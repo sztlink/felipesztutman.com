@@ -1,11 +1,17 @@
 ---
+import SchemaOrg from '../components/SchemaOrg.astro';
+
 interface Props {
   title: string;
   description?: string;
   ogTitle?: string;
   lang?: 'pt' | 'en';
+  schemaType?: 'WebSite' | 'Person' | 'ArtWork';
+  schemaName?: string;
+  schemaDate?: string;
+  schemaLocation?: string;
 }
-const { title, description = 'Felipe Sztutman — artista e construtor de sistemas imersivos. São Paulo, Brasil.', ogTitle, lang = 'pt' } = Astro.props;
+const { title, description = 'Felipe Sztutman — artista e construtor de sistemas imersivos. São Paulo, Brasil.', ogTitle, lang = 'pt', schemaType = 'WebSite', schemaName, schemaDate, schemaLocation } = Astro.props;
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const altLang = isEN ? 'pt' : 'en';
@@ -31,6 +37,7 @@ const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPa
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content={ogTitle || title}>
 <meta name="twitter:description" content={description}>
+<SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} />
 <style is:global>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#060810;--fg:#c8d0e0;--fg2:rgba(200,210,230,.45);--fg3:rgba(200,210,230,.2);--accent:#4477ff;--mono:'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;--sans:system-ui,-apple-system,'Segoe UI',sans-serif}

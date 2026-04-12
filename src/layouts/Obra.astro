@@ -22,7 +22,7 @@ const prefix = isEN ? '/en' : '';
 const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) — ${frontmatter.location}. Felipe Sztutman.`;
 ---
-<Base title={seoTitle} description={seoDesc} lang={lang}>
+<Base title={seoTitle} description={seoDesc} lang={lang} schemaType="ArtWork" schemaName={frontmatter.title} schemaDate={frontmatter.year} schemaLocation={frontmatter.location}>
   <article>
     <div class="obra-header">
       <a href={`${prefix}/#obras`} class="back">{isEN ? '← works' : '← obras'}</a>

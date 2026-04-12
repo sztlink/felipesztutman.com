@@ -1,0 +1,65 @@
+---
+interface Props {
+  type?: 'WebSite' | 'Person' | 'ArtWork';
+  name?: string;
+  description?: string;
+  url?: string;
+  image?: string;
+  dateCreated?: string;
+  location?: string;
+}
+const { type = 'WebSite', name, description, url, image, dateCreated, location } = Astro.props;
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Felipe Sztutman",
+  "url": "https://felipesztutman.com",
+  "sameAs": [
+    "https://instagram.com/felipesztutman",
+    "https://br.linkedin.com/in/felipesztutman",
+    "https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman",
+    "https://aya.cx"
+  ],
+  "jobTitle": "Artist",
+  "description": "Artist and builder of immersive systems. Conceives environments where light, technology, and perception become language.",
+  "birthDate": "1986-11-30",
+  "birthPlace": { "@type": "Place", "name": "São Paulo, Brazil" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "FAU-USP", "department": "Design" },
+    { "@type": "EducationalOrganization", "name": "COTUCA/Unicamp", "department": "Mechatronics" }
+  ],
+  "affiliation": { "@type": "Organization", "name": "AYA Studio", "url": "https://aya.cx" },
+  "knowsAbout": ["immersive art", "light art", "new media art", "installation art", "projection mapping", "interactive installation"]
+};
+
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Felipe Sztutman",
+  "url": "https://felipesztutman.com",
+  "author": { "@type": "Person", "name": "Felipe Sztutman" },
+  "inLanguage": ["pt-BR", "en"]
+};
+
+const artwork = name ? {
+  "@context": "https://schema.org",
+  "@type": "VisualArtwork",
+  "name": name,
+  "description": description,
+  "url": url,
+  "creator": { "@type": "Person", "name": "Felipe Sztutman", "url": "https://felipesztutman.com" },
+  "dateCreated": dateCreated,
+  ...(location ? { "locationCreated": { "@type": "Place", "name": location } } : {}),
+  ...(image ? { "image": image } : {}),
+  "artMedium": "immersive installation",
+  "artform": "new media art"
+} : null;
+
+const schemas = type === 'Person' ? [person, website] : 
+                type === 'ArtWork' && artwork ? [artwork] : 
+                [website];
+---
+{schemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}
