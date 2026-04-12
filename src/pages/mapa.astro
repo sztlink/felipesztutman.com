@@ -1,0 +1,232 @@
+---
+import mapaConfig from '../data/mapa.json';
+
+// ── import.meta.glob (Astro 6) ───────────────────────────────
+const obraModules  = import.meta.glob('./obras/*.md',   { eager: true }) as Record<string, any>;
+const escritoModules = import.meta.glob('./escritos/*.md', { eager: true }) as Record<string, any>;
+
+function idFromPath(path: string): string {
+  return path.split('/').pop()!.replace('.md', '');
+}
+
+function extractPeople(credits: any[], filterMap: Record<string, string>): string[] {
+  const found = new Set<string>();
+  for (const c of credits || []) {
+    for (const [name, key] of Object.entries(filterMap)) {
+      if ((c.name || '').includes(name)) found.add(key);
+    }
+  }
+  return [...found];
+}
+
+const pf = mapaConfig.people_filter as Record<string, string>;
+
+// ── Obras ─────────────────────────────────────────────────────
+const obraNodes = Object.entries(obraModules).map(([path, mod]) => {
+  const id  = idFromPath(path);
+  const cfg = (mapaConfig.nodes as any)[id] || {};
+  const fm  = mod.frontmatter;
+  const venue = cfg.venue || (fm.location || '').split(',')[0].substring(0, 22).trim();
+  return {
+    id,
+    label: fm.title as string,
+    sub:   `${fm.year} · ${venue}`,
+    year:  parseInt(fm.year) || null,
+    desc:  fm.description as string,
+    slug:  `/obras/${id}`,
+    people: extractPeople(fm.credits, pf),
+    type:  'obra',
+    r:       cfg.r     || 14,
+    color:   cfg.color || '#2255ee',
+    material: cfg.material || [],
+    tags:    cfg.tags  || [],
+    links:   cfg.links || [],
+    lens:    cfg.lens  || { conceito: [0, 0] },
+  };
+});
+
+// ── Escritos ──────────────────────────────────────────────────
+const escritoNodes = Object.entries(escritoModules)
+  .filter(([path]) => !path.includes('index'))
+  .map(([path, mod]) => {
+    const id  = idFromPath(path);
+    const cfg = (mapaConfig.nodes as any)[id] || {};
+    const fm  = mod.frontmatter;
+    return {
+      id,
+      label: fm.title as string,
+      sub:   (fm.subtitle || fm.date || '') as string,
+      year:  null,
+      desc:  fm.description as string,
+      slug:  `/escritos/${id}`,
+      people: [] as string[],
+      type:  'escrito',
+      r:       cfg.r     || 8,
+      color:   cfg.color || '#555',
+      material: cfg.material || [],
+      tags:    cfg.tags  || [],
+      links:   cfg.links || [],
+      lens:    cfg.lens  || { conceito: [0, 0] },
+    };
+  });
+
+// ── Ghosts (refs sem página) ──────────────────────────────────
+const ghostNodes = Object.entries(mapaConfig.ghosts as any).map(([id, g]: [string, any]) => ({
+  id,
+  label:    g.label,
+  sub:      g.sub,
+  year:     g.year,
+  desc:     g.desc,
+  slug:     g.slug,
+  people:   g.people   || [],
+  type:     g.type,
+  r:        g.r,
+  color:    g.color,
+  material: g.material || [],
+  tags:     g.tags     || [],
+  links:    g.links    || [],
+  lens:     g.lens     || { conceito: [0, 0] },
+}));
+
+const allNodes = [...obraNodes, ...escritoNodes, ...ghostNodes];
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felipe Sztutman — Mapa</title>
+  <meta name="description" content="Mapa das obras de Felipe Sztutman — navegação não-linear por linhagem, tempo e conceito.">
+  <meta property="og:title" content="Felipe Sztutman — Mapa">
+  <meta property="og:description" content="Mapa interativo das obras — navegação por lentes: conceito, temporal, linhagem.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box }
+    html, body { width: 100%; height: 100%; background: #060810; overflow: hidden;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace }
+    #canvas { position: absolute; inset: 0; cursor: grab }
+    #canvas:active { cursor: grabbing }
+
+    /* NAV */
+    #nav { position: fixed; top: 12px; left: 14px; z-index: 30 }
+    #nav a { font: 11px/1 monospace; color: rgba(255,255,255,.18); margin-right: 14px;
+      text-decoration: none; letter-spacing: .04em }
+    #nav a:hover { color: rgba(255,255,255,.6) }
+
+    /* CONTROLS */
+    #controls { position: fixed; top: 9px; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 0; z-index: 30; white-space: nowrap }
+    .lens { background: none; border: none; cursor: pointer;
+      font: 10px/1 'SF Mono','Fira Code',monospace; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,.2); padding: 6px 13px;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: color .15s, border-color .15s }
+    .lens:hover { color: rgba(255,255,255,.5); border-bottom-color: rgba(255,255,255,.12) }
+    .lens.active { color: #4477ff; border-bottom-color: #4477ff }
+    .ctrl-sep { color: rgba(255,255,255,.07); padding: 0 8px; font: 11px/1 monospace; align-self: center }
+    #search-wrap { display: flex; align-items: center; gap: 5px; padding: 0 8px }
+    #search-icon { font: 12px/1 monospace; color: rgba(255,255,255,.2); user-select: none }
+    #search { background: none; border: none; outline: none;
+      font: 10px/1 'SF Mono','Fira Code',monospace; color: rgba(255,255,255,.55);
+      width: 110px; letter-spacing: .03em }
+    #search::placeholder { color: rgba(255,255,255,.12) }
+    #search:focus { color: rgba(255,255,255,.8) }
+
+    /* FILTERS */
+    #filters { position: fixed; bottom: 14px; left: 14px; z-index: 30;
+      display: flex; flex-direction: column; gap: 5px }
+    .frow { display: flex; align-items: center; gap: 4px }
+    .flabel { font: 9px/1 monospace; color: rgba(255,255,255,.1); width: 14px;
+      text-align: right; flex-shrink: 0 }
+    .fp { background: none; border: 1px solid rgba(255,255,255,.06); cursor: pointer;
+      font: 9px/1 'SF Mono','Fira Code',monospace; letter-spacing: .04em;
+      color: rgba(255,255,255,.2); padding: 3px 7px; border-radius: 2px;
+      transition: color .12s, border-color .12s, background .12s }
+    .fp:hover { color: rgba(255,255,255,.5); border-color: rgba(255,255,255,.14) }
+    .fp.on { color: #fff; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.04) }
+
+    /* HINT */
+    #hint { position: fixed; bottom: 12px; right: 14px; font: 10px/1 monospace;
+      color: rgba(255,255,255,.07); pointer-events: none; z-index: 10 }
+
+    /* DETAIL PANEL */
+    #detail { position: fixed; right: 0; top: 0; bottom: 0; width: 0; overflow: hidden;
+      background: rgba(6,8,16,.97); border-left: 1px solid rgba(255,255,255,.06);
+      transition: width .25s ease; z-index: 40 }
+    #detail.open { width: 380px }
+    #di { width: 380px; padding: 28px; color: #c8d0e0; overflow-y: auto; height: 100% }
+    #dc { font: 11px/1 monospace; color: rgba(255,255,255,.22); cursor: pointer; margin-bottom: 22px }
+    #dc:hover { color: #fff }
+    #dtype { font: 9px/1 monospace; text-transform: uppercase; letter-spacing: .12em;
+      color: #4477ff; margin-bottom: 8px }
+    #dtitle { font: 500 1.35rem/1.2 system-ui,sans-serif; color: #c8d0e0; margin-bottom: 4px }
+    #dmeta { font: 11px/1.4 monospace; color: rgba(255,255,255,.22); margin-bottom: 18px }
+    #dbody { font: 13px/1.85 system-ui,sans-serif; color: rgba(200,210,230,.5) }
+    #dbody p { margin-bottom: 12px }
+    #dtags { margin-top: 16px; display: flex; gap: 4px; flex-wrap: wrap }
+    #dtags span { font: 9px/1 monospace; color: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.06); padding: 3px 6px; border-radius: 2px }
+    #dlink { display: inline-block; margin-top: 18px; font: 11px/1 monospace;
+      color: #4477ff; text-decoration: none }
+    #dlink:hover { text-decoration: underline }
+  </style>
+</head>
+<body>
+
+<div id="nav">
+  <a href="/">felipe sztutman</a>
+  <a href="/sobre">sobre</a>
+  <a href="/escritos">escritos</a>
+</div>
+
+<div id="controls">
+  <button class="lens active" data-l="conceito">conceito</button>
+  <button class="lens" data-l="temporal">temporal</button>
+  <button class="lens" data-l="linhagem">linhagem</button>
+  <span class="ctrl-sep">·</span>
+  <div id="search-wrap">
+    <span id="search-icon">⌕</span>
+    <input id="search" type="text" placeholder="buscar no mapa">
+  </div>
+</div>
+
+<div id="filters">
+  <div class="frow">
+    <span class="flabel">↘</span>
+    <button class="fp" data-t="p" data-v="wesley">wesley</button>
+    <button class="fp" data-t="p" data-v="leston">leston</button>
+    <button class="fp" data-t="p" data-v="antonio">antonio</button>
+    <button class="fp" data-t="p" data-v="jãozão">jãozão</button>
+  </div>
+  <div class="frow">
+    <span class="flabel">◈</span>
+    <button class="fp" data-t="m" data-v="luz">luz</button>
+    <button class="fp" data-t="m" data-v="laser">laser</button>
+    <button class="fp" data-t="m" data-v="sensor">sensor</button>
+    <button class="fp" data-t="m" data-v="dados">dados</button>
+    <button class="fp" data-t="m" data-v="projeção">projeção</button>
+    <button class="fp" data-t="m" data-v="aroma">aroma</button>
+  </div>
+</div>
+
+<canvas id="canvas"></canvas>
+<div id="hint">scroll · drag · clique</div>
+
+<div id="detail">
+  <div id="di">
+    <div id="dc">× fechar</div>
+    <div id="dtype"></div>
+    <div id="dtitle"></div>
+    <div id="dmeta"></div>
+    <div id="dbody"></div>
+    <div id="dtags"></div>
+    <a id="dlink" href="#">→ página completa</a>
+  </div>
+</div>
+
+<!-- Dados injetados em build-time — motor lê via getElementById -->
+<script type="application/json" id="mapa-data" set:html={JSON.stringify(allNodes)}></script>
+<script src="/js/mapa-engine.js" is:inline></script>
+
+</body>
+</html>

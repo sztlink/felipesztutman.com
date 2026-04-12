@@ -1,0 +1,307 @@
+{
+  "people_filter": {
+    "Wesley Lee": "wesley",
+    "Matheus Leston": "leston",
+    "Antonio Curti": "antonio",
+    "João Alencar": "jãozão"
+  },
+
+  "nodes": {
+    "objeto-em-forma-de-espaco": {
+      "r": 18, "color": "#00ccff",
+      "material": ["luz", "aroma"],
+      "tags": ["fibra óptica", "sinestesia", "aroma", "som", "sensorial", "fundacional", "primeiro", "mis", "laboratório", "espaço"],
+      "links": ["cachoeira", "occupycopan", "canvas13"],
+      "lens": {
+        "conceito": [-80, -120],
+        "temporal": [-340, 40],
+        "linhagem": [-200, -70]
+      }
+    },
+    "occupycopan": {
+      "r": 12, "color": "#00ccff",
+      "material": ["luz"],
+      "tags": ["lâmpada", "tubo", "edifício", "vão", "estrutura", "arquitetura", "copan"],
+      "links": ["objeto-em-forma-de-espaco", "cachoeira"],
+      "lens": {
+        "conceito": [10, -160],
+        "temporal": [-253, -100],
+        "linhagem": [-200, -220]
+      }
+    },
+    "cachoeira": {
+      "r": 22, "color": "#00ccff",
+      "venue": "Anhangabaú",
+      "material": ["luz"],
+      "tags": ["água", "córrego", "soterrado", "invisível", "revelar", "são paulo", "anhangabaú", "cidade", "gesto fundacional"],
+      "links": ["floresta-utopica", "mantiqueira", "corrego-rio-verde", "objeto-em-forma-de-espaco"],
+      "lens": {
+        "conceito": [-180, -40],
+        "temporal": [-210, 80],
+        "linhagem": [-110, -110]
+      }
+    },
+    "mantiqueira": {
+      "r": 14, "color": "#00ccff",
+      "material": ["luz"],
+      "tags": ["água", "natureza", "montanha", "queda d'água", "paramétrico", "emergência", "serra"],
+      "links": ["cachoeira", "floresta-utopica", "corrego-rio-verde"],
+      "lens": {
+        "conceito": [-280, 60],
+        "temporal": [-166, 140],
+        "linhagem": [-120, 80]
+      }
+    },
+    "corrego-rio-verde": {
+      "r": 12, "color": "#00ccff",
+      "venue": "Beco do Batman",
+      "material": ["luz"],
+      "tags": ["água", "córrego", "bicicleta", "urbano", "são paulo", "beco batman", "vila madalena"],
+      "links": ["cachoeira", "mantiqueira", "canvas13"],
+      "lens": {
+        "conceito": [-120, 80],
+        "temporal": [-166, 20],
+        "linhagem": [-60, 30]
+      }
+    },
+    "canvas13": {
+      "r": 10, "color": "#00ccff",
+      "venue": "Serralheria",
+      "material": ["luz"],
+      "tags": ["espaço", "fio", "festival", "mapeamento", "audiovisual", "serralheria"],
+      "links": ["corrego-rio-verde", "objeto-em-forma-de-espaco"],
+      "lens": {
+        "conceito": [-60, 130],
+        "temporal": [-166, -160],
+        "linhagem": [-40, -210]
+      }
+    },
+    "floresta-utopica": {
+      "r": 26, "color": "#00ff88",
+      "material": ["luz", "laser", "projeção", "aroma"],
+      "tags": ["natureza", "floresta", "luz", "espelho", "aroma", "projeção", "invisível", "revelar", "ecologia", "mapping", "13 anos depois"],
+      "links": ["cachoeira", "mantiqueira", "oceanvs"],
+      "lens": {
+        "conceito": [-320, -100],
+        "temporal": [355, -40],
+        "linhagem": [-200, 180]
+      }
+    },
+    "mementos": {
+      "r": 16, "color": "#ff4466",
+      "material": ["luz", "laser"],
+      "tags": ["laser", "cristal", "generativo", "padrão", "regras", "emergência", "sistema", "físico", "digital"],
+      "links": ["interludio", "player1", "oceanvs"],
+      "lens": {
+        "conceito": [160, -110],
+        "temporal": [95, -110],
+        "linhagem": [110, -210]
+      }
+    },
+    "interludio": {
+      "r": 14, "color": "#ff4466",
+      "material": ["luz", "sensor"],
+      "tags": ["sensor", "proximidade", "corpo", "presença", "luz responsiva", "interativo", "reativo", "hardware"],
+      "links": ["player1", "mementos", "o-que-nos-une"],
+      "lens": {
+        "conceito": [200, -20],
+        "temporal": [95, 60],
+        "linhagem": [80, -80]
+      }
+    },
+    "o-que-nos-une": {
+      "r": 20, "color": "#ff4466",
+      "venue": "FIESP",
+      "material": ["sensor", "projeção"],
+      "tags": ["corpo", "biométrico", "coração", "sincronização", "espelho", "sensor", "nicolelis", "ciência", "conexão", "batimento"],
+      "links": ["interludio", "player1", "metadata"],
+      "lens": {
+        "conceito": [280, 50],
+        "temporal": [355, 110],
+        "linhagem": [220, -40]
+      }
+    },
+    "player1": {
+      "r": 28, "color": "#ff4466",
+      "material": ["sensor"],
+      "tags": ["videogame", "jogo", "corpo", "controle", "sensor", "anos 80", "cultura pop", "interativo", "pessoal", "strike", "drift", "trace", "rush"],
+      "links": ["interludio", "mementos", "gurps"],
+      "lens": {
+        "conceito": [340, -80],
+        "temporal": [400, -110],
+        "linhagem": [340, -160]
+      }
+    },
+    "andromeda": {
+      "r": 18, "color": "#aa77ff",
+      "material": ["luz", "projeção", "laser"],
+      "tags": ["cosmos", "astronomia", "luz", "projeção", "imersivo", "espaço sideral", "fenômeno", "juvi", "vídeo"],
+      "links": ["sao-paulo-3024", "flama", "oceanvs"],
+      "lens": {
+        "conceito": [60, -260],
+        "temporal": [355, -190],
+        "linhagem": [370, -290]
+      }
+    },
+    "sao-paulo-3024": {
+      "r": 16, "color": "#aa77ff",
+      "material": ["dados", "projeção"],
+      "tags": ["dados", "ia", "llm", "futuro", "cidade", "são paulo", "corpo", "projeção", "imersivo", "lora", "território"],
+      "links": ["andromeda", "metadata", "flama"],
+      "lens": {
+        "conceito": [-60, -300],
+        "temporal": [312, -150],
+        "linhagem": [320, -100]
+      }
+    },
+    "flama": {
+      "r": 16, "color": "#ff8800",
+      "material": ["luz", "sensor", "projeção"],
+      "tags": ["fogo", "toque", "marca", "permanente", "interativo", "cristal", "chama", "calor", "fogueira", "led"],
+      "links": ["andromeda", "floresta-utopica", "oceanvs"],
+      "lens": {
+        "conceito": [180, -260],
+        "temporal": [400, 70],
+        "linhagem": [390, 90]
+      }
+    },
+    "oceanvs": {
+      "r": 22, "color": "#2255ee",
+      "venue": "Farol + Casa Fiat",
+      "material": ["projeção", "dados"],
+      "tags": ["água", "oceano", "imersivo", "oito atos", "projeção", "motion", "trilha", "juvi", "sistema", "container"],
+      "links": ["floresta-utopica", "metadata", "mementos", "amano"],
+      "lens": {
+        "conceito": [40, 40],
+        "temporal": [225, 20],
+        "linhagem": [190, -200]
+      }
+    },
+    "metadata": {
+      "r": 16, "color": "#2255ee",
+      "venue": "FIESP",
+      "material": ["dados", "projeção"],
+      "tags": ["dados", "tempo real", "são paulo", "fluido", "3d", "informação", "urbano", "visualização"],
+      "links": ["oceanvs", "sao-paulo-3024", "o-que-nos-une"],
+      "lens": {
+        "conceito": [120, 120],
+        "temporal": [269, 90],
+        "linhagem": [280, 60]
+      }
+    },
+    "luz-aeterna": {
+      "r": 16, "color": "#2255ee",
+      "venue": "CCBB",
+      "material": ["luz", "projeção"],
+      "tags": ["curadoria", "new media", "espaço", "luz", "coletivo", "ccbb", "artistas", "jornada", "design espacial", "expografia"],
+      "links": ["amano", "oceanvs"],
+      "lens": {
+        "conceito": [-40, 180],
+        "temporal": [312, 40],
+        "linhagem": [160, 170]
+      }
+    },
+    "amano": {
+      "r": 20, "color": "#2255ee",
+      "venue": "CCBB · 3 cidades",
+      "material": ["projeção", "laser"],
+      "tags": ["yoshitaka amano", "anime", "fantasia", "imersivo", "laser", "projeção", "mapping", "ccbb", "rio", "belo horizonte", "final fantasy", "itinerância"],
+      "links": ["luz-aeterna", "oceanvs"],
+      "lens": {
+        "conceito": [60, 240],
+        "temporal": [312, 165],
+        "linhagem": [240, 190]
+      }
+    },
+
+    "szt-link": {
+      "r": 12, "color": "#ffffff",
+      "material": [],
+      "tags": ["implante", "cognitivo", "argila", "clay", "artefato", "sistema", "ferramenta", "autoconhecimento", "phármakon", "bion", "pensamento"],
+      "links": ["borda-difusa", "cartografia-do-saber", "luzcidade", "cachoeira", "floresta-utopica", "player1"],
+      "lens": {
+        "conceito": [0, 0],
+        "temporal": [355, -280],
+        "linhagem": [0, 0]
+      }
+    },
+    "borda-difusa": {
+      "r": 8, "color": "#555",
+      "material": [],
+      "tags": ["cartografia", "fundacional", "implante", "sessão", "origem", "fronteira", "borda", "limite", "papel", "artista", "diretor"],
+      "links": ["szt-link", "cartografia-do-saber"],
+      "lens": {
+        "conceito": [-40, -50],
+        "temporal": [270, -250],
+        "linhagem": [-50, 100]
+      }
+    },
+    "cartografia-do-saber": {
+      "r": 8, "color": "#555",
+      "material": [],
+      "tags": ["método", "rolnik", "corpo", "razão", "sentido", "técnica", "processo", "saber", "sentimental"],
+      "links": ["szt-link", "borda-difusa"],
+      "lens": {
+        "conceito": [50, -40],
+        "temporal": [320, -250],
+        "linhagem": [60, 100]
+      }
+    },
+    "luzcidade": {
+      "r": 10, "color": "#555",
+      "material": ["luz"],
+      "tags": ["tcc", "fau", "usp", "moholy", "flavin", "campo", "luz", "espaço", "fundacional", "genealogia", "dissertação", "neon", "lâmpada"],
+      "links": ["objeto-em-forma-de-espaco", "cachoeira", "szt-link"],
+      "lens": {
+        "conceito": [-140, -80],
+        "temporal": [-166, -80],
+        "linhagem": [-260, -160]
+      }
+    }
+  },
+
+  "ghosts": {
+    "gurps": {
+      "label": "GURPS Cyberpunk",
+      "sub": "1994 · referência",
+      "type": "ref", "color": "#2a2a3a", "r": 8, "year": 1994,
+      "people": [], "material": [],
+      "tags": ["cyberpunk", "ficção científica", "escritório digital", "rpg", "anos 90", "imaginação", "interface", "terminal", "implante"],
+      "desc": "Escritório digital imaginado nos anos 90. A AYA de hoje é o que pensei naquele dia.",
+      "links": ["player1", "szt-link"], "slug": null,
+      "lens": {
+        "conceito": [420, -180],
+        "temporal": [-300, -280],
+        "linhagem": [-480, 220]
+      }
+    },
+    "flavin": {
+      "label": "Dan Flavin",
+      "sub": "referência",
+      "type": "ref", "color": "#2a2a3a", "r": 8, "year": 1963,
+      "people": [], "material": ["luz"],
+      "tags": ["lâmpada", "neon", "luz", "espaço", "americano", "referência", "minimal", "fluorescente", "tubo"],
+      "desc": "Lâmpada como medium. Viena 2013. O campo reconhecido no museu.",
+      "links": ["occupycopan", "luzcidade", "objeto-em-forma-de-espaco"], "slug": null,
+      "lens": {
+        "conceito": [-240, -180],
+        "temporal": [-400, -280],
+        "linhagem": [-360, -240]
+      }
+    },
+    "moholy": {
+      "label": "Moholy-Nagy",
+      "sub": "referência",
+      "type": "ref", "color": "#2a2a3a", "r": 6, "year": 1922,
+      "people": [], "material": ["luz"],
+      "tags": ["bauhaus", "luz", "espaço", "modernismo", "influência", "visão", "modular", "kinetismo", "espaço-luz"],
+      "desc": "Luz como matéria. Modulador de Espaço-Luz. Bauhaus. A genealogia começa aqui.",
+      "links": ["flavin", "luzcidade"], "slug": null,
+      "lens": {
+        "conceito": [-300, -200],
+        "temporal": [-500, -280],
+        "linhagem": [-480, -320]
+      }
+    }
+  }
+}
