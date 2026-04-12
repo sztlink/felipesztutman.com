@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Sztutman — Mapa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#060810;overflow:hidden;font-family:'SF Mono','Fira Code',monospace}
+#canvas{position:absolute;inset:0;cursor:grab}
+#canvas:active{cursor:grabbing}
+#hint{position:fixed;bottom:12px;right:14px;font:10px/1 monospace;color:rgba(255,255,255,.1);pointer-events:none;z-index:10}
+#detail{position:fixed;right:0;top:0;bottom:0;width:0;overflow:hidden;background:rgba(6,8,16,.97);border-left:1px solid rgba(255,255,255,.06);transition:width .25s ease;z-index:20}
+#detail.open{width:380px}
+#detail-inner{width:380px;padding:24px;color:#c8d0e0;overflow-y:auto;height:100%}
+#detail-close{font:11px/1 monospace;color:rgba(255,255,255,.3);cursor:pointer;margin-bottom:16px}
+#detail-close:hover{color:#fff}
+#detail-type{font:9px/1 monospace;text-transform:uppercase;letter-spacing:.12em;color:#4477ff;margin-bottom:6px}
+#detail-title{font:500 1.3rem/1.25 system-ui,sans-serif;color:#c8d0e0;margin-bottom:4px}
+#detail-meta{font:11px/1.4 monospace;color:rgba(255,255,255,.25);margin-bottom:16px}
+#detail-body{font:13px/1.8 system-ui,sans-serif;color:rgba(200,210,230,.55)}
+#detail-body p{margin-bottom:12px}
+#detail-link{display:inline-block;margin-top:12px;font:11px/1 monospace;color:#4477ff;text-decoration:none}
+#detail-link:hover{text-decoration:underline}
+#nav{position:fixed;top:12px;left:14px;z-index:10}
+#nav a{font:11px/1 monospace;color:rgba(255,255,255,.2);margin-right:12px;text-decoration:none}
+#nav a:hover{color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+<div id="nav">
+  <a href="/">felipe sztutman</a>
+  <a href="/sobre">sobre</a>
+  <a href="/escritos">escritos</a>
+</div>
+<canvas id="canvas"></canvas>
+<div id="hint">scroll · drag · clique nos nós</div>
+<div id="detail">
+  <div id="detail-inner">
+    <div id="detail-close">× fechar</div>
+    <div id="detail-type"></div>
+    <div id="detail-title"></div>
+    <div id="detail-meta"></div>
+    <div id="detail-body"></div>
+    <a id="detail-link" href="#">→ página completa</a>
+  </div>
+</div>
+<script>
+const nodes = [
+  // === REVELAR O INVISÍVEL (centro-esquerda) ===
+  {id:'cachoeira',x:-180,y:-40,r:22,label:'Cachoeira',sub:'2012 · Anhangabaú',type:'obra',
+   color:'#00ccff',desc:'500m de cabo eletroluminescente revelando o Córrego das Almas soterrado. O gesto fundacional: tornar visível o invisível.',
+   links:['floresta','mantiqueira','corrego','objeto'],slug:'cachoeira'},
+  {id:'floresta',x:-320,y:-100,r:26,label:'Floresta Utópica',sub:'2025 · Farol Santander',type:'obra',
+   color:'#00ff88',desc:'13 anos depois da Cachoeira. Projeção mapeada, espelhos, aromas, escultura de luz. A natureza não é representada — é evocada como estado interior.',
+   links:['cachoeira','mantiqueira','oceanvs'],slug:'floresta-utopica'},
+  {id:'mantiqueira',x:-280,y:60,r:14,label:'Mantiqueira',sub:'2013 · Serra',type:'obra',
+   color:'#00ccff',desc:'Cabos eletroluminescentes numa queda d\'água natural. O método paramétrico falhou. A forma emergiu do encontro com a natureza.',
+   links:['cachoeira','floresta','corrego'],slug:'mantiqueira'},
+  {id:'corrego',x:-120,y:80,r:12,label:'Córrego Rio Verde',sub:'2013 · Beco do Batman',type:'obra',
+   color:'#00ccff',desc:'240m de luz, aros de bicicleta, projeto paramétrico. Outro córrego revelado. Foto: Wesley Lee.',
+   links:['cachoeira','mantiqueira','canvas13'],slug:'corrego-rio-verde'},
+  {id:'canvas13',x:-60,y:130,r:10,label:'Canvas #13',sub:'2013 · Serralheria',type:'obra',
+   color:'#00ccff',desc:'Mapeamento do espaço com cabos eletroluminescentes. Festival audiovisual.',
+   links:['corrego','objeto'],slug:'canvas13'},
+  {id:'objeto',x:-80,y:-120,r:18,label:'Objeto em Forma de: Espaço',sub:'2009 · LabMIS',type:'obra',
+   color:'#00ccff',desc:'Primeira obra. 1.444 fibras ópticas, som, aroma. Ambiente sinestésico. A regra fundacional: ambiente como obra.',
+   links:['cachoeira','occupycopan','canvas13'],slug:'objeto-em-forma-de-espaco'},
+  {id:'occupycopan',x:10,y:-160,r:12,label:'OccupyCopan',sub:'2011 · Copan',type:'obra',
+   color:'#00ccff',desc:'Lâmpadas tubulares (amarelo/azul/vermelho) tensionadas por cabo de aço. Vão entre dois andares. Com Fernanda Brenner.',
+   links:['objeto','cachoeira'],slug:'occupycopan'},
+
+  // === CORPO COMO INTERFACE (centro-direita) ===
+  {id:'player1',x:340,y:-80,r:28,label:'Player 1',sub:'2026 · Farol',type:'obra',
+   color:'#ff4466',desc:'O corpo é o controle. STRIKE, DRIFT, TRACE, RUSH. Videogame como medium. O trabalho mais pessoal.',
+   links:['interludio','mementos','gurps'],slug:'player1'},
+  {id:'interludio',x:200,y:-20,r:14,label:'Interlúdio',sub:'2019 · Farol',type:'obra',
+   color:'#ff4466',desc:'Sensores de proximidade + luz responsiva. A obra só existe com presença humana. Wesley Lee fez o hardware.',
+   links:['player1','mementos','oqnu'],slug:'interludio'},
+  {id:'mementos',x:160,y:-110,r:16,label:'Mementos',sub:'2019 · Farol',type:'obra',
+   color:'#ff4466',desc:'45 lasers + cristal. Leston programou Max/Jitter, Wesley fez hardware. Padrões generativos emergindo de regras.',
+   links:['interludio','player1','oceanvs'],slug:'mementos'},
+  {id:'oqnu',x:280,y:50,r:20,label:'O Que Nos Une',sub:'2025 · FIESP',type:'obra',
+   color:'#ff4466',desc:'Nicolelis. Câmara de espelhos, piso interativo, sincronização biométrica. Corações pulsando juntos.',
+   links:['interludio','player1','metadata'],slug:'o-que-nos-une'},
+
+  // === COSMOS / ELEMENTOS (cima) ===
+  {id:'andromeda',x:60,y:-260,r:18,label:'Andrômeda',sub:'2025 · Farol',type:'obra',
+   color:'#aa77ff',desc:'Cosmos (interativa) + Andrômeda (17 min). Fenômenos astronômicos decompostos em luz. Trilha Juvi.',
+   links:['sp3024','flama','oceanvs'],slug:'andromeda'},
+  {id:'sp3024',x:-60,y:-300,r:16,label:'São Paulo 3024',sub:'2024 · Farol',type:'obra',
+   color:'#aa77ff',desc:'SP daqui a mil anos. 7 atos, 16 min. LLMs + LoRa. Inclui Território — o corpo constrói cidades.',
+   links:['andromeda','metadata','flama'],slug:'sao-paulo-3024'},
+  {id:'flama',x:180,y:-260,r:16,label:'FLAMA',sub:'2026 · Farol',type:'obra',
+   color:'#ff8800',desc:'Fogo. Fogueira LED + sala interativa + Câmara do Cristal. O toque deixa marca permanente.',
+   links:['andromeda','floresta','oceanvs'],slug:'flama'},
+
+  // === SISTEMA / CONTAINER (direita-baixo) ===
+  {id:'oceanvs',x:40,y:40,r:22,label:'OCEANVS',sub:'2022–26 · Farol + Casa Fiat',type:'obra',
+   color:'#2255ee',desc:'8 atos sobre água. Dir. criativa Felipe, roteiro Antonio, motion Flávio+Jãozão, trilha Juvi, interativo Leston.',
+   links:['floresta','metadata','mementos','amano'],slug:'oceanvs'},
+  {id:'metadata',x:120,y:120,r:16,label:'METADATA',sub:'2023–24 · FIESP',type:'obra',
+   color:'#2255ee',desc:'Dados de SP em tempo real → fluidos 3D. 5 telas, 6 meses. Wesley programou.',
+   links:['oceanvs','sp3024','oqnu'],slug:'metadata'},
+  {id:'luzaeterna',x:-40,y:180,r:16,label:'Luz Æterna',sub:'2024 · CCBB',type:'obra',
+   color:'#2255ee',desc:'8 artistas de new media art. Desenhei o espaço para que a luz unificasse a jornada. Leston expôs Céu Zero dentro.',
+   links:['amano','oceanvs'],slug:'luz-aeterna'},
+  {id:'amano',x:60,y:240,r:20,label:'AMANO',sub:'2024–26 · CCBB',type:'obra',
+   color:'#2255ee',desc:'Maior expo Yoshitaka Amano do mundo. 15 projetores laser. Sala imersiva 11 min. 3 cidades.',
+   links:['luzaeterna','oceanvs'],slug:'amano'},
+
+  // === PENSAMENTO / IMPLANTE (centro) ===
+  {id:'sztlink',x:0,y:0,r:12,label:'szt.link',sub:'implante cognitivo',type:'escrito',
+   color:'#ffffff',desc:'Argila computacional. Clay e artefato. O motor generativo de tudo que está neste mapa.',
+   links:['borda','cartografia','luzcidade','cachoeira','floresta','player1'],slug:'../escritos/szt-link'},
+  {id:'borda',x:-40,y:-50,r:8,label:'Borda Difusa',sub:'cartografia',type:'escrito',
+   color:'#888',desc:'Sessão fundacional. O agente deixou de ser ferramenta. Implante nomeado.',
+   links:['sztlink','cartografia'],slug:'../escritos/borda-difusa'},
+  {id:'cartografia',x:50,y:-40,r:8,label:'Cartografia do Saber',sub:'método',type:'escrito',
+   color:'#888',desc:'Técnica derivada de Suely Rolnik. 7 fases. Corpo antes da razão.',
+   links:['sztlink','borda'],slug:'../escritos/cartografia-do-saber'},
+  {id:'luzcidade',x:-140,y:-80,r:10,label:'LUZCIDADE',sub:'TCC 2013',type:'escrito',
+   color:'#888',desc:'Moholy-Nagy → Flavin → Felipe. O campo encontrado.',
+   links:['objeto','cachoeira','sztlink'],slug:'../escritos/luzcidade'},
+
+  // === REFERÊNCIAS FANTASMA (borda, menor) ===
+  {id:'gurps',x:420,y:-180,r:8,label:'GURPS Cyberpunk',sub:'1994 · referência',type:'ref',
+   color:'#333',desc:'Escritório digital imaginado nos anos 90. A AYA de hoje é o que pensei naquele dia.',
+   links:['player1','sztlink'],slug:null},
+  {id:'flavin',x:-240,y:-180,r:8,label:'Dan Flavin',sub:'referência',type:'ref',
+   color:'#333',desc:'Lâmpada como medium. Viena 2013. O campo reconhecido.',
+   links:['occupycopan','luzcidade','objeto'],slug:null},
+  {id:'moholy',x:-300,y:-200,r:6,label:'Moholy-Nagy',sub:'referência',type:'ref',
+   color:'#333',desc:'Luz como matéria. Modulador de espaço. Bauhaus.',
+   links:['flavin','luzcidade'],slug:null},
+];
+
+// === RENDERER ===
+const cvs = document.getElementById('canvas');
+const ctx = cvs.getContext('2d');
+let W, H, cx, cy, zoom = 1, panX = 0, panY = 0;
+let dragging = false, dragX, dragY, hovered = null;
+
+function resize() {
+  W = cvs.width = window.innerWidth;
+  H = cvs.height = window.innerHeight;
+  cx = W / 2; cy = H / 2;
+}
+window.addEventListener('resize', resize);
+resize();
+
+function toScreen(x, y) {
+  return [(x + panX) * zoom + cx, (y + panY) * zoom + cy];
+}
+function toWorld(sx, sy) {
+  return [(sx - cx) / zoom - panX, (sy - cy) / zoom - panY];
+}
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+
+  // connections
+  for (const n of nodes) {
+    for (const lid of n.links) {
+      const t = nodes.find(m => m.id === lid);
+      if (!t) continue;
+      const [x1, y1] = toScreen(n.x, n.y);
+      const [x2, y2] = toScreen(t.x, t.y);
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.strokeStyle = 'rgba(255,255,255,.03)';
+      ctx.lineWidth = 1;
+      if (hovered && (hovered.id === n.id || hovered.id === t.id || hovered.links.includes(n.id) || hovered.links.includes(t.id))) {
+        ctx.strokeStyle = 'rgba(255,255,255,.12)';
+      }
+      ctx.stroke();
+    }
+  }
+
+  // nodes
+  for (const n of nodes) {
+    const [sx, sy] = toScreen(n.x, n.y);
+    const sr = n.r * zoom;
+    const isHov = hovered && hovered.id === n.id;
+    const isConn = hovered && (hovered.links.includes(n.id) || n.links.includes(hovered.id));
+
+    // glow
+    if (n.type !== 'ref') {
+      const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, sr * 3);
+      g.addColorStop(0, n.color + (isHov ? '30' : '10'));
+      g.addColorStop(1, 'transparent');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(sx, sy, sr * 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // dot
+    ctx.beginPath();
+    ctx.arc(sx, sy, Math.max(sr * 0.3, 2), 0, Math.PI * 2);
+    ctx.fillStyle = isHov ? '#fff' : (isConn ? n.color + 'aa' : n.color + '60');
+    ctx.fill();
+
+    // label
+    const alpha = isHov ? 1 : (isConn ? 0.7 : (n.type === 'ref' ? 0.15 : 0.35));
+    ctx.font = `${Math.max(10, 11 * zoom)}px system-ui, sans-serif`;
+    ctx.fillStyle = `rgba(200,210,230,${alpha})`;
+    ctx.textAlign = 'center';
+    ctx.fillText(n.label, sx, sy + sr + 14 * zoom);
+
+    if (zoom > 0.7 && n.type !== 'ref') {
+      ctx.font = `${Math.max(8, 9 * zoom)}px 'SF Mono', monospace`;
+      ctx.fillStyle = `rgba(200,210,230,${alpha * 0.4})`;
+      ctx.fillText(n.sub, sx, sy + sr + 26 * zoom);
+    }
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+// === INTERACTION ===
+cvs.addEventListener('wheel', e => {
+  e.preventDefault();
+  const factor = e.deltaY > 0 ? 0.9 : 1.1;
+  zoom = Math.max(0.3, Math.min(4, zoom * factor));
+});
+
+cvs.addEventListener('mousedown', e => {
+  dragging = true;
+  dragX = e.clientX;
+  dragY = e.clientY;
+});
+cvs.addEventListener('mousemove', e => {
+  if (dragging) {
+    panX += (e.clientX - dragX) / zoom;
+    panY += (e.clientY - dragY) / zoom;
+    dragX = e.clientX;
+    dragY = e.clientY;
+  }
+  // hover detection
+  const [wx, wy] = toWorld(e.clientX, e.clientY);
+  hovered = null;
+  for (const n of nodes) {
+    const dx = wx - n.x, dy = wy - n.y;
+    if (Math.sqrt(dx * dx + dy * dy) < n.r * 1.5) {
+      hovered = n;
+      cvs.style.cursor = 'pointer';
+      break;
+    }
+  }
+  if (!hovered) cvs.style.cursor = dragging ? 'grabbing' : 'grab';
+});
+cvs.addEventListener('mouseup', e => {
+  if (dragging && Math.abs(e.clientX - dragX) < 3 && Math.abs(e.clientY - dragY) < 3 && hovered) {
+    openDetail(hovered);
+  }
+  dragging = false;
+});
+
+// detail panel
+const detail = document.getElementById('detail');
+document.getElementById('detail-close').onclick = () => detail.classList.remove('open');
+
+function openDetail(n) {
+  document.getElementById('detail-type').textContent = n.type;
+  document.getElementById('detail-title').textContent = n.label;
+  document.getElementById('detail-meta').textContent = n.sub;
+  document.getElementById('detail-body').innerHTML = `<p>${n.desc}</p>`;
+  const link = document.getElementById('detail-link');
+  if (n.slug) {
+    link.href = `/obras/${n.slug}`;
+    link.style.display = 'inline-block';
+  } else {
+    link.style.display = 'none';
+  }
+  detail.classList.add('open');
+}
+
+// touch support
+let touchDist = 0;
+cvs.addEventListener('touchstart', e => {
+  if (e.touches.length === 1) {
+    dragging = true;
+    dragX = e.touches[0].clientX;
+    dragY = e.touches[0].clientY;
+  }
+  if (e.touches.length === 2) {
+    touchDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+  }
+});
+cvs.addEventListener('touchmove', e => {
+  e.preventDefault();
+  if (e.touches.length === 1 && dragging) {
+    panX += (e.touches[0].clientX - dragX) / zoom;
+    panY += (e.touches[0].clientY - dragY) / zoom;
+    dragX = e.touches[0].clientX;
+    dragY = e.touches[0].clientY;
+  }
+  if (e.touches.length === 2) {
+    const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    zoom = Math.max(0.3, Math.min(4, zoom * (d / touchDist)));
+    touchDist = d;
+  }
+}, {passive: false});
+cvs.addEventListener('touchend', () => { dragging = false; });
+</script>
+</body>
+</html>
