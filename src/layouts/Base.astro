@@ -3,17 +3,26 @@ interface Props {
   title: string;
   description?: string;
   ogTitle?: string;
+  lang?: 'pt' | 'en';
 }
-const { title, description = 'Felipe Sztutman — artista e construtor de sistemas imersivos. São Paulo, Brasil.', ogTitle } = Astro.props;
+const { title, description = 'Felipe Sztutman — artista e construtor de sistemas imersivos. São Paulo, Brasil.', ogTitle, lang = 'pt' } = Astro.props;
+const isEN = lang === 'en';
+const prefix = isEN ? '/en' : '';
+const altLang = isEN ? 'pt' : 'en';
+const altPrefix = isEN ? '' : '/en';
+const currentPath = Astro.url.pathname;
+const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPath}`;
 ---
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang={isEN ? 'en' : 'pt-BR'}>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={Astro.url.href}>
+<link rel="alternate" hrefLang="pt-BR" href={`https://felipesztutman.com${isEN ? currentPath.replace(/^\/en/, '') || '/' : currentPath}`}>
+<link rel="alternate" hrefLang="en" href={`https://felipesztutman.com${isEN ? currentPath : '/en' + currentPath}`}>
 <meta property="og:title" content={ogTitle || title}>
 <meta property="og:description" content={description}>
 <meta property="og:url" content={Astro.url.href}>
@@ -39,13 +48,14 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,
 </head>
 <body>
 <header>
-  <h1><a href="/">Felipe Sztutman</a></h1>
+  <h1><a href={`${prefix}/`}>Felipe Sztutman</a></h1>
   <nav>
-    <a href="/#obras">obras</a>
-    <a href="/trajetoria">trajetória</a>
-    <a href="/sobre">sobre</a>
-    <a href="/#contato">contato</a>
-    <a href="/grafo">grafo ↗</a>
+    <a href={`${prefix}/#obras`}>{isEN ? 'works' : 'obras'}</a>
+    <a href={`${prefix}/trajetoria`}>{isEN ? 'trajectory' : 'trajetória'}</a>
+    <a href={`${prefix}/sobre`}>{isEN ? 'about' : 'sobre'}</a>
+    <a href={`${prefix}/#contato`}>{isEN ? 'contact' : 'contato'}</a>
+    <a href="/grafo.html">grafo ↗</a>
+    <a href={altPath} class="lang-toggle">{altLang.toUpperCase()}</a>
   </nav>
 </header>
 <slot />

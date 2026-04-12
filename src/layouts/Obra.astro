@@ -11,17 +11,21 @@ interface Props {
     credits?: Array<{role: string; name: string}>;
     press?: Array<{source: string; url: string; title: string}>;
     series?: string;
+    lang?: 'pt' | 'en';
   };
 }
 
 const { frontmatter } = Astro.props;
+const lang = frontmatter.lang || 'pt';
+const isEN = lang === 'en';
+const prefix = isEN ? '/en' : '';
 const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) — ${frontmatter.location}. Felipe Sztutman.`;
 ---
-<Base title={seoTitle} description={seoDesc}>
+<Base title={seoTitle} description={seoDesc} lang={lang}>
   <article>
     <div class="obra-header">
-      <a href="/#obras" class="back">← obras</a>
+      <a href={`${prefix}/#obras`} class="back">{isEN ? '← works' : '← obras'}</a>
       <h1 class="obra-title">{frontmatter.title}</h1>
       {frontmatter.subtitle && <div class="obra-subtitle">{frontmatter.subtitle}</div>}
       <div class="obra-meta">{frontmatter.year} · {frontmatter.location}</div>
@@ -33,7 +37,7 @@ const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.
 
     {frontmatter.credits && frontmatter.credits.length > 0 && (
       <div class="obra-credits">
-        <h2>Ficha Técnica</h2>
+        <h2>{isEN ? 'Credits' : 'Ficha Técnica'}</h2>
         {frontmatter.credits.map(c => (
           <div class="credit-line">
             <span class="credit-role">{c.role}</span>
@@ -45,7 +49,7 @@ const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.
 
     {frontmatter.press && frontmatter.press.length > 0 && (
       <div class="obra-press">
-        <h2>Imprensa</h2>
+        <h2>{isEN ? 'Press' : 'Imprensa'}</h2>
         {frontmatter.press.map(p => (
           <div class="press-line">
             <a href={p.url} target="_blank">{p.source} — {p.title}</a>
