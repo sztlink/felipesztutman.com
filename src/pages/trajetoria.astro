@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Felipe Sztutman — Trajetória" description="BijaRi, The Force, GTM Cenografia, AYA Studio. Madison Square Garden, Google, YouTube, Japan House. A formação de um artista-sistêmico.">
+
+<a href="/" class="back">← início</a>
+<h1 class="page-title">Trajetória</h1>
+
+<div class="timeline">
+
+  <div class="era">
+    <h2>AYA Studio</h2>
+    <div class="era-meta">2019–presente · São Paulo · co-fundador, direção executiva e técnica</div>
+    <p>Estúdio de arte e tecnologia co-fundado com Antonio Curti. Exposições imersivas no Farol Santander, CCBB, SESI/FIESP, Japan House, Casa Fiat. Desenho de espaço, concepção técnica e artística, coordenação de equipes multidisciplinares.</p>
+  </div>
+
+  <div class="era">
+    <h2>The Force / GTM Cenografia</h2>
+    <div class="era-meta">2017–2018 · São Paulo e Rio de Janeiro</div>
+
+    <div class="project">
+      <strong>Dimensão — Nonotak Studio</strong>
+      <span class="proj-meta">2018 · Japan House, São Paulo · direção técnica</span>
+      <p>Três instalações imersivas do duo franco-japonês. Direção técnica da montagem (creditado como expografia). Ponto de inflexão → fundação da AYA.</p>
+    </div>
+
+    <div class="project">
+      <strong>Google Buttonwall</strong>
+      <span class="proj-meta">2017 · Hall do Google Brasil, São Paulo · montagem e integração</span>
+      <p>Instalação permanente interativa. ~7.000 botões RGB backlit, ~150 PCBs, ~25 Raspberry Pis. Wesley Lee redesenhou todo o hardware (100+ controller boards manuais). Vitaliano Palmieri fez o firmware. Eu e a GTM montamos e integramos. Baseada no Anypixels.js do Google Creative Lab.</p>
+    </div>
+
+    <div class="project">
+      <strong>YouTube Space Rio</strong>
+      <span class="proj-meta">2017 · Pier Mauá, Rio de Janeiro · cenografia via GTM</span>
+      <p>3.000 m² — descrito pelo G1 como "o mais high tech do mundo". Estúdios com câmeras 4K, cinema, 360°, cenários interativos.</p>
+    </div>
+
+    <div class="project">
+      <strong>Antitempo</strong>
+      <span class="proj-meta">2017 · Farol Santander, São Paulo · produção executiva (The Force)</span>
+      <p>42 moving lasers sincronizados com som. Matheus Leston desenvolveu sistema de controle, trilha sonora e coreografia de luz.</p>
+    </div>
+  </div>
+
+  <div class="era">
+    <h2>BijaRi</h2>
+    <div class="era-meta">2008–2017 · São Paulo · VJ, live-cinema, direção de arte</div>
+
+    <div class="project">
+      <strong>Villa Mix Goiânia ×3</strong>
+      <span class="proj-meta">2013–15 · Estádio Serra Dourada · direção de arte</span>
+      <p>Três edições do maior festival de música sertaneja do Brasil. 2015: Guinness Book of Records — maior palco de LED do mundo (1.400 m²). Mais de 1 milhão de espectadores no YouTube ao vivo. Direção de arte com João Alencar (Jãozão).</p>
+    </div>
+
+    <div class="project">
+      <strong>Ivete Sangalo DVD — Madison Square Garden</strong>
+      <span class="proj-meta">2010 · Nova York · vídeo-cenário</span>
+      <p>Vídeo-cenário para o DVD "Ivete Sangalo Ao Vivo no Madison Square Garden". 240 m² de painéis LED + cilindro de tecido de 10 metros de altura. DVD mais vendido do ano. Indicado ao Brazilian International Press Award.</p>
+    </div>
+
+    <div class="project">
+      <strong>Entropicália</strong>
+      <span class="proj-meta">2008 · Itaú Cultural, São Paulo · live-cinema</span>
+      <p>Performance live-cinema com o coletivo Maxifagia. Primeiro trabalho público — programação visual + manipulação de vídeo em tempo real.</p>
+    </div>
+  </div>
+
+  <div class="era">
+    <h2>Formação</h2>
+    <div class="era-meta">2002–2014</div>
+
+    <div class="project">
+      <strong>FAU-USP — Design</strong>
+      <span class="proj-meta">2007–14 · TCC LUZCIDADE, orient. Carlos Zibel Costa, banca Giselle Beiguelman</span>
+    </div>
+
+    <div class="project">
+      <strong>New York Visualists</strong>
+      <span class="proj-meta">2009 · Lab-Office com Rodrigo Bellotto e Gian Spina</span>
+    </div>
+
+    <div class="project">
+      <strong>COTUCA / Unicamp — Mecatrônica</strong>
+      <span class="proj-meta">2002–04 · Campinas</span>
+    </div>
+  </div>
+
+</div>
+
+</Base>
+
+<style>
+.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
+.back:hover{color:var(--fg);text-decoration:none}
+.page-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:2.5rem}
+.timeline{display:flex;flex-direction:column;gap:2.5rem}
+.era h2{font:500 1.2rem/1.3 var(--sans);margin-bottom:.2rem}
+.era-meta{font:.75rem/1.4 var(--mono);color:var(--fg3);margin-bottom:1rem}
+.era > p{font:.9rem/1.7 var(--sans);color:var(--fg2);margin-bottom:1.2rem}
+.project{margin-bottom:1.2rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,.06)}
+.project strong{font:500 .95rem/1.3 var(--sans);color:var(--fg);display:block}
+.proj-meta{font:.7rem/1.4 var(--mono);color:var(--fg3);display:block;margin-bottom:.3rem}
+.project p{font:.85rem/1.65 var(--sans);color:var(--fg2)}
+</style>

@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Felipe Sztutman — Sobre" description="Nascido em São Paulo, 1986. Técnico que virou artista. COTUCA Mecatrônica, FAU-USP Design, BijaRi, AYA Studio. Ambientes imersivos onde luz e tecnologia se tornam linguagem.">
+
+<a href="/" class="back">← início</a>
+
+<h1 class="page-title">Sobre</h1>
+
+<div class="bio">
+  <p>Nascido em São Paulo, 1986. Meus avós vieram da Polônia e da Romênia em 1933 — judeus fugidos do nazismo. Meu pai me ensinou que emancipação é pelo fazer: testar a ideia na matéria antes de afirmar que ela é boa.</p>
+
+  <p>Estudei <strong>Mecatrônica no COTUCA</strong> (Unicamp, 2002–04) e <strong>Design na FAU-USP</strong> (2007–14). Meu TCC, <em>LUZCIDADE</em>, traçou a linhagem de Moholy-Nagy a Dan Flavin e de Flavin ao meu trabalho com luz no espaço público. Orientação de Carlos Zibel Costa, banca de Giselle Beiguelman. Não sou artista que aprendeu tecnologia — sou técnico que virou artista. A ordem importa.</p>
+
+  <p>Em 2008 ingressei no <strong>BijaRi</strong>, onde trabalhei como VJ e diretor de arte por nove anos. Live-cinema no Itaú Cultural (2008), vídeo-cenário para Ivete Sangalo no Madison Square Garden (2010), três edições do Villa Mix Goiânia com Guinness Record do maior palco de LED do mundo (2013–15). O BijaRi me ensinou a operar em escala.</p>
+
+  <p>Em 2017, na <strong>The Force / GTM Cenografia</strong>, montei o Google Buttonwall no hall do Google Brasil com Wesley Lee (~7.000 botões RGB interativos), a cenografia do YouTube Space Rio no Pier Mauá (3.000 m², descrito pelo G1 como "o mais high tech do mundo"), e a direção técnica da exposição <em>Dimensão</em> do Nonotak Studio na Japan House São Paulo.</p>
+
+  <p>Em 2019 co-fundei a <strong>AYA Studio</strong> com Antonio Curti. Desde então, concebo e dirijo exposições imersivas no Farol Santander, CCBB, SESI/FIESP, Japan House e Casa Fiat. Desenho os espaços, concebo tecnicamente e artisticamente, e coordeno equipes multidisciplinares de motion designers, programadores, arquitetos e técnicos. Antonio assina a curadoria. A AYA é o sistema — eu sou um dos motores.</p>
+
+  <p>Meu trabalho se sustenta em duas linhagens: uma artística — de Moholy-Nagy a Dan Flavin, do modulador de luz e espaço à lâmpada fluorescente como medium — e outra técnica, que vem da mecatrônica e da fabricação digital. As obras nascem do cruzamento dessas forças. Revelar o invisível é o gesto que persiste: do Córrego das Almas soterrado em 2012 às redes micorrízicas da Floresta Utópica em 2025.</p>
+</div>
+
+<section>
+  <h2>Formação</h2>
+  <div class="formation">
+    <div class="form-item"><strong>COTUCA / Unicamp</strong> — Mecatrônica (2002–04)</div>
+    <div class="form-item"><strong>FAU-USP</strong> — Design (2007–14). TCC <em>LUZCIDADE</em>, orient. Carlos Zibel Costa, banca Giselle Beiguelman</div>
+    <div class="form-item"><strong>Dan Flavin: Lights</strong> — Mumok, Viena (2013). Visita que consolidou o campo</div>
+  </div>
+</section>
+
+<section>
+  <h2>Colaboradores recorrentes</h2>
+  <div class="collabs">
+    <div class="collab"><strong>Antonio Curti</strong> — curadoria em todas as exposições AYA desde 2019</div>
+    <div class="collab"><strong>Wesley Lee</strong> — hardware e eletrônica (Mementos, Interlúdio, METADATA, Google Buttonwall, Dimensão/Nonotak)</div>
+    <div class="collab"><strong>Matheus Leston</strong> — programação audiovisual (Mementos, OCEANVS, O Que Nos Une)</div>
+    <div class="collab"><strong>João Alencar (Jãozão)</strong> — motion design (OCEANVS, SP3024, AMANO). Antes juntos no BijaRi</div>
+    <div class="collab"><strong>Flávio Reis (Audiovisualismo)</strong> — motion design (OCEANVS)</div>
+    <div class="collab"><strong>Juvi</strong> — trilha sonora (OCEANVS, Andrômeda)</div>
+    <div class="collab"><strong>Rodrigo Bellotto</strong> — Objeto em Forma de: Espaço (2009), New York Visualists</div>
+  </div>
+</section>
+
+<section>
+  <h2>Registros</h2>
+  <div class="links-list">
+    <a href="https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman" target="_blank">Enciclopédia Itaú Cultural</a>
+    <a href="https://br.linkedin.com/in/felipesztutman" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/felipesztutman" target="_blank">Instagram</a>
+    <a href="https://aya.cx" target="_blank">AYA Studio</a>
+  </div>
+</section>
+
+</Base>
+
+<style>
+.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
+.back:hover{color:var(--fg);text-decoration:none}
+.page-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:2rem}
+.bio{font:.95rem/1.85 var(--sans);color:var(--fg);margin-bottom:2.5rem}
+.bio p{margin-bottom:1.2rem}
+.bio strong{font-weight:500}
+.bio em{color:var(--fg2)}
+section{margin-bottom:2.5rem}
+section h2{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--fg3);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.form-item,.collab{font:.88rem/1.7 var(--sans);color:var(--fg2);margin-bottom:.5rem}
+.form-item strong,.collab strong{color:var(--fg);font-weight:500}
+.links-list{display:flex;flex-direction:column;gap:.5rem;font:.82rem/1 var(--mono)}
+.links-list a{color:var(--fg2);transition:color .15s}.links-list a:hover{color:var(--accent)}
+</style>

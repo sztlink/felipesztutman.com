@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Sztutman</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#030509;overflow:hidden}
+#wr{position:relative;width:100%;height:100vh;background:#030509;overflow:hidden}
+#c{display:block;position:absolute;inset:0;width:100%;height:100%}
+#ctl{position:absolute;top:0;left:0;right:0;height:2px;transition:background .5s,opacity .5s;opacity:0;z-index:6}
+#bc{position:absolute;top:13px;left:14px;font:11px/1 monospace;color:rgba(255,255,255,.28);display:flex;align-items:center;gap:4px;z-index:6;user-select:none}
+.bs{cursor:pointer;transition:color .12s}.bs:hover{color:rgba(255,255,255,.85)}
+.bx{opacity:.15}.bl{color:rgba(255,255,255,.65);cursor:default}
+#lo{position:absolute;top:13px;right:14px;font:10px/1 monospace;color:rgba(255,255,255,.08);z-index:3;pointer-events:none}
+#hi{position:absolute;bottom:10px;right:14px;font:10px/1 monospace;color:rgba(255,255,255,.1);pointer-events:none}
+#bk{display:none;position:absolute;bottom:12px;left:14px;font:10px/1 monospace;color:rgba(255,255,255,.2);cursor:pointer;padding:5px 10px;border:.5px solid rgba(255,255,255,.1);border-radius:4px;z-index:6;transition:all .15s;background:rgba(3,5,9,.6)}
+#bk:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.35)}
+#tt{position:absolute;display:none;background:rgba(3,5,9,.95);border:.5px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 11px;pointer-events:none;z-index:10}
+.tt-t{font:9px/1 monospace;color:rgba(255,255,255,.22);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.tt-l{font:500 12px/1 sans-serif;color:#ccd8ee}
+.tt-h{font:10px/1 sans-serif;color:rgba(255,255,255,.28);margin-top:3px}
+#pn{position:absolute;right:0;top:0;bottom:0;width:0;overflow:hidden;background:rgba(4,7,20,.96);border-left:.5px solid rgba(255,255,255,.06);transition:width .22s ease;z-index:5}
+#pi{width:240px;padding:18px 16px;font-family:sans-serif}
+#pb{font:10px/1 monospace;text-transform:uppercase;letter-spacing:.07em;display:inline-flex;align-items:center;padding:3px 8px;border:.5px solid;border-radius:3px;margin-bottom:12px}
+#pt{font:500 15px/1.3 sans-serif;color:#dde2f0;margin-bottom:7px}
+#pd{font:12px/1.7 sans-serif;color:rgba(190,205,230,.42);margin-bottom:14px}
+#pe{display:none;width:100%;margin-bottom:14px;font:11px/1 monospace;padding:8px 0;cursor:pointer;background:transparent;color:rgba(190,205,230,.5);border:.5px solid rgba(190,205,230,.15);border-radius:4px;transition:all .15s;letter-spacing:.03em}
+#pe:hover{color:rgba(190,205,230,.95);border-color:rgba(190,205,230,.4)}
+.plh{font:9px/1 monospace;color:rgba(190,205,230,.22);letter-spacing:.06em;text-transform:uppercase;margin-bottom:7px}
+#pl{list-style:none;padding:0;margin:0 0 14px}
+#pl li{font:12px/1.65 sans-serif;color:rgba(190,205,230,.48);padding:3px 0;display:flex;align-items:center;gap:7px;cursor:pointer;transition:color .12s}
+#pl li:hover{color:rgba(190,205,230,.95)}
+.pcl{font:11px/1 sans-serif;color:rgba(190,205,230,.18);cursor:pointer;transition:color .12s}
+.pcl:hover{color:rgba(190,205,230,.7)}
+</style>
+</head>
+<body>
+<div id="wr">
+  <canvas id="c"></canvas>
+  <div id="ctl"></div>
+  <div id="bc"></div>
+  <div id="lo">felipesztutman.com</div>
+  <div id="bk" onclick="goBack()">← voltar</div>
+  <div id="hi">drag · scroll · clique</div>
+  <div id="tt"><div class="tt-t" id="ttt"></div><div class="tt-l" id="ttl"></div><div class="tt-h" id="tth"></div></div>
+  <div id="pn"><div id="pi">
+    <div id="pb"></div>
+    <div id="pt"></div>
+    <div id="pd"></div>
+    <button id="pe" onclick="enterSelected()">↳ entrar nesta rede</button>
+    <div class="plh" id="plh" style="display:none">conectado a</div>
+    <ul id="pl"></ul>
+    <span class="pcl" onclick="closePanel()">× fechar</span>
+  </div></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const U={id:'root',label:null,cc:null,nodes:[
+
+  // ── OBRAS ─────────────────────────────────────────────────────
+  {id:'obras',label:'Obras',sub:'instalações imersivas',cat:'cluster',hex:0x2255ee,lc:'#4477ff',
+   x:-145,y:20,z:10,
+   desc:'Instalações imersivas de grande escala — CCBB, Farol Santander, itinerância nacional.',
+   links:['pessoas'],
+   children:{id:'obras',label:'Obras',cc:'#2255ee',nodes:[
+
+     {id:'oceanvs',label:'OCEANVS',sub:'Farol Santander · 2025–26',cat:'obra',hex:0x1a5fff,lc:'#4488ff',
+      x:-120,y:-55,z:-20,
+      desc:'Instalação imersiva sobre oceanos, tempo profundo e estados de consciência. Itinerância nacional pelo Farol Santander — produção Santander / Arte 3.',
+      links:['amano','oqnu']},
+
+     {id:'oqnu',label:'O Que Nos Une',sub:'São Paulo · 2025',cat:'obra',hex:0x1a5fff,lc:'#4488ff',
+      x:70,y:-70,z:30,
+      desc:'Exposição sobre neurociência e conexão humana. Parceria com Miguel Nicolelis. São Paulo, Arte 3, out/2025–fev/2026.',
+      links:['oceanvs','beleza']},
+
+     {id:'amano',label:'AMANO',sub:'CCBB · trilogia · 2025–26',cat:'obra',hex:0x1a5fff,lc:'#4488ff',
+      x:130,y:10,z:-15,
+      desc:'Trilogia de instalações no CCBB — Belo Horizonte (dez/2025), Rio de Janeiro (abr/2026), Brasília (jul/2026). Produção AYA Arte e Tecnologia.',
+      links:['oqnu','beleza'],
+      children:{id:'amano',label:'AMANO — Trilogia CCBB',cc:'#1a5fff',nodes:[
+        {id:'amano-bh',label:'AMANO · BH',sub:'CCBB BH · dez/2025–mar/2026',cat:'obra',hex:0x1a5fff,lc:'#4488ff',x:-90,y:-30,z:10,desc:'Primeira apresentação da trilogia. CCBB Belo Horizonte.',links:['amano-rio']},
+        {id:'amano-rio',label:'AMANO · Rio',sub:'CCBB Rio · abr–jun/2026',cat:'obra',hex:0x1a5fff,lc:'#4488ff',x:40,y:-60,z:-10,desc:'Segunda apresentação. CCBB Rio de Janeiro.',links:['amano-bh','amano-bsb']},
+        {id:'amano-bsb',label:'AMANO · Brasília',sub:'CCBB BSB · jul–out/2026',cat:'obra',hex:0x1a5fff,lc:'#4488ff',x:110,y:30,z:15,desc:'Terceira apresentação. CCBB Brasília.',links:['amano-rio']},
+      ]}},
+
+     {id:'beleza',label:'Beleza Astral',sub:'Farol Santander · 2026',cat:'obra',hex:0x1a5fff,lc:'#4488ff',
+      x:10,y:80,z:20,
+      desc:'Em produção. Farol Santander, São Paulo. Santander Arte, mar–mai/2026. Equipe: Felipe, Antonio, Gabriela, Ihon, JãoZão.',
+      links:['amano','player1']},
+
+     {id:'player1',label:'PLAYER 1',sub:'50 Anos do Videogame · 2026',cat:'obra',hex:0x1a5fff,lc:'#4488ff',
+      x:-110,y:70,z:30,
+      desc:'Exposição sobre os 50 anos do videogame. Farol Santander, São Paulo, jun–set/2026. Inclui Totem CRT — instalação interativa com TVs CRT em coluna.',
+      links:['beleza'],
+      children:{id:'player1',label:'PLAYER 1',cc:'#1a5fff',nodes:[
+        {id:'totem',label:'Totem CRT',sub:'instalação interativa',cat:'obra',hex:0x1a5fff,lc:'#4488ff',x:-60,y:-20,z:10,desc:'Duas colunas de 5 TVs CRT flanqueando uma TV maior no topo. Dois jogadores disputam minigames arcade subindo pelas colunas — duelo final na TV compartilhada. Referência: Nam June Paik + brutalismo arcade.',links:[]},
+      ]}},
+
+   ]}},
+
+  // ── SISTEMAS ──────────────────────────────────────────────────
+  {id:'sistemas',label:'Sistemas',sub:'szt.link + AYA',cat:'cluster',hex:0x00b899,lc:'#00ddbb',
+   x:65,y:-70,z:40,
+   desc:'Infraestrutura cognitiva e operacional do estúdio.',
+   links:[],
+   children:{id:'sistemas',label:'Sistemas',cc:'#00b899',nodes:[
+
+     {id:'szt',label:'szt.link',sub:'implante cognitivo',cat:'sistema',hex:0x00b899,lc:'#00ddbb',
+      x:-88,y:15,z:20,
+      desc:'Implante cognitivo do artista. Orquestra agentes autônomos, vault de conhecimento, Portal AYA e interface via Telegram. Mais szt.link = mais Felipe.',
+      links:['aya']},
+
+     {id:'aya',label:'Portal AYA',sub:'sistema operacional',cat:'sistema',hex:0x00b899,lc:'#00ddbb',
+      x:88,y:-25,z:-15,
+      desc:'Runtime compilado do estúdio AYA Arte e Tecnologia. Projetos, equipe, financeiro, produção. Membrana entre o ateliê e a operação coletiva.',
+      links:['szt'],
+      children:{id:'aya',label:'Portal AYA',cc:'#00b899',nodes:[
+        {id:'pr',label:'Projetos',sub:'obras e contratos',cat:'modulo',hex:0x00b899,lc:'#00ddbb',x:-85,y:-35,z:10,desc:'Gestão de projetos e obras — fases, equipe, entregas.',links:['fi']},
+        {id:'fi',label:'Financeiro',sub:'multi-CNPJ · OFX',cat:'modulo',hex:0x00b899,lc:'#00ddbb',x:85,y:-35,z:-10,desc:'Módulo financeiro — lançamentos OFX/PDF, categorização, relatórios.',links:['pr','eq']},
+        {id:'eq',label:'Equipe',sub:'pessoas e alocações',cat:'modulo',hex:0x00b899,lc:'#00ddbb',x:85,y:50,z:10,desc:'Gestão da equipe — papéis, projetos, comunicação interna.',links:['fi']},
+        {id:'salic',label:'SALIC Intelligence',sub:'Lei Rouanet',cat:'modulo',hex:0x00b899,lc:'#00ddbb',x:-85,y:50,z:-10,desc:'Inteligência de captação via Lei Rouanet. Mapeamento de PRONACs, análise de editais, grafo de relações.',links:['pr']},
+      ]}},
+
+   ]}},
+
+  // ── CONCEITOS ─────────────────────────────────────────────────
+  {id:'conceitos',label:'Conceitos',sub:'linhas de pensamento',cat:'cluster',hex:0xcc8800,lc:'#ffcc44',
+   x:148,y:55,z:-30,
+   desc:'Frameworks cognitivos e posições filosóficas que atravessam o trabalho.',
+   links:[],
+   children:{id:'conceitos',label:'Conceitos',cc:'#cc8800',nodes:[
+
+     {id:'imersao',label:'Imersão',sub:'presença total',cat:'conceito',hex:0xcc8800,lc:'#ffcc44',
+      x:-92,y:-30,z:20,
+      desc:'Instalações que envolvem o corpo inteiro — luz, som, espaço. O visitante não observa: habita.',
+      links:['corpo','sistema']},
+
+     {id:'corpo',label:'Corpo',sub:'antes da razão',cat:'conceito',hex:0xcc8800,lc:'#ffcc44',
+      x:60,y:-55,z:-10,
+      desc:'O corpo como primeiro sensor. Antes de qualquer decisão racional, o corpo já respondeu. Prática derivada de Suely Rolnik.',
+      links:['imersao','clay']},
+
+     {id:'sistema',label:'Sistema',sub:'software como medium',cat:'conceito',hex:0xcc8800,lc:'#ffcc44',
+      x:65,y:55,z:10,
+      desc:'O software não é ferramenta — é medium. A forma nasce do comportamento do sistema, não do design imposto sobre ele.',
+      links:['imersao','clay']},
+
+     {id:'clay',label:'Clay',sub:'antes do artefato',cat:'conceito',hex:0xcc8800,lc:'#ffcc44',
+      x:-50,y:60,z:-15,
+      desc:'Clay é o que ainda não tem corpo suficiente para existir sem mediação. Artefato é o que pode ser habitado por outros. A distinção guia todo o processo.',
+      links:['corpo','sistema']},
+
+   ]}},
+
+  // ── EM DESENVOLVIMENTO ────────────────────────────────────────
+  {id:'dev',label:'Em Desenvolvimento',sub:'seeds e concepção',cat:'cluster',hex:0x229944,lc:'#50d870',
+   x:-28,y:108,z:50,
+   desc:'Projetos em fase de seed, concepção ou pesquisa ativa.',
+   links:[],
+   children:{id:'dev',label:'Em Desenvolvimento',cc:'#229944',nodes:[
+
+     {id:'flama',label:'FLAMA',sub:'seed avançado',cat:'projeto',hex:0x229944,lc:'#50d870',
+      x:-90,y:-20,z:10,
+      desc:'Instalação imersiva em fase de seed avançado. Sketch sobre a planta do 22º andar do Farol Santander. Modelo 3D em Rhino 6, estudo técnico de projeção no Disguise Mapping Matter.',
+      links:['cave']},
+
+     {id:'cave',label:'CAVE',sub:'Accenture · São Paulo',cat:'projeto',hex:0x229944,lc:'#50d870',
+      x:90,y:-20,z:-10,
+      desc:'Evento imersivo para a Accenture, São Paulo. Confirmado para set/2025 em diante.',
+      links:['flama','salic-obs']},
+
+     {id:'salic-obs',label:'SALIC Observatory',sub:'pesquisa de captação',cat:'projeto',hex:0x229944,lc:'#50d870',
+      x:0,y:70,z:15,
+      desc:'Laboratório de inteligência sobre a Lei Rouanet. Grafo de relações entre projetos, empresas e proponentes. Dados versionados e rastreáveis.',
+      links:['cave']},
+
+   ]}},
+
+  // ── PESSOAS ───────────────────────────────────────────────────
+  {id:'pessoas',label:'Pessoas',sub:'equipe e parceiros',cat:'cluster',hex:0x607080,lc:'#a0b4c8',
+   x:-108,y:-82,z:-40,
+   desc:'Equipe AYA Arte e Tecnologia e colaboradores próximos.',
+   links:['obras'],
+   children:{id:'pessoas',label:'Pessoas',cc:'#607080',nodes:[
+
+     {id:'felipe',label:'Felipe Sztutman',sub:'artista · diretor criativo',cat:'pessoa',hex:0x607080,lc:'#a0b4c8',
+      x:0,y:-20,z:10,
+      desc:'Artista e co-fundador da AYA Arte e Tecnologia. Instalações imersivas de grande escala. São Paulo.',
+      links:['antonio']},
+
+     {id:'antonio',label:'Antonio Curti',sub:'co-diretor · curador',cat:'pessoa',hex:0x607080,lc:'#a0b4c8',
+      x:-90,y:-30,z:20,
+      desc:'Co-diretor e curador da AYA Arte e Tecnologia. Prospecção, relação com instituições e direção de projetos.',
+      links:['felipe','ihon']},
+
+     {id:'ihon',label:'Ihon',sub:'produtor técnico',cat:'pessoa',hex:0x607080,lc:'#a0b4c8',
+      x:30,y:-65,z:-10,
+      desc:'Produtor técnico — infraestrutura de shows e instalações. Operação técnica em campo.',
+      links:['antonio','gabi']},
+
+     {id:'gabi',label:'Gabriela',sub:'produtora executiva',cat:'pessoa',hex:0x607080,lc:'#a0b4c8',
+      x:100,y:20,z:15,
+      desc:'Produtora executiva — contratos, logística, cronogramas e orçamentos.',
+      links:['ihon','jz']},
+
+     {id:'jz',label:'JãoZão',sub:'assistente técnico',cat:'pessoa',hex:0x607080,lc:'#a0b4c8',
+      x:-20,y:70,z:-5,
+      desc:'Assistente técnico e designer — TouchDesigner, instalação, visual.',
+      links:['gabi','antonio']},
+
+   ]}},
+
+]};
+
+// ── ENGINE ────────────────────────────────────────────────────────
+const wr=document.getElementById('wr'),cv=document.getElementById('c');
+const ctl=document.getElementById('ctl'),bk=document.getElementById('bk'),bcEl=document.getElementById('bc');
+const tt=document.getElementById('tt'),pn=document.getElementById('pn');
+
+const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(52,1,.1,2000);
+camera.position.z=340;
+
+const world=new THREE.Group(),nodeGrp=new THREE.Group(),hitGrp=new THREE.Group(),lineGrp=new THREE.Group();
+world.add(lineGrp,nodeGrp,hitGrp);
+scene.add(world);
+
+const sp=new Float32Array(1500);
+for(let i=0;i<1500;i++)sp[i]=(Math.random()-.5)*(i%3===2?800:1200);
+const sGeo=new THREE.BufferGeometry();
+sGeo.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));
+scene.add(new THREE.Points(sGeo,new THREE.PointsMaterial({color:0x223344,size:1.3,transparent:true,opacity:.55})));
+
+let stack=[],curG=U;
+let rotX=.12,rotY=.18,tRX=.12,tRY=.18;
+let zoom=340,tZoom=340;
+let al=1,tAl=1,t=0;
+let hovId=null,selN=null;
+let mats=[],bills=[],rings=[],hitboxes=[];
+const mouse=new THREE.Vector2(-9,-9),ray=new THREE.Raycaster();
+let isDrag=false,dmx=0,dmy=0,rx0=0,ry0=0,dist=0;
+
+function am(m,b){m.userData.b=b;mats.push(m);return m;}
+
+function buildMesh(n){
+  const g=new THREE.Group();g.userData.nid=n.id;const h=n.hex;
+  const isBill=n.cat==='cluster'||n.cat==='obra'||n.cat==='projeto'||n.cat==='modulo';
+  if(isBill){
+    const w=n.cat==='cluster'?72:n.cat==='obra'?54:40,ht=n.cat==='cluster'?46:n.cat==='obra'?34:26;
+    const pl=new THREE.PlaneGeometry(w,ht);
+    g.add(new THREE.Mesh(pl,am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.15,side:THREE.DoubleSide}),.15)));
+    g.add(new THREE.LineSegments(new THREE.EdgesGeometry(pl),am(new THREE.LineBasicMaterial({color:h,transparent:true,opacity:.75}),.75)));
+    const dot=new THREE.Mesh(new THREE.CircleGeometry(2.5,12),am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:1}),1));
+    dot.position.z=.1;g.add(dot);
+    bills.push(g);
+  }else if(n.cat==='sistema'){
+    const bx=new THREE.BoxGeometry(28,28,28);
+    g.add(new THREE.Mesh(bx,am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.08}),.08)));
+    g.add(new THREE.LineSegments(new THREE.EdgesGeometry(bx),am(new THREE.LineBasicMaterial({color:h,transparent:true,opacity:.88}),.88)));
+    g.add(new THREE.Mesh(new THREE.BoxGeometry(10,10,10),am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.4}),.4)));
+  }else if(n.cat==='conceito'){
+    g.add(new THREE.Mesh(new THREE.SphereGeometry(16,14,10),am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.11,wireframe:true}),.11)));
+    g.add(new THREE.Mesh(new THREE.SphereGeometry(4,8,8),am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:1}),1)));
+  }else if(n.cat==='agente'){
+    const oc=new THREE.OctahedronGeometry(16,0);
+    g.add(new THREE.Mesh(oc,am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.14}),.14)));
+    g.add(new THREE.LineSegments(new THREE.EdgesGeometry(oc),am(new THREE.LineBasicMaterial({color:h,transparent:true,opacity:.85}),.85)));
+  }else if(n.cat==='pessoa'){
+    const cyl=new THREE.CylinderGeometry(14,14,3.5,18);
+    g.add(new THREE.Mesh(cyl,am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.18}),.18)));
+    const dc=new THREE.Mesh(new THREE.CircleGeometry(6,12),am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:1}),1));
+    dc.rotation.x=-Math.PI/2;dc.position.y=2;g.add(dc);
+  }else{
+    const bx=new THREE.BoxGeometry(15,15,15);
+    g.add(new THREE.Mesh(bx,am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.15}),.15)));
+    g.add(new THREE.LineSegments(new THREE.EdgesGeometry(bx),am(new THREE.LineBasicMaterial({color:h,transparent:true,opacity:.85}),.85)));
+  }
+  if(n.children){
+    const r=n.cat==='sistema'?23:isBill?(n.cat==='cluster'?36:27):20;
+    const tor=new THREE.Mesh(new THREE.TorusGeometry(r,.85,8,34),am(new THREE.MeshBasicMaterial({color:h,transparent:true,opacity:.35}),.35));
+    g.add(tor);rings.push(tor);
+  }
+  g.position.set(n.x,n.y,n.z);return g;
+}
+
+function buildGraph(g){
+  while(nodeGrp.children.length)nodeGrp.remove(nodeGrp.children[0]);
+  while(hitGrp.children.length)hitGrp.remove(hitGrp.children[0]);
+  while(lineGrp.children.length)lineGrp.remove(lineGrp.children[0]);
+  mats=[];bills=[];rings=[];hitboxes=[];
+  if(!g.nodes)return;
+  g.nodes.forEach(n=>{
+    nodeGrp.add(buildMesh(n));
+    const hb=new THREE.Mesh(new THREE.SphereGeometry(30,5,3),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}));
+    hb.position.set(n.x,n.y,n.z);hb.userData.nid=n.id;hitGrp.add(hb);hitboxes.push(hb);
+  });
+  const drawn=new Set();
+  g.nodes.forEach(n=>(n.links||[]).forEach(tid=>{
+    const k=[n.id,tid].sort().join('|');
+    if(!drawn.has(k)){drawn.add(k);
+      const tn=g.nodes.find(x=>x.id===tid);
+      if(tn){
+        const lm=new THREE.LineBasicMaterial({color:0x1a3055,transparent:true,opacity:.42});
+        lm.userData.b=.42;mats.push(lm);
+        lineGrp.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(n.x,n.y,n.z),new THREE.Vector3(tn.x,tn.y,tn.z)]),lm));
+      }
+    }
+  }));
+}
+
+function fitZoom(nodes){
+  if(!nodes||!nodes.length)return;
+  const xs=nodes.map(n=>n.x),ys=nodes.map(n=>n.y);
+  const sp=Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys));
+  tZoom=Math.max(180,Math.min(580,sp*1.45+110));
+}
+
+function enterNode(n){
+  if(!n||!n.children)return;
+  closePanel();tAl=0;
+  setTimeout(()=>{
+    stack.push({graph:curG,rX:tRX,rY:tRY,pZ:tZoom});
+    curG=n.children;buildGraph(curG);
+    tRX=.12;tRY=.2;rotX=.12;rotY=.2;world.rotation.set(rotX,rotY,0);
+    fitZoom(curG.nodes);zoom=tZoom;tAl=1;updateChrome();
+  },300);
+}
+
+function goToDepth(d){
+  if(stack.length<=d)return;
+  closePanel();tAl=0;
+  setTimeout(()=>{
+    let saved;
+    while(stack.length>d)saved=stack.pop();
+    curG=saved.graph;buildGraph(curG);
+    tRX=saved.rX;tRY=saved.rY;rotX=saved.rX;rotY=saved.rY;
+    world.rotation.set(rotX,rotY,0);
+    tZoom=saved.pZ||340;zoom=tZoom;tAl=1;updateChrome();
+  },300);
+}
+
+function goBack(){goToDepth(stack.length-1);}
+
+function updateChrome(){
+  bcEl.innerHTML='';
+  const path=[{label:'felipesztutman.com'}];
+  stack.forEach(s=>{if(s.graph&&s.graph.label)path.push({label:s.graph.label});});
+  if(curG.label)path.push({label:curG.label,active:true});
+  path.forEach((seg,i)=>{
+    if(i){const sp=document.createElement('span');sp.className='bx';sp.textContent='/';bcEl.appendChild(sp);}
+    const el=document.createElement('span');el.textContent=seg.label;
+    if(seg.active)el.className='bl';
+    else{el.className='bs';el.onclick=()=>goToDepth(i);}
+    bcEl.appendChild(el);
+  });
+  bk.style.display=stack.length?'block':'none';
+  ctl.style.background=curG.cc||'transparent';
+  ctl.style.opacity=curG.cc?.85:0;
+}
+
+function openPanel(n){
+  selN=n;
+  const pb=document.getElementById('pb');
+  pb.textContent=n.cat;pb.style.color=n.lc;pb.style.borderColor=n.lc+'30';
+  document.getElementById('pt').textContent=n.label;
+  document.getElementById('pd').textContent=n.desc||'';
+  const pe=document.getElementById('pe');pe.style.display=n.children?'block':'none';
+  const pl=document.getElementById('pl'),plh=document.getElementById('plh');
+  pl.innerHTML='';
+  const conns=(n.links||[]).map(id=>curG.nodes.find(x=>x.id===id)).filter(Boolean);
+  plh.style.display=conns.length?'block':'none';
+  conns.forEach(cn=>{
+    const li=document.createElement('li');
+    const dot=document.createElement('span');
+    dot.style.cssText=`display:inline-block;width:6px;height:6px;border-radius:50%;background:${cn.lc};flex-shrink:0`;
+    li.appendChild(dot);li.appendChild(document.createTextNode(cn.label));
+    li.onclick=()=>openPanel(cn);pl.appendChild(li);
+  });
+  pn.style.width='240px';
+}
+
+function closePanel(){selN=null;pn.style.width='0';}
+function enterSelected(){if(selN&&selN.children)enterNode(selN);}
+
+wr.addEventListener('mousedown',e=>{isDrag=true;dmx=e.clientX;dmy=e.clientY;rx0=tRX;ry0=tRY;dist=0;});
+window.addEventListener('mouseup',()=>{isDrag=false;});
+window.addEventListener('mousemove',e=>{
+  if(isDrag){dist+=Math.hypot(e.clientX-dmx,e.clientY-dmy);tRY=ry0+(e.clientX-dmx)*.005;tRX=rx0+(e.clientY-dmy)*.004;tRX=Math.max(-1.3,Math.min(1.3,tRX));}
+  const r=cv.getBoundingClientRect();
+  mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
+  tt.style.left=(e.clientX-r.left+14)+'px';tt.style.top=(e.clientY-r.top-10)+'px';
+});
+wr.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.1:.92;tZoom=Math.max(100,Math.min(600,tZoom*f));},{passive:false});
+wr.addEventListener('click',e=>{
+  if(dist>7)return;
+  ray.setFromCamera(mouse,camera);
+  const hits=ray.intersectObjects(hitboxes);
+  if(hits.length){const nd=curG.nodes.find(x=>x.id===hits[0].object.userData.nid);if(nd)openPanel(nd);}
+  else closePanel();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')goBack();});
+
+function resize(){
+  const r=wr.getBoundingClientRect();
+  renderer.setSize(r.width,r.height);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();
+}
+
+function animate(){
+  requestAnimationFrame(animate);t+=.012;
+  rotX+=(tRX-rotX)*.08;rotY+=(tRY-rotY)*.08;al+=(tAl-al)*.12;zoom+=(tZoom-zoom)*.08;
+  world.rotation.x=rotX;world.rotation.y=rotY;camera.position.z=zoom;
+  rings.forEach((r,i)=>{r.rotation.y=t*(.65-i*.07);r.rotation.x=t*.22;});
+  mats.forEach(m=>{m.opacity=m.userData.b*al;});
+  bills.forEach(b=>b.lookAt(camera.position));
+  ray.setFromCamera(mouse,camera);
+  const hits=ray.intersectObjects(hitboxes);
+  const nid=hits.length?hits[0].object.userData.nid:null;
+  if(nid!==hovId){
+    hovId=nid;wr.style.cursor=nid?'pointer':'';
+    if(nid){
+      const nd=curG.nodes.find(x=>x.id===nid);
+      if(nd){document.getElementById('ttt').textContent=nd.cat;document.getElementById('ttl').textContent=nd.label;document.getElementById('tth').textContent=nd.children?'▶ entrar nesta rede':(nd.sub||'');tt.style.display='block';}
+    }else tt.style.display='none';
+  }
+  renderer.render(scene,camera);
+}
+
+buildGraph(U);fitZoom(U.nodes);zoom=tZoom;updateChrome();resize();animate();
+window.addEventListener('resize',resize);
+</script>
+</body>
+</html>

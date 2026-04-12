@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+
+const obras = [
+  { slug: 'player1', title: 'Player 1 — 50 Anos dos Videogames', year: '2026', location: 'Farol Santander, São Paulo', desc: 'Quatro instalações interativas onde o corpo é o controle. STRIKE, DRIFT, TRACE, RUSH.' },
+  { slug: 'flama', title: 'FLAMA', year: '2026', location: 'Farol Santander, São Paulo', desc: 'Fogo. Fogueira escultórica, sala interativa, Câmara do Cristal.' },
+  { slug: 'amano', title: 'AMANO — Além da Fantasia', year: '2024–26', location: 'CCBB SP, BH, Rio', desc: 'Maior exposição de Yoshitaka Amano no mundo. Espaço imersivo com 15 projetores laser.' },
+  { slug: 'floresta-utopica', title: 'Floresta Utópica', year: '2025', location: 'Farol Santander, São Paulo', desc: 'Sete atos, vinte minutos. Projeção mapeada, espelhos, aromas, escultura de luz.' },
+  { slug: 'o-que-nos-une', title: 'O Que Nos Une', year: '2025', location: 'Centro Cultural FIESP, São Paulo', desc: 'Neurociência de Nicolelis traduzida em experiência imersiva.' },
+  { slug: 'andromeda', title: 'Andrômeda — Universo Sem Fim', year: '2025', location: 'Farol Santander, São Paulo', desc: 'Cosmos (interativa) + Andrômeda (imersiva, 17 min).' },
+  { slug: 'luz-aeterna', title: 'Luz Æterna — Ensaio Sobre o Sol', year: '2024', location: 'CCBB Brasília e BH', desc: 'Oito artistas brasileiros. Desenhei o espaço expográfico.' },
+  { slug: 'sao-paulo-3024', title: 'São Paulo 3024', year: '2024', location: 'Farol Santander, São Paulo', desc: 'São Paulo daqui a mil anos. LLMs, LoRa, OpenCV. 7 atos, 16 min.' },
+  { slug: 'metadata', title: 'METADATA — O Mundo Invisível', year: '2023–24', location: 'SESI/FIESP, São Paulo', desc: 'Dados de São Paulo em tempo real traduzidos em fluidos 3D.' },
+  { slug: 'oceanvs', title: 'OCEANVS — Imersão em Azul', year: '2022–26', location: 'Farol Santander SP, Casa Fiat BH', desc: 'Oito atos sobre água. Itinerância nacional.' },
+  { slug: 'mementos', title: 'Mementos', year: '2019', location: 'Farol Santander, São Paulo', desc: '45 lasers e um grande cristal. Padrões generativos.' },
+  { slug: 'interludio', title: 'Interlúdio', year: '2019', location: 'Farol Santander, São Paulo', desc: 'Sensores e luz responsiva. A obra só existe com presença humana.' },
+];
+
+const luzcidade = [
+  { slug: 'objeto-em-forma-de-espaco', title: 'Objeto em Forma de: Espaço', year: '2009', location: 'LabMIS, MIS-SP' },
+  { slug: 'occupycopan', title: 'OccupyCopan', year: '2011', location: 'Edifício Copan, São Paulo' },
+  { slug: 'cachoeira', title: 'Cachoeira, para Córrego das Almas', year: '2012', location: 'Vale do Anhangabaú, URBE/CCBB' },
+  { slug: 'canvas13', title: 'sem título, para Canvas #13', year: '2013', location: 'Serralheria Cultural, São Paulo' },
+  { slug: 'corrego-rio-verde', title: 'sem título, para Córrego Rio Verde', year: '2013', location: 'Beco do Batman, Vila Madalena' },
+  { slug: 'mantiqueira', title: 'sem título, para Mantiqueira', year: '2013', location: 'Serra da Mantiqueira' },
+];
+---
+<Base title="Felipe Sztutman — Artista, Sistemas Imersivos, São Paulo" description="Felipe Sztutman é artista e construtor de sistemas imersivos. Concebe ambientes onde luz, tecnologia e percepção se tornam linguagem. São Paulo, Brasil.">
+
+<div class="statement">
+  <p>Em 2012, fui convidado para criar uma obra de arte pública no centro de São Paulo. Escolhi revelar algo invisível: o Córrego das Almas, que corre escondido sob o pavimento do Vale do Anhangabaú. Com cabos eletroluminescentes, concebi a obra <em>Cachoeira</em>, evidenciando como tentamos controlar e até mesmo ocultar os rios que sustentam nossas cidades.</p>
+  <p>Treze anos depois, esse mesmo impulso — tornar visível o invisível — continua guiando meu trabalho. Desenho espaços imersivos onde luz, som, tecnologia e percepção se organizam como sistemas. Não faço objetos que se observam de fora. Concebo ambientes que só existem quando alguém entra.</p>
+</div>
+
+<section id="obras">
+  <h2>Obras</h2>
+  {obras.map(o => (
+    <a href={`/obras/${o.slug}`} class="work-link">
+      <div class="work">
+        <div class="work-title">{o.title}</div>
+        <div class="work-meta">{o.year} · {o.location}</div>
+        <div class="work-desc">{o.desc}</div>
+      </div>
+    </a>
+  ))}
+
+  <div class="series">
+    <div class="series-label">Série LUZCIDADE · TCC Design FAU-USP · 2009–2013</div>
+    {luzcidade.map(o => (
+      <a href={`/obras/${o.slug}`} class="work-link">
+        <div class="work work-series">
+          <div class="work-title">{o.title}</div>
+          <div class="work-meta">{o.year} · {o.location}</div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <div class="links">
+    <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
+    <a href="https://instagram.com/felipesztutman" target="_blank">instagram</a>
+    <a href="https://aya.cx" target="_blank">aya.cx</a>
+    <a href="https://br.linkedin.com/in/felipesztutman" target="_blank">linkedin</a>
+  </div>
+</section>
+
+</Base>
+
+<style>
+.statement{margin-bottom:3rem;font-size:1.05rem;line-height:1.85}
+.statement p{margin-bottom:1.2rem}
+section{margin-bottom:3rem}
+section h2{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--fg3);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.work-link{text-decoration:none;display:block}
+.work-link:hover .work-title{color:var(--accent)}
+.work{margin-bottom:1.5rem}
+.work-title{font:500 1rem/1.3 var(--sans);color:var(--fg);transition:color .15s;margin-bottom:.15rem}
+.work-meta{font:.75rem/1.4 var(--mono);color:var(--fg3);margin-bottom:.3rem}
+.work-desc{font:.88rem/1.65 var(--sans);color:var(--fg2)}
+.series{margin-top:2rem;padding-left:1.5rem;border-left:1px solid rgba(255,255,255,.06)}
+.series-label{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--fg3);margin-bottom:1rem}
+.work-series{margin-bottom:1rem}
+.links{font:.75rem/1 var(--mono);color:var(--fg3);display:flex;gap:1.2rem;flex-wrap:wrap}
+.links a{color:var(--fg2);transition:color .15s}.links a:hover{color:var(--fg)}
+</style>
