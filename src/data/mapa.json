@@ -226,7 +226,7 @@
       }
     },
     "borda-difusa": {
-      "r": 8, "color": "#555",
+      "r": 8, "color": "#555555",
       "material": [],
       "tags": ["cartografia", "fundacional", "implante", "sessão", "origem", "fronteira", "borda", "limite", "papel", "artista", "diretor"],
       "links": ["szt-link", "cartografia-do-saber"],
@@ -237,7 +237,7 @@
       }
     },
     "cartografia-do-saber": {
-      "r": 8, "color": "#555",
+      "r": 8, "color": "#555555",
       "material": [],
       "tags": ["método", "rolnik", "corpo", "razão", "sentido", "técnica", "processo", "saber", "sentimental"],
       "links": ["szt-link", "borda-difusa"],
@@ -248,7 +248,7 @@
       }
     },
     "luzcidade": {
-      "r": 10, "color": "#555",
+      "r": 10, "color": "#555555",
       "material": ["luz"],
       "tags": ["tcc", "fau", "usp", "moholy", "flavin", "campo", "luz", "espaço", "fundacional", "genealogia", "dissertação", "neon", "lâmpada"],
       "links": ["objeto-em-forma-de-espaco", "cachoeira", "szt-link"],

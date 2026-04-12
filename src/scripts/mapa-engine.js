@@ -1,12 +1,21 @@
 // mapa-engine.js — módulo ES, importado pelo Astro
 // DOM já está pronto quando módulos executam (deferred por padrão)
 // ─────────────────────────────────────────────────────────────
-  const raw = JSON.parse(document.getElementById('mapa-data').textContent);
-  const nodes = raw.map(n => ({
-    ...n,
-    rx: n.lens.conceito[0], ry: n.lens.conceito[1], // posição de render atual
-    tx: n.lens.conceito[0], ty: n.lens.conceito[1], // target
-  }));
+const raw = JSON.parse(document.getElementById('mapa-data').textContent);
+
+// Normaliza cores: #rgb → #rrggbb (evita crash no addColorStop)
+function hex6(c) {
+  if (!c) return '#888888';
+  if (c.length === 4) return '#' + c[1]+c[1] + c[2]+c[2] + c[3]+c[3];
+  return c;
+}
+
+const nodes = raw.map(n => ({
+  ...n,
+  color: hex6(n.color),
+  rx: n.lens.conceito[0], ry: n.lens.conceito[1],
+  tx: n.lens.conceito[0], ty: n.lens.conceito[1],
+}));
 
   // ── ESTADO ────────────────────────────────────────────────
   let currentLens = 'conceito';
