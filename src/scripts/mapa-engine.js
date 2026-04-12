@@ -1,8 +1,6 @@
-// mapa-engine.js — motor canvas puro
-// Lê window.__MAPA_DATA__ injetado pelo Astro em build-time
+// mapa-engine.js — módulo ES, importado pelo Astro
+// DOM já está pronto quando módulos executam (deferred por padrão)
 // ─────────────────────────────────────────────────────────────
-
-(function () {
   const raw = JSON.parse(document.getElementById('mapa-data').textContent);
   const nodes = raw.map(n => ({
     ...n,
@@ -335,4 +333,4 @@
     });
   });
 
-})();
+

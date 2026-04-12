@@ -226,7 +226,10 @@ const allNodes = [...obraNodes, ...escritoNodes, ...ghostNodes];
 
 <!-- Dados injetados em build-time — motor lê via getElementById -->
 <script type="application/json" id="mapa-data" set:html={JSON.stringify(allNodes)}></script>
-<script src="/js/mapa-engine.js" is:inline></script>
+<!-- Módulo ES: Vite processa, executa após DOM ready (deferred automático) -->
+<script>
+  import '../scripts/mapa-engine.js';
+</script>
 
 </body>
 </html>
