@@ -221,7 +221,7 @@
       "links": ["borda-difusa", "cartografia-do-saber", "luzcidade", "cachoeira", "floresta-utopica", "player1"],
       "lens": {
         "conceito": [0, 0],
-        "temporal": [355, -280],
+        "temporal": [357, -388],
         "linhagem": [0, 0]
       }
     },
@@ -232,7 +232,7 @@
       "links": ["szt-link", "cartografia-do-saber"],
       "lens": {
         "conceito": [-40, -50],
-        "temporal": [270, -250],
+        "temporal": [369, -249],
         "linhagem": [-50, 100]
       }
     },
@@ -243,7 +243,7 @@
       "links": ["szt-link", "borda-difusa"],
       "lens": {
         "conceito": [50, -40],
-        "temporal": [320, -250],
+        "temporal": [374, -317],
         "linhagem": [60, 100]
       }
     },
@@ -271,7 +271,7 @@
       "links": ["player1", "szt-link"], "slug": null,
       "lens": {
         "conceito": [420, -180],
-        "temporal": [-300, -280],
+        "temporal": [-589, -253],
         "linhagem": [-480, 220]
       }
     },
@@ -285,7 +285,7 @@
       "links": ["occupycopan", "luzcidade", "objeto-em-forma-de-espaco"], "slug": null,
       "lens": {
         "conceito": [-240, -180],
-        "temporal": [-400, -280],
+        "temporal": [-332, -246],
         "linhagem": [-360, -240]
       }
     },
@@ -299,7 +299,7 @@
       "links": ["flavin", "luzcidade"], "slug": null,
       "lens": {
         "conceito": [-300, -200],
-        "temporal": [-500, -280],
+        "temporal": [-407, -248],
         "linhagem": [-480, -320]
       }
     }
