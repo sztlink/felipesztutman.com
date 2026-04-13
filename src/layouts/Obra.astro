@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import galleryData from '../data/gallery.json';
+type GalleryItem = { src: string; caption: string | null };
 
 interface Props {
   frontmatter: {
@@ -25,9 +26,10 @@ const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) — ${frontmatter.location}. Felipe Sztutman.`;
 // Extrai slug da URL para buscar galeria
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
-const images = (galleryData as Record<string, string[]>)[slug] || [];
-const heroImg = images[0] || frontmatter.hero || null;
-const galleryImgs = images.slice(1);
+const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
+const heroItem = items[0] || null;
+const heroImg = heroItem?.src || frontmatter.hero || null;
+const galleryItems = items.slice(1);
 const ogImage = heroImg || undefined;
 ---
 <Base title={seoTitle} description={seoDesc} lang={lang} schemaType="ArtWork" schemaName={frontmatter.title} schemaDate={frontmatter.year} schemaLocation={frontmatter.location} ogImage={ogImage}>
@@ -41,7 +43,8 @@ const ogImage = heroImg || undefined;
 
     {heroImg && (
       <div class="obra-hero">
-        <img src={heroImg} alt={frontmatter.title} loading="eager" />
+        <img src={heroImg} alt={frontmatter.title} loading="eager" data-idx="0" class="lightbox-trigger" />
+        {heroItem?.caption && <div class="obra-hero-caption">{heroItem.caption}</div>}
       </div>
     )}
 
@@ -61,10 +64,12 @@ const ogImage = heroImg || undefined;
       </div>
     )}
 
-    {galleryImgs.length > 0 && (
+    {galleryItems.length > 0 && (
       <div class="obra-gallery">
-        {galleryImgs.map((img, i) => (
-          <img src={img} alt={`${frontmatter.title} — ${i + 2}`} loading="lazy" />
+        {galleryItems.map((item, i) => (
+          <figure class="gallery-fig">
+            <img src={item.src} alt={`${frontmatter.title} — ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
+          </figure>
         ))}
       </div>
     )}
@@ -80,6 +85,77 @@ const ogImage = heroImg || undefined;
       </div>
     )}
   </article>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <div id="lb-close">×</div>
+    <div id="lb-nav"><span class="lb-arrow" id="lb-prev">←</span><span class="lb-arrow" id="lb-next">→</span></div>
+    <img id="lb-img" src="" alt="" />
+    <div id="lb-caption"></div>
+    <div id="lb-counter"></div>
+  </div>
+
+  <script is:inline define:vars={{ items: JSON.stringify(items) }}>
+    (function() {
+      const gallery = JSON.parse(items);
+      if (!gallery.length) return;
+
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const lbCap = document.getElementById('lb-caption');
+      const lbCount = document.getElementById('lb-counter');
+      let current = 0;
+
+      function show(idx) {
+        current = idx;
+        const item = gallery[idx];
+        if (!item) return;
+        lbImg.src = item.src;
+        lbCap.textContent = item.caption || '';
+        lbCount.textContent = `${idx + 1} / ${gallery.length}`;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function hide() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function next() { show((current + 1) % gallery.length); }
+      function prev() { show((current - 1 + gallery.length) % gallery.length); }
+
+      // Click on gallery/hero images
+      document.querySelectorAll('.lightbox-trigger').forEach(img => {
+        img.addEventListener('click', () => show(parseInt(img.dataset.idx || '0')));
+      });
+
+      document.getElementById('lb-close').addEventListener('click', hide);
+      document.getElementById('lb-prev').addEventListener('click', prev);
+      document.getElementById('lb-next').addEventListener('click', next);
+
+      // Click outside image closes
+      lb.addEventListener('click', (e) => {
+        if (e.target === lb) hide();
+      });
+
+      // Keyboard
+      document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') hide();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+      });
+
+      // Swipe on touch
+      let touchX = 0;
+      lb.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
+      lb.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 50) dx > 0 ? prev() : next();
+      });
+    })();
+  </script>
 </Base>
 
 <style>
@@ -90,10 +166,25 @@ const ogImage = heroImg || undefined;
 .obra-meta{font:.8rem/1.4 var(--mono);color:var(--fg3);margin-bottom:2rem}
 .obra-hero{margin-bottom:2.5rem;overflow:hidden}
 .obra-hero img{width:100%;height:auto;display:block;border-radius:2px}
+.obra-hero-caption{font:.7rem/1.4 var(--mono);color:var(--fg3);margin-top:.5rem}
 .obra-gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:2.5rem}
+.gallery-fig{margin:0}
 .obra-gallery img{width:100%;height:auto;display:block;border-radius:2px;cursor:pointer;transition:opacity .15s}
 .obra-gallery img:hover{opacity:.85}
+.lightbox-trigger{cursor:pointer}
 @media(max-width:500px){.obra-gallery{grid-template-columns:1fr}}
+
+/* LIGHTBOX */
+#lightbox{position:fixed;inset:0;background:rgba(4,6,14,.96);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
+#lightbox.open{display:flex}
+#lb-img{max-width:92vw;max-height:82vh;object-fit:contain}
+#lb-caption{font:.75rem/1.6 var(--mono);color:var(--fg3);margin-top:.75rem;text-align:center;max-width:600px;padding:0 1rem}
+#lb-close{position:fixed;top:14px;right:18px;font:1.2rem/1 var(--mono);color:var(--fg3);cursor:pointer;z-index:101}
+#lb-close:hover{color:var(--fg)}
+#lb-nav{position:fixed;top:50%;width:100%;display:flex;justify-content:space-between;padding:0 12px;transform:translateY(-50%);pointer-events:none;z-index:101}
+.lb-arrow{font:1.5rem/1 var(--mono);color:var(--fg3);cursor:pointer;pointer-events:auto;padding:8px;user-select:none}
+.lb-arrow:hover{color:var(--fg)}
+#lb-counter{position:fixed;bottom:14px;right:18px;font:.7rem/1 var(--mono);color:var(--fg3);z-index:101}
 .obra-body{font:1rem/1.85 var(--sans);color:var(--fg);margin-bottom:2.5rem}
 .obra-body :global(p){margin-bottom:1.2rem}
 .obra-body :global(em){color:var(--fg2);font-style:italic}

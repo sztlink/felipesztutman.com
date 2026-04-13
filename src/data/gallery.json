@@ -1,114 +1,366 @@
 {
   "objeto-em-forma-de-espaco": [
-    "/img/obras/objeto-em-forma-de-espaco/01-fibras-blue.jpg",
-    "/img/obras/objeto-em-forma-de-espaco/02-fibras-teal.jpg",
-    "/img/obras/objeto-em-forma-de-espaco/03-tcc_page_058.jpg",
-    "/img/obras/objeto-em-forma-de-espaco/04-tcc_page_059.jpg",
-    "/img/obras/objeto-em-forma-de-espaco/05-tcc_page_060.jpg",
-    "/img/obras/objeto-em-forma-de-espaco/06-tcc_page_061.jpg"
+    {
+      "src": "/img/obras/objeto-em-forma-de-espaco/01-fibras-blue.jpg",
+      "caption": "Fibras blue · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/objeto-em-forma-de-espaco/02-fibras-teal.jpg",
+      "caption": "Fibras teal · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/objeto-em-forma-de-espaco/03-tcc_page_058.jpg",
+      "caption": "TCC LUZCIDADE · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/objeto-em-forma-de-espaco/04-tcc_page_059.jpg",
+      "caption": "TCC LUZCIDADE · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/objeto-em-forma-de-espaco/05-tcc_page_060.jpg",
+      "caption": "TCC LUZCIDADE · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/objeto-em-forma-de-espaco/06-tcc_page_061.jpg",
+      "caption": "TCC LUZCIDADE · foto: Felipe Sztutman"
+    }
   ],
   "cachoeira": [
-    "/img/obras/cachoeira/01-aerea-viaduto.jpg",
-    "/img/obras/cachoeira/02-cityscape.jpg",
-    "/img/obras/cachoeira/03-multidao.jpg",
-    "/img/obras/cachoeira/04-viaduto-noite.jpg",
-    "/img/obras/cachoeira/05-tcc_page_064.jpg",
-    "/img/obras/cachoeira/06-tcc_page_065.jpg"
+    {
+      "src": "/img/obras/cachoeira/01-aerea-viaduto.jpg",
+      "caption": "Aerea viaduto · foto: Diego Bis"
+    },
+    {
+      "src": "/img/obras/cachoeira/02-cityscape.jpg",
+      "caption": "Cityscape · foto: Diego Bis"
+    },
+    {
+      "src": "/img/obras/cachoeira/03-multidao.jpg",
+      "caption": "Multidao · foto: Diego Bis"
+    },
+    {
+      "src": "/img/obras/cachoeira/04-viaduto-noite.jpg",
+      "caption": "Viaduto noite · foto: Diego Bis"
+    },
+    {
+      "src": "/img/obras/cachoeira/05-tcc_page_064.jpg",
+      "caption": "TCC LUZCIDADE · foto: Diego Bis"
+    },
+    {
+      "src": "/img/obras/cachoeira/06-tcc_page_065.jpg",
+      "caption": "TCC LUZCIDADE · foto: Diego Bis"
+    }
   ],
   "canvas13": [
-    "/img/obras/canvas13/01-canvas13-hero-detalhe-parede.jpg",
-    "/img/obras/canvas13/02-canvas13-hero-linhas-abstract.jpg",
-    "/img/obras/canvas13/03-canvas13-hero-linhas-teto.jpg",
-    "/img/obras/canvas13/04-canvas13-gallery-bancos-espaco.jpg",
-    "/img/obras/canvas13/05-canvas13-gallery-detalhe-pesso.jpg",
-    "/img/obras/canvas13/06-tcc_page_073.jpg"
+    {
+      "src": "/img/obras/canvas13/01-canvas13-hero-detalhe-parede.jpg",
+      "caption": "Canvas13 hero detalhe parede · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/canvas13/02-canvas13-hero-linhas-abstract.jpg",
+      "caption": "Canvas13 hero linhas abstract · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/canvas13/03-canvas13-hero-linhas-teto.jpg",
+      "caption": "Canvas13 hero linhas teto · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/canvas13/04-canvas13-gallery-bancos-espaco.jpg",
+      "caption": "Canvas13 gallery bancos espaco · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/canvas13/05-canvas13-gallery-detalhe-pesso.jpg",
+      "caption": "Canvas13 gallery detalhe pesso · foto: Felipe Sztutman"
+    },
+    {
+      "src": "/img/obras/canvas13/06-tcc_page_073.jpg",
+      "caption": "TCC LUZCIDADE · foto: Felipe Sztutman"
+    }
   ],
   "corrego-rio-verde": [
-    "/img/obras/corrego-rio-verde/01-beco-noite.jpg",
-    "/img/obras/corrego-rio-verde/02-geometria.jpg",
-    "/img/obras/corrego-rio-verde/03-luz-rua.jpg",
-    "/img/obras/corrego-rio-verde/04-trails-cobblestone.jpg",
-    "/img/obras/corrego-rio-verde/05-beco-dinamico.jpg",
-    "/img/obras/corrego-rio-verde/06-geometria-ceu.jpg"
+    {
+      "src": "/img/obras/corrego-rio-verde/01-beco-noite.jpg",
+      "caption": "Beco noite · foto: Wesley Lee"
+    },
+    {
+      "src": "/img/obras/corrego-rio-verde/02-geometria.jpg",
+      "caption": "Geometria · foto: Wesley Lee"
+    },
+    {
+      "src": "/img/obras/corrego-rio-verde/03-luz-rua.jpg",
+      "caption": "Luz rua · foto: Wesley Lee"
+    },
+    {
+      "src": "/img/obras/corrego-rio-verde/04-trails-cobblestone.jpg",
+      "caption": "Trails cobblestone · foto: Wesley Lee"
+    },
+    {
+      "src": "/img/obras/corrego-rio-verde/05-beco-dinamico.jpg",
+      "caption": "Beco dinamico · foto: Wesley Lee"
+    },
+    {
+      "src": "/img/obras/corrego-rio-verde/06-geometria-ceu.jpg",
+      "caption": "Geometria ceu · foto: Wesley Lee"
+    }
   ],
   "mantiqueira": [
-    "/img/obras/mantiqueira/01-fibras-cachoeira.jpg",
-    "/img/obras/mantiqueira/02-piramide-floresta.jpg",
-    "/img/obras/mantiqueira/03-triangulo-1.jpg",
-    "/img/obras/mantiqueira/04-triangulo-2.jpg",
-    "/img/obras/mantiqueira/05-triangulo-rochas.jpg",
-    "/img/obras/mantiqueira/06-floresta-azul.jpg"
+    {
+      "src": "/img/obras/mantiqueira/01-fibras-cachoeira.jpg",
+      "caption": "Fibras cachoeira · foto: Layla Motta"
+    },
+    {
+      "src": "/img/obras/mantiqueira/02-piramide-floresta.jpg",
+      "caption": "Piramide floresta · foto: Layla Motta"
+    },
+    {
+      "src": "/img/obras/mantiqueira/03-triangulo-1.jpg",
+      "caption": "Triangulo 1 · foto: Layla Motta"
+    },
+    {
+      "src": "/img/obras/mantiqueira/04-triangulo-2.jpg",
+      "caption": "Triangulo 2 · foto: Layla Motta"
+    },
+    {
+      "src": "/img/obras/mantiqueira/05-triangulo-rochas.jpg",
+      "caption": "Triangulo rochas · foto: Layla Motta"
+    },
+    {
+      "src": "/img/obras/mantiqueira/06-floresta-azul.jpg",
+      "caption": "Floresta azul · foto: Layla Motta"
+    }
   ],
   "mementos": [
-    "/img/obras/mementos/01-img-0-0.jpg",
-    "/img/obras/mementos/02-img-0.jpg",
-    "/img/obras/mementos/03-img-12-12.jpg",
-    "/img/obras/mementos/04-img-12.jpg",
-    "/img/obras/mementos/05-img-3-3.jpg",
-    "/img/obras/mementos/06-img-3.jpg"
+    {
+      "src": "/img/obras/mementos/01-img-0-0.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/mementos/02-img-0.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/mementos/03-img-12-12.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/mementos/04-img-12.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/mementos/05-img-3-3.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/mementos/06-img-3.jpg",
+      "caption": null
+    }
   ],
   "oceanvs": [
-    "/img/obras/oceanvs/01-oceanvs-golden-reflection-face.jpg",
-    "/img/obras/oceanvs/02-oceanvs-immersive-water-projec.jpg",
-    "/img/obras/oceanvs/03-oceanvs-immersive-water-projec.jpg",
-    "/img/obras/oceanvs/04-oceanvs-immersive-water-projec.jpg",
-    "/img/obras/oceanvs/05-oceanvs-immersive-water-projec.jpg",
-    "/img/obras/oceanvs/06-oceanvs-immersivewater-01.jpg"
+    {
+      "src": "/img/obras/oceanvs/01-oceanvs-golden-reflection-face.jpg",
+      "caption": "Oceanvs golden reflection face"
+    },
+    {
+      "src": "/img/obras/oceanvs/02-oceanvs-immersive-water-projec.jpg",
+      "caption": "Oceanvs immersive water projec"
+    },
+    {
+      "src": "/img/obras/oceanvs/03-oceanvs-immersive-water-projec.jpg",
+      "caption": "Oceanvs immersive water projec"
+    },
+    {
+      "src": "/img/obras/oceanvs/04-oceanvs-immersive-water-projec.jpg",
+      "caption": "Oceanvs immersive water projec"
+    },
+    {
+      "src": "/img/obras/oceanvs/05-oceanvs-immersive-water-projec.jpg",
+      "caption": "Oceanvs immersive water projec"
+    },
+    {
+      "src": "/img/obras/oceanvs/06-oceanvs-immersivewater-01.jpg",
+      "caption": "Oceanvs immersivewater 01"
+    }
   ],
   "metadata": [
-    "/img/obras/metadata/01-metadata-blue-light-walk.jpg",
-    "/img/obras/metadata/02-metadata-colorful-shadow-play.jpg",
-    "/img/obras/metadata/03-metadata-digital-abstract-figu.jpg",
-    "/img/obras/metadata/04-metadata-digital-abstract-figu.jpg",
-    "/img/obras/metadata/05-metadata-digital-abstract-spac.jpg",
-    "/img/obras/metadata/06-metadata-digital-art-exhibitio.jpg"
+    {
+      "src": "/img/obras/metadata/01-metadata-blue-light-walk.jpg",
+      "caption": "Metadata blue light walk"
+    },
+    {
+      "src": "/img/obras/metadata/02-metadata-colorful-shadow-play.jpg",
+      "caption": "Metadata colorful shadow play"
+    },
+    {
+      "src": "/img/obras/metadata/03-metadata-digital-abstract-figu.jpg",
+      "caption": "Metadata digital abstract figu"
+    },
+    {
+      "src": "/img/obras/metadata/04-metadata-digital-abstract-figu.jpg",
+      "caption": "Metadata digital abstract figu"
+    },
+    {
+      "src": "/img/obras/metadata/05-metadata-digital-abstract-spac.jpg",
+      "caption": "Metadata digital abstract spac"
+    },
+    {
+      "src": "/img/obras/metadata/06-metadata-digital-art-exhibitio.jpg",
+      "caption": "Metadata digital art exhibitio"
+    }
   ],
   "luz-aeterna": [
-    "/img/obras/luz-aeterna/01-luz-aeterna-luz-eterna-ccbb.jpg",
-    "/img/obras/luz-aeterna/02-luz-aeterna-luz-eterna-doorway.jpg",
-    "/img/obras/luz-aeterna/03-luz-aeterna-luz-eterna-exhibit.jpg",
-    "/img/obras/luz-aeterna/04-luz-aeterna-luz-eterna-exhibit.jpg",
-    "/img/obras/luz-aeterna/05-luz-aeterna-luz-eterna-exhibit.jpg",
-    "/img/obras/luz-aeterna/06-luz-aeterna-luz-eterna-exhibit.jpg"
+    {
+      "src": "/img/obras/luz-aeterna/01-luz-aeterna-luz-eterna-ccbb.jpg",
+      "caption": "Luz aeterna luz eterna ccbb"
+    },
+    {
+      "src": "/img/obras/luz-aeterna/02-luz-aeterna-luz-eterna-doorway.jpg",
+      "caption": "Luz aeterna luz eterna doorway"
+    },
+    {
+      "src": "/img/obras/luz-aeterna/03-luz-aeterna-luz-eterna-exhibit.jpg",
+      "caption": "Luz aeterna luz eterna exhibit"
+    },
+    {
+      "src": "/img/obras/luz-aeterna/04-luz-aeterna-luz-eterna-exhibit.jpg",
+      "caption": "Luz aeterna luz eterna exhibit"
+    },
+    {
+      "src": "/img/obras/luz-aeterna/05-luz-aeterna-luz-eterna-exhibit.jpg",
+      "caption": "Luz aeterna luz eterna exhibit"
+    },
+    {
+      "src": "/img/obras/luz-aeterna/06-luz-aeterna-luz-eterna-exhibit.jpg",
+      "caption": "Luz aeterna luz eterna exhibit"
+    }
   ],
   "sao-paulo-3024": [
-    "/img/obras/sao-paulo-3024/01-sp3024-cityscape-sao-paulo-302.jpg",
-    "/img/obras/sao-paulo-3024/02-sp3024-cyberpunk-cityscape-202.jpg",
-    "/img/obras/sao-paulo-3024/03-sp3024-cyberpunk-cityscape-lig.jpg",
-    "/img/obras/sao-paulo-3024/04-sp3024-cyberpunk-urban-landsca.jpg",
-    "/img/obras/sao-paulo-3024/05-sp3024-digital-city-night.jpg",
-    "/img/obras/sao-paulo-3024/06-sp3024-digital-cityscape-3d-re.jpg"
+    {
+      "src": "/img/obras/sao-paulo-3024/01-sp3024-cityscape-sao-paulo-302.jpg",
+      "caption": "Sp3024 cityscape sao paulo 302"
+    },
+    {
+      "src": "/img/obras/sao-paulo-3024/02-sp3024-cyberpunk-cityscape-202.jpg",
+      "caption": "Sp3024 cyberpunk cityscape 202"
+    },
+    {
+      "src": "/img/obras/sao-paulo-3024/03-sp3024-cyberpunk-cityscape-lig.jpg",
+      "caption": "Sp3024 cyberpunk cityscape lig"
+    },
+    {
+      "src": "/img/obras/sao-paulo-3024/04-sp3024-cyberpunk-urban-landsca.jpg",
+      "caption": "Sp3024 cyberpunk urban landsca"
+    },
+    {
+      "src": "/img/obras/sao-paulo-3024/05-sp3024-digital-city-night.jpg",
+      "caption": "Sp3024 digital city night"
+    },
+    {
+      "src": "/img/obras/sao-paulo-3024/06-sp3024-digital-cityscape-3d-re.jpg",
+      "caption": "Sp3024 digital cityscape 3d re"
+    }
   ],
   "andromeda": [
-    "/img/obras/andromeda/01-andromeda-astronomy-light-show.jpg",
-    "/img/obras/andromeda/02-andromeda-astronomy-projected-.jpg",
-    "/img/obras/andromeda/03-andromeda-black-hole-explosion.jpg",
-    "/img/obras/andromeda/04-andromeda-black-hole-illusion-.jpg",
-    "/img/obras/andromeda/05-andromeda-black-hole-illusion.jpg",
-    "/img/obras/andromeda/06-andromeda-cosmic-silhouette-il.jpg"
+    {
+      "src": "/img/obras/andromeda/01-andromeda-astronomy-light-show.jpg",
+      "caption": "Andromeda astronomy light show"
+    },
+    {
+      "src": "/img/obras/andromeda/02-andromeda-astronomy-projected-.jpg",
+      "caption": "Andromeda astronomy projected"
+    },
+    {
+      "src": "/img/obras/andromeda/03-andromeda-black-hole-explosion.jpg",
+      "caption": "Andromeda black hole explosion"
+    },
+    {
+      "src": "/img/obras/andromeda/04-andromeda-black-hole-illusion-.jpg",
+      "caption": "Andromeda black hole illusion"
+    },
+    {
+      "src": "/img/obras/andromeda/05-andromeda-black-hole-illusion.jpg",
+      "caption": "Andromeda black hole illusion"
+    },
+    {
+      "src": "/img/obras/andromeda/06-andromeda-cosmic-silhouette-il.jpg",
+      "caption": "Andromeda cosmic silhouette il"
+    }
   ],
   "o-que-nos-une": [
-    "/img/obras/o-que-nos-une/01-oqnu-brain-mirror-chamber-1-2.jpg",
-    "/img/obras/o-que-nos-une/02-oqnu-brain-mirror-chamber-1.jpg",
-    "/img/obras/o-que-nos-une/03-oqnu-brain-mirror-chamber.jpg",
-    "/img/obras/o-que-nos-une/04-oqnu-mirror-chamber-blue-light.jpg",
-    "/img/obras/o-que-nos-une/05-oqnu-mirror-chamber-blue-light.jpg",
-    "/img/obras/o-que-nos-une/06-oqnu-mirror-chamber-blue-silho.jpg"
+    {
+      "src": "/img/obras/o-que-nos-une/01-oqnu-brain-mirror-chamber-1-2.jpg",
+      "caption": "Oqnu brain mirror chamber 1 2"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/02-oqnu-brain-mirror-chamber-1.jpg",
+      "caption": "Oqnu brain mirror chamber 1"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/03-oqnu-brain-mirror-chamber.jpg",
+      "caption": "Oqnu brain mirror chamber"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/04-oqnu-mirror-chamber-blue-light.jpg",
+      "caption": "Oqnu mirror chamber blue light"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/05-oqnu-mirror-chamber-blue-light.jpg",
+      "caption": "Oqnu mirror chamber blue light"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/06-oqnu-mirror-chamber-blue-silho.jpg",
+      "caption": "Oqnu mirror chamber blue silho"
+    }
   ],
   "floresta-utopica": [
-    "/img/obras/floresta-utopica/01-img-0-0.jpg",
-    "/img/obras/floresta-utopica/02-img-0.jpg",
-    "/img/obras/floresta-utopica/03-img-12-12.jpg",
-    "/img/obras/floresta-utopica/04-img-12.jpg",
-    "/img/obras/floresta-utopica/05-img-3-3.jpg",
-    "/img/obras/floresta-utopica/06-img-3.jpg"
+    {
+      "src": "/img/obras/floresta-utopica/01-img-0-0.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/floresta-utopica/02-img-0.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/floresta-utopica/03-img-12-12.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/floresta-utopica/04-img-12.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/floresta-utopica/05-img-3-3.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/floresta-utopica/06-img-3.jpg",
+      "caption": null
+    }
   ],
   "amano": [
-    "/img/obras/amano/01-img-0-0.jpg",
-    "/img/obras/amano/02-img-0.jpg",
-    "/img/obras/amano/03-img-12-12.jpg",
-    "/img/obras/amano/04-img-12.jpg",
-    "/img/obras/amano/05-img-3-3.jpg",
-    "/img/obras/amano/06-img-3.jpg"
+    {
+      "src": "/img/obras/amano/01-img-0-0.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/amano/02-img-0.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/amano/03-img-12-12.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/amano/04-img-12.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/amano/05-img-3-3.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/amano/06-img-3.jpg",
+      "caption": null
+    }
   ]
 }
