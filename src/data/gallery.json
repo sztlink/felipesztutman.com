@@ -399,28 +399,32 @@
   ],
   "interludio": [
     {
-      "src": "/img/obras/interludio/01-luz-reflexo.jpg",
-      "caption": "Luz responsiva e reflexos. Foto: Junior Viana."
+      "src": "/img/obras/interludio/01-hero.jpg",
+      "caption": "Interlúdio — sensores de proximidade e luz responsiva. Foto: Junior Viana."
     },
     {
-      "src": "/img/obras/interludio/02-tubos-imersao.jpg",
-      "caption": "Tubos luminosos — imersão. Foto: Junior Viana."
+      "src": "/img/obras/interludio/02-gallery.jpg",
+      "caption": null
     },
     {
-      "src": "/img/obras/interludio/03-geometria-luz.jpg",
-      "caption": "Geometria de luz no espaço. Foto: Junior Viana."
+      "src": "/img/obras/interludio/03-gallery.jpg",
+      "caption": null
     },
     {
-      "src": "/img/obras/interludio/04-sensor-proximidade.jpg",
-      "caption": "Sensores de proximidade ativados. Foto: Junior Viana."
+      "src": "/img/obras/interludio/04-gallery.jpg",
+      "caption": null
     },
     {
-      "src": "/img/obras/interludio/05-tubos-dinamico.jpg",
-      "caption": "Tubos luminosos cruzados — espaço dinâmico. Foto: Junior Viana."
+      "src": "/img/obras/interludio/05-gallery.jpg",
+      "caption": null
     },
     {
-      "src": "/img/obras/interludio/06-espaco-vibrant.jpg",
-      "caption": "Espaço vibrante com presença humana. Foto: Junior Viana."
+      "src": "/img/obras/interludio/06-gallery.jpg",
+      "caption": null
+    },
+    {
+      "src": "/img/obras/interludio/07-gallery.jpg",
+      "caption": null
     }
   ]
 }
