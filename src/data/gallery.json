@@ -362,5 +362,39 @@
       "src": "/img/obras/amano/06-img-3.jpg",
       "caption": null
     }
+  ],
+  "luzcidade": [
+    {
+      "src": "/img/escritos/luzcidade/01-banca-overview.jpg",
+      "caption": "Banca de defesa TCC LUZCIDADE, FAU-USP 2013. Chapas de compensado com fotos e fragmentos."
+    },
+    {
+      "src": "/img/escritos/luzcidade/02-moholy-nagy-modulator.jpg",
+      "caption": "László Moholy-Nagy — Light and Space Modulator, réplica 1970. Van Abbemuseum."
+    },
+    {
+      "src": "/img/escritos/luzcidade/03-moholy-nagy-film.jpg",
+      "caption": "László Moholy-Nagy — frames de \"A play of light black white grey\", 1930. Moholy-Nagy Foundation."
+    },
+    {
+      "src": "/img/escritos/luzcidade/04-banca-flavin.jpg",
+      "caption": "Banca TCC — seção Dan Flavin. Fotos de Felipe Sztutman em Viena, 2013."
+    },
+    {
+      "src": "/img/escritos/luzcidade/05-flavin-diagonal.jpg",
+      "caption": "Dan Flavin — The diagonal of May 25, 1963 (to Constantin Brancusi). Foto: Felipe Sztutman, Viena 2013."
+    },
+    {
+      "src": "/img/escritos/luzcidade/06-flavin-christina-bruno.jpg",
+      "caption": "Dan Flavin — untitled (to Christina and Bruno), 1966-1971. Lâmpadas fluorescentes douradas, 244×244cm. Foto: Felipe Sztutman, 2013."
+    },
+    {
+      "src": "/img/escritos/luzcidade/07-flavin-barrier.jpg",
+      "caption": "Dan Flavin — an artificial barrier of blue, red and blue fluorescent light (to Flavin Starbuck Judd), 1968. Foto: Felipe Sztutman."
+    },
+    {
+      "src": "/img/escritos/luzcidade/08-flavin-mumok.jpg",
+      "caption": "Dan Flavin — European Couples. Exposição \"Dan Flavin: Lights\", 2013, Mumok, Viena. Foto: Felipe Sztutman."
+    }
   ]
 }

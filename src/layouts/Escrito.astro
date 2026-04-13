@@ -1,5 +1,7 @@
 ---
 import Base from './Base.astro';
+import galleryData from '../data/gallery.json';
+type GalleryItem = { src: string; caption: string | null };
 
 interface Props {
   frontmatter: {
@@ -18,8 +20,13 @@ const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title}. Felipe Sztutman.`;
+const slug = Astro.url.pathname.replace(/^\/(?:en\/)?escritos\//, '').replace(/\/$/, '');
+const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
+const heroItem = items[0] || null;
+const galleryItems = items.slice(1);
+const ogImage = heroItem?.src || undefined;
 ---
-<Base title={seoTitle} description={seoDesc} lang={lang}>
+<Base title={seoTitle} description={seoDesc} lang={lang} ogImage={ogImage}>
   <article class="escrito">
     <a href={`${prefix}/escritos`} class="back">{isEN ? '← writings' : '← escritos'}</a>
     
@@ -28,10 +35,74 @@ const seoDesc = frontmatter.description || `${frontmatter.title}. Felipe Sztutma
     {frontmatter.subtitle && <div class="escrito-subtitle">{frontmatter.subtitle}</div>}
     {frontmatter.date && <div class="escrito-date">{frontmatter.date}</div>}
 
+    {heroItem && (
+      <div class="escrito-hero">
+        <img src={heroItem.src} alt={frontmatter.title} loading="eager" data-idx="0" class="lightbox-trigger" />
+        {heroItem.caption && <div class="escrito-hero-caption">{heroItem.caption}</div>}
+      </div>
+    )}
+
     <div class="escrito-body">
       <slot />
     </div>
+
+    {galleryItems.length > 0 && (
+      <div class="escrito-gallery">
+        {galleryItems.map((item, i) => (
+          <figure class="gallery-fig">
+            <img src={item.src} alt={`${frontmatter.title} — ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
+          </figure>
+        ))}
+      </div>
+    )}
   </article>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <div id="lb-close">×</div>
+    <div id="lb-nav"><span class="lb-arrow" id="lb-prev">←</span><span class="lb-arrow" id="lb-next">→</span></div>
+    <img id="lb-img" src="" alt="" />
+    <div id="lb-caption"></div>
+    <div id="lb-counter"></div>
+  </div>
+
+  <script is:inline define:vars={{ items: JSON.stringify(items) }}>
+    (function() {
+      const gallery = JSON.parse(items);
+      if (!gallery.length) return;
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const lbCap = document.getElementById('lb-caption');
+      const lbCount = document.getElementById('lb-counter');
+      let current = 0;
+      function show(idx) {
+        current = idx; const item = gallery[idx]; if (!item) return;
+        lbImg.src = item.src; lbCap.textContent = item.caption || '';
+        lbCount.textContent = (idx + 1) + ' / ' + gallery.length;
+        lb.classList.add('open'); document.body.style.overflow = 'hidden';
+      }
+      function hide() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+      function next() { show((current + 1) % gallery.length); }
+      function prev() { show((current - 1 + gallery.length) % gallery.length); }
+      document.querySelectorAll('.lightbox-trigger').forEach(function(img) {
+        img.addEventListener('click', function() { show(parseInt(img.dataset.idx || '0')); });
+      });
+      document.getElementById('lb-close').addEventListener('click', hide);
+      document.getElementById('lb-prev').addEventListener('click', prev);
+      document.getElementById('lb-next').addEventListener('click', next);
+      lb.addEventListener('click', function(e) { if (e.target === lb) hide(); });
+      document.addEventListener('keydown', function(e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') hide(); if (e.key === 'ArrowRight') next(); if (e.key === 'ArrowLeft') prev();
+      });
+      var touchX = 0;
+      lb.addEventListener('touchstart', function(e) { touchX = e.touches[0].clientX; });
+      lb.addEventListener('touchend', function(e) {
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 50) { dx > 0 ? prev() : next(); }
+      });
+    })();
+  </script>
 </Base>
 
 <style>
@@ -51,4 +122,23 @@ const seoDesc = frontmatter.description || `${frontmatter.title}. Felipe Sztutma
 .escrito-body :global(code){font:var(--mono);font-size:.85em;background:rgba(255,255,255,.05);padding:.15em .4em;border-radius:3px}
 .escrito-body :global(hr){border:none;border-top:1px solid rgba(255,255,255,.06);margin:2.5rem 0}
 @media(max-width:600px){.escrito-title{font-size:1.5rem}}
+.escrito-hero{margin-bottom:2rem;overflow:hidden}
+.escrito-hero img{width:100%;height:auto;display:block;border-radius:2px;cursor:pointer}
+.escrito-hero-caption{font:.7rem/1.4 var(--mono);color:var(--fg3);margin-top:.5rem}
+.escrito-gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:2.5rem 0}
+.gallery-fig{margin:0}
+.escrito-gallery img{width:100%;height:auto;display:block;border-radius:2px;cursor:pointer;transition:opacity .15s}
+.escrito-gallery img:hover{opacity:.85}
+.lightbox-trigger{cursor:pointer}
+@media(max-width:500px){.escrito-gallery{grid-template-columns:1fr}}
+#lightbox{position:fixed;inset:0;background:rgba(4,6,14,.96);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
+#lightbox.open{display:flex}
+#lb-img{max-width:92vw;max-height:82vh;object-fit:contain}
+#lb-caption{font:.75rem/1.6 var(--mono);color:var(--fg3);margin-top:.75rem;text-align:center;max-width:600px;padding:0 1rem}
+#lb-close{position:fixed;top:14px;right:18px;font:1.2rem/1 var(--mono);color:var(--fg3);cursor:pointer;z-index:101}
+#lb-close:hover{color:var(--fg)}
+#lb-nav{position:fixed;top:50%;width:100%;display:flex;justify-content:space-between;padding:0 12px;transform:translateY(-50%);pointer-events:none;z-index:101}
+.lb-arrow{font:1.5rem/1 var(--mono);color:var(--fg3);cursor:pointer;pointer-events:auto;padding:8px;user-select:none}
+.lb-arrow:hover{color:var(--fg)}
+#lb-counter{position:fixed;bottom:14px;right:18px;font:.7rem/1 var(--mono);color:var(--fg3);z-index:101}
 </style>
