@@ -399,12 +399,28 @@
   ],
   "interludio": [
     {
-      "src": "/img/obras/interludio/01-luz-pessoa.jpg",
-      "caption": "Feixes de luz responsiva e presença humana. Foto: Junior Viana."
+      "src": "/img/obras/interludio/01-luz-reflexo.jpg",
+      "caption": "Luz responsiva e reflexos. Foto: Junior Viana."
     },
     {
-      "src": "/img/obras/interludio/02-tubos-presenca.jpg",
-      "caption": "Tubos luminosos que só existem com proximidade do corpo. Foto: Junior Viana."
+      "src": "/img/obras/interludio/02-tubos-imersao.jpg",
+      "caption": "Tubos luminosos — imersão. Foto: Junior Viana."
+    },
+    {
+      "src": "/img/obras/interludio/03-geometria-luz.jpg",
+      "caption": "Geometria de luz no espaço. Foto: Junior Viana."
+    },
+    {
+      "src": "/img/obras/interludio/04-sensor-proximidade.jpg",
+      "caption": "Sensores de proximidade ativados. Foto: Junior Viana."
+    },
+    {
+      "src": "/img/obras/interludio/05-tubos-dinamico.jpg",
+      "caption": "Tubos luminosos cruzados — espaço dinâmico. Foto: Junior Viana."
+    },
+    {
+      "src": "/img/obras/interludio/06-espaco-vibrant.jpg",
+      "caption": "Espaço vibrante com presença humana. Foto: Junior Viana."
     }
   ]
 }
