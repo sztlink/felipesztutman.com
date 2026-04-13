@@ -151,6 +151,30 @@ const allNodes = [...obraNodes, ...escritoNodes, ...ghostNodes];
     #vis-count { position: fixed; bottom: 28px; right: 14px; font: 10px/1 monospace;
       color: rgba(68,119,255,.5); pointer-events: none; z-index: 10 }
 
+    /* EDIT PANEL */
+    #edit-panel { position:fixed; bottom:0; right:0; width:360px;
+      background:rgba(4,6,16,.97); border-left:1px solid rgba(255,200,50,.2);
+      border-top:1px solid rgba(255,200,50,.2); padding:14px 16px 18px;
+      z-index:50; display:none; flex-direction:column; gap:10px }
+    #edit-panel.active { display:flex }
+    #edit-header { display:flex; justify-content:space-between; align-items:center }
+    #edit-title { font:10px/1 monospace; color:rgba(255,200,50,.9);
+      letter-spacing:.1em; text-transform:uppercase }
+    #edit-lens-name { font:10px/1 monospace; color:rgba(255,255,255,.3) }
+    #edit-json { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
+      color:rgba(180,210,240,.65); font:9.5px/1.6 'SF Mono','Fira Code',monospace;
+      padding:10px; height:200px; resize:none; outline:none; width:100%;
+      border-radius:0 }
+    #edit-actions { display:flex; gap:8px }
+    .ebtn { background:none; border:1px solid rgba(255,255,255,.15);
+      color:rgba(255,255,255,.45); font:10px/1 monospace; padding:6px 14px;
+      cursor:pointer; letter-spacing:.05em }
+    .ebtn:hover { color:#fff; border-color:rgba(255,255,255,.4) }
+    .ebtn.primary { border-color:rgba(255,200,50,.5); color:rgba(255,200,50,.85) }
+    .ebtn.primary:hover { border-color:rgba(255,200,50,1); color:rgba(255,200,50,1) }
+    #edit-hint { font:9px/1.5 monospace; color:rgba(255,255,255,.2) }
+    #btn-edit.active { color:rgba(255,200,50,.9); border-bottom-color:rgba(255,200,50,.7) }
+
     /* DETAIL PANEL */
     #detail { position: fixed; right: 0; top: 0; bottom: 0; width: 0; overflow: hidden;
       background: rgba(6,8,16,.97); border-left: 1px solid rgba(255,255,255,.06);
@@ -196,6 +220,8 @@ const allNodes = [...obraNodes, ...escritoNodes, ...ghostNodes];
     <span id="search-icon">⌕</span>
     <input id="search" type="text" placeholder="buscar no mapa">
   </div>
+  <span class="ctrl-sep">·</span>
+  <button id="btn-edit" class="lens">editar</button>
 </div>
 
 <div id="filters">
@@ -220,6 +246,19 @@ const allNodes = [...obraNodes, ...escritoNodes, ...ghostNodes];
 <canvas id="canvas"></canvas>
 <div id="hint">scroll · drag · clique</div>
 <div id="vis-count"></div>
+
+<div id="edit-panel">
+  <div id="edit-header">
+    <span id="edit-title">✦ modo edição</span>
+    <span id="edit-lens-name">lente: conceito</span>
+  </div>
+  <textarea id="edit-json" spellcheck="false" readonly></textarea>
+  <div id="edit-actions">
+    <button class="ebtn primary" id="btn-copy-pos">copiar posições</button>
+    <button class="ebtn" id="btn-copy-all">copiar tudo</button>
+  </div>
+  <div id="edit-hint">arraste os nós · posições da lente ativa · cole no Pi para salvar</div>
+</div>
 
 <div id="detail">
   <div id="di">
