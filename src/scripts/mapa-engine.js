@@ -12,7 +12,17 @@ const nodes = raw.map(n => ({
   color: hex6(n.color),
   rx: n.lens.conceito[0], ry: n.lens.conceito[1],
   tx: n.lens.conceito[0], ty: n.lens.conceito[1],
+  img: null,  // será preenchido pelo preload
 }));
+
+// ── PRELOAD HERO IMAGES ───────────────────────────────────
+nodes.forEach(n => {
+  if (n.hero) {
+    const img = new Image();
+    img.src = n.hero;
+    img.onload = () => { n.img = img; };
+  }
+});
 
 // ── ESTADO ────────────────────────────────────────────────
 let currentLens  = 'conceito';
@@ -256,35 +266,60 @@ function draw() {
     const isConn  = hovered && ((hovered.links||[]).includes(n.id)||(n.links||[]).includes(hovered.id));
     const isDragging = editDragNode && editDragNode.id === n.id;
 
-    const dotR = Math.max(sr * 0.40, 3);
+    // raio: maior para nós com imagem
+    const nodeR = n.img ? Math.max(sr * 0.7, 14) : Math.max(sr * 0.40, 3);
 
-    // fill
-    let fillColor;
-    if (isDragging)       fillColor = '#ffcc33';
-    else if (n.type==='ref') fillColor = active ? '#3a3a55' : '#1c1c2a';
-    else                  fillColor = active ? n.color : '#1e2030';
+    // ── IMAGEM CIRCULAR ──────────────────────────────────
+    if (n.img && active) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(sx, sy, nodeR, 0, Math.PI * 2);
+      ctx.clip();
+      // cover crop centralizado
+      const iw = n.img.width, ih = n.img.height;
+      const scale = Math.max(nodeR * 2 / iw, nodeR * 2 / ih);
+      const dw = iw * scale, dh = ih * scale;
+      ctx.drawImage(n.img, sx - dw/2, sy - dh/2, dw, dh);
+      ctx.restore();
 
-    ctx.beginPath(); ctx.arc(sx, sy, dotR, 0, Math.PI * 2);
-    ctx.fillStyle = fillColor;
-    ctx.fill();
-
-    // anel
-    if (n.type !== 'ref' && (active || editMode) && zoom > 0.4) {
-      const ringR = dotR + Math.max(2.5, 3 * zoom);
-      ctx.beginPath(); ctx.arc(sx, sy, ringR, 0, Math.PI * 2);
-      ctx.strokeStyle = isDragging
-        ? 'rgba(255,204,51,0.8)'
-        : isHov ? n.color : (isConn ? n.color+'aa' : (editMode ? n.color+'55' : n.color+'33'));
-      ctx.lineWidth = isDragging ? 1.5 : (isHov ? 1.5 : 0.8);
+      // borda
+      ctx.beginPath(); ctx.arc(sx, sy, nodeR + 1.5, 0, Math.PI * 2);
+      ctx.strokeStyle = isDragging ? 'rgba(255,204,51,0.9)'
+        : isHov ? '#fff'
+        : isConn ? n.color + 'cc'
+        : n.color + '44';
+      ctx.lineWidth = isHov ? 2.5 : 1;
       ctx.stroke();
+    }
+    // ── FALLBACK: dot colorido ───────────────────────────
+    else {
+      let fillColor;
+      if (isDragging) fillColor = '#ffcc33';
+      else if (n.img && !active) fillColor = '#1e2030'; // imagem mas inativo
+      else if (n.type==='ref') fillColor = active ? '#3a3a55' : '#1c1c2a';
+      else fillColor = active ? n.color : '#1e2030';
+
+      ctx.beginPath(); ctx.arc(sx, sy, nodeR, 0, Math.PI * 2);
+      ctx.fillStyle = fillColor;
+      ctx.fill();
+
+      if (n.type !== 'ref' && (active || editMode) && zoom > 0.4) {
+        const ringR = nodeR + Math.max(2.5, 3 * zoom);
+        ctx.beginPath(); ctx.arc(sx, sy, ringR, 0, Math.PI * 2);
+        ctx.strokeStyle = isDragging
+          ? 'rgba(255,204,51,0.8)'
+          : isHov ? n.color : (isConn ? n.color+'aa' : (editMode ? n.color+'55' : n.color+'33'));
+        ctx.lineWidth = isDragging ? 1.5 : (isHov ? 1.5 : 0.8);
+        ctx.stroke();
+      }
     }
 
     // coordenada enquanto arrasta
     if (isDragging) {
-      ctx.font = '10px \'SF Mono\',monospace';
+      ctx.font = "10px 'SF Mono',monospace";
       ctx.fillStyle = 'rgba(255,204,51,0.95)';
       ctx.textAlign = 'left';
-      ctx.fillText(`[${Math.round(n.rx)}, ${Math.round(n.ry)}]`, sx + dotR + 6, sy - 4);
+      ctx.fillText('[' + Math.round(n.rx) + ', ' + Math.round(n.ry) + ']', sx + nodeR + 6, sy - 4);
     }
 
     // label
@@ -294,16 +329,17 @@ function draw() {
 
     const labelSize = Math.max(10, Math.min(13, 11 * zoom));
     ctx.textAlign  = 'center';
-    ctx.font       = `${isHov||isDragging ? 500 : 400} ${labelSize}px 'SF Mono','Fira Code',monospace`;
+    ctx.font       = (isHov||isDragging ? 500 : 400) + ' ' + labelSize + "px 'SF Mono','Fira Code',monospace";
     ctx.fillStyle  = isDragging
-      ? `rgba(255,204,51,${labelAlpha})`
-      : `rgba(220,230,245,${labelAlpha})`;
-    const textY = sy + dotR + 14 * Math.max(zoom, 0.6);
+      ? 'rgba(255,204,51,' + labelAlpha + ')'
+      : 'rgba(220,230,245,' + labelAlpha + ')';
+
+    const textY = sy + nodeR + 14 * Math.max(zoom, 0.6);
     ctx.fillText(n.label, sx, textY);
 
     if (zoom > 0.7 && n.type !== 'ref') {
-      ctx.font      = `${Math.max(8, 8 * zoom)}px 'SF Mono',monospace`;
-      ctx.fillStyle = `rgba(140,160,190,${labelAlpha * 0.6})`;
+      ctx.font      = Math.max(8, 8 * zoom) + "px 'SF Mono',monospace";
+      ctx.fillStyle = 'rgba(140,160,190,' + (labelAlpha * 0.6) + ')';
       ctx.fillText(n.sub, sx, textY + 13 * Math.max(zoom, 0.6));
     }
   }
