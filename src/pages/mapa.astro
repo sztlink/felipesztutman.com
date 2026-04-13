@@ -1,5 +1,7 @@
 ---
 import mapaConfig from '../data/mapa.json';
+import galleryData from '../data/gallery.json';
+type GalleryItem = { src: string; caption: string | null };
 
 // ── import.meta.glob (Astro 6) ───────────────────────────────
 const obraModules  = import.meta.glob('./obras/*.md',   { eager: true }) as Record<string, any>;
@@ -20,6 +22,10 @@ function extractPeople(credits: any[], filterMap: Record<string, string>): strin
 }
 
 const pf = mapaConfig.people_filter as Record<string, string>;
+const gd = galleryData as Record<string, GalleryItem[]>;
+function heroFor(id: string): string | null {
+  return gd[id]?.[0]?.src || null;
+}
 
 // ── Obras ─────────────────────────────────────────────────────
 const obraNodes = Object.entries(obraModules).map(([path, mod]) => {
@@ -34,6 +40,7 @@ const obraNodes = Object.entries(obraModules).map(([path, mod]) => {
     year:  parseInt(fm.year) || null,
     desc:  fm.description as string,
     slug:  `/obras/${id}`,
+    hero:  heroFor(id),
     people: extractPeople(fm.credits, pf),
     type:  'obra',
     r:       cfg.r     || 14,
@@ -59,6 +66,7 @@ const escritoNodes = Object.entries(escritoModules)
       year:  null,
       desc:  fm.description as string,
       slug:  `/escritos/${id}`,
+      hero:  heroFor(id),
       people: [] as string[],
       type:  'escrito',
       r:       cfg.r     || 8,
@@ -263,6 +271,7 @@ const allNodes = [...obraNodes, ...escritoNodes, ...ghostNodes];
 <div id="detail">
   <div id="di">
     <div id="dc">× fechar</div>
+    <img id="dhero" src="" alt="" style="width:100%;height:auto;border-radius:2px;margin-bottom:16px;display:none" />
     <div id="dtype"></div>
     <div id="dtitle"></div>
     <div id="dmeta"></div>

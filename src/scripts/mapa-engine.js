@@ -461,6 +461,11 @@ window.addEventListener('keydown', e => {
 });
 
 function openDetail(n) {
+  const heroEl = document.getElementById('dhero');
+  if (heroEl) {
+    if (n.hero) { heroEl.src = n.hero; heroEl.alt = n.label; heroEl.style.display = 'block'; }
+    else { heroEl.style.display = 'none'; }
+  }
   document.getElementById('dtype').textContent  = n.type;
   document.getElementById('dtitle').textContent = n.label;
   document.getElementById('dmeta').textContent  = n.sub;
