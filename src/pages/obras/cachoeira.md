@@ -4,6 +4,7 @@ title: "Cachoeira"
 year: "2012"
 location: "Vale do Anhangabaú e Viaduto do Chá, São Paulo"
 description: "Instalação de arte pública que revelou o Córrego das Almas canalizado sob o Anhangabaú usando 500 metros de cabo eletroluminescente"
+hero: "/img/obras/cachoeira.jpg"
 credits:
   - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Curadoria", name: "Alessandra Mader, Felipe Brait, Julia Clemente" }

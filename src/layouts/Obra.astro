@@ -8,6 +8,7 @@ interface Props {
     year: string;
     location: string;
     description?: string;
+    hero?: string;
     credits?: Array<{role: string; name: string}>;
     press?: Array<{source: string; url: string; title: string}>;
     series?: string;
@@ -21,8 +22,10 @@ const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) — ${frontmatter.location}. Felipe Sztutman.`;
+const heroImg = frontmatter.hero || null;
+const ogImage = heroImg || undefined;
 ---
-<Base title={seoTitle} description={seoDesc} lang={lang} schemaType="ArtWork" schemaName={frontmatter.title} schemaDate={frontmatter.year} schemaLocation={frontmatter.location}>
+<Base title={seoTitle} description={seoDesc} lang={lang} schemaType="ArtWork" schemaName={frontmatter.title} schemaDate={frontmatter.year} schemaLocation={frontmatter.location} ogImage={ogImage}>
   <article>
     <div class="obra-header">
       <a href={`${prefix}/#obras`} class="back">{isEN ? '← works' : '← obras'}</a>
@@ -30,6 +33,12 @@ const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.
       {frontmatter.subtitle && <div class="obra-subtitle">{frontmatter.subtitle}</div>}
       <div class="obra-meta">{frontmatter.year} · {frontmatter.location}</div>
     </div>
+
+    {heroImg && (
+      <div class="obra-hero">
+        <img src={heroImg} alt={frontmatter.title} loading="eager" />
+      </div>
+    )}
 
     <div class="obra-body">
       <slot />
@@ -65,7 +74,9 @@ const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.
 .back:hover{color:var(--fg);text-decoration:none}
 .obra-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:.25rem}
 .obra-subtitle{font:400 1rem/1.4 var(--sans);color:var(--fg2);margin-bottom:.25rem}
-.obra-meta{font:.8rem/1.4 var(--mono);color:var(--fg3);margin-bottom:2.5rem}
+.obra-meta{font:.8rem/1.4 var(--mono);color:var(--fg3);margin-bottom:2rem}
+.obra-hero{margin-bottom:2.5rem;overflow:hidden}
+.obra-hero img{width:100%;height:auto;display:block;border-radius:2px}
 .obra-body{font:1rem/1.85 var(--sans);color:var(--fg);margin-bottom:2.5rem}
 .obra-body :global(p){margin-bottom:1.2rem}
 .obra-body :global(em){color:var(--fg2);font-style:italic}

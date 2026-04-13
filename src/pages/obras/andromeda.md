@@ -4,6 +4,7 @@ title: "Andrômeda — Universo Sem Fim"
 year: "2025"
 location: "Farol Santander São Paulo"
 description: "Experiência imersiva de 17 minutos sobre fenômenos cósmicos, com ambiente interativo modulado por presença e jornada audiovisual através de nebulosas, supernovas e galáxias."
+hero: "/img/obras/andromeda.jpg"
 credits:
   - { role: "Curadoria", name: "Antonio Curti" }
   - { role: "Direção", name: "Felipe Sztutman" }

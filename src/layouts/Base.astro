@@ -5,13 +5,14 @@ interface Props {
   title: string;
   description?: string;
   ogTitle?: string;
+  ogImage?: string;
   lang?: 'pt' | 'en';
   schemaType?: 'WebSite' | 'Person' | 'ArtWork';
   schemaName?: string;
   schemaDate?: string;
   schemaLocation?: string;
 }
-const { title, description = 'Felipe Sztutman — artista e construtor de sistemas imersivos. São Paulo, Brasil.', ogTitle, lang = 'pt', schemaType = 'WebSite', schemaName, schemaDate, schemaLocation } = Astro.props;
+const { title, description = 'Felipe Sztutman — artista e construtor de sistemas imersivos. São Paulo, Brasil.', ogTitle, ogImage, lang = 'pt', schemaType = 'WebSite', schemaName, schemaDate, schemaLocation } = Astro.props;
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const altLang = isEN ? 'pt' : 'en';
@@ -37,7 +38,9 @@ const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPa
 <meta property="og:url" content={Astro.url.href}>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary">
+{ogImage && <meta property="og:image" content={`https://felipesztutman.com${ogImage}`} />}
+{ogImage && <meta name="twitter:image" content={`https://felipesztutman.com${ogImage}`} />}
+<meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'}>
 <meta name="twitter:title" content={ogTitle || title}>
 <meta name="twitter:description" content={description}>
 <SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} />

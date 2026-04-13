@@ -4,6 +4,7 @@ title: "O Que Nos Une"
 year: "2025"
 location: "Centro Cultural FIESP, São Paulo"
 description: "Exposição imersiva que traduz teorias de Miguel Nicolelis sobre consciência coletiva em três ambientes interativos, onde visitantes experimentam redes neurais, sincronização biométrica e padrões gerados em tempo real."
+hero: "/img/obras/o-que-nos-une.jpg"
 credits:
   - { role: "Curadoria Científica", name: "Miguel Nicolelis" }
   - { role: "Curadoria Artística", name: "Antonio Curti" }
