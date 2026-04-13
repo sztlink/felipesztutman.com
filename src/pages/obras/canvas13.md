@@ -4,7 +4,6 @@ title: "sem título, para Canvas #13"
 year: "2013"
 location: "Serralheria Cultural, São Paulo"
 description: "Instalação luminosa site-specific que mapeou o espaço da Serralheria através de geometria e luz, segunda obra da série LUZCIDADE"
-hero: "/img/obras/canvas13.jpg"
 credits:
   - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Organização festival", name: "Felipe Brait e coletivo audiovisual ZoomB" }

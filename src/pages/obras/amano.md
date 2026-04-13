@@ -4,7 +4,6 @@ title: "AMANO — Além da Fantasia"
 year: "2026"
 location: "CCBB São Paulo, Belo Horizonte, Rio de Janeiro"
 description: "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada no mundo. Direção técnica e sistemas integrados para traduzir 218 obras originais em experiência habitável."
-hero: "/img/obras/amano.jpg"
 credits:
   - { role: "Curadoria", name: "Antonio Curti" }
   - { role: "Direção Técnica", name: "Felipe Sztutman" }

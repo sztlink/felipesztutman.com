@@ -4,7 +4,6 @@ title: "Mementos"
 year: "2019"
 location: "Farol Santander, São Paulo"
 description: "45 lasers programados interagindo com cristal. Primeira obra no Farol Santander, tornando visível a conexão inseparável entre físico e digital."
-hero: "/img/obras/mementos.jpg"
 credits:
   - { role: "Programação", name: "Matheus Leston (Bloco)" }
   - { role: "Curadoria", name: "Antonio Curti" }

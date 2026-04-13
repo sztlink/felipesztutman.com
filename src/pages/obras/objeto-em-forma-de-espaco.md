@@ -4,7 +4,6 @@ title: "Objeto em Forma de: Espaço"
 year: "2009"
 location: "Museu da Imagem e do Som (MIS-SP)"
 description: "Primeiro ambiente sinestésico de Felipe Sztutman, onde som, aroma e luz criam um espaço habitável pela soma de elementos invisíveis"
-hero: "/img/obras/objeto-em-forma-de-espaco.jpg"
 credits:
   - { role: "Concepção e realização", name: "Felipe Sztutman e Rodrigo Bellotto" }
 ---

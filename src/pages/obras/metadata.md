@@ -4,7 +4,6 @@ title: "Metadata — O Mundo Invisível"
 year: "2023"
 location: "Centro Cultural FIESP, São Paulo"
 description: "Sala imersiva de cinco telas onde sistemas de partículas simulam fluidos 3D perturbados por dados reais de São Paulo. Raio-X da metrópole em tempo real."
-hero: "/img/obras/metadata.jpg"
 credits:
   - { role: "Curadoria", name: "Antonio Curti" }
 press:

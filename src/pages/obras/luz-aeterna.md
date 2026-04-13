@@ -4,7 +4,6 @@ title: "Luz Æterna — Ensaio Sobre o Sol"
 year: "2024"
 location: "CCBB Brasília + CCBB Belo Horizonte"
 description: "Direção executiva de exposição de new media art com oito artistas brasileiros, onde a luz organiza o espaço e unifica a jornada entre físico e virtual."
-hero: "/img/obras/luz-aeterna.jpg"
 credits:
   - { role: "Curadoria", name: "Antonio Curti" }
   - { role: "Direção Executiva", name: "Felipe Sztutman" }

@@ -4,7 +4,6 @@ title: "Floresta Utópica"
 year: "2025"
 location: "Farol Santander São Paulo"
 description: "Instalação imersiva de 20 minutos sobre temporalidades florestais e redes de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa que evoca água e regeneração natural."
-hero: "/img/obras/floresta-utopica.jpg"
 credits:
   - { role: "Curadoria", name: "Antonio Curti" }
   - { role: "Direção Executiva", name: "Felipe Sztutman" }

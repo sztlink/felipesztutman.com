@@ -4,7 +4,6 @@ title: "Oceanvs"
 year: "2022"
 location: "Farol Santander SP, Casa Fiat BH"
 description: "Instalação imersiva que percorre oito atos. Primeira grande co-criação — Antonio escreveu o roteiro, eu desenhei a experiência espacial que traz água ao corpo sem molhar a pele."
-hero: "/img/obras/oceanvs.jpg"
 credits:
   - { role: "Direção Geral e Executiva", name: "Felipe Sztutman" }
   - { role: "Curadoria e Direção Criativa", name: "Antonio Curti" }

@@ -4,7 +4,6 @@ title: "sem título, para Mantiqueira"
 year: "2013"
 location: "Serra da Mantiqueira, SP"
 description: "Instalação luminosa efêmera na Serra da Mantiqueira. LUZCIDADE encontra a água — a única da série onde o ambiente natural derrotou o método paramétrico."
-hero: "/img/obras/mantiqueira.jpg"
 credits:
   - { role: "Registro fotográfico", name: "Layla Motta" }
 ---
