@@ -8,6 +8,8 @@ lang: en
 credits:
   - { role: "Concept", name: "Felipe Sztutman" }
   - { role: "Curatorship", name: "Alessandra Mader, Felipe Brait, Julia Clemente" }
+publications:
+  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64–67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "Dedicated profile on the artist, including Cachoeira alongside Mantiqueira and OCEANVS." }
 press:
   - { source: "Revista IstoÉ", url: "https://revista.istoe.com.br/187449_navelocidadedaluz", title: "Na velocidade da luz" }
   - { source: "Harper's Bazaar", url: "https://harpersbazaar.uol.com.br/cultura/acontece-nesta-semana-sao-pauli-recebe-a-urbe-mostra-de-arte-publica", title: "Acontece nesta semana" }

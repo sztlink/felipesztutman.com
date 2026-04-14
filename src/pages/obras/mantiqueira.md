@@ -6,6 +6,8 @@ location: "Serra da Mantiqueira, SP"
 description: "Instalação luminosa efêmera na Serra da Mantiqueira. LUZCIDADE encontra a água — a única da série onde o ambiente natural derrotou o método paramétrico."
 credits:
   - { role: "Registro fotográfico", name: "Layla Motta" }
+publications:
+  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "p. 64–67", url: "/publicacoes/100-anos-de-arte-moderna", note: "A legenda e a imagem da obra aparecem no perfil dedicado ao artista, reforçando a série LUZCIDADE dentro de uma leitura mais ampla da trajetória." }
 ---
 
 LUZCIDADE se completa quando a luz finalmente encontra a água. Diferente de todas as outras da série, aqui o ambiente natural derrotou meu método de projeto paramétrico — literalmente caiu por água. Como prever as condições físicas do lugar? Árvores, pedras, raízes, fluxo imprevisível da queda d'água. Levei 40 metros de cabo eletroluminescente para a Serra da Mantiqueira sem saber que forma a obra tomaria. Durante a montagem, imerso na água, procurei pontos onde pudesse fixar os cabos — e esses pontos não podiam ser estabelecidos de acordo com minha vontade. O ambiente tinha suas próprias regras de organização. Era a natureza.

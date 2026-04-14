@@ -12,6 +12,8 @@ credits:
   - { role: "Motion Graphics", name: "João Alencar" }
   - { role: "Original Score", name: "Juvi" }
   - { role: "Interactive Programming", name: "Matheus Leston" }
+publications:
+  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64–67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "The book frames OCEANVS as a turning point between the early light works and the AYA phase of immersive exhibitions." }
 ---
 
 OCEANVS was my first major co-creation. Until 2022, I had conceived works alone — from Cachoeira to Floresta Utópica. With OCEANVS, I learned to design spaces in collaboration: Antonio Curti wrote the script for the eight acts, I designed the spatial experience and technical direction that would bring water to the body without wetting the skin.

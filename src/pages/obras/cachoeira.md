@@ -7,6 +7,8 @@ description: "Instalação de arte pública que revelou o Córrego das Almas can
 credits:
   - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Curadoria", name: "Alessandra Mader, Felipe Brait, Julia Clemente" }
+publications:
+  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "p. 64–67", url: "/publicacoes/100-anos-de-arte-moderna", note: "Perfil dedicado ao artista com reprodução e contextualização de Cachoeira ao lado de Mantiqueira e OCEANVS." }
 press:
   - { source: "Revista IstoÉ", url: "https://revista.istoe.com.br/187449_navelocidadedaluz", title: "Na velocidade da luz" }
   - { source: "Harper's Bazaar", url: "https://harpersbazaar.uol.com.br/cultura/acontece-nesta-semana-sao-pauli-recebe-a-urbe-mostra-de-arte-publica", title: "Acontece nesta semana" }

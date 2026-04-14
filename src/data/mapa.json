@@ -302,6 +302,20 @@
         "temporal": [-407, -248],
         "linhagem": [-480, -320]
       }
+    },
+    "zibel-book": {
+      "label": "100 Anos de Arte Moderna",
+      "sub": "publicação",
+      "type": "ref", "color": "#2a2a3a", "r": 8, "year": null,
+      "people": [], "material": [],
+      "tags": ["publicação", "livro", "carlos zibel costa", "fau-usp", "trajetória", "perfil", "legitimação"],
+      "desc": "Publicação impressa que articula LUZCIDADE, Cachoeira, Mantiqueira e OCEANVS como partes de uma mesma linhagem.",
+      "links": ["luzcidade", "cachoeira", "mantiqueira", "oceanvs"], "slug": "/publicacoes/100-anos-de-arte-moderna",
+      "lens": {
+        "conceito": [-210, 10],
+        "temporal": [145, 15],
+        "linhagem": [-20, -60]
+      }
     }
   }
 }
