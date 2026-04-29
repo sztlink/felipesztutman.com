@@ -149,6 +149,12 @@ const lines = publicRelations
     </section>
 
     <section class="map-shell">
+      <div class="map-legend">
+        <span><strong>obra</strong> arquivo público</span>
+        <span><strong>escrito</strong> origem conceitual</span>
+        <span><strong>referência</strong> linhagem</span>
+        <span><strong>publicação</strong> circulação editorial</span>
+      </div>
       <div class="map-field">
         <svg viewBox="0 0 1180 820" class="map-lines" aria-hidden="true">
           {lines.map((line: any) => (
@@ -201,6 +207,8 @@ body.page-map a{text-decoration:none}
 .map-head p{max-width:52ch;font:1rem/1.65 var(--sans);color:rgba(17,17,17,.75);margin-bottom:.75rem}
 .map-meta{color:rgba(17,17,17,.48);margin-bottom:1.5rem}
 .map-shell{overflow:auto;border-top:1px solid rgba(17,17,17,.18);padding-top:1rem}
+.map-legend{display:flex;gap:1rem 1.25rem;flex-wrap:wrap;margin:0 0 .9rem;font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.5)}
+.map-legend strong{color:#111;font-weight:500}
 .map-field{position:relative;min-width:1180px;height:820px;background:rgba(255,255,255,.14);border:1px solid rgba(17,17,17,.16)}
 .map-lines{position:absolute;inset:0;width:100%;height:100%}
 .map-lines line{stroke:rgba(17,17,17,.18);stroke-width:1.2}

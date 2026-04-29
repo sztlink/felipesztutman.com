@@ -54,7 +54,7 @@ function statusLabel(status: string) {
           </thead>
           <tbody>
             {works.map((work) => (
-              <tr class:list={{ pending: work.status === 'A_CONFIRMAR' }}>
+              <tr class:list={{ pending: work.status === 'A_CONFIRMAR' }} style={`--pulse:${work.corPulso || '#111111'};`}>
                 <td class="num"><a href={`/obras/${work.slug}`}>{work.numero}</a></td>
                 <td class="title-cell">
                   <a href={`/obras/${work.slug}`}>{work.titulo}</a>
@@ -109,9 +109,11 @@ body.page-home a{text-decoration:none}
 .archive-table th{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(17,17,17,.48);text-align:left}
 .archive-table td{font:.92rem/1.45 var(--sans);color:rgba(17,17,17,.9)}
 .archive-table td a{color:inherit}
-.archive-table tr:hover{background:rgba(17,17,17,.03)}
-.archive-table tr:hover .title-cell a{text-decoration:underline}
-.num{font:.8rem/1.2 var(--mono);color:rgba(17,17,17,.55);width:64px}
+.archive-table tbody tr{transition:background .15s ease}
+.archive-table tbody tr:hover{background:rgba(17,17,17,.03)}
+.archive-table tbody tr:hover .title-cell a{text-decoration:underline}
+.archive-table tbody tr:hover .num{border-left-color:var(--pulse)}
+.num{font:.8rem/1.2 var(--mono);color:rgba(17,17,17,.55);width:64px;border-left:3px solid transparent;padding-left:.8rem;transition:border-color .15s ease}
 .title-cell{min-width:320px}
 .title-cell a{font-weight:600;letter-spacing:-.01em}
 .title-desc{margin-top:.3rem;font-size:.82rem;line-height:1.5;color:rgba(17,17,17,.58);max-width:52ch}
