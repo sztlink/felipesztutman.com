@@ -1,0 +1,1399 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-29",
+    "counts": {
+      "total": 18,
+      "realizada": 16,
+      "aConfirmar": 2
+    },
+    "statusLegend": {
+      "REALIZADA": "publicada e tratada como obra ativa no arquivo atual",
+      "A_CONFIRMAR": "publicada, mas precisa de confirmação factual final",
+      "EM_CURSO": "reservado para uso futuro",
+      "INEDITA": "reservado para uso futuro"
+    },
+    "sources": [
+      "claude-design/obras-oficiais.csv",
+      "src/pages/obras/*.md",
+      "src/data/mapa.json",
+      "src/data/gallery.json"
+    ],
+    "notes": [
+      "Este arquivo normaliza dados estruturais para home, mapa e fichas técnicas.",
+      "Narrativas longas continuam nas páginas Markdown em src/pages/obras/.",
+      "As ligações em mapa.linksDeclarados são o estado legado do mapa e serão substituídas progressivamente por src/data/map-relations.json."
+    ]
+  },
+  "works": [
+    {
+      "numero": "001",
+      "slug": "objeto-em-forma-de-espaco",
+      "titulo": "Objeto em Forma de: Espaço",
+      "ano": 2009,
+      "status": "REALIZADA",
+      "local": "Museu da Imagem e do Som (MIS-SP)",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "fibras ópticas",
+        "som",
+        "aroma",
+        "luz"
+      ],
+      "contexto": "série LUZCIDADE / ambiente sinestésico",
+      "tipo": "INSTALACAO",
+      "serie": "LUZCIDADE",
+      "corPulso": "#00ccff",
+      "description": "Primeiro ambiente sinestésico de Felipe Sztutman, onde som, aroma e luz criam um espaço habitável pela soma de elementos invisíveis",
+      "sourceFiles": {
+        "page": "src/pages/obras/objeto-em-forma-de-espaco.md",
+        "galleryKey": "objeto-em-forma-de-espaco",
+        "mapNodeKey": "objeto-em-forma-de-espaco"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "aroma"
+        ],
+        "tags": [
+          "fibra óptica",
+          "sinestesia",
+          "aroma",
+          "som",
+          "sensorial",
+          "fundacional",
+          "primeiro",
+          "mis",
+          "laboratório",
+          "espaço"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            -80,
+            -120
+          ],
+          "temporal": [
+            -340,
+            40
+          ],
+          "linhagem": [
+            -200,
+            -70
+          ]
+        },
+        "linksDeclarados": [
+          "cachoeira",
+          "occupycopan",
+          "canvas13"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/objeto-em-forma-de-espaco.md"
+      }
+    },
+    {
+      "numero": "002",
+      "slug": "occupycopan",
+      "titulo": "OccupyCopan",
+      "ano": 2011,
+      "status": "REALIZADA",
+      "local": "Edifício Copan, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "lâmpadas fluorescentes",
+        "cabo de aço",
+        "luz no espaço"
+      ],
+      "contexto": "série LUZCIDADE / intervenção vertical",
+      "tipo": "INSTALACAO",
+      "serie": "LUZCIDADE",
+      "corPulso": "#00ccff",
+      "description": "Escultura de lâmpadas fluorescentes suspensas por cabos de aço no vão vertical do Copan, primeira exploração de luz como matéria",
+      "sourceFiles": {
+        "page": "src/pages/obras/occupycopan.md",
+        "galleryKey": null,
+        "mapNodeKey": "occupycopan"
+      },
+      "assets": {
+        "galleryAvailable": false,
+        "galleryCount": 0
+      },
+      "mapa": {
+        "materiais": [
+          "luz"
+        ],
+        "tags": [
+          "lâmpada",
+          "tubo",
+          "edifício",
+          "vão",
+          "estrutura",
+          "arquitetura",
+          "copan"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            10,
+            -160
+          ],
+          "temporal": [
+            -253,
+            -100
+          ],
+          "linhagem": [
+            -200,
+            -220
+          ]
+        },
+        "linksDeclarados": [
+          "objeto-em-forma-de-espaco",
+          "cachoeira"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/occupycopan.md"
+      }
+    },
+    {
+      "numero": "003",
+      "slug": "cachoeira",
+      "titulo": "Cachoeira",
+      "ano": 2012,
+      "status": "REALIZADA",
+      "local": "Vale do Anhangabaú e Viaduto do Chá, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "500m de cabo eletroluminescente"
+      ],
+      "contexto": "URBE / CCBB / arte pública",
+      "tipo": "ARTE_PUBLICA",
+      "serie": "LUZCIDADE",
+      "corPulso": "#00ccff",
+      "description": "Instalação de arte pública que revelou o Córrego das Almas canalizado sob o Anhangabaú usando 500 metros de cabo eletroluminescente",
+      "sourceFiles": {
+        "page": "src/pages/obras/cachoeira.md",
+        "galleryKey": "cachoeira",
+        "mapNodeKey": "cachoeira"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz"
+        ],
+        "tags": [
+          "água",
+          "córrego",
+          "soterrado",
+          "invisível",
+          "revelar",
+          "são paulo",
+          "anhangabaú",
+          "cidade",
+          "gesto fundacional"
+        ],
+        "venueCurto": "Anhangabaú",
+        "lens": {
+          "conceito": [
+            -180,
+            -40
+          ],
+          "temporal": [
+            -210,
+            80
+          ],
+          "linhagem": [
+            -110,
+            -110
+          ]
+        },
+        "linksDeclarados": [
+          "floresta-utopica",
+          "mantiqueira",
+          "corrego-rio-verde",
+          "objeto-em-forma-de-espaco"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/cachoeira.md"
+      },
+      "fichaTecnica": {
+        "extensao": "500m de cabo eletroluminescente em segmentos de 40m",
+        "duracao": "5 noites · 20h–22h",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Alessandra Mader",
+          "Felipe Brait",
+          "Julia Clemente"
+        ],
+        "fotografia": [
+          "Diego Bis"
+        ],
+        "realizacao": [
+          "URBE — Mostra de Arte Pública",
+          "CCBB"
+        ]
+      },
+      "todo": [
+        "Confirmar crédito das imagens 05 e 06 do TCC.",
+        "Confirmar se existe equipe técnica adicional para a ficha expandida."
+      ]
+    },
+    {
+      "numero": "004",
+      "slug": "canvas13",
+      "titulo": "sem título, para Canvas #13",
+      "ano": 2013,
+      "status": "REALIZADA",
+      "local": "Serralheria Cultural, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "instalação luminosa site-specific"
+      ],
+      "contexto": "série LUZCIDADE",
+      "tipo": "INSTALACAO",
+      "serie": "LUZCIDADE",
+      "corPulso": "#00ccff",
+      "description": "Instalação luminosa site-specific que mapeou o espaço da Serralheria através de geometria e luz, segunda obra da série LUZCIDADE",
+      "sourceFiles": {
+        "page": "src/pages/obras/canvas13.md",
+        "galleryKey": "canvas13",
+        "mapNodeKey": "canvas13"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz"
+        ],
+        "tags": [
+          "espaço",
+          "fio",
+          "festival",
+          "mapeamento",
+          "audiovisual",
+          "serralheria"
+        ],
+        "venueCurto": "Serralheria",
+        "lens": {
+          "conceito": [
+            -60,
+            130
+          ],
+          "temporal": [
+            -166,
+            -160
+          ],
+          "linhagem": [
+            -40,
+            -210
+          ]
+        },
+        "linksDeclarados": [
+          "corrego-rio-verde",
+          "objeto-em-forma-de-espaco"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/canvas13.md"
+      }
+    },
+    {
+      "numero": "005",
+      "slug": "corrego-rio-verde",
+      "titulo": "sem título, para Córrego Rio Verde",
+      "ano": 2013,
+      "status": "REALIZADA",
+      "local": "Beco do Batman, Vila Madalena, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "design paramétrico + luz"
+      ],
+      "contexto": "série LUZCIDADE / intervenção independente",
+      "tipo": "INTERVENCAO_URBANA",
+      "serie": "LUZCIDADE",
+      "corPulso": "#00ccff",
+      "description": "Intervenção luminosa independente que revelou o Córrego Rio Verde canalizado sob o Beco do Batman usando design paramétrico",
+      "sourceFiles": {
+        "page": "src/pages/obras/corrego-rio-verde.md",
+        "galleryKey": "corrego-rio-verde",
+        "mapNodeKey": "corrego-rio-verde"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz"
+        ],
+        "tags": [
+          "água",
+          "córrego",
+          "bicicleta",
+          "urbano",
+          "são paulo",
+          "beco batman",
+          "vila madalena"
+        ],
+        "venueCurto": "Beco do Batman",
+        "lens": {
+          "conceito": [
+            -120,
+            80
+          ],
+          "temporal": [
+            -166,
+            20
+          ],
+          "linhagem": [
+            -60,
+            30
+          ]
+        },
+        "linksDeclarados": [
+          "cachoeira",
+          "mantiqueira",
+          "canvas13"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/corrego-rio-verde.md"
+      }
+    },
+    {
+      "numero": "006",
+      "slug": "mantiqueira",
+      "titulo": "sem título, para Mantiqueira",
+      "ano": 2013,
+      "status": "REALIZADA",
+      "local": "Serra da Mantiqueira, SP",
+      "cidades": [
+        "São Bento do Sapucaí"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "instalação luminosa efêmera em natureza"
+      ],
+      "contexto": "série LUZCIDADE",
+      "tipo": "INSTALACAO",
+      "serie": "LUZCIDADE",
+      "corPulso": "#00ccff",
+      "description": "Instalação luminosa efêmera na Serra da Mantiqueira. LUZCIDADE encontra a água — a única da série onde o ambiente natural derrotou o método paramétrico.",
+      "sourceFiles": {
+        "page": "src/pages/obras/mantiqueira.md",
+        "galleryKey": "mantiqueira",
+        "mapNodeKey": "mantiqueira"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz"
+        ],
+        "tags": [
+          "água",
+          "natureza",
+          "montanha",
+          "queda d'água",
+          "paramétrico",
+          "emergência",
+          "serra"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            -280,
+            60
+          ],
+          "temporal": [
+            -166,
+            140
+          ],
+          "linhagem": [
+            -120,
+            80
+          ]
+        },
+        "linksDeclarados": [
+          "cachoeira",
+          "floresta-utopica",
+          "corrego-rio-verde"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/mantiqueira.md"
+      }
+    },
+    {
+      "numero": "007",
+      "slug": "mementos",
+      "titulo": "Mementos",
+      "ano": 2019,
+      "status": "REALIZADA",
+      "local": "Farol Santander, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "lasers + cristal"
+      ],
+      "contexto": "Metaversø / Farol",
+      "tipo": "INSTALACAO",
+      "serie": "Metaversø",
+      "corPulso": "#ff4466",
+      "description": "45 lasers programados interagindo com cristal. Primeira obra no Farol Santander, tornando visível a conexão inseparável entre físico e digital.",
+      "sourceFiles": {
+        "page": "src/pages/obras/mementos.md",
+        "galleryKey": "mementos",
+        "mapNodeKey": "mementos"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "laser"
+        ],
+        "tags": [
+          "laser",
+          "cristal",
+          "generativo",
+          "padrão",
+          "regras",
+          "emergência",
+          "sistema",
+          "físico",
+          "digital"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            160,
+            -110
+          ],
+          "temporal": [
+            95,
+            -110
+          ],
+          "linhagem": [
+            110,
+            -210
+          ]
+        },
+        "linksDeclarados": [
+          "interludio",
+          "player1",
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/mementos.md"
+      }
+    },
+    {
+      "numero": "008",
+      "slug": "interludio",
+      "titulo": "Interlúdio",
+      "ano": 2019,
+      "status": "REALIZADA",
+      "local": "Farol Santander, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "sensores de proximidade + luz responsiva"
+      ],
+      "contexto": "Metaversø / Farol",
+      "tipo": "INSTALACAO",
+      "serie": "Metaversø",
+      "corPulso": "#ff4466",
+      "description": "Instalação com sensores de proximidade ultraprecisos e luz responsiva. A obra só existia quando alguém estava presente — tecnologia que depende fundamentalmente da presença humana.",
+      "sourceFiles": {
+        "page": "src/pages/obras/interludio.md",
+        "galleryKey": "interludio",
+        "mapNodeKey": "interludio"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 7
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "sensor"
+        ],
+        "tags": [
+          "sensor",
+          "proximidade",
+          "corpo",
+          "presença",
+          "luz responsiva",
+          "interativo",
+          "reativo",
+          "hardware"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            200,
+            -20
+          ],
+          "temporal": [
+            95,
+            60
+          ],
+          "linhagem": [
+            80,
+            -80
+          ]
+        },
+        "linksDeclarados": [
+          "player1",
+          "mementos",
+          "o-que-nos-une"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/interludio.md"
+      }
+    },
+    {
+      "numero": "009",
+      "slug": "oceanvs",
+      "titulo": "Oceanvs",
+      "ano": 2022,
+      "status": "REALIZADA",
+      "local": "Farol Santander SP, Casa Fiat BH",
+      "cidades": [
+        "São Paulo",
+        "Belo Horizonte"
+      ],
+      "cidadesSigla": [
+        "SP",
+        "BH"
+      ],
+      "tecnicaMedium": [
+        "projeção",
+        "interatividade",
+        "trilha",
+        "oito atos"
+      ],
+      "contexto": "série dos Elementos / água",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": "Os Elementos",
+      "corPulso": "#2255ee",
+      "description": "Instalação imersiva que percorre oito atos. Primeira grande co-criação — Antonio escreveu o roteiro, eu desenhei a experiência espacial que traz água ao corpo sem molhar a pele.",
+      "sourceFiles": {
+        "page": "src/pages/obras/oceanvs.md",
+        "galleryKey": "oceanvs",
+        "mapNodeKey": "oceanvs"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "projeção",
+          "dados"
+        ],
+        "tags": [
+          "água",
+          "oceano",
+          "imersivo",
+          "oito atos",
+          "projeção",
+          "motion",
+          "trilha",
+          "juvi",
+          "sistema",
+          "container"
+        ],
+        "venueCurto": "Farol + Casa Fiat",
+        "lens": {
+          "conceito": [
+            40,
+            40
+          ],
+          "temporal": [
+            225,
+            20
+          ],
+          "linhagem": [
+            190,
+            -200
+          ]
+        },
+        "linksDeclarados": [
+          "floresta-utopica",
+          "metadata",
+          "mementos",
+          "amano"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/oceanvs.md"
+      }
+    },
+    {
+      "numero": "010",
+      "slug": "metadata",
+      "titulo": "Metadata — O Mundo Invisível",
+      "ano": 2023,
+      "status": "REALIZADA",
+      "local": "Centro Cultural FIESP, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "dados em tempo real + fluidos 3D + projeção"
+      ],
+      "contexto": "exposição imersiva",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": null,
+      "corPulso": "#2255ee",
+      "description": "Sala imersiva de cinco telas onde sistemas de partículas simulam fluidos 3D perturbados por dados reais de São Paulo. Raio-X da metrópole em tempo real.",
+      "sourceFiles": {
+        "page": "src/pages/obras/metadata.md",
+        "galleryKey": "metadata",
+        "mapNodeKey": "metadata"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "dados",
+          "projeção"
+        ],
+        "tags": [
+          "dados",
+          "tempo real",
+          "são paulo",
+          "fluido",
+          "3d",
+          "informação",
+          "urbano",
+          "visualização"
+        ],
+        "venueCurto": "FIESP",
+        "lens": {
+          "conceito": [
+            120,
+            120
+          ],
+          "temporal": [
+            269,
+            90
+          ],
+          "linhagem": [
+            280,
+            60
+          ]
+        },
+        "linksDeclarados": [
+          "oceanvs",
+          "sao-paulo-3024",
+          "o-que-nos-une"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/metadata.md"
+      }
+    },
+    {
+      "numero": "011",
+      "slug": "sao-paulo-3024",
+      "titulo": "São Paulo 3024",
+      "ano": 2024,
+      "status": "REALIZADA",
+      "local": "Farol Santander São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "LLMs",
+        "LoRa",
+        "OpenCV",
+        "projeção",
+        "instalação interativa"
+      ],
+      "contexto": "série dos Elementos / humano",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": "Os Elementos",
+      "corPulso": "#aa77ff",
+      "description": "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRa como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real.",
+      "sourceFiles": {
+        "page": "src/pages/obras/sao-paulo-3024.md",
+        "galleryKey": "sao-paulo-3024",
+        "mapNodeKey": "sao-paulo-3024"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "dados",
+          "projeção"
+        ],
+        "tags": [
+          "dados",
+          "ia",
+          "llm",
+          "futuro",
+          "cidade",
+          "são paulo",
+          "corpo",
+          "projeção",
+          "imersivo",
+          "lora",
+          "território"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            -60,
+            -300
+          ],
+          "temporal": [
+            312,
+            -150
+          ],
+          "linhagem": [
+            320,
+            -100
+          ]
+        },
+        "linksDeclarados": [
+          "andromeda",
+          "metadata",
+          "flama"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/sao-paulo-3024.md"
+      }
+    },
+    {
+      "numero": "012",
+      "slug": "luz-aeterna",
+      "titulo": "Luz Æterna — Ensaio Sobre o Sol",
+      "ano": 2024,
+      "status": "REALIZADA",
+      "local": "CCBB Brasília + CCBB Belo Horizonte",
+      "cidades": [
+        "Brasília",
+        "Belo Horizonte"
+      ],
+      "cidadesSigla": [
+        "DF",
+        "BH"
+      ],
+      "tecnicaMedium": [
+        "expografia",
+        "luz",
+        "projeção"
+      ],
+      "contexto": "exposição dirigida / new media",
+      "tipo": "EXPOSICAO_DIRIGIDA",
+      "serie": null,
+      "corPulso": "#2255ee",
+      "description": "Direção executiva de exposição de new media art com oito artistas brasileiros, onde a luz organiza o espaço e unifica a jornada entre físico e virtual.",
+      "sourceFiles": {
+        "page": "src/pages/obras/luz-aeterna.md",
+        "galleryKey": "luz-aeterna",
+        "mapNodeKey": "luz-aeterna"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "projeção"
+        ],
+        "tags": [
+          "curadoria",
+          "new media",
+          "espaço",
+          "luz",
+          "coletivo",
+          "ccbb",
+          "artistas",
+          "jornada",
+          "design espacial",
+          "expografia"
+        ],
+        "venueCurto": "CCBB",
+        "lens": {
+          "conceito": [
+            -40,
+            180
+          ],
+          "temporal": [
+            312,
+            40
+          ],
+          "linhagem": [
+            160,
+            170
+          ]
+        },
+        "linksDeclarados": [
+          "amano",
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/luz-aeterna.md"
+      },
+      "todo": [
+        "Decidir se permanece em obras ou migra para categoria paralela."
+      ]
+    },
+    {
+      "numero": "013",
+      "slug": "o-que-nos-une",
+      "titulo": "O Que Nos Une",
+      "ano": 2025,
+      "status": "REALIZADA",
+      "local": "Centro Cultural FIESP, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "espelhos",
+        "sincronização biométrica",
+        "sensor",
+        "projeção"
+      ],
+      "contexto": "exposição imersiva / Nicolelis",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": null,
+      "corPulso": "#ff4466",
+      "description": "Exposição imersiva que traduz teorias de Miguel Nicolelis sobre consciência coletiva em três ambientes interativos, onde visitantes experimentam redes neurais, sincronização biométrica e padrões gerados em tempo real.",
+      "sourceFiles": {
+        "page": "src/pages/obras/o-que-nos-une.md",
+        "galleryKey": "o-que-nos-une",
+        "mapNodeKey": "o-que-nos-une"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "sensor",
+          "projeção"
+        ],
+        "tags": [
+          "corpo",
+          "biométrico",
+          "coração",
+          "sincronização",
+          "espelho",
+          "sensor",
+          "nicolelis",
+          "ciência",
+          "conexão",
+          "batimento"
+        ],
+        "venueCurto": "FIESP",
+        "lens": {
+          "conceito": [
+            280,
+            50
+          ],
+          "temporal": [
+            355,
+            110
+          ],
+          "linhagem": [
+            220,
+            -40
+          ]
+        },
+        "linksDeclarados": [
+          "interludio",
+          "player1",
+          "metadata"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/o-que-nos-une.md"
+      }
+    },
+    {
+      "numero": "014",
+      "slug": "floresta-utopica",
+      "titulo": "Floresta Utópica",
+      "ano": 2025,
+      "status": "REALIZADA",
+      "local": "Farol Santander São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "projeção",
+        "espelhos",
+        "aromas",
+        "escultura de luz"
+      ],
+      "contexto": "série dos Elementos / terra",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": "Os Elementos",
+      "corPulso": "#00ff88",
+      "description": "Instalação imersiva de 20 minutos sobre temporalidades florestais e redes de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa que evoca água e regeneração natural.",
+      "sourceFiles": {
+        "page": "src/pages/obras/floresta-utopica.md",
+        "galleryKey": "floresta-utopica",
+        "mapNodeKey": "floresta-utopica"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "laser",
+          "projeção",
+          "aroma"
+        ],
+        "tags": [
+          "natureza",
+          "floresta",
+          "luz",
+          "espelho",
+          "aroma",
+          "projeção",
+          "invisível",
+          "revelar",
+          "ecologia",
+          "mapping",
+          "13 anos depois"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            -320,
+            -100
+          ],
+          "temporal": [
+            355,
+            -40
+          ],
+          "linhagem": [
+            -200,
+            180
+          ]
+        },
+        "linksDeclarados": [
+          "cachoeira",
+          "mantiqueira",
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/floresta-utopica.md"
+      }
+    },
+    {
+      "numero": "015",
+      "slug": "andromeda",
+      "titulo": "Andrômeda — Universo Sem Fim",
+      "ano": 2025,
+      "status": "REALIZADA",
+      "local": "Farol Santander São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "projeção",
+        "laser",
+        "ambiente imersivo"
+      ],
+      "contexto": "série dos Elementos / ar-cosmos",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": "Os Elementos",
+      "corPulso": "#aa77ff",
+      "description": "Experiência imersiva de 17 minutos sobre fenômenos cósmicos, com ambiente interativo modulado por presença e jornada audiovisual através de nebulosas, supernovas e galáxias.",
+      "sourceFiles": {
+        "page": "src/pages/obras/andromeda.md",
+        "galleryKey": "andromeda",
+        "mapNodeKey": "andromeda"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "projeção",
+          "laser"
+        ],
+        "tags": [
+          "cosmos",
+          "astronomia",
+          "luz",
+          "projeção",
+          "imersivo",
+          "espaço sideral",
+          "fenômeno",
+          "juvi",
+          "vídeo"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            60,
+            -260
+          ],
+          "temporal": [
+            355,
+            -190
+          ],
+          "linhagem": [
+            370,
+            -290
+          ]
+        },
+        "linksDeclarados": [
+          "sao-paulo-3024",
+          "flama",
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/andromeda.md"
+      }
+    },
+    {
+      "numero": "016",
+      "slug": "amano",
+      "titulo": "AMANO — Além da Fantasia",
+      "ano": 2026,
+      "status": "REALIZADA",
+      "local": "CCBB São Paulo, Belo Horizonte, Rio de Janeiro",
+      "cidades": [
+        "São Paulo",
+        "Belo Horizonte",
+        "Rio de Janeiro"
+      ],
+      "cidadesSigla": [
+        "SP",
+        "BH",
+        "RJ"
+      ],
+      "tecnicaMedium": [
+        "espaço imersivo",
+        "vídeo",
+        "luz",
+        "som",
+        "automação",
+        "projeção"
+      ],
+      "contexto": "exposição dirigida / itinerância",
+      "tipo": "EXPOSICAO_DIRIGIDA",
+      "serie": null,
+      "corPulso": "#2255ee",
+      "description": "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada no mundo. Direção técnica e sistemas integrados para traduzir 218 obras originais em experiência habitável.",
+      "sourceFiles": {
+        "page": "src/pages/obras/amano.md",
+        "galleryKey": "amano",
+        "mapNodeKey": "amano"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "projeção",
+          "laser"
+        ],
+        "tags": [
+          "yoshitaka amano",
+          "anime",
+          "fantasia",
+          "imersivo",
+          "laser",
+          "projeção",
+          "mapping",
+          "ccbb",
+          "rio",
+          "belo horizonte",
+          "final fantasy",
+          "itinerância"
+        ],
+        "venueCurto": "CCBB · 3 cidades",
+        "lens": {
+          "conceito": [
+            60,
+            240
+          ],
+          "temporal": [
+            312,
+            165
+          ],
+          "linhagem": [
+            240,
+            190
+          ]
+        },
+        "linksDeclarados": [
+          "luz-aeterna",
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/amano.md"
+      },
+      "todo": [
+        "Decidir se permanece em obras ou migra para categoria paralela."
+      ]
+    },
+    {
+      "numero": "017",
+      "slug": "flama",
+      "titulo": "FLAMA",
+      "ano": 2026,
+      "status": "A_CONFIRMAR",
+      "local": "Farol Santander São Paulo, 22º andar",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "fogo como material interativo",
+        "sensores",
+        "projeção",
+        "LED"
+      ],
+      "contexto": "série dos Elementos / fogo",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": "Os Elementos",
+      "corPulso": "#ff8800",
+      "description": "Encerramento da pentalogia Os Elementos. Três ambientes onde o visitante contempla, cria e é revelado pela chama. Experiência espacial sobre fogo como material interativo.",
+      "sourceFiles": {
+        "page": "src/pages/obras/flama.md",
+        "galleryKey": null,
+        "mapNodeKey": "flama"
+      },
+      "assets": {
+        "galleryAvailable": false,
+        "galleryCount": 0
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "sensor",
+          "projeção"
+        ],
+        "tags": [
+          "fogo",
+          "toque",
+          "marca",
+          "permanente",
+          "interativo",
+          "cristal",
+          "chama",
+          "calor",
+          "fogueira",
+          "led"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            180,
+            -260
+          ],
+          "temporal": [
+            400,
+            70
+          ],
+          "linhagem": [
+            390,
+            90
+          ]
+        },
+        "linksDeclarados": [
+          "andromeda",
+          "floresta-utopica",
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/flama.md"
+      },
+      "todo": [
+        "Confirmar status factual final antes de tratar como REALIZADA."
+      ]
+    },
+    {
+      "numero": "018",
+      "slug": "player1",
+      "titulo": "Player 1: 50 Anos dos Videogames",
+      "ano": 2026,
+      "status": "A_CONFIRMAR",
+      "local": "Farol Santander São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "instalações interativas corpo-interface"
+      ],
+      "contexto": "exposição / jogos como medium",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": null,
+      "corPulso": "#ff4466",
+      "description": "Quatro instalações interativas que usam o corpo como interface. Arqueologia do corpo vibrátil — cinquenta anos de cultura jogável traduzidos em experiência espacial contemporânea.",
+      "sourceFiles": {
+        "page": "src/pages/obras/player1.md",
+        "galleryKey": null,
+        "mapNodeKey": "player1"
+      },
+      "assets": {
+        "galleryAvailable": false,
+        "galleryCount": 0
+      },
+      "mapa": {
+        "materiais": [
+          "sensor"
+        ],
+        "tags": [
+          "videogame",
+          "jogo",
+          "corpo",
+          "controle",
+          "sensor",
+          "anos 80",
+          "cultura pop",
+          "interativo",
+          "pessoal",
+          "strike",
+          "drift",
+          "trace",
+          "rush"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            340,
+            -80
+          ],
+          "temporal": [
+            400,
+            -110
+          ],
+          "linhagem": [
+            340,
+            -160
+          ]
+        },
+        "linksDeclarados": [
+          "interludio",
+          "mementos",
+          "gurps"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/player1.md"
+      },
+      "todo": [
+        "Confirmar status factual final antes de tratar como REALIZADA."
+      ]
+    }
+  ]
+}

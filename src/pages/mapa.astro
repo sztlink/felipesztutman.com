@@ -1,297 +1,220 @@
 ---
-import mapaConfig from '../data/mapa.json';
-import galleryData from '../data/gallery.json';
-type GalleryItem = { src: string; caption: string | null };
+import Base from '../layouts/Base.astro';
+import worksData from '../data/works.json';
+import relationsData from '../data/map-relations.json';
+import referencesData from '../data/references.json';
+import publicationsData from '../data/publications.json';
+import legacyMap from '../data/mapa.json';
 
-// ── import.meta.glob (Astro 6) ───────────────────────────────
-const obraModules  = import.meta.glob('./obras/*.md',   { eager: true }) as Record<string, any>;
-const escritoModules = import.meta.glob('./escritos/*.md', { eager: true }) as Record<string, any>;
+const works = (worksData as any).works || [];
+const publicRelations = ((relationsData as any).relations || []).filter((relation: any) => relation.visibility === 'PUBLICA');
+const references = (referencesData as any).references || [];
+const publications = (publicationsData as any).publications || [];
 
-function idFromPath(path: string): string {
-  return path.split('/').pop()!.replace('.md', '');
-}
-
-function extractPeople(credits: any[], filterMap: Record<string, string>): string[] {
-  const found = new Set<string>();
-  for (const c of credits || []) {
-    for (const [name, key] of Object.entries(filterMap)) {
-      if ((c.name || '').includes(name)) found.add(key);
-    }
-  }
-  return [...found];
-}
-
-const pf = mapaConfig.people_filter as Record<string, string>;
-const gd = galleryData as Record<string, GalleryItem[]>;
-function heroFor(id: string): string | null {
-  return gd[id]?.[0]?.src || null;
-}
-
-// ── Obras ─────────────────────────────────────────────────────
-const obraNodes = Object.entries(obraModules).map(([path, mod]) => {
-  const id  = idFromPath(path);
-  const cfg = (mapaConfig.nodes as any)[id] || {};
-  const fm  = mod.frontmatter;
-  const venue = cfg.venue || (fm.location || '').split(',')[0].substring(0, 22).trim();
-  return {
-    id,
-    label: fm.title as string,
-    sub:   `${fm.year} · ${venue}`,
-    year:  parseInt(fm.year) || null,
-    desc:  fm.description as string,
-    slug:  `/obras/${id}`,
-    hero:  heroFor(id),
-    people: extractPeople(fm.credits, pf),
-    type:  'obra',
-    r:       cfg.r     || 14,
-    color:   cfg.color || '#2255ee',
-    material: cfg.material || [],
-    tags:    cfg.tags  || [],
-    links:   cfg.links || [],
-    lens:    cfg.lens  || { conceito: [0, 0] },
-  };
-});
-
-// ── Escritos ──────────────────────────────────────────────────
-const escritoNodes = Object.entries(escritoModules)
-  .filter(([path]) => !path.includes('index'))
+const writingModules = import.meta.glob('./escritos/*.md', { eager: true }) as Record<string, any>;
+const writings = Object.entries(writingModules)
+  .filter(([path]) => !path.endsWith('index.astro'))
   .map(([path, mod]) => {
-    const id  = idFromPath(path);
-    const cfg = (mapaConfig.nodes as any)[id] || {};
-    const fm  = mod.frontmatter;
+    const id = path.split('/').pop()!.replace('.md', '');
     return {
-      id,
-      label: fm.title as string,
-      sub:   (fm.subtitle || fm.date || '') as string,
-      year:  null,
-      desc:  fm.description as string,
-      slug:  `/escritos/${id}`,
-      hero:  heroFor(id),
-      people: [] as string[],
-      type:  'escrito',
-      r:       cfg.r     || 8,
-      color:   cfg.color || '#555',
-      material: cfg.material || [],
-      tags:    cfg.tags  || [],
-      links:   cfg.links || [],
-      lens:    cfg.lens  || { conceito: [0, 0] },
+      slug: id,
+      title: mod.frontmatter.title as string,
+      description: mod.frontmatter.description as string,
+      href: `/escritos/${id}`,
+      lens: (legacyMap as any).nodes?.[id]?.lens || null,
     };
   });
 
-// ── Ghosts (refs sem página) ──────────────────────────────────
-const ghostNodes = Object.entries(mapaConfig.ghosts as any).map(([id, g]: [string, any]) => ({
-  id,
-  label:    g.label,
-  sub:      g.sub,
-  year:     g.year,
-  desc:     g.desc,
-  slug:     g.slug,
-  people:   g.people   || [],
-  type:     g.type,
-  r:        g.r,
-  color:    g.color,
-  material: g.material || [],
-  tags:     g.tags     || [],
-  links:    g.links    || [],
-  lens:     g.lens     || { conceito: [0, 0] },
-}));
+const referenceGhostMap: Record<string, string> = {
+  'moholy-nagy': 'moholy',
+  'dan-flavin': 'flavin',
+  'gurps-cyberpunk': 'gurps'
+};
 
-const allNodes = [...obraNodes, ...escritoNodes, ...ghostNodes];
+const publicationGhostMap: Record<string, string> = {
+  '100-anos-de-arte-moderna': 'zibel-book'
+};
+
+function project(point: [number, number]) {
+  const [x, y] = point;
+  return {
+    x: Math.round((x + 380) * 1.2 + 80),
+    y: Math.round((y + 340) * 1.05 + 80),
+  };
+}
+
+function resolveNode(kind: string, id: string) {
+  if (kind === 'OBRA') {
+    const work = works.find((entry: any) => entry.slug === id);
+    if (!work?.mapa?.lens?.conceito) return null;
+    return {
+      id,
+      kind,
+      label: work.titulo,
+      meta: `${work.numero} · ${work.ano}`,
+      href: `/obras/${work.slug}`,
+      position: project(work.mapa.lens.conceito),
+      color: work.corPulso || '#111111',
+    };
+  }
+  if (kind === 'ESCRITO') {
+    const writing = writings.find((entry) => entry.slug === id);
+    if (!writing?.lens?.conceito) return null;
+    return {
+      id,
+      kind,
+      label: writing.title,
+      meta: 'escrito',
+      href: writing.href,
+      position: project(writing.lens.conceito),
+      color: '#7a7a7a',
+    };
+  }
+  if (kind === 'REFERENCIA') {
+    const reference = references.find((entry: any) => entry.slug === id);
+    const ghost = (legacyMap as any).ghosts?.[referenceGhostMap[id]];
+    if (!reference || !ghost?.lens?.conceito) return null;
+    return {
+      id,
+      kind,
+      label: reference.label,
+      meta: 'referência',
+      href: null,
+      position: project(ghost.lens.conceito),
+      color: '#4a4a4a',
+    };
+  }
+  if (kind === 'PUBLICACAO') {
+    const publication = publications.find((entry: any) => entry.slug === id);
+    const ghost = (legacyMap as any).ghosts?.[publicationGhostMap[id]];
+    if (!publication || !ghost?.lens?.conceito) return null;
+    return {
+      id,
+      kind,
+      label: publication.titulo,
+      meta: 'publicação',
+      href: publication.currentPublicPath || '/publicacoes',
+      position: project(ghost.lens.conceito),
+      color: '#4a4a4a',
+    };
+  }
+  return null;
+}
+
+const nodeKeys = new Set<string>();
+for (const relation of publicRelations) {
+  nodeKeys.add(`${relation.sourceKind}:${relation.source}`);
+  nodeKeys.add(`${relation.targetKind}:${relation.target}`);
+}
+
+const nodes = [...nodeKeys]
+  .map((key) => {
+    const [kind, id] = key.split(':');
+    return resolveNode(kind, id);
+  })
+  .filter(Boolean);
+
+const nodeIndex = Object.fromEntries(nodes.map((node: any) => [node.id, node]));
+
+const lines = publicRelations
+  .map((relation: any) => {
+    const source = nodeIndex[relation.source];
+    const target = nodeIndex[relation.target];
+    if (!source || !target) return null;
+    return {
+      ...relation,
+      source,
+      target,
+      midX: Math.round((source.position.x + target.position.x) / 2),
+      midY: Math.round((source.position.y + target.position.y) / 2),
+    };
+  })
+  .filter(Boolean);
 ---
+<Base
+  title="Felipe Sztutman — Mapa"
+  description="Diagrama de relações públicas entre obras, escritos e referências de Felipe Sztutman."
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-map"
+>
+  <main class="map-page">
+    <section class="map-head">
+      <a href="/#obras" class="back">← arquivo</a>
+      <div class="map-kicker">MAPA</div>
+      <h1>Relações públicas</h1>
+      <p>Diagrama técnico de relações já sustentadas pelo arquivo atual. Sem filtros, sem busca, sem conexões internas.</p>
+      <div class="map-meta">{lines.length} relações públicas · {nodes.length} nós públicos · FLAMA e Player 1 ficam fora do v1 até confirmação.</div>
+    </section>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Felipe Sztutman — Mapa</title>
-  <meta name="description" content="Mapa das obras de Felipe Sztutman — navegação não-linear por linhagem, tempo e conceito.">
-  <meta property="og:title" content="Felipe Sztutman — Mapa">
-  <meta property="og:description" content="Mapa interativo das obras — navegação por lentes: conceito, temporal, linhagem.">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box }
-    html, body { width: 100%; height: 100%; background: #060810; overflow: hidden;
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace }
-    #canvas { position: absolute; inset: 0; cursor: grab }
-    #canvas:active { cursor: grabbing }
+    <section class="map-shell">
+      <div class="map-field">
+        <svg viewBox="0 0 1180 820" class="map-lines" aria-hidden="true">
+          {lines.map((line: any) => (
+            <g>
+              <line x1={line.source.position.x} y1={line.source.position.y} x2={line.target.position.x} y2={line.target.position.y} />
+              {line.label && (
+                <text x={line.midX} y={line.midY}>{line.label}</text>
+              )}
+            </g>
+          ))}
+        </svg>
 
-    /* NAV */
-    #nav { position: fixed; top: 12px; left: 14px; z-index: 30 }
-    #nav a { font: 11px/1 monospace; color: rgba(255,255,255,.18); margin-right: 14px;
-      text-decoration: none; letter-spacing: .04em }
-    #nav a:hover { color: rgba(255,255,255,.6) }
+        {nodes.map((node: any) => (
+          node.href ? (
+            <a
+              href={node.href}
+              class:list={['map-node', node.kind.toLowerCase()]}
+              style={`left:${node.position.x}px;top:${node.position.y}px;--node-color:${node.color};`}
+            >
+              <span class="node-label">{node.label}</span>
+              <span class="node-meta">{node.meta}</span>
+            </a>
+          ) : (
+            <div
+              class:list={['map-node', node.kind.toLowerCase()]}
+              style={`left:${node.position.x}px;top:${node.position.y}px;--node-color:${node.color};`}
+            >
+              <span class="node-label">{node.label}</span>
+              <span class="node-meta">{node.meta}</span>
+            </div>
+          )
+        ))}
+      </div>
+    </section>
+  </main>
+</Base>
 
-    /* CONTROLS */
-    #controls { position: fixed; top: 9px; left: 50%; transform: translateX(-50%);
-      display: flex; align-items: center; gap: 0; z-index: 30; white-space: nowrap }
-    .lens { background: none; border: none; cursor: pointer;
-      font: 10px/1 'SF Mono','Fira Code',monospace; letter-spacing: .1em; text-transform: uppercase;
-      color: rgba(255,255,255,.2); padding: 6px 13px;
-      border-bottom: 1px solid rgba(255,255,255,.04);
-      transition: color .15s, border-color .15s }
-    .lens:hover { color: rgba(255,255,255,.5); border-bottom-color: rgba(255,255,255,.12) }
-    .lens.active { color: #4477ff; border-bottom-color: #4477ff }
-    .ctrl-sep { color: rgba(255,255,255,.07); padding: 0 8px; font: 11px/1 monospace; align-self: center }
-    #search-wrap { display: flex; align-items: center; gap: 5px; padding: 0 8px }
-    #search-icon { font: 12px/1 monospace; color: rgba(255,255,255,.2); user-select: none }
-    #search { background: none; border: none; outline: none;
-      font: 10px/1 'SF Mono','Fira Code',monospace; color: rgba(255,255,255,.55);
-      width: 110px; letter-spacing: .03em }
-    #search::placeholder { color: rgba(255,255,255,.12) }
-    #search:focus { color: rgba(255,255,255,.8) }
+<style is:global>
+body.page-map{background:#ece5d8;color:#111}
+body.page-map a{text-decoration:none}
+</style>
 
-    /* FILTERS */
-    #filters { position: fixed; bottom: 14px; left: 14px; z-index: 30;
-      display: flex; flex-direction: column; gap: 5px }
-    .frow { display: flex; align-items: center; gap: 4px }
-    .flabel { font: 9px/1 monospace; color: rgba(255,255,255,.1); width: 14px;
-      text-align: right; flex-shrink: 0 }
-    .fp { background: none; border: 1px solid rgba(255,255,255,.06); cursor: pointer;
-      font: 9px/1 'SF Mono','Fira Code',monospace; letter-spacing: .04em;
-      color: rgba(255,255,255,.2); padding: 3px 7px; border-radius: 2px;
-      transition: color .12s, border-color .12s, background .12s }
-    .fp:hover { color: rgba(255,255,255,.5); border-color: rgba(255,255,255,.14) }
-    .fp.on { color: #fff; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.04) }
-
-    /* HINT */
-    #hint { position: fixed; bottom: 12px; right: 14px; font: 10px/1 monospace;
-      color: rgba(255,255,255,.07); pointer-events: none; z-index: 10 }
-    #vis-count { position: fixed; bottom: 28px; right: 14px; font: 10px/1 monospace;
-      color: rgba(68,119,255,.5); pointer-events: none; z-index: 10 }
-
-    /* EDIT PANEL */
-    #edit-panel { position:fixed; bottom:0; right:0; width:360px;
-      background:rgba(4,6,16,.97); border-left:1px solid rgba(255,200,50,.2);
-      border-top:1px solid rgba(255,200,50,.2); padding:14px 16px 18px;
-      z-index:50; display:none; flex-direction:column; gap:10px }
-    #edit-panel.active { display:flex }
-    #edit-header { display:flex; justify-content:space-between; align-items:center }
-    #edit-title { font:10px/1 monospace; color:rgba(255,200,50,.9);
-      letter-spacing:.1em; text-transform:uppercase }
-    #edit-lens-name { font:10px/1 monospace; color:rgba(255,255,255,.3) }
-    #edit-json { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
-      color:rgba(180,210,240,.65); font:9.5px/1.6 'SF Mono','Fira Code',monospace;
-      padding:10px; height:200px; resize:none; outline:none; width:100%;
-      border-radius:0 }
-    #edit-actions { display:flex; gap:8px }
-    .ebtn { background:none; border:1px solid rgba(255,255,255,.15);
-      color:rgba(255,255,255,.45); font:10px/1 monospace; padding:6px 14px;
-      cursor:pointer; letter-spacing:.05em }
-    .ebtn:hover { color:#fff; border-color:rgba(255,255,255,.4) }
-    .ebtn.primary { border-color:rgba(255,200,50,.5); color:rgba(255,200,50,.85) }
-    .ebtn.primary:hover { border-color:rgba(255,200,50,1); color:rgba(255,200,50,1) }
-    #edit-hint { font:9px/1.5 monospace; color:rgba(255,255,255,.2) }
-    #btn-edit.active { color:rgba(255,200,50,.9); border-bottom-color:rgba(255,200,50,.7) }
-
-    /* DETAIL PANEL */
-    #detail { position: fixed; right: 0; top: 0; bottom: 0; width: 0; overflow: hidden;
-      background: rgba(6,8,16,.97); border-left: 1px solid rgba(255,255,255,.06);
-      transition: width .25s ease; z-index: 40 }
-    #detail.open { width: 380px }
-    #di { width: 380px; padding: 28px; color: #c8d0e0; overflow-y: auto; height: 100% }
-    #dc { font: 11px/1 monospace; color: rgba(255,255,255,.22); cursor: pointer; margin-bottom: 22px }
-    #dc:hover { color: #fff }
-    #dtype { font: 9px/1 monospace; text-transform: uppercase; letter-spacing: .12em;
-      color: #4477ff; margin-bottom: 8px }
-    #dtitle { font: 500 1.35rem/1.2 system-ui,sans-serif; color: #c8d0e0; margin-bottom: 4px }
-    #dmeta { font: 11px/1.4 monospace; color: rgba(255,255,255,.22); margin-bottom: 18px }
-    #dbody { font: 13px/1.85 system-ui,sans-serif; color: rgba(200,210,230,.5) }
-    #dbody p { margin-bottom: 12px }
-    #dconn { margin-top: 18px; display: flex; flex-direction: column; gap: 0 }
-    .dconn-label { font: 9px/1 monospace; text-transform: uppercase; letter-spacing: .1em;
-      color: rgba(255,255,255,.15); margin-bottom: 8px }
-    .dconn-item { font: 11px/1.8 system-ui,sans-serif; color: rgba(100,150,255,.6);
-      cursor: pointer; padding: 1px 0 }
-    .dconn-item:hover { color: rgba(100,150,255,1) }
-    #dtags { margin-top: 14px; display: flex; gap: 4px; flex-wrap: wrap }
-    #dtags span { font: 9px/1 monospace; color: rgba(255,255,255,.18);
-      border: 1px solid rgba(255,255,255,.06); padding: 3px 6px; border-radius: 2px }
-    #dlink { display: inline-block; margin-top: 18px; font: 11px/1 monospace;
-      color: #4477ff; text-decoration: none }
-    #dlink:hover { text-decoration: underline }
-  </style>
-</head>
-<body>
-
-<div id="nav">
-  <a href="/">felipe sztutman</a>
-  <a href="/mapa" style="color:rgba(255,255,255,.45)">mapa</a>
-  <a href="/#obras">obras</a>
-  <a href="/escritos">escritos</a>
-  <a href="/publicacoes">publicações</a>
-  <a href="/trajetoria">trajetória</a>
-  <a href="/sobre">sobre</a>
-</div>
-
-<div id="controls">
-  <button class="lens active" data-l="conceito">conceito</button>
-  <button class="lens" data-l="temporal">temporal</button>
-  <button class="lens" data-l="linhagem">linhagem</button>
-  <span class="ctrl-sep">·</span>
-  <div id="search-wrap">
-    <span id="search-icon">⌕</span>
-    <input id="search" type="text" placeholder="buscar no mapa">
-  </div>
-  <span class="ctrl-sep">·</span>
-  <button id="btn-edit" class="lens">editar</button>
-</div>
-
-<div id="filters">
-  <div class="frow">
-    <span class="flabel">↘</span>
-    <button class="fp" data-t="p" data-v="wesley">wesley</button>
-    <button class="fp" data-t="p" data-v="leston">leston</button>
-    <button class="fp" data-t="p" data-v="antonio">antonio</button>
-    <button class="fp" data-t="p" data-v="jãozão">jãozão</button>
-  </div>
-  <div class="frow">
-    <span class="flabel">◈</span>
-    <button class="fp" data-t="m" data-v="luz">luz</button>
-    <button class="fp" data-t="m" data-v="laser">laser</button>
-    <button class="fp" data-t="m" data-v="sensor">sensor</button>
-    <button class="fp" data-t="m" data-v="dados">dados</button>
-    <button class="fp" data-t="m" data-v="projeção">projeção</button>
-    <button class="fp" data-t="m" data-v="aroma">aroma</button>
-  </div>
-</div>
-
-<canvas id="canvas"></canvas>
-<div id="hint">scroll · drag · clique</div>
-<div id="vis-count"></div>
-
-<div id="edit-panel">
-  <div id="edit-header">
-    <span id="edit-title">✦ modo edição</span>
-    <span id="edit-lens-name">lente: conceito</span>
-  </div>
-  <textarea id="edit-json" spellcheck="false" readonly></textarea>
-  <div id="edit-actions">
-    <button class="ebtn primary" id="btn-copy-pos">copiar posições</button>
-    <button class="ebtn" id="btn-copy-all">copiar tudo</button>
-  </div>
-  <div id="edit-hint">arraste os nós · posições da lente ativa · cole no Pi para salvar</div>
-</div>
-
-<div id="detail">
-  <div id="di">
-    <div id="dc">× fechar</div>
-    <img id="dhero" src="" alt="" style="width:100%;height:auto;border-radius:2px;margin-bottom:16px;display:none" />
-    <div id="dtype"></div>
-    <div id="dtitle"></div>
-    <div id="dmeta"></div>
-    <div id="dbody"></div>
-    <div id="dconn"></div>
-    <div id="dtags"></div>
-    <a id="dlink" href="#">→ página completa</a>
-  </div>
-</div>
-
-<!-- Dados injetados em build-time — motor lê via getElementById -->
-<script type="application/json" id="mapa-data" set:html={JSON.stringify(allNodes)}></script>
-<!-- Módulo ES: Vite processa, executa após DOM ready (deferred automático) -->
-<script>
-  import '../scripts/mapa-engine.js';
-</script>
-
-</body>
-</html>
+<style>
+.map-page{min-height:100vh;background:#ece5d8;color:#111;padding:1.25rem 1rem 2rem}
+.back,.map-kicker,.map-meta,.node-meta,.map-lines text{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.back{display:inline-block;color:rgba(17,17,17,.58);margin-bottom:1rem}
+.back:hover{color:#111}
+.map-kicker{color:rgba(17,17,17,.46);margin-bottom:.6rem}
+.map-head h1{font:800 clamp(2.4rem,6vw,4.5rem)/.95 var(--sans);letter-spacing:-.05em;margin-bottom:.75rem}
+.map-head p{max-width:52ch;font:1rem/1.65 var(--sans);color:rgba(17,17,17,.75);margin-bottom:.75rem}
+.map-meta{color:rgba(17,17,17,.48);margin-bottom:1.5rem}
+.map-shell{overflow:auto;border-top:1px solid rgba(17,17,17,.18);padding-top:1rem}
+.map-field{position:relative;min-width:1180px;height:820px;background:rgba(255,255,255,.14);border:1px solid rgba(17,17,17,.16)}
+.map-lines{position:absolute;inset:0;width:100%;height:100%}
+.map-lines line{stroke:rgba(17,17,17,.18);stroke-width:1.2}
+.map-lines text{fill:rgba(17,17,17,.45);font-size:10px;text-anchor:middle;dominant-baseline:middle}
+.map-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:.2rem;max-width:220px}
+.map-node.obra,.map-node.escrito,.map-node.publicacao{padding:.55rem .65rem .6rem;background:#f6f1e8;border:1px solid rgba(17,17,17,.16);border-left:4px solid var(--node-color,#111)}
+.map-node.referencia{padding:.2rem 0;max-width:none}
+.node-label{font:.95rem/1.25 var(--sans);color:#111;letter-spacing:-.02em}
+.node-meta{color:rgba(17,17,17,.48)}
+.map-node.referencia .node-label{font:.88rem/1.2 var(--sans);font-style:italic;color:rgba(17,17,17,.72)}
+.map-node.referencia .node-meta{display:none}
+.map-node:hover{z-index:2}
+.map-node.obra:hover,.map-node.escrito:hover,.map-node.publicacao:hover{background:#fffdf8}
+@media (min-width: 900px){
+  .map-page{padding:1.5rem 2rem 2.5rem}
+}
+</style>

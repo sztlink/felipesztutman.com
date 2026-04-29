@@ -1,6 +1,11 @@
 ---
 import Base from './Base.astro';
 import galleryData from '../data/gallery.json';
+import worksData from '../data/works.json';
+import relationsData from '../data/map-relations.json';
+import referencesData from '../data/references.json';
+import publicationsData from '../data/publications.json';
+
 type GalleryItem = { src: string; caption: string | null };
 
 interface Props {
@@ -25,202 +30,275 @@ const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) — ${frontmatter.location}. Felipe Sztutman.`;
-// Extrai slug da URL para buscar galeria
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
 const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
-const heroItem = items[0] || null;
-const heroImg = heroItem?.src || frontmatter.hero || null;
-const galleryItems = items.slice(1);
-const ogImage = heroImg || undefined;
+const ogImage = items[0]?.src || frontmatter.hero || undefined;
+
+const works = (worksData as any).works || [];
+const references = (referencesData as any).references || [];
+const publications = (publicationsData as any).publications || [];
+const relationSeeds = (relationsData as any).relations || [];
+
+const work = works.find((entry: any) => entry.slug === slug) || null;
+
+const writingModules = import.meta.glob('../pages/escritos/*.md', { eager: true }) as Record<string, any>;
+const writings = Object.entries(writingModules)
+  .filter(([path]) => !path.endsWith('index.astro'))
+  .map(([path, mod]) => {
+    const id = path.split('/').pop()!.replace('.md', '');
+    return {
+      slug: id,
+      title: mod.frontmatter.title as string,
+      href: `${prefix}/escritos/${id}`,
+    };
+  });
+
+function resolveEntity(kind: string, id: string) {
+  if (kind === 'OBRA') {
+    const found = works.find((entry: any) => entry.slug === id);
+    return found ? { label: found.titulo, href: `${prefix}/obras/${found.slug}` } : null;
+  }
+  if (kind === 'ESCRITO') {
+    const found = writings.find((entry) => entry.slug === id);
+    return found ? { label: found.title, href: found.href } : null;
+  }
+  if (kind === 'PUBLICACAO') {
+    const found = publications.find((entry: any) => entry.slug === id);
+    return found ? { label: found.titulo, href: found.currentPublicPath || `${prefix}/publicacoes` } : null;
+  }
+  if (kind === 'REFERENCIA') {
+    const found = references.find((entry: any) => entry.slug === id);
+    return found ? { label: found.label, href: null } : null;
+  }
+  return null;
+}
+
+const publicRelations = relationSeeds
+  .filter((relation: any) => relation.visibility === 'PUBLICA' && (relation.source === slug || relation.target === slug))
+  .map((relation: any) => {
+    const isSource = relation.source === slug;
+    const relatedKind = isSource ? relation.targetKind : relation.sourceKind;
+    const relatedId = isSource ? relation.target : relation.source;
+    const related = resolveEntity(relatedKind, relatedId);
+    return related ? {
+      label: related.label,
+      href: related.href,
+      relationLabel: relation.label,
+      notes: relation.notes,
+      relationType: relation.relationType,
+    } : null;
+  })
+  .filter(Boolean);
+
+const dossierRows = [
+  work?.numero ? { label: isEN ? 'Number' : 'Número', value: work.numero } : null,
+  work?.status ? { label: isEN ? 'Status' : 'Status', value: work.status === 'A_CONFIRMAR' ? 'A CONFIRMAR' : 'REALIZADA' } : null,
+  work?.ano ? { label: isEN ? 'Year' : 'Ano', value: String(work.ano) } : null,
+  work?.local ? { label: isEN ? 'Location' : 'Local', value: work.local } : null,
+  work?.contexto ? { label: isEN ? 'Context' : 'Contexto', value: work.contexto } : null,
+  work?.tipo ? { label: isEN ? 'Type' : 'Tipo', value: work.tipo.replaceAll('_', ' ') } : null,
+  work?.serie ? { label: isEN ? 'Series' : 'Série', value: work.serie } : null,
+  work?.tecnicaMedium?.length ? { label: isEN ? 'Technique / medium' : 'Técnica / medium', value: work.tecnicaMedium.join(' · ') } : null,
+  work?.fichaTecnica?.extensao ? { label: isEN ? 'Extension' : 'Extensão', value: work.fichaTecnica.extensao } : null,
+  work?.fichaTecnica?.duracao ? { label: isEN ? 'Duration' : 'Duração', value: work.fichaTecnica.duracao } : null,
+  work?.fichaTecnica?.realizacao?.length ? { label: isEN ? 'Realization' : 'Realização', value: work.fichaTecnica.realizacao.join(' · ') } : null,
+].filter(Boolean);
+
+function imageAlt(item: GalleryItem, index: number) {
+  const cleanCaption = item.caption?.split('· foto')[0]?.trim();
+  return cleanCaption ? `${frontmatter.title} — ${cleanCaption}` : `${frontmatter.title} — ${isEN ? 'image' : 'imagem'} ${index + 1}`;
+}
+
+function normalizePublicationUrl(url?: string) {
+  if (!url) return null;
+  if (url.includes('/publicacoes/')) return `${prefix}/publicacoes`;
+  return url;
+}
 ---
-<Base title={seoTitle} description={seoDesc} lang={lang} schemaType="ArtWork" schemaName={frontmatter.title} schemaDate={frontmatter.year} schemaLocation={frontmatter.location} ogImage={ogImage}>
-  <article>
-    <div class="obra-header">
-      <a href={`${prefix}/#obras`} class="back">{isEN ? '← works' : '← obras'}</a>
-      <h1 class="obra-title">{frontmatter.title}</h1>
-      {frontmatter.subtitle && <div class="obra-subtitle">{frontmatter.subtitle}</div>}
-      <div class="obra-meta">{frontmatter.year} · {frontmatter.location}</div>
-    </div>
-
-    {heroImg && (
-      <div class="obra-hero">
-        <img src={heroImg} alt={frontmatter.title} loading="eager" data-idx="0" class="lightbox-trigger" />
-        {heroItem?.caption && <div class="obra-hero-caption">{heroItem.caption}</div>}
+<Base
+  title={seoTitle}
+  description={seoDesc}
+  lang={lang}
+  schemaType="ArtWork"
+  schemaName={frontmatter.title}
+  schemaDate={frontmatter.year}
+  schemaLocation={frontmatter.location}
+  ogImage={ogImage}
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-obra"
+>
+  <article class="obra-page">
+    <section class="obra-entry">
+      <a href={`${prefix}/#obras`} class="back">{isEN ? '← archive' : '← arquivo'}</a>
+      <div class="eyebrow">
+        {work?.numero ? `OBRA Nº ${work.numero}` : 'OBRA'} · {frontmatter.year}
+        {work?.status === 'A_CONFIRMAR' && <span class="status-chip">A CONFIRMAR</span>}
       </div>
-    )}
+      <h1>{frontmatter.title}</h1>
+      <div class="entry-meta">{work?.contexto || frontmatter.location}</div>
+    </section>
 
-    <div class="obra-body">
-      <slot />
-    </div>
-
-    {frontmatter.credits && frontmatter.credits.length > 0 && (
-      <div class="obra-credits">
-        <h2>{isEN ? 'Credits' : 'Ficha Técnica'}</h2>
-        {frontmatter.credits.map(c => (
-          <div class="credit-line">
-            <span class="credit-role">{c.role}</span>
-            <span class="credit-name">{c.name}</span>
+    <section class="panel dossier">
+      <div class="panel-kicker">{isEN ? 'Dossier' : 'Dossiê'}</div>
+      {frontmatter.description && <p class="lead">{frontmatter.description}</p>}
+      <dl>
+        {dossierRows.map((row: any) => (
+          <div class="row">
+            <dt>{row.label}</dt>
+            <dd>{row.value}</dd>
           </div>
         ))}
+      </dl>
+    </section>
+
+    <section class="narrative">
+      <div class="section-kicker">{isEN ? 'Text' : 'Texto'}</div>
+      <div class="narrative-body">
+        <slot />
       </div>
+    </section>
+
+    {publicRelations.length > 0 && (
+      <section class="panel relations">
+        <div class="panel-kicker">{isEN ? 'Public relations' : 'Relações públicas'}</div>
+        <div class="relation-list">
+          {publicRelations.map((relation: any) => (
+            <div class="relation-item">
+              <div class="relation-label">{relation.relationLabel || (isEN ? 'Relation' : 'Relação')}</div>
+              {relation.href ? (
+                <a href={relation.href} class="relation-target">{relation.label}</a>
+              ) : (
+                <span class="relation-target static">{relation.label}</span>
+              )}
+              {relation.notes && <div class="relation-notes">{relation.notes}</div>}
+            </div>
+          ))}
+        </div>
+      </section>
     )}
 
-    {galleryItems.length > 0 && (
-      <div class="obra-gallery">
-        {galleryItems.map((item, i) => (
-          <figure class="gallery-fig">
-            <img src={item.src} alt={`${frontmatter.title} — ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
-          </figure>
-        ))}
-      </div>
-    )}
-
-    {frontmatter.publications && frontmatter.publications.length > 0 && (
-      <div class="obra-publications">
-        <h2>{isEN ? 'Publications' : 'Publicações'}</h2>
-        {frontmatter.publications.map(p => (
-          <div class="publication-line">
-            {p.url ? (
-              <a href={p.url}>{p.title}</a>
-            ) : (
-              <span class="publication-title">{p.title}</span>
-            )}
-            {(p.author || p.pages) && (
-              <span class="publication-meta">
-                {p.author ? p.author : ''}{p.author && p.pages ? ' · ' : ''}{p.pages ? p.pages : ''}
-              </span>
-            )}
-            {p.note && <div class="publication-note">{p.note}</div>}
+    {(frontmatter.credits?.length || frontmatter.publications?.length || frontmatter.press?.length) && (
+      <section class="panel support">
+        {frontmatter.credits && frontmatter.credits.length > 0 && (
+          <div class="support-block">
+            <div class="panel-kicker">{isEN ? 'Credits' : 'Créditos'}</div>
+            <div class="support-list">
+              {frontmatter.credits.map((credit) => (
+                <div class="support-row">
+                  <span>{credit.role}</span>
+                  <strong>{credit.name}</strong>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
+        )}
+
+        {frontmatter.publications && frontmatter.publications.length > 0 && (
+          <div class="support-block">
+            <div class="panel-kicker">{isEN ? 'Publication' : 'Publicação'}</div>
+            <div class="support-list">
+              {frontmatter.publications.map((publication) => (
+                <div class="support-row support-row-stack">
+                  {normalizePublicationUrl(publication.url) ? <a href={normalizePublicationUrl(publication.url)!}><strong>{publication.title}</strong></a> : <strong>{publication.title}</strong>}
+                  {(publication.author || publication.pages) && <span>{publication.author}{publication.author && publication.pages ? ' · ' : ''}{publication.pages || ''}</span>}
+                  {publication.note && <span>{publication.note}</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {frontmatter.press && frontmatter.press.length > 0 && (
+          <div class="support-block">
+            <div class="panel-kicker">{isEN ? 'Press' : 'Imprensa'}</div>
+            <div class="support-list">
+              {frontmatter.press.map((press) => (
+                <div class="support-row support-row-stack">
+                  <a href={press.url} target="_blank"><strong>{press.source}</strong></a>
+                  <span>{press.title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
     )}
 
-    {frontmatter.press && frontmatter.press.length > 0 && (
-      <div class="obra-press">
-        <h2>{isEN ? 'Press' : 'Imprensa'}</h2>
-        {frontmatter.press.map(p => (
-          <div class="press-line">
-            <a href={p.url} target="_blank">{p.source} — {p.title}</a>
-          </div>
-        ))}
-      </div>
+    {items.length > 0 && (
+      <section class="gallery">
+        <div class="section-kicker">{isEN ? 'Documentation' : 'Documentação'}</div>
+        <div class="gallery-grid">
+          {items.map((item, index) => (
+            <figure class:list={[ 'gallery-item', index === 0 && 'hero' ]}>
+              <img src={item.src} alt={imageAlt(item, index)} loading={index === 0 ? 'eager' : 'lazy'} />
+              {item.caption && <figcaption>{item.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      </section>
     )}
   </article>
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox">
-    <div id="lb-close">×</div>
-    <div id="lb-nav"><span class="lb-arrow" id="lb-prev">←</span><span class="lb-arrow" id="lb-next">→</span></div>
-    <img id="lb-img" src="" alt="" />
-    <div id="lb-caption"></div>
-    <div id="lb-counter"></div>
-  </div>
-
-  <script is:inline define:vars={{ items: JSON.stringify(items) }}>
-    (function() {
-      const gallery = JSON.parse(items);
-      if (!gallery.length) return;
-
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lb-img');
-      const lbCap = document.getElementById('lb-caption');
-      const lbCount = document.getElementById('lb-counter');
-      let current = 0;
-
-      function show(idx) {
-        current = idx;
-        const item = gallery[idx];
-        if (!item) return;
-        lbImg.src = item.src;
-        lbCap.textContent = item.caption || '';
-        lbCount.textContent = `${idx + 1} / ${gallery.length}`;
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function hide() {
-        lb.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      function next() { show((current + 1) % gallery.length); }
-      function prev() { show((current - 1 + gallery.length) % gallery.length); }
-
-      // Click on gallery/hero images
-      document.querySelectorAll('.lightbox-trigger').forEach(img => {
-        img.addEventListener('click', () => show(parseInt(img.dataset.idx || '0')));
-      });
-
-      document.getElementById('lb-close').addEventListener('click', hide);
-      document.getElementById('lb-prev').addEventListener('click', prev);
-      document.getElementById('lb-next').addEventListener('click', next);
-
-      // Click outside image closes
-      lb.addEventListener('click', (e) => {
-        if (e.target === lb) hide();
-      });
-
-      // Keyboard
-      document.addEventListener('keydown', (e) => {
-        if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') hide();
-        if (e.key === 'ArrowRight') next();
-        if (e.key === 'ArrowLeft') prev();
-      });
-
-      // Swipe on touch
-      let touchX = 0;
-      lb.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
-      lb.addEventListener('touchend', e => {
-        const dx = e.changedTouches[0].clientX - touchX;
-        if (Math.abs(dx) > 50) dx > 0 ? prev() : next();
-      });
-    })();
-  </script>
 </Base>
 
-<style>
-.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
-.back:hover{color:var(--fg);text-decoration:none}
-.obra-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:.25rem}
-.obra-subtitle{font:400 1rem/1.4 var(--sans);color:var(--fg2);margin-bottom:.25rem}
-.obra-meta{font:.8rem/1.4 var(--mono);color:var(--fg3);margin-bottom:2rem}
-.obra-hero{margin-bottom:2.5rem;overflow:hidden}
-.obra-hero img{width:100%;height:auto;display:block;border-radius:2px}
-.obra-hero-caption{font:.7rem/1.4 var(--mono);color:var(--fg3);margin-top:.5rem}
-.obra-gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:2.5rem}
-.gallery-fig{margin:0}
-.obra-gallery img{width:100%;height:auto;display:block;border-radius:2px;cursor:pointer;transition:opacity .15s}
-.obra-gallery img:hover{opacity:.85}
-.lightbox-trigger{cursor:pointer}
-@media(max-width:500px){.obra-gallery{grid-template-columns:1fr}}
+<style is:global>
+body.page-obra{background:#050505;color:#f1ece3}
+body.page-obra a{text-decoration:none}
+</style>
 
-/* LIGHTBOX */
-#lightbox{position:fixed;inset:0;background:rgba(4,6,14,.96);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
-#lightbox.open{display:flex}
-#lb-img{max-width:92vw;max-height:82vh;object-fit:contain}
-#lb-caption{font:.75rem/1.6 var(--mono);color:var(--fg3);margin-top:.75rem;text-align:center;max-width:600px;padding:0 1rem}
-#lb-close{position:fixed;top:14px;right:18px;font:1.2rem/1 var(--mono);color:var(--fg3);cursor:pointer;z-index:101}
-#lb-close:hover{color:var(--fg)}
-#lb-nav{position:fixed;top:50%;width:100%;display:flex;justify-content:space-between;padding:0 12px;transform:translateY(-50%);pointer-events:none;z-index:101}
-.lb-arrow{font:1.5rem/1 var(--mono);color:var(--fg3);cursor:pointer;pointer-events:auto;padding:8px;user-select:none}
-.lb-arrow:hover{color:var(--fg)}
-#lb-counter{position:fixed;bottom:14px;right:18px;font:.7rem/1 var(--mono);color:var(--fg3);z-index:101}
-.obra-body{font:1rem/1.85 var(--sans);color:var(--fg);margin-bottom:2.5rem}
-.obra-body :global(p){margin-bottom:1.2rem}
-.obra-body :global(em){color:var(--fg2);font-style:italic}
-.obra-credits{margin-bottom:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.04)}
-.obra-credits h2,.obra-publications h2,.obra-press h2{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--fg3);margin-bottom:1rem}
-.credit-line{display:flex;gap:.75rem;font:.85rem/1.6 var(--sans);margin-bottom:.2rem}
-.credit-role{color:var(--fg3);min-width:180px;font-size:.8rem}
-.credit-name{color:var(--fg2)}
-.obra-publications,.obra-press{margin-bottom:2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.04)}
-.publication-line,.press-line{font:.82rem/1.8 var(--sans);margin-bottom:.7rem}
-.publication-line a,.press-line a{color:var(--fg2);transition:color .15s}
-.publication-line a:hover,.press-line a:hover{color:var(--accent)}
-.publication-title{color:var(--fg2)}
-.publication-meta{display:block;font:.72rem/1.6 var(--mono);color:var(--fg3)}
-.publication-note{color:var(--fg2)}
-@media(max-width:600px){.obra-title{font-size:1.5rem}.credit-line{flex-direction:column;gap:.1rem}.credit-role{min-width:auto}}
+<style>
+:root{--paper:#ece5d8;--ink:#131313;--line:rgba(255,255,255,.1);--paper-line:rgba(17,17,17,.16)}
+.obra-page{background:#050505;color:#f1ece3;padding:1.25rem 1rem 3rem}
+.obra-entry{padding:0 0 2rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
+.back,.eyebrow,.panel-kicker,.section-kicker,.status-chip{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.back{display:inline-block;color:rgba(255,255,255,.55);margin-bottom:1.25rem}
+.back:hover{color:#fff}
+.eyebrow{color:rgba(255,255,255,.5);margin-bottom:1rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.status-chip{padding:.28rem .4rem;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.65)}
+.obra-entry h1{font:900 clamp(2.8rem,10vw,8rem)/.9 var(--sans);letter-spacing:-.05em;max-width:10ch}
+.entry-meta{margin-top:.85rem;font:.82rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.48)}
+.panel{background:var(--paper);color:var(--ink);padding:1rem;border-top:2px solid rgba(0,204,255,.65);margin:0 0 1.5rem}
+.panel-kicker,.section-kicker{color:rgba(17,17,17,.48);margin-bottom:1rem}
+.lead{font:400 1.05rem/1.6 var(--sans);margin-bottom:1rem;max-width:56ch}
+.dossier dl{display:grid;gap:.55rem}
+.row{display:grid;grid-template-columns:140px 1fr;gap:.75rem;padding-top:.55rem;border-top:1px solid var(--paper-line)}
+.row dt{font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.55)}
+.row dd{font:.95rem/1.55 var(--sans);color:rgba(17,17,17,.92)}
+.narrative{padding:0 0 1.5rem}
+.narrative .section-kicker{color:rgba(255,255,255,.42)}
+.narrative-body{max-width:68ch;font:1rem/1.9 var(--sans);color:#f1ece3}
+.narrative-body :global(p){margin-bottom:1.2rem}
+.relation-list,.support{display:grid;gap:1rem}
+.relation-item{padding-top:.75rem;border-top:1px solid var(--paper-line)}
+.relation-label{font:.72rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.55);margin-bottom:.35rem}
+.relation-target{font:600 1rem/1.4 var(--sans);color:var(--ink)}
+.relation-target:hover{text-decoration:underline}
+.relation-target.static{display:inline-block}
+.relation-notes{margin-top:.2rem;font:.86rem/1.5 var(--sans);color:rgba(17,17,17,.62)}
+.support-block + .support-block{padding-top:.25rem;border-top:1px solid var(--paper-line)}
+.support-list{display:grid;gap:.75rem}
+.support-row{display:grid;grid-template-columns:180px 1fr;gap:.75rem;font:.92rem/1.5 var(--sans)}
+.support-row span{color:rgba(17,17,17,.65)}
+.support-row strong{color:var(--ink)}
+.support-row-stack{display:flex;flex-direction:column;gap:.15rem}
+.support-row-stack a{color:var(--ink)}
+.gallery{padding-top:.5rem}
+.gallery .section-kicker{color:rgba(255,255,255,.42)}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.gallery-item{margin:0}
+.gallery-item.hero{grid-column:1 / -1}
+.gallery-item img{display:block;width:100%;height:auto;background:#111}
+.gallery-item figcaption{padding:.5rem 0 0;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
+@media (min-width: 900px){
+  .obra-page{padding:1.5rem 2rem 4rem}
+  .obra-entry{padding-bottom:2.5rem;margin-bottom:2rem}
+  .panel{max-width:980px;padding:1.25rem 1.25rem 1.35rem}
+  .support{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+  .support-block + .support-block{border-top:none;padding-top:0;padding-left:1rem;border-left:1px solid var(--paper-line)}
+}
+@media (max-width: 720px){
+  .row,.support-row{grid-template-columns:1fr;gap:.25rem}
+  .gallery-grid{grid-template-columns:1fr}
+}
 </style>

@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-29",
+    "sources": [
+      "src/data/mapa.json",
+      "claude-design/material-claude-fase6.md"
+    ],
+    "notes": [
+      "Publicações estruturadas para uso em páginas de obra e nós do mapa."
+    ]
+  },
+  "publications": [
+    {
+      "slug": "100-anos-de-arte-moderna",
+      "titulo": "100 Anos de Arte Moderna: a cena contemporânea",
+      "autor": "Carlos Zibel Costa",
+      "ano": null,
+      "color": "#2a2a3a",
+      "description": "Publicação impressa que articula LUZCIDADE, Cachoeira, Mantiqueira e Oceanvs como partes de uma mesma linhagem.",
+      "relatedWorks": [
+        "cachoeira",
+        "mantiqueira",
+        "oceanvs"
+      ],
+      "currentPublicPath": "/publicacoes",
+      "source": "src/data/mapa.json#ghosts.zibel-book"
+    }
+  ]
+}

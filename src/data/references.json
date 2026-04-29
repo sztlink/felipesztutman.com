@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-29",
+    "sources": [
+      "src/data/mapa.json"
+    ],
+    "notes": [
+      "Referências não-obra usadas pelo mapa público ou interno."
+    ]
+  },
+  "references": [
+    {
+      "slug": "moholy-nagy",
+      "label": "Moholy-Nagy",
+      "type": "ARTISTA",
+      "year": 1922,
+      "color": "#2a2a3a",
+      "description": "Luz como matéria. Modulador de Espaço-Luz. Bauhaus. A genealogia começa aqui.",
+      "tags": [
+        "bauhaus",
+        "luz",
+        "espaço",
+        "modernismo",
+        "kinetismo"
+      ],
+      "source": "src/data/mapa.json#ghosts.moholy"
+    },
+    {
+      "slug": "dan-flavin",
+      "label": "Dan Flavin",
+      "type": "ARTISTA",
+      "year": 1963,
+      "color": "#2a2a3a",
+      "description": "Lâmpada como medium. Viena 2013. O campo reconhecido no museu.",
+      "tags": [
+        "lâmpada",
+        "luz",
+        "fluorescente",
+        "espaço"
+      ],
+      "source": "src/data/mapa.json#ghosts.flavin"
+    },
+    {
+      "slug": "gurps-cyberpunk",
+      "label": "GURPS Cyberpunk",
+      "type": "OBRA_LITERARIA",
+      "year": 1994,
+      "color": "#2a2a3a",
+      "description": "Escritório digital imaginado nos anos 90. A AYA de hoje é o que pensei naquele dia.",
+      "tags": [
+        "cyberpunk",
+        "rpg",
+        "interface",
+        "imaginação"
+      ],
+      "source": "src/data/mapa.json#ghosts.gurps"
+    }
+  ]
+}
