@@ -22,6 +22,7 @@ interface Props {
     series?: string;
     lead?: string;
     archiveNote?: string;
+    mechanism?: Array<{label: string; value: string}>;
     lang?: 'pt' | 'en';
   };
 }
@@ -159,6 +160,20 @@ function normalizePublicationUrl(url?: string) {
         ))}
       </dl>
     </section>
+
+    {frontmatter.mechanism && frontmatter.mechanism.length > 0 && (
+      <section class="panel mechanism">
+        <div class="panel-kicker">{isEN ? 'Mechanism' : 'Mecanismo'}</div>
+        <dl>
+          {frontmatter.mechanism.map((item) => (
+            <div class="row">
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
 
     <section class="narrative">
       <div class="section-kicker">{isEN ? 'Text' : 'Texto'}</div>

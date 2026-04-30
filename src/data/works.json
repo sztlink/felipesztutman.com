@@ -541,7 +541,23 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/mementos.md"
-      }
+      },
+      "fichaTecnica": {
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "realizacao": [
+          "Metaversø",
+          "Farol Santander"
+        ]
+      },
+      "todo": [
+        "Confirmar crédito fotográfico específico da galeria.",
+        "Expandir a ficha técnica com hardware, material óptico e montagem quando o dado estiver consolidado."
+      ]
     },
     {
       "numero": "008",
