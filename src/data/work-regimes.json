@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-29",
+    "notes": [
+      "Tipologias editoriais para Obras V2.",
+      "A tese ARQUIVO / EXIBIÇÃO permanece constante; variam as prioridades de leitura."
+    ]
+  },
+  "regimes": {
+    "A": {
+      "label": "Fundacional / arte pública / gesto inaugural",
+      "priority": ["dossie", "contexto-territorial", "relacoes-genealogicas", "documentacao-historica", "imprensa-publicacao"],
+      "question": "O que esta obra revelou e onde ela atua no nascimento do arquivo?"
+    },
+    "B": {
+      "label": "Instalação / sistema / mecanismo perceptivo",
+      "priority": ["mecanismo", "ficha-tecnica", "corpo-sistema", "documentacao-em-funcionamento", "creditos-tecnicos"],
+      "question": "Como o sistema funciona e o que ele faz o corpo perceber?"
+    },
+    "C": {
+      "label": "Exposição imersiva / direção espacial / circulação institucional",
+      "priority": ["espacialidade", "circulacao-adaptacao", "colaboracao-estruturante", "infraestrutura-direcao", "documentacao-de-escala"],
+      "question": "Como esta obra organiza espaço, circulação e colaboração para existir?"
+    }
+  },
+  "works": {
+    "cachoeira": "A",
+    "occupycopan": "A",
+    "mantiqueira": "A",
+    "corrego-rio-verde": "A",
+    "mementos": "B",
+    "interludio": "B",
+    "metadata": "B",
+    "o-que-nos-une": "B",
+    "oceanvs": "C",
+    "floresta-utopica": "C",
+    "andromeda": "C",
+    "luz-aeterna": "C",
+    "amano": "C"
+  },
+  "pilots": ["cachoeira", "mementos", "oceanvs"]
+}

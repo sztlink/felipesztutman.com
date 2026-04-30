@@ -20,6 +20,8 @@ interface Props {
     press?: Array<{source: string; url: string; title: string}>;
     publications?: Array<{title: string; author?: string; pages?: string; url?: string; note?: string}>;
     series?: string;
+    lead?: string;
+    archiveNote?: string;
     lang?: 'pt' | 'en';
   };
 }
@@ -33,6 +35,7 @@ const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
 const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
 const ogImage = items[0]?.src || frontmatter.hero || undefined;
+const lead = frontmatter.lead || frontmatter.description;
 
 const works = ((worksData as any).works || []).slice().sort((a: any, b: any) => a.numero.localeCompare(b.numero));
 const references = (referencesData as any).references || [];
@@ -146,7 +149,7 @@ function normalizePublicationUrl(url?: string) {
 
     <section class="panel dossier">
       <div class="panel-kicker">{isEN ? 'Dossier' : 'Dossiê'}</div>
-      {frontmatter.description && <p class="lead">{frontmatter.description}</p>}
+      {lead && <p class="lead">{lead}</p>}
       <dl>
         {dossierRows.map((row: any) => (
           <div class="row">
@@ -230,6 +233,13 @@ function normalizePublicationUrl(url?: string) {
       </section>
     )}
 
+    {frontmatter.archiveNote && (
+      <section class="panel archive-note">
+        <div class="panel-kicker">{isEN ? 'Archive note' : 'Nota de arquivo'}</div>
+        <p>{frontmatter.archiveNote}</p>
+      </section>
+    )}
+
     {items.length > 0 && (
       <section class="gallery">
         <div class="section-kicker">{isEN ? 'Documentation' : 'Documentação'}</div>
@@ -304,6 +314,7 @@ body.page-obra a{text-decoration:none}
 .support-row strong{color:var(--ink)}
 .support-row-stack{display:flex;flex-direction:column;gap:.15rem}
 .support-row-stack a{color:var(--ink)}
+.archive-note p{font:.92rem/1.65 var(--sans);color:rgba(17,17,17,.74);max-width:62ch}
 .gallery{padding-top:.5rem}
 .gallery .section-kicker{color:rgba(255,255,255,.42)}
 .gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
