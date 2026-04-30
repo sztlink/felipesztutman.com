@@ -1,105 +1,116 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const eras = [
+  {
+    title: 'AYA Studio',
+    meta: '2019–presente · São Paulo · co-fundador, direção executiva e técnica',
+    text: 'Estúdio de arte e tecnologia co-fundado com Antonio Curti. Exposições imersivas no Farol Santander, CCBB, SESI/FIESP, Japan House e Casa Fiat. Desenho de espaço, concepção técnica e artística, coordenação de equipes multidisciplinares.',
+    projects: []
+  },
+  {
+    title: 'The Force / GTM Cenografia',
+    meta: '2017–2018 · São Paulo e Rio de Janeiro',
+    text: null,
+    projects: [
+      ['Dimensão — Nonotak Studio', '2018 · Japan House, São Paulo · direção técnica', 'Três instalações imersivas do duo franco-japonês. Ponto de inflexão para a fundação da AYA.'],
+      ['Google Buttonwall', '2017 · Hall do Google Brasil, São Paulo · montagem e integração', 'Instalação permanente interativa com ~7.000 botões RGB backlit, ~150 PCBs e ~25 Raspberry Pis.'],
+      ['YouTube Space Rio', '2017 · Pier Mauá, Rio de Janeiro · cenografia via GTM', '3.000 m² descritos pelo G1 como “o mais high tech do mundo”.'],
+      ['Antitempo', '2017 · Farol Santander, São Paulo · produção executiva', '42 moving lasers sincronizados com som.']
+    ]
+  },
+  {
+    title: 'BijaRi',
+    meta: '2008–2017 · São Paulo · VJ, live-cinema, direção de arte',
+    text: null,
+    projects: [
+      ['Villa Mix Goiânia ×3', '2013–15 · Estádio Serra Dourada · direção de arte', '2015: Guinness Book of Records — maior palco de LED do mundo.'],
+      ['Ivete Sangalo — Madison Square Garden', '2010 · Nova York · vídeo-cenário', 'Vídeo-cenário para o DVD “Ao Vivo no Madison Square Garden”.'],
+      ['Entropicália', '2008 · Itaú Cultural, São Paulo · live-cinema', 'Primeiro trabalho público: programação visual + manipulação de vídeo em tempo real.']
+    ]
+  },
+  {
+    title: 'Formação',
+    meta: '2002–2014',
+    text: null,
+    projects: [
+      ['FAU-USP — Design', '2007–14 · TCC LUZCIDADE · orient. Carlos Zibel Costa · banca Giselle Beiguelman', null],
+      ['New York Visualists', '2009 · Lab-Office com Rodrigo Bellotto e Gian Spina', null],
+      ['COTUCA / Unicamp — Mecatrônica', '2002–04 · Campinas', null]
+    ]
+  }
+];
 ---
-<Base title="Felipe Sztutman — Trajetória" description="BijaRi, The Force, GTM Cenografia, AYA Studio. Madison Square Garden, Google, YouTube, Japan House. A formação de um artista-sistêmico.">
+<Base
+  title="Felipe Sztutman — Trajetória"
+  description="BijaRi, The Force, GTM Cenografia, AYA Studio. A formação de um artista-sistêmico."
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-trajetoria"
+>
+  <main class="archive-page">
+    <section class="entry">
+      <a href="/#obras" class="back">← arquivo</a>
+      <div class="entry-kicker">TRAJETÓRIA</div>
+      <h1>Escala, infraestrutura, campo</h1>
+      <p>Percurso técnico e artístico que levou da mecatrônica e do live-cinema à construção de ambientes imersivos e sistemas expositivos.</p>
+    </section>
 
-<a href="/" class="back">← início</a>
-<h1 class="page-title">Trajetória</h1>
-
-<div class="timeline">
-
-  <div class="era">
-    <h2>AYA Studio</h2>
-    <div class="era-meta">2019–presente · São Paulo · co-fundador, direção executiva e técnica</div>
-    <p>Estúdio de arte e tecnologia co-fundado com Antonio Curti. Exposições imersivas no Farol Santander, CCBB, SESI/FIESP, Japan House, Casa Fiat. Desenho de espaço, concepção técnica e artística, coordenação de equipes multidisciplinares.</p>
-  </div>
-
-  <div class="era">
-    <h2>The Force / GTM Cenografia</h2>
-    <div class="era-meta">2017–2018 · São Paulo e Rio de Janeiro</div>
-
-    <div class="project">
-      <strong>Dimensão — Nonotak Studio</strong>
-      <span class="proj-meta">2018 · Japan House, São Paulo · direção técnica</span>
-      <p>Três instalações imersivas do duo franco-japonês. Direção técnica da montagem (creditado como expografia). Ponto de inflexão → fundação da AYA.</p>
-    </div>
-
-    <div class="project">
-      <strong>Google Buttonwall</strong>
-      <span class="proj-meta">2017 · Hall do Google Brasil, São Paulo · montagem e integração</span>
-      <p>Instalação permanente interativa. ~7.000 botões RGB backlit, ~150 PCBs, ~25 Raspberry Pis. Wesley Lee redesenhou todo o hardware (100+ controller boards manuais). Vitaliano Palmieri fez o firmware. Eu e a GTM montamos e integramos. Baseada no Anypixels.js do Google Creative Lab.</p>
-    </div>
-
-    <div class="project">
-      <strong>YouTube Space Rio</strong>
-      <span class="proj-meta">2017 · Pier Mauá, Rio de Janeiro · cenografia via GTM</span>
-      <p>3.000 m² — descrito pelo G1 como "o mais high tech do mundo". Estúdios com câmeras 4K, cinema, 360°, cenários interativos.</p>
-    </div>
-
-    <div class="project">
-      <strong>Antitempo</strong>
-      <span class="proj-meta">2017 · Farol Santander, São Paulo · produção executiva (The Force)</span>
-      <p>42 moving lasers sincronizados com som. Matheus Leston desenvolveu sistema de controle, trilha sonora e coreografia de luz.</p>
-    </div>
-  </div>
-
-  <div class="era">
-    <h2>BijaRi</h2>
-    <div class="era-meta">2008–2017 · São Paulo · VJ, live-cinema, direção de arte</div>
-
-    <div class="project">
-      <strong>Villa Mix Goiânia ×3</strong>
-      <span class="proj-meta">2013–15 · Estádio Serra Dourada · direção de arte</span>
-      <p>Três edições do maior festival de música sertaneja do Brasil. 2015: Guinness Book of Records — maior palco de LED do mundo (1.400 m²). Mais de 1 milhão de espectadores no YouTube ao vivo. Direção de arte com João Alencar (Jãozão).</p>
-    </div>
-
-    <div class="project">
-      <strong>Ivete Sangalo DVD — Madison Square Garden</strong>
-      <span class="proj-meta">2010 · Nova York · vídeo-cenário</span>
-      <p>Vídeo-cenário para o DVD "Ivete Sangalo Ao Vivo no Madison Square Garden". 240 m² de painéis LED + cilindro de tecido de 10 metros de altura. DVD mais vendido do ano. Indicado ao Brazilian International Press Award.</p>
-    </div>
-
-    <div class="project">
-      <strong>Entropicália</strong>
-      <span class="proj-meta">2008 · Itaú Cultural, São Paulo · live-cinema</span>
-      <p>Performance live-cinema com o coletivo Maxifagia. Primeiro trabalho público — programação visual + manipulação de vídeo em tempo real.</p>
-    </div>
-  </div>
-
-  <div class="era">
-    <h2>Formação</h2>
-    <div class="era-meta">2002–2014</div>
-
-    <div class="project">
-      <strong>FAU-USP — Design</strong>
-      <span class="proj-meta">2007–14 · TCC LUZCIDADE, orient. Carlos Zibel Costa, banca Giselle Beiguelman</span>
-    </div>
-
-    <div class="project">
-      <strong>New York Visualists</strong>
-      <span class="proj-meta">2009 · Lab-Office com Rodrigo Bellotto e Gian Spina</span>
-    </div>
-
-    <div class="project">
-      <strong>COTUCA / Unicamp — Mecatrônica</strong>
-      <span class="proj-meta">2002–04 · Campinas</span>
-    </div>
-  </div>
-
-</div>
-
+    <section class="paper">
+      <div class="paper-kicker">LINHA DO TEMPO</div>
+      <div class="eras">
+        {eras.map((era) => (
+          <article class="era">
+            <div class="era-head">
+              <h2>{era.title}</h2>
+              <div class="era-meta">{era.meta}</div>
+            </div>
+            {era.text && <p class="era-text">{era.text}</p>}
+            {era.projects.length > 0 && (
+              <div class="project-list">
+                {era.projects.map(([title, meta, desc]) => (
+                  <div class="project-item">
+                    <strong>{title}</strong>
+                    <span>{meta}</span>
+                    {desc && <p>{desc}</p>}
+                  </div>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
 </Base>
 
+<style is:global>
+body.page-trajetoria{background:#050505;color:#f1ece3}
+body.page-trajetoria a{text-decoration:none}
+</style>
+
 <style>
-.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
-.back:hover{color:var(--fg);text-decoration:none}
-.page-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:2.5rem}
-.timeline{display:flex;flex-direction:column;gap:2.5rem}
-.era h2{font:500 1.2rem/1.3 var(--sans);margin-bottom:.2rem}
-.era-meta{font:.75rem/1.4 var(--mono);color:var(--fg3);margin-bottom:1rem}
-.era > p{font:.9rem/1.7 var(--sans);color:var(--fg2);margin-bottom:1.2rem}
-.project{margin-bottom:1.2rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,.06)}
-.project strong{font:500 .95rem/1.3 var(--sans);color:var(--fg);display:block}
-.proj-meta{font:.7rem/1.4 var(--mono);color:var(--fg3);display:block;margin-bottom:.3rem}
-.project p{font:.85rem/1.65 var(--sans);color:var(--fg2)}
+:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16)}
+.archive-page{min-height:100vh;background:#050505}
+.entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.back,.entry-kicker,.paper-kicker,.era-meta,.project-item span{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.back{display:inline-block;color:rgba(255,255,255,.55);margin-bottom:1rem}.back:hover{color:#fff}
+.entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}
+.entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:12ch}
+.entry p{max-width:46rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
+.paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 2rem}
+.paper-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}
+.eras{display:grid;gap:1.25rem}
+.era{padding-top:1rem;border-top:1px solid var(--line)}
+.era-head{margin-bottom:.65rem}
+.era h2{font:700 1.3rem/1.2 var(--sans);letter-spacing:-.03em;margin-bottom:.2rem}
+.era-meta{color:rgba(17,17,17,.5)}
+.era-text{font:.95rem/1.7 var(--sans);color:rgba(17,17,17,.76);max-width:60ch}
+.project-list{display:grid;gap:.8rem;margin-top:.8rem}
+.project-item{padding-left:1rem;border-left:2px solid rgba(17,17,17,.12)}
+.project-item strong{display:block;font:600 .98rem/1.35 var(--sans);margin-bottom:.15rem}
+.project-item span{display:block;color:rgba(17,17,17,.5);margin-bottom:.25rem}
+.project-item p{font:.88rem/1.6 var(--sans);color:rgba(17,17,17,.72)}
+@media (min-width: 900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:2.5rem}}
 </style>

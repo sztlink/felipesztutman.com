@@ -1,47 +1,63 @@
 ---
 import Base from '../layouts/Base.astro';
+import publicationsData from '../data/publications.json';
 
-const items = [
-  {
-    slug: '100-anos-de-arte-moderna',
-    title: '100 Anos de Arte Moderna: a cena contemporânea',
-    meta: 'Carlos Zibel Costa · publicação impressa',
-    desc: 'Livro que dedica as páginas 64–67 ao percurso de Felipe Sztutman, articulando Cachoeira, sem título, para Mantiqueira e OCEANVS em uma mesma linhagem.'
-  }
-];
+const items = (publicationsData as any).publications || [];
 ---
-<Base title="Felipe Sztutman — Publicações" description="Publicações, livros e registros editoriais relacionados à trajetória de Felipe Sztutman.">
+<Base
+  title="Felipe Sztutman — Publicações"
+  description="Publicações, livros e registros editoriais relacionados à trajetória de Felipe Sztutman."
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-publicacoes"
+>
+  <main class="archive-page">
+    <section class="entry">
+      <a href="/#obras" class="back">← arquivo</a>
+      <div class="entry-kicker">PUBLICAÇÕES</div>
+      <h1>Circulação editorial</h1>
+      <p>Livros, catálogos e registros impressos que passaram a operar como parte do campo da obra.</p>
+    </section>
 
-<a href="/" class="back">← início</a>
-<h1 class="page-title">Publicações</h1>
-
-<div class="intro">
-  <p>Nem todo reconhecimento da trajetória aparece como matéria jornalística. Algumas obras entram em circulação por livros, catálogos e publicações institucionais. Esta seção reúne esses registros quando eles se tornam parte do campo da obra.</p>
-</div>
-
-<section>
-  {items.map(item => (
-    <a href={`/publicacoes/${item.slug}`} class="entry-link">
-      <div class="entry">
-        <div class="entry-title">{item.title}</div>
-        <div class="entry-meta">{item.meta}</div>
-        <div class="entry-desc">{item.desc}</div>
+    <section class="paper">
+      <div class="paper-kicker">ARQUIVO EDITORIAL</div>
+      <div class="count">{items.length} publicação{items.length === 1 ? '' : 'ões'}</div>
+      <div class="pub-list">
+        {items.map((item: any) => (
+          <a href={item.currentPublicPath || `/publicacoes/${item.slug}`} class="pub-item">
+            <div class="pub-title">{item.titulo}</div>
+            <div class="pub-meta">{item.autor}{item.ano ? ` · ${item.ano}` : ''} · publicação impressa</div>
+            <div class="pub-desc">{item.description}</div>
+          </a>
+        ))}
       </div>
-    </a>
-  ))}
-</section>
-
+    </section>
+  </main>
 </Base>
 
+<style is:global>
+body.page-publicacoes{background:#050505;color:#f1ece3}
+body.page-publicacoes a{text-decoration:none}
+</style>
+
 <style>
-.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
-.back:hover{color:var(--fg);text-decoration:none}
-.page-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:2rem}
-.intro{font:.98rem/1.85 var(--sans);margin-bottom:2rem;color:var(--fg)}
-.entry-link{text-decoration:none;display:block}
-.entry-link:hover .entry-title{color:var(--accent)}
-.entry{margin-bottom:1.5rem}
-.entry-title{font:500 1rem/1.3 var(--sans);color:var(--fg);transition:color .15s;margin-bottom:.15rem}
-.entry-meta{font:.75rem/1.4 var(--mono);color:var(--fg3);margin-bottom:.35rem}
-.entry-desc{font:.88rem/1.7 var(--sans);color:var(--fg2)}
+:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16);--line-strong:rgba(17,17,17,.28)}
+.archive-page{min-height:100vh;background:#050505}
+.entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.back,.entry-kicker,.paper-kicker,.count{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.back{display:inline-block;color:rgba(255,255,255,.55);margin-bottom:1rem}.back:hover{color:#fff}
+.entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}
+.entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem}
+.entry p{max-width:42rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
+.paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 2rem}
+.paper-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}
+.count{color:rgba(17,17,17,.58);margin-bottom:1rem}
+.pub-list{border-top:1px solid var(--line)}
+.pub-item{display:block;padding:1rem 0;border-bottom:1px solid var(--line);color:inherit}
+.pub-item:hover .pub-title{text-decoration:underline}
+.pub-title{font:600 1.08rem/1.3 var(--sans);letter-spacing:-.02em;margin-bottom:.2rem}
+.pub-meta{font:.74rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.5);margin-bottom:.35rem}
+.pub-desc{font:.9rem/1.65 var(--sans);color:rgba(17,17,17,.72);max-width:56ch}
+@media (min-width: 900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:2.5rem}}
 </style>
