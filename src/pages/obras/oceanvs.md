@@ -4,6 +4,13 @@ title: "Oceanvs"
 year: "2022"
 location: "Farol Santander SP, Casa Fiat BH"
 description: "Instalação imersiva que percorre oito atos. Primeira grande co-criação — Antonio escreveu o roteiro, eu desenhei a experiência espacial que traz água ao corpo sem molhar a pele."
+lead: "Ambiente imersivo em oito atos onde roteiro, motion, trilha, programação e desenho espacial operam juntos para trazer água ao corpo sem molhar a pele."
+archiveNote: "Esta página marca OCEANVS como obra de circulação e adaptação. A passagem de São Paulo para Belo Horizonte não é exceção documental, mas parte do comportamento da obra."
+circulation:
+  - { label: "Estreia", value: "Farol Santander, São Paulo, 2022" }
+  - { label: "Adaptação", value: "Casa Fiat de Cultura, Belo Horizonte, 2023" }
+  - { label: "Estrutura", value: "Oito atos, projeção mapeada, trilha original, interatividade e espaço de imersão" }
+collaborationNote: "OCEANVS é a primeira obra em que a colaboração não entra como execução de um conceito pré-fechado. O roteiro de Antonio Curti, o motion de Flávio Reis e João Alencar, a trilha de Juvi e a programação interativa de Matheus Leston interferem diretamente no desenho final da experiência."
 credits:
   - { role: "Direção Geral e Executiva", name: "Felipe Sztutman" }
   - { role: "Curadoria e Direção Criativa", name: "Antonio Curti" }

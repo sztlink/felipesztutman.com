@@ -707,7 +707,23 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/oceanvs.md"
-      }
+      },
+      "fichaTecnica": {
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "realizacao": [
+          "Farol Santander",
+          "Casa Fiat de Cultura"
+        ]
+      },
+      "todo": [
+        "Consolidar ficha expandida com número de projetores, sistema de som e variações entre as montagens.",
+        "Confirmar créditos fotográficos específicos da galeria."
+      ]
     },
     {
       "numero": "010",

@@ -23,6 +23,8 @@ interface Props {
     lead?: string;
     archiveNote?: string;
     mechanism?: Array<{label: string; value: string}>;
+    circulation?: Array<{label: string; value: string}>;
+    collaborationNote?: string;
     lang?: 'pt' | 'en';
   };
 }
@@ -172,6 +174,27 @@ function normalizePublicationUrl(url?: string) {
             </div>
           ))}
         </dl>
+      </section>
+    )}
+
+    {frontmatter.circulation && frontmatter.circulation.length > 0 && (
+      <section class="panel circulation">
+        <div class="panel-kicker">{isEN ? 'Circulation' : 'Circulação'}</div>
+        <dl>
+          {frontmatter.circulation.map((item) => (
+            <div class="row">
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
+
+    {frontmatter.collaborationNote && (
+      <section class="panel collaboration-note">
+        <div class="panel-kicker">{isEN ? 'Collaboration' : 'Co-criação'}</div>
+        <p>{frontmatter.collaborationNote}</p>
       </section>
     )}
 
@@ -329,7 +352,7 @@ body.page-obra a{text-decoration:none}
 .support-row strong{color:var(--ink)}
 .support-row-stack{display:flex;flex-direction:column;gap:.15rem}
 .support-row-stack a{color:var(--ink)}
-.archive-note p{font:.92rem/1.65 var(--sans);color:rgba(17,17,17,.74);max-width:62ch}
+.archive-note p,.collaboration-note p{font:.92rem/1.65 var(--sans);color:rgba(17,17,17,.74);max-width:62ch}
 .gallery{padding-top:.5rem}
 .gallery .section-kicker{color:rgba(255,255,255,.42)}
 .gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
