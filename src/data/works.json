@@ -1297,8 +1297,22 @@
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/amano.md"
       },
+      "fichaTecnica": {
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "realizacao": [
+          "AYA Studio",
+          "CCBB"
+        ]
+      },
       "todo": [
-        "Decidir se permanece em obras ou migra para categoria paralela."
+        "Decidir se permanece em obras ou migra para categoria paralela.",
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir a ficha técnica com integração de sistemas, audiovisual, montagem e variações entre cidades."
       ]
     },
     {

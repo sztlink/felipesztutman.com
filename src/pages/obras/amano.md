@@ -4,6 +4,13 @@ title: "AMANO — Além da Fantasia"
 year: "2026"
 location: "CCBB São Paulo, Belo Horizonte, Rio de Janeiro"
 description: "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada no mundo. Direção técnica e sistemas integrados para traduzir 218 obras originais em experiência habitável."
+lead: "Espaço imersivo concebido para traduzir 218 obras originais de Yoshitaka Amano em experiência habitável, articulando vídeo, luz, som, automação e projeção como um único sistema."
+archiveNote: "AMANO deve ser lida no arquivo como obra de circulação e tradução técnica: não apenas uma sala imersiva, mas a infraestrutura que torna habitável, no Brasil, um universo visual vindo do Japão."
+circulation:
+  - { label: "Itinerância", value: "CCBB São Paulo, Belo Horizonte e Rio de Janeiro" }
+  - { label: "Estrutura", value: "Sala imersiva de 11 minutos e 40 segundos com quinze projetores laser sincronizados" }
+  - { label: "Matéria", value: "Vídeo, luz, som, automação e projeção organizados como um único sistema" }
+collaborationNote: "A curadoria de Antonio Curti, a co-autoria audiovisual de Raphael Minhoso, o conteúdo original de João Alencar e a integração de sistemas com Ihon Yadoya fazem a obra existir como direção espacial compartilhada, não como execução isolada de uma autoria única."
 credits:
   - { role: "Curadoria", name: "Antonio Curti" }
   - { role: "Direção Técnica", name: "Felipe Sztutman" }
