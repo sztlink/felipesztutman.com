@@ -628,7 +628,23 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/interludio.md"
-      }
+      },
+      "fichaTecnica": {
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "realizacao": [
+          "Metaversø",
+          "Farol Santander"
+        ]
+      },
+      "todo": [
+        "Confirmar créditos fotográficos específicos da galeria além da imagem hero.",
+        "Expandir a ficha técnica com detalhes de sensores, eletrônica e montagem quando o dado estiver consolidado."
+      ]
     },
     {
       "numero": "009",

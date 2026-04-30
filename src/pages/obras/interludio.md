@@ -4,6 +4,13 @@ title: "Interlúdio"
 year: "2019"
 location: "Farol Santander, São Paulo"
 description: "Instalação com sensores de proximidade ultraprecisos e luz responsiva. A obra só existia quando alguém estava presente — tecnologia que depende fundamentalmente da presença humana."
+lead: "Instalação responsiva em que sensores de proximidade e luz só se ativam com a presença do corpo, tornando literal a dependência da tecnologia em relação ao humano."
+archiveNote: "A documentação visual publicada nesta rodada ainda é mínima. O objetivo aqui é nomear o funcionamento da obra e retirar a página do regime genérico de galeria silenciosa."
+mechanism:
+  - { label: "Sistema", value: "Sensores de proximidade ultraprecisos acoplados a um sistema de luz responsiva" }
+  - { label: "Hardware", value: "Wesley Lee desenvolveu a eletrônica e os sensores da instalação" }
+  - { label: "Operação", value: "Sem corpo presente, o sistema permanece inerte; a obra só existe quando alguém se aproxima" }
+  - { label: "Pergunta", value: "Qual é o papel fundamental do humano em uma era de avanço exponencial da tecnologia?" }
 credits:
   - { role: "Hardware/sensores", name: "Wesley Lee" }
   - { role: "Curadoria", name: "Antonio Curti" }
