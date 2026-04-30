@@ -4,6 +4,13 @@ title: "Floresta Utópica"
 year: "2025"
 location: "Farol Santander São Paulo"
 description: "Instalação imersiva de 20 minutos sobre temporalidades florestais e redes de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa que evoca água e regeneração natural."
+lead: "Ambiente imersivo sobre temporalidades florestais e sistemas invisíveis de interdependência, estruturado por projeção, aromas e uma escultura de luz em forma de cachoeira."
+archiveNote: "Floresta Utópica deve ser lida no arquivo como desdobramento tardio de Cachoeira e Mantiqueira: a água e os sistemas invisíveis reaparecem aqui não como intervenção urbana, mas como ecologia imersiva."
+circulation:
+  - { label: "Local", value: "Farol Santander São Paulo, 2025" }
+  - { label: "Duração", value: "Instalação imersiva de 20 minutos" }
+  - { label: "Estrutura", value: "Projeção mapeada, design sonoro, aromas e escultura luminosa central" }
+collaborationNote: "Na AYA, a obra se constrói pela tradução de processos ecológicos em linguagem espacial. Em vez de reproduzir a natureza literalmente, a equipe organiza imagem, som, aroma e luz para tornar sensíveis as redes invisíveis entre plantas, fungos, solo e água."
 credits:
   - { role: "Curadoria", name: "Antonio Curti" }
   - { role: "Direção Executiva", name: "Felipe Sztutman" }

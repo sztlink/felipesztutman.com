@@ -1122,7 +1122,23 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/floresta-utopica.md"
-      }
+      },
+      "fichaTecnica": {
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "realizacao": [
+          "AYA Studio",
+          "Farol Santander"
+        ]
+      },
+      "todo": [
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir a ficha técnica com equipe de som, aromas, projeção e montagem quando o dado estiver consolidado."
+      ]
     },
     {
       "numero": "015",
