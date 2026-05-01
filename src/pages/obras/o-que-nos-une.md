@@ -3,7 +3,15 @@ layout: ../../layouts/Obra.astro
 title: "O Que Nos Une"
 year: "2025"
 location: "Centro Cultural FIESP, São Paulo"
-description: "Exposição imersiva que traduz teorias de Miguel Nicolelis sobre consciência coletiva em três ambientes interativos, onde visitantes experimentam redes neurais, sincronização biométrica e padrões gerados em tempo real."
+description: "Instalação-sistema em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica."
+lead: "Instalação-sistema em três ambientes: o visitante atravessa espelhos, câmeras e sensores cardíacos para perceber, no próprio corpo, padrões de rede e sincronização coletiva."
+archiveNote: "No arquivo, O Que Nos Une deve ser lida menos como exposição imersiva genérica e mais como mecanismo perceptivo: espelhos, rastreamento de posição e sensores biométricos fazem a ideia de consciência coletiva depender da presença e da sincronização dos visitantes."
+mechanism:
+  - { label: "Estrutura", value: "Três ambientes interligados: câmara de espelhos e LEDs, piso interativo e câmara de sincronização biométrica" }
+  - { label: "Corpo", value: "Visitantes entram como presença física mensurável: posição no piso e batimento cardíaco na câmara final" }
+  - { label: "Rastreamento", value: "Câmeras detectam a posição dos visitantes e alimentam padrões gerados em tempo real em Max/MSP" }
+  - { label: "Sincronização", value: "Sensores customizados capturam batimentos cardíacos e os traduzem em luz e som; quando os corações se aproximam em ritmo, a sala responde" }
+  - { label: "Pergunta", value: "Como fazer a consciência coletiva deixar de ser explicação e virar experiência corporal?" }
 credits:
   - { role: "Curadoria Científica", name: "Miguel Nicolelis" }
   - { role: "Curadoria Artística", name: "Antonio Curti" }
@@ -21,8 +29,10 @@ press:
   - { source: "Instagram Centro Cultural Fiesp", url: "https://www.instagram.com/reel/DTf1_SKjB4m/", title: "Vídeo da exposição" }
 ---
 
-Em 2025, o neurocientista Miguel Nicolelis me convidou para traduzir suas teorias sobre consciência coletiva em experiências imersivas. Era um desafio fascinante: como transformar neurociência em espaço habitável? Como fazer alguém sentir — não apenas entender — que democracia, dinheiro, felicidade são abstrações que emergem de mentes individuais trabalhando juntas? Desenhei o espaço e concebi técnica e artisticamente três ambientes interligados, cada um revelando uma camada dessa rede invisível que nos conecta. Antonio Curti trouxe a curadoria artística, Miguel a científica. O AYA Studio executou.
+Em 2025, o neurocientista Miguel Nicolelis me convidou para traduzir suas teorias sobre consciência coletiva em experiência espacial. O ponto não era ilustrar neurociência, mas construir um sistema em que o visitante entrasse fisicamente na hipótese: indivíduos separados produzindo padrões coletivos.
 
-A exposição é uma jornada do individual ao coletivo. Começa em uma câmara de espelhos e LEDs — uma estrutura prismática desenhada pelo Tiago Guimarães que evoca o interior de um cérebro. Segue para um piso interativo onde os visitantes se tornam neurônios em uma rede viva: câmeras detectam posição, algoritmos geram padrões em tempo real, projeções panorâmicas respondem ao movimento coletivo. Esse sistema foi desenvolvido por Matheus Leston em Max/MSP — não é vídeo pré-gravado, é imagem gerada ao vivo. Termina em uma câmara de sincronização biométrica: sensores customizados que desenvolvemos capturam batimentos cardíacos e traduzem em luz e som. Quando os corações dos visitantes começam a pulsar juntos, a sala responde. É sincronia mensurável, não metáfora.
+A obra se organiza em três ambientes interligados. Primeiro, uma câmara de espelhos e LEDs — estrutura prismática desenhada por Tiago Guimarães que evoca o interior de um cérebro. Depois, um piso interativo onde câmeras detectam a posição dos visitantes; algoritmos geram padrões em tempo real; projeções panorâmicas respondem ao movimento do grupo. Esse sistema foi desenvolvido por Matheus Leston em Max/MSP. Não é vídeo pré-gravado: é imagem gerada ao vivo a partir da presença.
 
-Ficou três meses em cartaz no Centro Cultural FIESP em São Paulo, de outubro de 2025 a fevereiro de 2026. A exposição vai itinerar — MIS Ceará já está confirmado. Cada nova montagem exige adaptação completa: a sala imersiva precisa de teto alto para as câmeras suspensas, a câmara de espelhos é reconstruída do zero para o espaço, os sensores biométricos viajam conosco porque não existem equivalentes. Não é tecnologia pela tecnologia — cada sistema serve ao conceito científico e artístico. Os visitantes não aprendem sobre consciência coletiva. Eles a experimentam.
+A terceira etapa torna o mecanismo mais literal. Sensores customizados capturam batimentos cardíacos e traduzem esses sinais em luz e som. Quando os ritmos dos visitantes se aproximam, a sala responde. A sincronização deixa de ser metáfora social e vira dado perceptível pelo corpo.
+
+Ficou em cartaz no Centro Cultural FIESP em São Paulo, de outubro de 2025 a fevereiro de 2026. A exposição vai itinerar — MIS Ceará já está confirmado. Cada nova montagem exige adaptação: a sala interativa precisa de teto alto para as câmeras suspensas, a câmara de espelhos é reconstruída para o espaço, os sensores biométricos viajam conosco porque não existem equivalentes. O AYA Studio executou; Miguel assinou a curadoria científica e Antonio Curti a curadoria artística.

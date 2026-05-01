@@ -757,8 +757,8 @@
       "tecnicaMedium": [
         "dados em tempo real + fluidos 3D + projeção"
       ],
-      "contexto": "exposição imersiva",
-      "tipo": "EXPOSICAO_IMERSIVA",
+      "contexto": "instalação-sistema / dados urbanos",
+      "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#2255ee",
       "description": "Sala imersiva de cinco telas onde sistemas de partículas simulam fluidos 3D perturbados por dados reais de São Paulo. Raio-X da metrópole em tempo real.",
@@ -810,7 +810,25 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/metadata.md"
-      }
+      },
+      "fichaTecnica": {
+        "estrutura": "sala imersiva de cinco telas",
+        "duracao": "seis meses em cartaz",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "producao": [
+          "equipe AYA"
+        ],
+        "local": "Centro Cultural FIESP, São Paulo"
+      },
+      "todo": [
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir ficha técnica com fontes de dados, sistema de projeção e equipe técnica quando o dado estiver consolidado."
+      ]
     },
     {
       "numero": "011",
@@ -965,8 +983,31 @@
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/luz-aeterna.md"
       },
+      "fichaTecnica": {
+        "estrutura": "exposição coletiva de new media art com oito artistas brasileiros",
+        "locais": [
+          "CCBB Brasília",
+          "CCBB Belo Horizonte"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "direcaoExecutiva": [
+          "Felipe Sztutman"
+        ],
+        "producaoExecutiva": [
+          "Eduardo Raele",
+          "Rodrigo Primo"
+        ],
+        "projetoMultimidiaELocacao": [
+          "AYA Studio"
+        ]
+      },
       "todo": [
-        "Decidir se permanece em obras ou migra para categoria paralela."
+        "Decidir se permanece em obras ou migra para categoria paralela; por enquanto, tratar como obra de exposição dirigida / regime C, sem resolver falsamente a categoria.",
+        "Confirmar lista completa dos oito artistas e créditos técnicos antes de expandir a ficha técnica.",
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Mapear variações expográficas entre Brasília e Belo Horizonte sem apagar a autonomia das obras participantes."
       ]
     },
     {
@@ -988,11 +1029,11 @@
         "sensor",
         "projeção"
       ],
-      "contexto": "exposição imersiva / Nicolelis",
-      "tipo": "EXPOSICAO_IMERSIVA",
+      "contexto": "instalação-sistema / Nicolelis",
+      "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#ff4466",
-      "description": "Exposição imersiva que traduz teorias de Miguel Nicolelis sobre consciência coletiva em três ambientes interativos, onde visitantes experimentam redes neurais, sincronização biométrica e padrões gerados em tempo real.",
+      "description": "Instalação-sistema em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica.",
       "sourceFiles": {
         "page": "src/pages/obras/o-que-nos-une.md",
         "galleryKey": "o-que-nos-une",
@@ -1043,7 +1084,37 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/o-que-nos-une.md"
-      }
+      },
+      "fichaTecnica": {
+        "estrutura": "três ambientes interligados: câmara de espelhos e LEDs, piso interativo com câmeras/projeção e câmara de sincronização biométrica",
+        "periodo": "outubro de 2025 a fevereiro de 2026",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Miguel Nicolelis (científica)",
+          "Antonio Curti (artística)"
+        ],
+        "programacao": [
+          "Matheus Leston (Max/MSP, obras 2 e 3)"
+        ],
+        "cenografia": [
+          "Tiago Guimarães"
+        ],
+        "projetoDeLuz": [
+          "André Boll / SANTA LUZ"
+        ],
+        "execucao": [
+          "AYA Studio"
+        ],
+        "producao": [
+          "Arte3 — Ana Helena Curti"
+        ]
+      },
+      "todo": [
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir a ficha técnica com detalhes dos sensores biométricos, câmeras, projeção e adaptações de itinerância quando o dado estiver consolidado."
+      ]
     },
     {
       "numero": "014",
@@ -1213,7 +1284,28 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/andromeda.md"
-      }
+      },
+      "fichaTecnica": {
+        "duracao": "17 minutos",
+        "estrutura": "ambiente interativo de entrada e jornada audiovisual imersiva",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "trilhaSonora": [
+          "Juvi"
+        ],
+        "producao": [
+          "AYA Studio"
+        ],
+        "local": "Farol Santander São Paulo"
+      },
+      "todo": [
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir ficha técnica com sistema de projeção, laser, sensores e equipe técnica quando o dado estiver consolidado."
+      ]
     },
     {
       "numero": "016",
