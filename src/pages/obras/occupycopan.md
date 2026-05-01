@@ -4,6 +4,8 @@ title: "OccupyCopan"
 year: "2011"
 location: "Edifício Copan, São Paulo"
 description: "Escultura de lâmpadas fluorescentes suspensas por cabos de aço no vão vertical do Copan, primeira exploração de luz como matéria"
+lead: "Escultura de lâmpadas fluorescentes suspensas por cabos de aço no vão vertical do Copan, primeiro gesto da linhagem que depois seria articulada como LUZCIDADE."
+archiveNote: "A página permanece sem galeria publicada. No arquivo, OccupyCopan é preservada como documento textual de origem: a luz aparece pela primeira vez como matéria no espaço arquitetônico."
 credits:
   - { role: "Concepção", name: "Felipe Sztutman" }
 ---

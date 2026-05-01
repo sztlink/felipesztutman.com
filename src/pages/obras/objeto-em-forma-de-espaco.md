@@ -4,6 +4,8 @@ title: "Objeto em Forma de: Espaço"
 year: "2009"
 location: "Museu da Imagem e do Som (MIS-SP)"
 description: "Primeiro ambiente sinestésico de Felipe Sztutman, onde som, aroma e luz criam um espaço habitável pela soma de elementos invisíveis"
+lead: "Ambiente sinestésico realizado no LabMIS/MIS-SP, onde som, aroma e luz definem o princípio fundacional do trabalho: o ambiente como obra."
+archiveNote: "No arquivo, esta página funciona como gesto inaugural: antes da luz como matéria urbana, já aparece aqui a decisão de construir espaços habitáveis pela combinação de elementos invisíveis."
 credits:
   - { role: "Concepção e realização", name: "Felipe Sztutman e Rodrigo Bellotto" }
 ---

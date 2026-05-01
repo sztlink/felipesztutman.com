@@ -4,6 +4,8 @@ title: "sem título, para Córrego Rio Verde"
 year: "2013"
 location: "Beco do Batman, Vila Madalena, São Paulo"
 description: "Intervenção luminosa independente que revelou o Córrego Rio Verde canalizado sob o Beco do Batman usando design paramétrico"
+lead: "Intervenção independente no Beco do Batman que revelou o Córrego Rio Verde canalizado por meio de 240 metros de luz, aros de bicicleta e cabos de aço."
+archiveNote: "No arquivo, esta obra desloca o gesto de Cachoeira para uma condição sem instituição, verba ou produção formal: o território urbano aparece como negociação direta."
 credits:
   - { role: "Concepção e projeto", name: "Felipe Sztutman" }
   - { role: "Montagem", name: "Jan Nehring e Wesley Lee Yang" }

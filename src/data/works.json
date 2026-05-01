@@ -99,7 +99,25 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/objeto-em-forma-de-espaco.md"
-      }
+      },
+      "fichaTecnica": {
+        "local": "Museu da Imagem e do Som (MIS-SP)",
+        "concepcao": [
+          "Felipe Sztutman",
+          "Rodrigo Bellotto"
+        ],
+        "realizacao": [
+          "Felipe Sztutman",
+          "Rodrigo Bellotto"
+        ],
+        "fotografia": [
+          "Felipe Sztutman"
+        ]
+      },
+      "todo": [
+        "Confirmar duração, planta ou detalhes de montagem antes de expandir a ficha técnica.",
+        "Confirmar se as páginas do TCC LUZCIDADE reproduzidas na galeria exigem crédito de reprodução separado."
+      ]
     },
     {
       "numero": "002",
@@ -169,7 +187,25 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/occupycopan.md"
-      }
+      },
+      "fichaTecnica": {
+        "local": "Edifício Copan, São Paulo",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "materiais": [
+          "lâmpadas tubulares fluorescentes",
+          "cabos de aço"
+        ],
+        "contexto": "OccupyCopan, coletiva com 25 artistas nos andares inferiores do Edifício Copan",
+        "organizacao": [
+          "Fernanda Brenner"
+        ]
+      },
+      "todo": [
+        "Não há galeria publicada no arquivo atual; localizar ou confirmar documentação visual antes de criar galeria.",
+        "Confirmar créditos fotográficos, duração de exibição e detalhes de montagem antes de expandir a ficha técnica."
+      ]
     },
     {
       "numero": "003",
@@ -331,7 +367,28 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/canvas13.md"
-      }
+      },
+      "fichaTecnica": {
+        "local": "Serralheria Cultural, São Paulo",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "organizacao": [
+          "Felipe Brait",
+          "coletivo audiovisual ZoomB"
+        ],
+        "orientacao": [
+          "Carlos Zibel Costa"
+        ],
+        "fotografia": [
+          "Felipe Sztutman"
+        ],
+        "extensao": "500m de cabo eletroluminescente remanescentes de Cachoeira"
+      },
+      "todo": [
+        "Confirmar duração de exibição durante o festival Canvas #13.",
+        "Confirmar se houve equipe de montagem adicional além dos créditos já publicados."
+      ]
     },
     {
       "numero": "005",
@@ -400,7 +457,32 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/corrego-rio-verde.md"
-      }
+      },
+      "fichaTecnica": {
+        "local": "Beco do Batman, Vila Madalena, São Paulo",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "montagem": [
+          "Jan Nehring",
+          "Wesley Lee Yang"
+        ],
+        "apoio": [
+          "Billy Castilho",
+          "Pablo Gallardo (Tag & Juice)"
+        ],
+        "orientacao": [
+          "Carlos Zibel Costa"
+        ],
+        "fotografia": [
+          "Wesley Lee Yang"
+        ],
+        "extensao": "240m de cabo eletroluminescente"
+      },
+      "todo": [
+        "Confirmar duração exata da instalação no Beco do Batman.",
+        "Confirmar se a ficha deve registrar Boleta apenas como aval informal do território ou manter essa informação somente na narrativa."
+      ]
     },
     {
       "numero": "006",
@@ -469,7 +551,22 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/mantiqueira.md"
-      }
+      },
+      "fichaTecnica": {
+        "local": "Serra da Mantiqueira, SP",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "fotografia": [
+          "Layla Motta"
+        ],
+        "extensao": "40m de cabo eletroluminescente",
+        "duracao": "uma noite"
+      },
+      "todo": [
+        "Confirmar ponto exato da montagem na Serra da Mantiqueira.",
+        "Confirmar se houve equipe de montagem ou se a ficha deve permanecer apenas com concepção e registro fotográfico."
+      ]
     },
     {
       "numero": "007",
@@ -1426,8 +1523,8 @@
         "projeção",
         "LED"
       ],
-      "contexto": "série dos Elementos / fogo",
-      "tipo": "EXPOSICAO_IMERSIVA",
+      "contexto": "série dos Elementos / instalação-sistema do fogo",
+      "tipo": "INSTALACAO",
       "serie": "Os Elementos",
       "corPulso": "#ff8800",
       "description": "Encerramento da pentalogia Os Elementos. Três ambientes onde o visitante contempla, cria e é revelado pela chama. Experiência espacial sobre fogo como material interativo.",
@@ -1483,8 +1580,25 @@
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/flama.md"
       },
+      "fichaTecnica": {
+        "estrutura": "três ambientes: fogueira escultórica de LED volumétrico com projeção 360°, sala responsiva por sensores e Câmara do Cristal",
+        "local": "Farol Santander São Paulo, 22º andar",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "realizacao": [
+          "AYA Studio"
+        ]
+      },
       "todo": [
-        "Confirmar status factual final antes de tratar como REALIZADA."
+        "Confirmar status factual final antes de tratar como REALIZADA.",
+        "Confirmar data de abertura, período de exibição e duração do ciclo audiovisual antes de publicar ficha expandida.",
+        "Confirmar documentação visual, créditos fotográficos e legendas antes de criar galeria.",
+        "Expandir ficha técnica com sensores, LED volumétrico, projeção, som, cristal e equipe técnica quando o dado estiver consolidado.",
+        "Confirmar os parâmetros técnicos da memória coletiva e das marcas permanentes descritas para a segunda sala e a Câmara do Cristal."
       ]
     },
     {
@@ -1503,8 +1617,8 @@
       "tecnicaMedium": [
         "instalações interativas corpo-interface"
       ],
-      "contexto": "exposição / jogos como medium",
-      "tipo": "EXPOSICAO_IMERSIVA",
+      "contexto": "instalação-sistema / corpo-interface / jogos como medium",
+      "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#ff4466",
       "description": "Quatro instalações interativas que usam o corpo como interface. Arqueologia do corpo vibrátil — cinquenta anos de cultura jogável traduzidos em experiência espacial contemporânea.",
@@ -1561,8 +1675,31 @@
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/player1.md"
       },
+      "fichaTecnica": {
+        "estrutura": "quatro instalações interativas (STRIKE, DRIFT, TRACE, RUSH) articuladas a acervo histórico de videogames",
+        "local": "Farol Santander São Paulo",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "acervo": [
+          "Alex Mamed"
+        ],
+        "arquitetura": [
+          "Brígida"
+        ],
+        "design": [
+          "Ana Clara"
+        ]
+      },
       "todo": [
-        "Confirmar status factual final antes de tratar como REALIZADA."
+        "Confirmar status factual final antes de tratar como REALIZADA.",
+        "Confirmar data de abertura, período de exibição e detalhes finais de local/montagem.",
+        "Confirmar documentação visual, créditos fotográficos e legendas antes de criar galeria.",
+        "Expandir ficha técnica com sensores, softwares, hardware, CRTs e equipe técnica por módulo quando o dado estiver consolidado.",
+        "Confirmar lista final do acervo, seleção de 115 itens, cinco núcleos e créditos de produção antes de publicar ficha expandida."
       ]
     }
   ]

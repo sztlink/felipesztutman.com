@@ -24,19 +24,24 @@
     }
   },
   "works": {
-    "cachoeira": "A",
+    "objeto-em-forma-de-espaco": "A",
     "occupycopan": "A",
-    "mantiqueira": "A",
+    "cachoeira": "A",
+    "canvas13": "A",
     "corrego-rio-verde": "A",
+    "mantiqueira": "A",
     "mementos": "B",
     "interludio": "B",
-    "metadata": "B",
-    "o-que-nos-une": "B",
     "oceanvs": "C",
+    "metadata": "B",
+    "sao-paulo-3024": "B",
+    "luz-aeterna": "C",
+    "o-que-nos-une": "B",
     "floresta-utopica": "C",
     "andromeda": "C",
-    "luz-aeterna": "C",
-    "amano": "C"
+    "amano": "C",
+    "flama": "B",
+    "player1": "B"
   },
   "pilots": ["cachoeira", "mementos", "oceanvs"]
 }
