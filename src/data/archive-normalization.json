@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-29",
+    "notes": [
+      "Checklist operacional para normalização editorial do arquivo.",
+      "P1 = problema visível e bloqueio claro de qualidade.",
+      "P2 = refinamento importante, mas não urgente.",
+      "P3 = consolidação do fundo histórico ou pendência curatorial/status."
+    ]
+  },
+  "priority": {
+    "P1": ["interludio", "floresta-utopica", "amano"],
+    "P2": ["metadata", "o-que-nos-une", "andromeda", "luz-aeterna"],
+    "P3": ["objeto-em-forma-de-espaco", "canvas13", "corrego-rio-verde", "mantiqueira", "occupycopan", "flama", "player1"]
+  },
+  "works": {
+    "interludio": {
+      "regime": "B",
+      "issues": ["6/7 captions nulas"],
+      "needs": ["lead", "archiveNote", "mechanism", "fichaTecnica"]
+    },
+    "floresta-utopica": {
+      "regime": "C",
+      "issues": ["6/6 captions nulas"],
+      "needs": ["lead", "archiveNote", "circulation", "fichaTecnica"]
+    },
+    "amano": {
+      "regime": "C",
+      "issues": ["6/6 captions nulas"],
+      "needs": ["lead", "archiveNote", "circulation", "collaborationNote", "fichaTecnica"]
+    },
+    "metadata": {
+      "regime": "B",
+      "issues": [],
+      "needs": ["lead", "mechanism", "fichaTecnica"]
+    },
+    "o-que-nos-une": {
+      "regime": "B",
+      "issues": [],
+      "needs": ["lead", "mechanism", "fichaTecnica"]
+    },
+    "andromeda": {
+      "regime": "C",
+      "issues": [],
+      "needs": ["lead", "circulation-ou-equivalente", "fichaTecnica"]
+    },
+    "luz-aeterna": {
+      "regime": "C",
+      "issues": ["enquadramento curatorial ainda ambíguo"],
+      "needs": ["lead", "circulation", "fichaTecnica"]
+    },
+    "objeto-em-forma-de-espaco": {
+      "regime": "A",
+      "issues": [],
+      "needs": ["lead", "archiveNote", "fichaTecnica"]
+    },
+    "canvas13": {
+      "regime": "A",
+      "issues": [],
+      "needs": ["lead", "archiveNote", "fichaTecnica"]
+    },
+    "corrego-rio-verde": {
+      "regime": "A",
+      "issues": [],
+      "needs": ["lead", "fichaTecnica"]
+    },
+    "mantiqueira": {
+      "regime": "A",
+      "issues": [],
+      "needs": ["lead", "archiveNote", "fichaTecnica"]
+    },
+    "occupycopan": {
+      "regime": "A",
+      "issues": ["sem galeria atual"],
+      "needs": ["lead", "fichaTecnica", "documentacao-visual-se-existir"]
+    },
+    "flama": {
+      "regime": "B",
+      "issues": ["status A_CONFIRMAR", "sem galeria atual"],
+      "needs": ["confirmacao-status", "lead", "mechanism", "fichaTecnica"]
+    },
+    "player1": {
+      "regime": "B",
+      "issues": ["status A_CONFIRMAR", "sem galeria atual"],
+      "needs": ["confirmacao-status", "lead", "mechanism", "fichaTecnica"]
+    }
+  }
+}

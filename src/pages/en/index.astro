@@ -1,88 +1,240 @@
 ---
 import Base from '../../layouts/Base.astro';
+import worksData from '../../data/works.json';
+import regimeData from '../../data/work-regimes.json';
 
-const obras = [
-  { slug: 'player1', title: 'Player 1 — 50 Years of Video Games', year: '2026', location: 'Farol Santander, São Paulo', desc: 'Exhibition under confirmation: proposed body-interface experiences and video game archive.' },
-  { slug: 'flama', title: 'FLAMA', year: '2026', location: 'Farol Santander, São Paulo', desc: 'Fire. Sculptural bonfire, interactive room, Crystal Chamber.' },
-  { slug: 'amano', title: 'AMANO — Beyond Fantasy', year: '2024–26', location: 'CCBB SP, BH, Rio', desc: 'Largest Yoshitaka Amano exhibition in the world. Immersive space with 15 laser projectors.' },
-  { slug: 'floresta-utopica', title: 'Floresta Utópica', year: '2025', location: 'Farol Santander, São Paulo', desc: 'Seven acts, twenty minutes. Mapped projection, mirrors, scents, light sculpture.' },
-  { slug: 'o-que-nos-une', title: 'O Que Nos Une', year: '2025', location: 'Centro Cultural FIESP, São Paulo', desc: 'Nicolelis\' neuroscience translated into immersive experience.' },
-  { slug: 'andromeda', title: 'Andrômeda — Endless Universe', year: '2025', location: 'Farol Santander, São Paulo', desc: 'Cosmos (interactive) + Andrômeda (immersive, 17 min).' },
-  { slug: 'luz-aeterna', title: 'Luz Æterna — Essay on the Sun', year: '2024', location: 'CCBB Brasília and BH', desc: 'Eight Brazilian artists. I designed the exhibition space.' },
-  { slug: 'sao-paulo-3024', title: 'São Paulo 3024', year: '2024', location: 'Farol Santander, São Paulo', desc: 'São Paulo a thousand years from now. LLMs, LoRa, OpenCV. 7 acts, 16 min.' },
-  { slug: 'metadata', title: 'METADATA — The Invisible World', year: '2023–24', location: 'SESI/FIESP, São Paulo', desc: 'Real-time São Paulo data translated into 3D fluids.' },
-  { slug: 'oceanvs', title: 'OCEANVS — Immersion in Blue', year: '2022–26', location: 'Farol Santander SP, Casa Fiat BH', desc: 'Eight acts about water. National touring.' },
-  { slug: 'mementos', title: 'Mementos', year: '2019', location: 'Farol Santander, São Paulo', desc: '45 lasers and a large crystal. Generative patterns.' },
-  { slug: 'interludio', title: 'Interlúdio', year: '2019', location: 'Farol Santander, São Paulo', desc: 'Sensors and responsive light. The work only exists with human presence.' },
-];
+const works = [...worksData.works].sort((a, b) => a.numero.localeCompare(b.numero));
+const updatedAt = worksData.meta.generatedAt;
+const total = worksData.meta.counts.total;
+const realized = worksData.meta.counts.realizada;
+const toConfirm = worksData.meta.counts.aConfirmar;
 
-const luzcidade = [
-  { slug: 'objeto-em-forma-de-espaco', title: 'Objeto em Forma de: Espaço', year: '2009', location: 'LabMIS, MIS-SP' },
-  { slug: 'occupycopan', title: 'OccupyCopan', year: '2011', location: 'Edifício Copan, São Paulo' },
-  { slug: 'cachoeira', title: 'Cachoeira, para Córrego das Almas', year: '2012', location: 'Vale do Anhangabaú, URBE/CCBB' },
-  { slug: 'canvas13', title: 'sem título, para Canvas #13', year: '2013', location: 'Serralheria Cultural, São Paulo' },
-  { slug: 'corrego-rio-verde', title: 'sem título, para Córrego Rio Verde', year: '2013', location: 'Beco do Batman, Vila Madalena' },
-  { slug: 'mantiqueira', title: 'sem título, para Mantiqueira', year: '2013', location: 'Serra da Mantiqueira' },
-];
+const regimes = (regimeData as any).works || {};
+const workModules = import.meta.glob('./obras/*.md', { eager: true }) as Record<string, any>;
+const workFrontmatter = Object.fromEntries(
+  Object.entries(workModules).map(([path, mod]) => [path.split('/').pop()!.replace('.md', ''), mod.frontmatter || {}])
+);
+
+const regimeLabels: Record<string, string> = {
+  A: 'foundational / territory / lineage',
+  B: 'system / body / mechanism',
+  C: 'space / circulation / collaboration',
+};
+
+function statusLabel(status: string) {
+  return status === 'A_CONFIRMAR' ? 'TO CONFIRM' : 'REALIZED';
+}
+
+function statusNote(status: string) {
+  return status === 'A_CONFIRMAR' ? 'published as archive in verification' : 'realized work in the archive';
+}
+
+function editorialStatus(work: any) {
+  const labels: Record<string, string> = {
+    AUTORAL_FELIPE: 'Felipe-authored work',
+    COAUTORAL_FELIPE: 'co-authored work',
+    PROJETO_ARTISTA_TERCEIRO: 'third-party artist project',
+    EXPOSICAO_TEMATICA: 'thematic / collective exhibition',
+    DIRECAO_EXPERIENCIA: 'experience direction',
+  };
+  if (work.status === 'A_CONFIRMAR') {
+    return work.authorshipMode === 'EXPOSICAO_TEMATICA' ? 'exhibition under confirmation' : 'project under confirmation';
+  }
+  if (work.authorshipMode && labels[work.authorshipMode]) return labels[work.authorshipMode];
+  if (work.tipo === 'ARTE_PUBLICA') return 'public art';
+  if (work.tipo === 'INTERVENCAO_URBANA') return 'urban intervention';
+  if (work.tipo === 'EXPOSICAO_DIRIGIDA') return 'directed exhibition';
+  if (work.tipo === 'INSTALACAO' && regimes[work.slug] === 'B') return 'installation-system';
+  if (work.tipo === 'INSTALACAO' && regimes[work.slug] === 'A') return 'foundational gesture';
+  if (regimes[work.slug] === 'C') return 'spatial direction';
+  return 'work';
+}
+
+const contextLabels: Record<string, string> = {
+  'série LUZCIDADE / ambiente sinestésico': 'LUZCIDADE series / synesthetic environment',
+  'série LUZCIDADE / intervenção vertical': 'LUZCIDADE series / vertical intervention',
+  'URBE / CCBB / arte pública': 'URBE / CCBB / public art',
+  'série LUZCIDADE': 'LUZCIDADE series',
+  'série LUZCIDADE / intervenção independente': 'LUZCIDADE series / independent intervention',
+  'Metaversø / Farol': 'Metaversø / Farol',
+  'série dos Elementos / água': 'Elements series / water',
+  'instalação-sistema / dados urbanos': 'installation-system / urban data',
+  'série dos Elementos / humano': 'Elements series / human',
+  'exposição dirigida / new media': 'directed exhibition / new media',
+  'instalação-sistema / Nicolelis': 'installation-system / Nicolelis',
+  'série dos Elementos / terra': 'Elements series / earth',
+  'série dos Elementos / ar-cosmos': 'Elements series / air-cosmos',
+  'exposição dirigida / itinerância': 'directed exhibition / touring',
+  'série dos Elementos / instalação-sistema do fogo': 'Elements series / fire installation-system',
+  'instalação-sistema / corpo-interface / jogos como medium': 'installation-system / body-interface / games as medium',
+};
+
+function contextLabel(work: any) {
+  return contextLabels[work.contexto] || 'archive context';
+}
+
+function regimeLabel(work: any) {
+  const regime = regimes[work.slug];
+  return regime ? regimeLabels[regime] : null;
+}
+
+function displayWork(work: any) {
+  const frontmatter = workFrontmatter[work.slug] || {};
+  return {
+    title: frontmatter.title || work.titulo,
+    year: frontmatter.year || work.ano,
+    location: frontmatter.location || work.local,
+    description: frontmatter.description || work.description,
+  };
+}
 ---
-<Base title="Felipe Sztutman — Artist, Immersive Systems, São Paulo" description="Felipe Sztutman is an artist and builder of immersive systems. He conceives environments where light, technology, and perception become language. São Paulo, Brazil." lang="en">
+<Base
+  title="Felipe Sztutman — Work archive"
+  description="Work archive of Felipe Sztutman. Light, technology, perception, and immersive systems organized as work and relation."
+  schemaType="Person"
+  lang="en"
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-home"
+>
+  <main class="home">
+    <section class="entry">
+      <div class="entry-meta">WORK ARCHIVE · 2009—</div>
+      <h1>FELIPE SZTUTMAN</h1>
+      <div class="entry-hint">SCROLL TO ENTER ↓</div>
+    </section>
 
-<div class="statement">
-  <p>In 2012, I was invited to create a public artwork in downtown São Paulo. I chose to reveal something invisible: the Córrego das Almas, a stream that runs hidden beneath the pavement of Vale do Anhangabaú. With electroluminescent cables, I conceived the work <em>Cachoeira</em>, highlighting how we try to control and even conceal the rivers that sustain our cities.</p>
-  <p>Thirteen years later, this same impulse — making the invisible visible — continues to guide my work. I design immersive spaces where light, sound, technology, and perception organize themselves as systems. I don't make objects to be observed from outside. I conceive environments that only exist when someone enters.</p>
-</div>
+    <section class="statement" aria-label="statement">
+      <div class="statement-label">STATEMENT</div>
+      <p>Making the invisible visible.</p>
+    </section>
 
-<section id="obras">
-  <h2>Works</h2>
-  {obras.map(o => (
-    <a href={`/en/obras/${o.slug}`} class="work-link">
-      <div class="work">
-        <div class="work-title">{o.title}</div>
-        <div class="work-meta">{o.year} · {o.location}</div>
-        <div class="work-desc">{o.desc}</div>
-      </div>
-    </a>
-  ))}
-
-  <div class="series">
-    <div class="series-label">LUZCIDADE Series · Design Thesis FAU-USP · 2009–2013</div>
-    {luzcidade.map(o => (
-      <a href={`/en/obras/${o.slug}`} class="work-link">
-        <div class="work work-series">
-          <div class="work-title">{o.title}</div>
-          <div class="work-meta">{o.year} · {o.location}</div>
+    <section class="archive" id="obras">
+      <div class="archive-head">
+        <div class="archive-kicker">ARCHIVE</div>
+        <h2>{total} works</h2>
+        <div class="archive-meta">São Paulo · active 2009— · {realized} realized · {toConfirm} to confirm · updated {updatedAt}</div>
+        <p class="archive-note">Public entry to the archive. Works, systems, and experience directions lead to dossiers; the map reads sustained relations; the graph preserves an earlier process layer.</p>
+        <div class="statute-legend" aria-label="Editorial statutes">
+          <div><strong>Felipe-authored work</strong><span>Felipe is the artist; curation, production and materialization remain credited when present.</span></div>
+          <div><strong>Thematic / collective exhibition</strong><span>Felipe appears through art, technology and experience direction, without absorbing other artists' authorship.</span></div>
+          <div><strong>Third-party artist project</strong><span>The invited artist remains the primary author; Felipe operates spatial/technical translation.</span></div>
+          <div><strong>Under confirmation</strong><span>Published as archive in verification; dates, credits or final status remain open.</span></div>
         </div>
-      </a>
-    ))}
-  </div>
-</section>
+      </div>
 
-<section id="contato">
-  <h2>Contact</h2>
-  <div class="links">
-    <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
-    <a href="https://instagram.com/felipesztutman" target="_blank">instagram</a>
-    <a href="https://aya.cx" target="_blank">aya.cx</a>
-    <a href="https://br.linkedin.com/in/felipesztutman" target="_blank">linkedin</a>
-  </div>
-</section>
+      <div class="archive-table-wrap">
+        <table class="archive-table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>WORK</th>
+              <th>YEAR</th>
+              <th>LOCATION</th>
+              <th>CONTEXT</th>
+              <th>STATUTE</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {works.map((work) => {
+              const display = displayWork(work);
+              return (
+                <tr class:list={{ pending: work.status === 'A_CONFIRMAR' }} style={`--pulse:${work.corPulso || '#111111'};`}>
+                  <td class="num"><a href={`/en/obras/${work.slug}`}>{work.numero}</a></td>
+                  <td class="title-cell">
+                    <a href={`/en/obras/${work.slug}`}>{display.title}</a>
+                    <div class="title-desc">{display.description}</div>
+                  </td>
+                  <td>{display.year}</td>
+                  <td>{display.location}</td>
+                  <td>{contextLabel(work)}</td>
+                  <td class="statute-cell">
+                    <span>{editorialStatus(work)}</span>
+                    {regimeLabel(work) && <small>{regimeLabel(work)}</small>}
+                  </td>
+                  <td>
+                    <span class:list={[ 'status', work.status === 'A_CONFIRMAR' && 'pending' ]}>{statusLabel(work.status)}</span>
+                    <div class="status-note">{statusNote(work.status)}</div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
 
+      <div class="archive-links">
+        <a href="/mapa"><strong>map</strong> relational exploration</a>
+        <a href="/en/escritos"><strong>writings</strong> conceptual layer</a>
+        <a href="/en/publicacoes"><strong>publications</strong> editorial circulation</a>
+        <a href="/en/trajetoria"><strong>trajectory</strong> chronology</a>
+        <a href="/en/sobre"><strong>about</strong> context</a>
+        <a href="/grafo"><strong>graph</strong> legacy</a>
+        <a href="/"><strong>PT</strong> português</a>
+        <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
+      </div>
+    </section>
+  </main>
 </Base>
 
+<style is:global>
+body.page-home{background:#050505;color:#f1ece3}
+body.page-home a{text-decoration:none}
+</style>
+
 <style>
-.statement{margin-bottom:3rem;font-size:1.05rem;line-height:1.85}
-.statement p{margin-bottom:1.2rem}
-section{margin-bottom:3rem}
-section h2{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--fg3);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,.04)}
-.work-link{text-decoration:none;display:block}
-.work-link:hover .work-title{color:var(--accent)}
-.work{margin-bottom:1.5rem}
-.work-title{font:500 1rem/1.3 var(--sans);color:var(--fg);transition:color .15s;margin-bottom:.15rem}
-.work-meta{font:.75rem/1.4 var(--mono);color:var(--fg3);margin-bottom:.3rem}
-.work-desc{font:.88rem/1.65 var(--sans);color:var(--fg2)}
-.series{margin-top:2rem;padding-left:1.5rem;border-left:1px solid rgba(255,255,255,.06)}
-.series-label{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--fg3);margin-bottom:1rem}
-.work-series{margin-bottom:1rem}
-.links{font:.75rem/1 var(--mono);color:var(--fg3);display:flex;gap:1.2rem;flex-wrap:wrap}
-.links a{color:var(--fg2);transition:color .15s}.links a:hover{color:var(--fg)}
+:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.15);--line-strong:rgba(17,17,17,.28)}
+.home{min-height:100vh;background:#050505}
+.entry{min-height:100vh;padding:3rem 2rem 2rem;display:flex;flex-direction:column;justify-content:space-between;background:#050505;color:#f1ece3}
+.entry-meta,.entry-hint,.statement-label,.archive-kicker,.archive-links{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.entry-meta{color:rgba(255,255,255,.55)}
+.entry h1{font:900 clamp(4rem,13vw,12rem)/.92 var(--sans);letter-spacing:-.05em;max-width:12ch}
+.entry-hint{color:rgba(255,255,255,.45);text-align:right}
+.statement{background:var(--paper);color:var(--ink);padding:4rem 2rem 5rem;border-top:1px solid rgba(255,255,255,.04)}
+.statement-label{color:rgba(17,17,17,.45);margin-bottom:1rem}
+.statement p{font:300 italic clamp(2rem,5vw,4.5rem)/1.05 var(--sans);max-width:14ch;letter-spacing:-.04em}
+.archive{background:var(--paper);color:var(--ink);padding:0 2rem 3rem}
+.archive-head{padding:0 0 1.5rem;border-bottom:1px solid var(--line-strong);margin-bottom:1.5rem}
+.archive-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}
+.archive h2{font:700 clamp(2rem,4vw,3.5rem)/1 var(--sans);letter-spacing:-.05em;margin-bottom:.5rem}
+.archive-meta{font:.8rem/1.5 var(--mono);color:rgba(17,17,17,.58);text-transform:uppercase;letter-spacing:.08em}
+.archive-note{margin:.75rem 0 0;max-width:60ch;font:.95rem/1.55 var(--sans);color:rgba(17,17,17,.68)}
+.statute-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:1.25rem;background:var(--line-strong);border:1px solid var(--line-strong)}
+.statute-legend div{background:var(--paper);padding:.85rem .75rem}
+.statute-legend strong{display:block;font:.68rem/1.25 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.78);margin-bottom:.35rem}
+.statute-legend span{display:block;font:.78rem/1.45 var(--sans);color:rgba(17,17,17,.58)}
+.archive-table-wrap{overflow:auto;border-top:1px solid var(--line)}
+.archive-table{width:100%;border-collapse:collapse;min-width:980px}
+.archive-table th,.archive-table td{padding:.9rem .65rem;vertical-align:top;border-bottom:1px solid var(--line)}
+.archive-table th{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(17,17,17,.48);text-align:left}
+.archive-table td{font:.92rem/1.45 var(--sans);color:rgba(17,17,17,.9)}
+.archive-table td a{color:inherit}
+.archive-table tbody tr{transition:background .15s ease}
+.archive-table tbody tr:hover{background:rgba(17,17,17,.03)}
+.archive-table tbody tr:hover .title-cell a{text-decoration:underline}
+.archive-table tbody tr:hover .num{border-left-color:var(--pulse)}
+.num{font:.8rem/1.2 var(--mono);color:rgba(17,17,17,.55);width:64px;border-left:3px solid transparent;padding-left:.8rem;transition:border-color .15s ease}
+.title-cell{min-width:320px}
+.title-cell a{font-weight:600;letter-spacing:-.01em}
+.title-desc{margin-top:.3rem;font-size:.82rem;line-height:1.5;color:rgba(17,17,17,.58);max-width:52ch}
+.statute-cell span{display:block;font:.78rem/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.72)}
+.statute-cell small{display:block;margin-top:.25rem;font:.78rem/1.45 var(--sans);color:rgba(17,17,17,.55);max-width:24ch}
+.status{display:inline-block;font:.72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.75);padding:.32rem .45rem;border:1px solid rgba(17,17,17,.2)}
+.status.pending{color:#4d2b00;background:rgba(255,136,0,.12);border-color:rgba(122,70,0,.34)}
+.status-note{margin-top:.35rem;font:.74rem/1.4 var(--sans);color:rgba(17,17,17,.5);max-width:18ch}
+.archive-links{display:flex;gap:.7rem 1.25rem;flex-wrap:wrap;padding-top:1.5rem;color:rgba(17,17,17,.55);border-top:1px solid var(--line-strong);margin-top:1.5rem}
+.archive-links a{color:inherit;display:flex;gap:.35rem;align-items:baseline}
+.archive-links strong{font-weight:600;color:rgba(17,17,17,.78)}
+.archive-links a:hover{color:var(--ink);text-decoration:underline}
+@media (max-width: 1100px){.statute-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 900px){
+  .entry,.statement,.archive{padding-left:1rem;padding-right:1rem}
+  .entry{padding-top:1.25rem;padding-bottom:1.25rem}
+  .statement{padding-top:3rem;padding-bottom:3rem}
+  .archive{padding-bottom:2rem}
+  .archive-meta{font-size:.72rem}
+}
+@media (max-width: 640px){.statute-legend{grid-template-columns:1fr}}
 </style>

@@ -77,6 +77,12 @@ function regimeLabel(work: any) {
         <h2>{total} obras</h2>
         <div class="archive-meta">São Paulo · ativo 2009— · {realizada} realizadas · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
         <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê; o mapa lê relações sustentadas; o grafo preserva uma camada anterior do processo.</p>
+        <div class="statute-legend" aria-label="Estatutos editoriais">
+          <div><strong>Obra autoral de Felipe</strong><span>Felipe é o artista; curadoria, produção e materialização seguem creditadas quando existem.</span></div>
+          <div><strong>Exposição temática / coletiva</strong><span>Felipe aparece pela direção de arte, tecnologia e experiência, sem absorver a autoria de outros artistas.</span></div>
+          <div><strong>Projeto com artista terceiro</strong><span>O artista convidado permanece como autor principal; Felipe opera a tradução espacial e técnica.</span></div>
+          <div><strong>Em confirmação</strong><span>Publicado como arquivo em verificação; datas, créditos ou estatuto final seguem abertos.</span></div>
+        </div>
       </div>
 
       <div class="archive-table-wrap">
@@ -124,6 +130,7 @@ function regimeLabel(work: any) {
         <a href="/trajetoria"><strong>trajetória</strong> cronologia</a>
         <a href="/sobre"><strong>sobre</strong> contexto</a>
         <a href="/grafo"><strong>grafo</strong> legacy</a>
+        <a href="/en"><strong>EN</strong> english</a>
         <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
       </div>
     </section>
@@ -152,6 +159,10 @@ body.page-home a{text-decoration:none}
 .archive h2{font:700 clamp(2rem,4vw,3.5rem)/1 var(--sans);letter-spacing:-.05em;margin-bottom:.5rem}
 .archive-meta{font:.8rem/1.5 var(--mono);color:rgba(17,17,17,.58);text-transform:uppercase;letter-spacing:.08em}
 .archive-note{margin:.75rem 0 0;max-width:60ch;font:.95rem/1.55 var(--sans);color:rgba(17,17,17,.68)}
+.statute-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:1.25rem;background:var(--line-strong);border:1px solid var(--line-strong)}
+.statute-legend div{background:var(--paper);padding:.85rem .75rem}
+.statute-legend strong{display:block;font:.68rem/1.25 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.78);margin-bottom:.35rem}
+.statute-legend span{display:block;font:.78rem/1.45 var(--sans);color:rgba(17,17,17,.58)}
 .archive-table-wrap{overflow:auto;border-top:1px solid var(--line)}
 .archive-table{width:100%;border-collapse:collapse;min-width:980px}
 .archive-table th,.archive-table td{padding:.9rem .65rem;vertical-align:top;border-bottom:1px solid var(--line)}
@@ -175,6 +186,7 @@ body.page-home a{text-decoration:none}
 .archive-links a{color:inherit;display:flex;gap:.35rem;align-items:baseline}
 .archive-links strong{font-weight:600;color:rgba(17,17,17,.78)}
 .archive-links a:hover{color:var(--ink);text-decoration:underline}
+@media (max-width: 1100px){.statute-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 900px){
   .entry,.statement,.archive{padding-left:1rem;padding-right:1rem}
   .entry{padding-top:1.25rem;padding-bottom:1.25rem}
@@ -182,4 +194,5 @@ body.page-home a{text-decoration:none}
   .archive{padding-bottom:2rem}
   .archive-meta{font-size:.72rem}
 }
+@media (max-width: 640px){.statute-legend{grid-template-columns:1fr}}
 </style>

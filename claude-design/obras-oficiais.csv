@@ -1,0 +1,19 @@
+numero,slug,titulo,ano,local,tecnica_medium,contexto,status
+001,objeto-em-forma-de-espaco,"Objeto em Forma de: Espaço",2009,"Museu da Imagem e do Som (MIS-SP)","fibras ópticas; som; aroma; luz","série LUZCIDADE / ambiente sinestésico",REALIZADA
+002,occupycopan,OccupyCopan,2011,"Edifício Copan, São Paulo","lâmpadas fluorescentes; cabo de aço; luz no espaço","série LUZCIDADE / intervenção vertical",REALIZADA
+003,cachoeira,Cachoeira,2012,"Vale do Anhangabaú e Viaduto do Chá, São Paulo","500m de cabo eletroluminescente","URBE / CCBB / arte pública",REALIZADA
+004,canvas13,"sem título, para Canvas #13",2013,"Serralheria Cultural, São Paulo","instalação luminosa site-specific","série LUZCIDADE",REALIZADA
+005,corrego-rio-verde,"sem título, para Córrego Rio Verde",2013,"Beco do Batman, Vila Madalena, São Paulo","design paramétrico + luz","série LUZCIDADE / intervenção independente",REALIZADA
+006,mantiqueira,"sem título, para Mantiqueira",2013,"Serra da Mantiqueira, SP","instalação luminosa efêmera em natureza","série LUZCIDADE",REALIZADA
+007,mementos,Mementos,2019,"Farol Santander, São Paulo","lasers + cristal","Metaversø / Farol",REALIZADA
+008,interludio,Interlúdio,2019,"Farol Santander, São Paulo","sensores de proximidade + luz responsiva","Metaversø / Farol",REALIZADA
+009,oceanvs,Oceanvs,2022,"Farol Santander SP, Casa Fiat BH","projeção; interatividade; trilha; oito atos","série dos Elementos / água",REALIZADA
+010,metadata,"Metadata — O Mundo Invisível",2023,"Centro Cultural FIESP, São Paulo","dados em tempo real + fluidos 3D + projeção","exposição imersiva",REALIZADA
+011,sao-paulo-3024,"São Paulo 3024",2024,"Farol Santander São Paulo","LLMs; LoRa; OpenCV; projeção; instalação interativa","série dos Elementos / humano",REALIZADA
+012,luz-aeterna,"Luz Æterna — Ensaio Sobre o Sol",2024,"CCBB Brasília + CCBB Belo Horizonte","expografia; luz; projeção","exposição dirigida / new media",REALIZADA
+013,o-que-nos-une,"O Que Nos Une",2025,"Centro Cultural FIESP, São Paulo","espelhos; sincronização biométrica; sensor; projeção","exposição imersiva / Nicolelis",REALIZADA
+014,floresta-utopica,Floresta Utópica,2025,"Farol Santander São Paulo","projeção; espelhos; aromas; escultura de luz","série dos Elementos / terra",REALIZADA
+015,andromeda,"Andrômeda — Universo Sem Fim",2025,"Farol Santander São Paulo","projeção; laser; ambiente imersivo","série dos Elementos / ar-cosmos",REALIZADA
+016,amano,"AMANO — Além da Fantasia",2026,"CCBB São Paulo, Belo Horizonte, Rio de Janeiro","espaço imersivo; vídeo; luz; som; automação; projeção","exposição dirigida / itinerância",REALIZADA
+017,flama,FLAMA,2026,"Farol Santander São Paulo, 22º andar","fogo como material interativo; sensores; projeção; LED","série dos Elementos / fogo",A_CONFIRMAR
+018,player1,"Player 1: 50 Anos dos Videogames",2026,"Farol Santander São Paulo","instalações interativas corpo-interface","exposição / jogos como medium",A_CONFIRMAR

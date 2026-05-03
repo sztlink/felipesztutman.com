@@ -6,3 +6,9 @@ dist/
 !src/pages/obras/
 benchmark/
 INVENTARIO.md
+
+# Local design handoff artifacts (heavy / process-only).
+# Canonical decisions are preserved in Markdown files committed to the repo.
+claude-design/*.zip
+claude-design/*redesign-handoff*/
+claude-design/screenshots/
