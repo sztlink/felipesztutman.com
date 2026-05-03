@@ -234,16 +234,10 @@ function normalizePublicationUrl(url?: string) {
       </section>
     )}
 
-    <section class="narrative">
-      <div class="section-kicker">{isEN ? 'Text' : 'Texto'}</div>
-      <div class="narrative-body">
-        <slot />
-      </div>
-    </section>
-
     {publicRelations.length > 0 && (
-      <section class="panel relations">
+      <section class="panel relations relation-index">
         <div class="panel-kicker">{isEN ? 'Public relations' : 'Relações públicas'}</div>
+        <p class="panel-intro">{isEN ? 'Public connections that situate this work inside the archive before the narrative text.' : 'Conexões públicas que situam esta obra no arquivo antes do texto narrativo.'}</p>
         <div class="relation-list">
           {publicRelations.map((relation: any) => (
             <div class="relation-item">
@@ -259,6 +253,13 @@ function normalizePublicationUrl(url?: string) {
         </div>
       </section>
     )}
+
+    <section class="narrative">
+      <div class="section-kicker">{isEN ? 'Narrative text' : 'Texto narrativo'}</div>
+      <div class="narrative-body">
+        <slot />
+      </div>
+    </section>
 
     {(frontmatter.credits?.length || frontmatter.publications?.length || frontmatter.press?.length) && (
       <section class="panel support">
@@ -371,6 +372,7 @@ body.page-obra a{text-decoration:none}
 .pending-note{margin-top:1rem;max-width:56ch;border-left:3px solid #ff9b2f;padding:.75rem .85rem;background:rgba(255,136,0,.1);font:.92rem/1.55 var(--sans);color:rgba(255,238,216,.82)}
 .panel{background:var(--paper);color:var(--ink);padding:1rem;border-top:2px solid var(--pulse);margin:0 0 1.5rem}
 .panel-kicker,.section-kicker{color:rgba(17,17,17,.48);margin-bottom:1rem}
+.panel-intro{font:.92rem/1.55 var(--sans);color:rgba(17,17,17,.62);max-width:58ch;margin:-.25rem 0 1rem}
 .lead{font:400 1.05rem/1.6 var(--sans);margin-bottom:1rem;max-width:56ch}
 .dossier dl{display:grid;gap:.55rem}
 .row{display:grid;grid-template-columns:140px 1fr;gap:.75rem;padding-top:.55rem;border-top:1px solid var(--paper-line)}
@@ -381,6 +383,7 @@ body.page-obra a{text-decoration:none}
 .narrative-body{max-width:68ch;font:1rem/1.9 var(--sans);color:#f1ece3}
 .narrative-body :global(p){margin-bottom:1.2rem}
 .relation-list,.support{display:grid;gap:1rem}
+.relation-index{border-top-width:4px}
 .relation-item{padding-top:.75rem;border-top:1px solid var(--paper-line)}
 .relation-label{font:.72rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.55);margin-bottom:.35rem}
 .relation-target{font:600 1rem/1.4 var(--sans);color:var(--ink)}
