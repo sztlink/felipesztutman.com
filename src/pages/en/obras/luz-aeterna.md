@@ -4,17 +4,17 @@ title: "Luz Æterna — Ensaio Sobre o Sol"
 year: "2024"
 location: "CCBB Brasília + CCBB Belo Horizonte"
 lang: en
-description: "Executive direction of new media art exhibition featuring eight Brazilian artists, where light organizes space and unifies the journey between physical and virtual."
-lead: "Collective new media art exhibition treated as executive and spatial direction: eight artists coexist in a route where light, exhibition design, and architectural adaptation organize the experience without erasing each work's autonomy."
-archiveNote: "Luz Æterna remains in the archive as a directed exhibition, not as resolved individual authorship. The page holds this ambiguity: the authorial gesture is in spatial direction, technical articulation, and institutional circulation, while the works and their artists preserve their own authorship."
+description: "Art, technology, and experience direction for a collective new media art exhibition featuring eight Brazilian artists, where light organizes space and unifies the journey between physical and virtual."
+lead: "Thematic/collective new media art exhibition treated as art, technology, and experience direction: eight artists coexist in a route where light, exhibition design, and architectural adaptation organize the experience without erasing each work's autonomy."
+archiveNote: "Luz Æterna remains in the archive as a directed thematic/collective exhibition, not as Felipe's individual authored work. The page records a directing gesture — spatial, technical, and experiential — while the works and their artists preserve their own authorship."
 circulation:
   - { label: "Circuit", value: "CCBB Brasília and CCBB Belo Horizonte" }
   - { label: "Structure", value: "Collective new media art exhibition with eight Brazilian artists" }
-  - { label: "Spatial direction", value: "Site-specific exhibition design, light, and route between autonomous works" }
-collaborationNote: "Collaboration is constitutive of the work: Antonio Curti signs the curation, Felipe Sztutman organizes executive and spatial direction, Eduardo Raele and Rodrigo Primo join executive production, and AYA Studio sustains the multimedia project and venue. The archive does not turn this network into single authorship; it records the directing gesture that made the set function as an inhabitable exhibition."
+  - { label: "Experience direction", value: "Site-specific exhibition design, light, and route between autonomous works" }
+collaborationNote: "Collaboration is constitutive of the exhibition: Antonio Curti signs curatorial conception and curation, Felipe Sztutman organizes art, technology, and experience direction, Eduardo Raele and Rodrigo Primo join executive production, and AYA Studio sustains the multimedia project and venue. The archive does not turn this network into single authorship; it records the directing gesture that made the set function as an inhabitable exhibition."
 credits:
-  - { role: "Curator", name: "Antonio Curti" }
-  - { role: "Executive Director", name: "Felipe Sztutman" }
+  - { role: "Curatorial conception and curation", name: "Antonio Curti" }
+  - { role: "Art, technology, and experience direction", name: "Felipe Sztutman" }
   - { role: "Executive Production", name: "Eduardo Raele, Rodrigo Primo" }
   - { role: "Multimedia Project and Venue", name: "AYA Studio" }
 ---

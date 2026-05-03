@@ -5,8 +5,8 @@ year: "2024"
 location: "Farol Santander São Paulo"
 description: "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRa como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real."
 credits:
-  - { role: "Curadoria", name: "Antonio Curti" }
-  - { role: "Concepção Técnica e Artística", name: "Felipe Sztutman" }
+  - { role: "Artista", name: "Felipe Sztutman" }
+  - { role: "Curadoria e narrativa", name: "Antonio Curti" }
   - { role: "Estúdio", name: "AYA Studio" }
   - { role: "Produção", name: "Arte3" }
   - { role: "Patrocínio", name: "Santander Brasil" }

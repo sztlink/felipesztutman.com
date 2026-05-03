@@ -14,8 +14,8 @@ mechanism:
   - { label: "Infrastructure", value: "Eleven synchronized projectors, 5.1 sound, and a distributed three-zone network with redundancy" }
   - { label: "Question", value: "Is technology illustrating the future, or asking whether the future is already hidden inside today's machines?" }
 credits:
-  - { role: "Curator", name: "Antonio Curti" }
-  - { role: "Technical and Artistic Conception", name: "Felipe Sztutman" }
+  - { role: "Artist", name: "Felipe Sztutman" }
+  - { role: "Curation and narrative", name: "Antonio Curti" }
   - { role: "Studio", name: "AYA Studio" }
   - { role: "Production", name: "Arte3" }
   - { role: "Sponsorship", name: "Santander Brasil" }

@@ -12,8 +12,8 @@ circulation:
   - { label: "Estrutura", value: "Ambiente interativo de entrada e sala imersiva com luz, projeção, laser e trilha original" }
 collaborationNote: "A obra articula curadoria de Antonio Curti, direção de Felipe Sztutman, trilha sonora de Juvi e produção da AYA Studio. A colaboração aparece na composição do percurso: roteiro, espaço, luz, movimento e som operam como uma experiência única de visita."
 credits:
-  - { role: "Curadoria", name: "Antonio Curti" }
-  - { role: "Direção", name: "Felipe Sztutman" }
+  - { role: "Artista", name: "Felipe Sztutman" }
+  - { role: "Curadoria e narrativa", name: "Antonio Curti" }
   - { role: "Trilha Sonora", name: "Juvi" }
   - { role: "Produção", name: "AYA Studio" }
 ---

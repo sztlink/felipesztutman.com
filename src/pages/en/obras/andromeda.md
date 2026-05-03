@@ -13,8 +13,8 @@ circulation:
   - { label: "Structure", value: "Interactive entry environment and immersive room with light, projection, laser, and original score" }
 collaborationNote: "The work articulates Antonio Curti's curation, Felipe Sztutman's direction, Juvi's original score, and AYA Studio's production. Collaboration appears in the composition of the route: script, space, light, movement, and sound operate as a single visitor experience."
 credits:
-  - { role: "Curator", name: "Antonio Curti" }
-  - { role: "Director", name: "Felipe Sztutman" }
+  - { role: "Artist", name: "Felipe Sztutman" }
+  - { role: "Curation and narrative", name: "Antonio Curti" }
   - { role: "Original Score", name: "Juvi" }
   - { role: "Production", name: "AYA Studio" }
 ---

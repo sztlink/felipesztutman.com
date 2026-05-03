@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "FLAMA"
 year: "2026"
 location: "Farol Santander São Paulo, 22º andar"
-description: "Encerramento da pentalogia Os Elementos. Três ambientes onde o visitante contempla, cria e é revelado pela chama. Experiência espacial sobre fogo como material interativo."
+description: "Obra autoral em confirmação. Encerramento da pentalogia Os Elementos: três ambientes onde o visitante contempla, cria e é revelado pela chama."
 lead: "Instalação-sistema em três ambientes onde o fogo aparece como material interativo: contemplação coletiva, criação corporal e toque individual organizam uma experiência pensada para acumular memória no espaço."
 archiveNote: "FLAMA permanece em A_CONFIRMAR: a página descreve o projeto a partir do texto atual do arquivo, sem resolver data de abertura, documentação visual, ficha técnica expandida ou confirmação final de realização."
 mechanism:
@@ -12,9 +12,9 @@ mechanism:
   - { label: "Acúmulo", value: "O projeto prevê memória coletiva acumulada no espaço; no cristal, o toque deixaria marcas ao longo da operação" }
   - { label: "Pergunta", value: "Como criar três modos de estar diante do fogo — contemplar, criar e ser revelado pela chama?" }
 credits:
-  - { role: "Concepção artística e espacial", name: "Felipe Sztutman" }
-  - { role: "Curadoria", name: "Antonio Curti" }
-  - { role: "Realização", name: "AYA Studio" }
+  - { role: "Artista", name: "Felipe Sztutman" }
+  - { role: "Curadoria e narrativa", name: "Antonio Curti" }
+  - { role: "Produção e materialização", name: "AYA Studio" }
 ---
 
 Em 2024, Antonio Curti me convidou para completar uma jornada que começara com OCEANVS. Quatro elementos já haviam sido materializados no Farol Santander — Água, Ar, Terra, Humano. Faltava o fogo. Concebi FLAMA como encerramento dessa pentalogia: três ambientes onde o visitante contempla, cria e é revelado pela chama.

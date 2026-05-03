@@ -13,6 +13,7 @@ mechanism:
   - { label: "Tempo", value: "O sistema cruza dados em tempo real com marcas históricas e dados retroativos" }
   - { label: "Pergunta", value: "Como fazer um raio-X de São Paulo?" }
 credits:
+  - { role: "Artista", name: "Felipe Sztutman" }
   - { role: "Curadoria", name: "Antonio Curti" }
 press:
   - { source: "SESI São Paulo", url: "https://www.sesisp.org.br/evento/8b7ede64-6589-45df-b5f3-a2baa41412fc/metadata-o-mundo-invisivel", title: "Página oficial" }

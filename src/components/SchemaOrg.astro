@@ -7,8 +7,10 @@ interface Props {
   image?: string;
   dateCreated?: string;
   location?: string;
+  creatorNames?: string[];
+  omitCreator?: boolean;
 }
-const { type = 'WebSite', name, description, url, image, dateCreated, location } = Astro.props;
+const { type = 'WebSite', name, description, url, image, dateCreated, location, creatorNames, omitCreator = false } = Astro.props;
 
 const person = {
   "@context": "https://schema.org",
@@ -42,13 +44,19 @@ const website = {
   "inLanguage": ["pt-BR", "en"]
 };
 
+const resolvedCreators = (creatorNames?.length ? creatorNames : ['Felipe Sztutman']).map((creatorName) => ({
+  "@type": "Person",
+  "name": creatorName,
+  ...(creatorName === 'Felipe Sztutman' ? { "url": "https://felipesztutman.com" } : {})
+}));
+
 const artwork = name ? {
   "@context": "https://schema.org",
   "@type": "VisualArtwork",
   "name": name,
   "description": description,
   "url": url,
-  "creator": { "@type": "Person", "name": "Felipe Sztutman", "url": "https://felipesztutman.com" },
+  ...(!omitCreator ? { "creator": resolvedCreators.length === 1 ? resolvedCreators[0] : resolvedCreators } : {}),
   "dateCreated": dateCreated,
   ...(location ? { "locationCreated": { "@type": "Place", "name": location } } : {}),
   ...(image ? { "image": image } : {}),

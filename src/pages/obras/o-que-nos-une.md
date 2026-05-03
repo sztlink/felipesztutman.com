@@ -15,7 +15,7 @@ mechanism:
 credits:
   - { role: "Curadoria Científica", name: "Miguel Nicolelis" }
   - { role: "Curadoria Artística", name: "Antonio Curti" }
-  - { role: "Concepção e Direção Geral de Tecnologia", name: "Felipe Sztutman" }
+  - { role: "Direção de arte, tecnologia e experiência", name: "Felipe Sztutman" }
   - { role: "Estúdio Executor", name: "AYA Studio" }
   - { role: "Obra 1: O Indivíduo", name: "João Alencar / Automotion" }
   - { role: "Obras 2 e 3 (Max/MSP)", name: "Matheus Leston" }

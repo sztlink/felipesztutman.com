@@ -4,7 +4,7 @@ title: "FLAMA"
 year: "2026"
 location: "Farol Santander São Paulo, 22nd floor"
 lang: en
-description: "Conclusion of the pentology Os Elementos. Three environments where the visitor contemplates, creates, and is revealed by flame. Spatial experience about fire as interactive material."
+description: "Authored work under confirmation. Conclusion of the pentology Os Elementos: three environments where the visitor contemplates, creates, and is revealed by flame."
 lead: "System-installation in three environments where fire appears as interactive material: collective contemplation, bodily creation, and individual touch organize an experience conceived to accumulate memory in space."
 archiveNote: "FLAMA remains under confirmation: this page describes the project from the current archive text, without resolving opening date, visual documentation, expanded technical credits, or final realization confirmation."
 mechanism:
@@ -14,9 +14,9 @@ mechanism:
   - { label: "Question", value: "How to create three modes of being before fire — contemplating, creating, and being revealed by flame?" }
 collaborationNote: "The current project text names Antonio Curti's curation and AYA Studio's materialization, including Ana Clara on visual design, Minhoso on 3D renders, and the technical infrastructure planned for continuous operation; this remains a project description, not final confirmed credits."
 credits:
-  - { role: "Artistic and Spatial Conception", name: "Felipe Sztutman" }
-  - { role: "Curator", name: "Antonio Curti" }
-  - { role: "Realization", name: "AYA Studio" }
+  - { role: "Artist", name: "Felipe Sztutman" }
+  - { role: "Curation and narrative", name: "Antonio Curti" }
+  - { role: "Production and materialization", name: "AYA Studio" }
 ---
 
 In 2024, Antonio Curti invited me to complete a journey that had begun with OCEANVS. Four elements had already been materialized at Farol Santander — Water, Air, Earth, Human. Fire was missing. I conceived FLAMA as the conclusion of this pentology: three environments where the visitor contemplates, creates, and is revealed by flame.

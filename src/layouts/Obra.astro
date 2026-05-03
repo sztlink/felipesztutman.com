@@ -47,6 +47,13 @@ const publications = (publicationsData as any).publications || [];
 const relationSeeds = (relationsData as any).relations || [];
 
 const work = works.find((entry: any) => entry.slug === slug) || null;
+const artistCredits = frontmatter.credits?.filter((credit) => ['artista', 'artist'].includes(credit.role.toLowerCase())) || [];
+const schemaCreatorNames = work?.authorshipMode === 'PROJETO_ARTISTA_TERCEIRO'
+  ? artistCredits.map((credit) => credit.name)
+  : work?.authorshipMode === 'COAUTORAL_FELIPE' && Array.isArray(work?.fichaTecnica?.concepcao)
+    ? work.fichaTecnica.concepcao
+    : ['Felipe Sztutman'];
+const schemaOmitCreator = work?.authorshipMode === 'EXPOSICAO_TEMATICA' || work?.authorshipMode === 'DIRECAO_EXPERIENCIA' || (work?.authorshipMode === 'PROJETO_ARTISTA_TERCEIRO' && schemaCreatorNames.length === 0);
 const pulse = work?.corPulso || '#00ccff';
 const regimes = (regimeData as any).works || {};
 const regime = work ? regimes[work.slug] : null;
@@ -59,7 +66,18 @@ const regimeLabels: Record<string, string> = {
 
 function editorialStatus(entry: any) {
   if (!entry) return null;
-  if (entry.status === 'A_CONFIRMAR') return isEN ? 'project under confirmation' : 'projeto em confirmação';
+  const labels: Record<string, {pt: string; en: string}> = {
+    AUTORAL_FELIPE: { pt: 'obra autoral de Felipe', en: 'Felipe-authored work' },
+    COAUTORAL_FELIPE: { pt: 'obra coautoral', en: 'co-authored work' },
+    PROJETO_ARTISTA_TERCEIRO: { pt: 'projeto com artista terceiro', en: 'third-party artist project' },
+    EXPOSICAO_TEMATICA: { pt: 'exposição temática / coletiva', en: 'thematic / collective exhibition' },
+    DIRECAO_EXPERIENCIA: { pt: 'direção de experiência', en: 'experience direction' },
+  };
+  if (entry.status === 'A_CONFIRMAR') {
+    if (entry.authorshipMode === 'EXPOSICAO_TEMATICA') return isEN ? 'exhibition under confirmation' : 'exposição em confirmação';
+    return isEN ? 'project under confirmation' : 'projeto em confirmação';
+  }
+  if (entry.authorshipMode && labels[entry.authorshipMode]) return isEN ? labels[entry.authorshipMode].en : labels[entry.authorshipMode].pt;
   if (entry.tipo === 'ARTE_PUBLICA') return isEN ? 'public art' : 'arte pública';
   if (entry.tipo === 'INTERVENCAO_URBANA') return isEN ? 'urban intervention' : 'intervenção urbana';
   if (entry.tipo === 'EXPOSICAO_DIRIGIDA') return isEN ? 'directed exhibition' : 'exposição dirigida';
@@ -161,6 +179,8 @@ function normalizePublicationUrl(url?: string) {
   schemaName={frontmatter.title}
   schemaDate={frontmatter.year}
   schemaLocation={frontmatter.location}
+  schemaCreatorNames={schemaCreatorNames}
+  schemaOmitCreator={schemaOmitCreator}
   ogImage={ogImage}
   fullBleed={true}
   showHeader={false}

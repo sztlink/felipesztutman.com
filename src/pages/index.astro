@@ -25,7 +25,17 @@ function statusNote(status: string) {
 }
 
 function editorialStatus(work: any) {
-  if (work.status === 'A_CONFIRMAR') return 'projeto em confirmação';
+  const labels: Record<string, string> = {
+    AUTORAL_FELIPE: 'obra autoral de Felipe',
+    COAUTORAL_FELIPE: 'obra coautoral',
+    PROJETO_ARTISTA_TERCEIRO: 'projeto com artista terceiro',
+    EXPOSICAO_TEMATICA: 'exposição temática / coletiva',
+    DIRECAO_EXPERIENCIA: 'direção de experiência',
+  };
+  if (work.status === 'A_CONFIRMAR') {
+    return work.authorshipMode === 'EXPOSICAO_TEMATICA' ? 'exposição em confirmação' : 'projeto em confirmação';
+  }
+  if (work.authorshipMode && labels[work.authorshipMode]) return labels[work.authorshipMode];
   if (work.tipo === 'ARTE_PUBLICA') return 'arte pública';
   if (work.tipo === 'INTERVENCAO_URBANA') return 'intervenção urbana';
   if (work.tipo === 'EXPOSICAO_DIRIGIDA') return 'exposição dirigida';
@@ -66,7 +76,7 @@ function regimeLabel(work: any) {
         <div class="archive-kicker">ARQUIVO</div>
         <h2>{total} obras</h2>
         <div class="archive-meta">São Paulo · ativo 2009— · {realizada} realizadas · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
-        <p class="archive-note">Entrada pública do arquivo. As obras levam ao dossiê; o mapa lê relações sustentadas; o grafo preserva uma camada anterior do processo.</p>
+        <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê; o mapa lê relações sustentadas; o grafo preserva uma camada anterior do processo.</p>
       </div>
 
       <div class="archive-table-wrap">

@@ -11,6 +11,8 @@ interface Props {
   schemaName?: string;
   schemaDate?: string;
   schemaLocation?: string;
+  schemaCreatorNames?: string[];
+  schemaOmitCreator?: boolean;
   showHeader?: boolean;
   showFooter?: boolean;
   fullBleed?: boolean;
@@ -26,6 +28,8 @@ const {
   schemaName,
   schemaDate,
   schemaLocation,
+  schemaCreatorNames,
+  schemaOmitCreator = false,
   showHeader = true,
   showFooter = true,
   fullBleed = false,
@@ -60,7 +64,7 @@ const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPa
 <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'}>
 <meta name="twitter:title" content={ogTitle || title}>
 <meta name="twitter:description" content={description}>
-<SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} />
+<SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} creatorNames={schemaCreatorNames} omitCreator={schemaOmitCreator} />
 <style is:global>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#060810;--fg:#c8d0e0;--fg2:rgba(200,210,230,.45);--fg3:rgba(200,210,230,.2);--accent:#4477ff;--mono:'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;--sans:system-ui,-apple-system,'Segoe UI',sans-serif}

@@ -117,7 +117,8 @@
       "todo": [
         "Confirmar duração, planta ou detalhes de montagem antes de expandir a ficha técnica.",
         "Confirmar se as páginas do TCC LUZCIDADE reproduzidas na galeria exigem crédito de reprodução separado."
-      ]
+      ],
+      "authorshipMode": "COAUTORAL_FELIPE"
     },
     {
       "numero": "002",
@@ -205,7 +206,8 @@
       "todo": [
         "Não há galeria publicada no arquivo atual; localizar ou confirmar documentação visual antes de criar galeria.",
         "Confirmar créditos fotográficos, duração de exibição e detalhes de montagem antes de expandir a ficha técnica."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "003",
@@ -300,7 +302,8 @@
       "todo": [
         "Confirmar crédito das imagens 05 e 06 do TCC.",
         "Confirmar se existe equipe técnica adicional para a ficha expandida."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "004",
@@ -388,7 +391,8 @@
       "todo": [
         "Confirmar duração de exibição durante o festival Canvas #13.",
         "Confirmar se houve equipe de montagem adicional além dos créditos já publicados."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "005",
@@ -482,7 +486,8 @@
       "todo": [
         "Confirmar duração exata da instalação no Beco do Batman.",
         "Confirmar se a ficha deve registrar Boleta apenas como aval informal do território ou manter essa informação somente na narrativa."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "006",
@@ -566,7 +571,8 @@
       "todo": [
         "Confirmar ponto exato da montagem na Serra da Mantiqueira.",
         "Confirmar se houve equipe de montagem ou se a ficha deve permanecer apenas com concepção e registro fotográfico."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "007",
@@ -654,7 +660,8 @@
       "todo": [
         "Confirmar crédito fotográfico específico da galeria.",
         "Expandir a ficha técnica com hardware, material óptico e montagem quando o dado estiver consolidado."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "008",
@@ -741,7 +748,8 @@
       "todo": [
         "Confirmar créditos fotográficos específicos da galeria além da imagem hero.",
         "Expandir a ficha técnica com detalhes de sensores, eletrônica e montagem quando o dado estiver consolidado."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "009",
@@ -768,7 +776,7 @@
       "tipo": "EXPOSICAO_IMERSIVA",
       "serie": "Os Elementos",
       "corPulso": "#2255ee",
-      "description": "Instalação imersiva que percorre oito atos. Primeira grande co-criação — Antonio escreveu o roteiro, eu desenhei a experiência espacial que traz água ao corpo sem molhar a pele.",
+      "description": "Exposição autoral de Felipe Sztutman em oito atos. Antonio Curti escreveu o roteiro curatorial; Felipe concebeu a obra e a experiência espacial que traz água ao corpo sem molhar a pele.",
       "sourceFiles": {
         "page": "src/pages/obras/oceanvs.md",
         "galleryKey": "oceanvs",
@@ -831,12 +839,22 @@
         "realizacao": [
           "Farol Santander",
           "Casa Fiat de Cultura"
+        ],
+        "artista": [
+          "Felipe Sztutman"
+        ],
+        "curadoriaNarrativa": [
+          "Antonio Curti"
+        ],
+        "producaoMaterializacao": [
+          "AYA Studio"
         ]
       },
       "todo": [
         "Consolidar ficha expandida com número de projetores, sistema de som e variações entre as montagens.",
         "Confirmar créditos fotográficos específicos da galeria."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "010",
@@ -925,7 +943,8 @@
       "todo": [
         "Confirmar créditos fotográficos específicos da galeria.",
         "Expandir ficha técnica com fontes de dados, sistema de projeção e equipe técnica quando o dado estiver consolidado."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "011",
@@ -1003,7 +1022,8 @@
       "content": {
         "hasNarrativa": true,
         "narrativaPath": "src/pages/obras/sao-paulo-3024.md"
-      }
+      },
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "012",
@@ -1029,7 +1049,7 @@
       "tipo": "EXPOSICAO_DIRIGIDA",
       "serie": null,
       "corPulso": "#2255ee",
-      "description": "Direção executiva de exposição de new media art com oito artistas brasileiros, onde a luz organiza o espaço e unifica a jornada entre físico e virtual.",
+      "description": "Exposição temática/coletiva de new media art com oito artistas brasileiros. Direção de arte, tecnologia e experiência para organizar luz, expografia e percurso.",
       "sourceFiles": {
         "page": "src/pages/obras/luz-aeterna.md",
         "galleryKey": "luz-aeterna",
@@ -1089,14 +1109,20 @@
         "curadoria": [
           "Antonio Curti"
         ],
-        "direcaoExecutiva": [
-          "Felipe Sztutman"
-        ],
         "producaoExecutiva": [
           "Eduardo Raele",
           "Rodrigo Primo"
         ],
         "projetoMultimidiaELocacao": [
+          "AYA Studio"
+        ],
+        "concepcaoCuratorialCuradoria": [
+          "Antonio Curti"
+        ],
+        "direcaoArteTecnologiaExperiencia": [
+          "Felipe Sztutman"
+        ],
+        "producaoMaterializacao": [
           "AYA Studio"
         ]
       },
@@ -1105,7 +1131,8 @@
         "Confirmar lista completa dos oito artistas e créditos técnicos antes de expandir a ficha técnica.",
         "Confirmar créditos fotográficos específicos da galeria.",
         "Mapear variações expográficas entre Brasília e Belo Horizonte sem apagar a autonomia das obras participantes."
-      ]
+      ],
+      "authorshipMode": "EXPOSICAO_TEMATICA"
     },
     {
       "numero": "013",
@@ -1130,7 +1157,7 @@
       "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#ff4466",
-      "description": "Instalação-sistema em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica.",
+      "description": "Exposição temática/científica em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica.",
       "sourceFiles": {
         "page": "src/pages/obras/o-que-nos-une.md",
         "galleryKey": "o-que-nos-une",
@@ -1185,9 +1212,6 @@
       "fichaTecnica": {
         "estrutura": "três ambientes interligados: câmara de espelhos e LEDs, piso interativo com câmeras/projeção e câmara de sincronização biométrica",
         "periodo": "outubro de 2025 a fevereiro de 2026",
-        "concepcao": [
-          "Felipe Sztutman"
-        ],
         "curadoria": [
           "Miguel Nicolelis (científica)",
           "Antonio Curti (artística)"
@@ -1206,12 +1230,16 @@
         ],
         "producao": [
           "Arte3 — Ana Helena Curti"
+        ],
+        "direcaoArteTecnologiaExperiencia": [
+          "Felipe Sztutman"
         ]
       },
       "todo": [
         "Confirmar créditos fotográficos específicos da galeria.",
         "Expandir a ficha técnica com detalhes dos sensores biométricos, câmeras, projeção e adaptações de itinerância quando o dado estiver consolidado."
-      ]
+      ],
+      "authorshipMode": "EXPOSICAO_TEMATICA"
     },
     {
       "numero": "014",
@@ -1236,7 +1264,7 @@
       "tipo": "EXPOSICAO_IMERSIVA",
       "serie": "Os Elementos",
       "corPulso": "#00ff88",
-      "description": "Instalação imersiva de 20 minutos sobre temporalidades florestais e redes de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa que evoca água e regeneração natural.",
+      "description": "Obra autoral de Felipe Sztutman sobre temporalidades florestais e sistemas invisíveis de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa central.",
       "sourceFiles": {
         "page": "src/pages/obras/floresta-utopica.md",
         "galleryKey": "floresta-utopica",
@@ -1301,12 +1329,23 @@
         "realizacao": [
           "AYA Studio",
           "Farol Santander"
+        ],
+        "artista": [
+          "Felipe Sztutman"
+        ],
+        "curadoriaNarrativa": [
+          "Antonio Curti"
+        ],
+        "producaoMaterializacao": [
+          "AYA Studio",
+          "Farol Santander"
         ]
       },
       "todo": [
         "Confirmar créditos fotográficos específicos da galeria.",
         "Expandir a ficha técnica com equipe de som, aromas, projeção e montagem quando o dado estiver consolidado."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "015",
@@ -1402,7 +1441,8 @@
       "todo": [
         "Confirmar créditos fotográficos específicos da galeria.",
         "Expandir ficha técnica com sistema de projeção, laser, sensores e equipe técnica quando o dado estiver consolidado."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "016",
@@ -1410,7 +1450,7 @@
       "titulo": "AMANO — Além da Fantasia",
       "ano": 2026,
       "status": "REALIZADA",
-      "local": "CCBB São Paulo, Belo Horizonte, Rio de Janeiro",
+      "local": "São Paulo, Belo Horizonte, Rio de Janeiro",
       "cidades": [
         "São Paulo",
         "Belo Horizonte",
@@ -1433,7 +1473,7 @@
       "tipo": "EXPOSICAO_DIRIGIDA",
       "serie": null,
       "corPulso": "#2255ee",
-      "description": "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada no mundo. Direção técnica e sistemas integrados para traduzir 218 obras originais em experiência habitável.",
+      "description": "Projeto com artista terceiro: direção de experiência e tecnologia para traduzir 218 obras originais de Yoshitaka Amano em uma sala imersiva habitável.",
       "sourceFiles": {
         "page": "src/pages/obras/amano.md",
         "galleryKey": "amano",
@@ -1487,13 +1527,23 @@
         "narrativaPath": "src/pages/obras/amano.md"
       },
       "fichaTecnica": {
-        "concepcao": [
-          "Felipe Sztutman"
-        ],
         "curadoria": [
           "Antonio Curti"
         ],
         "realizacao": [
+          "AYA Studio",
+          "CCBB"
+        ],
+        "artista": [
+          "Yoshitaka Amano"
+        ],
+        "concepcaoCuratorialCuradoria": [
+          "Antonio Curti"
+        ],
+        "direcaoExperienciaTecnologia": [
+          "Felipe Sztutman"
+        ],
+        "producaoMaterializacao": [
           "AYA Studio",
           "CCBB"
         ]
@@ -1502,7 +1552,8 @@
         "Decidir se permanece em obras ou migra para categoria paralela.",
         "Confirmar créditos fotográficos específicos da galeria.",
         "Expandir a ficha técnica com integração de sistemas, audiovisual, montagem e variações entre cidades."
-      ]
+      ],
+      "authorshipMode": "PROJETO_ARTISTA_TERCEIRO"
     },
     {
       "numero": "017",
@@ -1527,7 +1578,7 @@
       "tipo": "INSTALACAO",
       "serie": "Os Elementos",
       "corPulso": "#ff8800",
-      "description": "Encerramento da pentalogia Os Elementos. Três ambientes onde o visitante contempla, cria e é revelado pela chama. Experiência espacial sobre fogo como material interativo.",
+      "description": "Obra autoral em confirmação. Encerramento da pentalogia Os Elementos: três ambientes onde o visitante contempla, cria e é revelado pela chama.",
       "sourceFiles": {
         "page": "src/pages/obras/flama.md",
         "galleryKey": null,
@@ -1591,6 +1642,15 @@
         ],
         "realizacao": [
           "AYA Studio"
+        ],
+        "artista": [
+          "Felipe Sztutman"
+        ],
+        "curadoriaNarrativa": [
+          "Antonio Curti"
+        ],
+        "producaoMaterializacao": [
+          "AYA Studio"
         ]
       },
       "todo": [
@@ -1599,7 +1659,8 @@
         "Confirmar documentação visual, créditos fotográficos e legendas antes de criar galeria.",
         "Expandir ficha técnica com sensores, LED volumétrico, projeção, som, cristal e equipe técnica quando o dado estiver consolidado.",
         "Confirmar os parâmetros técnicos da memória coletiva e das marcas permanentes descritas para a segunda sala e a Câmara do Cristal."
-      ]
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
     },
     {
       "numero": "018",
@@ -1621,7 +1682,7 @@
       "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#ff4466",
-      "description": "Quatro instalações interativas que usam o corpo como interface. Arqueologia do corpo vibrátil — cinquenta anos de cultura jogável traduzidos em experiência espacial contemporânea.",
+      "description": "Exposição temática em confirmação sobre cinquenta anos de cultura jogável, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
       "sourceFiles": {
         "page": "src/pages/obras/player1.md",
         "galleryKey": null,
@@ -1678,9 +1739,6 @@
       "fichaTecnica": {
         "estrutura": "quatro instalações interativas (STRIKE, DRIFT, TRACE, RUSH) articuladas a acervo histórico de videogames",
         "local": "Farol Santander São Paulo",
-        "concepcao": [
-          "Felipe Sztutman"
-        ],
         "curadoria": [
           "Antonio Curti"
         ],
@@ -1692,15 +1750,21 @@
         ],
         "design": [
           "Ana Clara"
+        ],
+        "direcaoArteTecnologiaExperiencia": [
+          "Felipe Sztutman"
+        ],
+        "concepcaoCuratorialCuradoria": [
+          "Antonio Curti"
         ]
       },
       "todo": [
-        "Confirmar status factual final antes de tratar como REALIZADA.",
-        "Confirmar data de abertura, período de exibição e detalhes finais de local/montagem.",
-        "Confirmar documentação visual, créditos fotográficos e legendas antes de criar galeria.",
-        "Expandir ficha técnica com sensores, softwares, hardware, CRTs e equipe técnica por módulo quando o dado estiver consolidado.",
-        "Confirmar lista final do acervo, seleção de 115 itens, cinco núcleos e créditos de produção antes de publicar ficha expandida."
-      ]
+        "Confirmar data de abertura e período de exposição",
+        "Confirmar seleção final do acervo e organização dos núcleos",
+        "Confirmar créditos expandidos de produção, arquitetura, design e desenvolvimento",
+        "Confirmar registros oficiais de imagem/vídeo e status final de realização"
+      ],
+      "authorshipMode": "EXPOSICAO_TEMATICA"
     }
   ]
 }
