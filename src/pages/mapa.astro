@@ -7,7 +7,7 @@ import publicationsData from '../data/publications.json';
 import legacyMap from '../data/mapa.json';
 
 const works = (worksData as any).works || [];
-const publicRelations = ((relationsData as any).relations || []).filter((relation: any) => relation.visibility === 'PUBLICA');
+const publicRelations = ((relationsData as any).relations || []).filter((relation: any) => relation.visibility === 'PUBLICA' && !relation.requiresConfirmation);
 const references = (referencesData as any).references || [];
 const publications = (publicationsData as any).publications || [];
 
@@ -43,58 +43,80 @@ function project(point: [number, number]) {
   };
 }
 
+const lenses = ['conceito', 'temporal', 'linhagem'];
+
+function lensPositions(source: any) {
+  const base = source?.lens || source;
+  if (!base?.conceito) return null;
+  const fallback = base.conceito;
+  return Object.fromEntries(lenses.map((lens) => [lens, project(base[lens] || fallback)]));
+}
+
 function resolveNode(kind: string, id: string) {
+  const key = `${kind}:${id}`;
   if (kind === 'OBRA') {
     const work = works.find((entry: any) => entry.slug === id);
-    if (!work?.mapa?.lens?.conceito) return null;
+    const positions = lensPositions(work?.mapa?.lens);
+    if (!work || !positions) return null;
     return {
       id,
+      key,
       kind,
       label: work.titulo,
       meta: `${work.numero} · ${work.ano}`,
       href: `/obras/${work.slug}`,
-      position: project(work.mapa.lens.conceito),
+      position: positions.conceito,
+      positions,
       color: work.corPulso || '#111111',
     };
   }
   if (kind === 'ESCRITO') {
     const writing = writings.find((entry) => entry.slug === id);
-    if (!writing?.lens?.conceito) return null;
+    const positions = lensPositions(writing?.lens);
+    if (!writing || !positions) return null;
     return {
       id,
+      key,
       kind,
       label: writing.title,
       meta: 'escrito',
       href: writing.href,
-      position: project(writing.lens.conceito),
+      position: positions.conceito,
+      positions,
       color: '#7a7a7a',
     };
   }
   if (kind === 'REFERENCIA') {
     const reference = references.find((entry: any) => entry.slug === id);
     const ghost = (legacyMap as any).ghosts?.[referenceGhostMap[id]];
-    if (!reference || !ghost?.lens?.conceito) return null;
+    const positions = lensPositions(ghost?.lens);
+    if (!reference || !positions) return null;
     return {
       id,
+      key,
       kind,
       label: reference.label,
       meta: 'referência',
       href: null,
-      position: project(ghost.lens.conceito),
+      position: positions.conceito,
+      positions,
       color: '#4a4a4a',
     };
   }
   if (kind === 'PUBLICACAO') {
     const publication = publications.find((entry: any) => entry.slug === id);
     const ghost = (legacyMap as any).ghosts?.[publicationGhostMap[id]];
-    if (!publication || !ghost?.lens?.conceito) return null;
+    const positions = lensPositions(ghost?.lens);
+    if (!publication || !positions) return null;
     return {
       id,
+      key,
       kind,
       label: publication.titulo,
       meta: 'publicação',
       href: publication.currentPublicPath || '/publicacoes',
-      position: project(ghost.lens.conceito),
+      position: positions.conceito,
+      positions,
       color: '#4a4a4a',
     };
   }
@@ -114,17 +136,19 @@ const nodes = [...nodeKeys]
   })
   .filter(Boolean);
 
-const nodeIndex = Object.fromEntries(nodes.map((node: any) => [node.id, node]));
+const nodeIndex = Object.fromEntries(nodes.map((node: any) => [node.key, node]));
 
 const lines = publicRelations
   .map((relation: any) => {
-    const source = nodeIndex[relation.source];
-    const target = nodeIndex[relation.target];
+    const source = nodeIndex[`${relation.sourceKind}:${relation.source}`];
+    const target = nodeIndex[`${relation.targetKind}:${relation.target}`];
     if (!source || !target) return null;
     return {
       ...relation,
       source,
       target,
+      sourceKey: source.key,
+      targetKey: target.key,
       midX: Math.round((source.position.x + target.position.x) / 2),
       midY: Math.round((source.position.y + target.position.y) / 2),
     };
@@ -152,6 +176,11 @@ const lines = publicRelations
     </section>
 
     <section class="map-shell">
+      <div class="lens-controls" aria-label="Lentes do mapa">
+        <button type="button" data-lens-button="conceito" class="active" aria-pressed="true">conceito</button>
+        <button type="button" data-lens-button="temporal" aria-pressed="false">temporal</button>
+        <button type="button" data-lens-button="linhagem" aria-pressed="false">linhagem</button>
+      </div>
       <div class="map-legend">
         <span><strong>obra</strong> lastro público</span>
         <span><strong>escrito</strong> camada conceitual</span>
@@ -163,9 +192,9 @@ const lines = publicRelations
         <svg viewBox="0 0 1180 820" class="map-lines" aria-hidden="true">
           {lines.map((line: any) => (
             <g>
-              <line x1={line.source.position.x} y1={line.source.position.y} x2={line.target.position.x} y2={line.target.position.y} />
+              <line data-line data-source={line.sourceKey} data-target={line.targetKey} x1={line.source.position.x} y1={line.source.position.y} x2={line.target.position.x} y2={line.target.position.y} />
               {line.label && (
-                <text x={line.midX} y={line.midY}>{line.label}</text>
+                <text data-line-label data-source={line.sourceKey} data-target={line.targetKey} x={line.midX} y={line.midY}>{line.label}</text>
               )}
             </g>
           ))}
@@ -176,6 +205,13 @@ const lines = publicRelations
             <a
               href={node.href}
               class:list={['map-node', node.kind.toLowerCase()]}
+              data-node={node.key}
+              data-x-conceito={node.positions.conceito.x}
+              data-y-conceito={node.positions.conceito.y}
+              data-x-temporal={node.positions.temporal.x}
+              data-y-temporal={node.positions.temporal.y}
+              data-x-linhagem={node.positions.linhagem.x}
+              data-y-linhagem={node.positions.linhagem.y}
               style={`left:${node.position.x}px;top:${node.position.y}px;--node-color:${node.color};`}
             >
               <span class="node-label">{node.label}</span>
@@ -184,6 +220,13 @@ const lines = publicRelations
           ) : (
             <div
               class:list={['map-node', node.kind.toLowerCase()]}
+              data-node={node.key}
+              data-x-conceito={node.positions.conceito.x}
+              data-y-conceito={node.positions.conceito.y}
+              data-x-temporal={node.positions.temporal.x}
+              data-y-temporal={node.positions.temporal.y}
+              data-x-linhagem={node.positions.linhagem.x}
+              data-y-linhagem={node.positions.linhagem.y}
               style={`left:${node.position.x}px;top:${node.position.y}px;--node-color:${node.color};`}
             >
               <span class="node-label">{node.label}</span>
@@ -195,6 +238,58 @@ const lines = publicRelations
     </section>
   </main>
 </Base>
+
+<script>
+const nodeElements = Array.from(document.querySelectorAll<HTMLElement>('[data-node]'));
+const nodesByKey = new Map(nodeElements.map((node) => [node.dataset.node!, node]));
+const lineElements = Array.from(document.querySelectorAll<SVGLineElement>('[data-line]'));
+const lineLabels = Array.from(document.querySelectorAll<SVGTextElement>('[data-line-label]'));
+const lensButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-lens-button]'));
+
+function pointFor(node: HTMLElement, lens: string) {
+  return {
+    x: Number(node.dataset[`x${lens[0].toUpperCase()}${lens.slice(1)}`]),
+    y: Number(node.dataset[`y${lens[0].toUpperCase()}${lens.slice(1)}`]),
+  };
+}
+
+function applyLens(lens: string) {
+  for (const button of lensButtons) {
+    const isActive = button.dataset.lensButton === lens;
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  }
+  for (const node of nodeElements) {
+    const point = pointFor(node, lens);
+    node.style.left = `${point.x}px`;
+    node.style.top = `${point.y}px`;
+  }
+  for (const line of lineElements) {
+    const source = nodesByKey.get(line.dataset.source || '');
+    const target = nodesByKey.get(line.dataset.target || '');
+    if (!source || !target) continue;
+    const s = pointFor(source, lens);
+    const t = pointFor(target, lens);
+    line.setAttribute('x1', String(s.x));
+    line.setAttribute('y1', String(s.y));
+    line.setAttribute('x2', String(t.x));
+    line.setAttribute('y2', String(t.y));
+  }
+  for (const label of lineLabels) {
+    const source = nodesByKey.get(label.dataset.source || '');
+    const target = nodesByKey.get(label.dataset.target || '');
+    if (!source || !target) continue;
+    const s = pointFor(source, lens);
+    const t = pointFor(target, lens);
+    label.setAttribute('x', String(Math.round((s.x + t.x) / 2)));
+    label.setAttribute('y', String(Math.round((s.y + t.y) / 2)));
+  }
+}
+
+for (const button of lensButtons) {
+  button.addEventListener('click', () => applyLens(button.dataset.lensButton || 'conceito'));
+}
+</script>
 
 <style is:global>
 body.page-map{background:#ece5d8;color:#111}
@@ -213,13 +308,17 @@ body.page-map a{text-decoration:none}
 .map-head p{max-width:52ch;font:1rem/1.65 var(--sans);color:rgba(17,17,17,.75);margin-bottom:.75rem}
 .map-meta{color:rgba(17,17,17,.48);margin-bottom:1.5rem}
 .map-shell{overflow:auto;border-top:1px solid rgba(17,17,17,.18);padding-top:1rem}
+.lens-controls{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 .85rem}
+.lens-controls button{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:transparent;color:rgba(17,17,17,.48);border:1px solid rgba(17,17,17,.16);padding:.48rem .62rem;cursor:pointer}
+.lens-controls button:hover{color:#111;border-color:rgba(17,17,17,.34)}
+.lens-controls button.active{background:#111;color:#ece5d8;border-color:#111}
 .map-legend{display:flex;gap:1rem 1.25rem;flex-wrap:wrap;margin:0 0 .9rem;font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.5)}
 .map-legend strong{color:#111;font-weight:500}
 .map-field{position:relative;min-width:1180px;height:820px;background:rgba(255,255,255,.14);border:1px solid rgba(17,17,17,.16)}
 .map-lines{position:absolute;inset:0;width:100%;height:100%}
-.map-lines line{stroke:rgba(17,17,17,.18);stroke-width:1.2}
-.map-lines text{fill:rgba(17,17,17,.45);font-size:10px;text-anchor:middle;dominant-baseline:middle}
-.map-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:.2rem;max-width:220px}
+.map-lines line{stroke:rgba(17,17,17,.18);stroke-width:1.2;transition:all .32s ease}
+.map-lines text{fill:rgba(17,17,17,.45);font-size:10px;text-anchor:middle;dominant-baseline:middle;transition:all .32s ease}
+.map-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:.2rem;max-width:220px;transition:left .32s ease,top .32s ease,background .15s ease,border-color .15s ease}
 .map-node.obra,.map-node.escrito,.map-node.publicacao{padding:.55rem .65rem .6rem;background:#f6f1e8;border:1px solid rgba(17,17,17,.16);border-left:4px solid var(--node-color,#111)}
 .map-node.referencia{padding:.2rem 0;max-width:none}
 .node-label{font:.95rem/1.25 var(--sans);color:#111;letter-spacing:-.02em}
