@@ -4,6 +4,8 @@ title: "sem título, para Mantiqueira"
 year: "2013"
 location: "Serra da Mantiqueira, SP"
 description: "Ephemeral luminous installation in Serra da Mantiqueira. LUZCIDADE meets water — the only one in the series where the natural environment defeated the parametric method."
+lead: "One-night ephemeral installation in Serra da Mantiqueira, where 40 meters of electroluminescent cable met the waterfall and closed the LUZCIDADE series."
+archiveNote: "In the archive, Mantiqueira records the limit of the parametric method before the natural environment: the final form is born from the water, the rocks and the possible fixing points."
 lang: en
 credits:
   - { role: "Photographic documentation", name: "Layla Motta" }

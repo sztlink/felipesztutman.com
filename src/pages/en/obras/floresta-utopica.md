@@ -5,6 +5,13 @@ year: "2025"
 location: "Farol Santander São Paulo"
 lang: en
 description: "20-minute immersive installation about forest temporalities and interdependency networks, with mapped projection, sound design, aromas, and a luminous sculpture that evokes water and natural regeneration."
+lead: "Immersive environment about forest temporalities and invisible systems of interdependence, structured by projection, aromas, and a light sculpture in the form of a waterfall."
+archiveNote: "Floresta Utópica should be read in the archive as a late unfolding of Cachoeira and Mantiqueira: water and invisible systems reappear here not as urban intervention, but as immersive ecology."
+circulation:
+  - { label: "Site", value: "Farol Santander São Paulo, 2025" }
+  - { label: "Duration", value: "20-minute immersive installation" }
+  - { label: "Structure", value: "Mapped projection, sound design, aromas, and central luminous sculpture" }
+collaborationNote: "At AYA, the work is built by translating ecological processes into spatial language. Rather than literally reproducing nature, the team organizes image, sound, aroma, and light to make the invisible networks between plants, fungi, soil, and water perceptible."
 credits:
   - { role: "Curator", name: "Antonio Curti" }
   - { role: "Executive Director", name: "Felipe Sztutman" }

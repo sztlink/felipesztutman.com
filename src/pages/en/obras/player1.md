@@ -5,6 +5,15 @@ year: "2026"
 location: "Farol Santander São Paulo"
 lang: en
 description: "Four interactive installations that use the body as interface. Archaeology of the vibratile body — fifty years of playable culture translated into contemporary spatial experience."
+lead: "System-installation of four experiences in which the body replaces the controller: attacking, dodging, exploring, and executing turn fifty years of video games into playable behavior in space."
+archiveNote: "Player 1 remains under confirmation: the current archive describes structure, credits, and intention, but still asks for final factual confirmation of realization, visual documentation, and expanded technical credits."
+mechanism:
+  - { label: "Structure", value: "Four interactive installations — STRIKE, DRIFT, TRACE, and RUSH — articulated with a historical video game collection" }
+  - { label: "Body", value: "No joystick or button: gestures, displacement, finger, and hands operate the playable behaviors" }
+  - { label: "Archive", value: "Alex Mamed's collection, curatorially organized by Antonio Curti, functions as the exhibition's historical ground" }
+  - { label: "Behaviors", value: "STRIKE translates gestures into energy attacks, DRIFT into dodging, TRACE into collection exploration, and RUSH into timed execution on four CRTs" }
+  - { label: "Question", value: "What did fifty years of playable culture inscribe in the body?" }
+collaborationNote: "The current file names Antonio Curti's curation, Alex Mamed's collection, and AYA Studio roles across architecture, renders, design, technical sourcing, installation, and production; this remains a description under confirmation until final credits are confirmed."
 credits:
   - { role: "Artist", name: "Felipe Sztutman" }
   - { role: "Curator", name: "Antonio Curti" }

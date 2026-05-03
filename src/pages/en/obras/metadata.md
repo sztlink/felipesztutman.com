@@ -5,6 +5,14 @@ year: "2023"
 location: "Centro Cultural FIESP, São Paulo"
 lang: en
 description: "Immersive five-screen room where particle systems simulate 3D fluids disturbed by real São Paulo data. X-ray of the metropolis in real time."
+lead: "Immersive five-screen installation that transforms real São Paulo data into three-dimensional fluids, making the city appear as a habitable perceptual system."
+archiveNote: "In the archive, METADATA should be read less as a generic exhibition and more as a perception mechanism: a room where urban data, real time, and historical memory continuously disturb the image."
+mechanism:
+  - { label: "System", value: "Immersive five-screen room with particle systems and 3D fluids" }
+  - { label: "Data", value: "Real-time urban data captured from online sources and translated into visual behavior" }
+  - { label: "Operation", value: "External vectors disturb the fluids, translating the city's pulse into visual behavior" }
+  - { label: "Time", value: "The system crosses real-time data with historical marks and retroactive data" }
+  - { label: "Question", value: "How can São Paulo be X-rayed?" }
 credits:
   - { role: "Curator", name: "Antonio Curti" }
 press:

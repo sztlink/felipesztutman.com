@@ -5,6 +5,13 @@ year: "2026"
 location: "CCBB São Paulo, Belo Horizonte, Rio de Janeiro"
 lang: en
 description: "Immersive space for the largest Yoshitaka Amano exhibition ever held worldwide. Technical direction and integrated systems to translate 218 original works into an inhabitable experience."
+lead: "Immersive space conceived to translate 218 original works by Yoshitaka Amano into an inhabitable experience, articulating video, light, sound, automation, and projection as a single system."
+archiveNote: "AMANO should be read in the archive as a work of circulation and technical translation: not only an immersive room, but the infrastructure that makes a visual universe from Japan inhabitable in Brazil."
+circulation:
+  - { label: "Itinerary", value: "São Paulo, Belo Horizonte, and Rio de Janeiro" }
+  - { label: "Structure", value: "11-minute-40-second immersive room with fifteen synchronized laser projectors" }
+  - { label: "Material", value: "Video, light, sound, automation, and projection organized as a single system" }
+collaborationNote: "Antonio Curti's curation, Raphael Minhoso's audiovisual co-authorship, João Alencar's original content, and systems integration with Ihon Yadoya make the work exist as shared spatial direction, not as isolated execution of a single authorship."
 credits:
   - { role: "Curator", name: "Antonio Curti" }
   - { role: "Technical Director", name: "Felipe Sztutman" }

@@ -4,6 +4,8 @@ title: "Cachoeira"
 year: "2012"
 location: "Vale do Anhangabaú e Viaduto do Chá, São Paulo"
 description: "Public art installation that revealed the channeled Córrego das Almas beneath the Anhangabaú using 500 meters of electroluminescent cable"
+lead: "Luminous intervention that revealed the buried path of the Córrego das Almas in the Anhangabaú Valley with 500 meters of electroluminescent cable."
+archiveNote: "Images 05 and 06 are pages from the undergraduate thesis LUZCIDADE (FAU-USP, 2013), included here as archival documentation of the work's trajectory. The exact credit for these reproductions remains to be confirmed."
 lang: en
 credits:
   - { role: "Concept", name: "Felipe Sztutman" }

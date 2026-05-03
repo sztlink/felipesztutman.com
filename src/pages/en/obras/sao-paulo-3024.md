@@ -5,6 +5,14 @@ year: "2024"
 location: "Farol Santander São Paulo"
 lang: en
 description: "16-minute immersive experience imagining São Paulo a thousand years in the future, using LLMs and LoRa as philosophical foundation. Includes interactive installation where body movements generate urban territories in real time."
+lead: "Immersive 16-minute journey through São Paulo a thousand years ahead, using LLMs and LoRa as philosophical ground and bodily movement as live urban matter."
+mechanism:
+  - { label: "Immersive room", value: "Seven-act, 16-minute journey through coexisting future worlds on the 23rd floor of Farol Santander" }
+  - { label: "AI", value: "LLMs and LoRa used as philosophical foundation rather than only image-generation tools" }
+  - { label: "Territory", value: "Interactive installation where body movements become architectural elements projected in real time" }
+  - { label: "Tracking", value: "OpenCV, five mapped projectors, and an RTX 4090 process bodily gesture as raw material for the urban landscape" }
+  - { label: "Infrastructure", value: "Eleven synchronized projectors, 5.1 sound, and a distributed three-zone network with redundancy" }
+  - { label: "Question", value: "Is technology illustrating the future, or asking whether the future is already hidden inside today's machines?" }
 credits:
   - { role: "Curator", name: "Antonio Curti" }
   - { role: "Technical and Artistic Conception", name: "Felipe Sztutman" }

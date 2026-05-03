@@ -4,6 +4,8 @@ title: "Objeto em Forma de: Espaço"
 year: "2009"
 location: "Museu da Imagem e do Som (MIS-SP)"
 description: "Felipe Sztutman's first synesthetic environment, where sound, aroma and light create a habitable space through the sum of invisible elements"
+lead: "Synesthetic environment developed at LabMIS/MIS-SP, where sound, aroma and light define a foundational principle of the work: the environment as artwork."
+archiveNote: "In the archive, this page functions as an inaugural gesture: before light as urban matter, the decision to build habitable spaces through the combination of invisible elements already appears here."
 lang: en
 credits:
   - { role: "Concept and production", name: "Felipe Sztutman e Rodrigo Bellotto" }

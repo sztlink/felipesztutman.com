@@ -5,6 +5,14 @@ year: "2025"
 location: "Centro Cultural FIESP, São Paulo"
 lang: en
 description: "Immersive exhibition that translates Miguel Nicolelis's theories about collective consciousness into three interactive environments, where visitors experience neural networks, biometric synchronization, and real-time generated patterns."
+lead: "System-installation in three environments: visitors move through mirrors, cameras, and heartbeat sensors to perceive network patterns and collective synchronization in their own bodies."
+archiveNote: "In the archive, O Que Nos Une should be read less as a generic immersive exhibition and more as a perceptual mechanism: mirrors, position tracking, and biometric sensors make the idea of collective consciousness depend on visitors' presence and synchronization."
+mechanism:
+  - { label: "Structure", value: "Three connected environments: mirror and LED chamber, interactive floor, and biometric synchronization chamber" }
+  - { label: "Body", value: "Visitors enter as measurable physical presence: floor position and heartbeat in the final chamber" }
+  - { label: "Tracking", value: "Cameras detect visitors' positions and feed patterns generated in real time in Max/MSP" }
+  - { label: "Synchronization", value: "Custom sensors capture heartbeats and translate them into light and sound; when heart rhythms approach each other, the room responds" }
+  - { label: "Question", value: "How can collective consciousness stop being an explanation and become a bodily experience?" }
 credits:
   - { role: "Scientific Curator", name: "Miguel Nicolelis" }
   - { role: "Artistic Curator", name: "Antonio Curti" }

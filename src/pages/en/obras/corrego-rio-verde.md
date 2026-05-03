@@ -4,6 +4,8 @@ title: "sem título, para Córrego Rio Verde"
 year: "2013"
 location: "Beco do Batman, Vila Madalena, São Paulo"
 description: "Independent luminous intervention that revealed the channeled Córrego Rio Verde beneath Beco do Batman using parametric design"
+lead: "Independent intervention at Beco do Batman that revealed the channeled Córrego Rio Verde through 240 meters of light, bicycle rims and steel cables."
+archiveNote: "In the archive, this work shifts Cachoeira's gesture into a condition without institution, budget or formal production: the urban territory appears as direct negotiation."
 lang: en
 credits:
   - { role: "Concept and design", name: "Felipe Sztutman" }

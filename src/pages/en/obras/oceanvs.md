@@ -5,6 +5,13 @@ year: "2022"
 location: "Farol Santander SP, Casa Fiat BH"
 lang: en
 description: "Immersive installation that traverses eight acts. First major co-creation — Antonio wrote the script, I designed the spatial experience that brings water to the body without wetting the skin."
+lead: "Immersive environment in eight acts where script, motion, score, programming, and spatial design work together to bring water to the body without wetting the skin."
+archiveNote: "This page marks OCEANVS as a work of circulation and adaptation. The passage from São Paulo to Belo Horizonte is not a documentary exception, but part of the work's behavior."
+circulation:
+  - { label: "Premiere", value: "Farol Santander, São Paulo, 2022" }
+  - { label: "Adaptation", value: "Casa Fiat de Cultura, Belo Horizonte, 2023" }
+  - { label: "Structure", value: "Eight acts, mapped projection, original score, interactivity, and immersive space" }
+collaborationNote: "OCEANVS is the first work in which collaboration does not enter as execution of a pre-closed concept. Antonio Curti's script, the motion by Flávio Reis and João Alencar, Juvi's score, and Matheus Leston's interactive programming directly interfere with the final design of the experience."
 credits:
   - { role: "General and Executive Direction", name: "Felipe Sztutman" }
   - { role: "Curation and Creative Direction", name: "Antonio Curti" }

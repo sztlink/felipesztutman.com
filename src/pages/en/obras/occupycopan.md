@@ -4,6 +4,8 @@ title: "OccupyCopan"
 year: "2011"
 location: "Edifício Copan, São Paulo"
 description: "Sculpture of fluorescent lamps suspended by steel cables in the vertical void of the Copan building, first exploration of light as matter"
+lead: "Sculpture of fluorescent lamps suspended by steel cables in the vertical void of the Copan building, the first gesture of the lineage later articulated as LUZCIDADE."
+archiveNote: "This page remains without a published gallery. In the archive, OccupyCopan is preserved as a textual origin document: light appears for the first time as matter in architectural space."
 lang: en
 credits:
   - { role: "Concept", name: "Felipe Sztutman" }

@@ -4,6 +4,8 @@ title: "sem título, para Canvas #13"
 year: "2013"
 location: "Serralheria Cultural, São Paulo"
 description: "Site-specific luminous installation that mapped the Serralheria space through geometry and light, second work in the LUZCIDADE series"
+lead: "Site-specific luminous installation at Serralheria Cultural, the second work in the LUZCIDADE series, made with electroluminescent cables left over from Cachoeira."
+archiveNote: "In the archive, Canvas #13 marks the passage between the public scale of Cachoeira and a more intimate investigation of architecture, geometry and coexistence within the festival."
 lang: en
 credits:
   - { role: "Concept", name: "Felipe Sztutman" }

@@ -5,6 +5,13 @@ year: "2019"
 location: "Farol Santander, São Paulo"
 lang: en
 description: "45 programmed lasers interacting with crystal. First work at Farol Santander, making visible the inseparable connection between physical and digital."
+lead: "Generative installation with 45 lasers and a large crystal, conceived to make the mutual dependence between physical and digital palpable."
+archiveNote: "The visual documentation currently published still needs more specific captions for each image. In this round, it remains minimal documentation of how the installation functioned."
+mechanism:
+  - { label: "System", value: "45 programmed lasers passing through and refracting in a large crystal" }
+  - { label: "Programming", value: "Matheus Leston developed the system in Max/Jitter/MSP" }
+  - { label: "Operation", value: "The patterns were not pre-rendered videos, but generative forms emerging from the system's rules" }
+  - { label: "Question", value: "How can the inseparable connection between physical and digital be made visible?" }
 credits:
   - { role: "Programming", name: "Matheus Leston (Bloco)" }
   - { role: "Curator", name: "Antonio Curti" }
