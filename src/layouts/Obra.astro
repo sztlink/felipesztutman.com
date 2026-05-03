@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import galleryData from '../data/gallery.json';
 import worksData from '../data/works.json';
+import regimeData from '../data/work-regimes.json';
 import relationsData from '../data/map-relations.json';
 import referencesData from '../data/references.json';
 import publicationsData from '../data/publications.json';
@@ -47,6 +48,31 @@ const relationSeeds = (relationsData as any).relations || [];
 
 const work = works.find((entry: any) => entry.slug === slug) || null;
 const pulse = work?.corPulso || '#00ccff';
+const regimes = (regimeData as any).works || {};
+const regime = work ? regimes[work.slug] : null;
+
+const regimeLabels: Record<string, string> = {
+  A: isEN ? 'foundational / territory / lineage' : 'fundacional / território / linhagem',
+  B: isEN ? 'system / body / mechanism' : 'sistema / corpo / mecanismo',
+  C: isEN ? 'space / circulation / collaboration' : 'espaço / circulação / colaboração',
+};
+
+function editorialStatus(entry: any) {
+  if (!entry) return null;
+  if (entry.status === 'A_CONFIRMAR') return isEN ? 'project under confirmation' : 'projeto em confirmação';
+  if (entry.tipo === 'ARTE_PUBLICA') return isEN ? 'public art' : 'arte pública';
+  if (entry.tipo === 'INTERVENCAO_URBANA') return isEN ? 'urban intervention' : 'intervenção urbana';
+  if (entry.tipo === 'EXPOSICAO_DIRIGIDA') return isEN ? 'directed exhibition' : 'exposição dirigida';
+  if (entry.tipo === 'INSTALACAO' && regime === 'B') return isEN ? 'installation-system' : 'instalação-sistema';
+  if (entry.tipo === 'INSTALACAO' && regime === 'A') return isEN ? 'foundational gesture' : 'gesto fundacional';
+  if (regime === 'C') return isEN ? 'spatial direction' : 'direção espacial';
+  return isEN ? 'work' : 'obra';
+}
+
+function statusValue(entry: any) {
+  if (!entry) return null;
+  return entry.status === 'A_CONFIRMAR' ? (isEN ? 'TO CONFIRM · published as archive in verification' : 'A CONFIRMAR · publicado como arquivo em verificação') : (isEN ? 'REALIZED' : 'REALIZADA');
+}
 const currentIndex = works.findIndex((entry: any) => entry.slug === slug);
 const previousWork = currentIndex > 0 ? works[currentIndex - 1] : null;
 const nextWork = currentIndex >= 0 && currentIndex < works.length - 1 ? works[currentIndex + 1] : null;
@@ -102,7 +128,9 @@ const publicRelations = relationSeeds
 
 const dossierRows = [
   work?.numero ? { label: isEN ? 'Number' : 'Número', value: work.numero } : null,
-  work?.status ? { label: isEN ? 'Status' : 'Status', value: work.status === 'A_CONFIRMAR' ? 'A CONFIRMAR' : 'REALIZADA' } : null,
+  work ? { label: isEN ? 'Editorial status' : 'Estatuto', value: editorialStatus(work) } : null,
+  regime ? { label: isEN ? 'Reading regime' : 'Regime de leitura', value: regimeLabels[regime] } : null,
+  work?.status ? { label: isEN ? 'Status' : 'Status', value: statusValue(work) } : null,
   work?.ano ? { label: isEN ? 'Year' : 'Ano', value: String(work.ano) } : null,
   work?.local ? { label: isEN ? 'Location' : 'Local', value: work.local } : null,
   work?.contexto ? { label: isEN ? 'Context' : 'Contexto', value: work.contexto } : null,
@@ -141,13 +169,21 @@ function normalizePublicationUrl(url?: string) {
 >
   <article class="obra-page" style={`--pulse:${pulse};`}>
     <section class="obra-entry">
-      <a href={`${prefix}/#obras`} class="back">{isEN ? '← archive' : '← arquivo'}</a>
+      <div class="surface-links">
+        <a href={`${prefix}/#obras`} class="back">{isEN ? '← archive' : '← arquivo'}</a>
+        <a href="/mapa" class="map-link">{isEN ? 'map relations' : 'mapa relacional'}</a>
+      </div>
       <div class="eyebrow">
         {work?.numero ? `OBRA Nº ${work.numero}` : 'OBRA'} · {frontmatter.year}
+        {editorialStatus(work) && <span class="statute-chip">{editorialStatus(work)}</span>}
+        {regime && <span class="regime-chip">{regimeLabels[regime]}</span>}
         {work?.status === 'A_CONFIRMAR' && <span class="status-chip">A CONFIRMAR</span>}
       </div>
       <h1>{frontmatter.title}</h1>
       <div class="entry-meta">{work?.contexto || frontmatter.location}</div>
+      {work?.status === 'A_CONFIRMAR' && (
+        <div class="pending-note">{isEN ? 'Published as archive in verification. Dates, documentation and expanded credits remain open.' : 'Publicado como arquivo em verificação. Datas, documentação e créditos expandidos permanecem abertos.'}</div>
+      )}
     </section>
 
     <section class="panel dossier">
@@ -320,13 +356,19 @@ body.page-obra a{text-decoration:none}
 :root{--paper:#ece5d8;--ink:#131313;--line:rgba(255,255,255,.1);--paper-line:rgba(17,17,17,.16)}
 .obra-page{background:#050505;color:#f1ece3;padding:1.25rem 1rem 3rem}
 .obra-entry{padding:0 0 2rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
-.back,.eyebrow,.panel-kicker,.section-kicker,.status-chip{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.back{display:inline-block;color:rgba(255,255,255,.55);margin-bottom:1.25rem}
-.back:hover{color:#fff}
+.back,.map-link,.eyebrow,.panel-kicker,.section-kicker,.status-chip,.statute-chip,.regime-chip{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
+.back,.map-link{display:inline-block;color:rgba(255,255,255,.55)}
+.back:hover,.map-link:hover{color:#fff}
+.map-link{color:rgba(255,255,255,.38)}
 .eyebrow{color:rgba(255,255,255,.5);margin-bottom:1rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
-.status-chip{padding:.28rem .4rem;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.65)}
+.status-chip,.statute-chip,.regime-chip{padding:.28rem .4rem;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.65)}
+.statute-chip{border-color:rgba(255,255,255,.26);color:rgba(255,255,255,.82)}
+.regime-chip{color:rgba(255,255,255,.48);border-color:rgba(255,255,255,.12)}
+.status-chip{color:#ffd9a8;background:rgba(255,136,0,.16);border-color:rgba(255,178,90,.32)}
 .obra-entry h1{font:900 clamp(2.8rem,10vw,8rem)/.9 var(--sans);letter-spacing:-.05em;max-width:10ch}
 .entry-meta{margin-top:.85rem;font:.82rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.48)}
+.pending-note{margin-top:1rem;max-width:56ch;border-left:3px solid #ff9b2f;padding:.75rem .85rem;background:rgba(255,136,0,.1);font:.92rem/1.55 var(--sans);color:rgba(255,238,216,.82)}
 .panel{background:var(--paper);color:var(--ink);padding:1rem;border-top:2px solid var(--pulse);margin:0 0 1.5rem}
 .panel-kicker,.section-kicker{color:rgba(17,17,17,.48);margin-bottom:1rem}
 .lead{font:400 1.05rem/1.6 var(--sans);margin-bottom:1rem;max-width:56ch}

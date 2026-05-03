@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import worksData from '../data/works.json';
+import regimeData from '../data/work-regimes.json';
 
 const works = [...worksData.works].sort((a, b) => a.numero.localeCompare(b.numero));
 const updatedAt = worksData.meta.generatedAt;
@@ -8,8 +9,35 @@ const total = worksData.meta.counts.total;
 const realizada = worksData.meta.counts.realizada;
 const aConfirmar = worksData.meta.counts.aConfirmar;
 
+const regimes = (regimeData as any).works || {};
+const regimeLabels: Record<string, string> = {
+  A: 'fundacional / território / linhagem',
+  B: 'sistema / corpo / mecanismo',
+  C: 'espaço / circulação / colaboração',
+};
+
 function statusLabel(status: string) {
   return status === 'A_CONFIRMAR' ? 'A CONFIRMAR' : 'REALIZADA';
+}
+
+function statusNote(status: string) {
+  return status === 'A_CONFIRMAR' ? 'publicada como arquivo em confirmação' : 'obra realizada no arquivo';
+}
+
+function editorialStatus(work: any) {
+  if (work.status === 'A_CONFIRMAR') return 'projeto em confirmação';
+  if (work.tipo === 'ARTE_PUBLICA') return 'arte pública';
+  if (work.tipo === 'INTERVENCAO_URBANA') return 'intervenção urbana';
+  if (work.tipo === 'EXPOSICAO_DIRIGIDA') return 'exposição dirigida';
+  if (work.tipo === 'INSTALACAO' && regimes[work.slug] === 'B') return 'instalação-sistema';
+  if (work.tipo === 'INSTALACAO' && regimes[work.slug] === 'A') return 'gesto fundacional';
+  if (regimes[work.slug] === 'C') return 'direção espacial';
+  return 'obra';
+}
+
+function regimeLabel(work: any) {
+  const regime = regimes[work.slug];
+  return regime ? regimeLabels[regime] : null;
 }
 ---
 <Base
@@ -38,6 +66,7 @@ function statusLabel(status: string) {
         <div class="archive-kicker">ARQUIVO</div>
         <h2>{total} obras</h2>
         <div class="archive-meta">São Paulo · ativo 2009— · {realizada} realizadas · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
+        <p class="archive-note">Entrada pública do arquivo. As obras levam ao dossiê; o mapa lê relações sustentadas; o grafo preserva uma camada anterior do processo.</p>
       </div>
 
       <div class="archive-table-wrap">
@@ -49,6 +78,7 @@ function statusLabel(status: string) {
               <th>ANO</th>
               <th>LOCAL</th>
               <th>CONTEXTO</th>
+              <th>ESTATUTO</th>
               <th>STATUS</th>
             </tr>
           </thead>
@@ -63,7 +93,14 @@ function statusLabel(status: string) {
                 <td>{work.ano}</td>
                 <td>{work.local}</td>
                 <td>{work.contexto}</td>
-                <td><span class:list={[ 'status', work.status === 'A_CONFIRMAR' && 'pending' ]}>{statusLabel(work.status)}</span></td>
+                <td class="statute-cell">
+                  <span>{editorialStatus(work)}</span>
+                  {regimeLabel(work) && <small>{regimeLabel(work)}</small>}
+                </td>
+                <td>
+                  <span class:list={[ 'status', work.status === 'A_CONFIRMAR' && 'pending' ]}>{statusLabel(work.status)}</span>
+                  <div class="status-note">{statusNote(work.status)}</div>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -71,11 +108,12 @@ function statusLabel(status: string) {
       </div>
 
       <div class="archive-links">
-        <a href="/mapa">mapa</a>
-        <a href="/escritos">escritos</a>
-        <a href="/publicacoes">publicações</a>
-        <a href="/trajetoria">trajetória</a>
-        <a href="/sobre">sobre</a>
+        <a href="/mapa"><strong>mapa</strong> exploração relacional</a>
+        <a href="/escritos"><strong>escritos</strong> camada conceitual</a>
+        <a href="/publicacoes"><strong>publicações</strong> circulação editorial</a>
+        <a href="/trajetoria"><strong>trajetória</strong> cronologia</a>
+        <a href="/sobre"><strong>sobre</strong> contexto</a>
+        <a href="/grafo"><strong>grafo</strong> legacy</a>
         <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
       </div>
     </section>
@@ -103,6 +141,7 @@ body.page-home a{text-decoration:none}
 .archive-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}
 .archive h2{font:700 clamp(2rem,4vw,3.5rem)/1 var(--sans);letter-spacing:-.05em;margin-bottom:.5rem}
 .archive-meta{font:.8rem/1.5 var(--mono);color:rgba(17,17,17,.58);text-transform:uppercase;letter-spacing:.08em}
+.archive-note{margin:.75rem 0 0;max-width:60ch;font:.95rem/1.55 var(--sans);color:rgba(17,17,17,.68)}
 .archive-table-wrap{overflow:auto;border-top:1px solid var(--line)}
 .archive-table{width:100%;border-collapse:collapse;min-width:980px}
 .archive-table th,.archive-table td{padding:.9rem .65rem;vertical-align:top;border-bottom:1px solid var(--line)}
@@ -117,10 +156,14 @@ body.page-home a{text-decoration:none}
 .title-cell{min-width:320px}
 .title-cell a{font-weight:600;letter-spacing:-.01em}
 .title-desc{margin-top:.3rem;font-size:.82rem;line-height:1.5;color:rgba(17,17,17,.58);max-width:52ch}
+.statute-cell span{display:block;font:.78rem/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.72)}
+.statute-cell small{display:block;margin-top:.25rem;font:.78rem/1.45 var(--sans);color:rgba(17,17,17,.55);max-width:24ch}
 .status{display:inline-block;font:.72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.75);padding:.32rem .45rem;border:1px solid rgba(17,17,17,.2)}
-.status.pending{color:rgba(17,17,17,.55);border-color:rgba(17,17,17,.12)}
-.archive-links{display:flex;gap:1rem 1.25rem;flex-wrap:wrap;padding-top:1.5rem;color:rgba(17,17,17,.55);border-top:1px solid var(--line-strong);margin-top:1.5rem}
-.archive-links a{color:inherit}
+.status.pending{color:#4d2b00;background:rgba(255,136,0,.12);border-color:rgba(122,70,0,.34)}
+.status-note{margin-top:.35rem;font:.74rem/1.4 var(--sans);color:rgba(17,17,17,.5);max-width:18ch}
+.archive-links{display:flex;gap:.7rem 1.25rem;flex-wrap:wrap;padding-top:1.5rem;color:rgba(17,17,17,.55);border-top:1px solid var(--line-strong);margin-top:1.5rem}
+.archive-links a{color:inherit;display:flex;gap:.35rem;align-items:baseline}
+.archive-links strong{font-weight:600;color:rgba(17,17,17,.78)}
 .archive-links a:hover{color:var(--ink);text-decoration:underline}
 @media (max-width: 900px){
   .entry,.statement,.archive{padding-left:1rem;padding-right:1rem}

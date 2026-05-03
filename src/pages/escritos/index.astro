@@ -22,8 +22,11 @@ const escritos = Object.entries(modules)
 >
   <main class="archive-page">
     <section class="entry">
-      <a href="/#obras" class="back">← arquivo</a>
-      <div class="entry-kicker">ESCRITOS</div>
+      <div class="surface-links">
+        <a href="/#obras" class="back">← arquivo</a>
+        <a href="/mapa" class="surface-link">mapa relacional</a>
+      </div>
+      <div class="entry-kicker">ESCRITOS · CAMADA CONCEITUAL</div>
       <h1>Processo, sistema, pesquisa</h1>
       <p>Textos que emergem da prática. Não documentação neutra, mas elaboração conceitual que acompanha e dobra a obra.</p>
     </section>
@@ -56,8 +59,10 @@ body.page-escritos a{text-decoration:none}
 :root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16)}
 .archive-page{min-height:100vh;background:#050505}
 .entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
-.back,.entry-kicker,.paper-kicker,.count,.writing-type,.writing-date{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.back{display:inline-block;color:rgba(255,255,255,.55);margin-bottom:1rem}.back:hover{color:#fff}
+.back,.surface-link,.entry-kicker,.paper-kicker,.count,.writing-type,.writing-date{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}.back:hover,.surface-link:hover{color:#fff}
+.surface-link{color:rgba(255,255,255,.38)}
 .entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}
 .entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:12ch}
 .entry p{max-width:46rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}

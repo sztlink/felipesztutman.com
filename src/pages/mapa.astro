@@ -141,19 +141,23 @@ const lines = publicRelations
 >
   <main class="map-page">
     <section class="map-head">
-      <a href="/#obras" class="back">← arquivo</a>
-      <div class="map-kicker">MAPA</div>
+      <div class="surface-links">
+        <a href="/#obras" class="back">← arquivo</a>
+        <a href="/grafo" class="legacy-link">grafo legacy</a>
+      </div>
+      <div class="map-kicker">MAPA · EXPLORAÇÃO RELACIONAL</div>
       <h1>Relações públicas</h1>
-      <p>Diagrama técnico de relações já sustentadas pelo arquivo atual. Sem filtros, sem busca, sem conexões internas.</p>
-      <div class="map-meta">{lines.length} relações públicas · {nodes.length} nós públicos · FLAMA e Player 1 ficam fora do v1 até confirmação.</div>
+      <p>Leitura relacional do arquivo atual: obras, escritos, referências e publicações conectados apenas quando a relação já se sustenta publicamente.</p>
+      <div class="map-meta">{lines.length} relações públicas · {nodes.length} nós públicos · leitura curada do arquivo atual · relações em confirmação ficam fora desta camada.</div>
     </section>
 
     <section class="map-shell">
       <div class="map-legend">
-        <span><strong>obra</strong> arquivo público</span>
-        <span><strong>escrito</strong> origem conceitual</span>
+        <span><strong>obra</strong> lastro público</span>
+        <span><strong>escrito</strong> camada conceitual</span>
         <span><strong>referência</strong> linhagem</span>
         <span><strong>publicação</strong> circulação editorial</span>
+        <span><strong>grafo</strong> camada legacy separada</span>
       </div>
       <div class="map-field">
         <svg viewBox="0 0 1180 820" class="map-lines" aria-hidden="true">
@@ -199,9 +203,11 @@ body.page-map a{text-decoration:none}
 
 <style>
 .map-page{min-height:100vh;background:#ece5d8;color:#111;padding:1.25rem 1rem 2rem}
-.back,.map-kicker,.map-meta,.node-meta,.map-lines text{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.back{display:inline-block;color:rgba(17,17,17,.58);margin-bottom:1rem}
-.back:hover{color:#111}
+.back,.legacy-link,.map-kicker,.map-meta,.node-meta,.map-lines text{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.back,.legacy-link{display:inline-block;color:rgba(17,17,17,.58)}
+.legacy-link{color:rgba(17,17,17,.42)}
+.back:hover,.legacy-link:hover{color:#111}
 .map-kicker{color:rgba(17,17,17,.46);margin-bottom:.6rem}
 .map-head h1{font:800 clamp(2.4rem,6vw,4.5rem)/.95 var(--sans);letter-spacing:-.05em;margin-bottom:.75rem}
 .map-head p{max-width:52ch;font:1rem/1.65 var(--sans);color:rgba(17,17,17,.75);margin-bottom:.75rem}
