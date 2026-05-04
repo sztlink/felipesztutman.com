@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const modules = import.meta.glob('./*.md', { eager: true }) as Record<string, any>;
+const entradas = Object.entries(modules)
+  .map(([path, mod]) => ({
+    slug: path.split('/').pop()!.replace('.md', ''),
+    title: mod.frontmatter.title as string,
+    subtitle: mod.frontmatter.subtitle as string,
+    desc: mod.frontmatter.description as string,
+    date: (mod.frontmatter.date || '') as string,
+    tags: (mod.frontmatter.tags || []) as string[],
+  }))
+  .sort((a, b) => (b.date || b.slug).localeCompare(a.date || a.slug));
+---
+<Base
+  title="Felipe Sztutman — Diário de Ateliê"
+  description="Notas públicas do processo artístico de Felipe Sztutman: arquivo, obras, software, memória e sistemas imersivos."
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-diario"
+>
+  <main class="diario-page">
+    <section class="entry">
+      <div class="surface-links">
+        <a href="/" class="back">← arquivo</a>
+        <a href="/escritos" class="surface-link">escritos</a>
+        <a href="/mapa" class="surface-link">mapa relacional</a>
+      </div>
+      <div class="entry-kicker">DIÁRIO DE ATELIÊ · PROCESSO PÚBLICO</div>
+      <h1>Notas de passagem.</h1>
+      <p>Fragmentos públicos do processo artístico: quando o ateliê deixa uma frase atravessar sem ainda virar obra, statement ou arquivo definitivo.</p>
+    </section>
+
+    <section class="paper">
+      <div class="paper-kicker">ENTRADAS</div>
+      <div class="count">{entradas.length} entrada{entradas.length === 1 ? '' : 's'}</div>
+      <div class="diary-list">
+        {entradas.map((item) => (
+          <a href={`/diario/${item.slug}`} class="diary-item">
+            <div class="diary-date">{item.date || item.slug}</div>
+            <div class="diary-main">
+              <div class="diary-title">{item.title}</div>
+              {item.subtitle && <div class="diary-subtitle">{item.subtitle}</div>}
+              <div class="diary-desc">{item.desc}</div>
+              {item.tags?.length > 0 && <div class="diary-tags">{item.tags.slice(0, 4).join(' · ')}</div>}
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style is:global>
+body.page-diario{background:#050505;color:#f1ece3}
+body.page-diario a{text-decoration:none}
+</style>
+
+<style>
+:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16)}
+.diario-page{min-height:100vh;background:#050505}
+.entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.back,.surface-link,.entry-kicker,.paper-kicker,.count,.diary-date,.diary-tags{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}.back:hover,.surface-link:hover{color:#fff}
+.surface-link{color:rgba(255,255,255,.38)}
+.entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}
+.entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:12ch}
+.entry p{max-width:46rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
+.paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 2rem}
+.paper-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}
+.count{color:rgba(17,17,17,.58);margin-bottom:1rem}
+.diary-list{border-top:1px solid var(--line)}
+.diary-item{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);color:inherit}
+.diary-item:hover .diary-title{text-decoration:underline}
+.diary-date{color:rgba(17,17,17,.5);padding-top:.2rem}
+.diary-title{font:650 1.22rem/1.2 var(--sans);letter-spacing:-.03em;margin-bottom:.22rem}
+.diary-subtitle{font:.9rem/1.45 var(--sans);color:rgba(17,17,17,.54);margin-bottom:.35rem}
+.diary-desc{font:.92rem/1.65 var(--sans);color:rgba(17,17,17,.72);max-width:62ch}
+.diary-tags{color:rgba(17,17,17,.43);margin-top:.6rem}
+@media (min-width:900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:2.5rem}}
+@media (max-width:720px){.diary-item{grid-template-columns:1fr;gap:.4rem}}
+</style>
