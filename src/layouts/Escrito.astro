@@ -25,42 +25,60 @@ const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug
 const heroItem = items[0] || null;
 const galleryItems = items.slice(1);
 const ogImage = heroItem?.src || undefined;
+const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
 ---
-<Base title={seoTitle} description={seoDesc} lang={lang} ogImage={ogImage}>
-  <article class="escrito">
-    <a href={`${prefix}/escritos`} class="back">{isEN ? '← writings' : '← escritos'}</a>
-    
-    {frontmatter.type && <div class="escrito-type">{frontmatter.type}</div>}
-    <h1 class="escrito-title">{frontmatter.title}</h1>
-    {frontmatter.subtitle && <div class="escrito-subtitle">{frontmatter.subtitle}</div>}
-    {frontmatter.date && <div class="escrito-date">{frontmatter.date}</div>}
-
-    {heroItem && (
-      <div class="escrito-hero">
-        <img src={heroItem.src} alt={frontmatter.title} loading="eager" data-idx="0" class="lightbox-trigger" />
-        {heroItem.caption && <div class="escrito-hero-caption">{heroItem.caption}</div>}
+<Base
+  title={seoTitle}
+  description={seoDesc}
+  lang={lang}
+  ogImage={ogImage}
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-escrito"
+>
+  <main class="writing-page">
+    <section class="writing-entry">
+      <div class="surface-links">
+        <a href={`${prefix}/escritos`} class="back">{isEN ? '← writings' : '← escritos'}</a>
+        <a href={`${prefix}/#obras`} class="surface-link">{isEN ? 'archive' : 'arquivo'}</a>
+        <a href={isEN ? '/mapa' : '/mapa'} class="surface-link">{isEN ? 'relational map' : 'mapa relacional'}</a>
+        <a href={altPath} class="surface-link">{isEN ? 'PT' : 'EN'}</a>
       </div>
-    )}
+      {frontmatter.type && <div class="writing-type">{frontmatter.type}</div>}
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.subtitle && <p class="writing-subtitle">{frontmatter.subtitle}</p>}
+      {frontmatter.date && <div class="writing-date">{frontmatter.date}</div>}
+    </section>
 
-    <div class="escrito-body">
-      <slot />
-    </div>
+    <article class="paper" aria-label={frontmatter.title}>
+      {heroItem && (
+        <figure class="writing-hero">
+          <img src={heroItem.src} alt={frontmatter.title} loading="eager" data-idx="0" class="lightbox-trigger" />
+          {heroItem.caption && <figcaption>{heroItem.caption}</figcaption>}
+        </figure>
+      )}
 
-    {galleryItems.length > 0 && (
-      <div class="escrito-gallery">
-        {galleryItems.map((item, i) => (
-          <figure class="gallery-fig">
-            <img src={item.src} alt={`${frontmatter.title} — ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
-          </figure>
-        ))}
+      <div class="writing-body">
+        <slot />
       </div>
-    )}
-  </article>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox">
-    <div id="lb-close">×</div>
-    <div id="lb-nav"><span class="lb-arrow" id="lb-prev">←</span><span class="lb-arrow" id="lb-next">→</span></div>
+      {galleryItems.length > 0 && (
+        <div class="writing-gallery" aria-label={isEN ? 'Image documentation' : 'Documentação de imagem'}>
+          {galleryItems.map((item, i) => (
+            <figure class="gallery-fig">
+              <img src={item.src} alt={`${frontmatter.title} — ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
+              {item.caption && <figcaption>{item.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      )}
+    </article>
+  </main>
+
+  <div id="lightbox" aria-hidden="true">
+    <button id="lb-close" aria-label={isEN ? 'Close' : 'Fechar'}>×</button>
+    <div id="lb-nav"><button class="lb-arrow" id="lb-prev" aria-label={isEN ? 'Previous' : 'Anterior'}>←</button><button class="lb-arrow" id="lb-next" aria-label={isEN ? 'Next' : 'Próxima'}>→</button></div>
     <img id="lb-img" src="" alt="" />
     <div id="lb-caption"></div>
     <div id="lb-counter"></div>
@@ -76,12 +94,21 @@ const ogImage = heroItem?.src || undefined;
       const lbCount = document.getElementById('lb-counter');
       let current = 0;
       function show(idx) {
-        current = idx; const item = gallery[idx]; if (!item) return;
-        lbImg.src = item.src; lbCap.textContent = item.caption || '';
+        current = idx;
+        const item = gallery[idx];
+        if (!item) return;
+        lbImg.src = item.src;
+        lbCap.textContent = item.caption || '';
         lbCount.textContent = (idx + 1) + ' / ' + gallery.length;
-        lb.classList.add('open'); document.body.style.overflow = 'hidden';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
-      function hide() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+      function hide() {
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
       function next() { show((current + 1) % gallery.length); }
       function prev() { show((current - 1 + gallery.length) % gallery.length); }
       document.querySelectorAll('.lightbox-trigger').forEach(function(img) {
@@ -93,7 +120,9 @@ const ogImage = heroItem?.src || undefined;
       lb.addEventListener('click', function(e) { if (e.target === lb) hide(); });
       document.addEventListener('keydown', function(e) {
         if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') hide(); if (e.key === 'ArrowRight') next(); if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'Escape') hide();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
       });
       var touchX = 0;
       lb.addEventListener('touchstart', function(e) { touchX = e.touches[0].clientX; });
@@ -105,40 +134,57 @@ const ogImage = heroItem?.src || undefined;
   </script>
 </Base>
 
+<style is:global>
+body.page-escrito{background:#050505;color:#f1ece3}
+body.page-escrito a{text-decoration:none}
+</style>
+
 <style>
-.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
-.back:hover{color:var(--fg);text-decoration:none}
-.escrito-type{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.5rem}
-.escrito-title{font:500 2rem/1.2 var(--sans);letter-spacing:-.03em;margin-bottom:.35rem}
-.escrito-subtitle{font:400 1.1rem/1.4 var(--sans);color:var(--fg2);margin-bottom:.35rem}
-.escrito-date{font:.75rem/1 var(--mono);color:var(--fg3);margin-bottom:2.5rem}
-.escrito-body{font:1rem/1.9 var(--sans);color:var(--fg)}
-.escrito-body :global(p){margin-bottom:1.4rem}
-.escrito-body :global(h2){font:500 1.3rem/1.3 var(--sans);margin:2.5rem 0 1rem;letter-spacing:-.02em}
-.escrito-body :global(h3){font:500 1rem/1.3 var(--sans);margin:2rem 0 .8rem}
-.escrito-body :global(blockquote){border-left:2px solid rgba(68,119,255,.3);padding-left:1.2rem;margin:1.5rem 0;color:var(--fg2);font-style:italic}
-.escrito-body :global(em){color:var(--fg2)}
-.escrito-body :global(strong){color:var(--fg);font-weight:500}
-.escrito-body :global(code){font:var(--mono);font-size:.85em;background:rgba(255,255,255,.05);padding:.15em .4em;border-radius:3px}
-.escrito-body :global(hr){border:none;border-top:1px solid rgba(255,255,255,.06);margin:2.5rem 0}
-@media(max-width:600px){.escrito-title{font-size:1.5rem}}
-.escrito-hero{margin-bottom:2rem;overflow:hidden}
-.escrito-hero img{width:100%;height:auto;display:block;border-radius:2px;cursor:pointer}
-.escrito-hero-caption{font:.7rem/1.4 var(--mono);color:var(--fg3);margin-top:.5rem}
-.escrito-gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:2.5rem 0}
-.gallery-fig{margin:0}
-.escrito-gallery img{width:100%;height:auto;display:block;border-radius:2px;cursor:pointer;transition:opacity .15s}
-.escrito-gallery img:hover{opacity:.85}
+:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16);--muted:rgba(17,17,17,.58)}
+.writing-page{min-height:100vh;background:#050505}
+.writing-entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.back,.surface-link,.writing-type,.writing-date{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}
+.back:hover,.surface-link:hover{color:#fff;text-decoration:none}
+.surface-link{color:rgba(255,255,255,.38)}
+.writing-type{color:rgba(255,255,255,.48);margin-bottom:.75rem}
+.writing-entry h1{font:900 clamp(2.6rem,8vw,6.6rem)/.9 var(--sans);letter-spacing:-.06em;margin-bottom:.85rem;max-width:13ch;color:#f1ece3}
+.writing-subtitle{max-width:48rem;font:1.05rem/1.65 var(--sans);color:rgba(255,255,255,.7);margin:0 0 .9rem}
+.writing-date{color:rgba(255,255,255,.42)}
+.paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 3rem;min-height:56vh}
+.writing-hero{margin:0 0 2rem;border-bottom:1px solid var(--line);padding-bottom:.75rem}
+.writing-hero img{width:100%;height:auto;display:block;cursor:pointer}
+.writing-hero figcaption,.gallery-fig figcaption{font:.68rem/1.45 var(--mono);letter-spacing:.04em;color:var(--muted);margin-top:.5rem}
+.writing-body{font:1.05rem/1.85 Georgia,'Times New Roman',serif;max-width:780px;color:var(--ink)}
+.writing-body :global(p){margin-bottom:1.35rem}
+.writing-body :global(h2){font:800 clamp(1.45rem,3vw,2.15rem)/1.08 var(--sans);letter-spacing:-.04em;margin:2.8rem 0 1rem;color:var(--ink)}
+.writing-body :global(h3){font:700 1.05rem/1.25 var(--sans);letter-spacing:-.02em;margin:2rem 0 .75rem;color:var(--ink)}
+.writing-body :global(ul),.writing-body :global(ol){padding-left:1.25rem;margin:0 0 1.35rem}
+.writing-body :global(li){margin:.35rem 0}
+.writing-body :global(blockquote){border-left:2px solid rgba(17,17,17,.28);padding-left:1rem;margin:1.75rem 0;color:rgba(17,17,17,.68);font-style:italic}
+.writing-body :global(em){color:rgba(17,17,17,.7)}
+.writing-body :global(strong){color:var(--ink);font-weight:700}
+.writing-body :global(a){color:#111;border-bottom:1px solid rgba(17,17,17,.32)}
+.writing-body :global(a:hover){border-color:#111;text-decoration:none}
+.writing-body :global(code){font-family:var(--mono);font-size:.85em;background:rgba(17,17,17,.08);padding:.15em .4em;border-radius:2px}
+.writing-body :global(pre){background:rgba(17,17,17,.08);padding:1rem;overflow:auto;margin:1.5rem 0;font:.82rem/1.55 var(--mono)}
+.writing-body :global(hr){border:none;border-top:1px solid var(--line);margin:2.5rem 0}
+.writing-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:3rem 0 0;max-width:980px}
+.gallery-fig{margin:0;border-top:1px solid var(--line);padding-top:.5rem}
+.writing-gallery img{width:100%;height:auto;display:block;cursor:pointer;transition:opacity .15s}
+.writing-gallery img:hover,.writing-hero img:hover{opacity:.9}
 .lightbox-trigger{cursor:pointer}
-@media(max-width:500px){.escrito-gallery{grid-template-columns:1fr}}
 #lightbox{position:fixed;inset:0;background:rgba(4,6,14,.96);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
 #lightbox.open{display:flex}
 #lb-img{max-width:92vw;max-height:82vh;object-fit:contain}
-#lb-caption{font:.75rem/1.6 var(--mono);color:var(--fg3);margin-top:.75rem;text-align:center;max-width:600px;padding:0 1rem}
-#lb-close{position:fixed;top:14px;right:18px;font:1.2rem/1 var(--mono);color:var(--fg3);cursor:pointer;z-index:101}
-#lb-close:hover{color:var(--fg)}
+#lb-caption{font:.75rem/1.6 var(--mono);color:rgba(255,255,255,.45);margin-top:.75rem;text-align:center;max-width:680px;padding:0 1rem}
+#lb-close{position:fixed;top:14px;right:18px;font:1.2rem/1 var(--mono);color:rgba(255,255,255,.45);cursor:pointer;z-index:101;background:transparent;border:0}
+#lb-close:hover{color:#fff}
 #lb-nav{position:fixed;top:50%;width:100%;display:flex;justify-content:space-between;padding:0 12px;transform:translateY(-50%);pointer-events:none;z-index:101}
-.lb-arrow{font:1.5rem/1 var(--mono);color:var(--fg3);cursor:pointer;pointer-events:auto;padding:8px;user-select:none}
-.lb-arrow:hover{color:var(--fg)}
-#lb-counter{position:fixed;bottom:14px;right:18px;font:.7rem/1 var(--mono);color:var(--fg3);z-index:101}
+.lb-arrow{font:1.5rem/1 var(--mono);color:rgba(255,255,255,.45);cursor:pointer;pointer-events:auto;padding:8px;user-select:none;background:transparent;border:0}
+.lb-arrow:hover{color:#fff}
+#lb-counter{position:fixed;bottom:14px;right:18px;font:.7rem/1 var(--mono);color:rgba(255,255,255,.45);z-index:101}
+@media (min-width: 900px){.writing-entry,.paper{padding-left:2rem;padding-right:2rem}.writing-entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:4rem}.writing-body{font-size:1.12rem}}
+@media (max-width: 720px){.writing-entry h1{font-size:clamp(2.4rem,14vw,4rem)}.writing-gallery{grid-template-columns:1fr}.writing-body{font-size:1rem;line-height:1.78}}
 </style>

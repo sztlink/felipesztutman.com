@@ -1,81 +1,99 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Felipe Sztutman — About" description="Born in São Paulo, 1986. Technician who became an artist. COTUCA Mechatronics, FAU-USP Design, BijaRi, AYA Studio. Immersive environments where light and technology become language." lang="en">
+<Base
+  title="Felipe Sztutman — About"
+  description="Born in São Paulo, 1986. Technician who became an artist. COTUCA Mechatronics, FAU-USP Design, BijaRi, AYA Studio."
+  lang="en"
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-sobre"
+>
+  <main class="archive-page">
+    <section class="entry">
+      <div class="surface-links">
+        <a href="/en/#obras" class="back">← archive</a>
+        <a href="/mapa" class="surface-link">relational map</a>
+        <a href="/sobre" class="surface-link">PT</a>
+      </div>
+      <div class="entry-kicker">ABOUT · CONTEXT</div>
+      <h1>Technician who became an artist</h1>
+      <p>São Paulo, 1986. Mechatronics, design, live-cinema, scenography, technical direction, immersive exhibitions. Two lineages operate together: the artistic lineage of light in space and the technical lineage of fabrication and systems.</p>
+    </section>
 
-<a href="/en" class="back">← home</a>
+    <section class="paper dossier">
+      <div class="paper-kicker">DOSSIER</div>
+      <dl>
+        <div class="row"><dt>Born</dt><dd>São Paulo, 1986</dd></div>
+        <div class="row"><dt>Education</dt><dd>COTUCA / Unicamp — Mechatronics · FAU-USP — Design</dd></div>
+        <div class="row"><dt>Field</dt><dd>Light, technology, perception, immersive environments</dd></div>
+        <div class="row"><dt>Structures</dt><dd>BijaRi · The Force / GTM · AYA Studio</dd></div>
+        <div class="row"><dt>Recurring gesture</dt><dd>Making the invisible visible</dd></div>
+      </dl>
+    </section>
 
-<h1 class="page-title">About</h1>
+    <section class="paper body-block">
+      <div class="paper-kicker">TRAJECTORY</div>
+      <div class="body-copy">
+        <p>Born in São Paulo, 1986. My grandparents came from Poland and Romania in 1933 — Jews fleeing Nazism. My father taught me that emancipation comes through making: test the idea in matter before claiming it's good.</p>
+        <p>I studied <strong>Mechatronics at COTUCA</strong> (Unicamp, 2002–04) and <strong>Design at FAU-USP</strong> (2007–14). My thesis, <em>LUZCIDADE</em>, traced the lineage from Moholy-Nagy to Dan Flavin and from Flavin to my work with light in São Paulo's public space. Advised by Carlos Zibel Costa, committee included Giselle Beiguelman. I'm not an artist who learned technology — I'm a technician who became an artist. The order matters.</p>
+        <p>In 2008 I joined <strong>BijaRi</strong>, where I worked as a VJ and art director for nine years. Live-cinema at Itaú Cultural (2008), video-scenery for Ivete Sangalo at Madison Square Garden (2010), three editions of Villa Mix Goiânia with Guinness Record for the world's largest LED stage (2013–15). BijaRi taught me to operate at scale.</p>
+        <p>In 2017, at <strong>The Force / GTM Cenografia</strong>, I installed the Google Buttonwall in the lobby of Google Brasil with Wesley Lee (~7,000 interactive RGB buttons), the scenography of YouTube Space Rio at Pier Mauá (3,000 m², described by G1 as "the most high-tech in the world"), and the technical direction of the <em>Dimensão</em> exhibition by Nonotak Studio at Japan House São Paulo.</p>
+        <p>In 2019 I co-founded <strong>AYA Studio</strong> with Antonio Curti. Since then, I've conceived and directed immersive exhibitions at Farol Santander, CCBB, SESI/FIESP, Japan House, and Casa Fiat. I design the spaces, conceive them technically and artistically, and coordinate multidisciplinary teams of motion designers, programmers, architects, and technicians. Antonio signs the curatorship. AYA is the system — I'm one of the engines.</p>
+        <p>My work stands on two lineages: one artistic — from Moholy-Nagy to Dan Flavin, from the light-space modulator to the fluorescent lamp as medium — and another technical, which comes from mechatronics and digital fabrication. The works are born from the intersection of these forces. Revealing the invisible is the gesture that persists: from the buried Córrego das Almas in 2012 to the mycorrhizal networks of Floresta Utópica in 2025.</p>
+        <p>Years after the thesis, this lineage reappeared explicitly in the book <em>100 Anos de Arte Moderna: a cena contemporânea</em>, by Carlos Zibel Costa — the same advisor who accompanied <em>LUZCIDADE</em> at FAU-USP. The profile dedicated to my work articulates <em>Cachoeira</em>, <em>sem título, para Mantiqueira</em>, and <em>OCEANVS</em> as parts of a single trajectory: from light in public space to the construction of immersive environments.</p>
+      </div>
+    </section>
 
-<div class="bio">
-  <p>Born in São Paulo, 1986. My grandparents came from Poland and Romania in 1933 — Jews fleeing Nazism. My father taught me that emancipation comes through making: test the idea in matter before claiming it's good.</p>
-
-  <p>I studied <strong>Mechatronics at COTUCA</strong> (Unicamp, 2002–04) and <strong>Design at FAU-USP</strong> (2007–14). My thesis, <em>LUZCIDADE</em>, traced the lineage from Moholy-Nagy to Dan Flavin and from Flavin to my work with light in public space. Advised by Carlos Zibel Costa, committee included Giselle Beiguelman. I'm not an artist who learned technology — I'm a technician who became an artist. The order matters.</p>
-
-  <p>In 2008 I joined <strong>BijaRi</strong>, where I worked as a VJ and art director for nine years. Live-cinema at Itaú Cultural (2008), video-scenery for Ivete Sangalo at Madison Square Garden (2010), three editions of Villa Mix Goiânia with Guinness Record for the world's largest LED stage (2013–15). BijaRi taught me to operate at scale.</p>
-
-  <p>In 2017, at <strong>The Force / GTM Cenografia</strong>, I installed the Google Buttonwall in the lobby of Google Brasil with Wesley Lee (~7,000 interactive RGB buttons), the scenography of YouTube Space Rio at Pier Mauá (3,000 m², described by G1 as "the most high-tech in the world"), and the technical direction of the <em>Dimensão</em> exhibition by Nonotak Studio at Japan House São Paulo.</p>
-
-  <p>In 2019 I co-founded <strong>AYA Studio</strong> with Antonio Curti. Since then, I've conceived and directed immersive exhibitions at Farol Santander, CCBB, SESI/FIESP, Japan House, and Casa Fiat. I design the spaces, conceive them technically and artistically, and coordinate multidisciplinary teams of motion designers, programmers, architects, and technicians. Antonio signs the curatorship. AYA is the system — I'm one of the engines.</p>
-
-  <p>My work stands on two lineages: one artistic — from Moholy-Nagy to Dan Flavin, from the light-space modulator to the fluorescent lamp as medium — and another technical, which comes from mechatronics and digital fabrication. The works are born from the intersection of these forces. Revealing the invisible is the gesture that persists: from the buried Córrego das Almas in 2012 to the mycorrhizal networks of Floresta Utópica in 2025.</p>
-
-  <p>Years after the thesis, this lineage reappeared explicitly in the book <em>100 Anos de Arte Moderna: a cena contemporânea</em>, by Carlos Zibel Costa — the same advisor who accompanied <em>LUZCIDADE</em> at FAU-USP. The profile dedicated to my work articulates <em>Cachoeira</em>, <em>sem título, para Mantiqueira</em>, and <em>OCEANVS</em> as parts of a single trajectory: from light in public space to the construction of immersive environments.</p>
-</div>
-
-<section>
-  <h2>Education</h2>
-  <div class="formation">
-    <div class="form-item"><strong>COTUCA / Unicamp</strong> — Mechatronics (2002–04)</div>
-    <div class="form-item"><strong>FAU-USP</strong> — Design (2007–14). Thesis <em>LUZCIDADE</em>, advisor Carlos Zibel Costa, committee Giselle Beiguelman</div>
-    <div class="form-item"><strong>Dan Flavin: Lights</strong> — Mumok, Vienna (2013). Visit that consolidated the field</div>
-  </div>
-</section>
-
-<section>
-  <h2>Recurring Collaborators</h2>
-  <div class="collabs">
-    <div class="collab"><strong>Antonio Curti</strong> — curatorship in all AYA exhibitions since 2019</div>
-    <div class="collab"><strong>Wesley Lee</strong> — hardware and electronics (Mementos, Interlúdio, METADATA, Google Buttonwall, Dimensão/Nonotak)</div>
-    <div class="collab"><strong>Matheus Leston</strong> — audiovisual programming (Mementos, OCEANVS, O Que Nos Une)</div>
-    <div class="collab"><strong>João Alencar (Jãozão)</strong> — motion design (OCEANVS, SP3024, AMANO). Previously together at BijaRi</div>
-    <div class="collab"><strong>Flávio Reis (Audiovisualismo)</strong> — motion design (OCEANVS)</div>
-    <div class="collab"><strong>Juvi</strong> — sound design (OCEANVS, Andrômeda)</div>
-    <div class="collab"><strong>Rodrigo Bellotto</strong> — Objeto em Forma de: Espaço (2009), New York Visualists</div>
-  </div>
-</section>
-
-<section>
-  <h2>Publications</h2>
-  <div class="collabs">
-    <div class="collab"><strong><a href="/en/publicacoes/100-anos-de-arte-moderna">100 Anos de Arte Moderna: a cena contemporânea</a></strong> — Carlos Zibel Costa. Dedicated profile on pp. 64–67, with references to <em>Cachoeira</em>, <em>sem título, para Mantiqueira</em>, and <em>OCEANVS</em>.</div>
-  </div>
-</section>
-
-<section>
-  <h2>Records</h2>
-  <div class="links-list">
-    <a href="https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman" target="_blank">Enciclopédia Itaú Cultural</a>
-    <a href="https://br.linkedin.com/in/felipesztutman" target="_blank">LinkedIn</a>
-    <a href="https://instagram.com/felipesztutman" target="_blank">Instagram</a>
-    <a href="https://aya.cx" target="_blank">AYA Studio</a>
-  </div>
-</section>
-
+    <section class="paper split">
+      <div class="split-block">
+        <div class="paper-kicker">Recurring collaborators</div>
+        <div class="list">
+          <div><strong>Antonio Curti</strong> — curatorship in all AYA exhibitions since 2019</div>
+          <div><strong>Wesley Lee</strong> — hardware and electronics (Mementos, Interlúdio, METADATA, Google Buttonwall, Dimensão/Nonotak)</div>
+          <div><strong>Matheus Leston</strong> — audiovisual programming (Mementos, OCEANVS, O Que Nos Une)</div>
+          <div><strong>João Alencar (Jãozão)</strong> — motion design (OCEANVS, SP3024, AMANO). Previously together at BijaRi</div>
+          <div><strong>Flávio Reis (Audiovisualismo)</strong> — motion design (OCEANVS)</div>
+          <div><strong>Juvi</strong> — sound design (OCEANVS, Andrômeda)</div>
+          <div><strong>Rodrigo Bellotto</strong> — Objeto em Forma de: Espaço (2009), New York Visualists</div>
+          <div><strong><a href="/en/publicacoes/100-anos-de-arte-moderna">100 Anos de Arte Moderna: a cena contemporânea</a></strong> — Carlos Zibel Costa. Dedicated profile on pp. 64–67.</div>
+        </div>
+      </div>
+      <div class="split-block">
+        <div class="paper-kicker">Records</div>
+        <div class="list links">
+          <a href="https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman" target="_blank">Enciclopédia Itaú Cultural</a>
+          <a href="https://br.linkedin.com/in/felipesztutman" target="_blank">LinkedIn</a>
+          <a href="https://instagram.com/felipesztutman" target="_blank">Instagram</a>
+          <a href="https://aya.cx" target="_blank">AYA Studio</a>
+        </div>
+      </div>
+    </section>
+  </main>
 </Base>
 
+<style is:global>
+body.page-sobre{background:#050505;color:#f1ece3}
+body.page-sobre a{text-decoration:none}
+</style>
+
 <style>
-.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
-.back:hover{color:var(--fg);text-decoration:none}
-.page-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:2rem}
-.bio{font:.95rem/1.85 var(--sans);color:var(--fg);margin-bottom:2.5rem}
-.bio p{margin-bottom:1.2rem}
-.bio strong{font-weight:500}
-.bio em{color:var(--fg2)}
-section{margin-bottom:2.5rem}
-section h2{font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--fg3);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,.04)}
-.form-item,.collab{font:.88rem/1.7 var(--sans);color:var(--fg2);margin-bottom:.5rem}
-.form-item strong,.collab strong{color:var(--fg);font-weight:500}
-.links-list{display:flex;flex-direction:column;gap:.5rem;font:.82rem/1 var(--mono)}
-.links-list a{color:var(--fg2);transition:color .15s}.links-list a:hover{color:var(--accent)}
+:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16)}
+.archive-page{min-height:100vh;background:#050505}
+.entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.back,.surface-link,.entry-kicker,.paper-kicker,.row dt{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}.back:hover,.surface-link:hover{color:#fff}
+.surface-link{color:rgba(255,255,255,.38)}
+.entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}
+.entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:10ch}
+.entry p{max-width:48rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
+.paper{background:var(--paper);color:var(--ink);padding:1rem;margin:0}.paper + .paper{border-top:1px solid var(--line)}
+.paper-kicker{color:rgba(17,17,17,.45);margin-bottom:.8rem}.dossier dl{display:grid;gap:.55rem}
+.row{display:grid;grid-template-columns:150px 1fr;gap:.8rem;padding-top:.55rem;border-top:1px solid var(--line)}.row dt{color:rgba(17,17,17,.55)}.row dd{font:.95rem/1.55 var(--sans);color:rgba(17,17,17,.92)}
+.body-copy{max-width:62ch;font:.95rem/1.8 var(--sans);color:rgba(17,17,17,.78)}.body-copy p + p{margin-top:1rem}
+.split{display:grid;gap:1rem}.list{display:grid;gap:.55rem;font:.9rem/1.65 var(--sans);color:rgba(17,17,17,.75)}.list strong{color:var(--ink)}.links a{color:rgba(17,17,17,.75)}.links a:hover{text-decoration:underline;color:var(--ink)}
+@media (min-width: 900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.split{grid-template-columns:1fr 1fr;align-items:start}.split-block + .split-block{padding-left:1rem;border-left:1px solid var(--line)}}
+@media (max-width: 720px){.row{grid-template-columns:1fr;gap:.25rem}}
 </style>

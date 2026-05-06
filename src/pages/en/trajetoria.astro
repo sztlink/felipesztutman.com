@@ -1,105 +1,108 @@
 ---
 import Base from '../../layouts/Base.astro';
+
+const eras = [
+  {
+    title: 'AYA Studio',
+    meta: '2019–present · São Paulo · co-founder, executive and technical direction',
+    text: 'Art and technology studio co-founded with Antonio Curti. Immersive exhibitions at Farol Santander, CCBB, SESI/FIESP, Japan House, and Casa Fiat. Space design, technical and artistic conception, coordination of multidisciplinary teams.',
+    projects: []
+  },
+  {
+    title: 'The Force / GTM Cenografia',
+    meta: '2017–2018 · São Paulo and Rio de Janeiro',
+    text: null,
+    projects: [
+      ['Dimensão — Nonotak Studio', '2018 · Japan House, São Paulo · technical direction', 'Three immersive installations by the Franco-Japanese duo. Technical direction of the installation, credited as exhibition design. Turning point toward the founding of AYA.'],
+      ['Google Buttonwall', '2017 · Google Brasil lobby, São Paulo · installation and integration', 'Permanent interactive installation with ~7,000 backlit RGB buttons, ~150 PCBs, and ~25 Raspberry Pis. Wesley Lee redesigned the hardware; Vitaliano Palmieri worked on firmware; GTM and I installed and integrated. Based on Google Creative Lab’s Anypixels.js.'],
+      ['YouTube Space Rio', '2017 · Pier Mauá, Rio de Janeiro · scenography via GTM', '3,000 m² described by G1 as “the most high-tech in the world”: studios with 4K cameras, cinema, 360°, and interactive sets.'],
+      ['Antitempo', '2017 · Farol Santander, São Paulo · executive production', '42 moving lasers synchronized with sound. Matheus Leston developed the control system, soundtrack, and light choreography.']
+    ]
+  },
+  {
+    title: 'BijaRi',
+    meta: '2008–2017 · São Paulo · VJ, live-cinema, art direction',
+    text: null,
+    projects: [
+      ['Villa Mix Goiânia ×3', '2013–15 · Estádio Serra Dourada · art direction', 'Three editions of Brazil’s largest sertanejo music festival. 2015: Guinness Book of Records — world’s largest LED stage (1,400 m²). Over 1 million viewers on YouTube live. Art direction with João Alencar (Jãozão).'],
+      ['Ivete Sangalo DVD — Madison Square Garden', '2010 · New York · video-scenery', 'Video-scenery for the DVD “Ivete Sangalo Live at Madison Square Garden”. 240 m² of LED panels plus a 10-meter-tall fabric cylinder. Best-selling DVD of the year. Nominated for Brazilian International Press Award.'],
+      ['Entropicália', '2008 · Itaú Cultural, São Paulo · live-cinema', 'Live-cinema performance with Maxifagia collective. First public work: visual programming and real-time video manipulation.']
+    ]
+  },
+  {
+    title: 'Education',
+    meta: '2002–2014',
+    text: null,
+    projects: [
+      ['FAU-USP — Design', '2007–14 · thesis LUZCIDADE · advisor Carlos Zibel Costa · committee Giselle Beiguelman', null],
+      ['New York Visualists', '2009 · Lab-Office with Rodrigo Bellotto and Gian Spina', null],
+      ['COTUCA / Unicamp — Mechatronics', '2002–04 · Campinas', null]
+    ]
+  }
+];
 ---
-<Base title="Felipe Sztutman — Timeline" description="BijaRi, The Force, GTM Cenografia, AYA Studio. Madison Square Garden, Google, YouTube, Japan House. The formation of a systemic artist." lang="en">
+<Base
+  title="Felipe Sztutman — Timeline"
+  description="BijaRi, The Force, GTM Cenografia, AYA Studio. The formation of a systemic artist."
+  lang="en"
+  fullBleed={true}
+  showHeader={false}
+  showFooter={false}
+  bodyClass="page-trajetoria"
+>
+  <main class="archive-page">
+    <section class="entry">
+      <div class="surface-links">
+        <a href="/en/#obras" class="back">← archive</a>
+        <a href="/mapa" class="surface-link">relational map</a>
+        <a href="/trajetoria" class="surface-link">PT</a>
+      </div>
+      <div class="entry-kicker">TRAJECTORY · CHRONOLOGY</div>
+      <h1>Scale, infrastructure, field</h1>
+      <p>Technical and artistic path from mechatronics and live-cinema to the construction of immersive environments and exhibition systems.</p>
+    </section>
 
-<a href="/en" class="back">← home</a>
-<h1 class="page-title">Timeline</h1>
-
-<div class="timeline">
-
-  <div class="era">
-    <h2>AYA Studio</h2>
-    <div class="era-meta">2019–present · São Paulo · co-founder, executive and technical direction</div>
-    <p>Art and technology studio co-founded with Antonio Curti. Immersive exhibitions at Farol Santander, CCBB, SESI/FIESP, Japan House, Casa Fiat. Space design, technical and artistic conception, coordination of multidisciplinary teams.</p>
-  </div>
-
-  <div class="era">
-    <h2>The Force / GTM Cenografia</h2>
-    <div class="era-meta">2017–2018 · São Paulo and Rio de Janeiro</div>
-
-    <div class="project">
-      <strong>Dimensão — Nonotak Studio</strong>
-      <span class="proj-meta">2018 · Japan House, São Paulo · technical direction</span>
-      <p>Three immersive installations by the Franco-Japanese duo. Technical direction of the installation (credited as exhibition design). Turning point → founding of AYA.</p>
-    </div>
-
-    <div class="project">
-      <strong>Google Buttonwall</strong>
-      <span class="proj-meta">2017 · Google Brasil lobby, São Paulo · installation and integration</span>
-      <p>Permanent interactive installation. ~7,000 backlit RGB buttons, ~150 PCBs, ~25 Raspberry Pis. Wesley Lee redesigned all the hardware (100+ manual controller boards). Vitaliano Palmieri did the firmware. GTM and I installed and integrated. Based on Google Creative Lab's Anypixels.js.</p>
-    </div>
-
-    <div class="project">
-      <strong>YouTube Space Rio</strong>
-      <span class="proj-meta">2017 · Pier Mauá, Rio de Janeiro · scenography via GTM</span>
-      <p>3,000 m² — described by G1 as "the most high-tech in the world". Studios with 4K cameras, cinema, 360°, interactive sets.</p>
-    </div>
-
-    <div class="project">
-      <strong>Antitempo</strong>
-      <span class="proj-meta">2017 · Farol Santander, São Paulo · executive production (The Force)</span>
-      <p>42 moving lasers synchronized with sound. Matheus Leston developed control system, soundtrack, and light choreography.</p>
-    </div>
-  </div>
-
-  <div class="era">
-    <h2>BijaRi</h2>
-    <div class="era-meta">2008–2017 · São Paulo · VJ, live-cinema, art direction</div>
-
-    <div class="project">
-      <strong>Villa Mix Goiânia ×3</strong>
-      <span class="proj-meta">2013–15 · Estádio Serra Dourada · art direction</span>
-      <p>Three editions of Brazil's largest sertanejo music festival. 2015: Guinness Book of Records — world's largest LED stage (1,400 m²). Over 1 million viewers on YouTube live. Art direction with João Alencar (Jãozão).</p>
-    </div>
-
-    <div class="project">
-      <strong>Ivete Sangalo DVD — Madison Square Garden</strong>
-      <span class="proj-meta">2010 · New York · video-scenery</span>
-      <p>Video-scenery for the DVD "Ivete Sangalo Live at Madison Square Garden". 240 m² of LED panels + 10-meter tall fabric cylinder. Best-selling DVD of the year. Nominated for Brazilian International Press Award.</p>
-    </div>
-
-    <div class="project">
-      <strong>Entropicália</strong>
-      <span class="proj-meta">2008 · Itaú Cultural, São Paulo · live-cinema</span>
-      <p>Live-cinema performance with Maxifagia collective. First public work — visual programming + real-time video manipulation.</p>
-    </div>
-  </div>
-
-  <div class="era">
-    <h2>Education</h2>
-    <div class="era-meta">2002–2014</div>
-
-    <div class="project">
-      <strong>FAU-USP — Design</strong>
-      <span class="proj-meta">2007–14 · Thesis LUZCIDADE, advisor Carlos Zibel Costa, committee Giselle Beiguelman</span>
-    </div>
-
-    <div class="project">
-      <strong>New York Visualists</strong>
-      <span class="proj-meta">2009 · Lab-Office with Rodrigo Bellotto and Gian Spina</span>
-    </div>
-
-    <div class="project">
-      <strong>COTUCA / Unicamp — Mechatronics</strong>
-      <span class="proj-meta">2002–04 · Campinas</span>
-    </div>
-  </div>
-
-</div>
-
+    <section class="paper">
+      <div class="paper-kicker">TIMELINE</div>
+      <div class="eras">
+        {eras.map((era) => (
+          <article class="era">
+            <div class="era-head">
+              <h2>{era.title}</h2>
+              <div class="era-meta">{era.meta}</div>
+            </div>
+            {era.text && <p class="era-text">{era.text}</p>}
+            {era.projects.length > 0 && (
+              <div class="project-list">
+                {era.projects.map(([title, meta, desc]) => (
+                  <div class="project-item">
+                    <strong>{title}</strong>
+                    <span>{meta}</span>
+                    {desc && <p>{desc}</p>}
+                  </div>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
 </Base>
 
+<style is:global>
+body.page-trajetoria{background:#050505;color:#f1ece3}
+body.page-trajetoria a{text-decoration:none}
+</style>
+
 <style>
-.back{font:.75rem/1 var(--mono);color:var(--fg3);display:inline-block;margin-bottom:1.5rem;transition:color .15s}
-.back:hover{color:var(--fg);text-decoration:none}
-.page-title{font:500 2rem/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:2.5rem}
-.timeline{display:flex;flex-direction:column;gap:2.5rem}
-.era h2{font:500 1.2rem/1.3 var(--sans);margin-bottom:.2rem}
-.era-meta{font:.75rem/1.4 var(--mono);color:var(--fg3);margin-bottom:1rem}
-.era > p{font:.9rem/1.7 var(--sans);color:var(--fg2);margin-bottom:1.2rem}
-.project{margin-bottom:1.2rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,.06)}
-.project strong{font:500 .95rem/1.3 var(--sans);color:var(--fg);display:block}
-.proj-meta{font:.7rem/1.4 var(--mono);color:var(--fg3);display:block;margin-bottom:.3rem}
-.project p{font:.85rem/1.65 var(--sans);color:var(--fg2)}
+:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16)}
+.archive-page{min-height:100vh;background:#050505}
+.entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.back,.surface-link,.entry-kicker,.paper-kicker,.era-meta,.project-item span{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}.back:hover,.surface-link:hover{color:#fff}.surface-link{color:rgba(255,255,255,.38)}
+.entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}.entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:12ch}.entry p{max-width:46rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
+.paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 2rem}.paper-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}.eras{display:grid;gap:1.25rem}.era{padding-top:1rem;border-top:1px solid var(--line)}.era-head{margin-bottom:.65rem}.era h2{font:700 1.3rem/1.2 var(--sans);letter-spacing:-.03em;margin-bottom:.2rem}.era-meta{color:rgba(17,17,17,.5)}.era-text{font:.95rem/1.7 var(--sans);color:rgba(17,17,17,.76);max-width:60ch}.project-list{display:grid;gap:.8rem;margin-top:.8rem}.project-item{padding-left:1rem;border-left:2px solid rgba(17,17,17,.12)}.project-item strong{display:block;font:600 .98rem/1.35 var(--sans);margin-bottom:.15rem}.project-item span{display:block;color:rgba(17,17,17,.5);margin-bottom:.25rem}.project-item p{font:.88rem/1.6 var(--sans);color:rgba(17,17,17,.72)}
+@media (min-width: 900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:2.5rem}}
 </style>
