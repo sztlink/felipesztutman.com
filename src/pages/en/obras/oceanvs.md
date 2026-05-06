@@ -5,13 +5,14 @@ year: "2022"
 location: "Farol Santander SP, Casa Fiat BH"
 lang: en
 description: "Felipe Sztutman's authored exhibition in eight acts. Antonio Curti wrote the curatorial script; Felipe conceived the work and the spatial experience that brings water to the body without wetting the skin."
-lead: "Felipe Sztutman's authored work in eight acts, where curatorial script, motion, score, programming, and spatial design work together to bring water to the body without wetting the skin."
-archiveNote: "This page marks OCEANVS as an authored exhibition by Felipe Sztutman and as a work of circulation and adaptation. The passage from São Paulo to Belo Horizonte is not a documentary exception, but part of the work's behavior."
+lead: "Felipe Sztutman's authored work in eight acts, born from his lineage of expanded video and materialized by AYA Studio, where curatorial script, motion, score, programming, and spatial design work together to bring water to the body without wetting the skin."
+archiveNote: "This page marks OCEANVS as an authored exhibition by Felipe Sztutman and as a work of circulation and adaptation. The passage from São Paulo to Belo Horizonte — and later to Farol Viajante — is not a documentary exception, but part of the work's behavior."
 circulation:
   - { label: "Premiere", value: "Farol Santander, São Paulo, 2022" }
   - { label: "Adaptation", value: "Casa Fiat de Cultura, Belo Horizonte, 2023" }
+  - { label: "Circulation", value: "Farol Viajante, ongoing" }
   - { label: "Structure", value: "Eight acts, mapped projection, original score, interactivity, and immersive space" }
-collaborationNote: "OCEANVS is the first work in which collaboration does not enter as execution of a pre-closed concept. Antonio Curti's script, the motion by Flávio Reis and João Alencar, Juvi's score, and Matheus Leston's interactive programming directly interfere with the final design of the experience."
+collaborationNote: "In OCEANVS, collaboration does not enter as execution of a pre-closed concept. Antonio Curti structured the visual and narrative concept; the motion by Flávio Reis and João Alencar, Juvi's score, Matheus Leston's interactive programming, and AYA Studio's materialization directly interfere with the final design of the experience."
 credits:
   - { role: "Artist", name: "Felipe Sztutman" }
   - { role: "Curation and narrative", name: "Antonio Curti" }
@@ -19,15 +20,18 @@ credits:
   - { role: "Motion Graphics", name: "João Alencar" }
   - { role: "Original Score", name: "Juvi" }
   - { role: "Interactive Programming", name: "Matheus Leston" }
+  - { role: "Materialization", name: "AYA Studio" }
 publications:
   - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64–67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "The book frames OCEANVS as a turning point between the early light works and the AYA phase of immersive exhibitions." }
 ---
 
-OCEANVS was my first major co-creation. Until 2022, I had conceived works alone — from Cachoeira to Floresta Utópica. With OCEANVS, I learned to design spaces in collaboration: Antonio Curti wrote the script for the eight acts, I designed the spatial experience and technical direction that would bring water to the body without wetting the skin.
+Before OCEANVS, I already had authored works within AYA exhibitions — Mementos and Interlúdio, in Metaversø, are part of that chronology. OCEANVS was a different turning point: not an installation within a thematic exhibition, but AYA's first full immersive exhibition organized as an authored work of mine. With it, I learned to design spaces in collaboration: Antonio Curti structured the visual and narrative concept for the eight acts, while I conceived the work, the spatial experience, and the technical direction that would bring water to the body without wetting the skin.
+
+The work was born at a moment when AYA had gathered an audiovisual nucleus recently formed through previous large-scale projection projects. That nucleus reactivated a lineage I carried from my years at BijaRi, where I worked with non-conventional video formats, expanded image, and spatial montage. OCEANVS transformed that technical and human maturity into an authored exhibition, conceived to occupy Farol Santander as an immersion chamber about water.
 
 The work traverses eight moments — Prelúdio, Horizonte, Mergulho, Submersão, Tempestade, Seca, Caos, Vida. Flávio Reis (Audiovisualismo) and João Alencar developed the motion graphics that give body to Antonio's script, Juvi composed the original score, Matheus Leston programmed the interactive elements that respond to the audience's presence. I conceived the space as an immersion chamber: six mapped projectors, spatial sound, a floor that reflects the ocean above. The audience enters, lies down, and the sea happens around them.
 
-OCEANVS circulated through Farol Santander in São Paulo (2022) and Casa Fiat de Cultura in Belo Horizonte (2023). It generated byproducts — art objects that isolate frames from the narrative, exhibited at Galeria Luis Maluf and SP-Arte Rotas Brasileiras.
+OCEANVS circulated through Farol Santander in São Paulo (2022), Casa Fiat de Cultura in Belo Horizonte (2023), and continues in a new application at Farol Viajante. It generated byproducts — art objects that isolate frames from the narrative, exhibited at Galeria Luis Maluf and SP-Arte Rotas Brasileiras.
 
 The collaboration with Antonio Curti deserves a record that goes beyond the distribution of roles. The script for the eight acts didn't arrive as a finished text: it was transformed in the space. Motion, score, and interactive programming didn't illustrate the script — they interfered with it. What came out of the exhibition room in São Paulo was not the original script. That is what distinguishes co-creation from division of labor.
 
