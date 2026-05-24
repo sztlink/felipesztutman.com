@@ -1,15 +1,16 @@
 {
   "meta": {
-    "generatedAt": "2026-04-29",
+    "generatedAt": "2026-05-24",
     "counts": {
       "total": 18,
       "realizada": 16,
-      "aConfirmar": 2
+      "emCurso": 1,
+      "aConfirmar": 1
     },
     "statusLegend": {
       "REALIZADA": "publicada e tratada como obra ativa no arquivo atual",
       "A_CONFIRMAR": "publicada, mas precisa de confirmação factual final",
-      "EM_CURSO": "reservado para uso futuro",
+      "EM_CURSO": "confirmada e em produção, ainda não tratada como realizada",
       "INEDITA": "reservado para uso futuro"
     },
     "sources": [
@@ -1667,7 +1668,7 @@
       "slug": "player1",
       "titulo": "Player 1: 50 Anos dos Videogames",
       "ano": 2026,
-      "status": "A_CONFIRMAR",
+      "status": "EM_CURSO",
       "local": "Farol Santander São Paulo",
       "cidades": [
         "São Paulo"
@@ -1682,7 +1683,7 @@
       "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#ff4466",
-      "description": "Exposição temática em confirmação sobre cinquenta anos de cultura jogável, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
+      "description": "Exposição temática confirmada e em produção sobre cinquenta anos de cultura jogável, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
       "sourceFiles": {
         "page": "src/pages/obras/player1.md",
         "galleryKey": null,
@@ -1762,7 +1763,7 @@
         "Confirmar data de abertura e período de exposição",
         "Confirmar seleção final do acervo e organização dos núcleos",
         "Confirmar créditos expandidos de produção, arquitetura, design e desenvolvimento",
-        "Confirmar registros oficiais de imagem/vídeo e status final de realização"
+        "Acompanhar registros oficiais de imagem/vídeo antes de tratar como REALIZADA"
       ],
       "authorshipMode": "EXPOSICAO_TEMATICA"
     }

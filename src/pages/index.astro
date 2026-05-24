@@ -7,6 +7,7 @@ const works = [...worksData.works].sort((a, b) => a.numero.localeCompare(b.numer
 const updatedAt = worksData.meta.generatedAt;
 const total = worksData.meta.counts.total;
 const realizada = worksData.meta.counts.realizada;
+const emCurso = worksData.meta.counts.emCurso || 0;
 const aConfirmar = worksData.meta.counts.aConfirmar;
 
 const regimes = (regimeData as any).works || {};
@@ -17,11 +18,15 @@ const regimeLabels: Record<string, string> = {
 };
 
 function statusLabel(status: string) {
-  return status === 'A_CONFIRMAR' ? 'A CONFIRMAR' : 'REALIZADA';
+  if (status === 'A_CONFIRMAR') return 'A CONFIRMAR';
+  if (status === 'EM_CURSO') return 'EM PRODUÇÃO';
+  return 'REALIZADA';
 }
 
 function statusNote(status: string) {
-  return status === 'A_CONFIRMAR' ? 'publicada como arquivo em confirmação' : 'obra realizada no arquivo';
+  if (status === 'A_CONFIRMAR') return 'publicada como arquivo em confirmação';
+  if (status === 'EM_CURSO') return 'confirmada e em produção';
+  return 'obra realizada no arquivo';
 }
 
 function editorialStatus(work: any) {
@@ -34,6 +39,9 @@ function editorialStatus(work: any) {
   };
   if (work.status === 'A_CONFIRMAR') {
     return work.authorshipMode === 'EXPOSICAO_TEMATICA' ? 'exposição em confirmação' : 'projeto em confirmação';
+  }
+  if (work.status === 'EM_CURSO') {
+    return work.authorshipMode === 'EXPOSICAO_TEMATICA' ? 'exposição em produção' : 'obra em curso';
   }
   if (work.authorshipMode && labels[work.authorshipMode]) return labels[work.authorshipMode];
   if (work.tipo === 'ARTE_PUBLICA') return 'arte pública';
@@ -75,12 +83,13 @@ function regimeLabel(work: any) {
       <div class="archive-head">
         <div class="archive-kicker">ARQUIVO</div>
         <h2>{total} obras</h2>
-        <div class="archive-meta">São Paulo · ativo 2009— · {realizada} realizadas · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
+        <div class="archive-meta">São Paulo · ativo 2009— · {realizada} realizadas · {emCurso} em produção · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
         <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê; o mapa lê relações sustentadas; o grafo preserva uma camada anterior do processo.</p>
         <div class="statute-legend" aria-label="Estatutos editoriais">
           <div><strong>Obra autoral de Felipe</strong><span>Felipe é o artista; curadoria, produção e materialização seguem creditadas quando existem.</span></div>
           <div><strong>Exposição temática / coletiva</strong><span>Felipe aparece pela direção de arte, tecnologia e experiência, sem absorver a autoria de outros artistas.</span></div>
           <div><strong>Projeto com artista terceiro</strong><span>O artista convidado permanece como autor principal; Felipe opera a tradução espacial e técnica.</span></div>
+          <div><strong>Em produção</strong><span>Confirmada e em produção; documentação final e créditos expandidos seguem em consolidação.</span></div>
           <div><strong>Em confirmação</strong><span>Publicado como arquivo em verificação; datas, créditos ou estatuto final seguem abertos.</span></div>
         </div>
       </div>

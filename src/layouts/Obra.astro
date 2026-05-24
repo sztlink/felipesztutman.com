@@ -77,6 +77,10 @@ function editorialStatus(entry: any) {
     if (entry.authorshipMode === 'EXPOSICAO_TEMATICA') return isEN ? 'exhibition under confirmation' : 'exposição em confirmação';
     return isEN ? 'project under confirmation' : 'projeto em confirmação';
   }
+  if (entry.status === 'EM_CURSO') {
+    if (entry.authorshipMode === 'EXPOSICAO_TEMATICA') return isEN ? 'exhibition in production' : 'exposição em produção';
+    return isEN ? 'work in progress' : 'obra em curso';
+  }
   if (entry.authorshipMode && labels[entry.authorshipMode]) return isEN ? labels[entry.authorshipMode].en : labels[entry.authorshipMode].pt;
   if (entry.tipo === 'ARTE_PUBLICA') return isEN ? 'public art' : 'arte pública';
   if (entry.tipo === 'INTERVENCAO_URBANA') return isEN ? 'urban intervention' : 'intervenção urbana';
@@ -89,7 +93,9 @@ function editorialStatus(entry: any) {
 
 function statusValue(entry: any) {
   if (!entry) return null;
-  return entry.status === 'A_CONFIRMAR' ? (isEN ? 'TO CONFIRM · published as archive in verification' : 'A CONFIRMAR · publicado como arquivo em verificação') : (isEN ? 'REALIZED' : 'REALIZADA');
+  if (entry.status === 'A_CONFIRMAR') return isEN ? 'TO CONFIRM · published as archive in verification' : 'A CONFIRMAR · publicado como arquivo em verificação';
+  if (entry.status === 'EM_CURSO') return isEN ? 'CONFIRMED · IN PRODUCTION' : 'CONFIRMADA · EM PRODUÇÃO';
+  return isEN ? 'REALIZED' : 'REALIZADA';
 }
 const currentIndex = works.findIndex((entry: any) => entry.slug === slug);
 const previousWork = currentIndex > 0 ? works[currentIndex - 1] : null;
@@ -198,11 +204,15 @@ function normalizePublicationUrl(url?: string) {
         {editorialStatus(work) && <span class="statute-chip">{editorialStatus(work)}</span>}
         {regime && <span class="regime-chip">{regimeLabels[regime]}</span>}
         {work?.status === 'A_CONFIRMAR' && <span class="status-chip">A CONFIRMAR</span>}
+        {work?.status === 'EM_CURSO' && <span class="status-chip">{isEN ? 'IN PRODUCTION' : 'EM PRODUÇÃO'}</span>}
       </div>
       <h1>{frontmatter.title}</h1>
       <div class="entry-meta">{work?.contexto || frontmatter.location}</div>
       {work?.status === 'A_CONFIRMAR' && (
         <div class="pending-note">{isEN ? 'Published as archive in verification. Dates, documentation and expanded credits remain open.' : 'Publicado como arquivo em verificação. Datas, documentação e créditos expandidos permanecem abertos.'}</div>
+      )}
+      {work?.status === 'EM_CURSO' && (
+        <div class="pending-note">{isEN ? 'Confirmed exhibition in production. Opening date, final documentation and expanded credits will be consolidated during production.' : 'Exposição confirmada e em produção. Data de abertura, documentação final e créditos expandidos serão consolidados ao longo da produção.'}</div>
       )}
     </section>
 

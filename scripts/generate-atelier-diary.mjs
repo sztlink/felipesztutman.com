@@ -10,7 +10,7 @@ const DREAM_ROOT = path.resolve('/home/aya/lastro/Documents/aya/workspace/sistem
 const SITE_ROOT = path.resolve('/home/aya/lastro/Documents/artista/felipesztutman-astro');
 const OUT_DIR = path.join(SITE_ROOT, 'src/pages/diario');
 const ENDPOINT = process.env.QWEN_ENDPOINT || 'http://192.168.15.133:11435/v1/chat/completions';
-const MODEL = process.env.QWEN_MODEL || 'Qwen_Qwen3.6-35B-A3B-Q4_K_M.gguf';
+const MODEL = process.env.QWEN_MODEL || 'local-vllm';
 const PI_FALLBACK_PROVIDER = process.env.PI_FALLBACK_PROVIDER || 'openai-codex';
 const PI_FALLBACK_MODEL = process.env.PI_FALLBACK_MODEL || 'gpt-5.5';
 const PI_FALLBACK_THINKING = process.env.PI_FALLBACK_THINKING || 'high';
@@ -85,13 +85,29 @@ Regras obrigatórias:
   const user = JSON.stringify({ date, source: sanitizePublic(source).slice(0, 12000) });
   return { system, user };
 }
+async function resolveQwenModel() {
+  const modelsUrl = ENDPOINT.replace(/\/chat\/completions\/?$/, '/models');
+  try {
+    const res = await fetch(modelsUrl, { signal: AbortSignal.timeout(5000) });
+    if (!res.ok) return MODEL;
+    const payload = await res.json();
+    const ids = Array.isArray(payload.data) ? payload.data.map(m => m.id).filter(Boolean) : [];
+    if (!ids.length || ids.includes(MODEL)) return MODEL;
+    console.error(`  WARN Qwen model ${MODEL} não encontrado; usando ${ids[0]}`);
+    return ids[0];
+  } catch {
+    return MODEL;
+  }
+}
+
 async function generateWithQwen(date, source) {
   const { system, user } = diaryPrompt(date, source);
+  const model = await resolveQwenModel();
   const res = await fetch(ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: MODEL,
+      model,
       messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
       temperature: 0.38,
       max_tokens: 3600,

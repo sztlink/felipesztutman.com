@@ -7,6 +7,7 @@ const works = [...worksData.works].sort((a, b) => a.numero.localeCompare(b.numer
 const updatedAt = worksData.meta.generatedAt;
 const total = worksData.meta.counts.total;
 const realized = worksData.meta.counts.realizada;
+const inProduction = worksData.meta.counts.emCurso || 0;
 const toConfirm = worksData.meta.counts.aConfirmar;
 
 const regimes = (regimeData as any).works || {};
@@ -22,11 +23,15 @@ const regimeLabels: Record<string, string> = {
 };
 
 function statusLabel(status: string) {
-  return status === 'A_CONFIRMAR' ? 'TO CONFIRM' : 'REALIZED';
+  if (status === 'A_CONFIRMAR') return 'TO CONFIRM';
+  if (status === 'EM_CURSO') return 'IN PRODUCTION';
+  return 'REALIZED';
 }
 
 function statusNote(status: string) {
-  return status === 'A_CONFIRMAR' ? 'published as archive in verification' : 'realized work in the archive';
+  if (status === 'A_CONFIRMAR') return 'published as archive in verification';
+  if (status === 'EM_CURSO') return 'confirmed and in production';
+  return 'realized work in the archive';
 }
 
 function editorialStatus(work: any) {
@@ -39,6 +44,9 @@ function editorialStatus(work: any) {
   };
   if (work.status === 'A_CONFIRMAR') {
     return work.authorshipMode === 'EXPOSICAO_TEMATICA' ? 'exhibition under confirmation' : 'project under confirmation';
+  }
+  if (work.status === 'EM_CURSO') {
+    return work.authorshipMode === 'EXPOSICAO_TEMATICA' ? 'exhibition in production' : 'work in progress';
   }
   if (work.authorshipMode && labels[work.authorshipMode]) return labels[work.authorshipMode];
   if (work.tipo === 'ARTE_PUBLICA') return 'public art';
@@ -114,12 +122,13 @@ function displayWork(work: any) {
       <div class="archive-head">
         <div class="archive-kicker">ARCHIVE</div>
         <h2>{total} works</h2>
-        <div class="archive-meta">São Paulo · active 2009— · {realized} realized · {toConfirm} to confirm · updated {updatedAt}</div>
+        <div class="archive-meta">São Paulo · active 2009— · {realized} realized · {inProduction} in production · {toConfirm} to confirm · updated {updatedAt}</div>
         <p class="archive-note">Public entry to the archive. Works, systems, and experience directions lead to dossiers; the map reads sustained relations; the graph preserves an earlier process layer.</p>
         <div class="statute-legend" aria-label="Editorial statutes">
           <div><strong>Felipe-authored work</strong><span>Felipe is the artist; curation, production and materialization remain credited when present.</span></div>
           <div><strong>Thematic / collective exhibition</strong><span>Felipe appears through art, technology and experience direction, without absorbing other artists' authorship.</span></div>
           <div><strong>Third-party artist project</strong><span>The invited artist remains the primary author; Felipe operates spatial/technical translation.</span></div>
+          <div><strong>In production</strong><span>Confirmed and in production; final documentation and expanded credits remain in consolidation.</span></div>
           <div><strong>Under confirmation</strong><span>Published as archive in verification; dates, credits or final status remain open.</span></div>
         </div>
       </div>

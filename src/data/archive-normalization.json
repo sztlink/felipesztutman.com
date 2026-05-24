@@ -81,8 +81,8 @@
     },
     "player1": {
       "regime": "B",
-      "issues": ["status A_CONFIRMAR", "sem galeria atual"],
-      "needs": ["confirmacao-status", "lead", "mechanism", "fichaTecnica"]
+      "issues": ["sem galeria atual", "documentação final em produção"],
+      "needs": ["documentacao-final", "creditos-expandidos", "galeria", "fichaTecnica"]
     }
   }
 }
