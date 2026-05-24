@@ -76,9 +76,10 @@ Transforme a persona "Felipe artista" de um relatório íntimo em uma entrada p�
 Objetivo: SEO e presença online do artista, sem expor bastidores íntimos.
 Responda APENAS JSON válido com: title, subtitle, description, tags, body_md.
 Regras obrigatórias:
-- Não mencionar "Sonho da Máquina", relatório, persona, AYA interna, paths, emails, saúde, família, alertas, instruções íntimas ou operação sensível.
+- Não mencionar sonho, Sonho da Máquina, relatório, persona, jornal íntimo, Scout, TurboQuant, X Journal, AYA interna, paths, emails, saúde, família, alertas, instruções íntimas ou operação sensível.
 - Pode mencionar szt.link, arquivo, obras, software, jogo, interface, instalação, memória, ateliê, processo e pesquisa artística.
-- Escrever em primeira pessoa quando couber, como texto público assumível pelo artista.
+- Escrever em primeira pessoa, como texto público assumível pelo artista. Nunca escrever como análise externa sobre "o artista".
+- Se mencionar Player 1, tratar como exposição confirmada e em produção, nunca como A_CONFIRMAR ou em confirmação.
 - Título curto, forte, SEO-friendly, sem clickbait.
 - body_md com 600 a 1100 palavras, headings H2, tom ensaístico claro.
 - Incluir uma frase final discreta conectando o texto ao processo artístico em andamento.`;
@@ -156,11 +157,25 @@ async function generateEntry(date, source) {
   };
 }
 
+function validatePublicEntry(entry) {
+  const text = [entry.title, entry.subtitle, entry.description, entry.body_md, ...(entry.tags || [])].join('\n').toLowerCase();
+  const forbidden = [
+    'sonho', 'relatório', 'persona', 'jornal íntimo', 'scout', 'turboquant', 'x journal',
+    'aya interna', 'alerta', 'a_confirmar', 'em confirmação'
+  ];
+  const hit = forbidden.find(term => text.includes(term));
+  if (hit) throw new Error(`entrada pública contém termo proibido: ${hit}`);
+  if (/\/home\/aya|C:\\\\|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/i.test(text)) {
+    throw new Error('entrada pública contém path ou email');
+  }
+}
+
 function writeEntry(date, entry) {
+  validatePublicEntry(entry);
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const out = path.join(OUT_DIR, `${date}.md`);
   const tags = `[${entry.tags.map(yaml).join(', ')}]`;
-  const body = `---\nlayout: ../../layouts/Escrito.astro\ntitle: ${yaml(entry.title)}\nsubtitle: ${yaml(entry.subtitle)}\ndate: ${yaml(date)}\ndescription: ${yaml(entry.description)}\ntype: "diário de ateliê"\ntags: ${tags}\nsource: "derivado público da persona Felipe artista do sonho da máquina"\n---\n\n${entry.body_md.trim()}\n`;
+  const body = `---\nlayout: ../../layouts/Escrito.astro\ntitle: ${yaml(entry.title)}\nsubtitle: ${yaml(entry.subtitle)}\ndate: ${yaml(date)}\ndescription: ${yaml(entry.description)}\ntype: "diário de ateliê"\ntags: ${tags}\nsource: "derivado público de caderno de ateliê"\n---\n\n${entry.body_md.trim()}\n`;
   fs.writeFileSync(out, body, 'utf8');
   return out;
 }
