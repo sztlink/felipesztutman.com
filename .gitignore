@@ -7,6 +7,9 @@ dist/
 benchmark/
 INVENTARIO.md
 
+# Local unpublished drafts. Do not commit raw diary derivations or intimate process notes.
+drafts/
+
 # Local design handoff artifacts (heavy / process-only).
 # Canonical decisions are preserved in Markdown files committed to the repo.
 claude-design/*.zip
