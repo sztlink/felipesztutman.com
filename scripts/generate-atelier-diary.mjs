@@ -1,10 +1,24 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { spawn } from 'node:child_process';
 
-const execFileAsync = promisify(execFile);
+// Roda o pi CLI com STDIN FECHADO (stdio[0]='ignore'). Sem isso o pi fica
+// pendurado esperando input de stdin quando recebe prompt longo via -p, e
+// só morre no timeout (10min). Com stdin em EOF imediato, responde em ~18s.
+// execFile NÃO resolve: ele força pipe no stdin. Só spawn respeita 'ignore'.
+function runPi(args, timeoutMs) {
+  return new Promise((resolve, reject) => {
+    const child = spawn('pi', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+    let out = '', err = '', done = false;
+    const finish = (fn, v) => { if (!done) { done = true; clearTimeout(timer); fn(v); } };
+    const timer = setTimeout(() => { child.kill('SIGKILL'); finish(reject, new Error('pi timeout')); }, timeoutMs);
+    child.stdout.on('data', d => { out += d; });
+    child.stderr.on('data', d => { err += d; });
+    child.on('error', e => finish(reject, e));
+    child.on('close', code => code === 0 ? finish(resolve, out) : finish(reject, new Error(`pi exit ${code}: ${err.slice(0, 200)}`)));
+  });
+}
 
 const DREAM_ROOT = path.resolve('/home/aya/lastro/Documents/aya/workspace/sistema/relatorios');
 const SITE_ROOT = path.resolve('/home/aya/lastro/Documents/artista/felipesztutman-astro');
@@ -12,8 +26,8 @@ const OUT_DIR = path.join(SITE_ROOT, 'src/pages/diario');
 const ENDPOINT = process.env.QWEN_ENDPOINT || 'http://192.168.15.133:11435/v1/chat/completions';
 const MODEL = process.env.QWEN_MODEL || 'local-vllm';
 const PI_FALLBACK_PROVIDER = process.env.PI_FALLBACK_PROVIDER || 'openai-codex';
-const PI_FALLBACK_MODEL = process.env.PI_FALLBACK_MODEL || 'gpt-5.5';
-const PI_FALLBACK_THINKING = process.env.PI_FALLBACK_THINKING || 'high';
+const PI_FALLBACK_MODEL = process.env.PI_FALLBACK_MODEL || 'gpt-5.4';
+const PI_FALLBACK_THINKING = process.env.PI_FALLBACK_THINKING || 'medium';
 const PI_FALLBACK_TIMEOUT_MS = Number(process.env.PI_FALLBACK_TIMEOUT_MS || 600000);
 
 const args = new Set(process.argv.slice(2));
@@ -136,7 +150,7 @@ async function generateWithQwen(date, source, avoid = []) {
 async function generateWithPiFallback(date, source, avoid = []) {
   const { system, user } = diaryPrompt(date, source, avoid);
   const prompt = `${system}\n\nDADOS DE ENTRADA JSON:\n${user}\n\nRetorne somente o objeto JSON, sem markdown.`;
-  const { stdout } = await execFileAsync('pi', [
+  const stdout = await runPi([
     '--provider', PI_FALLBACK_PROVIDER,
     '--model', PI_FALLBACK_MODEL,
     '--thinking', PI_FALLBACK_THINKING,
@@ -149,17 +163,18 @@ async function generateWithPiFallback(date, source, avoid = []) {
     '--no-session',
     '-p',
     prompt,
-  ], { timeout: PI_FALLBACK_TIMEOUT_MS, maxBuffer: 1024 * 1024 * 8 });
+  ], PI_FALLBACK_TIMEOUT_MS);
   return parseJson(stdout);
 }
 async function generateEntry(date, source, avoid = []) {
   let obj;
   try {
-    obj = await generateWithQwen(date, source, avoid);
-  } catch (err) {
-    console.error(`  WARN Qwen indisponível/ocupado: ${err.message}`);
-    console.error(`  usando fallback Pi: ${PI_FALLBACK_PROVIDER}/${PI_FALLBACK_MODEL} • ${PI_FALLBACK_THINKING}`);
+    // Pi primeiro: voz em primeira pessoa muito melhor que o Qwen 7B local.
     obj = await generateWithPiFallback(date, source, avoid);
+  } catch (err) {
+    console.error(`  WARN Pi indisponível: ${err.message}`);
+    console.error(`  usando Qwen local como fallback`);
+    obj = await generateWithQwen(date, source, avoid);
   }
   return {
     title: sanitizePublic(obj.title || fallbackTitle(source)),
