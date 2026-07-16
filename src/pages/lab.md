@@ -19,7 +19,7 @@ This page collects the research as it happens. The code and the full numbers liv
 
 Krea 2 is a 12.9 billion parameter diffusion transformer released as open weights in June 2026. The community ships five quantized variants of its Turbo checkpoint, and no fidelity comparison between them existed. I measured all five on a single RTX 4090, at 1024x1024, with 12 versioned prompts and 8 fixed seeds per variant, every image paired seed to seed against the BF16 reference. That gives 96 pairs per variant, scored with LPIPS, PSNR and ImageReward delta.
 
-| variant | LPIPS | PSNR | ImageReward delta |
+| variant | LPIPS | PSNR | IR delta |
 |---|---|---|---|
 | int8 convrot, 8 steps | 0.066 | 27.7 | -0.010 |
 | mxfp8, 8 steps | 0.115 | 24.0 | +0.004 |
