@@ -31,9 +31,13 @@ The rotation-based int8 build wins by a wide margin. Half the perceptual distanc
 
 The table also says where the real cost lives. Format changes are nearly free at 8 steps. Cutting steps is not. At 4 steps the images diverge from the reference but hold their quality, at 2 steps quality collapses outright. The expensive axis is time, not bits.
 
-![Same seed, same prompt, six builds. The painterly prompt survives every format at 8 steps and dies with step reduction.](/img/lab/grid-painterly-step-collapse.png)
+![Painterly prompt across six builds](/img/lab/grid-painterly-step-collapse.png)
 
-![Low light is where the quantization formats separate from each other.](/img/lab/grid-lowlight-quant-pain.png)
+*Same seed, same prompt, six builds. The painterly prompt survives every format at 8 steps and dies with step reduction.*
+
+![Low light prompt across six builds](/img/lab/grid-lowlight-quant-pain.png)
+
+*Low light is where the quantization formats separate from each other.*
 
 Quantization hurts low light, fine texture and product shots first. Step reduction kills painterly styles, and visible brushstroke structure is the first casualty. A benchmark that reports one aggregate number hides exactly this, which is why every per-pair score ships in the repo.
 
@@ -43,4 +47,6 @@ The current stack generates a 1024px image in 5.5 seconds on the 4090, measured 
 
 Code, data and method live at [github.com/sztlink/dit-score](https://github.com/sztlink/dit-score). The LLM side of this practice lives at [kv-score](https://github.com/sztlink/kv-score).
 
-![The reference fox. BF16, seed 1000, one of the 96 pairs behind each number above.](/img/lab/fox-bf16-ref.png)
+![The reference fox](/img/lab/fox-bf16-ref.png)
+
+*The reference fox. BF16, seed 1000, one of the 96 pairs behind each number above.*

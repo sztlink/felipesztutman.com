@@ -169,6 +169,13 @@ body.page-escrito a{text-decoration:none}
 .writing-body :global(a:hover){border-color:#111;text-decoration:none}
 .writing-body :global(code){font-family:var(--mono);font-size:.85em;background:rgba(17,17,17,.08);padding:.15em .4em;border-radius:2px}
 .writing-body :global(pre){background:rgba(17,17,17,.08);padding:1rem;overflow:auto;margin:1.5rem 0;font:.82rem/1.55 var(--mono)}
+.writing-body :global(img){max-width:100%;height:auto;display:block;margin:2rem 0 .5rem}
+.writing-body :global(p:has(> img) + p:has(> em:only-child)){font:.78rem/1.6 var(--mono);color:rgba(17,17,17,.55);margin:-.1rem 0 1.75rem}
+.writing-body :global(p:has(> img) + p:has(> em:only-child) em){font-style:normal;color:inherit}
+.writing-body :global(table){display:block;overflow-x:auto;border-collapse:collapse;margin:1.75rem 0;font:.8rem/1.55 var(--mono);-webkit-overflow-scrolling:touch}
+.writing-body :global(th){text-align:left;padding:.5rem 1.1rem .45rem 0;border-bottom:1px solid rgba(17,17,17,.4);font-weight:700;white-space:nowrap}
+.writing-body :global(td){padding:.5rem 1.1rem .5rem 0;border-bottom:1px solid rgba(17,17,17,.12);white-space:nowrap}
+.writing-body :global(tr:first-child td strong),.writing-body :global(td strong){color:var(--ink)}
 .writing-body :global(hr){border:none;border-top:1px solid var(--line);margin:2.5rem 0}
 .writing-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:3rem 0 0;max-width:980px}
 .gallery-fig{margin:0;border-top:1px solid var(--line);padding-top:.5rem}
