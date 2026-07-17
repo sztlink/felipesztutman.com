@@ -57,7 +57,7 @@ Those numbers are all storage quantization running through a general inference p
 
 The current stack generates a 1024px image in 5.5 seconds on the 4090, measured warm, 8 steps, fp8. Real time for an installation means two orders of magnitude beyond that, and the road there runs through 4-bit weights and activations with fused CUDA kernels, temporal caching between frames, and honest fidelity gates at every stage. The harness that produced the table above is the gate. It is open source, and the numbers it produces are the kind I would want to read from anyone else.
 
-Code, data and method live at [github.com/sztlink/dit-score](https://github.com/sztlink/dit-score). The LLM side of this practice lives at [kv-score](https://github.com/sztlink/kv-score).
+Code, data and method live in [Dead Channel](https://github.com/sztlink/dead-channel), an open benchmark that measures where diffusion quantization tunes to static. The leaderboard is at [huggingface.co/spaces/felipesztutman/dead-channel](https://huggingface.co/spaces/felipesztutman/dead-channel). The LLM side of this practice lives at [kv-score](https://github.com/sztlink/kv-score).
 
 ![The reference fox](/img/lab/fox-bf16-ref.png)
 
