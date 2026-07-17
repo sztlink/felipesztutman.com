@@ -41,6 +41,18 @@ The table also says where the real cost lives. Format changes are nearly free at
 
 Quantization hurts low light, fine texture and product shots first. Step reduction kills painterly styles, and visible brushstroke structure is the first casualty. A benchmark that reports one aggregate number hides exactly this, which is why every per-pair score ships in the repo.
 
+## Study 2. Ampere latency, and where fused kernels change the math
+
+The fidelity study named int8 convrot the most faithful quant of the five. On an RTX 3090 it is also the fastest. Same protocol, warm median of three seeds, and at 1024 pixels the int8 build renders in 8.0 seconds against 15.6 for fp8 and 17.8 for mxfp8. Twice the speed and better quality from one format, because on this generation the INT8 tensor cores are a real hardware route while the fp8 formats fall back to a slower one. On a 3090 the choice makes itself.
+
+| variant | 8 steps | 4 steps | 2 steps |
+|---|---|---|---|
+| int8 convrot | 8.0s | 4.5s | 2.5s |
+| fp8 scaled | 15.6s | 8.0s | 4.5s |
+| mxfp8 | 17.8s | 9.0s | 5.0s |
+
+Those numbers are all storage quantization running through a general inference path. The formats shrink the file and the memory, they do not rewrite the arithmetic of the forward pass. A fused low-bit kernel does. To see how much that matters I benchmarked Nunchaku's INT4 FLUX.1-dev, which quantizes weights and activations to four bits with custom CUDA kernels, on the same 3090. It renders at roughly half a second per step at 1024 pixels, where the fp8 path on a same-sized model sits near two seconds. These are different models, so read it as an indication rather than a controlled trial, though the gap is a factor of three and a half. That gap is the whole reason the next section exists.
+
 ## Where this goes
 
 The current stack generates a 1024px image in 5.5 seconds on the 4090, measured warm, 8 steps, fp8. Real time for an installation means two orders of magnitude beyond that, and the road there runs through 4-bit weights and activations with fused CUDA kernels, temporal caching between frames, and honest fidelity gates at every stage. The harness that produced the table above is the gate. It is open source, and the numbers it produces are the kind I would want to read from anyone else.
