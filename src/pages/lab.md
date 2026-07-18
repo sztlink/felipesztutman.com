@@ -53,6 +53,16 @@ The fidelity study named int8 convrot the most faithful quant of the five. On an
 
 Those numbers are all storage quantization running through a general inference path. The formats shrink the file and the memory, they do not rewrite the arithmetic of the forward pass. A fused low-bit kernel does. To see how much that matters I benchmarked Nunchaku's INT4 FLUX.1-dev, which quantizes weights and activations to four bits with custom CUDA kernels, on the same 3090. It renders at roughly half a second per step at 1024 pixels, where the fp8 path on a same-sized model sits near two seconds. These are different models, so read it as an indication rather than a controlled trial, though the gap is a factor of three and a half. That gap is the whole reason the next section exists.
 
+## Study 3. Four bits of weight and four bits of activation, measured on Krea 2
+
+Every build in Study 1 is storage quantization. It makes the file smaller and leaves the arithmetic of the forward pass untouched. The lever that buys real time is different. It quantizes the weights and the activations both down to four bits and fuses the low-bit multiply into a custom kernel, and that rewrite is where the factor of three and a half in Study 2 comes from. Nobody had taken Krea 2 that far, so no fidelity number existed to argue from. I made one.
+
+I quantized the Turbo checkpoint to W4A4 with the SVDQuant method, calibrated on a rented H100, and scored the result on the same 4090 and the same 96 seed-locked pairs as Study 1. The perceptual distance reads 0.268, near where the four-step build sits, which says the sampling trajectory moves to a neighboring image. The quality signal moved the other way. ImageReward came in at plus 0.052, the highest reading in the whole study, storage or fused. On average the reward model liked the four-bit images a touch more than full precision. Four bits of weight and four bits of activation, and quality held.
+
+The reason it holds is the shape of the method. SVDQuant carries a small full-precision side branch next to the four-bit multiply, and that branch absorbs the handful of large activations that would otherwise wreck the last blocks of the transformer. I watched the calibration error climb block by block, roughly three times larger at the end than at the start, and the branch soaked it up. The collapse I expected in the final layers never reached the image. What remains is a build that shifts its compositions slightly and keeps its quality, and that is the only kind of quantization that turns into frames on a gallery wall.
+
+The measured checkpoint is the artifact. The next step is running it through a fused kernel on my own cards, and after that, spending the four-bit budget where the model actually needs it instead of flat across every block.
+
 ## Where this goes
 
 The current stack generates a 1024px image in 5.5 seconds on the 4090, measured warm, 8 steps, fp8. Real time for an installation means two orders of magnitude beyond that, and the road there runs through 4-bit weights and activations with fused CUDA kernels, temporal caching between frames, and honest fidelity gates at every stage. The harness that produced the table above is the gate. It is open source, and the numbers it produces are the kind I would want to read from anyone else.
