@@ -63,6 +63,18 @@ The reason it holds is the shape of the method. SVDQuant carries a small full-pr
 
 The measured checkpoint is the artifact. The next step is running it through a fused kernel on my own cards, and after that, spending the four-bit budget where the model actually needs it instead of flat across every block.
 
+## Study 4. The four-bit build runs in a fused runtime
+
+Study 3 ended with a checkpoint and a promise, to run it through a fused kernel on my own cards. This study keeps the promise. I ported Krea 2 into the Nunchaku runtime, which carries custom kernels for four-bit weights and activations, and ran the checkpoint through them. It is the first time Krea 2 has generated an image with four-bit weights and activations through fused low-bit kernels instead of a simulation of them.
+
+It generates correct images. I ran six prompts against the full-precision model on the same card, seed locked, and the four-bit output is coherent and detailed and keeps its quality. The perceptual distance averages 0.277, from 0.14 on a clean portrait to around 0.35 on fine texture and dense city scenes, which tracks the number Study 3 predicted from the simulation. The prompts that move the most shift their composition, they do not lose quality, the same behavior the whole benchmark keeps finding.
+
+On speed, measured on an L40S with the four-bit and the full-precision model running the same attention path, the four-bit build renders a 1024 pixel image in 5.4 seconds against 7.5 for full precision, and a 512 pixel image in 1.35 against 2.19. At 512 pixels and two steps it reaches about two and a half images a second. The gain is 1.4 to 1.6 times, and it grows as the picture shrinks because attention takes less of the work and the quantized matmuls take more.
+
+One thing cost me a day and is worth writing down. The first port ran four times slower than that, and the reason was mundane. The query and key tensors had drifted to full precision, and full precision has no fast attention kernel, so the machine fell back silently to the slow path. Casting them back down fixes it. I blamed the wrong thing first and a controlled test corrected me, which is the only reason the numbers above are trustworthy.
+
+The four-bit build runs now, and it runs faster. The remaining distance to real time runs through folding more of the work into single kernels, spending the four-bit budget where the model needs it instead of flat across every block, and the cards I actually own.
+
 ## Where this goes
 
 The current stack generates a 1024px image in 5.5 seconds on the 4090, measured warm, 8 steps, fp8. Real time for an installation means two orders of magnitude beyond that, and the road there runs through 4-bit weights and activations with fused CUDA kernels, temporal caching between frames, and honest fidelity gates at every stage. The harness that produced the table above is the gate. It is open source, and the numbers it produces are the kind I would want to read from anyone else.
