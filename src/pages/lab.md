@@ -91,7 +91,7 @@ Then the ruler, and the measurement I did not expect to be the important one. I 
 
 ![bf16 and four-bit runs side by side across time](/img/lab/strip-video-bf16-w4a4.jpg)
 
-*Same prompt, seed 42, same card, all rows 832x480 at 4 steps. The bf16 reference over 9 chunks, the four-bit build over 9 chunks, and the four-bit build over 18 chunks. Two valid videos of the same prompt, and the double-length run ends coherent at frame 203.*
+*Same prompt, seed 42, same card, all rows 832x480 at 4 steps, columns aligned by frame index. The bf16 reference and the four-bit build both end at frame 101, the double-length four-bit run continues to frame 203 and ends coherent. The two four-bit rows share the seed and still differ, because the fused kernels are nondeterministic across runs and the sampler amplifies that like any other perturbation.*
 
 The next pass is the 14B through the same pipeline, one rented A100 for the calibration, and the checkpoint lands back on the 4090, where the arithmetic says it fits in under 20 GB with the cache resident. The full receipts, scripts and raw numbers live in [krea-realtime-bench](https://github.com/sztlink/krea-realtime-bench).
 
