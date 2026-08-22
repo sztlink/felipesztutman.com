@@ -212,7 +212,7 @@ function normalizePublicationUrl(url?: string) {
         <a href="/mapa" class="map-link">{isEN ? 'map relations (PT)' : 'mapa relacional'}</a>
       </div>
       <div class="eyebrow">
-        {work?.numero ? `OBRA Nº ${work.numero}` : 'OBRA'} · {frontmatter.year}
+        {work?.numero ? (isEN ? `WORK No. ${work.numero}` : `OBRA Nº ${work.numero}`) : (isEN ? 'WORK' : 'OBRA')} · {frontmatter.year}
         {editorialStatus(work) && <span class="statute-chip">{editorialStatus(work)}</span>}
         {regime && <span class="regime-chip">{regimeLabels[regime]}</span>}
         {work?.status === 'A_CONFIRMAR' && <span class="status-chip">A CONFIRMAR</span>}
