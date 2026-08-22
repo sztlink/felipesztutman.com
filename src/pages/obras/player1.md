@@ -6,6 +6,7 @@ location: "Farol Santander São Paulo"
 description: "Exposição temática confirmada e em produção sobre cinquenta anos de cultura jogável, com direção de arte, tecnologia e experiência de Felipe Sztutman."
 lead: "Exposição confirmada e em produção: quatro experiências em que o corpo substitui o controle e transforma cultura jogável em comportamento no espaço."
 archiveNote: "Player 1 está confirmado e em produção: o arquivo atual descreve uma exposição temática no Farol Santander São Paulo, com direção de arte, tecnologia e experiência de Felipe. A camada autobiográfica permanece como origem do gesto, data de abertura, documentação final e créditos expandidos serão consolidados ao longo da produção."
+galleryLabel: { pt: "Imagens de conceito", en: "Concept images" }
 mechanism:
   - { label: "Estrutura proposta", value: "Quatro instalações interativas, STRIKE, DRIFT, TRACE e RUSH, articuladas a um acervo histórico de videogames" }
   - { label: "Corpo", value: "Sem joystick ou botão: gestos, deslocamentos, dedo e mãos operam os comportamentos jogáveis" }
