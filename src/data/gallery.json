@@ -426,33 +426,5 @@
       "src": "/img/obras/interludio/07-gallery.jpg",
       "caption": "Interlúdio · sistema responsivo em funcionamento · vista 07"
     }
-  ],
-  "2047": [
-    {
-      "src": "/img/obras/2047/01-2047-estudo-plinto-central.jpg",
-      "caption": "Estudo de expografia, plinto central e papel acumulando no chão · estudo de julho de 2026, não é registro da obra montada"
-    },
-    {
-      "src": "/img/obras/2047/02-2047-estudo-pilha-elevada.jpg",
-      "caption": "Estudo de expografia, volume do papel ao fim da temporada · estudo de julho de 2026, não é registro da obra montada"
-    },
-    {
-      "src": "/img/obras/2047/03-2047-estudo-sala-escura.jpg",
-      "caption": "Estudo de expografia, sala escura com o aparato como única fonte de luz · estudo de julho de 2026, não é registro da obra montada"
-    }
-  ],
-  "player1": [
-    {
-      "src": "/img/obras/player1/01-player1-conceito-strike.jpg",
-      "caption": "STRIKE, o gesto vira ataque de energia contra entidades de luz · imagem de conceito, não é registro da obra montada"
-    },
-    {
-      "src": "/img/obras/player1/02-player1-conceito-drift.jpg",
-      "caption": "DRIFT, o corpo diante da parede de luz antes do desvio · imagem de conceito, não é registro da obra montada"
-    },
-    {
-      "src": "/img/obras/player1/03-player1-conceito-drift-desvio.jpg",
-      "caption": "DRIFT, o corpo em desvio dentro do campo de partículas · imagem de conceito, não é registro da obra montada"
-    }
   ]
 }

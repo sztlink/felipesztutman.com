@@ -7,7 +7,6 @@ lang: en
 description: "Confirmed exhibition in production about fifty years of playable culture, with art, technology, and experience direction by Felipe Sztutman and four body-interface installations."
 lead: "Confirmed exhibition in production: four experiences in which the body replaces the controller and turns playable culture into behavior in space."
 archiveNote: "Player 1 is confirmed and in production: the current archive describes a thematic exhibition at Farol Santander São Paulo, with art, technology, and experience direction by Felipe. The autobiographical layer remains as the origin of the gesture, opening date, final documentation, and expanded credits will be consolidated during production."
-galleryLabel: { pt: "Imagens de conceito", en: "Concept images" }
 mechanism:
   - { label: "Proposed structure", value: "Four interactive installations, STRIKE, DRIFT, TRACE, and RUSH, articulated with a historical video game collection" }
   - { label: "Body", value: "No joystick or button: gestures, displacement, finger, and hands operate the playable behaviors" }

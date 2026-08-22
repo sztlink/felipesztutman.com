@@ -1686,12 +1686,12 @@
       "description": "Exposição temática confirmada e em produção sobre cinquenta anos de cultura jogável, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
       "sourceFiles": {
         "page": "src/pages/obras/player1.md",
-        "galleryKey": "player1",
+        "galleryKey": null,
         "mapNodeKey": "player1"
       },
       "assets": {
-        "galleryAvailable": true,
-        "galleryCount": 3
+        "galleryAvailable": false,
+        "galleryCount": 0
       },
       "mapa": {
         "materiais": [
@@ -1763,7 +1763,8 @@
         "Confirmar data de abertura e período de exposição",
         "Confirmar seleção final do acervo e organização dos núcleos",
         "Confirmar créditos expandidos de produção, arquitetura, design e desenvolvimento",
-        "Acompanhar registros oficiais de imagem/vídeo antes de tratar como REALIZADA"
+        "Acompanhar registros oficiais de imagem/vídeo antes de tratar como REALIZADA",
+        "registro fotografico real, imagem de conceito nao entra (decisao Felipe 22/08)"
       ],
       "authorshipMode": "EXPOSICAO_TEMATICA"
     },
@@ -1792,12 +1793,12 @@
       "description": "Máquina que lê o noticiário real sobre terras raras e escreve todo dia um capítulo datado de 2047, impresso ao vivo em papel contínuo durante 32 dias na Casa Firjan. Obra coautoral de Felipe Sztutman e Giselle Beiguelman.",
       "sourceFiles": {
         "page": "src/pages/obras/2047.md",
-        "galleryKey": "2047",
+        "galleryKey": null,
         "mapNodeKey": "2047"
       },
       "assets": {
-        "galleryAvailable": true,
-        "galleryCount": 3
+        "galleryAvailable": false,
+        "galleryCount": 0
       },
       "mapa": {
         "materiais": [
@@ -1866,7 +1867,8 @@
         "registro fotográfico depois da abertura de 15/10",
         "ligar o arquivo público de contos quando houver capítulo aprovado",
         "créditos expandidos de produção e técnica",
-        "revisão do texto com Giselle Beiguelman"
+        "revisão do texto com Giselle Beiguelman",
+        "registro fotografico real, imagem de conceito nao entra (decisao Felipe 22/08)"
       ],
       "authorshipMode": "COAUTORAL_FELIPE"
     }
