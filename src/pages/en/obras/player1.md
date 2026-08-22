@@ -15,6 +15,7 @@ mechanism:
   - { label: "Question", value: "What did fifty years of playable culture inscribe in the body?" }
 collaborationNote: "The current file names Antonio Curti's curation, Alex Mamed's collection, and AYA Studio roles across architecture, renders, design, technical sourcing, installation, and production, expanded credits will be consolidated during production."
 credits:
+  - { role: "Photographic record", name: "Lua Morales" }
   - { role: "Art, technology, and experience direction", name: "Felipe Sztutman" }
   - { role: "Curatorial conception and curation", name: "Antonio Curti" }
   - { role: "Collection", name: "Alex Mamed" }

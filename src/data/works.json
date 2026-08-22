@@ -1686,12 +1686,12 @@
       "description": "Exposição temática confirmada e em produção sobre cinquenta anos de cultura jogável, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
       "sourceFiles": {
         "page": "src/pages/obras/player1.md",
-        "galleryKey": null,
+        "galleryKey": "player1",
         "mapNodeKey": "player1"
       },
       "assets": {
-        "galleryAvailable": false,
-        "galleryCount": 0
+        "galleryAvailable": true,
+        "galleryCount": 6
       },
       "mapa": {
         "materiais": [
@@ -1763,8 +1763,7 @@
         "Confirmar data de abertura e período de exposição",
         "Confirmar seleção final do acervo e organização dos núcleos",
         "Confirmar créditos expandidos de produção, arquitetura, design e desenvolvimento",
-        "Acompanhar registros oficiais de imagem/vídeo antes de tratar como REALIZADA",
-        "registro fotografico real, imagem de conceito nao entra (decisao Felipe 22/08)"
+        "Acompanhar registros oficiais de imagem/vídeo antes de tratar como REALIZADA"
       ],
       "authorshipMode": "EXPOSICAO_TEMATICA"
     },

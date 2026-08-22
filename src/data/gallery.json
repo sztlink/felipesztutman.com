@@ -426,5 +426,31 @@
       "src": "/img/obras/interludio/07-gallery.jpg",
       "caption": "Interlúdio · sistema responsivo em funcionamento · vista 07"
     }
+  ],
+  "player1": [
+    {
+      "src": "/img/obras/player1/01-player1-fdf0165.jpg",
+      "caption": "Três pórticos de neon RGB e as vitrines do acervo, com reflexo no piso · foto: Lua Morales, 2026"
+    },
+    {
+      "src": "/img/obras/player1/02-player1-fdf0145.jpg",
+      "caption": "Eixo da sala, o pórtico azul ao fundo e a parede de painéis · foto: Lua Morales, 2026"
+    },
+    {
+      "src": "/img/obras/player1/03-player1-fdf0193.jpg",
+      "caption": "RUSH, a torre de quatro CRTs empilhados · foto: Lua Morales, 2026"
+    },
+    {
+      "src": "/img/obras/player1/04-player1-fdf0178.jpg",
+      "caption": "Os pórticos em diagonal, vermelho, branco e verde · foto: Lua Morales, 2026"
+    },
+    {
+      "src": "/img/obras/player1/05-player1-fdf0161.jpg",
+      "caption": "Vista ampla da sala, colunas de luz e acervo em vitrine · foto: Lua Morales, 2026"
+    },
+    {
+      "src": "/img/obras/player1/06-player1-fdf0048.jpg",
+      "caption": "Corpo dentro do pórtico verde, na escala da obra · foto: Lua Morales, 2026"
+    }
   ]
 }
