@@ -18,7 +18,7 @@ const { frontmatter } = Astro.props;
 const lang = frontmatter.lang || 'pt';
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
-const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
+const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title}. Felipe Sztutman.`;
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?escritos\//, '').replace(/\/$/, '');
 const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
@@ -67,7 +67,7 @@ const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
         <div class="writing-gallery" aria-label={isEN ? 'Image documentation' : 'Documentação de imagem'}>
           {galleryItems.map((item, i) => (
             <figure class="gallery-fig">
-              <img src={item.src} alt={`${frontmatter.title} — ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
+              <img src={item.src} alt={`${frontmatter.title} · ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
               {item.caption && <figcaption>{item.caption}</figcaption>}
             </figure>
           ))}
@@ -135,13 +135,13 @@ const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
 </Base>
 
 <style is:global>
-body.page-escrito{background:#050505;color:#f1ece3}
+body.page-escrito{background:#000000;color:#ffffff}
 body.page-escrito a{text-decoration:none}
 </style>
 
 <style>
-:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16);--muted:rgba(17,17,17,.58)}
-.writing-page{min-height:100vh;background:#050505}
+:root{--paper:#000000;--ink:#ffffff;--line:rgba(255,255,255,.16);--muted:rgba(255,255,255,.58)}
+.writing-page{min-height:100vh;background:#000000}
 .writing-entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
 .back,.surface-link,.writing-type,.writing-date{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
@@ -149,7 +149,7 @@ body.page-escrito a{text-decoration:none}
 .back:hover,.surface-link:hover{color:#fff;text-decoration:none}
 .surface-link{color:rgba(255,255,255,.38)}
 .writing-type{color:rgba(255,255,255,.48);margin-bottom:.75rem}
-.writing-entry h1{font:900 clamp(2.6rem,8vw,6.6rem)/.9 var(--sans);letter-spacing:-.06em;margin-bottom:.85rem;max-width:13ch;color:#f1ece3}
+.writing-entry h1{font:900 clamp(2.6rem,8vw,6.6rem)/.9 var(--sans);letter-spacing:-.06em;margin-bottom:.85rem;max-width:13ch;color:#ffffff}
 .writing-subtitle{max-width:48rem;font:1.05rem/1.65 var(--sans);color:rgba(255,255,255,.7);margin:0 0 .9rem}
 .writing-date{color:rgba(255,255,255,.42)}
 .paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 3rem;min-height:56vh}
@@ -162,19 +162,19 @@ body.page-escrito a{text-decoration:none}
 .writing-body :global(h3){font:700 1.05rem/1.25 var(--sans);letter-spacing:-.02em;margin:2rem 0 .75rem;color:var(--ink)}
 .writing-body :global(ul),.writing-body :global(ol){padding-left:1.25rem;margin:0 0 1.35rem}
 .writing-body :global(li){margin:.35rem 0}
-.writing-body :global(blockquote){border-left:2px solid rgba(17,17,17,.28);padding-left:1rem;margin:1.75rem 0;color:rgba(17,17,17,.68);font-style:italic}
-.writing-body :global(em){color:rgba(17,17,17,.7)}
+.writing-body :global(blockquote){border-left:2px solid rgba(255,255,255,.28);padding-left:1rem;margin:1.75rem 0;color:rgba(255,255,255,.68);font-style:italic}
+.writing-body :global(em){color:rgba(255,255,255,.7)}
 .writing-body :global(strong){color:var(--ink);font-weight:700}
-.writing-body :global(a){color:#111;border-bottom:1px solid rgba(17,17,17,.32)}
+.writing-body :global(a){color:#111;border-bottom:1px solid rgba(255,255,255,.32)}
 .writing-body :global(a:hover){border-color:#111;text-decoration:none}
-.writing-body :global(code){font-family:var(--mono);font-size:.85em;background:rgba(17,17,17,.08);padding:.15em .4em;border-radius:2px}
-.writing-body :global(pre){background:rgba(17,17,17,.08);padding:1rem;overflow:auto;margin:1.5rem 0;font:.82rem/1.55 var(--mono)}
+.writing-body :global(code){font-family:var(--mono);font-size:.85em;background:rgba(255,255,255,.08);padding:.15em .4em;border-radius:2px}
+.writing-body :global(pre){background:rgba(255,255,255,.08);padding:1rem;overflow:auto;margin:1.5rem 0;font:.82rem/1.55 var(--mono)}
 .writing-body :global(img){max-width:100%;height:auto;display:block;margin:2rem 0 .5rem}
-.writing-body :global(p:has(> img) + p:has(> em:only-child)){font:.78rem/1.6 var(--mono);color:rgba(17,17,17,.55);margin:-.1rem 0 1.75rem}
+.writing-body :global(p:has(> img) + p:has(> em:only-child)){font:.78rem/1.6 var(--mono);color:rgba(255,255,255,.55);margin:-.1rem 0 1.75rem}
 .writing-body :global(p:has(> img) + p:has(> em:only-child) em){font-style:normal;color:inherit}
 .writing-body :global(table){display:block;overflow-x:auto;border-collapse:collapse;margin:1.75rem 0;font:.8rem/1.55 var(--mono);-webkit-overflow-scrolling:touch}
-.writing-body :global(th){text-align:left;padding:.5rem 1.1rem .45rem 0;border-bottom:1px solid rgba(17,17,17,.4);font-weight:700;white-space:nowrap}
-.writing-body :global(td){padding:.5rem 1.1rem .5rem 0;border-bottom:1px solid rgba(17,17,17,.12);white-space:nowrap}
+.writing-body :global(th){text-align:left;padding:.5rem 1.1rem .45rem 0;border-bottom:1px solid rgba(255,255,255,.4);font-weight:700;white-space:nowrap}
+.writing-body :global(td){padding:.5rem 1.1rem .5rem 0;border-bottom:1px solid rgba(255,255,255,.12);white-space:nowrap}
 .writing-body :global(tr:first-child td strong),.writing-body :global(td strong){color:var(--ink)}
 .writing-body :global(hr){border:none;border-top:1px solid var(--line);margin:2.5rem 0}
 .writing-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:3rem 0 0;max-width:980px}

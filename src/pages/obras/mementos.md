@@ -22,7 +22,7 @@ press:
 
 Em 2019, concebi *Mementos* para a exposição *Metaversø* no Farol Santander. Foi minha primeira obra naquele espaço, e eu queria tornar visível algo que os olhos não conseguem enxergar: a conexão inseparável entre o físico e o digital.
 
-Desenhei uma instalação com 45 lasers programados interagindo com um grande cristal. A programação foi desenvolvida por Matheus Leston em Max/Jitter/MSP — uma parceria fundamental para materializar o que eu havia imaginado. Os lasers, ao atravessarem e se refratarem no cristal, criavam padrões de luz efêmeros e sempre mutantes. Não eram vídeos pré-renderizados, mas um sistema generativo que emergia das regras que programamos.
+Desenhei uma instalação com 45 lasers programados interagindo com um grande cristal. A programação foi desenvolvida por Matheus Leston em Max/Jitter/MSP, uma parceria fundamental para materializar o que eu havia imaginado. Os lasers, ao atravessarem e se refratarem no cristal, criavam padrões de luz efêmeros e sempre mutantes. Não eram vídeos pré-renderizados, mas um sistema generativo que emergia das regras que programamos.
 
 O que me interessava era evidenciar que o real e o digital, aparentemente extremos distantes, são na verdade um equilíbrio necessário na construção do futuro da civilização. A dependência de ambos os contextos se tornava palpável ali, naquele ambiente imersivo. Antonio Curti assinou a curadoria da exposição, que incluía trabalhos de Bijari, Vigas e Sala 28, todos explorando esse território híbrido entre mundos.
 

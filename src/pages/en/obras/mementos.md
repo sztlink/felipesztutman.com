@@ -23,7 +23,7 @@ press:
 
 In 2019, I conceived *Mementos* for the exhibition *Metaversø* at Farol Santander. It was my first work in that space, and I wanted to make visible something the eyes can't see: the inseparable connection between the physical and the digital.
 
-I designed an installation with 45 programmed lasers interacting with a large crystal. The programming was developed by Matheus Leston in Max/Jitter/MSP — a fundamental partnership to materialize what I had imagined. The lasers, as they passed through and refracted in the crystal, created ephemeral and ever-changing light patterns. These weren't pre-rendered videos, but a generative system that emerged from the rules we programmed.
+I designed an installation with 45 programmed lasers interacting with a large crystal. The programming was developed by Matheus Leston in Max/Jitter/MSP, a fundamental partnership to materialize what I had imagined. The lasers, as they passed through and refracted in the crystal, created ephemeral and ever-changing light patterns. These weren't pre-rendered videos, but a generative system that emerged from the rules we programmed.
 
 What interested me was making evident that the real and the digital, seemingly distant extremes, are actually a necessary balance in building civilization's future. The dependence on both contexts became palpable there, in that immersive environment. Antonio Curti signed the exhibition's curation, which included works by Bijari, Vigas, and Sala 28, all exploring this hybrid territory between worlds.
 

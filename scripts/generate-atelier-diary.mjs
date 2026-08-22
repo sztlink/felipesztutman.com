@@ -65,6 +65,17 @@ function sanitizePublic(s = '') {
     .replace(/x journal/gi, 'registro')
     .replace(/aya interna/gi, 'ateliê')
     .replace(/scout\w*/gi, 'curadoria')
+    // Mirai é negociação com terceiro, não obra. Não sai no diário público.
+    .replace(/\bmirai\b/gi, 'um projeto em negociação')
+    // Regras de voz aplicadas na marra, porque o modelo escorrega mesmo instruído.
+    // Firmware: travessão é assinatura de LLM e não sai daqui. Ponto-e-vírgula idem.
+    .replace(/\s*—\s*$/gm, '')
+    .replace(/\s*—\s*/g, ', ')
+    // Ponto-e-vírgula vira vírgula, exceto quando fecha entidade HTML (&nbsp; &#8212;).
+    .replace(/(&#?\w+)?\s*;\s*/g, (m, entity) => (entity ? m : ', '))
+    .replace(/,\s*,+/g, ',')
+    .replace(/,\s*([.!?])/g, '$1')
+    .replace(/([.!?])\s*,/g, '$1')
     .replace(/[ \t]+\n/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
@@ -106,7 +117,17 @@ Regras obrigatórias:
 - Se mencionar Player 1, tratar como exposição confirmada e em produção, nunca como A_CONFIRMAR ou em confirmação.
 - Título curto, forte, SEO-friendly, sem clickbait.
 - body_md com 600 a 1100 palavras, headings H2, tom ensaístico claro.
-- Incluir uma frase final discreta conectando o texto ao processo artístico em andamento.`;
+- Incluir uma frase final discreta conectando o texto ao processo artístico em andamento.
+
+Regras de voz (valem para title, subtitle, description, tags e body_md):
+- NUNCA usar travessão (o caractere —). Trocar por vírgula, ponto e frase nova, ou parênteses.
+- NUNCA usar ponto-e-vírgula.
+- Não usar dois-pontos no meio da prosa. Dois-pontos só é aceito em título.
+- Proibida a construção "não é X, é Y" e todas as variantes ("mais do que X, é Y", "não se trata de X, e sim de Y", "não por X, mas por Y").
+- No máximo um aforismo no texto inteiro. Frase de efeito repetida vira maneirismo.
+- Não abrir parágrafo com "É", "Isso", "Aqui" ou "O que".
+- Evitar tríades decorativas do tipo "a matéria, o gesto e o tempo" quando os três termos não fazem trabalho distinto.
+- Frase curta é preferível. Se a frase precisa de subordinada para se sustentar, quebrar em duas.`;
   if (avoid.length) {
     system += `\n- CRÍTICO: NÃO use, em hipótese alguma, estas palavras ou expressões (uma versão anterior foi rejeitada por contê-las): ${avoid.join(', ')}. Reescreva o texto inteiro sem elas, inclusive no título, subtítulo e tags.`;
   }

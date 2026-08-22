@@ -10,7 +10,7 @@ mechanism:
   - { label: "Estrutura", value: "Três ambientes interligados: câmara de espelhos e LEDs, piso interativo e câmara de sincronização biométrica" }
   - { label: "Corpo", value: "Visitantes entram como presença física mensurável: posição no piso e batimento cardíaco na câmara final" }
   - { label: "Rastreamento", value: "Câmeras detectam a posição dos visitantes e alimentam padrões gerados em tempo real em Max/MSP" }
-  - { label: "Sincronização", value: "Sensores customizados capturam batimentos cardíacos e os traduzem em luz e som; quando os corações se aproximam em ritmo, a sala responde" }
+  - { label: "Sincronização", value: "Sensores customizados capturam batimentos cardíacos e os traduzem em luz e som, quando os corações se aproximam em ritmo, a sala responde" }
   - { label: "Pergunta", value: "Como fazer a consciência coletiva deixar de ser explicação e virar experiência corporal?" }
 credits:
   - { role: "Curadoria Científica", name: "Miguel Nicolelis" }
@@ -21,7 +21,7 @@ credits:
   - { role: "Obras 2 e 3 (Max/MSP)", name: "Matheus Leston" }
   - { role: "Cenografia", name: "Tiago Guimarães" }
   - { role: "Projeto de Luz", name: "André Boll / SANTA LUZ" }
-  - { role: "Produção", name: "Arte3 — Ana Helena Curti" }
+  - { role: "Produção", name: "Arte3, Ana Helena Curti" }
 press:
   - { source: "VEJA São Paulo", url: "https://preprod.vejasp.abril.com.br/cultura-lazer/teorias-neurocientista-miguel-nicolelis-exposicao-fiesp-avenida-paulista/", title: "Teorias do neurocientista Miguel Nicolelis viram arte na Avenida Paulista" }
   - { source: "SESI", url: "https://www.sesisp.org.br/noticia/o-que-nos-une-abre-ao-publico-no-centro-cultural-fiesp-e-apresenta-teorias-do-neurocientista-miguel-nicolelis-em-forma-de-arte", title: "O que nos une — Exposição apresenta teorias de Miguel Nicolelis em forma de arte" }
@@ -31,8 +31,8 @@ press:
 
 Em 2025, o neurocientista Miguel Nicolelis me convidou para traduzir suas teorias sobre consciência coletiva em experiência espacial. O ponto não era ilustrar neurociência, mas construir um sistema em que o visitante entrasse fisicamente na hipótese: indivíduos separados produzindo padrões coletivos.
 
-A obra se organiza em três ambientes interligados. Primeiro, uma câmara de espelhos e LEDs — estrutura prismática desenhada por Tiago Guimarães que evoca o interior de um cérebro. Depois, um piso interativo onde câmeras detectam a posição dos visitantes; algoritmos geram padrões em tempo real; projeções panorâmicas respondem ao movimento do grupo. Esse sistema foi desenvolvido por Matheus Leston em Max/MSP. Não é vídeo pré-gravado: é imagem gerada ao vivo a partir da presença.
+A obra se organiza em três ambientes interligados. Primeiro, uma câmara de espelhos e LEDs, estrutura prismática desenhada por Tiago Guimarães que evoca o interior de um cérebro. Depois, um piso interativo onde câmeras detectam a posição dos visitantes, algoritmos geram padrões em tempo real, projeções panorâmicas respondem ao movimento do grupo. Esse sistema foi desenvolvido por Matheus Leston em Max/MSP. Não é vídeo pré-gravado: é imagem gerada ao vivo a partir da presença.
 
 A terceira etapa torna o mecanismo mais literal. Sensores customizados capturam batimentos cardíacos e traduzem esses sinais em luz e som. Quando os ritmos dos visitantes se aproximam, a sala responde. A sincronização deixa de ser metáfora social e vira dado perceptível pelo corpo.
 
-Ficou em cartaz no Centro Cultural FIESP em São Paulo, de outubro de 2025 a fevereiro de 2026. A exposição vai itinerar — MIS Ceará já está confirmado. Cada nova montagem exige adaptação: a sala interativa precisa de teto alto para as câmeras suspensas, a câmara de espelhos é reconstruída para o espaço, os sensores biométricos viajam conosco porque não existem equivalentes. O AYA Studio executou; Miguel assinou a curadoria científica e Antonio Curti a curadoria artística.
+Ficou em cartaz no Centro Cultural FIESP em São Paulo, de outubro de 2025 a fevereiro de 2026. A exposição vai itinerar, MIS Ceará já está confirmado. Cada nova montagem exige adaptação: a sala interativa precisa de teto alto para as câmeras suspensas, a câmara de espelhos é reconstruída para o espaço, os sensores biométricos viajam conosco porque não existem equivalentes. O AYA Studio executou, Miguel assinou a curadoria científica e Antonio Curti a curadoria artística.
