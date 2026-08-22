@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-21",
+    "generatedAt": "2026-08-22",
     "counts": {
       "total": 19,
-      "realizada": 16,
-      "emCurso": 2,
+      "realizada": 17,
+      "emCurso": 1,
       "aConfirmar": 1
     },
     "statusLegend": {
@@ -1668,7 +1668,7 @@
       "slug": "player1",
       "titulo": "Player 1: 50 Anos dos Videogames",
       "ano": 2026,
-      "status": "EM_CURSO",
+      "status": "REALIZADA",
       "local": "Farol Santander São Paulo",
       "cidades": [
         "São Paulo"
@@ -1683,7 +1683,7 @@
       "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#ff4466",
-      "description": "Exposição temática confirmada e em produção sobre cinquenta anos de cultura jogável, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
+      "description": "Exposição temática sobre cinquenta anos de cultura jogável, aberta em 18 de junho de 2026 no Farol Santander São Paulo, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
       "sourceFiles": {
         "page": "src/pages/obras/player1.md",
         "galleryKey": "player1",
@@ -1757,10 +1757,10 @@
         ],
         "concepcaoCuratorialCuradoria": [
           "Antonio Curti"
-        ]
+        ],
+        "duracao": "abertura em 18/06/2026"
       },
       "todo": [
-        "Confirmar data de abertura e período de exposição",
         "Confirmar seleção final do acervo e organização dos núcleos",
         "Confirmar créditos expandidos de produção, arquitetura, design e desenvolvimento",
         "Acompanhar registros oficiais de imagem/vídeo antes de tratar como REALIZADA"
