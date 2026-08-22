@@ -41,7 +41,8 @@
     "andromeda": "C",
     "amano": "C",
     "flama": "B",
-    "player1": "B"
+    "player1": "B",
+    "2047": "B"
   },
   "pilots": ["cachoeira", "mementos", "oceanvs"]
 }

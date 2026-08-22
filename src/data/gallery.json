@@ -426,5 +426,19 @@
       "src": "/img/obras/interludio/07-gallery.jpg",
       "caption": "Interlúdio · sistema responsivo em funcionamento · vista 07"
     }
+  ],
+  "2047": [
+    {
+      "src": "/img/obras/2047/01-2047-estudo-plinto-central.jpg",
+      "caption": "Estudo de expografia, plinto central e papel acumulando no chão · estudo de julho de 2026, não é registro da obra montada"
+    },
+    {
+      "src": "/img/obras/2047/02-2047-estudo-pilha-elevada.jpg",
+      "caption": "Estudo de expografia, volume do papel ao fim da temporada · estudo de julho de 2026, não é registro da obra montada"
+    },
+    {
+      "src": "/img/obras/2047/03-2047-estudo-sala-escura.jpg",
+      "caption": "Estudo de expografia, sala escura com o aparato como única fonte de luz · estudo de julho de 2026, não é registro da obra montada"
+    }
   ]
 }

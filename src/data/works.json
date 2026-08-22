@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-05-24",
+    "generatedAt": "2026-08-21",
     "counts": {
-      "total": 18,
+      "total": 19,
       "realizada": 16,
-      "emCurso": 1,
+      "emCurso": 2,
       "aConfirmar": 1
     },
     "statusLegend": {
@@ -1766,6 +1766,109 @@
         "Acompanhar registros oficiais de imagem/vídeo antes de tratar como REALIZADA"
       ],
       "authorshipMode": "EXPOSICAO_TEMATICA"
+    },
+    {
+      "numero": "019",
+      "slug": "2047",
+      "titulo": "2047: Arquivo de depois",
+      "ano": 2026,
+      "status": "EM_CURSO",
+      "local": "Casa Firjan, Rio de Janeiro",
+      "cidades": [
+        "Rio de Janeiro"
+      ],
+      "cidadesSigla": [
+        "RJ"
+      ],
+      "tecnicaMedium": [
+        "máquina de escrita autônoma",
+        "impressão matricial em papel contínuo",
+        "projeção"
+      ],
+      "contexto": "máquina de escrita / arquivo material / mineração e infraestrutura",
+      "tipo": "INSTALACAO",
+      "serie": null,
+      "corPulso": "#e8c547",
+      "description": "Máquina que lê o noticiário real sobre terras raras e escreve todo dia um capítulo datado de 2047, impresso ao vivo em papel contínuo durante 32 dias na Casa Firjan. Obra coautoral de Felipe Sztutman e Giselle Beiguelman.",
+      "sourceFiles": {
+        "page": "src/pages/obras/2047.md",
+        "galleryKey": "2047",
+        "mapNodeKey": "2047"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 3
+      },
+      "mapa": {
+        "materiais": [
+          "papel contínuo",
+          "impressora matricial",
+          "modelo local"
+        ],
+        "tags": [
+          "terras raras",
+          "mineração",
+          "datacenter",
+          "água",
+          "arquivo",
+          "ficção",
+          "impressão",
+          "modelo local",
+          "soberania",
+          "duração",
+          "coautoria"
+        ],
+        "venueCurto": "Casa Firjan",
+        "lens": {
+          "conceito": [
+            420,
+            -200
+          ],
+          "temporal": [
+            430,
+            -150
+          ],
+          "linhagem": [
+            400,
+            -240
+          ]
+        },
+        "linksDeclarados": [
+          "metadata",
+          "floresta-utopica",
+          "player1"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/2047.md"
+      },
+      "fichaTecnica": {
+        "estrutura": "máquina de escrita autônoma acoplada a impressora matricial e a uma projeção, em temporada contínua de 32 dias",
+        "local": "Casa Firjan, Rio de Janeiro",
+        "curadoria": [],
+        "acervo": null,
+        "arquitetura": null,
+        "design": null,
+        "direcaoArteTecnologiaExperiencia": null,
+        "concepcaoCuratorialCuradoria": null,
+        "concepcao": [
+          "Felipe Sztutman",
+          "Giselle Beiguelman"
+        ],
+        "duracao": "32 dias (15/10 a 16/11/2026)",
+        "realizacao": [
+          "Festival Futuros Possíveis",
+          "Casa Firjan"
+        ]
+      },
+      "todo": [
+        "registro fotográfico depois da abertura de 15/10",
+        "ligar o arquivo público de contos quando houver capítulo aprovado",
+        "créditos expandidos de produção e técnica",
+        "revisão do texto com Giselle Beiguelman"
+      ],
+      "authorshipMode": "COAUTORAL_FELIPE"
     }
   ]
 }
