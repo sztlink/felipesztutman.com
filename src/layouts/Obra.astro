@@ -26,6 +26,8 @@ interface Props {
     mechanism?: Array<{label: string; value: string}>;
     circulation?: Array<{label: string; value: string}>;
     collaborationNote?: string;
+    arquivosAbertos?: Array<{label: string; url: string; note?: string}>;
+    galleryLabel?: {pt: string; en: string};
     lang?: 'pt' | 'en';
   };
 }
@@ -34,8 +36,8 @@ const { frontmatter } = Astro.props;
 const lang = frontmatter.lang || 'pt';
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
-const seoTitle = `Felipe Sztutman — ${frontmatter.title}`;
-const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) — ${frontmatter.location}. Felipe Sztutman.`;
+const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
+const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) · ${frontmatter.location}. Felipe Sztutman.`;
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
 const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
 const ogImage = items[0]?.src || frontmatter.hero || undefined;
@@ -168,7 +170,7 @@ const dossierRows = [
 
 function imageAlt(item: GalleryItem, index: number) {
   const cleanCaption = item.caption?.split('· foto')[0]?.trim();
-  return cleanCaption ? `${frontmatter.title} — ${cleanCaption}` : `${frontmatter.title} — ${isEN ? 'image' : 'imagem'} ${index + 1}`;
+  return cleanCaption ? `${frontmatter.title} · ${cleanCaption}` : `${frontmatter.title} · ${isEN ? 'image' : 'imagem'} ${index + 1}`;
 }
 
 function normalizePublicationUrl(url?: string) {
@@ -194,10 +196,20 @@ function normalizePublicationUrl(url?: string) {
   bodyClass="page-obra"
 >
   <article class="obra-page" style={`--pulse:${pulse};`}>
+    {items.length > 0 && (
+      <div class="obra-hero" data-count={Math.min(items.length, 3)}>
+        {items.slice(0, 3).map((item, index) => (
+          <figure class="hero-cell">
+            <img src={item.src} alt={imageAlt(item, index)} loading={index === 0 ? 'eager' : 'lazy'} />
+            {index === 0 && item.caption && <figcaption>{item.caption.split('·')[0].trim()}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
     <section class="obra-entry">
       <div class="surface-links">
         <a href={`${prefix}/#obras`} class="back">{isEN ? '← archive' : '← arquivo'}</a>
-        <a href="/mapa" class="map-link">{isEN ? 'map relations' : 'mapa relacional'}</a>
+        <a href="/mapa" class="map-link">{isEN ? 'map relations (PT)' : 'mapa relacional'}</a>
       </div>
       <div class="eyebrow">
         {work?.numero ? `OBRA Nº ${work.numero}` : 'OBRA'} · {frontmatter.year}
@@ -338,6 +350,21 @@ function normalizePublicationUrl(url?: string) {
       </section>
     )}
 
+    {frontmatter.arquivosAbertos && frontmatter.arquivosAbertos.length > 0 && (
+      <section class="panel open-files">
+        <div class="panel-kicker">{isEN ? 'Open files' : 'Arquivos abertos'}</div>
+        <p class="panel-intro">{isEN ? 'Working surfaces, code, and measurements published as the work is made.' : 'Superfícies de trabalho, código e medidas publicados enquanto a obra é feita.'}</p>
+        <div class="support-list">
+          {frontmatter.arquivosAbertos.map((file) => (
+            <div class="support-row support-row-stack">
+              <a href={file.url} target="_blank" rel="noopener"><strong>{file.label}</strong></a>
+              {file.note && <span>{file.note}</span>}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
     {frontmatter.archiveNote && (
       <section class="panel archive-note">
         <div class="panel-kicker">{isEN ? 'Archive note' : 'Nota de arquivo'}</div>
@@ -345,13 +372,13 @@ function normalizePublicationUrl(url?: string) {
       </section>
     )}
 
-    {items.length > 0 && (
+    {items.length > 3 && (
       <section class="gallery">
-        <div class="section-kicker">{isEN ? 'Documentation' : 'Documentação'}</div>
+        <div class="section-kicker">{frontmatter.galleryLabel ? (isEN ? frontmatter.galleryLabel.en : frontmatter.galleryLabel.pt) : (isEN ? 'Documentation' : 'Documentação')}</div>
         <div class="gallery-grid">
-          {items.map((item, index) => (
-            <figure class:list={[ 'gallery-item', index === 0 && 'hero' ]}>
-              <img src={item.src} alt={imageAlt(item, index)} loading={index === 0 ? 'eager' : 'lazy'} />
+          {items.slice(3).map((item, index) => (
+            <figure class="gallery-item">
+              <img src={item.src} alt={imageAlt(item, index + 3)} loading="lazy" />
               {item.caption && <figcaption>{item.caption}</figcaption>}
             </figure>
           ))}
@@ -379,15 +406,24 @@ function normalizePublicationUrl(url?: string) {
 </Base>
 
 <style is:global>
-body.page-obra{background:#050505;color:#f1ece3}
+body.page-obra{background:#000000;color:#ffffff}
 body.page-obra a{text-decoration:none}
 </style>
 
 <style>
-:root{--paper:#ece5d8;--ink:#131313;--line:rgba(255,255,255,.1);--paper-line:rgba(17,17,17,.16)}
-.obra-page{background:#050505;color:#f1ece3;padding:1.25rem 1rem 3rem}
+:root{--paper:#000000;--ink:#ffffff;--line:rgba(255,255,255,.1);--paper-line:rgba(255,255,255,.16)}
+.obra-page{background:#000000;color:#ffffff;padding:1.25rem 1rem 3rem}
+.obra-hero{display:grid;gap:0;margin:-1.25rem -1rem 1.75rem;grid-template-columns:1fr}
+.obra-hero[data-count="2"]{grid-template-columns:repeat(2,1fr)}
+.obra-hero[data-count="3"]{grid-template-columns:repeat(3,1fr)}
+.hero-cell{position:relative;margin:0;overflow:hidden}
+.hero-cell img{display:block;width:100%;height:44vh;min-height:230px;object-fit:cover;background:#000}
+.hero-cell figcaption{position:absolute;left:.85rem;bottom:.8rem;right:.85rem;font:.62rem/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.9)}
+@media(max-width:640px){.obra-hero[data-count="2"],.obra-hero[data-count="3"]{grid-template-columns:1fr}.hero-cell:nth-child(n+2){display:none}.hero-cell img{height:52vh}}
+
 .obra-entry{padding:0 0 2rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
-.back,.map-link,.eyebrow,.panel-kicker,.section-kicker,.status-chip,.statute-chip,.regime-chip{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.back,.map-link,.eyebrow,.status-chip,.statute-chip,.regime-chip{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.panel-kicker,.section-kicker{font:.62rem/1 var(--mono);letter-spacing:.26em;text-transform:uppercase}
 .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
 .back,.map-link{display:inline-block;color:rgba(255,255,255,.55)}
 .back:hover,.map-link:hover{color:#fff}
@@ -400,50 +436,52 @@ body.page-obra a{text-decoration:none}
 .obra-entry h1{font:900 clamp(2.8rem,10vw,8rem)/.9 var(--sans);letter-spacing:-.05em;max-width:10ch}
 .entry-meta{margin-top:.85rem;font:.82rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.48)}
 .pending-note{margin-top:1rem;max-width:56ch;border-left:3px solid #ff9b2f;padding:.75rem .85rem;background:rgba(255,136,0,.1);font:.92rem/1.55 var(--sans);color:rgba(255,238,216,.82)}
-.panel{background:var(--paper);color:var(--ink);padding:1rem;border-top:2px solid var(--pulse);margin:0 0 1.5rem}
-.panel-kicker,.section-kicker{color:rgba(17,17,17,.48);margin-bottom:1rem}
-.panel-intro{font:.92rem/1.55 var(--sans);color:rgba(17,17,17,.62);max-width:58ch;margin:-.25rem 0 1rem}
+.panel{background:transparent;color:#fff;padding:1.15rem 0 0;border-top:1px solid var(--pulse);margin:0 0 2.25rem}
+.panel-kicker,.section-kicker{color:var(--pulse);margin-bottom:1.1rem}
+.panel-intro{font:.92rem/1.55 var(--sans);color:rgba(255,255,255,.62);max-width:58ch;margin:-.25rem 0 1rem}
 .lead{font:400 1.05rem/1.6 var(--sans);margin-bottom:1rem;max-width:56ch}
 .dossier dl{display:grid;gap:.55rem}
 .row{display:grid;grid-template-columns:140px 1fr;gap:.75rem;padding-top:.55rem;border-top:1px solid var(--paper-line)}
-.row dt{font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.55)}
-.row dd{font:.95rem/1.55 var(--sans);color:rgba(17,17,17,.92)}
+.row dt{font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.row dd{font:.95rem/1.55 var(--sans);color:rgba(255,255,255,.92)}
 .narrative{padding:0 0 1.5rem}
-.narrative .section-kicker{color:rgba(255,255,255,.42)}
-.narrative-body{max-width:68ch;font:1rem/1.9 var(--sans);color:#f1ece3}
+.narrative .section-kicker{color:var(--pulse)}
+.narrative-body{max-width:68ch;font:1rem/1.9 var(--sans);color:#ffffff}
 .narrative-body :global(p){margin-bottom:1.2rem}
 .relation-list,.support{display:grid;gap:1rem}
 .relation-index{border-top-width:4px}
 .relation-item{padding-top:.75rem;border-top:1px solid var(--paper-line)}
-.relation-label{font:.72rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.55);margin-bottom:.35rem}
+.relation-label{font:.72rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.35rem}
 .relation-target{font:600 1rem/1.4 var(--sans);color:var(--ink)}
 .relation-target:hover{color:var(--pulse);text-decoration:underline}
 .relation-target.static{display:inline-block}
-.relation-notes{margin-top:.2rem;font:.86rem/1.5 var(--sans);color:rgba(17,17,17,.62)}
+.relation-notes{margin-top:.2rem;font:.86rem/1.5 var(--sans);color:rgba(255,255,255,.62)}
 .support-block + .support-block{padding-top:.25rem;border-top:1px solid var(--paper-line)}
 .support-list{display:grid;gap:.75rem}
 .support-row{display:grid;grid-template-columns:180px 1fr;gap:.75rem;font:.92rem/1.5 var(--sans)}
-.support-row span{color:rgba(17,17,17,.65)}
+.support-row span{color:rgba(255,255,255,.65)}
 .support-row strong{color:var(--ink)}
 .support-row-stack{display:flex;flex-direction:column;gap:.15rem}
 .support-row-stack a{color:var(--ink)}
-.archive-note p,.collaboration-note p{font:.92rem/1.65 var(--sans);color:rgba(17,17,17,.74);max-width:62ch}
+.archive-note p,.collaboration-note p{font:.92rem/1.65 var(--sans);color:rgba(255,255,255,.74);max-width:62ch}
 .gallery{padding-top:.5rem}
-.gallery .section-kicker{color:rgba(255,255,255,.42)}
-.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.gallery .section-kicker{color:var(--pulse)}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
 .gallery-item{margin:0}
 .gallery-item.hero{grid-column:1 / -1}
 .gallery-item img{display:block;width:100%;height:auto;background:#111}
-.gallery-item figcaption{padding:.5rem 0 0;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
+.gallery-item figcaption{padding:.55rem .6rem 1.2rem;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
 .archive-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;padding-top:1.5rem;border-top:1px solid var(--line);margin-top:1.5rem}
-.archive-nav-item{display:flex;flex-direction:column;gap:.25rem;padding:.85rem .95rem;border:1px solid rgba(255,255,255,.12);color:#f1ece3}
+.archive-nav-item{display:flex;flex-direction:column;gap:.25rem;padding:.85rem .95rem;border:1px solid rgba(255,255,255,.12);color:#ffffff}
 .archive-nav-item:hover{border-color:var(--pulse);background:rgba(255,255,255,.03)}
 .archive-nav-label{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.42)}
 .archive-nav-item strong{font:600 .98rem/1.4 var(--sans);letter-spacing:-.02em}
 @media (min-width: 900px){
   .obra-page{padding:1.5rem 2rem 4rem}
+  .obra-hero{margin:-1.5rem -2rem 2.25rem}
+  .hero-cell img{height:52vh}
   .obra-entry{padding-bottom:2.5rem;margin-bottom:2rem}
-  .panel{max-width:980px;padding:1.25rem 1.25rem 1.35rem}
+  .panel{max-width:none;padding:1.35rem 0 0}
   .support{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
   .support-block + .support-block{border-top:none;padding-top:0;padding-left:1rem;border-left:1px solid var(--paper-line)}
 }
