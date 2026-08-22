@@ -67,7 +67,7 @@ function resolveNode(kind: string, id: string) {
       href: `/obras/${work.slug}`,
       position: positions.conceito,
       positions,
-      color: work.corPulso || '#111111',
+      color: work.corPulso || '#ffffff',
     };
   }
   if (kind === 'ESCRITO') {
@@ -83,7 +83,7 @@ function resolveNode(kind: string, id: string) {
       href: writing.href,
       position: positions.conceito,
       positions,
-      color: '#7a7a7a',
+      color: '#9a9a9a',
     };
   }
   if (kind === 'REFERENCIA') {
@@ -100,7 +100,7 @@ function resolveNode(kind: string, id: string) {
       href: null,
       position: positions.conceito,
       positions,
-      color: '#4a4a4a',
+      color: '#777777',
     };
   }
   if (kind === 'PUBLICACAO') {
@@ -117,7 +117,7 @@ function resolveNode(kind: string, id: string) {
       href: publication.currentPublicPath || '/publicacoes',
       position: positions.conceito,
       positions,
-      color: '#4a4a4a',
+      color: '#777777',
     };
   }
   return null;
@@ -156,7 +156,7 @@ const lines = publicRelations
   .filter(Boolean);
 ---
 <Base
-  title="Felipe Sztutman — Mapa"
+  title="Felipe Sztutman · Mapa"
   description="Diagrama de relações públicas entre obras, escritos e referências de Felipe Sztutman."
   fullBleed={true}
   showHeader={false}
@@ -292,41 +292,41 @@ for (const button of lensButtons) {
 </script>
 
 <style is:global>
-body.page-map{background:#ece5d8;color:#111}
+body.page-map{background:#000000;color:#ffffff}
 body.page-map a{text-decoration:none}
 </style>
 
 <style>
-.map-page{min-height:100vh;background:#ece5d8;color:#111;padding:1.25rem 1rem 2rem}
+.map-page{min-height:100vh;background:#000000;color:#ffffff;padding:1.25rem 1rem 2rem}
 .back,.legacy-link,.map-kicker,.map-meta,.node-meta,.map-lines text{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
-.back,.legacy-link{display:inline-block;color:rgba(17,17,17,.58)}
-.legacy-link{color:rgba(17,17,17,.42)}
-.back:hover,.legacy-link:hover{color:#111}
-.map-kicker{color:rgba(17,17,17,.46);margin-bottom:.6rem}
+.back,.legacy-link{display:inline-block;color:rgba(255,255,255,.58)}
+.legacy-link{color:rgba(255,255,255,.42)}
+.back:hover,.legacy-link:hover{color:#ffffff}
+.map-kicker{color:rgba(255,255,255,.46);margin-bottom:.6rem}
 .map-head h1{font:800 clamp(2.4rem,6vw,4.5rem)/.95 var(--sans);letter-spacing:-.05em;margin-bottom:.75rem}
-.map-head p{max-width:52ch;font:1rem/1.65 var(--sans);color:rgba(17,17,17,.75);margin-bottom:.75rem}
-.map-meta{color:rgba(17,17,17,.48);margin-bottom:1.5rem}
-.map-shell{overflow:auto;border-top:1px solid rgba(17,17,17,.18);padding-top:1rem}
+.map-head p{max-width:52ch;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.75);margin-bottom:.75rem}
+.map-meta{color:rgba(255,255,255,.48);margin-bottom:1.5rem}
+.map-shell{overflow:auto;border-top:1px solid rgba(255,255,255,.18);padding-top:1rem}
 .lens-controls{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 .85rem}
-.lens-controls button{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:transparent;color:rgba(17,17,17,.48);border:1px solid rgba(17,17,17,.16);padding:.48rem .62rem;cursor:pointer}
-.lens-controls button:hover{color:#111;border-color:rgba(17,17,17,.34)}
-.lens-controls button.active{background:#111;color:#ece5d8;border-color:#111}
-.map-legend{display:flex;gap:1rem 1.25rem;flex-wrap:wrap;margin:0 0 .9rem;font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.5)}
-.map-legend strong{color:#111;font-weight:500}
-.map-field{position:relative;min-width:1180px;height:820px;background:rgba(255,255,255,.14);border:1px solid rgba(17,17,17,.16)}
+.lens-controls button{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.16);padding:.48rem .62rem;cursor:pointer}
+.lens-controls button:hover{color:#ffffff;border-color:rgba(255,255,255,.34)}
+.lens-controls button.active{background:#ffffff;color:#000000;border-color:#ffffff}
+.map-legend{display:flex;gap:1rem 1.25rem;flex-wrap:wrap;margin:0 0 .9rem;font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.map-legend strong{color:#ffffff;font-weight:500}
+.map-field{position:relative;min-width:1180px;height:820px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.16)}
 .map-lines{position:absolute;inset:0;width:100%;height:100%}
-.map-lines line{stroke:rgba(17,17,17,.18);stroke-width:1.2;transition:all .32s ease}
-.map-lines text{fill:rgba(17,17,17,.45);font-size:10px;text-anchor:middle;dominant-baseline:middle;transition:all .32s ease}
+.map-lines line{stroke:rgba(255,255,255,.18);stroke-width:1.2;transition:all .32s ease}
+.map-lines text{fill:rgba(255,255,255,.45);font-size:10px;text-anchor:middle;dominant-baseline:middle;transition:all .32s ease}
 .map-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:.2rem;max-width:220px;transition:left .32s ease,top .32s ease,background .15s ease,border-color .15s ease}
-.map-node.obra,.map-node.escrito,.map-node.publicacao{padding:.55rem .65rem .6rem;background:#f6f1e8;border:1px solid rgba(17,17,17,.16);border-left:4px solid var(--node-color,#111)}
+.map-node.obra,.map-node.escrito,.map-node.publicacao{padding:.55rem .65rem .6rem;background:#121212;border:1px solid rgba(255,255,255,.16);border-left:4px solid var(--node-color,#111)}
 .map-node.referencia{padding:.2rem 0;max-width:none}
-.node-label{font:.95rem/1.25 var(--sans);color:#111;letter-spacing:-.02em}
-.node-meta{color:rgba(17,17,17,.48)}
-.map-node.referencia .node-label{font:.88rem/1.2 var(--sans);font-style:italic;color:rgba(17,17,17,.72)}
+.node-label{font:.95rem/1.25 var(--sans);color:#ffffff;letter-spacing:-.02em}
+.node-meta{color:rgba(255,255,255,.48)}
+.map-node.referencia .node-label{font:.88rem/1.2 var(--sans);font-style:italic;color:rgba(255,255,255,.72)}
 .map-node.referencia .node-meta{display:none}
 .map-node:hover{z-index:2}
-.map-node.obra:hover,.map-node.escrito:hover,.map-node.publicacao:hover{background:#fffdf8}
+.map-node.obra:hover,.map-node.escrito:hover,.map-node.publicacao:hover{background:#1e1e1e}
 @media (min-width: 900px){
   .map-page{padding:1.5rem 2rem 2.5rem}
 }

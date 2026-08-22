@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 ---
 <Base
-  title="Felipe Sztutman — 100 Anos de Arte Moderna: a cena contemporânea"
+  title="Felipe Sztutman · 100 Anos de Arte Moderna: a cena contemporânea"
   description="Registro editorial impresso que dedica um perfil a Felipe Sztutman e articula Cachoeira, sem título, para Mantiqueira e OCEANVS em uma mesma trajetória."
   fullBleed={true}
   showHeader={false}
@@ -63,27 +63,27 @@ import Base from '../../layouts/Base.astro';
 </Base>
 
 <style is:global>
-body.page-publicacao{background:#050505;color:#f1ece3}
+body.page-publicacao{background:#000000;color:#ffffff}
 body.page-publicacao a{text-decoration:none}
 </style>
 
 <style>
-:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16);--muted:rgba(17,17,17,.58)}
-.text-page{min-height:100vh;background:#050505}
+:root{--paper:#000000;--ink:#ffffff;--line:rgba(255,255,255,.16);--muted:rgba(255,255,255,.58)}
+.text-page{min-height:100vh;background:#000000}
 .text-entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
 .back,.surface-link,.text-type,.text-date{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}.back:hover,.surface-link:hover{color:#fff;text-decoration:none}.surface-link{color:rgba(255,255,255,.38)}
 .text-type{color:rgba(255,255,255,.48);margin-bottom:.75rem}
-.text-entry h1{font:900 clamp(2.4rem,7vw,6rem)/.92 var(--sans);letter-spacing:-.055em;margin-bottom:.85rem;max-width:15ch;color:#f1ece3}
+.text-entry h1{font:900 clamp(2.4rem,7vw,6rem)/.92 var(--sans);letter-spacing:-.055em;margin-bottom:.85rem;max-width:15ch;color:#ffffff}
 .text-subtitle{max-width:48rem;font:1.05rem/1.65 var(--sans);color:rgba(255,255,255,.7);margin:0 0 .9rem}
 .text-date{color:rgba(255,255,255,.42)}
 .paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 3rem;min-height:56vh}
 .body{font:1.05rem/1.85 Georgia,'Times New Roman',serif;max-width:780px;color:var(--ink)}
 .body p{margin-bottom:1.35rem}.body h2{font:800 clamp(1.35rem,3vw,2rem)/1.1 var(--sans);letter-spacing:-.04em;margin:2.8rem 0 1rem;color:var(--ink)}
-.body ul{padding-left:1.25rem;margin:0 0 1.35rem}.body li{margin:.35rem 0}.body em{color:rgba(17,17,17,.7)}.body strong{font-weight:700;color:var(--ink)}
-blockquote{border-left:2px solid rgba(17,17,17,.28);padding-left:1rem;margin:1.75rem 0;color:rgba(17,17,17,.68);font-style:italic}blockquote footer{font:.72rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.links-list{display:flex;flex-direction:column;gap:.55rem;font:.82rem/1.2 var(--mono);letter-spacing:.04em;text-transform:uppercase}.links-list a{color:rgba(17,17,17,.72);border-bottom:1px solid rgba(17,17,17,.18);width:max-content}.links-list a:hover{color:#111;border-color:#111;text-decoration:none}
+.body ul{padding-left:1.25rem;margin:0 0 1.35rem}.body li{margin:.35rem 0}.body em{color:rgba(255,255,255,.7)}.body strong{font-weight:700;color:var(--ink)}
+blockquote{border-left:2px solid rgba(255,255,255,.28);padding-left:1rem;margin:1.75rem 0;color:rgba(255,255,255,.68);font-style:italic}blockquote footer{font:.72rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.links-list{display:flex;flex-direction:column;gap:.55rem;font:.82rem/1.2 var(--mono);letter-spacing:.04em;text-transform:uppercase}.links-list a{color:rgba(255,255,255,.72);border-bottom:1px solid rgba(255,255,255,.18);width:max-content}.links-list a:hover{color:#111;border-color:#111;text-decoration:none}
 @media (min-width:900px){.text-entry,.paper{padding-left:2rem;padding-right:2rem}.text-entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:4rem}.body{font-size:1.12rem}}
 @media (max-width:720px){.text-entry h1{font-size:clamp(2.3rem,13vw,4rem)}.body{font-size:1rem;line-height:1.78}}
 </style>

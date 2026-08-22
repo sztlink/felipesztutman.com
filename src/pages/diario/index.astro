@@ -14,7 +14,7 @@ const entradas = Object.entries(modules)
   .sort((a, b) => (b.date || b.slug).localeCompare(a.date || a.slug));
 ---
 <Base
-  title="Felipe Sztutman — Diário de Ateliê"
+  title="Felipe Sztutman · Diário de Ateliê"
   description="Notas públicas do processo artístico de Felipe Sztutman: arquivo, obras, software, memória e sistemas imersivos."
   fullBleed={true}
   showHeader={false}
@@ -54,13 +54,13 @@ const entradas = Object.entries(modules)
 </Base>
 
 <style is:global>
-body.page-diario{background:#050505;color:#f1ece3}
+body.page-diario{background:#000000;color:#ffffff}
 body.page-diario a{text-decoration:none}
 </style>
 
 <style>
-:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.16)}
-.diario-page{min-height:100vh;background:#050505}
+:root{--paper:#000000;--ink:#ffffff;--line:rgba(255,255,255,.16)}
+.diario-page{min-height:100vh;background:#000000}
 .entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .back,.surface-link,.entry-kicker,.paper-kicker,.count,.diary-date,.diary-tags{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
@@ -70,16 +70,16 @@ body.page-diario a{text-decoration:none}
 .entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:12ch}
 .entry p{max-width:46rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
 .paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 2rem}
-.paper-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}
-.count{color:rgba(17,17,17,.58);margin-bottom:1rem}
+.paper-kicker{color:rgba(255,255,255,.45);margin-bottom:.75rem}
+.count{color:rgba(255,255,255,.58);margin-bottom:1rem}
 .diary-list{border-top:1px solid var(--line)}
 .diary-item{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);color:inherit}
 .diary-item:hover .diary-title{text-decoration:underline}
-.diary-date{color:rgba(17,17,17,.5);padding-top:.2rem}
+.diary-date{color:rgba(255,255,255,.5);padding-top:.2rem}
 .diary-title{font:650 1.22rem/1.2 var(--sans);letter-spacing:-.03em;margin-bottom:.22rem}
-.diary-subtitle{font:.9rem/1.45 var(--sans);color:rgba(17,17,17,.54);margin-bottom:.35rem}
-.diary-desc{font:.92rem/1.65 var(--sans);color:rgba(17,17,17,.72);max-width:62ch}
-.diary-tags{color:rgba(17,17,17,.43);margin-top:.6rem}
+.diary-subtitle{font:.9rem/1.45 var(--sans);color:rgba(255,255,255,.54);margin-bottom:.35rem}
+.diary-desc{font:.92rem/1.65 var(--sans);color:rgba(255,255,255,.72);max-width:62ch}
+.diary-tags{color:rgba(255,255,255,.43);margin-top:.6rem}
 @media (min-width:900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:2.5rem}}
 @media (max-width:720px){.diary-item{grid-template-columns:1fr;gap:.4rem}}
 </style>

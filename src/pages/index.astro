@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import worksData from '../data/works.json';
 import regimeData from '../data/work-regimes.json';
+import galleryImages from '../data/gallery.json';
 
 const works = [...worksData.works].sort((a, b) => a.numero.localeCompare(b.numero));
 const updatedAt = worksData.meta.generatedAt;
@@ -11,6 +12,11 @@ const emCurso = worksData.meta.counts.emCurso || 0;
 const aConfirmar = worksData.meta.counts.aConfirmar;
 
 const regimes = (regimeData as any).works || {};
+
+const STRIP_SLUGS = ['cachoeira', 'oceanvs', 'metadata', 'floresta-utopica', 'andromeda', '2047'];
+const stripItems = STRIP_SLUGS
+  .map((s) => ((galleryImages as any)[s] || [])[0])
+  .filter(Boolean);
 const regimeLabels: Record<string, string> = {
   A: 'fundacional / território / linhagem',
   B: 'sistema / corpo / mecanismo',
@@ -59,7 +65,7 @@ function regimeLabel(work: any) {
 }
 ---
 <Base
-  title="Felipe Sztutman — Arquivo de obra"
+  title="Felipe Sztutman · Arquivo de obra"
   description="Arquivo de obra de Felipe Sztutman. Luz, tecnologia, percepção e sistemas imersivos organizados como obra e relação."
   schemaType="Person"
   fullBleed={true}
@@ -69,8 +75,13 @@ function regimeLabel(work: any) {
 >
   <main class="home">
     <section class="entry">
-      <div class="entry-meta">ARQUIVO DE OBRA · 2009—</div>
-      <h1>FELIPE SZTUTMAN</h1>
+      <div class="entry-strip" aria-hidden="true">
+        {stripItems.map((item) => (
+          <span class="strip-cell"><img src={item.src} alt="" loading="eager" /></span>
+        ))}
+      </div>
+      <div class="entry-meta">ARQUIVO DE OBRA · 2009–</div>
+      <h1><span class="given">FELIPE</span>SZTUTMAN</h1>
       <div class="entry-hint">ROLAR PARA ENTRAR ↓</div>
     </section>
 
@@ -83,14 +94,14 @@ function regimeLabel(work: any) {
       <div class="archive-head">
         <div class="archive-kicker">ARQUIVO</div>
         <h2>{total} obras</h2>
-        <div class="archive-meta">São Paulo · ativo 2009— · {realizada} realizadas · {emCurso} em produção · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
-        <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê; o mapa lê relações sustentadas; o grafo preserva uma camada anterior do processo.</p>
+        <div class="archive-meta">São Paulo · ativo 2009– · {realizada} realizadas · {emCurso} em produção · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
+        <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê. O mapa lê relações sustentadas. O grafo preserva uma camada anterior do processo.</p>
         <div class="statute-legend" aria-label="Estatutos editoriais">
-          <div><strong>Obra autoral de Felipe</strong><span>Felipe é o artista; curadoria, produção e materialização seguem creditadas quando existem.</span></div>
+          <div><strong>Obra autoral de Felipe</strong><span>Felipe é o artista. Curadoria, produção e materialização seguem creditadas quando existem.</span></div>
           <div><strong>Exposição temática / coletiva</strong><span>Felipe aparece pela direção de arte, tecnologia e experiência, sem absorver a autoria de outros artistas.</span></div>
           <div><strong>Projeto com artista terceiro</strong><span>O artista convidado permanece como autor principal; Felipe opera a tradução espacial e técnica.</span></div>
-          <div><strong>Em produção</strong><span>Confirmada e em produção; documentação final e créditos expandidos seguem em consolidação.</span></div>
-          <div><strong>Em confirmação</strong><span>Publicado como arquivo em verificação; datas, créditos ou estatuto final seguem abertos.</span></div>
+          <div><strong>Em produção</strong><span>Confirmada e em produção. Documentação final e créditos expandidos seguem em consolidação.</span></div>
+          <div><strong>Em confirmação</strong><span>Publicado como arquivo em verificação. Datas, créditos ou estatuto final seguem abertos.</span></div>
         </div>
       </div>
 
@@ -109,7 +120,7 @@ function regimeLabel(work: any) {
           </thead>
           <tbody>
             {works.map((work) => (
-              <tr class:list={{ pending: work.status === 'A_CONFIRMAR' }} style={`--pulse:${work.corPulso || '#111111'};`}>
+              <tr class:list={{ pending: work.status === 'A_CONFIRMAR' }} style={`--pulse:${work.corPulso || '#ffffff'};`}>
                 <td class="num"><a href={`/obras/${work.slug}`}>{work.numero}</a></td>
                 <td class="title-cell">
                   <a href={`/obras/${work.slug}`}>{work.titulo}</a>
@@ -149,53 +160,65 @@ function regimeLabel(work: any) {
 </Base>
 
 <style is:global>
-body.page-home{background:#050505;color:#f1ece3}
+body.page-home{background:#000000;color:#ffffff}
 body.page-home a{text-decoration:none}
 </style>
 
 <style>
-:root{--paper:#ece5d8;--ink:#111111;--line:rgba(17,17,17,.15);--line-strong:rgba(17,17,17,.28)}
-.home{min-height:100vh;background:#050505}
-.entry{min-height:100vh;padding:3rem 2rem 2rem;display:flex;flex-direction:column;justify-content:space-between;background:#050505;color:#f1ece3}
+:root{--paper:#000000;--ink:#ffffff;--line:rgba(255,255,255,.15);--line-strong:rgba(255,255,255,.28)}
+.home{min-height:100vh;background:#000000}
+.entry{min-height:100vh;padding:3rem 2rem 2rem;display:flex;flex-direction:column;justify-content:space-between;background:#000000;color:#ffffff}
+
+.entry{position:relative;overflow:hidden}
+.entry-strip{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);gap:0;z-index:0}
+.entry-strip .strip-cell{display:block;overflow:hidden}
+.entry-strip img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
+.entry-strip::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.22) 22%,rgba(0,0,0,.62) 52%,rgba(0,0,0,.34) 74%,rgba(0,0,0,.9) 100%)}
+.entry h1 .given{font-weight:200;display:block;letter-spacing:-.03em}
+
+.entry > *:not(.entry-strip){position:relative;z-index:1}
+.entry h1{text-shadow:0 2px 40px rgba(0,0,0,.85)}
+.entry-meta,.entry-hint{text-shadow:0 1px 14px rgba(0,0,0,.9)}
+@media(max-width:720px){.entry-strip{grid-template-columns:repeat(3,1fr)}.entry-strip .strip-cell:nth-child(n+4){display:none}}
 .entry-meta,.entry-hint,.statement-label,.archive-kicker,.archive-links{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .entry-meta{color:rgba(255,255,255,.55)}
 .entry h1{font:900 clamp(4rem,13vw,12rem)/.92 var(--sans);letter-spacing:-.05em;max-width:12ch}
 .entry-hint{color:rgba(255,255,255,.45);text-align:right}
 .statement{background:var(--paper);color:var(--ink);padding:4rem 2rem 5rem;border-top:1px solid rgba(255,255,255,.04)}
-.statement-label{color:rgba(17,17,17,.45);margin-bottom:1rem}
+.statement-label{color:rgba(255,255,255,.45);margin-bottom:1rem}
 .statement p{font:300 italic clamp(2rem,5vw,4.5rem)/1.05 var(--sans);max-width:12ch;letter-spacing:-.04em}
 .archive{background:var(--paper);color:var(--ink);padding:0 2rem 3rem}
 .archive-head{padding:0 0 1.5rem;border-bottom:1px solid var(--line-strong);margin-bottom:1.5rem}
-.archive-kicker{color:rgba(17,17,17,.45);margin-bottom:.75rem}
+.archive-kicker{color:rgba(255,255,255,.45);margin-bottom:.75rem}
 .archive h2{font:700 clamp(2rem,4vw,3.5rem)/1 var(--sans);letter-spacing:-.05em;margin-bottom:.5rem}
-.archive-meta{font:.8rem/1.5 var(--mono);color:rgba(17,17,17,.58);text-transform:uppercase;letter-spacing:.08em}
-.archive-note{margin:.75rem 0 0;max-width:60ch;font:.95rem/1.55 var(--sans);color:rgba(17,17,17,.68)}
+.archive-meta{font:.8rem/1.5 var(--mono);color:rgba(255,255,255,.58);text-transform:uppercase;letter-spacing:.08em}
+.archive-note{margin:.75rem 0 0;max-width:60ch;font:.95rem/1.55 var(--sans);color:rgba(255,255,255,.68)}
 .statute-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:1.25rem;background:var(--line-strong);border:1px solid var(--line-strong)}
 .statute-legend div{background:var(--paper);padding:.85rem .75rem}
-.statute-legend strong{display:block;font:.68rem/1.25 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.78);margin-bottom:.35rem}
-.statute-legend span{display:block;font:.78rem/1.45 var(--sans);color:rgba(17,17,17,.58)}
+.statute-legend strong{display:block;font:.68rem/1.25 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:.35rem}
+.statute-legend span{display:block;font:.78rem/1.45 var(--sans);color:rgba(255,255,255,.58)}
 .archive-table-wrap{overflow:auto;border-top:1px solid var(--line)}
 .archive-table{width:100%;border-collapse:collapse;min-width:980px}
 .archive-table th,.archive-table td{padding:.9rem .65rem;vertical-align:top;border-bottom:1px solid var(--line)}
-.archive-table th{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(17,17,17,.48);text-align:left}
-.archive-table td{font:.92rem/1.45 var(--sans);color:rgba(17,17,17,.9)}
+.archive-table th{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.48);text-align:left}
+.archive-table td{font:.92rem/1.45 var(--sans);color:rgba(255,255,255,.9)}
 .archive-table td a{color:inherit}
 .archive-table tbody tr{transition:background .15s ease}
-.archive-table tbody tr:hover{background:rgba(17,17,17,.03)}
+.archive-table tbody tr:hover{background:rgba(255,255,255,.03)}
 .archive-table tbody tr:hover .title-cell a{text-decoration:underline}
 .archive-table tbody tr:hover .num{border-left-color:var(--pulse)}
-.num{font:.8rem/1.2 var(--mono);color:rgba(17,17,17,.55);width:64px;border-left:3px solid transparent;padding-left:.8rem;transition:border-color .15s ease}
+.num{font:.8rem/1.2 var(--mono);color:rgba(255,255,255,.55);width:64px;border-left:3px solid transparent;padding-left:.8rem;transition:border-color .15s ease}
 .title-cell{min-width:320px}
 .title-cell a{font-weight:600;letter-spacing:-.01em}
-.title-desc{margin-top:.3rem;font-size:.82rem;line-height:1.5;color:rgba(17,17,17,.58);max-width:52ch}
-.statute-cell span{display:block;font:.78rem/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.72)}
-.statute-cell small{display:block;margin-top:.25rem;font:.78rem/1.45 var(--sans);color:rgba(17,17,17,.55);max-width:24ch}
-.status{display:inline-block;font:.72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.75);padding:.32rem .45rem;border:1px solid rgba(17,17,17,.2)}
+.title-desc{margin-top:.3rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.58);max-width:52ch}
+.statute-cell span{display:block;font:.78rem/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.statute-cell small{display:block;margin-top:.25rem;font:.78rem/1.45 var(--sans);color:rgba(255,255,255,.55);max-width:24ch}
+.status{display:inline-block;font:.72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);padding:.32rem .45rem;border:1px solid rgba(255,255,255,.2)}
 .status.pending{color:#4d2b00;background:rgba(255,136,0,.12);border-color:rgba(122,70,0,.34)}
-.status-note{margin-top:.35rem;font:.74rem/1.4 var(--sans);color:rgba(17,17,17,.5);max-width:18ch}
-.archive-links{display:flex;gap:.7rem 1.25rem;flex-wrap:wrap;padding-top:1.5rem;color:rgba(17,17,17,.55);border-top:1px solid var(--line-strong);margin-top:1.5rem}
+.status-note{margin-top:.35rem;font:.74rem/1.4 var(--sans);color:rgba(255,255,255,.5);max-width:18ch}
+.archive-links{display:flex;gap:.7rem 1.25rem;flex-wrap:wrap;padding-top:1.5rem;color:rgba(255,255,255,.55);border-top:1px solid var(--line-strong);margin-top:1.5rem}
 .archive-links a{color:inherit;display:flex;gap:.35rem;align-items:baseline}
-.archive-links strong{font-weight:600;color:rgba(17,17,17,.78)}
+.archive-links strong{font-weight:600;color:rgba(255,255,255,.78)}
 .archive-links a:hover{color:var(--ink);text-decoration:underline}
 @media (max-width: 1100px){.statute-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 900px){
