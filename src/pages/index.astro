@@ -4,7 +4,8 @@ import worksData from '../data/works.json';
 import regimeData from '../data/work-regimes.json';
 import galleryImages from '../data/gallery.json';
 
-const works = [...worksData.works].sort((a, b) => a.numero.localeCompare(b.numero));
+// Mais recente em cima: quem abre o site quer ver o agora, nao o comeco do arquivo.
+const works = [...worksData.works].sort((a, b) => b.numero.localeCompare(a.numero));
 const updatedAt = worksData.meta.generatedAt;
 const total = worksData.meta.counts.total;
 const realizada = worksData.meta.counts.realizada;
