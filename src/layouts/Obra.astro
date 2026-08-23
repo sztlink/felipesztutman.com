@@ -228,6 +228,28 @@ function normalizePublicationUrl(url?: string) {
       )}
     </section>
 
+
+    <section class="narrative">
+      <div class="section-kicker">{isEN ? 'Narrative text' : 'Texto narrativo'}</div>
+      <div class="narrative-body">
+        <slot />
+      </div>
+    </section>
+
+    {items.length > 3 && (
+      <section class="gallery">
+        <div class="section-kicker">{frontmatter.galleryLabel ? (isEN ? frontmatter.galleryLabel.en : frontmatter.galleryLabel.pt) : (isEN ? 'Documentation' : 'Documentação')}</div>
+        <div class="gallery-grid">
+          {items.slice(3).map((item, index) => (
+            <figure class="gallery-item">
+              <img src={item.src} alt={imageAlt(item, index + 3)} loading="lazy" />
+              {item.caption && <figcaption>{item.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      </section>
+    )}
+
     <section class="panel dossier">
       <div class="panel-kicker">{isEN ? 'Dossier' : 'Dossiê'}</div>
       {lead && <p class="lead">{lead}</p>}
@@ -296,12 +318,20 @@ function normalizePublicationUrl(url?: string) {
       </section>
     )}
 
-    <section class="narrative">
-      <div class="section-kicker">{isEN ? 'Narrative text' : 'Texto narrativo'}</div>
-      <div class="narrative-body">
-        <slot />
-      </div>
-    </section>
+    {frontmatter.arquivosAbertos && frontmatter.arquivosAbertos.length > 0 && (
+      <section class="panel open-files">
+        <div class="panel-kicker">{isEN ? 'Open files' : 'Arquivos abertos'}</div>
+        <p class="panel-intro">{isEN ? 'Working surfaces, code, and measurements published as the work is made.' : 'Superfícies de trabalho, código e medidas publicados enquanto a obra é feita.'}</p>
+        <div class="support-list">
+          {frontmatter.arquivosAbertos.map((file) => (
+            <div class="support-row support-row-stack">
+              <a href={file.url} target="_blank" rel="noopener"><strong>{file.label}</strong></a>
+              {file.note && <span>{file.note}</span>}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     {(frontmatter.credits?.length || frontmatter.publications?.length || frontmatter.press?.length) && (
       <section class="panel support">
@@ -350,39 +380,10 @@ function normalizePublicationUrl(url?: string) {
       </section>
     )}
 
-    {frontmatter.arquivosAbertos && frontmatter.arquivosAbertos.length > 0 && (
-      <section class="panel open-files">
-        <div class="panel-kicker">{isEN ? 'Open files' : 'Arquivos abertos'}</div>
-        <p class="panel-intro">{isEN ? 'Working surfaces, code, and measurements published as the work is made.' : 'Superfícies de trabalho, código e medidas publicados enquanto a obra é feita.'}</p>
-        <div class="support-list">
-          {frontmatter.arquivosAbertos.map((file) => (
-            <div class="support-row support-row-stack">
-              <a href={file.url} target="_blank" rel="noopener"><strong>{file.label}</strong></a>
-              {file.note && <span>{file.note}</span>}
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
-
     {frontmatter.archiveNote && (
       <section class="panel archive-note">
         <div class="panel-kicker">{isEN ? 'Archive note' : 'Nota de arquivo'}</div>
         <p>{frontmatter.archiveNote}</p>
-      </section>
-    )}
-
-    {items.length > 3 && (
-      <section class="gallery">
-        <div class="section-kicker">{frontmatter.galleryLabel ? (isEN ? frontmatter.galleryLabel.en : frontmatter.galleryLabel.pt) : (isEN ? 'Documentation' : 'Documentação')}</div>
-        <div class="gallery-grid">
-          {items.slice(3).map((item, index) => (
-            <figure class="gallery-item">
-              <img src={item.src} alt={imageAlt(item, index + 3)} loading="lazy" />
-              {item.caption && <figcaption>{item.caption}</figcaption>}
-            </figure>
-          ))}
-        </div>
       </section>
     )}
 
