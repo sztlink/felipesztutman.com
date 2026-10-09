@@ -1,16 +1,18 @@
 {
   "meta": {
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-10-09",
     "counts": {
       "total": 19,
       "realizada": 17,
-      "emCurso": 1,
+      "emCurso": 0,
+      "emExposicao": 1,
       "aConfirmar": 1
     },
     "statusLegend": {
       "REALIZADA": "publicada e tratada como obra ativa no arquivo atual",
       "A_CONFIRMAR": "publicada, mas precisa de confirmação factual final",
       "EM_CURSO": "confirmada e em produção, ainda não tratada como realizada",
+      "EM_EXPOSICAO": "aberta ao público em temporada com datas definidas, vira REALIZADA quando a temporada termina",
       "INEDITA": "reservado para uso futuro"
     },
     "sources": [
@@ -1770,9 +1772,21 @@
     {
       "numero": "019",
       "slug": "2047",
-      "titulo": "2047: Arquivo de depois",
+      "titulo": "2047: Arquivos do depois de antes",
       "ano": 2026,
-      "status": "EM_CURSO",
+      "status": "EM_EXPOSICAO",
+      "exposicao": {
+        "inicio": "2026-10-15",
+        "fim": "2026-11-16",
+        "periodo": {
+          "pt": "15 de outubro a 16 de novembro de 2026",
+          "en": "15 October to 16 November 2026"
+        },
+        "local": "Casa Firjan",
+        "cidade": "Rio de Janeiro",
+        "pais": "BR",
+        "contexto": "Festival Futuros Possíveis"
+      },
       "local": "Casa Firjan, Rio de Janeiro",
       "cidades": [
         "Rio de Janeiro"
@@ -1781,15 +1795,15 @@
         "RJ"
       ],
       "tecnicaMedium": [
-        "máquina de escrita autônoma",
+        "máquina de escrita com agente de IA",
         "impressão matricial em papel contínuo",
-        "projeção"
+        "vídeo gerado em placa local"
       ],
       "contexto": "máquina de escrita / arquivo material / mineração e infraestrutura",
       "tipo": "INSTALACAO",
       "serie": null,
       "corPulso": "#e8c547",
-      "description": "Máquina que lê o noticiário real sobre terras raras e escreve todo dia um capítulo datado de 2047, impresso ao vivo em papel contínuo durante 32 dias na Casa Firjan. Obra coautoral de Felipe Sztutman e Giselle Beiguelman.",
+      "description": "Obra de Giselle Beiguelman e Felipe Sztutman. Uma máquina lê o noticiário real sobre terras raras e a infraestrutura da inteligência artificial e escreve capítulos datados de 2047, impressos ao vivo em papel contínuo, com cenas projetadas na parede e arquivo público em heretica.xyz.",
       "sourceFiles": {
         "page": "src/pages/obras/2047.md",
         "galleryKey": null,
@@ -1844,7 +1858,7 @@
         "narrativaPath": "src/pages/obras/2047.md"
       },
       "fichaTecnica": {
-        "estrutura": "máquina de escrita autônoma acoplada a impressora matricial e a uma projeção, em temporada contínua de 32 dias",
+        "estrutura": "agente de escrita acoplado a impressora matricial e a projeção de cenas geradas a partir de cada capítulo, com arquivo público em heretica.xyz",
         "local": "Casa Firjan, Rio de Janeiro",
         "curadoria": [],
         "acervo": null,
@@ -1853,10 +1867,10 @@
         "direcaoArteTecnologiaExperiencia": null,
         "concepcaoCuratorialCuradoria": null,
         "concepcao": [
-          "Felipe Sztutman",
-          "Giselle Beiguelman"
+          "Giselle Beiguelman",
+          "Felipe Sztutman"
         ],
-        "duracao": "32 dias (15/10 a 16/11/2026)",
+        "duracao": "15/10 a 16/11/2026",
         "realizacao": [
           "Festival Futuros Possíveis",
           "Casa Firjan"
@@ -1864,10 +1878,10 @@
       },
       "todo": [
         "registro fotográfico depois da abertura de 15/10",
-        "ligar o arquivo público de contos quando houver capítulo aprovado",
         "créditos expandidos de produção e técnica",
         "revisão do texto com Giselle Beiguelman",
-        "registro fotografico real, imagem de conceito nao entra (decisao Felipe 22/08)"
+        "registro fotografico real, imagem de conceito nao entra (decisao Felipe 22/08)",
+        "virar status REALIZADA depois de 16/11/2026"
       ],
       "authorshipMode": "COAUTORAL_FELIPE"
     }

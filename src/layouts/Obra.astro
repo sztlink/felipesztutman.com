@@ -27,6 +27,11 @@ interface Props {
     circulation?: Array<{label: string; value: string}>;
     collaborationNote?: string;
     arquivosAbertos?: Array<{label: string; url: string; note?: string}>;
+    entryLinks?: Array<{label: string; url: string}>;
+    video?: {src: string; poster?: string; caption?: string; href?: string};
+    ogImage?: string;
+    sameAs?: string[];
+    artMedium?: string;
     galleryLabel?: {pt: string; en: string};
     lang?: 'pt' | 'en';
   };
@@ -40,7 +45,7 @@ const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) · ${frontmatter.location}. Felipe Sztutman.`;
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
 const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
-const ogImage = items[0]?.src || frontmatter.hero || undefined;
+const ogImage = items[0]?.src || frontmatter.hero || frontmatter.ogImage || frontmatter.video?.poster || undefined;
 const lead = frontmatter.lead || frontmatter.description;
 
 const works = ((worksData as any).works || []).slice().sort((a: any, b: any) => a.numero.localeCompare(b.numero));
@@ -83,6 +88,7 @@ function editorialStatus(entry: any) {
     if (entry.authorshipMode === 'EXPOSICAO_TEMATICA') return isEN ? 'exhibition in production' : 'exposição em produção';
     return isEN ? 'work in progress' : 'obra em curso';
   }
+  if (entry.status === 'EM_EXPOSICAO' && entry.authorshipMode === 'EXPOSICAO_TEMATICA') return isEN ? 'exhibition on view' : 'exposição em cartaz';
   if (entry.authorshipMode && labels[entry.authorshipMode]) return isEN ? labels[entry.authorshipMode].en : labels[entry.authorshipMode].pt;
   if (entry.tipo === 'ARTE_PUBLICA') return isEN ? 'public art' : 'arte pública';
   if (entry.tipo === 'INTERVENCAO_URBANA') return isEN ? 'urban intervention' : 'intervenção urbana';
@@ -97,8 +103,21 @@ function statusValue(entry: any) {
   if (!entry) return null;
   if (entry.status === 'A_CONFIRMAR') return isEN ? 'TO CONFIRM · published as archive in verification' : 'A CONFIRMAR · publicado como arquivo em verificação';
   if (entry.status === 'EM_CURSO') return isEN ? 'CONFIRMED · IN PRODUCTION' : 'CONFIRMADA · EM PRODUÇÃO';
+  if (entry.status === 'EM_EXPOSICAO') {
+    const period = entry.exposicao?.periodo?.[isEN ? 'en' : 'pt'];
+    return (isEN ? 'ON VIEW' : 'EM EXPOSIÇÃO') + (period ? ` · ${period}` : '');
+  }
   return isEN ? 'REALIZED' : 'REALIZADA';
 }
+const exhibition = work?.exposicao || null;
+const schemaExhibition = exhibition ? {
+  name: [exhibition.contexto, exhibition.local].filter(Boolean).join(', ') || frontmatter.title,
+  startDate: exhibition.inicio,
+  endDate: exhibition.fim,
+  location: exhibition.local,
+  city: exhibition.cidade,
+  country: exhibition.pais,
+} : undefined;
 const currentIndex = works.findIndex((entry: any) => entry.slug === slug);
 const previousWork = currentIndex > 0 ? works[currentIndex - 1] : null;
 const nextWork = currentIndex >= 0 && currentIndex < works.length - 1 ? works[currentIndex + 1] : null;
@@ -189,6 +208,9 @@ function normalizePublicationUrl(url?: string) {
   schemaLocation={frontmatter.location}
   schemaCreatorNames={schemaCreatorNames}
   schemaOmitCreator={schemaOmitCreator}
+  schemaSameAs={frontmatter.sameAs}
+  schemaMedium={frontmatter.artMedium}
+  schemaExhibition={schemaExhibition}
   ogImage={ogImage}
   fullBleed={true}
   showHeader={false}
@@ -217,14 +239,25 @@ function normalizePublicationUrl(url?: string) {
         {regime && <span class="regime-chip">{regimeLabels[regime]}</span>}
         {work?.status === 'A_CONFIRMAR' && <span class="status-chip">A CONFIRMAR</span>}
         {work?.status === 'EM_CURSO' && <span class="status-chip">{isEN ? 'IN PRODUCTION' : 'EM PRODUÇÃO'}</span>}
+        {work?.status === 'EM_EXPOSICAO' && <span class="status-chip">{isEN ? 'ON VIEW' : 'EM EXPOSIÇÃO'}</span>}
       </div>
       <h1>{frontmatter.title}</h1>
       <div class="entry-meta">{work?.contexto || frontmatter.location}</div>
+      {frontmatter.entryLinks && frontmatter.entryLinks.length > 0 && (
+        <div class="entry-links">
+          {frontmatter.entryLinks.map((link) => (
+            <a href={link.url} target="_blank" rel="noopener">{link.label} ↗</a>
+          ))}
+        </div>
+      )}
       {work?.status === 'A_CONFIRMAR' && (
         <div class="pending-note">{isEN ? 'Published as archive in verification. Dates, documentation and expanded credits remain open.' : 'Publicado como arquivo em verificação. Datas, documentação e créditos expandidos permanecem abertos.'}</div>
       )}
       {work?.status === 'EM_CURSO' && (
         <div class="pending-note">{isEN ? 'Confirmed exhibition in production. Opening date, final documentation and expanded credits will be consolidated during production.' : 'Exposição confirmada e em produção. Data de abertura, documentação final e créditos expandidos serão consolidados ao longo da produção.'}</div>
+      )}
+      {work?.status === 'EM_EXPOSICAO' && exhibition?.periodo && (
+        <div class="pending-note">{isEN ? `On view from ${exhibition.periodo.en}. ${frontmatter.location}.` : `Em exposição de ${exhibition.periodo.pt}. ${frontmatter.location}.`}</div>
       )}
     </section>
 
@@ -235,6 +268,21 @@ function normalizePublicationUrl(url?: string) {
         <slot />
       </div>
     </section>
+
+    {frontmatter.video && (
+      <section class="obra-video">
+        <div class="section-kicker">{isEN ? 'Scene' : 'Cena'}</div>
+        <figure>
+          <video src={frontmatter.video.src} poster={frontmatter.video.poster} autoplay muted loop playsinline preload="metadata" aria-label={frontmatter.video.caption || frontmatter.title}></video>
+          {frontmatter.video.caption && (
+            <figcaption>
+              {frontmatter.video.caption}
+              {frontmatter.video.href && <> · <a href={frontmatter.video.href} target="_blank" rel="noopener">{isEN ? 'all scenes' : 'todas as cenas'} ↗</a></>}
+            </figcaption>
+          )}
+        </figure>
+      </section>
+    )}
 
     {items.length > 3 && (
       <section class="gallery">
@@ -436,6 +484,14 @@ body.page-obra a{text-decoration:none}
 .status-chip{color:#ffd9a8;background:rgba(255,136,0,.16);border-color:rgba(255,178,90,.32)}
 .obra-entry h1{font:900 clamp(2.8rem,10vw,8rem)/.9 var(--sans);letter-spacing:-.05em;max-width:10ch}
 .entry-meta{margin-top:.85rem;font:.82rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.48)}
+.entry-links{margin-top:1rem;display:flex;gap:1.1rem;flex-wrap:wrap;font:.82rem/1.4 var(--mono);letter-spacing:.06em;text-transform:lowercase}
+.entry-links a{color:var(--pulse)}
+.entry-links a:hover{color:#fff}
+.obra-video{padding:0 0 2rem}
+.obra-video figure{margin:0}
+.obra-video video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;background:#000}
+.obra-video figcaption{padding:.55rem 0 0;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
+.obra-video figcaption a{color:rgba(255,255,255,.75)}
 .pending-note{margin-top:1rem;max-width:56ch;border-left:3px solid #ff9b2f;padding:.75rem .85rem;background:rgba(255,136,0,.1);font:.92rem/1.55 var(--sans);color:rgba(255,238,216,.82)}
 .panel{background:transparent;color:#fff;padding:1.15rem 0 0;border-top:1px solid var(--pulse);margin:0 0 2.25rem}
 .panel-kicker,.section-kicker{color:var(--pulse);margin-bottom:1.1rem}

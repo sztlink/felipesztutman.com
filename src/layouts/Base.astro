@@ -13,6 +13,9 @@ interface Props {
   schemaLocation?: string;
   schemaCreatorNames?: string[];
   schemaOmitCreator?: boolean;
+  schemaSameAs?: string[];
+  schemaMedium?: string;
+  schemaExhibition?: {name: string; startDate: string; endDate: string; location?: string; city?: string; country?: string};
   showHeader?: boolean;
   showFooter?: boolean;
   fullBleed?: boolean;
@@ -30,6 +33,9 @@ const {
   schemaLocation,
   schemaCreatorNames,
   schemaOmitCreator = false,
+  schemaSameAs,
+  schemaMedium,
+  schemaExhibition,
   showHeader = true,
   showFooter = true,
   fullBleed = false,
@@ -39,6 +45,7 @@ const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const altLang = isEN ? 'pt' : 'en';
 const currentPath = Astro.url.pathname;
+const ogImageUrl = ogImage ? (/^https?:\/\//.test(ogImage) ? ogImage : `https://felipesztutman.com${ogImage}`) : undefined;
 const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPath}`;
 ---
 <!DOCTYPE html>
@@ -59,12 +66,12 @@ const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPa
 <meta property="og:url" content={Astro.url.href}>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-{ogImage && <meta property="og:image" content={`https://felipesztutman.com${ogImage}`} />}
-{ogImage && <meta name="twitter:image" content={`https://felipesztutman.com${ogImage}`} />}
+{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
 <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'}>
 <meta name="twitter:title" content={ogTitle || title}>
 <meta name="twitter:description" content={description}>
-<SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} creatorNames={schemaCreatorNames} omitCreator={schemaOmitCreator} />
+<SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} creatorNames={schemaCreatorNames} omitCreator={schemaOmitCreator} sameAs={schemaSameAs} artMedium={schemaMedium} exhibition={schemaExhibition} image={ogImageUrl} inLanguage={isEN ? 'en' : 'pt-BR'} />
 <style is:global>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#000000;--fg:#ffffff;--fg2:rgba(255,255,255,.45);--fg3:rgba(255,255,255,.2);--accent:#ffffff;--mono:'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;--sans:system-ui,-apple-system,'Segoe UI',sans-serif}

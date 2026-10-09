@@ -9,8 +9,12 @@ interface Props {
   location?: string;
   creatorNames?: string[];
   omitCreator?: boolean;
+  sameAs?: string[];
+  artMedium?: string;
+  inLanguage?: string;
+  exhibition?: {name: string; startDate: string; endDate: string; location?: string; city?: string; country?: string};
 }
-const { type = 'WebSite', name, description, url, image, dateCreated, location, creatorNames, omitCreator = false } = Astro.props;
+const { type = 'WebSite', name, description, url, image, dateCreated, location, creatorNames, omitCreator = false, sameAs, artMedium, inLanguage, exhibition } = Astro.props;
 
 const person = {
   "@context": "https://schema.org",
@@ -50,9 +54,11 @@ const resolvedCreators = (creatorNames?.length ? creatorNames : ['Felipe Sztutma
   ...(creatorName === 'Felipe Sztutman' ? { "url": "https://felipesztutman.com" } : {})
 }));
 
+const artworkId = url ? `${url}#obra` : undefined;
 const artwork = name ? {
   "@context": "https://schema.org",
   "@type": "VisualArtwork",
+  ...(artworkId ? { "@id": artworkId } : {}),
   "name": name,
   "description": description,
   "url": url,
@@ -60,12 +66,34 @@ const artwork = name ? {
   "dateCreated": dateCreated,
   ...(location ? { "locationCreated": { "@type": "Place", "name": location } } : {}),
   ...(image ? { "image": image } : {}),
-  "artMedium": "immersive installation",
+  ...(inLanguage ? { "inLanguage": inLanguage } : {}),
+  ...(sameAs?.length ? {
+    "sameAs": sameAs,
+    "subjectOf": sameAs.map((siteUrl) => ({ "@type": "WebSite", "url": siteUrl }))
+  } : {}),
+  "artMedium": artMedium || "immersive installation",
   "artform": "new media art"
 } : null;
 
+const exhibitionEvent = artwork && exhibition ? {
+  "@context": "https://schema.org",
+  "@type": "ExhibitionEvent",
+  "name": `${name} · ${exhibition.name}`,
+  "startDate": exhibition.startDate,
+  "endDate": exhibition.endDate,
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  ...(exhibition.location ? { "location": {
+    "@type": "Place",
+    "name": exhibition.location,
+    ...(exhibition.city ? { "address": { "@type": "PostalAddress", "addressLocality": exhibition.city, ...(exhibition.country ? { "addressCountry": exhibition.country } : {}) } } : {})
+  } } : {}),
+  "workFeatured": artworkId ? { "@id": artworkId } : { "@type": "VisualArtwork", "name": name },
+  ...(url ? { "url": url } : {})
+} : null;
+
 const schemas = type === 'Person' ? [person, website] : 
-                type === 'ArtWork' && artwork ? [artwork] : 
+                type === 'ArtWork' && artwork ? [artwork, exhibitionEvent].filter(Boolean) : 
                 [website];
 ---
 {schemas.map(schema => (

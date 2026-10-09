@@ -10,6 +10,7 @@ const updatedAt = worksData.meta.generatedAt;
 const total = worksData.meta.counts.total;
 const realizada = worksData.meta.counts.realizada;
 const emCurso = worksData.meta.counts.emCurso || 0;
+const emExposicao = (worksData.meta.counts as any).emExposicao || 0;
 const aConfirmar = worksData.meta.counts.aConfirmar;
 
 const regimes = (regimeData as any).works || {};
@@ -28,12 +29,14 @@ const regimeLabels: Record<string, string> = {
 function statusLabel(status: string) {
   if (status === 'A_CONFIRMAR') return 'A CONFIRMAR';
   if (status === 'EM_CURSO') return 'EM PRODUÇÃO';
+  if (status === 'EM_EXPOSICAO') return 'EM EXPOSIÇÃO';
   return 'REALIZADA';
 }
 
 function statusNote(status: string) {
   if (status === 'A_CONFIRMAR') return 'publicada como arquivo em confirmação';
   if (status === 'EM_CURSO') return 'confirmada e em produção';
+  if (status === 'EM_EXPOSICAO') return 'aberta ao público, com datas';
   return 'obra realizada no arquivo';
 }
 
@@ -96,12 +99,13 @@ function regimeLabel(work: any) {
       <div class="archive-head">
         <div class="archive-kicker">ARQUIVO</div>
         <h2>{total} obras</h2>
-        <div class="archive-meta">São Paulo · ativo 2009– · {realizada} realizadas · {emCurso} em produção · {aConfirmar} a confirmar · atualizado {updatedAt}</div>
+        <div class="archive-meta">São Paulo · ativo 2009– · {realizada} realizadas · {emExposicao > 0 && `${emExposicao} em exposição · `}{emCurso > 0 && `${emCurso} em produção · `}{aConfirmar} a confirmar · atualizado {updatedAt}</div>
         <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê. O mapa lê relações sustentadas. O grafo preserva uma camada anterior do processo.</p>
         <div class="statute-legend" aria-label="Estatutos editoriais">
           <div><strong>Obra autoral de Felipe</strong><span>Felipe é o artista. Curadoria, produção e materialização seguem creditadas quando existem.</span></div>
           <div><strong>Exposição temática / coletiva</strong><span>Felipe aparece pela direção de arte, tecnologia e experiência, sem absorver a autoria de outros artistas.</span></div>
           <div><strong>Projeto com artista terceiro</strong><span>O artista convidado permanece como autor principal; Felipe opera a tradução espacial e técnica.</span></div>
+          <div><strong>Em exposição</strong><span>Aberta ao público agora. Vira obra realizada quando a temporada termina.</span></div>
           <div><strong>Em produção</strong><span>Confirmada e em produção. Documentação final e créditos expandidos seguem em consolidação.</span></div>
           <div><strong>Em confirmação</strong><span>Publicado como arquivo em verificação. Datas, créditos ou estatuto final seguem abertos.</span></div>
         </div>
