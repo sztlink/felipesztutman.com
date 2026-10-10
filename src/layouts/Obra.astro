@@ -29,6 +29,9 @@ interface Props {
     arquivosAbertos?: Array<{label: string; url: string; note?: string}>;
     entryLinks?: Array<{label: string; url: string}>;
     video?: {src: string; poster?: string; caption?: string; href?: string};
+    cenas?: {src: string; poster?: string; caption?: string}[];
+    cenasHref?: string;
+    cenasSorteio?: number;
     ogImage?: string;
     sameAs?: string[];
     artMedium?: string;
@@ -45,7 +48,7 @@ const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) · ${frontmatter.location}. Felipe Sztutman.`;
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
 const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
-const ogImage = items[0]?.src || frontmatter.hero || frontmatter.ogImage || frontmatter.video?.poster || undefined;
+const ogImage = items[0]?.src || frontmatter.hero || frontmatter.ogImage || frontmatter.video?.poster || frontmatter.cenas?.[0]?.poster || undefined;
 const lead = frontmatter.lead || frontmatter.description;
 
 const works = ((worksData as any).works || []).slice().sort((a: any, b: any) => a.numero.localeCompare(b.numero));
@@ -281,6 +284,42 @@ function normalizePublicationUrl(url?: string) {
             </figcaption>
           )}
         </figure>
+      </section>
+    )}
+
+    {frontmatter.cenas?.length && (
+      <section class="obra-video obra-cenas">
+        <div class="section-kicker">{isEN ? 'Scenes' : 'Cenas'}</div>
+        <figure>
+          <video src={frontmatter.cenas[0].src} poster={frontmatter.cenas[0].poster} autoplay muted playsinline preload="auto" aria-label={frontmatter.cenas[0].caption || frontmatter.title} data-cenas={JSON.stringify(frontmatter.cenas)} data-sorteio={frontmatter.cenasSorteio || frontmatter.cenas.length}></video>
+          <figcaption>
+            <span class="cena-legenda">{frontmatter.cenas[0].caption}</span>
+            {frontmatter.cenasHref && <> · <a href={frontmatter.cenasHref} target="_blank" rel="noopener">{isEN ? 'all scenes' : 'todas as cenas'} ↗</a></>}
+          </figcaption>
+        </figure>
+        <script is:inline set:html={`
+          (() => {
+            const v = document.currentScript.closest('section').querySelector('video[data-cenas]');
+            if (!v) return;
+            // sorteio a cada visita: embaralha as candidatas e fica com N
+            const todas = JSON.parse(v.dataset.cenas);
+            for (let k = todas.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [todas[k], todas[j]] = [todas[j], todas[k]]; }
+            const cenas = todas.slice(0, Number(v.dataset.sorteio) || todas.length), leg = v.closest('figure').querySelector('.cena-legenda');
+            const pre = new Image();
+            let i = 0;
+            const vai = n => {
+              i = (n + cenas.length) % cenas.length;
+              const c = cenas[i];
+              v.poster = c.poster || ''; v.src = c.src; v.setAttribute('aria-label', c.caption || '');
+              if (leg) leg.textContent = c.caption || '';
+              v.play().catch(() => {});
+              const prox = cenas[(i + 1) % cenas.length]; if (prox.poster) pre.src = prox.poster;
+            };
+            v.addEventListener('ended', () => vai(i + 1));
+            vai(0);
+            v.addEventListener('error', () => setTimeout(() => vai(i + 1), 500));
+          })();
+        `}></script>
       </section>
     )}
 
