@@ -82,7 +82,7 @@ function regimeLabel(work: any) {
     <section class="entry">
       <div class="entry-strip" aria-hidden="true" style={`--cols:${stripItems.length};`}>
         {stripItems.map((item) => (
-          <span class="strip-cell"><img src={item.src} alt="" loading="eager" /></span>
+          <span class="strip-cell"><img src={item.src} alt={item.caption || ""} loading="eager" /></span>
         ))}
       </div>
       <div class="entry-meta">ARQUIVO DE OBRA · 2009–</div>
