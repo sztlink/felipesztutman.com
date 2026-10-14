@@ -964,7 +964,7 @@
       ],
       "tecnicaMedium": [
         "LLMs",
-        "LoRa",
+        "LoRA",
         "OpenCV",
         "projeção",
         "instalação interativa"
@@ -973,7 +973,7 @@
       "tipo": "EXPOSICAO_IMERSIVA",
       "serie": "Os Elementos",
       "corPulso": "#aa77ff",
-      "description": "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRa como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real.",
+      "description": "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRA como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real.",
       "sourceFiles": {
         "page": "src/pages/obras/sao-paulo-3024.md",
         "galleryKey": "sao-paulo-3024",
