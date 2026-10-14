@@ -30,6 +30,7 @@ interface Props {
     entryLinks?: Array<{label: string; url: string}>;
     video?: {src: string; poster?: string; caption?: string; href?: string};
     cenas?: {src: string; poster?: string; caption?: string}[];
+    youtube?: {id: string; poster?: string; caption?: string};
     cenasHref?: string;
     cenasSorteio?: number;
     ogImage?: string;
@@ -284,6 +285,34 @@ function normalizePublicationUrl(url?: string) {
       </section>
     )}
 
+    {frontmatter.youtube && (
+      <section class="obra-video obra-youtube" id="video">
+        <div class="section-kicker">{isEN ? 'Video' : 'Vídeo'}</div>
+        <figure>
+          <button type="button" class="yt-facade" data-yt={frontmatter.youtube.id} aria-label={isEN ? 'Play video' : 'Assistir ao vídeo'}>
+            <img src={frontmatter.youtube.poster || `https://i.ytimg.com/vi/${frontmatter.youtube.id}/hqdefault.jpg`} alt={frontmatter.youtube.caption || frontmatter.title} loading="lazy" />
+            <span class="yt-play" aria-hidden="true">▶</span>
+          </button>
+          {frontmatter.youtube.caption && <figcaption>{frontmatter.youtube.caption}</figcaption>}
+        </figure>
+        <script is:inline set:html={`
+          (() => {
+            const b = document.currentScript.closest('section').querySelector('.yt-facade');
+            if (!b) return;
+            b.addEventListener('click', () => {
+              const f = document.createElement('iframe');
+              f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
+              f.title = b.querySelector('img').alt;
+              f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+              f.allowFullscreen = true;
+              f.className = 'yt-frame';
+              b.replaceWith(f);
+            }, { once: true });
+          })();
+        `} />
+      </section>
+    )}
+
     {frontmatter.cenas?.length && (
       <section class="obra-video obra-cenas">
         <div class="section-kicker">{isEN ? 'Scenes' : 'Cenas'}</div>
@@ -525,6 +554,11 @@ body.page-obra a{text-decoration:none}
 .obra-video video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;background:#000}
 .obra-video figcaption{padding:.55rem 0 0;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
 .obra-video figcaption a{color:rgba(255,255,255,.75)}
+.yt-facade{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:pointer;aspect-ratio:16 / 9}
+.yt-facade img{display:block;width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s}
+.yt-facade:hover img,.yt-facade:focus-visible img{opacity:1}
+.yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(2.5rem,7vw,4.5rem);color:#fff;line-height:1;text-shadow:0 0 24px rgba(0,0,0,.6)}
+.obra-video :global(.yt-frame){display:block;width:100%;height:auto;aspect-ratio:16 / 9;border:0;background:#000}
 .pending-note{margin-top:1.1rem;max-width:56ch;font:500 1.05rem/1.5 var(--sans);color:#ffffff}
 .panel{background:transparent;color:#fff;padding:1.15rem 0 0;border-top:1px solid var(--pulse);margin:0 0 2.25rem}
 .panel-kicker,.section-kicker{color:var(--pulse);margin-bottom:1.1rem}
