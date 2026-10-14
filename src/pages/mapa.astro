@@ -167,7 +167,6 @@ const lines = publicRelations
     <section class="map-head">
       <div class="surface-links">
         <a href="/#obras" class="back">← arquivo</a>
-        <a href="/grafo" class="legacy-link">grafo legacy</a>
       </div>
       <div class="map-kicker">MAPA · EXPLORAÇÃO RELACIONAL</div>
       <h1>Relações públicas</h1>
@@ -186,8 +185,8 @@ const lines = publicRelations
         <span><strong>escrito</strong> camada conceitual</span>
         <span><strong>referência</strong> linhagem</span>
         <span><strong>publicação</strong> circulação editorial</span>
-        <span><strong>grafo</strong> camada legacy separada</span>
       </div>
+      <div class="map-fit" data-map-fit>
       <div class="map-field">
         <svg viewBox="0 0 1180 820" class="map-lines" aria-hidden="true">
           {lines.map((line: any) => (
@@ -235,6 +234,17 @@ const lines = publicRelations
           )
         ))}
       </div>
+      </div>
+
+      <ol class="map-list">
+        {lines.map((line: any) => (
+          <li>
+            {line.source.href ? <a href={line.source.href}>{line.source.label}</a> : <span>{line.source.label}</span>}
+            <span class="map-list-rel">{line.label || 'relação'}</span>
+            {line.target.href ? <a href={line.target.href}>{line.target.label}</a> : <span>{line.target.label}</span>}
+          </li>
+        ))}
+      </ol>
     </section>
   </main>
 </Base>
@@ -289,6 +299,18 @@ function applyLens(lens: string) {
 for (const button of lensButtons) {
   button.addEventListener('click', () => applyLens(button.dataset.lensButton || 'conceito'));
 }
+
+// No celular o campo de 1180px inteiro cabe na largura da tela, em vez de rolar de lado.
+const fit = document.querySelector<HTMLElement>('[data-map-fit]');
+const field = fit?.querySelector<HTMLElement>('.map-field');
+function fitMap() {
+  if (!fit || !field) return;
+  const scale = Math.min(1, fit.clientWidth / 1180);
+  field.style.transform = scale < 1 ? `scale(${scale})` : '';
+  fit.style.height = scale < 1 ? `${Math.ceil(820 * scale)}px` : '';
+}
+fitMap();
+window.addEventListener('resize', fitMap);
 </script>
 
 <style is:global>
@@ -309,9 +331,9 @@ body.page-map a{text-decoration:none}
 .map-meta{color:rgba(255,255,255,.48);margin-bottom:1.5rem}
 .map-shell{overflow:auto;border-top:1px solid rgba(255,255,255,.18);padding-top:1rem}
 .lens-controls{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 .85rem}
-.lens-controls button{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.16);padding:.48rem .62rem;cursor:pointer}
-.lens-controls button:hover{color:#ffffff;border-color:rgba(255,255,255,.34)}
-.lens-controls button.active{background:#ffffff;color:#000000;border-color:#ffffff}
+.lens-controls button{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,.42);border:0;padding:.48rem 0;margin-right:.9rem;cursor:pointer}
+.lens-controls button:hover{color:#ffffff}
+.lens-controls button.active{color:#ffffff;text-decoration:underline;text-underline-offset:.35em}
 .map-legend{display:flex;gap:1rem 1.25rem;flex-wrap:wrap;margin:0 0 .9rem;font:.72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .map-legend strong{color:#ffffff;font-weight:500}
 .map-field{position:relative;min-width:1180px;height:820px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.16)}
@@ -327,7 +349,20 @@ body.page-map a{text-decoration:none}
 .map-node.referencia .node-meta{display:none}
 .map-node:hover{z-index:2}
 .map-node.obra:hover,.map-node.escrito:hover,.map-node.publicacao:hover{background:#1e1e1e}
+.map-fit{position:relative}
+.map-list{display:none;list-style:none;margin:1.5rem 0 0;padding:0}
+.map-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .5rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.12);font:.95rem/1.35 var(--sans)}
+.map-list a{color:#ffffff}
+.map-list li > span:not(.map-list-rel){color:rgba(255,255,255,.72);font-style:italic}
+.map-list-rel{font:.68rem/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 @media (min-width: 900px){
   .map-page{padding:1.5rem 2rem 2.5rem}
+}
+@media (max-width: 1240px){
+  .map-shell{overflow:hidden}
+  .map-field{transform-origin:0 0}
+}
+@media (max-width: 720px){
+  .map-list{display:block}
 }
 </style>

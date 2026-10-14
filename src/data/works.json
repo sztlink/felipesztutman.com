@@ -298,7 +298,7 @@
           "Diego Bis"
         ],
         "realizacao": [
-          "URBE — Mostra de Arte Pública",
+          "URBE: Mostra de Arte Pública",
           "CCBB"
         ]
       },
@@ -512,7 +512,7 @@
       "tipo": "INSTALACAO",
       "serie": "LUZCIDADE",
       "corPulso": "#00ccff",
-      "description": "Instalação luminosa efêmera na Serra da Mantiqueira. LUZCIDADE encontra a água — a única da série onde o ambiente natural derrotou o método paramétrico.",
+      "description": "Instalação luminosa efêmera na Serra da Mantiqueira. LUZCIDADE encontra a água: a única da série onde o ambiente natural derrotou o método paramétrico.",
       "sourceFiles": {
         "page": "src/pages/obras/mantiqueira.md",
         "galleryKey": "mantiqueira",
@@ -686,7 +686,7 @@
       "tipo": "INSTALACAO",
       "serie": "Metaversø",
       "corPulso": "#ff4466",
-      "description": "Instalação com sensores de proximidade ultraprecisos e luz responsiva. A obra só existia quando alguém estava presente — tecnologia que depende fundamentalmente da presença humana.",
+      "description": "Instalação com sensores de proximidade ultraprecisos e luz responsiva. A obra só existia quando alguém estava presente: tecnologia que depende fundamentalmente da presença humana.",
       "sourceFiles": {
         "page": "src/pages/obras/interludio.md",
         "galleryKey": "interludio",
@@ -862,7 +862,7 @@
     {
       "numero": "010",
       "slug": "metadata",
-      "titulo": "Metadata — O Mundo Invisível",
+      "titulo": "Metadata: O Mundo Invisível",
       "ano": 2023,
       "status": "REALIZADA",
       "local": "Centro Cultural FIESP, São Paulo",
@@ -1031,7 +1031,7 @@
     {
       "numero": "012",
       "slug": "luz-aeterna",
-      "titulo": "Luz Æterna — Ensaio Sobre o Sol",
+      "titulo": "Luz Æterna: Ensaio Sobre o Sol",
       "ano": 2024,
       "status": "REALIZADA",
       "local": "CCBB Brasília + CCBB Belo Horizonte",
@@ -1232,7 +1232,7 @@
           "AYA Studio"
         ],
         "producao": [
-          "Arte3 — Ana Helena Curti"
+          "Arte3, Ana Helena Curti"
         ],
         "direcaoArteTecnologiaExperiencia": [
           "Felipe Sztutman"
@@ -1353,7 +1353,7 @@
     {
       "numero": "015",
       "slug": "andromeda",
-      "titulo": "Andrômeda — Universo Sem Fim",
+      "titulo": "Andrômeda: Universo Sem Fim",
       "ano": 2025,
       "status": "REALIZADA",
       "local": "Farol Santander São Paulo",
@@ -1450,7 +1450,7 @@
     {
       "numero": "016",
       "slug": "amano",
-      "titulo": "AMANO — Além da Fantasia",
+      "titulo": "AMANO: Além da Fantasia",
       "ano": 2026,
       "status": "REALIZADA",
       "local": "São Paulo, Belo Horizonte, Rio de Janeiro",

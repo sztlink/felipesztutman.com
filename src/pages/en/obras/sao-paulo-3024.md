@@ -20,7 +20,7 @@ credits:
   - { role: "Production", name: "Arte3" }
   - { role: "Sponsorship", name: "Santander Brasil" }
 press:
-  - { source: "Farol Santander", url: "https://www.farolsantander.com.br/en/sp/exhibition/sao-paulo-3024-immersive-digital-art/", title: "São Paulo 3024 — Immersive Digital Art" }
+  - { source: "Farol Santander", url: "https://www.farolsantander.com.br/en/sp/exhibition/sao-paulo-3024-immersive-digital-art/", title: "São Paulo 3024: Immersive Digital Art" }
   - { source: "MARRA Comunicação", url: "https://marracomunica.com.br/nova-exposicao-do-farol-santander-mostra-como-sera-sao-paulo-daqui-mil-anos/", title: "Nova exposição do Farol Santander mostra como será São Paulo daqui mil anos" }
   - { source: "São Paulo Secreto", url: "https://saopaulosecreto.com/sao-paulo-3024-farol-santander/", title: "São Paulo 3024 no Farol Santander" }
 ---

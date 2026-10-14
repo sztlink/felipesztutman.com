@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Obra.astro
-title: "Andrômeda — Universo Sem Fim"
+title: "Andrômeda: Universo Sem Fim"
 year: "2025"
 location: "Farol Santander São Paulo"
 lang: en

@@ -1,4 +1,4 @@
-// mapa-engine.js — módulo ES
+// mapa-engine.js, módulo ES
 // ─────────────────────────────────────────────────────────────
 
 const raw = JSON.parse(document.getElementById('mapa-data').textContent);
@@ -211,7 +211,7 @@ function drawYearMarkers() {
   const [hx, hy] = toScreen(-36, lineY + 30);
   ctx.font = `${Math.max(8, 9 * zoom)}px 'SF Mono',monospace`;
   ctx.fillStyle = 'rgba(255,255,255,0.15)';
-  ctx.fillText('— hiato 2014–2018 —', hx, hy);
+  ctx.fillText('hiato 2014–2018', hx, hy);
   const [rx2, ry2] = toScreen(-400, -270);
   ctx.fillStyle = 'rgba(255,255,255,0.15)';
   ctx.fillText('referências', rx2, ry2);

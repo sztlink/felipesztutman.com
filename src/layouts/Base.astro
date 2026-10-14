@@ -1,4 +1,9 @@
 ---
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-sans/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
 import SchemaOrg from '../components/SchemaOrg.astro';
 
 interface Props {
@@ -75,7 +80,7 @@ const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPa
 <SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} creatorNames={schemaCreatorNames} omitCreator={schemaOmitCreator} sameAs={schemaSameAs} artMedium={schemaMedium} exhibition={schemaExhibition} image={ogImageUrl} inLanguage={isEN ? 'en' : 'pt-BR'} />
 <style is:global>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#000000;--fg:#ffffff;--fg2:rgba(255,255,255,.45);--fg3:rgba(255,255,255,.2);--accent:#ffffff;--mono:'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;--sans:system-ui,-apple-system,'Segoe UI',sans-serif}
+:root{--bg:#000000;--fg:#ffffff;--fg2:rgba(255,255,255,.45);--fg3:rgba(255,255,255,.2);--accent:#ffffff;--mono:'IBM Plex Mono','SF Mono',monospace;--sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
 html{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
 body{max-width:720px;margin:0 auto;padding:2rem 1.5rem 4rem;background:var(--bg);color:var(--fg)}
 body.full-bleed{max-width:none;margin:0;padding:0}
@@ -103,7 +108,6 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,
     <a href={`${prefix}/trajetoria`}>{isEN ? 'trajectory' : 'trajetória'}</a>
     <a href={`${prefix}/sobre`}>{isEN ? 'about' : 'sobre'}</a>
     <a href={`${prefix}/#contato`}>{isEN ? 'contact' : 'contato'}</a>
-    <a href="/grafo.html">{isEN ? 'graph (PT) ↗' : 'grafo ↗'}</a>
     <a href={altPath} class="lang-toggle">{altLang.toUpperCase()}</a>
   </nav>
 </header>

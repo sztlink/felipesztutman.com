@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Obra.astro
-title: "Metadata — O Mundo Invisível"
+title: "Metadata: O Mundo Invisível"
 year: "2023"
 location: "Centro Cultural FIESP, São Paulo"
 lang: en
@@ -19,7 +19,7 @@ credits:
 press:
   - { source: "SESI São Paulo", url: "https://www.sesisp.org.br/evento/8b7ede64-6589-45df-b5f3-a2baa41412fc/metadata-o-mundo-invisivel", title: "Página oficial" }
   - { source: "Dasartes", url: "https://dasartes.com.br/agenda/metadata-centro-cultural-fiesp-e-sesi-sp/", title: "Metadata no Centro Cultural FIESP" }
-  - { source: "Arte Que Acontece", url: "https://artequeacontece.com.br/evento/metadata-o-mundo-invisivel-no-centro-cultural-fiesp/", title: "Metadata — O Mundo Invisível" }
+  - { source: "Arte Que Acontece", url: "https://artequeacontece.com.br/evento/metadata-o-mundo-invisivel-no-centro-cultural-fiesp/", title: "Metadata: O Mundo Invisível" }
   - { source: "São Paulo Secreto", url: "https://saopaulosecreto.com/exposicao-metadata-o-mundo-invisivel/", title: "Exposição Metadata" }
 ---
 

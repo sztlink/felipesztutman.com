@@ -2,443 +2,515 @@
   "objeto-em-forma-de-espaco": [
     {
       "src": "/img/obras/objeto-em-forma-de-espaco/01-fibras-blue.jpg",
-      "caption": "Fibras ópticas no ambiente sinestésico · foto: Felipe Sztutman"
+      "caption": "Fibras ópticas no ambiente sinestésico · foto: Felipe Sztutman",
+      "captionEn": "Optical fibers in the synesthetic environment · photo: Felipe Sztutman"
     },
     {
       "src": "/img/obras/objeto-em-forma-de-espaco/02-fibras-teal.jpg",
-      "caption": "Fibras ópticas e luz no espaço da instalação · foto: Felipe Sztutman"
+      "caption": "Fibras ópticas e luz no espaço da instalação · foto: Felipe Sztutman",
+      "captionEn": "Optical fibers and light in the installation space · photo: Felipe Sztutman"
     },
     {
       "src": "/img/obras/objeto-em-forma-de-espaco/03-tcc_page_058.jpg",
-      "caption": "TCC LUZCIDADE · página de documentação da obra · reprodução de arquivo"
-    },
-    {
-      "src": "/img/obras/objeto-em-forma-de-espaco/04-tcc_page_059.jpg",
-      "caption": "TCC LUZCIDADE · página de documentação da obra · reprodução de arquivo"
+      "caption": "TCC LUZCIDADE · página de documentação da obra · reprodução de arquivo",
+      "captionEn": "TCC LUZCIDADE · documentation page of the work · archive reproduction"
     },
     {
       "src": "/img/obras/objeto-em-forma-de-espaco/05-tcc_page_060.jpg",
-      "caption": "TCC LUZCIDADE · página de documentação da obra · reprodução de arquivo"
-    },
-    {
-      "src": "/img/obras/objeto-em-forma-de-espaco/06-tcc_page_061.jpg",
-      "caption": "TCC LUZCIDADE · página de documentação da obra · reprodução de arquivo"
+      "caption": "TCC LUZCIDADE · página de documentação da obra · reprodução de arquivo",
+      "captionEn": "TCC LUZCIDADE · documentation page of the work · archive reproduction"
     }
   ],
   "cachoeira": [
     {
       "src": "/img/obras/cachoeira/01-aerea-viaduto.jpg",
-      "caption": "Vista aérea do Viaduto do Chá e do traçado luminoso · foto: Diego Bis"
+      "caption": "Vista aérea do Viaduto do Chá e do traçado luminoso · foto: Diego Bis",
+      "captionEn": "Aerial view of Viaduto do Chá and the light trace · photo: Diego Bis"
     },
     {
       "src": "/img/obras/cachoeira/02-cityscape.jpg",
-      "caption": "Traçado luminoso no Vale do Anhangabaú · foto: Diego Bis"
+      "caption": "Traçado luminoso no Vale do Anhangabaú · foto: Diego Bis",
+      "captionEn": "Light trace at Vale do Anhangabaú · photo: Diego Bis"
     },
     {
       "src": "/img/obras/cachoeira/03-multidao.jpg",
-      "caption": "Público no Vale do Anhangabaú · foto: Diego Bis"
+      "caption": "Público no Vale do Anhangabaú · foto: Diego Bis",
+      "captionEn": "Audience at Vale do Anhangabaú · photo: Diego Bis"
     },
     {
       "src": "/img/obras/cachoeira/04-viaduto-noite.jpg",
-      "caption": "Viaduto do Chá à noite com o traçado da obra · foto: Diego Bis"
+      "caption": "Viaduto do Chá à noite com o traçado da obra · foto: Diego Bis",
+      "captionEn": "Viaduto do Chá at night with the trace of the work · photo: Diego Bis"
     },
     {
       "src": "/img/obras/cachoeira/05-tcc_page_064.jpg",
-      "caption": "TCC LUZCIDADE · página 64 · reprodução de arquivo"
+      "caption": "TCC LUZCIDADE · página 64 · reprodução de arquivo",
+      "captionEn": "TCC LUZCIDADE · page 64 · archive reproduction"
     },
     {
       "src": "/img/obras/cachoeira/06-tcc_page_065.jpg",
-      "caption": "TCC LUZCIDADE · página 65 · reprodução de arquivo"
+      "caption": "TCC LUZCIDADE · página 65 · reprodução de arquivo",
+      "captionEn": "TCC LUZCIDADE · page 65 · archive reproduction"
     }
   ],
   "canvas13": [
     {
       "src": "/img/obras/canvas13/01-canvas13-hero-detalhe-parede.jpg",
-      "caption": "Detalhe dos cabos eletroluminescentes na parede · foto: Felipe Sztutman"
+      "caption": "Detalhe dos cabos eletroluminescentes na parede · foto: Felipe Sztutman",
+      "captionEn": "Detail of the electroluminescent cables on the wall · photo: Felipe Sztutman"
     },
     {
       "src": "/img/obras/canvas13/02-canvas13-hero-linhas-abstract.jpg",
-      "caption": "Linhas de luz e geometria da instalação · foto: Felipe Sztutman"
+      "caption": "Linhas de luz e geometria da instalação · foto: Felipe Sztutman",
+      "captionEn": "Lines of light and the geometry of the installation · photo: Felipe Sztutman"
     },
     {
       "src": "/img/obras/canvas13/03-canvas13-hero-linhas-teto.jpg",
-      "caption": "Cabos eletroluminescentes acompanhando o telhado · foto: Felipe Sztutman"
+      "caption": "Cabos eletroluminescentes acompanhando o telhado · foto: Felipe Sztutman",
+      "captionEn": "Electroluminescent cables following the roof · photo: Felipe Sztutman"
     },
     {
       "src": "/img/obras/canvas13/04-canvas13-gallery-bancos-espaco.jpg",
-      "caption": "Instalação no espaço da Serralheria Cultural · foto: Felipe Sztutman"
+      "caption": "Instalação no espaço da Serralheria Cultural · foto: Felipe Sztutman",
+      "captionEn": "Installation at Serralheria Cultural · photo: Felipe Sztutman"
     },
     {
       "src": "/img/obras/canvas13/05-canvas13-gallery-detalhe-pesso.jpg",
-      "caption": "Detalhe da instalação durante o festival · foto: Felipe Sztutman"
-    },
-    {
-      "src": "/img/obras/canvas13/06-tcc_page_073.jpg",
-      "caption": "TCC LUZCIDADE · página de documentação da obra · reprodução de arquivo"
+      "caption": "Detalhe da instalação durante o festival · foto: Felipe Sztutman",
+      "captionEn": "Installation detail during the festival · photo: Felipe Sztutman"
     }
   ],
   "corrego-rio-verde": [
     {
       "src": "/img/obras/corrego-rio-verde/01-beco-noite.jpg",
-      "caption": "Beco do Batman à noite com intervenção luminosa · foto: Wesley Lee Yang"
+      "caption": "Beco do Batman à noite com intervenção luminosa · foto: Wesley Lee Yang",
+      "captionEn": "Beco do Batman at night with the light intervention · photo: Wesley Lee Yang"
     },
     {
       "src": "/img/obras/corrego-rio-verde/02-geometria.jpg",
-      "caption": "Geometria da luz suspensa no beco · foto: Wesley Lee Yang"
+      "caption": "Geometria da luz suspensa no beco · foto: Wesley Lee Yang",
+      "captionEn": "Geometry of light suspended in the alley · photo: Wesley Lee Yang"
     },
     {
       "src": "/img/obras/corrego-rio-verde/03-luz-rua.jpg",
-      "caption": "Luz no espaço público da Vila Madalena · foto: Wesley Lee Yang"
+      "caption": "Luz no espaço público da Vila Madalena · foto: Wesley Lee Yang",
+      "captionEn": "Light in the public space of Vila Madalena · photo: Wesley Lee Yang"
     },
     {
       "src": "/img/obras/corrego-rio-verde/04-trails-cobblestone.jpg",
-      "caption": "Cabos eletroluminescentes sobre o calçamento · foto: Wesley Lee Yang"
+      "caption": "Cabos eletroluminescentes sobre o calçamento · foto: Wesley Lee Yang",
+      "captionEn": "Electroluminescent cables on the pavement · photo: Wesley Lee Yang"
     },
     {
       "src": "/img/obras/corrego-rio-verde/05-beco-dinamico.jpg",
-      "caption": "Intervenção luminosa no fluxo do beco · foto: Wesley Lee Yang"
+      "caption": "Intervenção luminosa no fluxo do beco · foto: Wesley Lee Yang",
+      "captionEn": "Light intervention in the flow of the alley · photo: Wesley Lee Yang"
     },
     {
       "src": "/img/obras/corrego-rio-verde/06-geometria-ceu.jpg",
-      "caption": "Geometria suspensa sobre o Beco do Batman · foto: Wesley Lee Yang"
+      "caption": "Geometria suspensa sobre o Beco do Batman · foto: Wesley Lee Yang",
+      "captionEn": "Geometry suspended over Beco do Batman · photo: Wesley Lee Yang"
     }
   ],
   "mantiqueira": [
     {
       "src": "/img/obras/mantiqueira/01-fibras-cachoeira.jpg",
-      "caption": "Cabos eletroluminescentes na queda d'água · foto: Layla Motta"
+      "caption": "Cabos eletroluminescentes na queda d'água · foto: Layla Motta",
+      "captionEn": "Electroluminescent cables in the waterfall · photo: Layla Motta"
     },
     {
       "src": "/img/obras/mantiqueira/02-piramide-floresta.jpg",
-      "caption": "Forma piramidal entre água e floresta · foto: Layla Motta"
+      "caption": "Forma piramidal entre água e floresta · foto: Layla Motta",
+      "captionEn": "Pyramidal form between water and forest · photo: Layla Motta"
     },
     {
       "src": "/img/obras/mantiqueira/03-triangulo-1.jpg",
-      "caption": "Geometria luminosa na Serra da Mantiqueira · foto: Layla Motta"
+      "caption": "Geometria luminosa na Serra da Mantiqueira · foto: Layla Motta",
+      "captionEn": "Light geometry in the Serra da Mantiqueira · photo: Layla Motta"
     },
     {
       "src": "/img/obras/mantiqueira/04-triangulo-2.jpg",
-      "caption": "Triângulo de luz na queda d'água · foto: Layla Motta"
+      "caption": "Triângulo de luz na queda d'água · foto: Layla Motta",
+      "captionEn": "Triangle of light in the waterfall · photo: Layla Motta"
     },
     {
       "src": "/img/obras/mantiqueira/05-triangulo-rochas.jpg",
-      "caption": "Cabos fixados entre pedras e água · foto: Layla Motta"
+      "caption": "Cabos fixados entre pedras e água · foto: Layla Motta",
+      "captionEn": "Cables fixed between rocks and water · photo: Layla Motta"
     },
     {
       "src": "/img/obras/mantiqueira/06-floresta-azul.jpg",
-      "caption": "Luz azul na floresta durante a montagem efêmera · foto: Layla Motta"
+      "caption": "Luz azul na floresta durante a montagem efêmera · foto: Layla Motta",
+      "captionEn": "Blue light in the forest during the ephemeral setup · photo: Layla Motta"
     }
   ],
   "mementos": [
     {
-      "src": "/img/obras/mementos/01-img-0-0.jpg",
-      "caption": "Mementos · documentação da instalação · vista 01"
+      "src": "/img/obras/mementos/01-mementos-laser-cristal.jpg",
+      "caption": "Mementos · feixes de laser sobre cristal, Metaversø, Farol Santander, 2019 · vista 01",
+      "captionEn": "Mementos · laser beams over crystal, Metaversø, Farol Santander, 2019 · view 01"
     },
     {
-      "src": "/img/obras/mementos/02-img-0.jpg",
-      "caption": "Mementos · documentação da instalação · vista 02"
+      "src": "/img/obras/mementos/02-mementos-laser-cristal.jpg",
+      "caption": "Mementos · feixes de laser sobre cristal, Metaversø, Farol Santander, 2019 · vista 02",
+      "captionEn": "Mementos · laser beams over crystal, Metaversø, Farol Santander, 2019 · view 02"
     },
     {
-      "src": "/img/obras/mementos/03-img-12-12.jpg",
-      "caption": "Mementos · feixes de laser e cristal · vista 03"
-    },
-    {
-      "src": "/img/obras/mementos/04-img-12.jpg",
-      "caption": "Mementos · feixes de laser e cristal · vista 04"
-    },
-    {
-      "src": "/img/obras/mementos/05-img-3-3.jpg",
-      "caption": "Mementos · padrões de luz gerados pelo sistema · vista 05"
-    },
-    {
-      "src": "/img/obras/mementos/06-img-3.jpg",
-      "caption": "Mementos · padrões de luz gerados pelo sistema · vista 06"
+      "src": "/img/obras/mementos/03-mementos-laser-cristal.jpg",
+      "caption": "Mementos · feixes de laser sobre cristal, Metaversø, Farol Santander, 2019 · vista 03",
+      "captionEn": "Mementos · laser beams over crystal, Metaversø, Farol Santander, 2019 · view 03"
     }
   ],
   "oceanvs": [
     {
       "src": "/img/obras/oceanvs/01-oceanvs-golden-reflection-face.jpg",
-      "caption": "OCEANVS · presença humana em reflexão aquática · vista 01"
+      "caption": "OCEANVS · presença humana em reflexão aquática · vista 01",
+      "captionEn": "OCEANVS · human presence in aquatic reflection · view 01"
     },
     {
       "src": "/img/obras/oceanvs/02-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 02"
+      "caption": "OCEANVS · projeção aquática imersiva · vista 02",
+      "captionEn": "OCEANVS · immersive aquatic projection · view 02"
     },
     {
       "src": "/img/obras/oceanvs/03-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 03"
+      "caption": "OCEANVS · projeção aquática imersiva · vista 03",
+      "captionEn": "OCEANVS · immersive aquatic projection · view 03"
     },
     {
       "src": "/img/obras/oceanvs/04-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 04"
+      "caption": "OCEANVS · projeção aquática imersiva · vista 04",
+      "captionEn": "OCEANVS · immersive aquatic projection · view 04"
     },
     {
       "src": "/img/obras/oceanvs/05-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 05"
+      "caption": "OCEANVS · projeção aquática imersiva · vista 05",
+      "captionEn": "OCEANVS · immersive aquatic projection · view 05"
     },
     {
       "src": "/img/obras/oceanvs/06-oceanvs-immersivewater-01.jpg",
-      "caption": "OCEANVS · ambiente de imersão · vista 06"
+      "caption": "OCEANVS · ambiente de imersão · vista 06",
+      "captionEn": "OCEANVS · immersion environment · view 06"
     }
   ],
   "metadata": [
     {
       "src": "/img/obras/metadata/01-metadata-blue-light-walk.jpg",
-      "caption": "METADATA · sala imersiva e projeção de dados · vista 01"
+      "caption": "METADATA · sala imersiva e projeção de dados · vista 01",
+      "captionEn": "METADATA · immersive room and data projection · view 01"
     },
     {
       "src": "/img/obras/metadata/02-metadata-colorful-shadow-play.jpg",
-      "caption": "METADATA · documentação da instalação · vista 02"
+      "caption": "METADATA · documentação da instalação · vista 02",
+      "captionEn": "METADATA · installation documentation · view 02"
     },
     {
       "src": "/img/obras/metadata/03-metadata-digital-abstract-figu.jpg",
-      "caption": "METADATA · visualização abstrata do sistema · vista 03"
+      "caption": "METADATA · visualização abstrata do sistema · vista 03",
+      "captionEn": "METADATA · abstract visualization of the system · view 03"
     },
     {
       "src": "/img/obras/metadata/04-metadata-digital-abstract-figu.jpg",
-      "caption": "METADATA · visualização abstrata do sistema · vista 04"
+      "caption": "METADATA · visualização abstrata do sistema · vista 04",
+      "captionEn": "METADATA · abstract visualization of the system · view 04"
     },
     {
       "src": "/img/obras/metadata/05-metadata-digital-abstract-spac.jpg",
-      "caption": "METADATA · projeção e espaço imersivo · vista 05"
+      "caption": "METADATA · projeção e espaço imersivo · vista 05",
+      "captionEn": "METADATA · projection and immersive space · view 05"
     },
     {
       "src": "/img/obras/metadata/06-metadata-digital-art-exhibitio.jpg",
-      "caption": "METADATA · documentação da exposição · vista 06"
+      "caption": "METADATA · documentação da exposição · vista 06",
+      "captionEn": "METADATA · exhibition documentation · view 06"
     }
   ],
   "luz-aeterna": [
     {
       "src": "/img/obras/luz-aeterna/01-luz-aeterna-genesis-particulas.jpg",
-      "caption": "Gênesis, a sala imersiva de projeção, com o corpo dentro do campo de partículas · foto: Lua Morales, 2024"
+      "caption": "Gênesis, a sala imersiva de projeção, com o corpo dentro do campo de partículas · foto: Lua Morales, 2024",
+      "captionEn": "Gênesis, the immersive projection room, with the body inside the particle field · photo: Lua Morales, 2024"
     },
     {
       "src": "/img/obras/luz-aeterna/02-luz-aeterna-genesis-esferas.jpg",
-      "caption": "Gênesis, esferas solares projetadas em parede e piso, com público na sala · foto: Lua Morales, 2024"
+      "caption": "Gênesis, esferas solares projetadas em parede e piso, com público na sala · foto: Lua Morales, 2024",
+      "captionEn": "Gênesis, solar spheres projected on wall and floor, with audience in the room · photo: Lua Morales, 2024"
     },
     {
       "src": "/img/obras/luz-aeterna/03-luz-aeterna-genesis-explosao.jpg",
-      "caption": "Gênesis, a explosão solar na sala escura, com o público em silhueta · foto: Lua Morales, 2024"
+      "caption": "Gênesis, a explosão solar na sala escura, com o público em silhueta · foto: Lua Morales, 2024",
+      "captionEn": "Gênesis, the solar explosion in the dark room, with the audience in silhouette · photo: Lua Morales, 2024"
     }
   ],
   "sao-paulo-3024": [
     {
       "src": "/img/obras/sao-paulo-3024/01-sp3024-cityscape-sao-paulo-302.jpg",
-      "caption": "Sp3024 cityscape sao paulo 302"
+      "caption": "São Paulo 3024 · projeção imersiva · vista 01",
+      "captionEn": "São Paulo 3024 · immersive projection · view 01"
     },
     {
       "src": "/img/obras/sao-paulo-3024/02-sp3024-cyberpunk-cityscape-202.jpg",
-      "caption": "Sp3024 cyberpunk cityscape 202"
+      "caption": "São Paulo 3024 · projeção imersiva · vista 02",
+      "captionEn": "São Paulo 3024 · immersive projection · view 02"
     },
     {
       "src": "/img/obras/sao-paulo-3024/03-sp3024-cyberpunk-cityscape-lig.jpg",
-      "caption": "Sp3024 cyberpunk cityscape lig"
+      "caption": "São Paulo 3024 · projeção imersiva · vista 03",
+      "captionEn": "São Paulo 3024 · immersive projection · view 03"
     },
     {
       "src": "/img/obras/sao-paulo-3024/04-sp3024-cyberpunk-urban-landsca.jpg",
-      "caption": "Sp3024 cyberpunk urban landsca"
+      "caption": "São Paulo 3024 · projeção imersiva · vista 04",
+      "captionEn": "São Paulo 3024 · immersive projection · view 04"
     },
     {
       "src": "/img/obras/sao-paulo-3024/05-sp3024-digital-city-night.jpg",
-      "caption": "Sp3024 digital city night"
+      "caption": "São Paulo 3024 · projeção imersiva · vista 05",
+      "captionEn": "São Paulo 3024 · immersive projection · view 05"
     },
     {
       "src": "/img/obras/sao-paulo-3024/06-sp3024-digital-cityscape-3d-re.jpg",
-      "caption": "Sp3024 digital cityscape 3d re"
+      "caption": "São Paulo 3024 · projeção imersiva · vista 06",
+      "captionEn": "São Paulo 3024 · immersive projection · view 06"
     }
   ],
   "andromeda": [
     {
       "src": "/img/obras/andromeda/01-andromeda-astronomy-light-show.jpg",
-      "caption": "Andrômeda · projeção astronômica · vista 01"
+      "caption": "Andrômeda · projeção astronômica · vista 01",
+      "captionEn": "Andrômeda · astronomical projection · view 01"
     },
     {
       "src": "/img/obras/andromeda/02-andromeda-astronomy-projected-.jpg",
-      "caption": "Andrômeda · luz projetada no ambiente · vista 02"
+      "caption": "Andrômeda · luz projetada no ambiente · vista 02",
+      "captionEn": "Andrômeda · light projected into the space · view 02"
     },
     {
       "src": "/img/obras/andromeda/03-andromeda-black-hole-explosion.jpg",
-      "caption": "Andrômeda · sequência cósmica imersiva · vista 03"
+      "caption": "Andrômeda · sequência cósmica imersiva · vista 03",
+      "captionEn": "Andrômeda · immersive cosmic sequence · view 03"
     },
     {
       "src": "/img/obras/andromeda/04-andromeda-black-hole-illusion-.jpg",
-      "caption": "Andrômeda · projeção e percepção espacial · vista 04"
+      "caption": "Andrômeda · projeção e percepção espacial · vista 04",
+      "captionEn": "Andrômeda · projection and spatial perception · view 04"
     },
     {
       "src": "/img/obras/andromeda/05-andromeda-black-hole-illusion.jpg",
-      "caption": "Andrômeda · projeção circular no espaço · vista 05"
+      "caption": "Andrômeda · projeção circular no espaço · vista 05",
+      "captionEn": "Andrômeda · circular projection in space · view 05"
     },
     {
       "src": "/img/obras/andromeda/06-andromeda-cosmic-silhouette-il.jpg",
-      "caption": "Andrômeda · presença do público na instalação · vista 06"
+      "caption": "Andrômeda · presença do público na instalação · vista 06",
+      "captionEn": "Andrômeda · audience presence in the installation · view 06"
     }
   ],
   "o-que-nos-une": [
     {
       "src": "/img/obras/o-que-nos-une/01-oqnu-brain-mirror-chamber-1-2.jpg",
-      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 01"
+      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 01",
+      "captionEn": "O Que Nos Une · mirror and LED chamber · view 01"
     },
     {
       "src": "/img/obras/o-que-nos-une/02-oqnu-brain-mirror-chamber-1.jpg",
-      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 02"
+      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 02",
+      "captionEn": "O Que Nos Une · mirror and LED chamber · view 02"
     },
     {
       "src": "/img/obras/o-que-nos-une/03-oqnu-brain-mirror-chamber.jpg",
-      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 03"
+      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 03",
+      "captionEn": "O Que Nos Une · mirror and LED chamber · view 03"
     },
     {
       "src": "/img/obras/o-que-nos-une/04-oqnu-mirror-chamber-blue-light.jpg",
-      "caption": "O Que Nos Une · luz azul na câmara de espelhos · vista 04"
+      "caption": "O Que Nos Une · luz azul na câmara de espelhos · vista 04",
+      "captionEn": "O Que Nos Une · blue light in the mirror chamber · view 04"
     },
     {
       "src": "/img/obras/o-que-nos-une/05-oqnu-mirror-chamber-blue-light.jpg",
-      "caption": "O Que Nos Une · documentação da câmara de espelhos · vista 05"
+      "caption": "O Que Nos Une · documentação da câmara de espelhos · vista 05",
+      "captionEn": "O Que Nos Une · documentation of the mirror chamber · view 05"
     },
     {
       "src": "/img/obras/o-que-nos-une/06-oqnu-mirror-chamber-blue-silho.jpg",
-      "caption": "O Que Nos Une · presença do corpo na câmara de espelhos · vista 06"
+      "caption": "O Que Nos Une · presença do corpo na câmara de espelhos · vista 06",
+      "captionEn": "O Que Nos Une · body presence in the mirror chamber · view 06"
     }
   ],
   "floresta-utopica": [
     {
       "src": "/img/obras/floresta-utopica/01-floresta-utopica-lua-morales-048.jpg",
-      "caption": "Corredor espelhado, com projeção nas duas paredes e a malha de fios acima · foto de Lua Morales, 2025"
+      "caption": "Corredor espelhado, com projeção nas duas paredes e a malha de fios acima · foto de Lua Morales, 2025",
+      "captionEn": "Mirrored corridor, with projection on both walls and the wire mesh above · photo: Lua Morales, 2025"
     },
     {
       "src": "/img/obras/floresta-utopica/02-floresta-utopica-lua-morales-030.jpg",
-      "caption": "A sala inteira, com a estrutura de fios sobre o piso espelhado · foto de Lua Morales, 2025"
+      "caption": "A sala inteira, com a estrutura de fios sobre o piso espelhado · foto de Lua Morales, 2025",
+      "captionEn": "The whole room, with the wire structure above the mirrored floor · photo: Lua Morales, 2025"
     },
     {
       "src": "/img/obras/floresta-utopica/03-floresta-utopica-lua-morales-051.jpg",
-      "caption": "Flora projetada em escala, na parede e no reflexo · foto de Lua Morales, 2025"
+      "caption": "Flora projetada em escala, na parede e no reflexo · foto de Lua Morales, 2025",
+      "captionEn": "Flora projected at scale, on the wall and in the reflection · photo: Lua Morales, 2025"
     },
     {
       "src": "/img/obras/floresta-utopica/04-floresta-utopica-lua-morales-041.jpg",
-      "caption": "A malha de fios descendo sobre o painel iluminado · foto de Lua Morales, 2025"
+      "caption": "A malha de fios descendo sobre o painel iluminado · foto de Lua Morales, 2025",
+      "captionEn": "The wire mesh descending over the lit panel · photo: Lua Morales, 2025"
     },
     {
       "src": "/img/obras/floresta-utopica/05-floresta-utopica-lua-morales-069.jpg",
-      "caption": "Lírio vermelho e o dobro dele no espelho do piso · foto de Lua Morales, 2025"
+      "caption": "Lírio vermelho e o dobro dele no espelho do piso · foto de Lua Morales, 2025",
+      "captionEn": "Red lily and its double in the floor mirror · photo: Lua Morales, 2025"
     },
     {
       "src": "/img/obras/floresta-utopica/06-floresta-utopica-lua-morales-060.jpg",
-      "caption": "Borboletas sobre o campo escuro, entre projeção e reflexo · foto de Lua Morales, 2025"
+      "caption": "Borboletas sobre o campo escuro, entre projeção e reflexo · foto de Lua Morales, 2025",
+      "captionEn": "Butterflies over the dark field, between projection and reflection · photo: Lua Morales, 2025"
     }
   ],
   "amano": [
     {
       "src": "/img/obras/amano/01-img-0-0.jpg",
-      "caption": "AMANO · ambiente imersivo · vista 01"
+      "caption": "AMANO · ambiente imersivo · vista 01",
+      "captionEn": "AMANO · immersive environment · view 01"
     },
     {
       "src": "/img/obras/amano/02-img-0.jpg",
-      "caption": "AMANO · ambiente imersivo · vista 02"
+      "caption": "AMANO · ambiente imersivo · vista 02",
+      "captionEn": "AMANO · immersive environment · view 02"
     },
     {
       "src": "/img/obras/amano/03-img-12-12.jpg",
-      "caption": "AMANO · video mapping e projeção · vista 03"
+      "caption": "AMANO · video mapping e projeção · vista 03",
+      "captionEn": "AMANO · video mapping and projection · view 03"
     },
     {
       "src": "/img/obras/amano/04-img-12.jpg",
-      "caption": "AMANO · video mapping e projeção · vista 04"
+      "caption": "AMANO · video mapping e projeção · vista 04",
+      "captionEn": "AMANO · video mapping and projection · view 04"
     },
     {
       "src": "/img/obras/amano/05-img-3-3.jpg",
-      "caption": "AMANO · tradução espacial do universo visual · vista 05"
+      "caption": "AMANO · tradução espacial do universo visual · vista 05",
+      "captionEn": "AMANO · spatial translation of the visual universe · view 05"
     },
     {
       "src": "/img/obras/amano/06-img-3.jpg",
-      "caption": "AMANO · tradução espacial do universo visual · vista 06"
+      "caption": "AMANO · tradução espacial do universo visual · vista 06",
+      "captionEn": "AMANO · spatial translation of the visual universe · view 06"
     }
   ],
   "luzcidade": [
     {
       "src": "/img/escritos/luzcidade/01-banca-overview.jpg",
-      "caption": "Banca de defesa TCC LUZCIDADE, FAU-USP 2013. Chapas de compensado com fotos e fragmentos."
+      "caption": "Banca de defesa TCC LUZCIDADE, FAU-USP 2013. Chapas de compensado com fotos e fragmentos.",
+      "captionEn": "LUZCIDADE thesis defense, FAU-USP 2013. Plywood boards with photos and fragments."
     },
     {
       "src": "/img/escritos/luzcidade/02-moholy-nagy-modulator.jpg",
-      "caption": "László Moholy-Nagy — Light and Space Modulator, réplica 1970. Van Abbemuseum."
+      "caption": "László Moholy-Nagy, Light and Space Modulator, réplica 1970. Van Abbemuseum.",
+      "captionEn": "László Moholy-Nagy, Light and Space Modulator, 1970 replica. Van Abbemuseum."
     },
     {
       "src": "/img/escritos/luzcidade/03-moholy-nagy-film.jpg",
-      "caption": "László Moholy-Nagy — frames de \"A play of light black white grey\", 1930. Moholy-Nagy Foundation."
+      "caption": "László Moholy-Nagy, frames de \"A play of light black white grey\", 1930. Moholy-Nagy Foundation.",
+      "captionEn": "László Moholy-Nagy, frames from \"A play of light black white grey\", 1930. Moholy-Nagy Foundation."
     },
     {
       "src": "/img/escritos/luzcidade/04-banca-flavin.jpg",
-      "caption": "Banca TCC — seção Dan Flavin. Fotos de Felipe Sztutman em Viena, 2013."
+      "caption": "Banca TCC, seção Dan Flavin. Fotos de Felipe Sztutman em Viena, 2013.",
+      "captionEn": "Thesis defense, Dan Flavin section. Photos by Felipe Sztutman in Vienna, 2013."
     },
     {
       "src": "/img/escritos/luzcidade/05-flavin-diagonal.jpg",
-      "caption": "Dan Flavin — The diagonal of May 25, 1963 (to Constantin Brancusi). Foto: Felipe Sztutman, Viena 2013."
+      "caption": "Dan Flavin, The diagonal of May 25, 1963 (to Constantin Brancusi). Foto: Felipe Sztutman, Viena 2013.",
+      "captionEn": "Dan Flavin, The diagonal of May 25, 1963 (to Constantin Brancusi). Photo: Felipe Sztutman, Vienna 2013."
     },
     {
       "src": "/img/escritos/luzcidade/06-flavin-christina-bruno.jpg",
-      "caption": "Dan Flavin — untitled (to Christina and Bruno), 1966-1971. Lâmpadas fluorescentes douradas, 244×244cm. Foto: Felipe Sztutman, 2013."
+      "caption": "Dan Flavin, untitled (to Christina and Bruno), 1966-1971. Lâmpadas fluorescentes douradas, 244×244cm. Foto: Felipe Sztutman, 2013.",
+      "captionEn": "Dan Flavin, untitled (to Christina and Bruno), 1966-1971. Gold fluorescent lamps, 244×244cm. Photo: Felipe Sztutman, 2013."
     },
     {
       "src": "/img/escritos/luzcidade/07-flavin-barrier.jpg",
-      "caption": "Dan Flavin — an artificial barrier of blue, red and blue fluorescent light (to Flavin Starbuck Judd), 1968. Foto: Felipe Sztutman."
+      "caption": "Dan Flavin, an artificial barrier of blue, red and blue fluorescent light (to Flavin Starbuck Judd), 1968. Foto: Felipe Sztutman.",
+      "captionEn": "Dan Flavin, an artificial barrier of blue, red and blue fluorescent light (to Flavin Starbuck Judd), 1968. Photo: Felipe Sztutman."
     },
     {
       "src": "/img/escritos/luzcidade/08-flavin-mumok.jpg",
-      "caption": "Dan Flavin — European Couples. Exposição \"Dan Flavin: Lights\", 2013, Mumok, Viena. Foto: Felipe Sztutman."
+      "caption": "Dan Flavin, European Couples. Exposição \"Dan Flavin: Lights\", 2013, Mumok, Viena. Foto: Felipe Sztutman.",
+      "captionEn": "Dan Flavin, European Couples. Exhibition \"Dan Flavin: Lights\", 2013, Mumok, Vienna. Photo: Felipe Sztutman."
     }
   ],
   "interludio": [
     {
       "src": "/img/obras/interludio/01-hero.jpg",
-      "caption": "Interlúdio · sensores de proximidade e luz responsiva · foto: Junior Viana"
+      "caption": "Interlúdio · sensores de proximidade e luz responsiva · foto: Junior Viana",
+      "captionEn": "Interlúdio · proximity sensors and responsive light · photo: Junior Viana"
     },
     {
       "src": "/img/obras/interludio/02-gallery.jpg",
-      "caption": "Interlúdio · documentação da instalação · vista 02"
+      "caption": "Interlúdio · documentação da instalação · vista 02",
+      "captionEn": "Interlúdio · installation documentation · view 02"
     },
     {
       "src": "/img/obras/interludio/03-gallery.jpg",
-      "caption": "Interlúdio · documentação da instalação · vista 03"
+      "caption": "Interlúdio · documentação da instalação · vista 03",
+      "captionEn": "Interlúdio · installation documentation · view 03"
     },
     {
       "src": "/img/obras/interludio/04-gallery.jpg",
-      "caption": "Interlúdio · documentação da instalação · vista 04"
+      "caption": "Interlúdio · documentação da instalação · vista 04",
+      "captionEn": "Interlúdio · installation documentation · view 04"
     },
     {
       "src": "/img/obras/interludio/05-gallery.jpg",
-      "caption": "Interlúdio · presença do corpo e ativação luminosa · vista 05"
+      "caption": "Interlúdio · presença do corpo e ativação luminosa · vista 05",
+      "captionEn": "Interlúdio · body presence and light activation · view 05"
     },
     {
       "src": "/img/obras/interludio/06-gallery.jpg",
-      "caption": "Interlúdio · presença do corpo e ativação luminosa · vista 06"
+      "caption": "Interlúdio · presença do corpo e ativação luminosa · vista 06",
+      "captionEn": "Interlúdio · body presence and light activation · view 06"
     },
     {
       "src": "/img/obras/interludio/07-gallery.jpg",
-      "caption": "Interlúdio · sistema responsivo em funcionamento · vista 07"
+      "caption": "Interlúdio · sistema responsivo em funcionamento · vista 07",
+      "captionEn": "Interlúdio · responsive system in operation · view 07"
     }
   ],
   "player1": [
     {
       "src": "/img/obras/player1/01-player1-rush-estacoes.jpg",
-      "caption": "RUSH, duas estações de quatro CRTs cada, rodando RACE, FIGHT, RUN e SHOOT · foto: Lua Morales, 2026"
+      "caption": "RUSH, duas estações de quatro CRTs cada, rodando RACE, FIGHT, RUN e SHOOT · foto: Lua Morales, 2026",
+      "captionEn": "RUSH, two stations of four CRTs each, running RACE, FIGHT, RUN and SHOOT · photo: Lua Morales, 2026"
     },
     {
       "src": "/img/obras/player1/02-player1-drift-campo.jpg",
-      "caption": "DRIFT, a tela de entrada e o piso iluminado do campo de jogo · foto: Lua Morales, 2026"
+      "caption": "DRIFT, a tela de entrada e o piso iluminado do campo de jogo · foto: Lua Morales, 2026",
+      "captionEn": "DRIFT, the start screen and the lit floor of the playing field · photo: Lua Morales, 2026"
     },
     {
       "src": "/img/obras/player1/03-player1-rush-painel.jpg",
-      "caption": "RUSH, o painel de controle com manche e botões · foto: Lua Morales, 2026"
+      "caption": "RUSH, o painel de controle com manche e botões · foto: Lua Morales, 2026",
+      "captionEn": "RUSH, the control panel with joystick and buttons · photo: Lua Morales, 2026"
     },
     {
       "src": "/img/obras/player1/04-player1-drift-telas.jpg",
-      "caption": "DRIFT, escolha um lado e abra os braços para iniciar, entre CONSTELAÇÃO e METEORO · foto: Lua Morales, 2026"
+      "caption": "DRIFT, escolha um lado e abra os braços para iniciar, entre CONSTELAÇÃO e METEORO · foto: Lua Morales, 2026",
+      "captionEn": "DRIFT, \"choose a side and open your arms to start\", between CONSTELLATION and METEOR · photo: Lua Morales, 2026"
     },
     {
       "src": "/img/obras/player1/05-player1-sala-eixo.jpg",
-      "caption": "Eixo da sala, o pórtico azul ao fundo e a parede de painéis · foto: Lua Morales, 2026"
+      "caption": "Eixo da sala, o pórtico azul ao fundo e a parede de painéis · foto: Lua Morales, 2026",
+      "captionEn": "Axis of the room, the blue gateway at the back and the wall of panels · photo: Lua Morales, 2026"
     },
     {
       "src": "/img/obras/player1/06-player1-porticos-acervo.jpg",
-      "caption": "Três pórticos de neon e as vitrines do acervo, com reflexo no piso · foto: Lua Morales, 2026"
+      "caption": "Três pórticos de neon e as vitrines do acervo, com reflexo no piso · foto: Lua Morales, 2026",
+      "captionEn": "Three neon gateways and the collection showcases, reflected in the floor · photo: Lua Morales, 2026"
     }
   ]
 }

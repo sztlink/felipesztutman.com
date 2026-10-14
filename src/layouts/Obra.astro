@@ -7,7 +7,7 @@ import relationsData from '../data/map-relations.json';
 import referencesData from '../data/references.json';
 import publicationsData from '../data/publications.json';
 
-type GalleryItem = { src: string; caption: string | null };
+type GalleryItem = { src: string; caption: string | null; captionEn?: string };
 
 interface Props {
   frontmatter: {
@@ -47,7 +47,8 @@ const prefix = isEN ? '/en' : '';
 const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) · ${frontmatter.location}. Felipe Sztutman.`;
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
-const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
+const items: GalleryItem[] = ((galleryData as Record<string, GalleryItem[]>)[slug] || [])
+  .map((item) => (isEN && item.captionEn ? { ...item, caption: item.captionEn } : item));
 const ogImage = items[0]?.src || frontmatter.hero || frontmatter.ogImage || frontmatter.video?.poster || frontmatter.cenas?.[0]?.poster || undefined;
 const lead = frontmatter.lead || frontmatter.description;
 
@@ -176,8 +177,6 @@ const publicRelations = relationSeeds
 
 const dossierRows = [
   work?.numero ? { label: isEN ? 'Number' : 'Número', value: work.numero } : null,
-  work ? { label: isEN ? 'Editorial status' : 'Estatuto', value: editorialStatus(work) } : null,
-  regime ? { label: isEN ? 'Reading regime' : 'Regime de leitura', value: regimeLabels[regime] } : null,
   work?.status ? { label: isEN ? 'Status' : 'Status', value: statusValue(work) } : null,
   work?.ano ? { label: isEN ? 'Year' : 'Ano', value: String(work.ano) } : null,
   work?.local ? { label: isEN ? 'Location' : 'Local', value: work.local } : null,
@@ -238,8 +237,6 @@ function normalizePublicationUrl(url?: string) {
       </div>
       <div class="eyebrow">
         {work?.numero ? (isEN ? `WORK No. ${work.numero}` : `OBRA Nº ${work.numero}`) : (isEN ? 'WORK' : 'OBRA')} · {frontmatter.year}
-        {editorialStatus(work) && <span class="statute-chip">{editorialStatus(work)}</span>}
-        {regime && <span class="regime-chip">{regimeLabels[regime]}</span>}
         {work?.status === 'A_CONFIRMAR' && <span class="status-chip">A CONFIRMAR</span>}
         {work?.status === 'EM_CURSO' && <span class="status-chip">{isEN ? 'IN PRODUCTION' : 'EM PRODUÇÃO'}</span>}
         {work?.status === 'EM_EXPOSICAO' && <span class="status-chip">{isEN ? 'ON VIEW' : 'EM EXPOSIÇÃO'}</span>}
@@ -510,17 +507,14 @@ body.page-obra a{text-decoration:none}
 @media(max-width:640px){.obra-hero[data-count="2"],.obra-hero[data-count="3"]{grid-template-columns:1fr}.hero-cell:nth-child(n+2){display:none}.hero-cell img{height:52vh}}
 
 .obra-entry{padding:0 0 2rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
-.back,.map-link,.eyebrow,.status-chip,.statute-chip,.regime-chip{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.back,.map-link,.eyebrow,.status-chip{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .panel-kicker,.section-kicker{font:.62rem/1 var(--mono);letter-spacing:.26em;text-transform:uppercase}
 .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
 .back,.map-link{display:inline-block;color:rgba(255,255,255,.55)}
 .back:hover,.map-link:hover{color:#fff}
 .map-link{color:rgba(255,255,255,.38)}
 .eyebrow{color:rgba(255,255,255,.5);margin-bottom:1rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
-.status-chip,.statute-chip,.regime-chip{padding:.28rem .4rem;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.65)}
-.statute-chip{border-color:rgba(255,255,255,.26);color:rgba(255,255,255,.82)}
-.regime-chip{color:rgba(255,255,255,.48);border-color:rgba(255,255,255,.12)}
-.status-chip{color:#ffd9a8;background:rgba(255,136,0,.16);border-color:rgba(255,178,90,.32)}
+.status-chip{color:#ffffff}
 .obra-entry h1{font:900 clamp(2.8rem,10vw,8rem)/.9 var(--sans);letter-spacing:-.05em;max-width:10ch}
 .entry-meta{margin-top:.85rem;font:.82rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.48)}
 .entry-links{margin-top:1rem;display:flex;gap:1.1rem;flex-wrap:wrap;font:.82rem/1.4 var(--mono);letter-spacing:.06em;text-transform:lowercase}
@@ -531,7 +525,7 @@ body.page-obra a{text-decoration:none}
 .obra-video video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;background:#000}
 .obra-video figcaption{padding:.55rem 0 0;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
 .obra-video figcaption a{color:rgba(255,255,255,.75)}
-.pending-note{margin-top:1rem;max-width:56ch;border-left:3px solid #ff9b2f;padding:.75rem .85rem;background:rgba(255,136,0,.1);font:.92rem/1.55 var(--sans);color:rgba(255,238,216,.82)}
+.pending-note{margin-top:1.1rem;max-width:56ch;font:500 1.05rem/1.5 var(--sans);color:#ffffff}
 .panel{background:transparent;color:#fff;padding:1.15rem 0 0;border-top:1px solid var(--pulse);margin:0 0 2.25rem}
 .panel-kicker,.section-kicker{color:var(--pulse);margin-bottom:1.1rem}
 .panel-intro{font:.92rem/1.55 var(--sans);color:rgba(255,255,255,.62);max-width:58ch;margin:-.25rem 0 1rem}
@@ -577,8 +571,8 @@ body.page-obra a{text-decoration:none}
 .gallery-item img{display:block;width:100%;height:auto;background:#111}
 .gallery-item figcaption{padding:.55rem .6rem 1.2rem;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
 .archive-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;padding-top:1.5rem;border-top:1px solid var(--line);margin-top:1.5rem}
-.archive-nav-item{display:flex;flex-direction:column;gap:.25rem;padding:.85rem .95rem;border:1px solid rgba(255,255,255,.12);color:#ffffff}
-.archive-nav-item:hover{border-color:var(--pulse);background:rgba(255,255,255,.03)}
+.archive-nav-item{display:flex;flex-direction:column;gap:.25rem;padding:.85rem 0;color:#ffffff}
+.archive-nav-item:hover strong{color:var(--pulse)}
 .archive-nav-label{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.42)}
 .archive-nav-item strong{font:600 .98rem/1.4 var(--sans);letter-spacing:-.02em}
 @media (min-width: 900px){

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Obra.astro
-title: "Luz Æterna — Ensaio Sobre o Sol"
+title: "Luz Æterna: Ensaio Sobre o Sol"
 year: "2024"
 location: "CCBB Brasília + CCBB Belo Horizonte"
 description: "Direção de arte, tecnologia e experiência de exposição coletiva de new media art com oito artistas brasileiros, onde a luz organiza o espaço e unifica a jornada entre físico e virtual."

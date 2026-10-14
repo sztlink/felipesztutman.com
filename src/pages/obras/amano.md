@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Obra.astro
-title: "AMANO — Além da Fantasia"
+title: "AMANO: Além da Fantasia"
 year: "2026"
 location: "São Paulo, Belo Horizonte, Rio de Janeiro"
 description: "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada no mundo. Direção de experiência e tecnologia para traduzir 218 obras originais em experiência habitável."

@@ -100,15 +100,7 @@ function regimeLabel(work: any) {
         <div class="archive-kicker">ARQUIVO</div>
         <h2>{total} obras</h2>
         <div class="archive-meta">São Paulo · ativo 2009– · {realizada} realizadas · {emExposicao > 0 && `${emExposicao} em exposição · `}{emCurso > 0 && `${emCurso} em produção · `}{aConfirmar} a confirmar · atualizado {updatedAt}</div>
-        <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê. O mapa lê relações sustentadas. O grafo preserva uma camada anterior do processo.</p>
-        <div class="statute-legend" aria-label="Estatutos editoriais">
-          <div><strong>Obra autoral de Felipe</strong><span>Felipe é o artista. Curadoria, produção e materialização seguem creditadas quando existem.</span></div>
-          <div><strong>Exposição temática / coletiva</strong><span>Felipe aparece pela direção de arte, tecnologia e experiência, sem absorver a autoria de outros artistas.</span></div>
-          <div><strong>Projeto com artista terceiro</strong><span>O artista convidado permanece como autor principal; Felipe opera a tradução espacial e técnica.</span></div>
-          <div><strong>Em exposição</strong><span>Aberta ao público agora. Vira obra realizada quando a temporada termina.</span></div>
-          <div><strong>Em produção</strong><span>Confirmada e em produção. Documentação final e créditos expandidos seguem em consolidação.</span></div>
-          <div><strong>Em confirmação</strong><span>Publicado como arquivo em verificação. Datas, créditos ou estatuto final seguem abertos.</span></div>
-        </div>
+        <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê. O mapa lê relações sustentadas.</p>
       </div>
 
       <div class="archive-table-wrap">
@@ -120,7 +112,6 @@ function regimeLabel(work: any) {
               <th>ANO</th>
               <th>LOCAL</th>
               <th>CONTEXTO</th>
-              <th>ESTATUTO</th>
               <th>STATUS</th>
             </tr>
           </thead>
@@ -135,10 +126,6 @@ function regimeLabel(work: any) {
                 <td>{work.ano}</td>
                 <td>{work.local}</td>
                 <td>{work.contexto}</td>
-                <td class="statute-cell">
-                  <span>{editorialStatus(work)}</span>
-                  {regimeLabel(work) && <small>{regimeLabel(work)}</small>}
-                </td>
                 <td>
                   <span class:list={[ 'status', work.status === 'A_CONFIRMAR' && 'pending' ]}>{statusLabel(work.status)}</span>
                   <div class="status-note">{statusNote(work.status)}</div>
@@ -157,7 +144,6 @@ function regimeLabel(work: any) {
         <a href="/publicacoes"><strong>publicações</strong> circulação editorial</a>
         <a href="/trajetoria"><strong>trajetória</strong> cronologia</a>
         <a href="/sobre"><strong>sobre</strong> contexto</a>
-        <a href="/grafo"><strong>grafo</strong> legacy</a>
         <a href="/en"><strong>EN</strong> english</a>
         <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
       </div>
@@ -200,10 +186,6 @@ body.page-home a{text-decoration:none}
 .archive h2{font:700 clamp(2rem,4vw,3.5rem)/1 var(--sans);letter-spacing:-.05em;margin-bottom:.5rem}
 .archive-meta{font:.8rem/1.5 var(--mono);color:rgba(255,255,255,.58);text-transform:uppercase;letter-spacing:.08em}
 .archive-note{margin:.75rem 0 0;max-width:60ch;font:.95rem/1.55 var(--sans);color:rgba(255,255,255,.68)}
-.statute-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:1.25rem;background:var(--line-strong);border:1px solid var(--line-strong)}
-.statute-legend div{background:var(--paper);padding:.85rem .75rem}
-.statute-legend strong{display:block;font:.68rem/1.25 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:.35rem}
-.statute-legend span{display:block;font:.78rem/1.45 var(--sans);color:rgba(255,255,255,.58)}
 .archive-table-wrap{overflow:auto;border-top:1px solid var(--line)}
 .archive-table{width:100%;border-collapse:collapse;min-width:980px}
 .archive-table th,.archive-table td{padding:.9rem .65rem;vertical-align:top;border-bottom:1px solid var(--line)}
@@ -218,16 +200,13 @@ body.page-home a{text-decoration:none}
 .title-cell{min-width:320px}
 .title-cell a{font-weight:600;letter-spacing:-.01em}
 .title-desc{margin-top:.3rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.58);max-width:52ch}
-.statute-cell span{display:block;font:.78rem/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
-.statute-cell small{display:block;margin-top:.25rem;font:.78rem/1.45 var(--sans);color:rgba(255,255,255,.55);max-width:24ch}
-.status{display:inline-block;font:.72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);padding:.32rem .45rem;border:1px solid rgba(255,255,255,.2)}
-.status.pending{color:#4d2b00;background:rgba(255,136,0,.12);border-color:rgba(122,70,0,.34)}
+.status{display:inline-block;font:.72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.status.pending{color:rgba(255,255,255,.42)}
 .status-note{margin-top:.35rem;font:.74rem/1.4 var(--sans);color:rgba(255,255,255,.5);max-width:18ch}
 .archive-links{display:flex;gap:.7rem 1.25rem;flex-wrap:wrap;padding-top:1.5rem;color:rgba(255,255,255,.55);border-top:1px solid var(--line-strong);margin-top:1.5rem}
 .archive-links a{color:inherit;display:flex;gap:.35rem;align-items:baseline}
 .archive-links strong{font-weight:600;color:rgba(255,255,255,.78)}
 .archive-links a:hover{color:var(--ink);text-decoration:underline}
-@media (max-width: 1100px){.statute-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 900px){
   .entry,.statement,.archive{padding-left:1rem;padding-right:1rem}
   .entry{padding-top:1.25rem;padding-bottom:1.25rem}
@@ -235,5 +214,20 @@ body.page-home a{text-decoration:none}
   .archive{padding-bottom:2rem}
   .archive-meta{font-size:.72rem}
 }
-@media (max-width: 640px){.statute-legend{grid-template-columns:1fr}}
+@media (max-width: 720px){
+  .archive-table{min-width:0}
+  .archive-table thead{display:none}
+  .archive-table,.archive-table tbody{display:block}
+  .archive-table tbody tr{display:grid;grid-template-columns:3.2rem minmax(0,1fr);column-gap:.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+  .archive-table td{display:block;border:0;padding:0;font-size:.88rem}
+  .archive-table td.num{grid-row:1 / span 5;padding-left:.5rem;border-left:3px solid var(--pulse)}
+  .title-cell{min-width:0}
+  .title-cell a{font-size:1.05rem}
+  .archive-table td:nth-child(3),.archive-table td:nth-child(4){color:rgba(255,255,255,.62);font:.74rem/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+  .archive-table td:nth-child(3){grid-column:2;margin-top:.5rem}
+  .archive-table td:nth-child(4){grid-column:2}
+  .archive-table td:nth-child(5){grid-column:2;color:rgba(255,255,255,.55);font-size:.82rem;margin-top:.15rem}
+  .archive-table td:nth-child(6){grid-column:2;margin-top:.45rem}
+  .status-note{display:none}
+}
 </style>

@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Obra.astro
-title: "AMANO — Além da Fantasia"
+title: "AMANO: Além da Fantasia"
 year: "2026"
 location: "São Paulo, Belo Horizonte, Rio de Janeiro"
 lang: en

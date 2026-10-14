@@ -5,7 +5,7 @@ year: "2019"
 location: "Farol Santander, São Paulo"
 description: "45 lasers programados interagindo com cristal. Primeira obra no Farol Santander, tornando visível a conexão inseparável entre físico e digital."
 lead: "Instalação generativa com 45 lasers e um grande cristal, concebida para tornar palpável a dependência mútua entre físico e digital."
-archiveNote: "A documentação visual atualmente publicada ainda precisa de legendas mais específicas por imagem. Nesta rodada, ela permanece como documentação mínima de funcionamento da instalação."
+archiveNote: "Registro fotográfico do catálogo de Metaversø, 2019. Crédito do fotógrafo a confirmar."
 mechanism:
   - { label: "Sistema", value: "45 lasers programados atravessando e se refratando em um grande cristal" }
   - { label: "Programação", value: "Matheus Leston desenvolveu o sistema em Max/Jitter/MSP" }

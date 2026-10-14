@@ -21,8 +21,8 @@ O domínio principal está servindo o **site novo em Astro**, não apenas o graf
 - `/` → home editorial do artista
 - `/mapa` → mapa interativo novo em Astro
 - `/en/` → versão em inglês
-- `/grafo` → grafo legacy
-- `/grafo.html` → redireciona para `/grafo`
+- `/grafo` → aposentado em 13/10/2026, redireciona para `/mapa` (`public/_redirects`)
+- `/grafo.html` → idem
 - `/robots.txt`
 - `/sitemap-index.xml`
 

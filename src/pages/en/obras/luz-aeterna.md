@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Obra.astro
-title: "Luz Æterna — Ensaio Sobre o Sol"
+title: "Luz Æterna: Ensaio Sobre o Sol"
 year: "2024"
 location: "CCBB Brasília + CCBB Belo Horizonte"
 lang: en

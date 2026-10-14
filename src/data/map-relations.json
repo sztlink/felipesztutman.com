@@ -455,6 +455,36 @@
       "evidence": "material-claude-fase6.md + INVENTARIO.md",
       "notes": "Candidata a pública; depende de confirmação editorial.",
       "modes": []
+    },
+    {
+      "id": "rel-030",
+      "source": "cachoeira",
+      "sourceKind": "OBRA",
+      "target": "2047",
+      "targetKind": "OBRA",
+      "relationType": "OBRA_OBRA",
+      "label": "revelar o invisível",
+      "visibility": "PUBLICA",
+      "confidence": "FORTE",
+      "requiresConfirmation": false,
+      "evidence": "src/pages/obras/2047.md: texto do Felipe liga 2047 ao Córrego das Almas (2012) e à Floresta Utópica (2025)",
+      "notes": "site-artista 13/10/2026",
+      "modes": []
+    },
+    {
+      "id": "rel-031",
+      "source": "floresta-utopica",
+      "sourceKind": "OBRA",
+      "target": "2047",
+      "targetKind": "OBRA",
+      "relationType": "OBRA_OBRA",
+      "label": "cadeia invisível",
+      "visibility": "PUBLICA",
+      "confidence": "FORTE",
+      "requiresConfirmation": false,
+      "evidence": "src/pages/obras/2047.md: texto do Felipe liga 2047 ao Córrego das Almas (2012) e à Floresta Utópica (2025)",
+      "notes": "site-artista 13/10/2026",
+      "modes": []
     }
   ],
   "collaboratorSeeds": [
