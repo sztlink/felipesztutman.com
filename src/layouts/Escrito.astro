@@ -11,6 +11,7 @@ interface Props {
     description?: string;
     lang?: 'pt' | 'en';
     type?: string;
+    index?: boolean;
   };
 }
 
@@ -25,6 +26,8 @@ const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug
 const heroItem = items[0] || null;
 const galleryItems = items.slice(1);
 const ogImage = heroItem?.src || undefined;
+// Entradas do diário ficam fora da busca, salvo as marcadas com index: true.
+const noindex = /^\/diario\/[^/]+/.test(Astro.url.pathname) && frontmatter.index !== true;
 const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
 ---
 <Base
@@ -36,6 +39,7 @@ const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
   showHeader={false}
   showFooter={false}
   bodyClass="page-escrito"
+  noindex={noindex}
 >
   <main class="writing-page">
     <section class="writing-entry">

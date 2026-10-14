@@ -25,6 +25,7 @@ interface Props {
   showFooter?: boolean;
   fullBleed?: boolean;
   bodyClass?: string;
+  noindex?: boolean;
 }
 const {
   title,
@@ -44,7 +45,8 @@ const {
   showHeader = true,
   showFooter = true,
   fullBleed = false,
-  bodyClass = ''
+  bodyClass = '',
+  noindex = false
 } = Astro.props;
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
@@ -64,6 +66,7 @@ const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPa
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>{title}</title>
 <meta name="description" content={description}>
+{noindex && <meta name="robots" content="noindex, follow">}
 <link rel="canonical" href={Astro.url.href}>
 <link rel="alternate" hrefLang="pt-BR" href={`https://felipesztutman.com${isEN ? currentPath.replace(/^\/en/, '') || '/' : currentPath}`}>
 <link rel="alternate" hrefLang="en" href={`https://felipesztutman.com${isEN ? currentPath : '/en' + currentPath}`}>
