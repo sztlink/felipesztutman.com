@@ -12,7 +12,6 @@ circulation:
   - { label: "Direção de experiência", value: "Expografia site-specific, luz e percurso entre trabalhos autônomos" }
 collaborationNote: "A colaboração é constitutiva da exposição: Antonio Curti assina a concepção curatorial e a curadoria, Felipe Sztutman organiza a direção de arte, tecnologia e experiência, Eduardo Raele e Rodrigo Primo integram a produção executiva, e a AYA Studio sustenta projeto multimídia e locação. O arquivo não transforma essa rede em autoria única, registra o gesto de direção que fez o conjunto funcionar como exposição habitável."
 credits:
-  - { role: "Registro fotográfico", name: "Lua Morales" }
   - { role: "Concepção curatorial e curadoria", name: "Antonio Curti" }
   - { role: "Direção de arte, tecnologia e experiência", name: "Felipe Sztutman" }
   - { role: "Produção Executiva", name: "Eduardo Raele, Rodrigo Primo" }

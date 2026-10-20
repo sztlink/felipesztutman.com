@@ -8,7 +8,6 @@ credits:
   - { role: "Artista", name: "Felipe Sztutman" }
   - { role: "Curadoria e narrativa", name: "Antonio Curti" }
   - { role: "Estúdio", name: "AYA Studio" }
-  - { role: "Fotografia", name: "Lua Morales" }
   - { role: "Produção", name: "Arte3" }
   - { role: "Patrocínio", name: "Santander Brasil" }
 galleryRatio: "3/2"

@@ -13,7 +13,6 @@ mechanism:
   - { label: "Comportamentos", value: "STRIKE traduz gestos em ataques de energia, DRIFT em esquiva, TRACE em exploração de acervo e RUSH em execução sob cronômetro em quatro CRTs" }
   - { label: "Pergunta", value: "O que cinquenta anos de cultura jogável deixaram inscrito no corpo?" }
 credits:
-  - { role: "Registro fotográfico", name: "Lua Morales" }
   - { role: "Direção de arte, tecnologia e experiência", name: "Felipe Sztutman" }
   - { role: "Concepção curatorial e curadoria", name: "Antonio Curti" }
   - { role: "Acervo", name: "Alex Mamed" }

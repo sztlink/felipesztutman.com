@@ -13,7 +13,6 @@ circulation:
   - { label: "Experience direction", value: "Site-specific exhibition design, light, and route between autonomous works" }
 collaborationNote: "Collaboration is constitutive of the exhibition: Antonio Curti signs curatorial conception and curation, Felipe Sztutman organizes art, technology, and experience direction, Eduardo Raele and Rodrigo Primo join executive production, and AYA Studio sustains the multimedia project and venue. The archive does not turn this network into single authorship, it records the directing gesture that made the set function as an inhabitable exhibition."
 credits:
-  - { role: "Photographic record", name: "Lua Morales" }
   - { role: "Curatorial conception and curation", name: "Antonio Curti" }
   - { role: "Art, technology, and experience direction", name: "Felipe Sztutman" }
   - { role: "Executive Production", name: "Eduardo Raele, Rodrigo Primo" }

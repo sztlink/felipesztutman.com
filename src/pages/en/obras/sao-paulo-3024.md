@@ -17,7 +17,6 @@ credits:
   - { role: "Artist", name: "Felipe Sztutman" }
   - { role: "Curation and narrative", name: "Antonio Curti" }
   - { role: "Studio", name: "AYA Studio" }
-  - { role: "Photography", name: "Lua Morales" }
   - { role: "Production", name: "Arte3" }
   - { role: "Sponsorship", name: "Santander Brasil" }
 press:
