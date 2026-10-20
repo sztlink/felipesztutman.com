@@ -7,7 +7,7 @@ description: "Instalação luminosa efêmera na Serra da Mantiqueira. LUZCIDADE 
 lead: "Instalação efêmera de uma noite na Serra da Mantiqueira, onde 40 metros de cabo eletroluminescente encontraram a queda d'água e encerraram a série LUZCIDADE."
 archiveNote: "No arquivo, Mantiqueira registra o limite do método paramétrico diante do ambiente natural: a forma final nasce da água, das pedras e dos pontos possíveis de fixação."
 credits:
-  - { role: "Registro fotográfico", name: "Layla Motta" }
+  - { role: "Fotografia", name: "Layla Motta" }
 publications:
   - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "p. 64–67", url: "/publicacoes/100-anos-de-arte-moderna", note: "A legenda e a imagem da obra aparecem no perfil dedicado ao artista, reforçando a série LUZCIDADE dentro de uma leitura mais ampla da trajetória." }
 ---

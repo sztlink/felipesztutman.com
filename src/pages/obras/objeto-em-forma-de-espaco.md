@@ -8,6 +8,7 @@ lead: "Ambiente sinestésico realizado no LabMIS/MIS-SP, onde som, aroma e luz d
 archiveNote: "No arquivo, esta página funciona como gesto inaugural: antes da luz como matéria urbana, já aparece aqui a decisão de construir espaços habitáveis pela combinação de elementos invisíveis."
 credits:
   - { role: "Concepção e realização", name: "Felipe Sztutman e Rodrigo Bellotto" }
+  - { role: "Fotografia", name: "Felipe Sztutman" }
 ---
 
 Em 2009, fui selecionado para o programa de residência artística do LabMIS, o Laboratório de Novas Mídias do Museu da Imagem e do Som de São Paulo. Tinha 22 anos e acabara de me formar em Mecatrônica no COTUCA. Levei para aquela residência uma pergunta que vinha do corpo: como criar ambientes que existem pela soma de elementos invisíveis? Não queria fazer um objeto que você olha. Queria fazer um espaço que você habita.

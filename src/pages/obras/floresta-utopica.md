@@ -16,6 +16,7 @@ credits:
   - { role: "Curadoria e narrativa", name: "Antonio Curti" }
   - { role: "Produção e materialização", name: "AYA Studio" }
   - { role: "Patrocínio", name: "Santander, Esfera, Return Capital" }
+  - { role: "Registro em vídeo e imagem", name: "Lua Morales" }
 ---
 
 Em 2012, fui convidado para criar uma obra de arte pública no centro de São Paulo. Escolhi revelar algo invisível: o Córrego das Almas, que corre escondido sob o pavimento do Vale do Anhangabaú. Com cabos eletroluminescentes, concebi a obra "Cachoeira", evidenciando como tentamos controlar e até mesmo ocultar os rios que sustentam nossas cidades.

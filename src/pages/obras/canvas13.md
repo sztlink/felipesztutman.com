@@ -10,6 +10,7 @@ credits:
   - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Organização festival", name: "Felipe Brait e coletivo audiovisual ZoomB" }
   - { role: "Orientação acadêmica", name: "Carlos Zibel Costa" }
+  - { role: "Fotografia", name: "Felipe Sztutman" }
 ---
 
 Em setembro de 2013, desenhei uma instalação luminosa para a Serralheria Cultural durante a 13ª edição do festival Canvas, organizado por Felipe Brait e o coletivo audiovisual ZoomB. Era a segunda obra de uma série que eu chamava LUZCIDADE, cinco trabalhos feitos entre 2009 e 2013 onde eu investigava a luz como matéria que define o espaço. Comecei pelo vértice estrutural que sustenta o telhado da Serralheria. Dali saíram seis cabos eletroluminescentes paralelos aos sarrafos do telhado, desceram pela parede, refletiram convergindo para um único ponto na altura dos olhos, e então se separaram novamente compondo um plano horizontal paralelo ao piso do corredor. Usei os 500 metros de cabo que sobraram da Cachoeira, a instalação que eu tinha feito no Vale do Anhangabaú em janeiro daquele ano para a primeira Mostra Urbe do CCBB.

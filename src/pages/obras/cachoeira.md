@@ -9,6 +9,7 @@ archiveNote: "As imagens 05 e 06 são páginas do TCC LUZCIDADE (FAU-USP, 2013) 
 credits:
   - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Curadoria", name: "Alessandra Mader, Felipe Brait, Julia Clemente" }
+  - { role: "Fotografia", name: "Diego Bis" }
 publications:
   - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "p. 64–67", url: "/publicacoes/100-anos-de-arte-moderna", note: "Perfil dedicado ao artista com reprodução e contextualização de Cachoeira ao lado de Mantiqueira e OCEANVS." }
 press:

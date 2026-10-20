@@ -22,6 +22,7 @@ credits:
   - { role: "Sourcing técnico", name: "Leonardo" }
   - { role: "Montagem", name: "Ihon" }
   - { role: "Design", name: "Ana Clara" }
+  - { role: "Fotografia", name: "Lua Morales" }
 ---
 
 Antes de aprender a desenhar, eu já construía universos. No Lego, no papel, no videogame, no RPG de mesa, sempre foi sobre criar mundos que pudessem ser habitados, sistemas que ganhassem vida quando alguém entrasse. Os jogos eletrônicos nunca foram entretenimento para mim. Eram o lugar onde aprendi que tecnologia não imita a experiência, ela *expande* o que é possível sentir e fazer. No arquivo atual, Player 1 é uma exposição temática aberta ao público, e também o primeiro lugar onde esse território fundacional aparece diretamente no cubo branco. O projeto descreve quatro instalações interativas que usam o corpo como interface: em STRIKE, gestos viram ataques de energia contra entidades de luz. Em DRIFT, o corpo se move para esquivar de objetos digitais. Em TRACE, o dedo explora cinquenta anos de história através de um acervo curado por Antonio Curti. Em RUSH, as mãos executam sob pressão em uma torre vertical de quatro CRTs empilhados, cada tela um minigame que precisa ser vencido contra o cronômetro.

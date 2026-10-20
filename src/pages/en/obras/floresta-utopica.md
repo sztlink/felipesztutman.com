@@ -17,6 +17,7 @@ credits:
   - { role: "Curation and narrative", name: "Antonio Curti" }
   - { role: "Production and materialization", name: "AYA Studio" }
   - { role: "Sponsors", name: "Santander, Esfera, Return Capital" }
+  - { role: "Video and photographic record", name: "Lua Morales" }
 ---
 
 In 2012, I was invited to create a public artwork in downtown São Paulo. I chose to reveal something invisible: the Córrego das Almas (Stream of Souls), which runs hidden beneath the pavement of Vale do Anhangabaú. Using electroluminescent cables, I conceived "Cachoeira" (Waterfall), showing how we try to control and even conceal the rivers that sustain our cities.

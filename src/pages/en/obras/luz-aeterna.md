@@ -17,6 +17,7 @@ credits:
   - { role: "Art, technology, and experience direction", name: "Felipe Sztutman" }
   - { role: "Executive Production", name: "Eduardo Raele, Rodrigo Primo" }
   - { role: "Multimedia Project and Venue", name: "AYA Studio" }
+  - { role: "Photography", name: "Lua Morales" }
 ---
 
 When Antonio Curti invited me to direct Luz Æterna, I knew the challenge wasn't just bringing together works of Brazilian new media art, it was designing the system that would allow eight artists to coexist without competing. Each work had its own language: LED panels, projections, parametric systems, physical and digital light. My job was to conceive the entire exhibition space, plan the exhibition design so that each work preserved its individuality while light unified the journey.

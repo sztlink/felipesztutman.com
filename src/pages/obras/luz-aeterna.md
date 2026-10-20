@@ -16,6 +16,7 @@ credits:
   - { role: "Direção de arte, tecnologia e experiência", name: "Felipe Sztutman" }
   - { role: "Produção Executiva", name: "Eduardo Raele, Rodrigo Primo" }
   - { role: "Projeto Multimídia e Locação", name: "AYA Studio" }
+  - { role: "Fotografia", name: "Lua Morales" }
 ---
 
 Quando Antonio Curti me convidou para dirigir a experiência de Luz Æterna, eu sabia que o desafio não era apenas reunir obras de new media art brasileira, era desenhar o sistema que permitiria oito artistas coexistirem sem competir. Cada trabalho tinha sua própria linguagem: painéis de LED, projeções, sistemas paramétricos, luz física e digital. Meu trabalho foi conceber o espaço expográfico inteiro, planejar a expografia para que cada obra preservasse sua individualidade enquanto a luz unificava a jornada.

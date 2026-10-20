@@ -9,6 +9,7 @@ archiveNote: "In the archive, this page functions as an inaugural gesture: befor
 lang: en
 credits:
   - { role: "Concept and production", name: "Felipe Sztutman e Rodrigo Bellotto" }
+  - { role: "Photography", name: "Felipe Sztutman" }
 ---
 
 In 2009, I was selected for the LabMIS artist residency program, the New Media Laboratory at the Museum of Image and Sound in São Paulo. I was 22 and had just graduated in Mechatronics from COTUCA. I brought to that residency a question that came from the body: how to create environments that exist through the sum of invisible elements? I didn't want to make an object you look at. I wanted to make a space you inhabit.

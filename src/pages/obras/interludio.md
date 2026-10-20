@@ -14,6 +14,7 @@ mechanism:
 credits:
   - { role: "Hardware/sensores", name: "Wesley Lee" }
   - { role: "Curadoria", name: "Antonio Curti" }
+  - { role: "Fotografia", name: "Junior Viana" }
 press:
   - { source: "Folha de São Paulo", url: "https://fotografia.folha.uol.com.br/galerias/1638635430640161-exposicao-metaverso-no-farol-santander", title: "Galeria de fotos" }
   - { source: "Diário do Grande ABC", url: "https://www.dgabc.com.br/Noticia/3085221/exposicao-metavers%C3%B8-prova-que-o-uso-de-tecnologia-ja-e-significativo-no-brasil", title: "Crítica" }

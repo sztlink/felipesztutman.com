@@ -2,13 +2,13 @@
   "objeto-em-forma-de-espaco": [
     {
       "src": "/img/obras/objeto-em-forma-de-espaco/01-fibras-blue.jpg",
-      "caption": "Fibras ópticas no ambiente sinestésico · foto: Felipe Sztutman",
-      "captionEn": "Optical fibers in the synesthetic environment · photo: Felipe Sztutman"
+      "caption": "Fibras ópticas no ambiente sinestésico",
+      "captionEn": "Optical fibers in the synesthetic environment"
     },
     {
       "src": "/img/obras/objeto-em-forma-de-espaco/02-fibras-teal.jpg",
-      "caption": "Fibras ópticas e luz no espaço da instalação · foto: Felipe Sztutman",
-      "captionEn": "Optical fibers and light in the installation space · photo: Felipe Sztutman"
+      "caption": "Fibras ópticas e luz no espaço da instalação",
+      "captionEn": "Optical fibers and light in the installation space"
     },
     {
       "src": "/img/obras/objeto-em-forma-de-espaco/03-tcc_page_058.jpg",
@@ -24,23 +24,23 @@
   "cachoeira": [
     {
       "src": "/img/obras/cachoeira/01-aerea-viaduto.jpg",
-      "caption": "Vista aérea do Viaduto do Chá e do traçado luminoso · foto: Diego Bis",
-      "captionEn": "Aerial view of Viaduto do Chá and the light trace · photo: Diego Bis"
+      "caption": "Vista aérea do Viaduto do Chá e do traçado luminoso",
+      "captionEn": "Aerial view of Viaduto do Chá and the light trace"
     },
     {
       "src": "/img/obras/cachoeira/02-cityscape.jpg",
-      "caption": "Traçado luminoso no Vale do Anhangabaú · foto: Diego Bis",
-      "captionEn": "Light trace at Vale do Anhangabaú · photo: Diego Bis"
+      "caption": "Traçado luminoso no Vale do Anhangabaú",
+      "captionEn": "Light trace at Vale do Anhangabaú"
     },
     {
       "src": "/img/obras/cachoeira/03-multidao.jpg",
-      "caption": "Público no Vale do Anhangabaú · foto: Diego Bis",
-      "captionEn": "Audience at Vale do Anhangabaú · photo: Diego Bis"
+      "caption": "Público no Vale do Anhangabaú",
+      "captionEn": "Audience at Vale do Anhangabaú"
     },
     {
       "src": "/img/obras/cachoeira/04-viaduto-noite.jpg",
-      "caption": "Viaduto do Chá à noite com o traçado da obra · foto: Diego Bis",
-      "captionEn": "Viaduto do Chá at night with the trace of the work · photo: Diego Bis"
+      "caption": "Viaduto do Chá à noite com o traçado da obra",
+      "captionEn": "Viaduto do Chá at night with the trace of the work"
     },
     {
       "src": "/img/obras/cachoeira/05-tcc_page_064.jpg",
@@ -56,109 +56,159 @@
   "canvas13": [
     {
       "src": "/img/obras/canvas13/01-canvas13-hero-detalhe-parede.jpg",
-      "caption": "Detalhe dos cabos eletroluminescentes na parede · foto: Felipe Sztutman",
-      "captionEn": "Detail of the electroluminescent cables on the wall · photo: Felipe Sztutman"
+      "caption": "Detalhe dos cabos eletroluminescentes na parede",
+      "captionEn": "Detail of the electroluminescent cables on the wall"
     },
     {
       "src": "/img/obras/canvas13/02-canvas13-hero-linhas-abstract.jpg",
-      "caption": "Linhas de luz e geometria da instalação · foto: Felipe Sztutman",
-      "captionEn": "Lines of light and the geometry of the installation · photo: Felipe Sztutman"
+      "caption": "Linhas de luz e geometria da instalação",
+      "captionEn": "Lines of light and the geometry of the installation"
     },
     {
       "src": "/img/obras/canvas13/03-canvas13-hero-linhas-teto.jpg",
-      "caption": "Cabos eletroluminescentes acompanhando o telhado · foto: Felipe Sztutman",
-      "captionEn": "Electroluminescent cables following the roof · photo: Felipe Sztutman"
+      "caption": "Cabos eletroluminescentes acompanhando o telhado",
+      "captionEn": "Electroluminescent cables following the roof"
     },
     {
       "src": "/img/obras/canvas13/04-canvas13-gallery-bancos-espaco.jpg",
-      "caption": "Instalação no espaço da Serralheria Cultural · foto: Felipe Sztutman",
-      "captionEn": "Installation at Serralheria Cultural · photo: Felipe Sztutman"
+      "caption": "Instalação no espaço da Serralheria Cultural",
+      "captionEn": "Installation at Serralheria Cultural"
     },
     {
       "src": "/img/obras/canvas13/05-canvas13-gallery-detalhe-pesso.jpg",
-      "caption": "Detalhe da instalação durante o festival · foto: Felipe Sztutman",
-      "captionEn": "Installation detail during the festival · photo: Felipe Sztutman"
+      "caption": "Detalhe da instalação durante o festival",
+      "captionEn": "Installation detail during the festival"
     }
   ],
   "corrego-rio-verde": [
     {
       "src": "/img/obras/corrego-rio-verde/01-beco-noite.jpg",
-      "caption": "Beco do Batman à noite com intervenção luminosa · foto: Wesley Lee Yang",
-      "captionEn": "Beco do Batman at night with the light intervention · photo: Wesley Lee Yang"
+      "caption": "Beco do Batman à noite com intervenção luminosa",
+      "captionEn": "Beco do Batman at night with the light intervention"
     },
     {
       "src": "/img/obras/corrego-rio-verde/02-geometria.jpg",
-      "caption": "Geometria da luz suspensa no beco · foto: Wesley Lee Yang",
-      "captionEn": "Geometry of light suspended in the alley · photo: Wesley Lee Yang"
+      "caption": "Geometria da luz suspensa no beco",
+      "captionEn": "Geometry of light suspended in the alley"
     },
     {
       "src": "/img/obras/corrego-rio-verde/03-luz-rua.jpg",
-      "caption": "Luz no espaço público da Vila Madalena · foto: Wesley Lee Yang",
-      "captionEn": "Light in the public space of Vila Madalena · photo: Wesley Lee Yang"
+      "caption": "Luz no espaço público da Vila Madalena",
+      "captionEn": "Light in the public space of Vila Madalena"
     },
     {
       "src": "/img/obras/corrego-rio-verde/04-trails-cobblestone.jpg",
-      "caption": "Cabos eletroluminescentes sobre o calçamento · foto: Wesley Lee Yang",
-      "captionEn": "Electroluminescent cables on the pavement · photo: Wesley Lee Yang"
+      "caption": "Cabos eletroluminescentes sobre o calçamento",
+      "captionEn": "Electroluminescent cables on the pavement"
     },
     {
       "src": "/img/obras/corrego-rio-verde/05-beco-dinamico.jpg",
-      "caption": "Intervenção luminosa no fluxo do beco · foto: Wesley Lee Yang",
-      "captionEn": "Light intervention in the flow of the alley · photo: Wesley Lee Yang"
+      "caption": "Intervenção luminosa no fluxo do beco",
+      "captionEn": "Light intervention in the flow of the alley"
     },
     {
       "src": "/img/obras/corrego-rio-verde/06-geometria-ceu.jpg",
-      "caption": "Geometria suspensa sobre o Beco do Batman · foto: Wesley Lee Yang",
-      "captionEn": "Geometry suspended over Beco do Batman · photo: Wesley Lee Yang"
+      "caption": "Geometria suspensa sobre o Beco do Batman",
+      "captionEn": "Geometry suspended over Beco do Batman"
     }
   ],
   "mantiqueira": [
     {
       "src": "/img/obras/mantiqueira/01-fibras-cachoeira.jpg",
-      "caption": "Cabos eletroluminescentes na queda d'água · foto: Layla Motta",
-      "captionEn": "Electroluminescent cables in the waterfall · photo: Layla Motta"
+      "caption": "Cabos eletroluminescentes na queda d'água",
+      "captionEn": "Electroluminescent cables in the waterfall"
     },
     {
       "src": "/img/obras/mantiqueira/02-piramide-floresta.jpg",
-      "caption": "Forma piramidal entre água e floresta · foto: Layla Motta",
-      "captionEn": "Pyramidal form between water and forest · photo: Layla Motta"
+      "caption": "Forma piramidal entre água e floresta",
+      "captionEn": "Pyramidal form between water and forest"
     },
     {
       "src": "/img/obras/mantiqueira/03-triangulo-1.jpg",
-      "caption": "Geometria luminosa na Serra da Mantiqueira · foto: Layla Motta",
-      "captionEn": "Light geometry in the Serra da Mantiqueira · photo: Layla Motta"
+      "caption": "Geometria luminosa na Serra da Mantiqueira",
+      "captionEn": "Light geometry in the Serra da Mantiqueira"
     },
     {
       "src": "/img/obras/mantiqueira/04-triangulo-2.jpg",
-      "caption": "Triângulo de luz na queda d'água · foto: Layla Motta",
-      "captionEn": "Triangle of light in the waterfall · photo: Layla Motta"
+      "caption": "Triângulo de luz na queda d'água",
+      "captionEn": "Triangle of light in the waterfall"
     },
     {
       "src": "/img/obras/mantiqueira/05-triangulo-rochas.jpg",
-      "caption": "Cabos fixados entre pedras e água · foto: Layla Motta",
-      "captionEn": "Cables fixed between rocks and water · photo: Layla Motta"
+      "caption": "Cabos fixados entre pedras e água",
+      "captionEn": "Cables fixed between rocks and water"
     },
     {
       "src": "/img/obras/mantiqueira/06-floresta-azul.jpg",
-      "caption": "Luz azul na floresta durante a montagem efêmera · foto: Layla Motta",
-      "captionEn": "Blue light in the forest during the ephemeral setup · photo: Layla Motta"
+      "caption": "Luz azul na floresta durante a montagem efêmera",
+      "captionEn": "Blue light in the forest during the ephemeral setup"
     }
   ],
   "mementos": [
     {
-      "src": "/img/obras/mementos/01-mementos-laser-cristal.jpg",
-      "caption": "Mementos · feixes de laser sobre cristal, Metaversø, Farol Santander, 2019 · vista 01",
-      "captionEn": "Mementos · laser beams over crystal, Metaversø, Farol Santander, 2019 · view 01"
+      "src": "/img/obras/mementos/01-4959.jpg",
+      "caption": "Mementos · O cristal no centro da sala, atravessado pelos feixes. Metaversø, Farol Santander, 2019",
+      "captionEn": "Mementos · The crystal at the center of the room, crossed by the beams. Metaversø, Farol Santander, 2019"
     },
     {
-      "src": "/img/obras/mementos/02-mementos-laser-cristal.jpg",
-      "caption": "Mementos · feixes de laser sobre cristal, Metaversø, Farol Santander, 2019 · vista 02",
-      "captionEn": "Mementos · laser beams over crystal, Metaversø, Farol Santander, 2019 · view 02"
+      "src": "/img/obras/mementos/02-6072.jpg",
+      "caption": "Mementos · Feixes que se cruzam e torcem em uma superfície de luz",
+      "captionEn": "Mementos · Beams crossing and twisting into a surface of light"
     },
     {
-      "src": "/img/obras/mementos/03-mementos-laser-cristal.jpg",
-      "caption": "Mementos · feixes de laser sobre cristal, Metaversø, Farol Santander, 2019 · vista 03",
-      "captionEn": "Mementos · laser beams over crystal, Metaversø, Farol Santander, 2019 · view 03"
+      "src": "/img/obras/mementos/03-5926.jpg",
+      "caption": "Mementos · Uma mão sobre o cristal, entre as linhas de laser",
+      "captionEn": "Mementos · A hand on the crystal, among the laser lines"
+    },
+    {
+      "src": "/img/obras/mementos/04-4917.jpg",
+      "caption": "Mementos · Vista geral: o cristal sobre o pedestal e a grade de feixes no espaço",
+      "captionEn": "Mementos · Overview: the crystal on its pedestal and the grid of beams in space"
+    },
+    {
+      "src": "/img/obras/mementos/05-6095.jpg",
+      "caption": "Mementos · Feixes refratados abrem em leque a partir do cristal",
+      "captionEn": "Mementos · Refracted beams fan out from the crystal"
+    },
+    {
+      "src": "/img/obras/mementos/06-4362.jpg",
+      "caption": "Mementos · O sistema em tempo real: o patch que gera os padrões, dentro da instalação",
+      "captionEn": "Mementos · The system in real time: the patch that generates the patterns, inside the installation"
+    },
+    {
+      "src": "/img/obras/mementos/07-5953.jpg",
+      "caption": "Mementos · O toque no cristal, de perto",
+      "captionEn": "Mementos · Touching the crystal, up close"
+    },
+    {
+      "src": "/img/obras/mementos/08-6170.jpg",
+      "caption": "Mementos · Os lasers convergem em um único ponto e voltam a se abrir",
+      "captionEn": "Mementos · The lasers converge on a single point and open again"
+    },
+    {
+      "src": "/img/obras/mementos/09-4973.jpg",
+      "caption": "Mementos · O cristal em diagonal, sob a curva formada pelos feixes",
+      "captionEn": "Mementos · The crystal on the diagonal, beneath the curve formed by the beams"
+    },
+    {
+      "src": "/img/obras/mementos/10-6181.jpg",
+      "caption": "Mementos · Linhas retas desenham uma curva no escuro",
+      "captionEn": "Mementos · Straight lines draw a curve in the dark"
+    },
+    {
+      "src": "/img/obras/mementos/11-5840.jpg",
+      "caption": "Mementos · Visitantes dentro do campo de luz, o cristal ao fundo",
+      "captionEn": "Mementos · Visitors inside the field of light, the crystal behind them"
+    },
+    {
+      "src": "/img/obras/mementos/12-6151.jpg",
+      "caption": "Mementos · A fileira de emissores e o feixe que se torce entre eles",
+      "captionEn": "Mementos · The row of emitters and the beam twisting between them"
+    },
+    {
+      "src": "/img/obras/mementos/13-6100.jpg",
+      "caption": "Mementos · Um feixe mais intenso corta a trama de lasers",
+      "captionEn": "Mementos · A stronger beam cuts across the web of lasers"
     }
   ],
   "oceanvs": [
@@ -462,8 +512,8 @@
   "interludio": [
     {
       "src": "/img/obras/interludio/01-hero.jpg",
-      "caption": "Interlúdio · sensores de proximidade e luz responsiva · foto: Junior Viana",
-      "captionEn": "Interlúdio · proximity sensors and responsive light · photo: Junior Viana"
+      "caption": "Interlúdio · sensores de proximidade e luz responsiva",
+      "captionEn": "Interlúdio · proximity sensors and responsive light"
     },
     {
       "src": "/img/obras/interludio/02-gallery.jpg",

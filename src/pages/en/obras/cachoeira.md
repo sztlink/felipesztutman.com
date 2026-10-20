@@ -10,6 +10,7 @@ lang: en
 credits:
   - { role: "Concept", name: "Felipe Sztutman" }
   - { role: "Curatorship", name: "Alessandra Mader, Felipe Brait, Julia Clemente" }
+  - { role: "Photography", name: "Diego Bis" }
 publications:
   - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64–67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "Dedicated profile on the artist, including Cachoeira alongside Mantiqueira and OCEANVS." }
 press:
