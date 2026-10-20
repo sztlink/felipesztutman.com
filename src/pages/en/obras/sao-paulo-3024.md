@@ -17,12 +17,14 @@ credits:
   - { role: "Artist", name: "Felipe Sztutman" }
   - { role: "Curation and narrative", name: "Antonio Curti" }
   - { role: "Studio", name: "AYA Studio" }
+  - { role: "Photography", name: "Lua Morales" }
   - { role: "Production", name: "Arte3" }
   - { role: "Sponsorship", name: "Santander Brasil" }
 press:
   - { source: "Farol Santander", url: "https://www.farolsantander.com.br/en/sp/exhibition/sao-paulo-3024-immersive-digital-art/", title: "São Paulo 3024: Immersive Digital Art" }
   - { source: "MARRA Comunicação", url: "https://marracomunica.com.br/nova-exposicao-do-farol-santander-mostra-como-sera-sao-paulo-daqui-mil-anos/", title: "Nova exposição do Farol Santander mostra como será São Paulo daqui mil anos" }
   - { source: "São Paulo Secreto", url: "https://saopaulosecreto.com/sao-paulo-3024-farol-santander/", title: "São Paulo 3024 no Farol Santander" }
+galleryRatio: "3/2"
 filme: { src: "https://video.heretica.xyz/felipesztutman/sp3024-sala.mp4", poster: "/img/obras/sao-paulo-3024/video-capa.jpg", caption: "The immersive room at Farol Santander, with Felipe Sztutman and Antonio Curti. Video: AYA Studio, 2024 (in Portuguese)." }
 ---
 

@@ -37,6 +37,7 @@ interface Props {
     sameAs?: string[];
     artMedium?: string;
     galleryLabel?: {pt: string; en: string};
+    galleryRatio?: string;
     lang?: 'pt' | 'en';
   };
 }
@@ -334,7 +335,7 @@ function normalizePublicationUrl(url?: string) {
     {items.length > 3 && (
       <section class="gallery">
         <div class="section-kicker">{frontmatter.galleryLabel ? (isEN ? frontmatter.galleryLabel.en : frontmatter.galleryLabel.pt) : (isEN ? 'Documentation' : 'Documentação')}</div>
-        <div class="gallery-grid">
+        <div class="gallery-grid" data-ratio={frontmatter.galleryRatio} style={frontmatter.galleryRatio ? `--ratio:${frontmatter.galleryRatio}` : undefined}>
           {items.slice(3).map((item, index) => (
             <figure class="gallery-item">
               <img src={item.src} alt={imageAlt(item, index + 3)} loading="lazy" />
@@ -580,6 +581,7 @@ body.page-obra a{text-decoration:none}
 .gallery-item{margin:0}
 .gallery-item.hero{grid-column:1 / -1}
 .gallery-item img{display:block;width:100%;height:auto;background:#111}
+.gallery-grid[data-ratio] .gallery-item img{aspect-ratio:var(--ratio);object-fit:cover}
 .gallery-item figcaption{padding:.55rem .6rem 1.2rem;font:.72rem/1.5 var(--mono);color:rgba(255,255,255,.5)}
 .archive-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;padding-top:1.5rem;border-top:1px solid var(--line);margin-top:1.5rem}
 .archive-nav-item{display:flex;flex-direction:column;gap:.25rem;padding:.85rem 0;color:#ffffff}
