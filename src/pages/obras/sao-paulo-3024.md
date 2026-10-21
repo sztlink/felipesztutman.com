@@ -5,9 +5,23 @@ year: "2024"
 location: "Farol Santander São Paulo"
 description: "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRA como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real."
 credits:
-  - { role: "Artista", name: "Felipe Sztutman" }
+  - { role: "Assinatura", name: "AYA Studio" }
+  - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Curadoria e narrativa", name: "Antonio Curti" }
-  - { role: "Estúdio", name: "AYA Studio" }
+  - { role: "Direção executiva", name: "Felipe Sztutman" }
+  - { role: "Gestão", name: "Ana Helena Curti" }
+  - { role: "Produção", name: "Gabriela Gonçalves" }
+  - { role: "Direção de conteúdo e motion graphics", name: "João Alencar" }
+  - { role: "Produção técnica", name: "Ihon Yadoya" }
+  - { role: "Produção de conteúdo e motion graphics", name: "Raphael Minhoso" }
+  - { role: "Produção musical", name: "Juvi Chagas" }
+  - { role: "Programação de interatividade", name: "Sala28" }
+  - { role: "Assistente técnico", name: "Leonardo Primo" }
+  - { role: "Comunicação visual e design gráfico", name: "Ana Carolina Curti Sanches" }
+  - { role: "Cenografia", name: "Office One" }
+  - { role: "Montagem", name: "1000 Faces" }
+  - { role: "Elétrica e iluminação", name: "MMV" }
+  - { role: "Projeto multimídia e locação de equipamentos", name: "AYA Studio" }
   - { role: "Produção", name: "Arte3" }
   - { role: "Patrocínio", name: "Santander Brasil" }
   - { role: "Fotografia", name: "Lua Morales" }

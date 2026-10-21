@@ -10,12 +10,31 @@ circulation:
   - { label: "Itinerância", value: "São Paulo, Belo Horizonte e Rio de Janeiro" }
   - { label: "Estrutura", value: "Sala imersiva de 11 minutos e 40 segundos com quinze projetores laser sincronizados" }
   - { label: "Matéria", value: "Vídeo, luz, som, automação e projeção organizados como um único sistema" }
-collaborationNote: "A curadoria de Antonio Curti, a direção de experiência e tecnologia de Felipe Sztutman, a direção audiovisual de Raphael Minhoso, o conteúdo original de João Alencar e a integração de sistemas com Ihon Yadoya fazem a sala imersiva existir como materialização coletiva sem deslocar a autoria artística de Yoshitaka Amano."
+collaborationNote: "A curadoria de Antonio Curti, a direção de experiência e tecnologia de Felipe Sztutman, a coordenação de conteúdo audiovisual de João Alencar, o motion e a produção de conteúdo de Raphael Minhoso e a integração de sistemas com Ihon Yadoya fazem a sala imersiva existir como materialização coletiva sem deslocar a autoria artística de Yoshitaka Amano."
 credits:
   - { role: "Artista", name: "Yoshitaka Amano" }
-  - { role: "Concepção curatorial e curadoria", name: "Antonio Curti" }
+  - { role: "Concepção e curadoria da exposição", name: "Antonio Curti" }
   - { role: "Direção de experiência e tecnologia", name: "Felipe Sztutman" }
-  - { role: "Produção e materialização", name: "AYA Studio" }
+  - { role: "Concepção e desenvolvimento da sala imersiva", name: "AYA Studio (São Paulo); AYA Studio, AC Studio e SZT Arte e Tecnologia (Belo Horizonte, Rio de Janeiro)" }
+  - { role: "Coordenação de produção", name: "Rodrigo Primo (São Paulo)" }
+  - { role: "Produção executiva", name: "Eduardo Raele (Belo Horizonte, Rio de Janeiro)" }
+  - { role: "Assistente de curadoria", name: "Gabriela Gonçalves (São Paulo); Yákara Santos (Belo Horizonte, Rio de Janeiro)" }
+  - { role: "Produção técnica", name: "Ihon Yadoya" }
+  - { role: "Coordenação de conteúdo audiovisual", name: "João Alencar (São Paulo)" }
+  - { role: "Produção de conteúdo em motion graphics", name: "Raphael Minhoso; João Alencar (São Paulo); Thiago Daudt, Automotion, AC Studio (Belo Horizonte, Rio de Janeiro)" }
+  - { role: "Decupagem de material digital", name: "Thiago Daudt (São Paulo)" }
+  - { role: "Assistência tecnológica", name: "Raphael Minhoso (Rio de Janeiro)" }
+  - { role: "Projeto expográfico", name: "Brígida Garrido" }
+  - { role: "Comunicação visual", name: "Ana Carolina Curti Sanches" }
+  - { role: "Composição de trilha sonora", name: "Juvi Chagas" }
+  - { role: "Projeto de iluminação", name: "André Boll" }
+  - { role: "Cenografia", name: "EPROM Secall (São Paulo); Secall Cenografia (Belo Horizonte, Rio de Janeiro)" }
+  - { role: "Execução de iluminação", name: "Santa Luz" }
+  - { role: "Elétrica", name: "MMV (São Paulo)" }
+  - { role: "Montagem audiovisual", name: "BUCK (São Paulo)" }
+  - { role: "Montagem técnica", name: "EVJ Produções (Rio de Janeiro)" }
+  - { role: "Confecção de suportes", name: "1000 Faces (Belo Horizonte, Rio de Janeiro)" }
+  - { role: "Locação de equipamentos multimídia", name: "SZT Arte e Tecnologia (Belo Horizonte, Rio de Janeiro)" }
   - { role: "Fotografia", name: "Lua Morales" }
 press:
   - { source: "CNN Brasil", url: "https://www.cnnbrasil.com.br/lifestyle/maior-exposicao-de-yoshitaka-amano-designer-de-final-fantasy-chega-a-bh/", title: "Maior exposição de Yoshitaka Amano, designer de Final Fantasy, chega a BH" }

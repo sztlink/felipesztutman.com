@@ -11,12 +11,22 @@ circulation:
   - { label: "Circuit", value: "CCBB Brasília and CCBB Belo Horizonte" }
   - { label: "Structure", value: "Collective new media art exhibition with eight Brazilian artists" }
   - { label: "Experience direction", value: "Site-specific exhibition design, light, and route between autonomous works" }
-collaborationNote: "Collaboration is constitutive of the exhibition: Antonio Curti signs curatorial conception and curation, Felipe Sztutman organizes art, technology, and experience direction, Eduardo Raele and Rodrigo Primo join executive production, and AYA Studio sustains the multimedia project and venue. The archive does not turn this network into single authorship, it records the directing gesture that made the set function as an inhabitable exhibition."
+collaborationNote: "Collaboration is constitutive of the exhibition: Antonio Curti signs curatorial conception and curation, Felipe Sztutman organizes art, technology, and experience direction, Eduardo Raele and Rodrigo Primo join executive production, and AYA Studio sustains the multimedia project and equipment rental. The archive does not turn this network into single authorship, it records the directing gesture that made the set function as an inhabitable exhibition."
 credits:
-  - { role: "Curatorial conception and curation", name: "Antonio Curti" }
+  - { role: "Concept and curation of the exhibition", name: "Antonio Curti" }
   - { role: "Art, technology, and experience direction", name: "Felipe Sztutman" }
-  - { role: "Executive Production", name: "Eduardo Raele, Rodrigo Primo" }
-  - { role: "Multimedia Project and Venue", name: "AYA Studio" }
+  - { role: "Executive production", name: "Eduardo Raele, Rodrigo Primo" }
+  - { role: "Technical direction", name: "Ihon Yadoya, João Alencar" }
+  - { role: "Curatorial and production assistant", name: "Gabriela Gonçalves" }
+  - { role: "Technical assistant", name: "Raphael Minhoso; Lucas Martins Reis (Belo Horizonte)" }
+  - { role: "Visual communication", name: "Ana Carolina Curti Sanches" }
+  - { role: "Exhibition design", name: "Tiago Guimarães" }
+  - { role: "Lighting design", name: "Clara Caramez" }
+  - { role: "Engineering", name: "Murilo Jarreta" }
+  - { role: "Local production", name: "Gian Spina (Belo Horizonte); Gisele Lima, Camila Netto (Brasília)" }
+  - { role: "Exhibition design execution", name: "Fala Cenários" }
+  - { role: "Assembly", name: "1000 Faces" }
+  - { role: "Multimedia project and equipment rental", name: "AYA Studio" }
   - { role: "Photography", name: "Lua Morales" }
 ---
 

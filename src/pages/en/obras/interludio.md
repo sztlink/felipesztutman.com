@@ -12,8 +12,11 @@ mechanism:
   - { label: "Operation", value: "Without a body present, the system remains inert, the work only exists when someone approaches" }
   - { label: "Question", value: "What is the fundamental role of the human in an era of exponential technological advancement?" }
 credits:
-  - { role: "Hardware/sensors", name: "Wesley Lee" }
+  - { role: "Signature", name: "AYA Studio x Wesley Lee" }
+  - { role: "Concept", name: "Felipe Sztutman" }
   - { role: "Curator", name: "Antonio Curti" }
+  - { role: "Technical and multimedia direction", name: "Felipe Sztutman" }
+  - { role: "Hardware/sensors", name: "Wesley Lee" }
   - { role: "Photography", name: "Junior Viana" }
 press:
   - { source: "Folha de São Paulo", url: "https://fotografia.folha.uol.com.br/galerias/1638635430640161-exposicao-metaverso-no-farol-santander", title: "Galeria de fotos" }

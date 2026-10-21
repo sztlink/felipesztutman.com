@@ -10,12 +10,22 @@ circulation:
   - { label: "Circuito", value: "CCBB Brasília e CCBB Belo Horizonte" }
   - { label: "Estrutura", value: "Exposição coletiva de new media art com oito artistas brasileiros" }
   - { label: "Direção de experiência", value: "Expografia site-specific, luz e percurso entre trabalhos autônomos" }
-collaborationNote: "A colaboração é constitutiva da exposição: Antonio Curti assina a concepção curatorial e a curadoria, Felipe Sztutman organiza a direção de arte, tecnologia e experiência, Eduardo Raele e Rodrigo Primo integram a produção executiva, e a AYA Studio sustenta projeto multimídia e locação. O arquivo não transforma essa rede em autoria única, registra o gesto de direção que fez o conjunto funcionar como exposição habitável."
+collaborationNote: "A colaboração é constitutiva da exposição: Antonio Curti assina a concepção curatorial e a curadoria, Felipe Sztutman organiza a direção de arte, tecnologia e experiência, Eduardo Raele e Rodrigo Primo integram a produção executiva, e a AYA Studio sustenta projeto multimídia e locação de equipamentos. O arquivo não transforma essa rede em autoria única, registra o gesto de direção que fez o conjunto funcionar como exposição habitável."
 credits:
-  - { role: "Concepção curatorial e curadoria", name: "Antonio Curti" }
+  - { role: "Concepção e curadoria da exposição", name: "Antonio Curti" }
   - { role: "Direção de arte, tecnologia e experiência", name: "Felipe Sztutman" }
-  - { role: "Produção Executiva", name: "Eduardo Raele, Rodrigo Primo" }
-  - { role: "Projeto Multimídia e Locação", name: "AYA Studio" }
+  - { role: "Produção executiva", name: "Eduardo Raele, Rodrigo Primo" }
+  - { role: "Direção técnica", name: "Ihon Yadoya, João Alencar" }
+  - { role: "Assistente de curadoria e de produção", name: "Gabriela Gonçalves" }
+  - { role: "Assistente técnico", name: "Raphael Minhoso; Lucas Martins Reis (Belo Horizonte)" }
+  - { role: "Comunicação visual", name: "Ana Carolina Curti Sanches" }
+  - { role: "Projeto expográfico", name: "Tiago Guimarães" }
+  - { role: "Projeto de iluminação", name: "Clara Caramez" }
+  - { role: "Engenharia", name: "Murilo Jarreta" }
+  - { role: "Produção local", name: "Gian Spina (Belo Horizonte); Gisele Lima, Camila Netto (Brasília)" }
+  - { role: "Execução do projeto expográfico", name: "Fala Cenários" }
+  - { role: "Montagem", name: "1000 Faces" }
+  - { role: "Projeto multimídia e locação de equipamentos", name: "AYA Studio" }
   - { role: "Fotografia", name: "Lua Morales" }
 ---
 

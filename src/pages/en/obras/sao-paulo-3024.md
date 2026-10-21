@@ -14,9 +14,23 @@ mechanism:
   - { label: "Infrastructure", value: "Eleven synchronized projectors, 5.1 sound, and a distributed three-zone network with redundancy" }
   - { label: "Question", value: "Is technology illustrating the future, or asking whether the future is already hidden inside today's machines?" }
 credits:
-  - { role: "Artist", name: "Felipe Sztutman" }
+  - { role: "Signature", name: "AYA Studio" }
+  - { role: "Concept", name: "Felipe Sztutman" }
   - { role: "Curation and narrative", name: "Antonio Curti" }
-  - { role: "Studio", name: "AYA Studio" }
+  - { role: "Executive direction", name: "Felipe Sztutman" }
+  - { role: "Management", name: "Ana Helena Curti" }
+  - { role: "Production", name: "Gabriela Gonçalves" }
+  - { role: "Content direction and motion graphics", name: "João Alencar" }
+  - { role: "Technical production", name: "Ihon Yadoya" }
+  - { role: "Content production and motion graphics", name: "Raphael Minhoso" }
+  - { role: "Music production", name: "Juvi Chagas" }
+  - { role: "Interactivity programming", name: "Sala28" }
+  - { role: "Technical assistant", name: "Leonardo Primo" }
+  - { role: "Visual communication and graphic design", name: "Ana Carolina Curti Sanches" }
+  - { role: "Scenography", name: "Office One" }
+  - { role: "Assembly", name: "1000 Faces" }
+  - { role: "Electrical and lighting", name: "MMV" }
+  - { role: "Multimedia project and equipment rental", name: "AYA Studio" }
   - { role: "Production", name: "Arte3" }
   - { role: "Sponsorship", name: "Santander Brasil" }
   - { role: "Photography", name: "Lua Morales" }

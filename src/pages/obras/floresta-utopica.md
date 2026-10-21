@@ -12,9 +12,20 @@ circulation:
   - { label: "Estrutura", value: "Projeção mapeada, design sonoro, aromas e escultura luminosa central" }
 collaborationNote: "Na AYA, a obra se constrói pela tradução de processos ecológicos em linguagem espacial. Em vez de reproduzir a natureza literalmente, a equipe organiza imagem, som, aroma e luz para tornar sensíveis as redes invisíveis entre plantas, fungos, solo e água."
 credits:
-  - { role: "Artista", name: "Felipe Sztutman" }
-  - { role: "Curadoria e narrativa", name: "Antonio Curti" }
-  - { role: "Produção e materialização", name: "AYA Studio" }
+  - { role: "Assinatura", name: "AYA Studio" }
+  - { role: "Concepção", name: "Felipe Sztutman" }
+  - { role: "Concepção da série e curadoria", name: "Antonio Curti" }
+  - { role: "Direção geral e técnica", name: "Felipe Sztutman" }
+  - { role: "Produção", name: "Gabriela Gonçalves" }
+  - { role: "Produção técnica", name: "Ihon Yadoya" }
+  - { role: "Desenvolvimento e coordenação de conteúdo audiovisual", name: "João Alencar" }
+  - { role: "Produção de conteúdo audiovisual", name: "Raphael Minhoso" }
+  - { role: "Produção de trilha sonora", name: "Juvi Chagas" }
+  - { role: "Assistente técnico", name: "Leonardo Primo" }
+  - { role: "Projeto expográfico", name: "Brígida Garrido" }
+  - { role: "Design gráfico", name: "Ana Carolina Curti Sanches" }
+  - { role: "Cenografia", name: "EPROM" }
+  - { role: "Elétrica e iluminação", name: "MMV" }
   - { role: "Patrocínio", name: "Santander, Esfera, Return Capital" }
   - { role: "Registro em vídeo e imagem", name: "Lua Morales" }
 ---

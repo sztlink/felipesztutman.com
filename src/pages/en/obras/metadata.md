@@ -14,8 +14,19 @@ mechanism:
   - { label: "Time", value: "The system crosses real-time data with historical marks and retroactive data" }
   - { label: "Question", value: "How can São Paulo be X-rayed?" }
 credits:
-  - { role: "Artist", name: "Felipe Sztutman" }
+  - { role: "Signature", name: "AYA Studio" }
+  - { role: "Concept", name: "Felipe Sztutman" }
   - { role: "Curator", name: "Antonio Curti" }
+  - { role: "Executive direction", name: "Felipe Sztutman" }
+  - { role: "Technical direction", name: "João Alencar" }
+  - { role: "Curatorial assistant", name: "Gabriela Gonçalves" }
+  - { role: "Executive production", name: "Rodrigo Primo" }
+  - { role: "Motion graphics development", name: "Flávio Reis, Wesley Lee" }
+  - { role: "Visual communication", name: "Ana Carolina Curti Sanches" }
+  - { role: "Original score", name: "Juvi Chagas" }
+  - { role: "Technical installation", name: "Diego Marques Santos Coelho, Felipe Albertin" }
+  - { role: "Scenography", name: "EPROM Secall" }
+  - { role: "Projector installation", name: "1000 Faces" }
   - { role: "Photography", name: "Jorge Sato" }
 press:
   - { source: "SESI São Paulo", url: "https://www.sesisp.org.br/evento/8b7ede64-6589-45df-b5f3-a2baa41412fc/metadata-o-mundo-invisivel", title: "Página oficial" }

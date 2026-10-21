@@ -5,7 +5,7 @@ year: "2026"
 location: "Farol Santander São Paulo"
 description: "Exposição temática sobre cinquenta anos de cultura jogável, aberta em 18 de junho de 2026 no Farol Santander São Paulo, com direção de arte, tecnologia e experiência de Felipe Sztutman."
 lead: "Quatro experiências em que o corpo substitui o controle e transforma cultura jogável em comportamento no espaço. Aberta em 18 de junho de 2026."
-archiveNote: "Player 1 abriu em 18 de junho de 2026 no Farol Santander São Paulo. A camada autobiográfica permanece como origem do gesto. Créditos expandidos e data de encerramento serão consolidados ao longo da temporada."
+archiveNote: "Player 1 abriu em 18 de junho de 2026 no Farol Santander São Paulo. A camada autobiográfica permanece como origem do gesto. A data de encerramento será consolidada ao longo da temporada."
 mechanism:
   - { label: "Estrutura proposta", value: "Quatro instalações interativas, STRIKE, DRIFT, TRACE e RUSH, articuladas a um acervo histórico de videogames" }
   - { label: "Corpo", value: "Sem joystick ou botão: gestos, deslocamentos, dedo e mãos operam os comportamentos jogáveis" }
@@ -13,15 +13,21 @@ mechanism:
   - { label: "Comportamentos", value: "STRIKE traduz gestos em ataques de energia, DRIFT em esquiva, TRACE em exploração de acervo e RUSH em execução sob cronômetro em quatro CRTs" }
   - { label: "Pergunta", value: "O que cinquenta anos de cultura jogável deixaram inscrito no corpo?" }
 credits:
-  - { role: "Direção de arte, tecnologia e experiência", name: "Felipe Sztutman" }
-  - { role: "Concepção curatorial e curadoria", name: "Antonio Curti" }
-  - { role: "Acervo", name: "Alex Mamed" }
-  - { role: "Arquitetura", name: "Brígida" }
-  - { role: "Apresentação e renders", name: "Raphael Minhoso" }
-  - { role: "Produção", name: "Eduardo" }
-  - { role: "Sourcing técnico", name: "Leonardo" }
-  - { role: "Montagem", name: "Ihon" }
-  - { role: "Design", name: "Ana Clara" }
+  - { role: "Concepção e curadoria da exposição", name: "Antonio Curti" }
+  - { role: "Direção de arte, experiência e tecnologia", name: "Felipe Sztutman" }
+  - { role: "Coleção", name: "Alex Mamed" }
+  - { role: "Produção", name: "Eduardo Raele" }
+  - { role: "Coordenação técnica", name: "Ihon Yadoya" }
+  - { role: "Projeto expográfico", name: "Brígida Garrido" }
+  - { role: "Produção de conteúdo audiovisual e interativo", name: "Raphael Minhoso, SZT Arte e Tecnologia" }
+  - { role: "Assistente de conteúdo audiovisual", name: "Ana Clara Paulino, Leonardo Primo" }
+  - { role: "Design gráfico", name: "Ana Carolina Curti Sanches" }
+  - { role: "Museologia", name: "Marília Fernandes" }
+  - { role: "Construção de obra de arte", name: "AC Studio" }
+  - { role: "Cenografia", name: "Nova Imagem" }
+  - { role: "Montagem fina", name: "Carlos Eduardo Ferreira, Federico Gómez Romero, Lee Dawkins, Miguel Freitas" }
+  - { role: "Estruturas especiais", name: "1000 Faces" }
+  - { role: "Elétrica e iluminação", name: "MMV" }
   - { role: "Fotografia", name: "Lua Morales, Mariana Ribeiro" }
 ---
 

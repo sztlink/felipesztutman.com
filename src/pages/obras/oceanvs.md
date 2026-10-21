@@ -11,15 +11,25 @@ circulation:
   - { label: "Adaptação", value: "Casa Fiat de Cultura, Belo Horizonte, 2023" }
   - { label: "Circulação", value: "Farol Viajante, em curso" }
   - { label: "Estrutura", value: "Oito atos, projeção mapeada, trilha original, interatividade e espaço de imersão" }
-collaborationNote: "Em OCEANVS, a colaboração não entra como execução de um conceito pré-fechado. Antonio Curti estruturou o conceito visual e narrativo, o motion de Flávio Reis e João Alencar, a trilha de Juvi, a programação interativa de Matheus Leston e a materialização da AYA Studio interferem diretamente no desenho final da experiência."
+collaborationNote: "Em OCEANVS, a colaboração não entra como execução de um conceito pré-fechado. Antonio Curti estruturou o conceito visual e narrativo, o motion de Flávio Reis e João Alencar, a trilha de Juvi Chagas, a programação interativa de Matheus Leston e a materialização da AYA Studio interferem diretamente no desenho final da experiência."
 credits:
-  - { role: "Artista", name: "Felipe Sztutman" }
+  - { role: "Assinatura", name: "AYA Studio" }
+  - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Curadoria e narrativa", name: "Antonio Curti" }
+  - { role: "Direção geral e executiva", name: "Felipe Sztutman" }
+  - { role: "Direção técnica", name: "João Alencar (Belo Horizonte, 2023)" }
+  - { role: "Produção", name: "Ana Chun (São Paulo, 2022); Rodrigo Primo (Belo Horizonte, 2023)" }
+  - { role: "Assistente de curadoria", name: "Gabriela Gonçalves (Belo Horizonte, 2023)" }
+  - { role: "Comunicação visual e projeto editorial", name: "Ana Carolina Curti Sanches" }
+  - { role: "Assistente multimídia", name: "Arthur Boeira (São Paulo, 2022)" }
   - { role: "Motion Graphics", name: "Flávio Reis (Audiovisualismo)" }
   - { role: "Motion Graphics", name: "João Alencar" }
-  - { role: "Trilha Sonora", name: "Juvi" }
+  - { role: "Trilha sonora original", name: "Juvi Chagas" }
   - { role: "Programação Interativa", name: "Matheus Leston" }
-  - { role: "Materialização", name: "AYA Studio" }
+  - { role: "Expografia", name: "AYA Studio (Belo Horizonte, 2023)" }
+  - { role: "Cenografia", name: "EPROM (São Paulo, 2022)" }
+  - { role: "Execução da expografia", name: "Fala Cenários (Belo Horizonte, 2023)" }
+  - { role: "Equipamento de projeção", name: "On Projeções" }
   - { role: "Fotografia", name: "Luiz Maudonnet (São Paulo), Leo Lara (Belo Horizonte)" }
 publications:
   - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "p. 64–67", url: "/publicacoes/100-anos-de-arte-moderna", note: "O livro articula OCEANVS como ponto de virada entre a série inicial de luz no espaço e a fase AYA das exposições imersivas." }
@@ -29,7 +39,7 @@ Antes de OCEANVS, já havia obras autorais minhas dentro de exposições da AYA,
 
 A obra nasceu em um momento em que a AYA reunia um núcleo audiovisual recém-formado a partir de experiências anteriores com projeção em grande escala. Esse núcleo reativava uma linhagem que eu trazia dos anos de BijaRi, onde trabalhei com vídeo em formatos não convencionais, imagem expandida e montagem espacial. OCEANVS transformou essa maturidade técnica e humana em uma exposição autoral, concebida para ocupar o Farol Santander como uma câmara de imersão sobre a água.
 
-A obra percorre oito momentos, Prelúdio, Horizonte, Mergulho, Submersão, Tempestade, Seca, Caos, Vida. Flávio Reis (Audiovisualismo) e João Alencar desenvolveram o motion graphics que dá corpo ao roteiro de Antonio, Juvi compôs a trilha sonora original, Matheus Leston programou os elementos interativos que respondem à presença do público. Concebi o espaço como uma câmara de imersão: seis projetores mapeados, som espacial, piso que reflete o oceano acima. O público entra, deita, e o mar acontece ao redor.
+A obra percorre oito momentos, Prelúdio, Horizonte, Mergulho, Submersão, Tempestade, Seca, Caos, Vida. Flávio Reis (Audiovisualismo) e João Alencar desenvolveram o motion graphics que dá corpo ao roteiro de Antonio, Juvi Chagas compôs a trilha sonora original, Matheus Leston programou os elementos interativos que respondem à presença do público. Concebi o espaço como uma câmara de imersão: seis projetores mapeados, som espacial, piso que reflete o oceano acima. O público entra, deita, e o mar acontece ao redor.
 
 OCEANVS circulou pelo Farol Santander em São Paulo (2022), pela Casa Fiat de Cultura em Belo Horizonte (2023) e segue em nova aplicação no Farol Viajante. Gerou subprodutos, objetos de arte que isolam frames da narrativa, expostos na Galeria Luis Maluf e na SP-Arte Rotas Brasileiras.
 

@@ -15,7 +15,7 @@ mechanism:
 collaborationNote: "The current project text names Antonio Curti's curation and AYA Studio's materialization, including Ana Clara on visual design, Minhoso on 3D renders, and the technical infrastructure planned for continuous operation, this remains a project description, not final confirmed credits."
 credits:
   - { role: "Artist", name: "Felipe Sztutman" }
-  - { role: "Curation and narrative", name: "Antonio Curti" }
+  - { role: "Series concept and curation", name: "Antonio Curti" }
   - { role: "Production and materialization", name: "AYA Studio" }
 ---
 

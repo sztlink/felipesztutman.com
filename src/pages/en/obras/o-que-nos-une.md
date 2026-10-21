@@ -15,14 +15,25 @@ mechanism:
   - { label: "Question", value: "How can collective consciousness stop being an explanation and become a bodily experience?" }
 credits:
   - { role: "Scientific Curator", name: "Miguel Nicolelis" }
+  - { role: "Associate content curator", name: "Marina Miranda" }
   - { role: "Artistic Curator", name: "Antonio Curti" }
   - { role: "Art, technology, and experience direction", name: "Felipe Sztutman" }
   - { role: "Executive Studio", name: "AYA Studio" }
-  - { role: "Work 1: O Indivíduo", name: "João Alencar / Automotion" }
+  - { role: "Executive production coordination", name: "Ana Helena Curti (Arte3)" }
+  - { role: "Executive production team (Arte3)", name: "Fernando Lion, Gabriela Caetano, João Simões, Rodrigo Primo" }
+  - { role: "Technical production", name: "Ihon Yadoya" }
+  - { role: "Technical assistants", name: "Leonardo Primo, Raphael Minhoso" }
+  - { role: "Visual identity and graphic design", name: "Ana Carolina Curti Sanches" }
+  - { role: "Motion graphics content production", name: "Automotion (Work 1: O Indivíduo)" }
   - { role: "Works 2 and 3 (Max/MSP)", name: "Matheus Leston" }
-  - { role: "Scenography", name: "Tiago Guimarães" }
-  - { role: "Lighting Design", name: "André Boll / SANTA LUZ" }
-  - { role: "Production", name: "Arte3, Ana Helena Curti" }
+  - { role: "Architectural design", name: "Tiago Guimarães" }
+  - { role: "Architectural design assistant", name: "Julia Marquez" }
+  - { role: "Lighting design", name: "André Boll" }
+  - { role: "Exhibition construction", name: "Secall Cenografia" }
+  - { role: "Fine assembly", name: "MMV" }
+  - { role: "Supports and structure", name: "1000 Faces" }
+  - { role: "Lighting design execution", name: "Santa Luz" }
+  - { role: "Photography and video editing", name: "Lua Morales" }
 press:
   - { source: "VEJA São Paulo", url: "https://preprod.vejasp.abril.com.br/cultura-lazer/teorias-neurocientista-miguel-nicolelis-exposicao-fiesp-avenida-paulista/", title: "Teorias do neurocientista Miguel Nicolelis viram arte na Avenida Paulista" }
   - { source: "SESI", url: "https://www.sesisp.org.br/noticia/o-que-nos-une-abre-ao-publico-no-centro-cultural-fiesp-e-apresenta-teorias-do-neurocientista-miguel-nicolelis-em-forma-de-arte", title: "O que nos une: Exposição apresenta teorias de Miguel Nicolelis em forma de arte" }

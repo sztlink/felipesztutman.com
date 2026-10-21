@@ -12,8 +12,11 @@ mechanism:
   - { label: "Operation", value: "The patterns were not pre-rendered videos, but generative forms emerging from the system's rules" }
   - { label: "Question", value: "How can the inseparable connection between physical and digital be made visible?" }
 credits:
-  - { role: "Programming", name: "Matheus Leston (Bloco)" }
+  - { role: "Signature", name: "AYA Studio x Bloco" }
+  - { role: "Concept", name: "Felipe Sztutman" }
   - { role: "Curator", name: "Antonio Curti" }
+  - { role: "Technical and multimedia direction", name: "Felipe Sztutman" }
+  - { role: "Programming", name: "Matheus Leston (Bloco)" }
   - { role: "Photography", name: "Junior Viana" }
 press:
   - { source: "Folha de São Paulo", url: "https://fotografia.folha.uol.com.br/galerias/1638635430640161-exposicao-metaverso-no-farol-santander", title: "Galeria de fotos" }

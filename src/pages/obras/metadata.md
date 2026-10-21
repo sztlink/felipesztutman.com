@@ -13,8 +13,19 @@ mechanism:
   - { label: "Tempo", value: "O sistema cruza dados em tempo real com marcas históricas e dados retroativos" }
   - { label: "Pergunta", value: "Como fazer um raio-X de São Paulo?" }
 credits:
-  - { role: "Artista", name: "Felipe Sztutman" }
+  - { role: "Assinatura", name: "AYA Studio" }
+  - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Curadoria", name: "Antonio Curti" }
+  - { role: "Direção executiva", name: "Felipe Sztutman" }
+  - { role: "Direção técnica", name: "João Alencar" }
+  - { role: "Assistente de curadoria", name: "Gabriela Gonçalves" }
+  - { role: "Produção executiva", name: "Rodrigo Primo" }
+  - { role: "Desenvolvimento de motion graphics", name: "Flávio Reis, Wesley Lee" }
+  - { role: "Comunicação visual", name: "Ana Carolina Curti Sanches" }
+  - { role: "Trilha sonora original", name: "Juvi Chagas" }
+  - { role: "Montagem técnica", name: "Diego Marques Santos Coelho, Felipe Albertin" }
+  - { role: "Cenografia", name: "EPROM Secall" }
+  - { role: "Montagem de projetores", name: "1000 Faces" }
   - { role: "Fotografia", name: "Jorge Sato" }
 press:
   - { source: "SESI São Paulo", url: "https://www.sesisp.org.br/evento/8b7ede64-6589-45df-b5f3-a2baa41412fc/metadata-o-mundo-invisivel", title: "Página oficial" }

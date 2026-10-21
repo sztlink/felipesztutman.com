@@ -13,7 +13,7 @@ mechanism:
   - { label: "Pergunta", value: "Como criar três modos de estar diante do fogo, contemplar, criar e ser revelado pela chama?" }
 credits:
   - { role: "Artista", name: "Felipe Sztutman" }
-  - { role: "Curadoria e narrativa", name: "Antonio Curti" }
+  - { role: "Concepção da série e curadoria", name: "Antonio Curti" }
   - { role: "Produção e materialização", name: "AYA Studio" }
 ---
 

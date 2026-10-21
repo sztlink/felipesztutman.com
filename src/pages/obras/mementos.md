@@ -11,8 +11,11 @@ mechanism:
   - { label: "Operação", value: "Os padrões não eram vídeos pré-renderizados, mas formas generativas emergentes das regras do sistema" }
   - { label: "Pergunta", value: "Como tornar visível a conexão inseparável entre físico e digital?" }
 credits:
-  - { role: "Programação", name: "Matheus Leston (Bloco)" }
+  - { role: "Assinatura", name: "AYA Studio x Bloco" }
+  - { role: "Concepção", name: "Felipe Sztutman" }
   - { role: "Curadoria", name: "Antonio Curti" }
+  - { role: "Direção técnica e multimídia", name: "Felipe Sztutman" }
+  - { role: "Programação", name: "Matheus Leston (Bloco)" }
   - { role: "Fotografia", name: "Junior Viana" }
 press:
   - { source: "Folha de São Paulo", url: "https://fotografia.folha.uol.com.br/galerias/1638635430640161-exposicao-metaverso-no-farol-santander", title: "Galeria de fotos" }

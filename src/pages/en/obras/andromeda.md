@@ -11,16 +11,31 @@ circulation:
   - { label: "Site", value: "Farol Santander São Paulo, 2025" }
   - { label: "Duration", value: "17-minute audiovisual journey" }
   - { label: "Structure", value: "Interactive entry environment and immersive room with light, projection, laser, and original score" }
-collaborationNote: "The work articulates Antonio Curti's curation, Felipe Sztutman's direction, Juvi's original score, and AYA Studio's production. Collaboration appears in the composition of the route: script, space, light, movement, and sound operate as a single visitor experience."
+collaborationNote: "The work articulates Antonio Curti's curation, Felipe Sztutman's direction, Juvi Chagas's original score, and AYA Studio's production. Collaboration appears in the composition of the route: script, space, light, movement, and sound operate as a single visitor experience."
 credits:
-  - { role: "Artist", name: "Felipe Sztutman" }
-  - { role: "Curation and narrative", name: "Antonio Curti" }
-  - { role: "Original Score", name: "Juvi" }
-  - { role: "Production", name: "AYA Studio" }
+  - { role: "Signature", name: "AYA Studio" }
+  - { role: "Concept", name: "Felipe Sztutman" }
+  - { role: "Series concept and curation", name: "Antonio Curti" }
+  - { role: "Executive direction", name: "Felipe Sztutman" }
+  - { role: "Management", name: "Ana Helena Curti" }
+  - { role: "Production", name: "Gabriela Gonçalves" }
+  - { role: "Content direction and motion graphics", name: "João Alencar" }
+  - { role: "Technical production", name: "Ihon Yadoya" }
+  - { role: "Content production and motion graphics", name: "Raphael Minhoso" }
+  - { role: "Music production", name: "Juvi Chagas" }
+  - { role: "Interactivity programming", name: "Sala28" }
+  - { role: "Technical assistant", name: "Leonardo Primo" }
+  - { role: "Visual communication and graphic design direction", name: "Ana Carolina Curti Sanches" }
+  - { role: "Visual communication and graphic design", name: "Nove Produção & Design" }
+  - { role: "Scenography", name: "Office One" }
+  - { role: "Assembly", name: "1000 Faces" }
+  - { role: "Electrical and lighting", name: "MMV" }
+  - { role: "Multimedia project and equipment rental", name: "AYA Studio" }
+  - { role: "Audiovisual documentation", name: "Lua Morales" }
 ---
 
 I spent months studying astronomy to conceive this work. Not as a scientist, but as an artist trying to understand the visual structure of cosmic phenomena, how a nebula forms, what visually defines a supernova, the way galaxies move. This process of decomposition and translation allowed me to work with space as raw material, building each layer of light and movement based on its precise relationship to the whole.
 
 The experience unfolds in two moments. In *Cosmos*, the first environment, the visitors' presence modulates the space, the body creates a unique choreography with the luminous projections through presence sensors. Right after, *Andrômeda* develops as a 17-minute immersive journey where nebulae, supernovae, and galaxies take form, redefining the architecture of Farol Santander through projected light.
 
-The original score by artist Juvi establishes the rhythmic foundations that guide the entire experience, creating a sonic dimension that amplifies spatial perception. The construction process brought together AYA's multidisciplinary team, motion designers, 3D artists, architects, programmers, and technicians working in sync. Antonio Curti's curation designed the script and creative direction that gave final form to the narrative.
+The original score by artist Juvi Chagas establishes the rhythmic foundations that guide the entire experience, creating a sonic dimension that amplifies spatial perception. The construction process brought together AYA's multidisciplinary team, motion designers, 3D artists, architects, programmers, and technicians working in sync. Antonio Curti's curation designed the script and creative direction that gave final form to the narrative.

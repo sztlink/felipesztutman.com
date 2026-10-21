@@ -13,9 +13,20 @@ circulation:
   - { label: "Structure", value: "Mapped projection, sound design, aromas, and central luminous sculpture" }
 collaborationNote: "At AYA, the work is built by translating ecological processes into spatial language. Rather than literally reproducing nature, the team organizes image, sound, aroma, and light to make the invisible networks between plants, fungi, soil, and water perceptible."
 credits:
-  - { role: "Artist", name: "Felipe Sztutman" }
-  - { role: "Curation and narrative", name: "Antonio Curti" }
-  - { role: "Production and materialization", name: "AYA Studio" }
+  - { role: "Signature", name: "AYA Studio" }
+  - { role: "Concept", name: "Felipe Sztutman" }
+  - { role: "Series concept and curation", name: "Antonio Curti" }
+  - { role: "General and technical direction", name: "Felipe Sztutman" }
+  - { role: "Production", name: "Gabriela Gonçalves" }
+  - { role: "Technical production", name: "Ihon Yadoya" }
+  - { role: "Development and coordination of audiovisual content", name: "João Alencar" }
+  - { role: "Audiovisual content production", name: "Raphael Minhoso" }
+  - { role: "Soundtrack production", name: "Juvi Chagas" }
+  - { role: "Technical assistant", name: "Leonardo Primo" }
+  - { role: "Exhibition design", name: "Brígida Garrido" }
+  - { role: "Graphic design", name: "Ana Carolina Curti Sanches" }
+  - { role: "Scenography", name: "EPROM" }
+  - { role: "Electrical and lighting", name: "MMV" }
   - { role: "Sponsors", name: "Santander, Esfera, Return Capital" }
   - { role: "Video and photographic record", name: "Lua Morales" }
 ---

@@ -6,24 +6,30 @@ location: "Farol Santander São Paulo"
 lang: en
 description: "Exhibition about fifty years of playable culture, opened on 18 June 2026 at Farol Santander São Paulo, with art, technology, and experience direction by Felipe Sztutman and four body-interface installations."
 lead: "Four experiences in which the body replaces the controller and turns playable culture into behavior in space. Opened on 18 June 2026."
-archiveNote: "Player 1 opened on 18 June 2026 at Farol Santander São Paulo. The autobiographical layer remains as the origin of the gesture. Expanded credits and closing date will be consolidated as the season runs."
+archiveNote: "Player 1 opened on 18 June 2026 at Farol Santander São Paulo. The autobiographical layer remains as the origin of the gesture. The closing date will be consolidated as the season runs."
 mechanism:
   - { label: "Proposed structure", value: "Four interactive installations, STRIKE, DRIFT, TRACE, and RUSH, articulated with a historical video game collection" }
   - { label: "Body", value: "No joystick or button: gestures, displacement, finger, and hands operate the playable behaviors" }
   - { label: "Archive", value: "Alex Mamed's collection, curatorially organized by Antonio Curti, functions as the exhibition's historical ground" }
   - { label: "Behaviors", value: "STRIKE translates gestures into energy attacks, DRIFT into dodging, TRACE into collection exploration, and RUSH into timed execution on four CRTs" }
   - { label: "Question", value: "What did fifty years of playable culture inscribe in the body?" }
-collaborationNote: "The current file names Antonio Curti's curation, Alex Mamed's collection, and AYA Studio roles across architecture, renders, design, technical sourcing, installation, and production, expanded credits will be consolidated during production."
+collaborationNote: "Credits follow the exhibition catalog: Antonio Curti's curation, Alex Mamed's collection, and the AYA Studio team named by role."
 credits:
-  - { role: "Art, technology, and experience direction", name: "Felipe Sztutman" }
-  - { role: "Curatorial conception and curation", name: "Antonio Curti" }
+  - { role: "Concept and curation of the exhibition", name: "Antonio Curti" }
+  - { role: "Art, experience, and technology direction", name: "Felipe Sztutman" }
   - { role: "Collection", name: "Alex Mamed" }
-  - { role: "Architecture", name: "Brígida" }
-  - { role: "Presentation and renders", name: "Raphael Minhoso" }
-  - { role: "Production", name: "Eduardo" }
-  - { role: "Technical sourcing", name: "Leonardo" }
-  - { role: "Installation", name: "Ihon" }
-  - { role: "Design", name: "Ana Clara" }
+  - { role: "Production", name: "Eduardo Raele" }
+  - { role: "Technical coordination", name: "Ihon Yadoya" }
+  - { role: "Exhibition design", name: "Brígida Garrido" }
+  - { role: "Audiovisual and interactive content production", name: "Raphael Minhoso, SZT Arte e Tecnologia" }
+  - { role: "Audiovisual content assistant", name: "Ana Clara Paulino, Leonardo Primo" }
+  - { role: "Graphic design", name: "Ana Carolina Curti Sanches" }
+  - { role: "Museology", name: "Marília Fernandes" }
+  - { role: "Artwork construction", name: "AC Studio" }
+  - { role: "Scenography", name: "Nova Imagem" }
+  - { role: "Fine assembly", name: "Carlos Eduardo Ferreira, Federico Gómez Romero, Lee Dawkins, Miguel Freitas" }
+  - { role: "Special structures", name: "1000 Faces" }
+  - { role: "Electrical and lighting", name: "MMV" }
   - { role: "Photography", name: "Lua Morales, Mariana Ribeiro" }
 ---
 
