@@ -1,12 +1,12 @@
 ---
 layout: ../../../layouts/Obra.astro
 title: "FLAMA"
-year: "2026"
+year: "2027"
 location: "Farol Santander São Paulo, 22nd floor"
 lang: en
 description: "Authored work under confirmation. Conclusion of the pentology Os Elementos: three environments where the visitor contemplates, creates, and is revealed by flame."
 lead: "System-installation in three environments where fire appears as interactive material: collective contemplation, bodily creation, and individual touch organize an experience conceived to accumulate memory in space."
-archiveNote: "FLAMA remains under confirmation: this page describes the project from the current archive text, without resolving opening date, visual documentation, expanded technical credits, or final realization confirmation."
+archiveNote: "FLAMA remains under confirmation: this page describes the project from the current archive text, with opening planned for 2027 and still without visual documentation, expanded technical credits, or final realization confirmation."
 mechanism:
   - { label: "Structure", value: "Three environments on the 22nd floor: sculptural volumetric LED bonfire with 360° projection, bodily creation room, and Crystal Chamber" }
   - { label: "Body", value: "The project describes sensors capturing movement and position, broad gestures generate vibrant flames, gentle movements produce delicate blue flames" }

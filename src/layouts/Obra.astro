@@ -49,6 +49,7 @@ const lang = frontmatter.lang || 'pt';
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
+const schemaYear = String(frontmatter.year).slice(0, 4);
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) · ${frontmatter.location}. Felipe Sztutman.`;
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
 const items: GalleryItem[] = ((galleryData as Record<string, GalleryItem[]>)[slug] || [])
@@ -234,7 +235,7 @@ const docItems = items.map((item, index) => ({ src: item.src, alt: imageAlt(item
   lang={lang}
   schemaType="ArtWork"
   schemaName={frontmatter.title}
-  schemaDate={frontmatter.year}
+  schemaDate={schemaYear}
   schemaLocation={frontmatter.location}
   schemaCreatorNames={schemaCreatorNames}
   schemaOmitCreator={schemaOmitCreator}

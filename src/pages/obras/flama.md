@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/Obra.astro
 title: "FLAMA"
-year: "2026"
+year: "2027"
 location: "Farol Santander São Paulo, 22º andar"
 description: "Obra autoral em confirmação. Encerramento da pentalogia Os Elementos: três ambientes onde o visitante contempla, cria e é revelado pela chama."
 lead: "Instalação-sistema em três ambientes onde o fogo aparece como material interativo: contemplação coletiva, criação corporal e toque individual organizam uma experiência pensada para acumular memória no espaço."
-archiveNote: "FLAMA permanece em A_CONFIRMAR: a página descreve o projeto a partir do texto atual do arquivo, sem resolver data de abertura, documentação visual, ficha técnica expandida ou confirmação final de realização."
+archiveNote: "FLAMA permanece em A_CONFIRMAR: a página descreve o projeto a partir do texto atual do arquivo, com abertura prevista para 2027 e ainda sem documentação visual, ficha técnica expandida ou confirmação final de realização."
 mechanism:
   - { label: "Estrutura", value: "Três ambientes no 22º andar: fogueira escultórica de LED volumétrico com projeção 360°, sala de criação corporal e Câmara do Cristal" }
   - { label: "Corpo", value: "Sensores captam movimento e posição, gestos amplos geram labaredas vibrantes, movimentos suaves produzem chamas azuis delicadas" }

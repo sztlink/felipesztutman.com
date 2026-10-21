@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/Obra.astro
 title: "AMANO: Além da Fantasia"
-year: "2026"
-location: "São Paulo, Belo Horizonte, Rio de Janeiro"
+year: "2024-2026"
+location: "Farol Santander São Paulo; CCBB Belo Horizonte, Rio de Janeiro e Brasília"
 description: "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada no mundo. Direção de experiência e tecnologia para traduzir 218 obras originais em experiência habitável."
 lead: "Projeto com artista terceiro: espaço imersivo concebido para traduzir 218 obras originais de Yoshitaka Amano em experiência habitável, articulando vídeo, luz, som, automação e projeção como um único sistema."
 archiveNote: "AMANO deve ser lida no arquivo como direção de experiência e tecnologia dentro de um projeto com artista terceiro. A autoria artística principal permanece de Yoshitaka Amano, o gesto de Felipe está na tradução espacial, técnica e experiencial desse universo visual no Brasil."
 circulation:
-  - { label: "Itinerância", value: "São Paulo, Belo Horizonte e Rio de Janeiro" }
+  - { label: "Itinerância", value: "Farol Santander São Paulo (2024); CCBB Belo Horizonte (2025-2026), CCBB Rio de Janeiro (2026) e CCBB Brasília (2026)" }
   - { label: "Estrutura", value: "Sala imersiva de 11 minutos e 40 segundos com quinze projetores laser sincronizados" }
   - { label: "Matéria", value: "Vídeo, luz, som, automação e projeção organizados como um único sistema" }
 collaborationNote: "A curadoria de Antonio Curti, a direção de experiência e tecnologia de Felipe Sztutman, a coordenação de conteúdo audiovisual de João Alencar, o motion e a produção de conteúdo de Raphael Minhoso e a integração de sistemas com Ihon Yadoya fazem a sala imersiva existir como materialização coletiva sem deslocar a autoria artística de Yoshitaka Amano."
@@ -46,4 +46,4 @@ Em 2024, Antonio Curti me convidou para desenhar o espaço imersivo da maior exp
 
 Desenhei o espaço imersivo e concebi os sistemas integrados de vídeo, luz, som, automação e projeção que fazem a exposição funcionar como um único organismo vivo. A sala imersiva de 11 minutos e 40 segundos traz seis pinturas de Amano para o movimento, quinze projetores laser sincronizados criam um video mapping onde serpentes nadam, ondas formam tempestades, heróis descem do céu perfurando monstros marinhos. Trabalhei com Ihon Yadoya na integração de sistemas, Raphael Minhoso na co-autoria audiovisual e João Alencar no conteúdo original da sala imersiva. O resultado é um ambiente onde o público pode entrar no caos controlado da mente de Amano.
 
-A exposição rodou três cidades brasileiras, São Paulo (Farol Santander, 2024), Belo Horizonte (CCBB, 2025-2026) e Rio de Janeiro (CCBB, abril-junho 2026), com entrada 100% gratuita via Lei Rouanet. Antonio Curti, que tem relação direta com Amano e selecionou pessoalmente as obras no Japão, assina a curadoria. Meu trabalho foi a direção de experiência e tecnologia: traduzir tecnicamente esse universo visual japonês para o contexto imersivo brasileiro e criar a infraestrutura que permite ao público não apenas ver as obras, mas habitá-las.
+A exposição rodou quatro cidades brasileiras, São Paulo (Farol Santander, 2024), Belo Horizonte (CCBB, 2025-2026), Rio de Janeiro (CCBB, abril-junho 2026) e Brasília (CCBB, julho-novembro 2026), com entrada 100% gratuita via Lei Rouanet. Antonio Curti, que tem relação direta com Amano e selecionou pessoalmente as obras no Japão, assina a curadoria. Meu trabalho foi a direção de experiência e tecnologia: traduzir tecnicamente esse universo visual japonês para o contexto imersivo brasileiro e criar a infraestrutura que permite ao público não apenas ver as obras, mas habitá-las.
