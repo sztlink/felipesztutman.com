@@ -596,7 +596,7 @@
       "contexto": "Metaversø / Farol",
       "tipo": "INSTALACAO",
       "serie": "Metaversø",
-      "corPulso": "#ff4466",
+      "corPulso": "#aa77ff",
       "description": "45 lasers programados interagindo com cristal. Primeira obra no Farol Santander, tornando visível a conexão inseparável entre físico e digital.",
       "sourceFiles": {
         "page": "src/pages/obras/mementos.md",
@@ -685,7 +685,7 @@
       "contexto": "Metaversø / Farol",
       "tipo": "INSTALACAO",
       "serie": "Metaversø",
-      "corPulso": "#ff4466",
+      "corPulso": "#aa77ff",
       "description": "Instalação com sensores de proximidade ultraprecisos e luz responsiva. A obra só existia quando alguém estava presente: tecnologia que depende fundamentalmente da presença humana.",
       "sourceFiles": {
         "page": "src/pages/obras/interludio.md",
@@ -1159,7 +1159,7 @@
       "contexto": "instalação-sistema / Nicolelis",
       "tipo": "INSTALACAO",
       "serie": null,
-      "corPulso": "#ff4466",
+      "corPulso": "#00ccff",
       "description": "Exposição temática/científica em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica.",
       "sourceFiles": {
         "page": "src/pages/obras/o-que-nos-une.md",
@@ -1580,7 +1580,7 @@
       "contexto": "série dos Elementos / instalação-sistema do fogo",
       "tipo": "INSTALACAO",
       "serie": "Os Elementos",
-      "corPulso": "#ff8800",
+      "corPulso": "#8a8a8a",
       "description": "Obra autoral em confirmação. Encerramento da pentalogia Os Elementos: três ambientes onde o visitante contempla, cria e é revelado pela chama.",
       "sourceFiles": {
         "page": "src/pages/obras/flama.md",
@@ -1684,7 +1684,7 @@
       "contexto": "instalação-sistema / corpo-interface / jogos como medium",
       "tipo": "INSTALACAO",
       "serie": null,
-      "corPulso": "#ff4466",
+      "corPulso": "#aa77ff",
       "description": "Exposição temática sobre cinquenta anos de cultura jogável, aberta em 18 de junho de 2026 no Farol Santander São Paulo, com direção de arte, tecnologia e experiência de Felipe Sztutman e quatro instalações corpo-interface.",
       "sourceFiles": {
         "page": "src/pages/obras/player1.md",
