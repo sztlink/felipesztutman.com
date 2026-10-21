@@ -1,109 +1,235 @@
 ---
+// Texto: Suely Rolnik (revisao de 2026-10-21). Marcacao: **negrito**, *italico*, [texto](url).
+// Os marcos de tempo (mark) sao estrutura da pagina; as obras citadas em cada
+// passagem saem dos links e ganham numero e ano de src/data/works.json.
 import Base from '../layouts/Base.astro';
+import SobreCorpo from '../components/SobreCorpo.astro';
+
+const nav = {
+  "back": "← arquivo",
+  "backHref": "/#obras",
+  "map": "mapa relacional",
+  "alt": "EN",
+  "altHref": "/en/sobre",
+  "altLabel": "English version"
+};
+
+const labels = {
+  "dossier": "Dossiê",
+  "path": "Percurso",
+  "team": "Colaboradores recorrentes",
+  "records": "Registros",
+  "cited": "Obras citadas nesta passagem",
+  "work": "Nº"
+};
+
+const dossier: Array<[string, string]> = [
+  [
+    "Nascimento",
+    "São Paulo, 1986"
+  ],
+  [
+    "Formação",
+    "Mecatrônica, COTUCA / Unicamp (2002-04) · Design, FAU-USP (2007-14), TCC *LUZCIDADE*"
+  ],
+  [
+    "Campo",
+    "Luz, tecnologia, percepção, ambientes imersivos"
+  ],
+  [
+    "Modos de trabalho",
+    "Obra própria · coautoria · direção de arte, tecnologia e experiência em exposições temáticas e de outros artistas"
+  ],
+  [
+    "Estruturas",
+    "BijaRi (2008-17) · GTM Cenografia (2017) · The Force (2018) · AYA Studio (desde 2019, marca que opero com Antonio Curti) · SZT Arte e Tecnologia (minha empresa, por onde opero na AYA)"
+  ],
+  [
+    "Instituições",
+    "Farol Santander · CCBB · Centro Cultural FIESP · Casa Fiat de Cultura · Casa Firjan · Japan House · MIS-SP"
+  ],
+  [
+    "Gesto recorrente",
+    "Tornar visível o invisível"
+  ]
+];
+
+const passages = [
+  {
+    "mark": "1986",
+    "md": "Nascido em São Paulo, 1986. Meus avós vieram da Polônia e da Romênia em 1933, judeus fugidos do nazismo. Meu pai me ensinou que emancipação é pelo fazer. Testar a ideia na matéria antes de afirmar que ela é boa."
+  },
+  {
+    "mark": "2002-2014",
+    "sub": "COTUCA · FAU-USP",
+    "md": "Estudei **Mecatrônica no COTUCA** (Unicamp, 2002-04) e **Design na FAU-USP** (2007-14). Meu TCC, *LUZCIDADE*, traçou a linhagem de Moholy-Nagy a Dan Flavin e de Flavin ao meu trabalho com luz no espaço público de São Paulo. Orientação de Carlos Zibel Costa, banca com Giselle Beiguelman. Não sou artista que aprendeu tecnologia. Sou técnico que virou artista. A ordem importa."
+  },
+  {
+    "mark": "2008-2017",
+    "sub": "BijaRi",
+    "md": "Em 2008 ingressei no **BijaRi**, onde trabalhei como VJ e diretor de arte por nove anos. Live-cinema no Itaú Cultural (2008), vídeo-cenário para Ivete Sangalo no Madison Square Garden (2010), três edições do Villa Mix Goiânia com recorde no Guinness de maior palco de LED do mundo (2013-15). O BijaRi me ensinou a operar em escala."
+  },
+  {
+    "mark": "2017-2018",
+    "sub": "GTM Cenografia · The Force",
+    "md": "Em 2017, na **GTM Cenografia**, montei o Google Buttonwall no hall do Google Brasil com Wesley Lee (cerca de 7.000 botões RGB interativos) e a cenografia do YouTube Space Rio no Pier Mauá (3.000 m², descrita pelo G1 como \"a mais high tech do mundo\"). Em 2018, na **The Force**, fiz a direção técnica da exposição *Dimensão*, do Nonotak Studio, na Japan House São Paulo."
+  },
+  {
+    "mark": "2019",
+    "sub": "AYA Studio",
+    "md": "Em 2019 começamos, Antonio Curti e eu, a trabalhar sob o nome **AYA Studio**. A AYA é uma marca que operamos juntos, eu pela **SZT Arte e Tecnologia**, ele pelo **AC Studio**. Não é uma empresa e não é artista. É onde as obras ganham corpo, uma máquina de materialização feita de gente que escolheu estar ali e que se recompõe a cada projeto. Desde então trabalhamos no Farol Santander, nos CCBB, no Centro Cultural FIESP e na Casa Fiat de Cultura. Eu desenho os espaços, concebo as obras técnica e artisticamente e dirijo equipes de motion designers, programadores, arquitetos, produtores e técnicos. Antonio concebe exposições e séries, escreve roteiros e assina curadorias. Os créditos mudam de obra para obra porque o que cada um fez muda também: a assinatura distingue a responsabilidade, não o valor. A AYA é o sistema, e eu sou um dos motores."
+  },
+  {
+    "mark": "2019-2023",
+    "md": "As primeiras obras dessa fase ainda moravam dentro de exposições maiores. Em 2019, na mostra *Metaversø*, no Farol Santander, [*Mementos*](/obras/mementos) fez 45 lasers atravessarem um cristal, com programação de Matheus Leston, e [*Interlúdio*](/obras/interludio) só acendia quando havia alguém perto, com a eletrônica de Wesley Lee. Era a mesma pergunta em duas formas: o que a máquina é sem o corpo. Em 2022, [*Oceanvs*](/obras/oceanvs) ocupou a exposição inteira. Oito atos no Farol Santander, adaptados em 2023 para a Casa Fiat de Cultura, em Belo Horizonte. Ali aprendi a desenhar em colaboração: o roteiro de Antonio não chegou pronto, se transformou no espaço junto com o motion, a trilha e a programação. Água no corpo sem molhar a pele."
+  },
+  {
+    "mark": "2023-2024",
+    "md": "Depois o invisível mudou de natureza. Em [*Metadata: O Mundo Invisível*](/obras/metadata) (2023), no Centro Cultural FIESP, já não era um córrego soterrado, eram dados de São Paulo em tempo real perturbando fluidos em cinco telas, uma tentativa de raio-X da cidade. Em [*São Paulo 3024*](/obras/sao-paulo-3024) (2024), no Farol Santander, usei modelos de linguagem como pergunta e não como ferramenta: imaginar a cidade daqui a mil anos é simular o futuro ou escrever o código dele? Na mesma sala, o gesto do público erguia prédios que deixavam de existir quando a pessoa saía. Essas obras foram assinadas na parede pela AYA Studio, e a concepção é minha. Hoje registro as duas coisas juntas."
+  },
+  {
+    "mark": "2024-2026",
+    "md": "Uma parte do trabalho é dirigir para que outros apareçam. Em [*Luz Æterna: Ensaio Sobre o Sol*](/obras/luz-aeterna) (2024, CCBB Brasília e CCBB Belo Horizonte), exposição concebida e curada por Antonio, oito artistas de new media art brasileira dividiam o percurso, e meu trabalho foi fazer a luz organizar o espaço sem apagar nenhum deles. Em [*AMANO: Além da Fantasia*](/obras/amano), também concebida e curada por Antonio, traduzi 218 obras originais de Yoshitaka Amano numa sala imersiva de quinze projetores laser. A exposição abriu no Farol Santander em 2024 e passou pelos CCBB de Belo Horizonte (2025-2026), Rio de Janeiro (2026) e Brasília (2026). Em [*O Que Nos Une*](/obras/o-que-nos-une) (2025, Centro Cultural FIESP), as ideias de Miguel Nicolelis sobre consciência coletiva viraram espelhos, piso que rastreia posição e uma sala que escuta o batimento cardíaco de quem entra. Nessas exposições o meu crédito é a direção, de arte, de tecnologia, de experiência."
+  },
+  {
+    "mark": "2025-2027",
+    "md": "Em 2025 a água voltou. [*Floresta Utópica*](/obras/floresta-utopica), no Farol Santander, retoma o gesto de [*Cachoeira*](/obras/cachoeira) treze anos depois: uma escultura de luz em forma de queda d'água no centro de vinte minutos sobre as redes entre plantas, fungos, solo e água. [*Andrômeda: Universo Sem Fim*](/obras/andromeda), no mesmo ano e no mesmo Farol, levou a escala ao cosmos, com uma primeira sala modulada pela presença e dezessete minutos de nebulosas, supernovas e galáxias. As duas pertencem à série Os Elementos, que Antonio concebeu e cura, e que [*FLAMA*](/obras/flama) encerra em 2027 com o fogo: três ambientes onde o visitante contempla, cria e é revelado pela chama."
+  },
+  {
+    "mark": "2026",
+    "md": "Em 2026, [*Player 1: 50 Anos dos Videogames*](/obras/player1), no Farol Santander, exposição concebida e curada por Antonio sobre a coleção de Alex Mamed, tirou o controle da mão. Nas quatro experiências que desenhei, o corpo é o joystick. É também o território mais antigo do meu trabalho, o de quem construía mundos no videogame antes de aprender a desenhar. No mesmo ano o trabalho se deslocou para dentro da máquina. Construo os motores que as obras usam e rodo em placa local, no ateliê, tudo o que cabe nela. [*2047: Arquivos do depois de antes*](/obras/2047), que faço com Giselle Beiguelman e que apresentamos em 2026 na Casa Firjan, no Rio de Janeiro, é a peça onde essa posição fica explícita, uma máquina que lê o noticiário sobre terras raras, escreve o futuro em papel contínuo e publica o próprio gasto, da placa da sala ao datacenter de onde vem a escrita. A pesquisa técnica que sustenta *2047* sai publicada em repositório aberto, porque medir e mostrar como a coisa funciona faz parte do trabalho."
+  },
+  {
+    "mark": "Publicação",
+    "coda": true,
+    "md": "Anos depois do TCC, essa linhagem reapareceu de forma explícita no livro *100 Anos de Arte Moderna: a cena contemporânea*, de Carlos Zibel Costa, o mesmo orientador que acompanhou *LUZCIDADE* na FAU-USP. O perfil dedicado ao meu trabalho articula [*Cachoeira*](/obras/cachoeira), [*sem título, para Mantiqueira*](/obras/mantiqueira) e [*Oceanvs*](/obras/oceanvs) como partes de uma trajetória só, da luz no espaço público à construção de ambientes imersivos."
+  },
+  {
+    "mark": "Linhagens",
+    "coda": true,
+    "md": "Meu trabalho se sustenta em duas linhagens. Uma artística, de Moholy-Nagy a Dan Flavin, do modulador de luz e espaço à lâmpada fluorescente como medium. Outra técnica, que vem da mecatrônica e da fabricação digital. As obras nascem do cruzamento dessas forças. Revelar o invisível é o que persiste, do Córrego das Almas soterrado em 2012 às redes micorrízicas da *Floresta Utópica* em 2025, dos dados de uma cidade ao minério de que a máquina depende. O que mudou foi o lugar do corpo. Nas primeiras obras ele olhava. Depois virou presença que acende, gesto que constrói, batimento que a sala escuta."
+  }
+];
+
+const blocks = [
+  {
+    "title": "Concepção compartilhada",
+    "people": [
+      {
+        "name": "Antonio Curti",
+        "md": "opera comigo a AYA Studio, pelo AC Studio. Concepção e curadoria da exposição em [Luz Æterna](/obras/luz-aeterna), [AMANO](/obras/amano) e [Player 1](/obras/player1). Concepção da série Os Elementos e curadoria em [Andrômeda](/obras/andromeda), [Floresta Utópica](/obras/floresta-utopica) e [FLAMA](/obras/flama). Curadoria e narrativa em [Oceanvs](/obras/oceanvs) e [São Paulo 3024](/obras/sao-paulo-3024). Curadoria em [Mementos](/obras/mementos), [Interlúdio](/obras/interludio) e [Metadata](/obras/metadata). Curadoria artística em [O Que Nos Une](/obras/o-que-nos-une)."
+      },
+      {
+        "name": "Giselle Beiguelman",
+        "md": "coautoria de [2047](/obras/2047). Antes, banca do TCC *LUZCIDADE*."
+      }
+    ]
+  },
+  {
+    "title": "Na equipe das obras",
+    "people": [
+      {
+        "name": "João Alencar (Jãozão)",
+        "md": "motion graphics em [Oceanvs](/obras/oceanvs) e [AMANO](/obras/amano); direção técnica em [Oceanvs](/obras/oceanvs) (Belo Horizonte, 2023), [Metadata](/obras/metadata) e [Luz Æterna](/obras/luz-aeterna); direção de conteúdo e motion em [São Paulo 3024](/obras/sao-paulo-3024) e [Andrômeda](/obras/andromeda); coordenação de conteúdo audiovisual em [AMANO](/obras/amano) e [Floresta Utópica](/obras/floresta-utopica)."
+      },
+      {
+        "name": "Raphael Minhoso",
+        "md": "conteúdo e motion graphics em [São Paulo 3024](/obras/sao-paulo-3024), [AMANO](/obras/amano), [Andrômeda](/obras/andromeda) e [Floresta Utópica](/obras/floresta-utopica); conteúdo audiovisual e interativo em [Player 1](/obras/player1); assistência técnica em [Luz Æterna](/obras/luz-aeterna), [O Que Nos Une](/obras/o-que-nos-une) e [AMANO](/obras/amano) (Rio de Janeiro)."
+      },
+      {
+        "name": "Ihon Yadoya",
+        "md": "produção técnica em [São Paulo 3024](/obras/sao-paulo-3024), [O Que Nos Une](/obras/o-que-nos-une), [AMANO](/obras/amano), [Andrômeda](/obras/andromeda) e [Floresta Utópica](/obras/floresta-utopica); direção técnica em [Luz Æterna](/obras/luz-aeterna); coordenação técnica em [Player 1](/obras/player1)."
+      },
+      {
+        "name": "Gabriela Gonçalves",
+        "md": "assistência de curadoria em [Metadata](/obras/metadata), [Oceanvs](/obras/oceanvs) (Belo Horizonte, 2023) e [AMANO](/obras/amano) (São Paulo); assistência de curadoria e de produção em [Luz Æterna](/obras/luz-aeterna); produção em [São Paulo 3024](/obras/sao-paulo-3024), [Andrômeda](/obras/andromeda) e [Floresta Utópica](/obras/floresta-utopica)."
+      },
+      {
+        "name": "Ana Carolina Curti Sanches",
+        "md": "comunicação visual e design gráfico em [Oceanvs](/obras/oceanvs), [Metadata](/obras/metadata), [São Paulo 3024](/obras/sao-paulo-3024), [Luz Æterna](/obras/luz-aeterna), [O Que Nos Une](/obras/o-que-nos-une), [AMANO](/obras/amano), [Andrômeda](/obras/andromeda), [Floresta Utópica](/obras/floresta-utopica) e [Player 1](/obras/player1)."
+      },
+      {
+        "name": "Juvi Chagas",
+        "md": "trilha sonora em [Oceanvs](/obras/oceanvs), [Metadata](/obras/metadata), [São Paulo 3024](/obras/sao-paulo-3024), [AMANO](/obras/amano), [Andrômeda](/obras/andromeda) e [Floresta Utópica](/obras/floresta-utopica)."
+      },
+      {
+        "name": "Brígida Garrido",
+        "md": "projeto expográfico em [AMANO](/obras/amano), [Floresta Utópica](/obras/floresta-utopica) e [Player 1](/obras/player1)."
+      },
+      {
+        "name": "Eduardo Raele",
+        "md": "produção executiva em [Luz Æterna](/obras/luz-aeterna) e [AMANO](/obras/amano) (Belo Horizonte, Rio de Janeiro); produção em [Player 1](/obras/player1)."
+      },
+      {
+        "name": "Rodrigo Primo",
+        "md": "produção executiva em [Metadata](/obras/metadata), [Luz Æterna](/obras/luz-aeterna) e [O Que Nos Une](/obras/o-que-nos-une); produção em [Oceanvs](/obras/oceanvs) (Belo Horizonte, 2023); coordenação de produção em [AMANO](/obras/amano) (São Paulo)."
+      },
+      {
+        "name": "Ana Helena Curti",
+        "md": "gestão em [São Paulo 3024](/obras/sao-paulo-3024) e [Andrômeda](/obras/andromeda); coordenação de produção executiva em [O Que Nos Une](/obras/o-que-nos-une) (Arte3)."
+      },
+      {
+        "name": "Leonardo Primo",
+        "md": "assistência técnica em [São Paulo 3024](/obras/sao-paulo-3024), [O Que Nos Une](/obras/o-que-nos-une), [Andrômeda](/obras/andromeda) e [Floresta Utópica](/obras/floresta-utopica); assistência de conteúdo audiovisual em [Player 1](/obras/player1)."
+      },
+      {
+        "name": "Ana Clara Paulino",
+        "md": "assistência de conteúdo audiovisual em [Player 1](/obras/player1)."
+      }
+    ]
+  },
+  {
+    "title": "Parcerias de longa data",
+    "people": [
+      {
+        "name": "Wesley Lee",
+        "md": "Google Buttonwall (2017); hardware e sensores em [Interlúdio](/obras/interludio); motion graphics em [Metadata](/obras/metadata); montagem de [sem título, para Córrego Rio Verde](/obras/corrego-rio-verde) (creditado como Wesley Lee Yang)."
+      },
+      {
+        "name": "Matheus Leston",
+        "md": "programação em [Mementos](/obras/mementos) (Bloco); programação interativa em [Oceanvs](/obras/oceanvs); salas 2 e 3 em Max/MSP de [O Que Nos Une](/obras/o-que-nos-une)."
+      },
+      {
+        "name": "Flávio Reis (Audiovisualismo)",
+        "md": "motion graphics em [Oceanvs](/obras/oceanvs) e [Metadata](/obras/metadata)."
+      },
+      {
+        "name": "Rodrigo Bellotto",
+        "md": "concepção e realização de [Objeto em Forma de: Espaço](/obras/objeto-em-forma-de-espaco) (2009); New York Visualists (2009)."
+      }
+    ]
+  }
+];
+
+const records = [
+  "**Publicação** · [100 Anos de Arte Moderna: a cena contemporânea](/publicacoes/100-anos-de-arte-moderna), Carlos Zibel Costa. Perfil dedicado nas pp. 64-67.",
+  "[Trajetória](/trajetoria)",
+  "[Enciclopédia Itaú Cultural](https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman)",
+  "[LinkedIn](https://br.linkedin.com/in/felipesztutman)",
+  "[Instagram](https://instagram.com/felipesztutman)",
+  "[AYA Studio](https://aya.cx)",
+  "[heretica.xyz, arquivo de 2047](https://heretica.xyz/)",
+  "[Pesquisa em inferência (GitHub)](https://github.com/sztlink/lab)"
+];
 ---
 <Base
   title="Felipe Sztutman · Sobre"
-  description="Nascido em São Paulo, 1986. Técnico que virou artista. COTUCA Mecatrônica, FAU-USP Design, BijaRi, AYA Studio."
+  description="Nascido em São Paulo, 1986. Técnico que virou artista. COTUCA Mecatrônica, FAU-USP Design, BijaRi, AYA Studio, SZT Arte e Tecnologia."
   fullBleed={true}
   showHeader={false}
   showFooter={false}
   bodyClass="page-sobre"
 >
-  <main class="archive-page">
-    <section class="entry">
-      <div class="surface-links">
-        <a href="/#obras" class="back">← arquivo</a>
-        <a href="/mapa" class="surface-link">mapa relacional</a>
-        <a href="/en/sobre" class="surface-link">EN</a>
-      </div>
-      <div class="entry-kicker">SOBRE · CONTEXTO</div>
-      <h1>Técnico que virou artista</h1>
-      <p>São Paulo, 1986. Mecatrônica, design, live-cinema, cenografia, direção técnica, exposições imersivas. Duas linhagens operam juntas, a artística da luz no espaço e a técnica da fabricação e dos sistemas.</p>
-    </section>
-
-    <section class="paper dossier">
-      <div class="paper-kicker">DOSSIÊ</div>
-      <dl>
-        <div class="row"><dt>Nascimento</dt><dd>São Paulo, 1986</dd></div>
-        <div class="row"><dt>Formação</dt><dd>COTUCA / Unicamp · Mecatrônica · FAU-USP · Design</dd></div>
-        <div class="row"><dt>Campo</dt><dd>Luz, tecnologia, percepção, ambientes imersivos</dd></div>
-        <div class="row"><dt>Estruturas</dt><dd>BijaRi · GTM Cenografia · The Force · AYA Studio</dd></div>
-        <div class="row"><dt>Gesto recorrente</dt><dd>Tornar visível o invisível</dd></div>
-      </dl>
-    </section>
-
-    <section class="paper body-block">
-      <div class="paper-kicker">PERCURSO</div>
-      <div class="body-copy">
-        <p>Nascido em São Paulo, 1986. Meus avós vieram da Polônia e da Romênia em 1933, judeus fugidos do nazismo. Meu pai me ensinou que emancipação é pelo fazer. Testar a ideia na matéria antes de afirmar que ela é boa.</p>
-        <p>Estudei <strong>Mecatrônica no COTUCA</strong> (Unicamp, 2002–04) e <strong>Design na FAU-USP</strong> (2007–14). Meu TCC, <em>LUZCIDADE</em>, traçou a linhagem de Moholy-Nagy a Dan Flavin e de Flavin ao meu trabalho com luz no espaço público de São Paulo. Orientação de Carlos Zibel Costa, banca com Giselle Beiguelman. Não sou artista que aprendeu tecnologia. Sou técnico que virou artista. A ordem importa.</p>
-        <p>Em 2008 ingressei no <strong>BijaRi</strong>, onde trabalhei como VJ e diretor de arte por nove anos. Live-cinema no Itaú Cultural (2008), vídeo-cenário para Ivete Sangalo no Madison Square Garden (2010), três edições do Villa Mix Goiânia com recorde no Guinness de maior palco de LED do mundo (2013–15). O BijaRi me ensinou a operar em escala.</p>
-        <p>Em 2017, na <strong>GTM Cenografia</strong>, montei o Google Buttonwall no hall do Google Brasil com Wesley Lee (cerca de 7.000 botões RGB interativos) e a cenografia do YouTube Space Rio no Pier Mauá (3.000 m², descrita pelo G1 como "a mais high tech do mundo"). Em 2018, na <strong>The Force</strong>, fiz a direção técnica da exposição <em>Dimensão</em>, do Nonotak Studio, na Japan House São Paulo.</p>
-        <p>Em 2019 co-fundei a <strong>AYA Studio</strong> com Antonio Curti. Desde então, concebo e dirijo exposições imersivas no Farol Santander, CCBB, SESI/FIESP, Japan House e Casa Fiat. Desenho os espaços, concebo tecnicamente e artisticamente, e coordeno equipes multidisciplinares de motion designers, programadores, arquitetos e técnicos. Antonio assina a curadoria. A AYA é o sistema, e eu sou um dos motores.</p>
-        <p>Meu trabalho se sustenta em duas linhagens. Uma artística, de Moholy-Nagy a Dan Flavin, do modulador de luz e espaço à lâmpada fluorescente como medium. Outra técnica, que vem da mecatrônica e da fabricação digital. As obras nascem do cruzamento dessas forças. Revelar o invisível é o que persiste, do Córrego das Almas soterrado em 2012 às redes micorrízicas da <em>Floresta Utópica</em> em 2025.</p>
-        <p>Anos depois do TCC, essa linhagem reapareceu de forma explícita no livro <em>100 Anos de Arte Moderna: a cena contemporânea</em>, de Carlos Zibel Costa, o mesmo orientador que acompanhou <em>LUZCIDADE</em> na FAU-USP. O perfil dedicado ao meu trabalho articula <em>Cachoeira</em>, <em>sem título, para Mantiqueira</em> e <em>OCEANVS</em> como partes de uma trajetória só, da luz no espaço público à construção de ambientes imersivos.</p>
-        <p>Em 2026 o trabalho se deslocou para dentro da máquina. Construo os motores que as obras usam e rodo em placa local, no ateliê, tudo o que cabe nela. <em><a href="/obras/2047">2047: Arquivos do depois de antes</a></em>, que faço com Giselle Beiguelman e que está na Casa Firjan de 15 de outubro a 16 de novembro de 2026, é a peça onde essa posição fica explícita, uma máquina que lê o presente, escreve o futuro em papel contínuo e publica o próprio gasto, da placa da sala ao datacenter de onde vem a escrita. <em><a href="/obras/player1">Player 1</a></em> foi realizada no Farol Santander. A pesquisa técnica que sustenta as duas sai publicada em repositório aberto, porque medir e mostrar como a coisa funciona faz parte do trabalho.</p>
-      </div>
-    </section>
-
-    <section class="paper split">
-      <div class="split-block">
-        <div class="paper-kicker">Colaboradores recorrentes</div>
-        <div class="list">
-          <div><strong>Antonio Curti</strong> · curadoria em todas as exposições AYA desde 2019</div>
-          <div><strong>Wesley Lee</strong> · hardware e eletrônica (Mementos, Interlúdio, METADATA, Google Buttonwall, Dimensão/Nonotak)</div>
-          <div><strong>Matheus Leston</strong> · programação audiovisual (Mementos, OCEANVS, O Que Nos Une)</div>
-          <div><strong>João Alencar (Jãozão)</strong> · motion design (OCEANVS, SP3024, AMANO). Antes juntos no BijaRi</div>
-          <div><strong>Flávio Reis (Audiovisualismo)</strong> · motion design (OCEANVS)</div>
-          <div><strong>Juvi</strong> · trilha sonora (OCEANVS, Andrômeda)</div>
-          <div><strong>Rodrigo Bellotto</strong> · Objeto em Forma de: Espaço (2009), New York Visualists</div>
-          <div><strong><a href="/publicacoes/100-anos-de-arte-moderna">100 Anos de Arte Moderna: a cena contemporânea</a></strong> · Carlos Zibel Costa. Perfil dedicado nas pp. 64–67.</div>
-        </div>
-      </div>
-      <div class="split-block">
-        <div class="paper-kicker">Registros</div>
-        <div class="list links">
-          <a href="https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman" target="_blank">Enciclopédia Itaú Cultural</a>
-          <a href="https://br.linkedin.com/in/felipesztutman" target="_blank">LinkedIn</a>
-          <a href="https://instagram.com/felipesztutman" target="_blank">Instagram</a>
-          <a href="https://aya.cx" target="_blank">AYA Studio</a>
-          <a href="https://github.com/sztlink/lab" target="_blank">Pesquisa em inferência (GitHub)</a>
-        </div>
-      </div>
-    </section>
-  </main>
+  <SobreCorpo
+    isEN={false}
+    nav={nav}
+    kicker="SOBRE · CONTEXTO"
+    title="Técnico que virou artista"
+    subtitle="São Paulo, 1986. Mecatrônica, design, live-cinema, cenografia, direção técnica, exposições imersivas e, desde 2026, os próprios motores das obras. Duas linhagens operam juntas, a artística da luz no espaço e a técnica da fabricação e dos sistemas."
+    labels={labels}
+    dossier={dossier}
+    passages={passages}
+    blocks={blocks}
+    records={records}
+  />
 </Base>
-
-<style is:global>
-body.page-sobre{background:#000000;color:#ffffff}
-body.page-sobre a{text-decoration:none}
-</style>
-
-<style>
-:root{--paper:#000000;--ink:#ffffff;--line:rgba(255,255,255,.16)}
-.archive-page{min-height:100vh;background:#000000}
-.entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
-.back,.surface-link,.entry-kicker,.paper-kicker,.row dt{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
-.back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}.back:hover,.surface-link:hover{color:#fff}
-.surface-link{color:rgba(255,255,255,.38)}
-.entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}
-.entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:10ch}
-.entry p{max-width:48rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
-.paper{background:var(--paper);color:var(--ink);padding:1rem;margin:0}
-.paper + .paper{border-top:1px solid var(--line)}
-.paper-kicker{color:rgba(255,255,255,.45);margin-bottom:.8rem}
-.dossier dl{display:grid;gap:.55rem}
-.row{display:grid;grid-template-columns:150px 1fr;gap:.8rem;padding-top:.55rem;border-top:1px solid var(--line)}
-.row dt{color:rgba(255,255,255,.55)}
-.row dd{font:.95rem/1.55 var(--sans);color:rgba(255,255,255,.92)}
-.body-copy{max-width:62ch;font:.95rem/1.8 var(--sans);color:rgba(255,255,255,.78)}
-.body-copy p + p{margin-top:1rem}
-.split{display:grid;gap:1rem}
-.list{display:grid;gap:.55rem;font:.9rem/1.65 var(--sans);color:rgba(255,255,255,.75)}
-.list strong{color:var(--ink)}
-.list a{color:rgba(255,255,255,.75)}
-.list a:hover{text-decoration:underline;color:var(--ink)}
-@media (min-width: 900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.split{grid-template-columns:1fr 1fr;align-items:start}.split-block + .split-block{padding-left:1rem;border-left:1px solid var(--line)}}
-@media (max-width: 720px){.row{grid-template-columns:1fr;gap:.25rem}}
-</style>

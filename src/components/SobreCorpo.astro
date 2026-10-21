@@ -1,0 +1,258 @@
+---
+// Sobre: a trajetoria como travessia. Uma espinha de tempo (marcos) em que
+// cada passagem do texto puxa, ao lado, as obras que cita, com numero e ano
+// vindos de works.json. Linhas finas, rotulos mono, nenhuma caixa. Sem JS:
+// a equipe recolhe em <details> nativo, como a ficha das obras.
+import worksData from '../data/works.json';
+
+type Passage = { mark: string; sub?: string; md: string; coda?: boolean };
+type Person = { name: string; md: string };
+type Block = { title: string; people: Person[] };
+
+interface Props {
+  isEN: boolean;
+  nav: { back: string; backHref: string; map: string; alt: string; altHref: string; altLabel: string };
+  kicker: string;
+  title: string;
+  subtitle: string;
+  labels: { dossier: string; path: string; team: string; records: string; cited: string; work: string };
+  dossier: Array<[string, string]>;
+  passages: Passage[];
+  blocks: Block[];
+  records: string[];
+}
+
+const { isEN, nav, kicker, title, subtitle, labels, dossier, passages, blocks, records } = Astro.props;
+
+const works: any[] = (worksData as any).works || [];
+const bySlug = new Map(works.map((w) => [w.slug, w]));
+
+function esc(s: string) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function inline(s: string) {
+  return s
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
+// Marcacao minima: **negrito**, *italico*, [texto](url). Links externos abrem em nova aba.
+function md(s: string) {
+  const parts: string[] = [];
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(s))) {
+    parts.push(inline(esc(s.slice(last, m.index))));
+    const href = m[2];
+    const ext = /^https?:\/\//.test(href);
+    const label = inline(esc(m[1]));
+    parts.push(ext
+      ? `<a href="${href}" target="_blank" rel="noopener">${label}<span class="ext" aria-hidden="true"> ↗</span></a>`
+      : `<a href="${href}">${label}</a>`);
+    last = m.index + m[0].length;
+  }
+  parts.push(inline(esc(s.slice(last))));
+  return parts.join('');
+}
+
+function cited(s: string) {
+  const slugs: string[] = [];
+  for (const m of s.matchAll(/\]\((?:\/en)?\/obras\/([^)]+)\)/g)) {
+    if (!slugs.includes(m[1])) slugs.push(m[1]);
+  }
+  return slugs.map((slug) => bySlug.get(slug)).filter(Boolean);
+}
+
+// Papeis de cada pessoa em linhas: separa por ponto e virgula; sem ele, por frase.
+function roleLines(s: string) {
+  const lines = s.includes('; ') ? s.split('; ') : s.split(/(?<=\.) (?=[A-ZÁÉÍÓÚ])/);
+  return lines.map((line) => md(line.trim()));
+}
+
+const prefix = isEN ? '/en' : '';
+---
+<main class="sobre">
+  <header class="entry">
+    <nav class="surface-links" aria-label={isEN ? 'Site' : 'Site'}>
+      <a href={nav.backHref} class="back">{nav.back}</a>
+      <a href="/mapa" class="surface-link">{nav.map}</a>
+      <a href={nav.altHref} class="surface-link" hreflang={isEN ? 'pt-BR' : 'en'} aria-label={nav.altLabel}>{nav.alt}</a>
+    </nav>
+    <p class="kicker">{kicker}</p>
+    <h1>{title}</h1>
+    <p class="subtitle">{subtitle}</p>
+  </header>
+
+  <section class="dossier" aria-labelledby="dossie">
+    <h2 class="section-kicker" id="dossie">{labels.dossier}</h2>
+    <dl>
+      {dossier.map(([k, v]) => (
+        <div>
+          <dt>{k}</dt>
+          <dd set:html={md(v)} />
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="path" aria-labelledby="percurso">
+    <h2 class="section-kicker" id="percurso">{labels.path}</h2>
+    <ol class="spine">
+      {passages.map((p) => {
+        const list = cited(p.md);
+        return (
+          <li class:list={['passage', p.coda && 'coda']}>
+            <div class="mark">
+              <h3>{p.mark}</h3>
+              {p.sub && <p class="mark-sub">{p.sub}</p>}
+            </div>
+            <p class="passage-text" set:html={md(p.md)} />
+            {list.length > 0 && (
+              <ul class="cited" aria-label={labels.cited}>
+                {list.map((w: any) => (
+                  <li style={`--pulse:${w.corPulso || '#ffffff'}`}>
+                    <a href={`${prefix}/obras/${w.slug}`}>
+                      <span class="cited-meta">{labels.work} {w.numero} · {w.ano}</span>
+                      <span class="cited-title">{w.titulo}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+
+  <section class="team" aria-labelledby="colaboradores">
+    <h2 class="section-kicker" id="colaboradores">{labels.team}</h2>
+    {blocks.map((block, i) => (
+      <details class="team-block">
+        <summary>
+          <span class="block-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <span class="sum-main">
+            <span class="block-title">{block.title}</span>
+            <span class="sum-count">{block.people.length}<span class="sr-only">{isEN ? (block.people.length === 1 ? ' person' : ' people') : (block.people.length === 1 ? ' pessoa' : ' pessoas')}</span></span>
+          </span>
+        </summary>
+        <ul class="people">
+          {block.people.map((person) => (
+            <li class="person">
+              <p class="person-name">{person.name}</p>
+              <ul class="roles">
+                {roleLines(person.md).map((line) => <li set:html={line} />)}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </details>
+    ))}
+  </section>
+
+  <section class="records" aria-labelledby="registros">
+    <h2 class="section-kicker" id="registros">{labels.records}</h2>
+    <ul>
+      {records.map((r) => <li set:html={md(r)} />)}
+    </ul>
+  </section>
+</main>
+
+<style is:global>
+  body.page-sobre{background:#000000;color:#ffffff}
+  body.page-sobre a{text-decoration:none}
+</style>
+
+<style>
+  .sobre{--line:rgba(255,255,255,.12);--dim:rgba(255,255,255,.5);background:#000000;color:#ffffff;padding:1.25rem 1.25rem 4rem;overflow-x:clip}
+  .sobre :global(a:focus-visible){outline:2px solid #ffffff;outline-offset:3px}
+
+  .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
+  .back,.surface-link,.kicker,.section-kicker,.mark-sub,.cited-meta,.team-block summary,.dossier dt{font:.72rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+  .back{color:rgba(255,255,255,.55)}
+  .surface-link{color:rgba(255,255,255,.38)}
+  .back:hover,.surface-link:hover{color:#ffffff}
+
+  .entry{padding:0 0 2.25rem;border-bottom:1px solid var(--line)}
+  .kicker{color:var(--dim);margin-bottom:1rem}
+  .entry h1{font:900 clamp(2.8rem,10vw,8rem)/.9 var(--sans);letter-spacing:-.05em;max-width:12ch}
+  .subtitle{margin-top:1.25rem;max-width:60ch;font:1.05rem/1.6 var(--sans);color:rgba(255,255,255,.78)}
+
+  .section-kicker{font-size:.62rem;letter-spacing:.26em;color:rgba(255,255,255,.55);font-weight:400;margin-bottom:1.25rem}
+  .dossier,.path,.team,.records{padding:1.75rem 0 2.25rem;border-bottom:1px solid var(--line)}
+  .records{border-bottom:0}
+
+  /* Dossie: faixa de campos curtos, nao tabela */
+  .dossier dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr));gap:1.1rem 2.5rem}
+  .dossier dt{font-size:.66rem;color:var(--dim)}
+  .dossier dd{margin-top:.3rem;font:.92rem/1.5 var(--sans);color:#ffffff}
+
+  /* Percurso: espinha de tempo */
+  .spine{list-style:none;position:relative}
+  .passage{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:.7rem;padding:0 0 2rem 1.25rem}
+  .spine::before{content:'';position:absolute;left:0;top:.45rem;bottom:2rem;width:1px;background:rgba(255,255,255,.22)}
+  .passage::before{content:'';position:absolute;left:-3px;top:.45rem;width:7px;height:7px;background:#ffffff}
+  .coda::before{background:#000000;outline:1px solid rgba(255,255,255,.6);outline-offset:-1px}
+  .passage:not(.coda) + .coda{margin-top:1rem}
+  .mark h3{font:700 1.35rem/1 var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:#ffffff}
+  .coda .mark h3{font:.72rem/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);padding-top:.15rem}
+  .mark-sub{margin-top:.45rem;color:rgba(255,255,255,.45);font-size:.64rem}
+  .passage-text{max-width:64ch;font:1rem/1.7 var(--sans);color:rgba(255,255,255,.86)}
+  .passage-text :global(strong){color:#ffffff;font-weight:600}
+  .passage-text :global(a),.roles :global(a),.records :global(a),.dossier :global(a){color:#ffffff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.32);text-underline-offset:.2em;text-decoration-thickness:1px}
+  .passage-text :global(a:hover),.roles :global(a:hover),.records :global(a:hover){text-decoration-color:#ffffff}
+
+  .cited{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;padding-top:.15rem}
+  .cited a{display:flex;flex-direction:column;gap:.2rem;color:#ffffff}
+  .cited-meta{display:flex;align-items:center;gap:.45rem;font-size:.6rem;color:rgba(255,255,255,.48)}
+  .cited-meta::before{content:'';width:6px;height:6px;background:var(--pulse);flex:0 0 auto}
+  .cited-title{font:500 .88rem/1.35 var(--sans)}
+  .cited a:hover .cited-title{text-decoration:underline;text-underline-offset:.2em}
+
+  /* Equipe: tres blocos recolhidos, linhas finas entre eles (como a ficha) */
+  .team-block{border-top:1px solid rgba(255,255,255,.1)}
+  .team-block summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:.9rem;padding:.95rem 0;color:rgba(255,255,255,.78)}
+  .team-block summary::-webkit-details-marker{display:none}
+  .team-block summary::after{content:'+';margin-left:auto;letter-spacing:0;font-size:.9rem;line-height:1;color:rgba(255,255,255,.55)}
+  .team-block[open] > summary::after{content:'\2212'}
+  .team-block summary:hover{color:#ffffff}
+  .team-block summary:focus-visible{outline:2px solid #ffffff;outline-offset:2px}
+  .block-n{color:rgba(255,255,255,.35)}
+  .sum-main{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem 1rem;min-width:0}
+  .sum-count{color:rgba(255,255,255,.38);letter-spacing:.08em}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .people{list-style:none;padding:.6rem 0 .6rem}
+  .person{break-inside:avoid;padding-bottom:1.35rem}
+  .person-name{font:600 1rem/1.35 var(--sans);letter-spacing:-.01em;color:#ffffff;margin-bottom:.35rem}
+  .roles{list-style:none;display:grid;gap:.2rem;font:.88rem/1.55 var(--sans);color:rgba(255,255,255,.66)}
+
+  /* Registros */
+  .records ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr));gap:.7rem 2.5rem;font:.92rem/1.5 var(--sans);color:rgba(255,255,255,.66)}
+  .records li:first-child{grid-column:1 / -1;max-width:64ch;margin-bottom:.5rem}
+  .records :global(strong){font:.66rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:400;margin-right:.35rem}
+  .records :global(.ext),.roles :global(.ext){color:rgba(255,255,255,.4)}
+
+  @media (min-width: 900px){
+    .sobre{padding:1.5rem 2rem 5rem}
+    .entry{padding-bottom:3rem}
+    .dossier,.path,.team,.records{padding:2.25rem 0 2.75rem}
+    .people{columns:2;column-gap:3.5rem}
+  }
+
+  @media (min-width: 1100px){
+    .spine::before{left:11rem}
+    .passage{grid-template-columns:10rem minmax(0,64ch) minmax(12rem,1fr);gap:0 3.5rem;padding:0 0 2.75rem 0;align-items:start}
+    .passage::before{left:calc(11rem - 3px)}
+    .mark{position:sticky;top:1.5rem;text-align:right}
+    .mark h3{font-size:1.6rem}
+    .coda .mark h3{font-size:.72rem}
+    .passage-text{max-width:none;font-size:1.02rem;line-height:1.8}
+    .dossier dl{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .cited{flex-direction:column;gap:.9rem}
+    .team-block summary{display:grid;grid-template-columns:10rem minmax(0,1fr) auto;gap:0 3.5rem}
+    .block-n{text-align:right}
+    .people{padding-left:13.5rem}
+  }
+</style>
