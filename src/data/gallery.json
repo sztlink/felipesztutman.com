@@ -478,34 +478,69 @@
   ],
   "o-que-nos-une": [
     {
-      "src": "/img/obras/o-que-nos-une/01-oqnu-brain-mirror-chamber-1-2.jpg",
-      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 01",
-      "captionEn": "O Que Nos Une · mirror and LED chamber · view 01"
+      "src": "/img/obras/o-que-nos-une/01-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitante na câmara de espelhos e LEDs, Centro Cultural FIESP, São Paulo, 2025",
+      "captionEn": "O Que Nos Une · visitor in the mirror and LED chamber, Centro Cultural FIESP, São Paulo, 2025"
     },
     {
-      "src": "/img/obras/o-que-nos-une/02-oqnu-brain-mirror-chamber-1.jpg",
-      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 02",
-      "captionEn": "O Que Nos Une · mirror and LED chamber · view 02"
+      "src": "/img/obras/o-que-nos-une/02-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitantes de mãos dadas sobre o piso interativo",
+      "captionEn": "O Que Nos Une · visitors holding hands on the interactive floor"
     },
     {
-      "src": "/img/obras/o-que-nos-une/03-oqnu-brain-mirror-chamber.jpg",
-      "caption": "O Que Nos Une · câmara de espelhos e LEDs · vista 03",
-      "captionEn": "O Que Nos Une · mirror and LED chamber · view 03"
+      "src": "/img/obras/o-que-nos-une/03-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitantes nos pedestais da câmara de sincronização biométrica",
+      "captionEn": "O Que Nos Une · visitors at the pedestals of the biometric synchronization chamber"
     },
     {
-      "src": "/img/obras/o-que-nos-une/04-oqnu-mirror-chamber-blue-light.jpg",
-      "caption": "O Que Nos Une · luz azul na câmara de espelhos · vista 04",
-      "captionEn": "O Que Nos Une · blue light in the mirror chamber · view 04"
+      "src": "/img/obras/o-que-nos-une/04-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · entrada da câmara de espelhos vista do salão",
+      "captionEn": "O Que Nos Une · entrance to the mirror chamber seen from the hall"
     },
     {
-      "src": "/img/obras/o-que-nos-une/05-oqnu-mirror-chamber-blue-light.jpg",
-      "caption": "O Que Nos Une · documentação da câmara de espelhos · vista 05",
-      "captionEn": "O Que Nos Une · documentation of the mirror chamber · view 05"
+      "src": "/img/obras/o-que-nos-une/05-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · silhueta diante de um cérebro projetado nos espelhos",
+      "captionEn": "O Que Nos Une · silhouette before a brain image multiplied by the mirrors"
     },
     {
-      "src": "/img/obras/o-que-nos-une/06-oqnu-mirror-chamber-blue-silho.jpg",
-      "caption": "O Que Nos Une · presença do corpo na câmara de espelhos · vista 06",
-      "captionEn": "O Que Nos Une · body presence in the mirror chamber · view 06"
+      "src": "/img/obras/o-que-nos-une/06-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · gesto de mão erguida dentro da câmara de espelhos",
+      "captionEn": "O Que Nos Une · raised hand inside the mirror chamber"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/07-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitante diante de um cérebro iluminado em LED",
+      "captionEn": "O Que Nos Une · visitor facing a brain lit in LED"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/08-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitantes espalhados pelo piso interativo",
+      "captionEn": "O Que Nos Une · visitors spread across the interactive floor"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/09-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · passos sobre a rede de luz gerada ao vivo",
+      "captionEn": "O Que Nos Une · footsteps over the live-generated web of light"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/10-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · roda de visitantes no piso interativo",
+      "captionEn": "O Que Nos Une · circle of visitors on the interactive floor"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/11-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitante diante da projeção que responde ao movimento",
+      "captionEn": "O Que Nos Une · visitor before the projection responding to movement"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/12-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitante com a mão no sensor cardíaco sob luz branca",
+      "captionEn": "O Que Nos Une · visitor with a hand on the heart sensor under white light"
+    },
+    {
+      "src": "/img/obras/o-que-nos-une/13-o-que-nos-une.jpg",
+      "caption": "O Que Nos Une · visitante com a mão no sensor cardíaco sob luz rosa",
+      "captionEn": "O Que Nos Une · visitor with a hand on the heart sensor under pink light"
     }
   ],
   "floresta-utopica": [
@@ -743,34 +778,79 @@
   ],
   "player1": [
     {
-      "src": "/img/obras/player1/01-player1-rush-estacoes.jpg",
-      "caption": "RUSH, duas estações de quatro CRTs cada, rodando RACE, FIGHT, RUN e SHOOT, 2026",
-      "captionEn": "RUSH, two stations of four CRTs each, running RACE, FIGHT, RUN and SHOOT, 2026"
+      "src": "/img/obras/player1/01-player1.jpg",
+      "caption": "Player 1 · RUSH em jogo, uma pessoa diante de quatro CRTs e a segunda estação acesa ao lado, Farol Santander São Paulo, 2026",
+      "captionEn": "Player 1 · RUSH in play, a person facing four CRTs with the second station lit beside, Farol Santander São Paulo, 2026"
     },
     {
-      "src": "/img/obras/player1/02-player1-drift-campo.jpg",
-      "caption": "DRIFT, a tela de entrada e o piso iluminado do campo de jogo, 2026",
-      "captionEn": "DRIFT, the start screen and the lit floor of the playing field, 2026"
+      "src": "/img/obras/player1/02-player1.jpg",
+      "caption": "Player 1 · DRIFT, de pé no campo diante da tela \"escolha um lado e abra os braços para iniciar\"",
+      "captionEn": "Player 1 · DRIFT, standing in the field before the screen \"choose a side and open your arms to start\""
     },
     {
-      "src": "/img/obras/player1/03-player1-rush-painel.jpg",
-      "caption": "RUSH, o painel de controle com manche e botões, 2026",
-      "captionEn": "RUSH, the control panel with joystick and buttons, 2026"
+      "src": "/img/obras/player1/03-player1.jpg",
+      "caption": "Player 1 · RUSH, as mãos no manche e nos botões do painel",
+      "captionEn": "Player 1 · RUSH, hands on the joystick and buttons of the panel"
     },
     {
-      "src": "/img/obras/player1/04-player1-drift-telas.jpg",
-      "caption": "DRIFT, escolha um lado e abra os braços para iniciar, entre CONSTELAÇÃO e METEORO, 2026",
-      "captionEn": "DRIFT, \"choose a side and open your arms to start\", between CONSTELLATION and METEOR, 2026"
+      "src": "/img/obras/player1/04-player1.jpg",
+      "caption": "Player 1 · DRIFT em jogo, uma criança diante do campo de partículas",
+      "captionEn": "Player 1 · DRIFT in play, a child facing the particle field"
     },
     {
-      "src": "/img/obras/player1/05-player1-sala-eixo.jpg",
-      "caption": "Eixo da sala, o pórtico azul ao fundo e a parede de painéis, 2026",
-      "captionEn": "Axis of the room, the blue gateway at the back and the wall of panels, 2026"
+      "src": "/img/obras/player1/05-player1.jpg",
+      "caption": "Player 1 · DRIFT, o corpo no centro da rede de luz enquanto os cubos caem",
+      "captionEn": "Player 1 · DRIFT, the body at the center of the web of light as the cubes fall"
     },
     {
-      "src": "/img/obras/player1/06-player1-porticos-acervo.jpg",
-      "caption": "Três pórticos de neon e as vitrines do acervo, com reflexo no piso, 2026",
-      "captionEn": "Three neon gateways and the collection showcases, reflected in the floor, 2026"
+      "src": "/img/obras/player1/06-player1.jpg",
+      "caption": "Player 1 · DRIFT, uma criança se joga no chão do campo",
+      "captionEn": "Player 1 · DRIFT, a child throws themself onto the floor of the field"
+    },
+    {
+      "src": "/img/obras/player1/07-player1.jpg",
+      "caption": "Player 1 · RUSH, uma criança sorri no painel enquanto outras jogam atrás",
+      "captionEn": "Player 1 · RUSH, a child smiles at the panel while others play behind"
+    },
+    {
+      "src": "/img/obras/player1/08-player1.jpg",
+      "caption": "Player 1 · DRIFT, a tela de escolha entre CONSTELAÇÃO e METEORO",
+      "captionEn": "Player 1 · DRIFT, the selection screen between CONSTELLATION and METEOR"
+    },
+    {
+      "src": "/img/obras/player1/09-player1.jpg",
+      "caption": "Player 1 · RUSH, duas estações de quatro CRTs rodando RACE, FIGHT, RUN e SHOOT",
+      "captionEn": "Player 1 · RUSH, two stations of four CRTs running RACE, FIGHT, RUN and SHOOT"
+    },
+    {
+      "src": "/img/obras/player1/10-player1.jpg",
+      "caption": "Player 1 · uma pessoa dentro do pórtico azul, no eixo da sala, entre as vitrines do acervo",
+      "captionEn": "Player 1 · a person inside the blue gateway, on the room's axis, between the collection showcases"
+    },
+    {
+      "src": "/img/obras/player1/11-player1.jpg",
+      "caption": "Player 1 · três pórticos de neon com peças do acervo, refletidos no piso",
+      "captionEn": "Player 1 · three neon gateways holding collection pieces, reflected in the floor"
+    },
+    {
+      "src": "/img/obras/player1/12-player1.jpg",
+      "caption": "Player 1 · um olhar através da vitrine da Power Glove, a luva que já tentava fazer da mão o controle",
+      "captionEn": "Player 1 · a gaze through the Power Glove showcase, the glove that already tried to make the hand the controller"
+    },
+    {
+      "src": "/img/obras/player1/13-player1.jpg",
+      "caption": "Player 1 · o Virtual Boy na vitrine, entre as tentativas de levar o jogo para o corpo",
+      "captionEn": "Player 1 · the Virtual Boy in its showcase, among the attempts to carry play into the body"
+    },
+    {
+      "src": "/img/obras/player1/14-player1.jpg",
+      "caption": "Player 1 · a sala do acervo, painéis de luz por geração sobre as vitrines e o reflexo no piso",
+      "captionEn": "Player 1 · the collection room, light panels by generation above the showcases and their reflection on the floor"
+    },
+    {
+      "src": "/img/obras/player1/15-player1.jpg",
+      "caption": "Player 1 · o corredor dos painéis, cinquenta anos de videogame em linha do tempo",
+      "captionEn": "Player 1 · the corridor of panels, fifty years of video games as a timeline"
     }
   ]
 }

@@ -24,7 +24,7 @@ credits:
   - { role: "Technical sourcing", name: "Leonardo" }
   - { role: "Installation", name: "Ihon" }
   - { role: "Design", name: "Ana Clara" }
-  - { role: "Photography", name: "Lua Morales" }
+  - { role: "Photography", name: "Lua Morales, Mariana Ribeiro" }
 ---
 
 Before I learned to draw, I was already building universes. With Lego, on paper, in video games, in tabletop RPGs, it was always about creating worlds that could be inhabited, systems that came alive when someone entered. Video games were never entertainment to me. They were the place where I learned that technology doesn't imitate experience, it *expands* what's possible to feel and do. In the current archive, Player 1 is an exhibition open to the public and also the first place where this foundational territory appears directly inside the white cube. The project describes four interactive installations that use the body as interface: in STRIKE, gestures become energy attacks against light entities. In DRIFT, the body moves to dodge digital objects. In TRACE, the finger explores fifty years of history through a collection curated by Antonio Curti. In RUSH, hands execute under pressure in a vertical tower of four stacked CRTs, each screen a minigame that must be beaten against the clock.
