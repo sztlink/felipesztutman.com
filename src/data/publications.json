@@ -33,8 +33,8 @@
         "oceanvs"
       ],
       "color": "#2a2a3a",
-      "description": "Livro com um perfil dedicado a Felipe que reúne Cachoeira, sem título, para Mantiqueira e OCEANVS numa mesma trajetória.",
-      "descriptionEn": "Book with a profile of Felipe that brings together Cachoeira, untitled, for Mantiqueira and OCEANVS as one trajectory.",
+      "description": "Livro com um perfil dedicado a Felipe que reúne Cachoeira, sem título, para Mantiqueira e OCEANVS numa mesma trajetória Edição de tiragem limitada, sem ISBN.",
+      "descriptionEn": "Book with a profile of Felipe that brings together Cachoeira, untitled, for Mantiqueira and OCEANVS as one trajectory Limited edition, without ISBN.",
       "currentPublicPath": "/publicacoes/100-anos-de-arte-moderna",
       "source": "src/data/mapa.json#ghosts.zibel-book",
       "section": "livros",

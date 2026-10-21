@@ -31,7 +31,7 @@ credits:
 press:
   - { source: "SESI São Paulo", url: "https://www.sesisp.org.br/evento/8b7ede64-6589-45df-b5f3-a2baa41412fc/metadata-o-mundo-invisivel", title: "Página oficial" }
   - { source: "Dasartes", url: "https://dasartes.com.br/agenda/metadata-centro-cultural-fiesp-e-sesi-sp/", title: "Metadata no Centro Cultural FIESP" }
-  - { source: "Arte Que Acontece", url: "https://artequeacontece.com.br/evento/metadata-o-mundo-invisivel-no-centro-cultural-fiesp/", title: "Metadata: O Mundo Invisível" }
+  - { source: "Arte Que Acontece", url: "https://web.archive.org/web/20241006072346/https://artequeacontece.com.br/evento/metadata-o-mundo-invisivel-no-centro-cultural-fiesp/", title: "Metadata: O Mundo Invisível (Web Archive)" }
   - { source: "São Paulo Secreto", url: "https://saopaulosecreto.com/exposicao-metadata-o-mundo-invisivel/", title: "Exposição Metadata" }
 ---
 
@@ -39,4 +39,4 @@ In 2023, I conceived METADATA to reveal the invisible layers that organize São 
 
 Antonio Curti signed the curation and proposed a question that guided all development: how do you X-ray São Paulo? How do you reveal not just the pulse in real time, but also the historical marks, events, cultural transformations, retroactive data that shaped the present? We conceived a system that crosses these two temporal dimensions, creating a membrane between memory and event. The work doesn't illustrate data, it materializes it. Each particle responds to what's happening now and what has already happened. The visitor doesn't observe a metrics panel, they inhabit the invisible dynamic that sustains the metropolis.
 
-The installation was on display for six months at Centro Cultural FIESP, on Paulista Avenue, with free admission and audio guide. It was the first time I signed under AYA's name, a decision I only recognized in 2026 as erasure of individual authorship. Today, I claim METADATA as my work, with Antonio's curation and production by the AYA team. It's not a correction, it's belated recognition of what was always true.
+The installation was on display for six months at Centro Cultural FIESP, on Paulista Avenue, with free admission and audio guide. I signed under AYA's name, a decision I only recognized in 2026 as erasure of individual authorship. Today, I claim METADATA as my work, with Antonio's curation and production by the AYA team. It's not a correction, it's belated recognition of what was always true.
