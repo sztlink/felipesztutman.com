@@ -546,58 +546,58 @@
   "floresta-utopica": [
     {
       "src": "/img/obras/floresta-utopica/01-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · a escultura de fios emoldura a sala espelhada, Farol Santander, São Paulo, 2025",
-      "captionEn": "Floresta Utópica · the wire sculpture frames the mirrored room, Farol Santander, São Paulo, 2025"
+      "caption": "Floresta Utópica · visitante sob a malha de fios, entre esporos de luz e o seu reflexo, Farol Santander, São Paulo, 2025",
+      "captionEn": "Floresta Utópica · a visitor beneath the wire mesh, among spores of light and their reflection, Farol Santander, São Paulo, 2025"
     },
     {
       "src": "/img/obras/floresta-utopica/02-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · árvores e esporos de luz nas paredes e no piso espelhado",
-      "captionEn": "Floresta Utópica · trees and spores of light on the walls and the mirrored floor"
+      "caption": "Floresta Utópica · a escultura de fios suspensa sobre o corredor de cogumelos e o piso espelhado",
+      "captionEn": "Floresta Utópica · the wire sculpture suspended over the corridor of mushrooms and the mirrored floor"
     },
     {
       "src": "/img/obras/floresta-utopica/03-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · visitantes diante da árvore luminosa, sob a malha de fios",
-      "captionEn": "Floresta Utópica · visitors before the luminous tree, beneath the wire mesh"
+      "caption": "Floresta Utópica · silhueta no centro da sala, cercada pelos fios e pelos painéis",
+      "captionEn": "Floresta Utópica · a silhouette at the center of the room, surrounded by wires and panels"
     },
     {
       "src": "/img/obras/floresta-utopica/04-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · a malha de fios se abre sobre a sala inteira",
-      "captionEn": "Floresta Utópica · the wire mesh opens over the whole room"
+      "caption": "Floresta Utópica · o título na entrada da exposição",
+      "captionEn": "Floresta Utópica · the title at the entrance of the exhibition"
     },
     {
       "src": "/img/obras/floresta-utopica/05-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · corredor de flora projetada e seu reflexo",
-      "captionEn": "Floresta Utópica · a corridor of projected flora and its reflection"
+      "caption": "Floresta Utópica · visitante diante dos cogumelos de luz",
+      "captionEn": "Floresta Utópica · a visitor before the mushrooms of light"
     },
     {
       "src": "/img/obras/floresta-utopica/06-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · cogumelos de luz e a escultura de fios espelhada no piso",
-      "captionEn": "Floresta Utópica · mushrooms of light and the wire sculpture mirrored in the floor"
+      "caption": "Floresta Utópica · silhueta diante da flor vermelha, duplicada no espelho",
+      "captionEn": "Floresta Utópica · a silhouette before the red flower, doubled in the mirror"
     },
     {
       "src": "/img/obras/floresta-utopica/07-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · a malha de fios descendo sobre o painel iluminado",
-      "captionEn": "Floresta Utópica · the wire mesh descending over the lit panel"
+      "caption": "Floresta Utópica · silhueta diante dos painéis de pétalas, sob os fios",
+      "captionEn": "Floresta Utópica · a silhouette before the panels of petals, beneath the wires"
     },
     {
       "src": "/img/obras/floresta-utopica/08-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · silhueta diante das folhas projetadas, cortada pelos fios",
-      "captionEn": "Floresta Utópica · a silhouette before projected leaves, crossed by the wires"
+      "caption": "Floresta Utópica · folhas projetadas sob a malha de fios",
+      "captionEn": "Floresta Utópica · projected leaves beneath the wire mesh"
     },
     {
       "src": "/img/obras/floresta-utopica/09-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · uma figura sobre o piso espelhado, diante do painel",
-      "captionEn": "Floresta Utópica · a figure on the mirrored floor, facing the panel"
+      "caption": "Floresta Utópica · flores vermelhas entre os fios e os painéis espelhados",
+      "captionEn": "Floresta Utópica · red flowers between the wires and the mirrored panels"
     },
     {
       "src": "/img/obras/floresta-utopica/10-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · lírio vermelho e o seu duplo no espelho do piso",
-      "captionEn": "Floresta Utópica · a red lily and its double in the floor mirror"
+      "caption": "Floresta Utópica · visitante diante de uma folha de fogo",
+      "captionEn": "Floresta Utópica · a visitor before a leaf of fire"
     },
     {
       "src": "/img/obras/floresta-utopica/11-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · visitante entre uma folha de fogo e o seu reflexo",
-      "captionEn": "Floresta Utópica · a visitor between a leaf of fire and its reflection"
+      "caption": "Floresta Utópica · a escultura de fios e o seu reflexo no piso",
+      "captionEn": "Floresta Utópica · the wire sculpture and its reflection in the floor"
     },
     {
       "src": "/img/obras/floresta-utopica/12-floresta-utopica.jpg",
@@ -606,8 +606,18 @@
     },
     {
       "src": "/img/obras/floresta-utopica/13-floresta-utopica.jpg",
-      "caption": "Floresta Utópica · folhas projetadas sob os fios, repetidas no espelho",
-      "captionEn": "Floresta Utópica · projected leaves beneath the wires, repeated in the mirror"
+      "caption": "Floresta Utópica · visitante entre cogumelos e brotos projetados",
+      "captionEn": "Floresta Utópica · a visitor among projected mushrooms and sprouts"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/14-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · mão estendida para as raízes de luz",
+      "captionEn": "Floresta Utópica · a hand reaching toward the roots of light"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/15-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · visitante tocando os fios da escultura",
+      "captionEn": "Floresta Utópica · a visitor touching the wires of the sculpture"
     }
   ],
   "amano": [
