@@ -88,7 +88,7 @@
       }
     },
     "mementos": {
-      "r": 16, "color": "#ff4466",
+      "r": 16, "color": "#aa77ff",
       "material": ["luz", "laser"],
       "tags": ["laser", "cristal", "generativo", "padrão", "regras", "emergência", "sistema", "físico", "digital"],
       "links": ["interludio", "player1", "oceanvs"],
@@ -99,7 +99,7 @@
       }
     },
     "interludio": {
-      "r": 14, "color": "#ff4466",
+      "r": 14, "color": "#aa77ff",
       "material": ["luz", "sensor"],
       "tags": ["sensor", "proximidade", "corpo", "presença", "luz responsiva", "interativo", "reativo", "hardware"],
       "links": ["player1", "mementos", "o-que-nos-une"],
@@ -110,7 +110,7 @@
       }
     },
     "o-que-nos-une": {
-      "r": 20, "color": "#ff4466",
+      "r": 20, "color": "#00ccff",
       "venue": "FIESP",
       "material": ["sensor", "projeção"],
       "tags": ["corpo", "biométrico", "coração", "sincronização", "espelho", "sensor", "nicolelis", "ciência", "conexão", "batimento"],
@@ -122,7 +122,7 @@
       }
     },
     "player1": {
-      "r": 28, "color": "#ff4466",
+      "r": 28, "color": "#aa77ff",
       "material": ["sensor"],
       "tags": ["videogame", "jogo", "corpo", "controle", "sensor", "anos 80", "cultura pop", "interativo", "pessoal", "strike", "drift", "trace", "rush"],
       "links": ["interludio", "mementos", "gurps"],
@@ -155,7 +155,7 @@
       }
     },
     "flama": {
-      "r": 16, "color": "#ff8800",
+      "r": 16, "color": "#8a8a8a",
       "material": ["luz", "sensor", "projeção"],
       "tags": ["fogo", "toque", "marca", "permanente", "interativo", "cristal", "chama", "calor", "fogueira", "led"],
       "links": ["andromeda", "floresta-utopica", "oceanvs"],
