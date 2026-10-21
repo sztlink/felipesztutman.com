@@ -15,6 +15,7 @@ mechanism:
 credits:
   - { role: "Artista", name: "Felipe Sztutman" }
   - { role: "Curadoria", name: "Antonio Curti" }
+  - { role: "Fotografia", name: "Jorge Sato" }
 press:
   - { source: "SESI São Paulo", url: "https://www.sesisp.org.br/evento/8b7ede64-6589-45df-b5f3-a2baa41412fc/metadata-o-mundo-invisivel", title: "Página oficial" }
   - { source: "Dasartes", url: "https://dasartes.com.br/agenda/metadata-centro-cultural-fiesp-e-sesi-sp/", title: "Metadata no Centro Cultural FIESP" }

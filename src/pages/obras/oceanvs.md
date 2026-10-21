@@ -20,6 +20,7 @@ credits:
   - { role: "Trilha Sonora", name: "Juvi" }
   - { role: "Programação Interativa", name: "Matheus Leston" }
   - { role: "Materialização", name: "AYA Studio" }
+  - { role: "Fotografia", name: "Luiz Maudonnet (São Paulo), Leo Lara (Belo Horizonte)" }
 publications:
   - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "p. 64–67", url: "/publicacoes/100-anos-de-arte-moderna", note: "O livro articula OCEANVS como ponto de virada entre a série inicial de luz no espaço e a fase AYA das exposições imersivas." }
 ---

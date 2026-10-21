@@ -213,66 +213,136 @@
   ],
   "oceanvs": [
     {
-      "src": "/img/obras/oceanvs/01-oceanvs-golden-reflection-face.jpg",
-      "caption": "OCEANVS · presença humana em reflexão aquática · vista 01",
-      "captionEn": "OCEANVS · human presence in aquatic reflection · view 01"
+      "src": "/img/obras/oceanvs/01-oceanvs.jpg",
+      "caption": "Oceanvs · a sala de imersão inteira, com projeção nas paredes e no piso e visitantes no banco central, Casa Fiat de Cultura, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · the full immersion room, projection on walls and floor, visitors on the central bench, Casa Fiat de Cultura, Belo Horizonte, 2023"
     },
     {
-      "src": "/img/obras/oceanvs/02-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 02",
-      "captionEn": "OCEANVS · immersive aquatic projection · view 02"
+      "src": "/img/obras/oceanvs/02-oceanvs.jpg",
+      "caption": "Oceanvs · duas crianças correm diante da onda projetada, Farol Santander, São Paulo, 2022",
+      "captionEn": "Oceanvs · two children run in front of the projected wave, Farol Santander, São Paulo, 2022"
     },
     {
-      "src": "/img/obras/oceanvs/03-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 03",
-      "captionEn": "OCEANVS · immersive aquatic projection · view 03"
+      "src": "/img/obras/oceanvs/03-oceanvs.jpg",
+      "caption": "Oceanvs · visitante sentado no centro das raízes de luz que se espalham pelo piso, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · a visitor seated at the center of roots of light spreading across the floor, Belo Horizonte, 2023"
     },
     {
-      "src": "/img/obras/oceanvs/04-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 04",
-      "captionEn": "OCEANVS · immersive aquatic projection · view 04"
+      "src": "/img/obras/oceanvs/04-oceanvs.jpg",
+      "caption": "Oceanvs · público sentado diante do mar projetado, com os projetores visíveis no teto, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · audience seated before the projected sea, projectors visible on the ceiling, Belo Horizonte, 2023"
     },
     {
-      "src": "/img/obras/oceanvs/05-oceanvs-immersive-water-projec.jpg",
-      "caption": "OCEANVS · projeção aquática imersiva · vista 05",
-      "captionEn": "OCEANVS · immersive aquatic projection · view 05"
+      "src": "/img/obras/oceanvs/05-oceanvs.jpg",
+      "caption": "Oceanvs · crianças correm sob a tempestade de luz violeta, São Paulo, 2022",
+      "captionEn": "Oceanvs · children run beneath the violet storm of light, São Paulo, 2022"
     },
     {
-      "src": "/img/obras/oceanvs/06-oceanvs-immersivewater-01.jpg",
-      "caption": "OCEANVS · ambiente de imersão · vista 06",
-      "captionEn": "OCEANVS · immersion environment · view 06"
+      "src": "/img/obras/oceanvs/06-oceanvs.jpg",
+      "caption": "Oceanvs · floresta submersa projetada em volta, com visitantes no banco, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · submerged forest projected all around, visitors on the bench, Belo Horizonte, 2023"
+    },
+    {
+      "src": "/img/obras/oceanvs/07-oceanvs.jpg",
+      "caption": "Oceanvs · linhas de luz descem pelas paredes e atravessam o piso entre adultos e crianças, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · lines of light run down the walls and across the floor among adults and children, Belo Horizonte, 2023"
+    },
+    {
+      "src": "/img/obras/oceanvs/08-oceanvs.jpg",
+      "caption": "Oceanvs · visitante caminha por um corredor de partículas brancas, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · a visitor walks through a corridor of white particles, Belo Horizonte, 2023"
+    },
+    {
+      "src": "/img/obras/oceanvs/09-oceanvs.jpg",
+      "caption": "Oceanvs · silhueta diante de filamentos que irradiam pela parede, São Paulo, 2022",
+      "captionEn": "Oceanvs · a silhouette before filaments radiating across the wall, São Paulo, 2022"
+    },
+    {
+      "src": "/img/obras/oceanvs/10-oceanvs.jpg",
+      "caption": "Oceanvs · a passagem entre salas, com o público do outro lado e luz no piso escuro, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · the passage between rooms, audience beyond and light on the dark floor, Belo Horizonte, 2023"
+    },
+    {
+      "src": "/img/obras/oceanvs/11-oceanvs.jpg",
+      "caption": "Oceanvs · visitante de perfil sobre o reflexo de água projetado no piso, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · a visitor in profile over water reflections projected on the floor, Belo Horizonte, 2023"
+    },
+    {
+      "src": "/img/obras/oceanvs/12-oceanvs.jpg",
+      "caption": "Oceanvs · visitante fotografa as dunas de luz verde, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · a visitor photographs the dunes of green light, Belo Horizonte, 2023"
+    },
+    {
+      "src": "/img/obras/oceanvs/13-oceanvs.jpg",
+      "caption": "Oceanvs · a mesma paisagem em vermelho, no ato da seca, Belo Horizonte, 2023",
+      "captionEn": "Oceanvs · the same landscape turned red, in the drought act, Belo Horizonte, 2023"
     }
   ],
   "metadata": [
     {
-      "src": "/img/obras/metadata/01-metadata-blue-light-walk.jpg",
-      "caption": "METADATA · sala imersiva e projeção de dados · vista 01",
-      "captionEn": "METADATA · immersive room and data projection · view 01"
+      "src": "/img/obras/metadata/01-metadata.jpg",
+      "caption": "METADATA · a sala de cinco telas inteira, com o piso tomado por partículas de luz, Centro Cultural FIESP, São Paulo, 2023",
+      "captionEn": "METADATA · the full five-screen room, its floor covered in particles of light, Centro Cultural FIESP, São Paulo, 2023"
     },
     {
-      "src": "/img/obras/metadata/02-metadata-colorful-shadow-play.jpg",
-      "caption": "METADATA · documentação da instalação · vista 02",
-      "captionEn": "METADATA · installation documentation · view 02"
+      "src": "/img/obras/metadata/02-metadata.jpg",
+      "caption": "METADATA · silhueta diante da tempestade de cubos vermelhos e azuis",
+      "captionEn": "METADATA · a silhouette before a storm of red and blue cubes"
     },
     {
-      "src": "/img/obras/metadata/03-metadata-digital-abstract-figu.jpg",
-      "caption": "METADATA · visualização abstrata do sistema · vista 03",
-      "captionEn": "METADATA · abstract visualization of the system · view 03"
+      "src": "/img/obras/metadata/03-metadata.jpg",
+      "caption": "METADATA · o fluido em linhas curva as paredes e o piso como um túnel",
+      "captionEn": "METADATA · flowing lines bend walls and floor into a tunnel"
     },
     {
-      "src": "/img/obras/metadata/04-metadata-digital-abstract-figu.jpg",
-      "caption": "METADATA · visualização abstrata do sistema · vista 04",
-      "captionEn": "METADATA · abstract visualization of the system · view 04"
+      "src": "/img/obras/metadata/04-metadata.jpg",
+      "caption": "METADATA · a camada de dados se sobrepõe ao campo verde, grade com números na parede",
+      "captionEn": "METADATA · the data layer overlays the green field, a numbered grid on the wall"
     },
     {
-      "src": "/img/obras/metadata/05-metadata-digital-abstract-spac.jpg",
-      "caption": "METADATA · projeção e espaço imersivo · vista 05",
-      "captionEn": "METADATA · projection and immersive space · view 05"
+      "src": "/img/obras/metadata/05-metadata.jpg",
+      "caption": "METADATA · cubos em dispersão com uma leitura de dados em linha na tela",
+      "captionEn": "METADATA · scattering cubes with a line of data readout on the screen"
     },
     {
-      "src": "/img/obras/metadata/06-metadata-digital-art-exhibitio.jpg",
-      "caption": "METADATA · documentação da exposição · vista 06",
-      "captionEn": "METADATA · exhibition documentation · view 06"
+      "src": "/img/obras/metadata/06-metadata.jpg",
+      "caption": "METADATA · a sala vazia em rosa e azul, partículas em suspensão nas cinco superfícies",
+      "captionEn": "METADATA · the empty room in pink and blue, particles suspended across all five surfaces"
+    },
+    {
+      "src": "/img/obras/metadata/07-metadata.jpg",
+      "caption": "METADATA · corpo no canto onde o vórtice amarelo e verde encontra a parede vermelha",
+      "captionEn": "METADATA · a body in the corner where the yellow and green vortex meets the red wall"
+    },
+    {
+      "src": "/img/obras/metadata/08-metadata.jpg",
+      "caption": "METADATA · figura atravessada por esferas de cor",
+      "captionEn": "METADATA · a figure crossed by spheres of color"
+    },
+    {
+      "src": "/img/obras/metadata/09-metadata.jpg",
+      "caption": "METADATA · a sala em branco e violeta, com o piso refletindo as partículas",
+      "captionEn": "METADATA · the room in white and violet, the floor reflecting the particles"
+    },
+    {
+      "src": "/img/obras/metadata/10-metadata.jpg",
+      "caption": "METADATA · pontos de cor cobrem parede, piso e corpo",
+      "captionEn": "METADATA · dots of color cover wall, floor and body"
+    },
+    {
+      "src": "/img/obras/metadata/11-metadata.jpg",
+      "caption": "METADATA · silhueta contra células laranja e azuis",
+      "captionEn": "METADATA · a silhouette against orange and blue cells"
+    },
+    {
+      "src": "/img/obras/metadata/12-metadata.jpg",
+      "caption": "METADATA · a sala em violeta, com uma figura no centro",
+      "captionEn": "METADATA · the room in violet, a figure at its center"
+    },
+    {
+      "src": "/img/obras/metadata/13-metadata.jpg",
+      "caption": "METADATA · a entrada, com o título e o texto curatorial na parede vermelha",
+      "captionEn": "METADATA · the entrance, with the title and curatorial text on the red wall"
     }
   ],
   "luz-aeterna": [
@@ -341,34 +411,69 @@
   ],
   "andromeda": [
     {
-      "src": "/img/obras/andromeda/01-andromeda-astronomy-light-show.jpg",
-      "caption": "Andrômeda · projeção astronômica · vista 01",
-      "captionEn": "Andrômeda · astronomical projection · view 01"
+      "src": "/img/obras/andromeda/01-andromeda.jpg",
+      "caption": "Andrômeda · um corpo no centro da espiral, entre planetas e anéis de fogo, Farol Santander, São Paulo, 2025",
+      "captionEn": "Andrômeda · a body at the center of the spiral, among planets and rings of fire, Farol Santander, São Paulo, 2025"
     },
     {
-      "src": "/img/obras/andromeda/02-andromeda-astronomy-projected-.jpg",
-      "caption": "Andrômeda · luz projetada no ambiente · vista 02",
-      "captionEn": "Andrômeda · light projected into the space · view 02"
+      "src": "/img/obras/andromeda/02-andromeda.jpg",
+      "caption": "Andrômeda · silhueta diante do buraco negro projetado",
+      "captionEn": "Andrômeda · a silhouette before the projected black hole"
     },
     {
-      "src": "/img/obras/andromeda/03-andromeda-black-hole-explosion.jpg",
-      "caption": "Andrômeda · sequência cósmica imersiva · vista 03",
-      "captionEn": "Andrômeda · immersive cosmic sequence · view 03"
+      "src": "/img/obras/andromeda/03-andromeda.jpg",
+      "caption": "Andrômeda · nebulosas nas três paredes e no piso da sala",
+      "captionEn": "Andrômeda · nebulae across the three walls and the floor of the room"
     },
     {
-      "src": "/img/obras/andromeda/04-andromeda-black-hole-illusion-.jpg",
-      "caption": "Andrômeda · projeção e percepção espacial · vista 04",
-      "captionEn": "Andrômeda · projection and spatial perception · view 04"
+      "src": "/img/obras/andromeda/04-andromeda.jpg",
+      "caption": "Andrômeda · braços abertos diante da nebulosa violeta",
+      "captionEn": "Andrômeda · arms open before the violet nebula"
     },
     {
-      "src": "/img/obras/andromeda/05-andromeda-black-hole-illusion.jpg",
-      "caption": "Andrômeda · projeção circular no espaço · vista 05",
-      "captionEn": "Andrômeda · circular projection in space · view 05"
+      "src": "/img/obras/andromeda/05-andromeda.jpg",
+      "caption": "Andrômeda · portal de luz atravessado por feixes de laser",
+      "captionEn": "Andrômeda · a portal of light crossed by laser beams"
     },
     {
-      "src": "/img/obras/andromeda/06-andromeda-cosmic-silhouette-il.jpg",
-      "caption": "Andrômeda · presença do público na instalação · vista 06",
-      "captionEn": "Andrômeda · audience presence in the installation · view 06"
+      "src": "/img/obras/andromeda/06-andromeda.jpg",
+      "caption": "Andrômeda · nuvem cósmica rosa sobre o corpo e o piso",
+      "captionEn": "Andrômeda · a pink cosmic cloud over the body and the floor"
+    },
+    {
+      "src": "/img/obras/andromeda/07-andromeda.jpg",
+      "caption": "Andrômeda · lasers e matéria fluida envolvendo a sala",
+      "captionEn": "Andrômeda · lasers and fluid matter wrapping the room"
+    },
+    {
+      "src": "/img/obras/andromeda/08-andromeda.jpg",
+      "caption": "Andrômeda · o sol ao fundo e órbitas desenhadas no chão",
+      "captionEn": "Andrômeda · the sun at the back and orbits drawn on the floor"
+    },
+    {
+      "src": "/img/obras/andromeda/09-andromeda.jpg",
+      "caption": "Andrômeda · constelação de Touro entre lasers e mandala no piso",
+      "captionEn": "Andrômeda · the Taurus constellation among lasers and a mandala on the floor"
+    },
+    {
+      "src": "/img/obras/andromeda/10-andromeda.jpg",
+      "caption": "Andrômeda · faixas de cor em horizonte curvo ao redor de uma figura",
+      "captionEn": "Andrômeda · bands of color on a curved horizon around a figure"
+    },
+    {
+      "src": "/img/obras/andromeda/11-andromeda.jpg",
+      "caption": "Andrômeda · túnel de linhas coloridas em perspectiva",
+      "captionEn": "Andrômeda · a tunnel of colored lines in perspective"
+    },
+    {
+      "src": "/img/obras/andromeda/12-andromeda.jpg",
+      "caption": "Andrômeda · malha de grade revela a arquitetura da sala",
+      "captionEn": "Andrômeda · a wireframe grid reveals the architecture of the room"
+    },
+    {
+      "src": "/img/obras/andromeda/13-andromeda.jpg",
+      "caption": "Andrômeda · lua violeta e paisagem de asteroides",
+      "captionEn": "Andrômeda · a violet moon and an asteroid landscape"
     }
   ],
   "o-que-nos-une": [
@@ -405,66 +510,126 @@
   ],
   "floresta-utopica": [
     {
-      "src": "/img/obras/floresta-utopica/01-floresta-utopica-lua-morales-048.jpg",
-      "caption": "Corredor espelhado, com projeção nas duas paredes e a malha de fios acima",
-      "captionEn": "Mirrored corridor, with projection on both walls and the wire mesh above, 2025"
+      "src": "/img/obras/floresta-utopica/01-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · a escultura de fios emoldura a sala espelhada, Farol Santander, São Paulo, 2025",
+      "captionEn": "Floresta Utópica · the wire sculpture frames the mirrored room, Farol Santander, São Paulo, 2025"
     },
     {
-      "src": "/img/obras/floresta-utopica/02-floresta-utopica-lua-morales-030.jpg",
-      "caption": "A sala inteira, com a estrutura de fios sobre o piso espelhado",
-      "captionEn": "The whole room, with the wire structure above the mirrored floor, 2025"
+      "src": "/img/obras/floresta-utopica/02-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · árvores e esporos de luz nas paredes e no piso espelhado",
+      "captionEn": "Floresta Utópica · trees and spores of light on the walls and the mirrored floor"
     },
     {
-      "src": "/img/obras/floresta-utopica/03-floresta-utopica-lua-morales-051.jpg",
-      "caption": "Flora projetada em escala, na parede e no reflexo",
-      "captionEn": "Flora projected at scale, on the wall and in the reflection, 2025"
+      "src": "/img/obras/floresta-utopica/03-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · visitantes diante da árvore luminosa, sob a malha de fios",
+      "captionEn": "Floresta Utópica · visitors before the luminous tree, beneath the wire mesh"
     },
     {
-      "src": "/img/obras/floresta-utopica/04-floresta-utopica-lua-morales-041.jpg",
-      "caption": "A malha de fios descendo sobre o painel iluminado",
-      "captionEn": "The wire mesh descending over the lit panel, 2025"
+      "src": "/img/obras/floresta-utopica/04-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · a malha de fios se abre sobre a sala inteira",
+      "captionEn": "Floresta Utópica · the wire mesh opens over the whole room"
     },
     {
-      "src": "/img/obras/floresta-utopica/05-floresta-utopica-lua-morales-069.jpg",
-      "caption": "Lírio vermelho e o dobro dele no espelho do piso",
-      "captionEn": "Red lily and its double in the floor mirror, 2025"
+      "src": "/img/obras/floresta-utopica/05-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · corredor de flora projetada e seu reflexo",
+      "captionEn": "Floresta Utópica · a corridor of projected flora and its reflection"
     },
     {
-      "src": "/img/obras/floresta-utopica/06-floresta-utopica-lua-morales-060.jpg",
-      "caption": "Borboletas sobre o campo escuro, entre projeção e reflexo",
-      "captionEn": "Butterflies over the dark field, between projection and reflection, 2025"
+      "src": "/img/obras/floresta-utopica/06-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · cogumelos de luz e a escultura de fios espelhada no piso",
+      "captionEn": "Floresta Utópica · mushrooms of light and the wire sculpture mirrored in the floor"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/07-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · a malha de fios descendo sobre o painel iluminado",
+      "captionEn": "Floresta Utópica · the wire mesh descending over the lit panel"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/08-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · silhueta diante das folhas projetadas, cortada pelos fios",
+      "captionEn": "Floresta Utópica · a silhouette before projected leaves, crossed by the wires"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/09-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · uma figura sobre o piso espelhado, diante do painel",
+      "captionEn": "Floresta Utópica · a figure on the mirrored floor, facing the panel"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/10-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · lírio vermelho e o seu duplo no espelho do piso",
+      "captionEn": "Floresta Utópica · a red lily and its double in the floor mirror"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/11-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · visitante entre uma folha de fogo e o seu reflexo",
+      "captionEn": "Floresta Utópica · a visitor between a leaf of fire and its reflection"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/12-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · silhueta contra o campo de luzes vermelhas",
+      "captionEn": "Floresta Utópica · a silhouette against the field of red lights"
+    },
+    {
+      "src": "/img/obras/floresta-utopica/13-floresta-utopica.jpg",
+      "caption": "Floresta Utópica · folhas projetadas sob os fios, repetidas no espelho",
+      "captionEn": "Floresta Utópica · projected leaves beneath the wires, repeated in the mirror"
     }
   ],
   "amano": [
     {
-      "src": "/img/obras/amano/01-img-0-0.jpg",
-      "caption": "AMANO · ambiente imersivo · vista 01",
-      "captionEn": "AMANO · immersive environment · view 01"
+      "src": "/img/obras/amano/01-amano.jpg",
+      "caption": "AMANO · sala imersiva vazia com projeção nas paredes e no piso, Farol Santander, São Paulo, 2024",
+      "captionEn": "AMANO · empty immersive room with projection on walls and floor, Farol Santander, São Paulo, 2024"
     },
     {
-      "src": "/img/obras/amano/02-img-0.jpg",
-      "caption": "AMANO · ambiente imersivo · vista 02",
-      "captionEn": "AMANO · immersive environment · view 02"
+      "src": "/img/obras/amano/02-amano.jpg",
+      "caption": "AMANO · visitante de pé no mar projetado, sob uma figura de cabelos vermelhos",
+      "captionEn": "AMANO · a visitor standing in the projected sea, beneath a red-haired figure"
     },
     {
-      "src": "/img/obras/amano/03-img-12-12.jpg",
-      "caption": "AMANO · video mapping e projeção · vista 03",
-      "captionEn": "AMANO · video mapping and projection · view 03"
+      "src": "/img/obras/amano/03-amano.jpg",
+      "caption": "AMANO · canto da sala tomado por vegetação e formas pontilhadas em projeção",
+      "captionEn": "AMANO · corner of the room filled with projected vegetation and dotted forms"
     },
     {
-      "src": "/img/obras/amano/04-img-12.jpg",
-      "caption": "AMANO · video mapping e projeção · vista 04",
-      "captionEn": "AMANO · video mapping and projection · view 04"
+      "src": "/img/obras/amano/04-amano.jpg",
+      "caption": "AMANO · criatura branca atravessa a quina da sala e se reflete no piso",
+      "captionEn": "AMANO · a white creature crosses the corner of the room, reflected on the floor"
     },
     {
-      "src": "/img/obras/amano/05-img-3-3.jpg",
-      "caption": "AMANO · tradução espacial do universo visual · vista 05",
-      "captionEn": "AMANO · spatial translation of the visual universe · view 05"
+      "src": "/img/obras/amano/05-amano.jpg",
+      "caption": "AMANO · relâmpagos e criatura marinha na cena da tempestade",
+      "captionEn": "AMANO · lightning and a sea creature in the storm scene"
     },
     {
-      "src": "/img/obras/amano/06-img-3.jpg",
-      "caption": "AMANO · tradução espacial do universo visual · vista 06",
-      "captionEn": "AMANO · spatial translation of the visual universe · view 06"
+      "src": "/img/obras/amano/06-amano.jpg",
+      "caption": "AMANO · corpo banhado pela projeção, o rosto voltado para a imagem",
+      "captionEn": "AMANO · a body bathed in projection, face turned toward the image"
+    },
+    {
+      "src": "/img/obras/amano/07-amano.jpg",
+      "caption": "AMANO · silhueta diante da cena em vermelho e laranja",
+      "captionEn": "AMANO · a silhouette before the red and orange scene"
+    },
+    {
+      "src": "/img/obras/amano/08-amano.jpg",
+      "caption": "AMANO · um corpo tomado pela projeção azul",
+      "captionEn": "AMANO · a body taken over by the blue projection"
+    },
+    {
+      "src": "/img/obras/amano/09-amano.jpg",
+      "caption": "AMANO · visitante e sua sombra entre as ondas projetadas",
+      "captionEn": "AMANO · a visitor and a shadow among the projected waves"
+    },
+    {
+      "src": "/img/obras/amano/10-amano.jpg",
+      "caption": "AMANO · visitante de chapéu dentro do mar azul projetado",
+      "captionEn": "AMANO · a visitor in a hat inside the projected blue sea"
+    },
+    {
+      "src": "/img/obras/amano/11-amano.jpg",
+      "caption": "AMANO · visitante sorri e abre o paletó diante da imagem",
+      "captionEn": "AMANO · a visitor smiles and opens a jacket before the image"
     }
   ],
   "luzcidade": [
@@ -511,39 +676,69 @@
   ],
   "interludio": [
     {
-      "src": "/img/obras/interludio/01-hero.jpg",
-      "caption": "Interlúdio · sensores de proximidade e luz responsiva",
-      "captionEn": "Interlúdio · proximity sensors and responsive light"
+      "src": "/img/obras/interludio/01-interludio.jpg",
+      "caption": "Interlúdio · visitante sentado à mesa no fundo da sala de tubos de luz, Metaversø, Farol Santander, São Paulo, 2019",
+      "captionEn": "Interlúdio · a visitor seated at the desk at the far end of the room of light tubes, Metaversø, Farol Santander, São Paulo, 2019"
     },
     {
-      "src": "/img/obras/interludio/02-gallery.jpg",
-      "caption": "Interlúdio · documentação da instalação · vista 02",
-      "captionEn": "Interlúdio · installation documentation · view 02"
+      "src": "/img/obras/interludio/02-interludio.jpg",
+      "caption": "Interlúdio · de costas, com fone, diante do laptop e dos tubos acesos",
+      "captionEn": "Interlúdio · seen from behind, wearing headphones, facing the laptop and the lit tubes"
     },
     {
-      "src": "/img/obras/interludio/03-gallery.jpg",
-      "caption": "Interlúdio · documentação da instalação · vista 03",
-      "captionEn": "Interlúdio · installation documentation · view 03"
+      "src": "/img/obras/interludio/03-interludio.jpg",
+      "caption": "Interlúdio · placa do sensor na base de um tubo de luz",
+      "captionEn": "Interlúdio · sensor board at the base of a light tube"
     },
     {
-      "src": "/img/obras/interludio/04-gallery.jpg",
-      "caption": "Interlúdio · documentação da instalação · vista 04",
-      "captionEn": "Interlúdio · installation documentation · view 04"
+      "src": "/img/obras/interludio/04-interludio.jpg",
+      "caption": "Interlúdio · a sala vazia, tubos em gradiente do azul ao vermelho",
+      "captionEn": "Interlúdio · the empty room, tubes in a gradient from blue to red"
     },
     {
-      "src": "/img/obras/interludio/05-gallery.jpg",
-      "caption": "Interlúdio · presença do corpo e ativação luminosa · vista 05",
-      "captionEn": "Interlúdio · body presence and light activation · view 05"
+      "src": "/img/obras/interludio/05-interludio.jpg",
+      "caption": "Interlúdio · um corpo presente no centro da sala",
+      "captionEn": "Interlúdio · a body present at the center of the room"
     },
     {
-      "src": "/img/obras/interludio/06-gallery.jpg",
-      "caption": "Interlúdio · presença do corpo e ativação luminosa · vista 06",
-      "captionEn": "Interlúdio · body presence and light activation · view 06"
+      "src": "/img/obras/interludio/06-interludio.jpg",
+      "caption": "Interlúdio · a luz responde à presença, tubos em laranja",
+      "captionEn": "Interlúdio · the light responds to presence, tubes in orange"
     },
     {
-      "src": "/img/obras/interludio/07-gallery.jpg",
-      "caption": "Interlúdio · sistema responsivo em funcionamento · vista 07",
-      "captionEn": "Interlúdio · responsive system in operation · view 07"
+      "src": "/img/obras/interludio/07-interludio.jpg",
+      "caption": "Interlúdio · a mesma cena, tubos em magenta",
+      "captionEn": "Interlúdio · the same scene, tubes in magenta"
+    },
+    {
+      "src": "/img/obras/interludio/08-interludio.jpg",
+      "caption": "Interlúdio · módulo de sensor e eletrônica sob o tubo branco",
+      "captionEn": "Interlúdio · sensor module and electronics beneath the white tube"
+    },
+    {
+      "src": "/img/obras/interludio/09-interludio.jpg",
+      "caption": "Interlúdio · o tubo muda de cor sobre o sensor",
+      "captionEn": "Interlúdio · the tube shifts color above the sensor"
+    },
+    {
+      "src": "/img/obras/interludio/10-interludio.jpg",
+      "caption": "Interlúdio · mesa, cadeira e laptop à espera de alguém",
+      "captionEn": "Interlúdio · desk, chair and laptop waiting for someone"
+    },
+    {
+      "src": "/img/obras/interludio/11-interludio.jpg",
+      "caption": "Interlúdio · tubos de luz em sequência na parede lateral",
+      "captionEn": "Interlúdio · light tubes in sequence along the side wall"
+    },
+    {
+      "src": "/img/obras/interludio/12-interludio.jpg",
+      "caption": "Interlúdio · mãos no teclado, o código que conduz a luz",
+      "captionEn": "Interlúdio · hands on the keyboard, the code that drives the light"
+    },
+    {
+      "src": "/img/obras/interludio/13-interludio.jpg",
+      "caption": "Interlúdio · laptop com código aberto e fone sobre a mesa",
+      "captionEn": "Interlúdio · laptop with open code and headphones on the desk"
     }
   ],
   "player1": [

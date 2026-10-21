@@ -6,7 +6,6 @@ location: "Farol Santander, São Paulo"
 lang: en
 description: "Installation with ultra-precise proximity sensors and responsive light. The work only existed when someone was present, technology that fundamentally depends on human presence."
 lead: "Responsive installation in which proximity sensors and light activate only with the body's presence, making technology's dependence on the human literal."
-archiveNote: "The visual documentation published in this round is still minimal. The goal here is to name the work's operation and move the page out of a generic silent-gallery regime."
 mechanism:
   - { label: "System", value: "Ultra-precise proximity sensors coupled to a responsive light system" }
   - { label: "Hardware", value: "Wesley Lee developed the installation's electronics and sensors" }

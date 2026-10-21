@@ -21,6 +21,7 @@ credits:
   - { role: "Original Score", name: "Juvi" }
   - { role: "Interactive Programming", name: "Matheus Leston" }
   - { role: "Materialization", name: "AYA Studio" }
+  - { role: "Photography", name: "Luiz Maudonnet (São Paulo), Leo Lara (Belo Horizonte)" }
 publications:
   - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64–67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "The book frames OCEANVS as a turning point between the early light works and the AYA phase of immersive exhibitions." }
 ---

@@ -16,6 +16,7 @@ credits:
   - { role: "Concepção curatorial e curadoria", name: "Antonio Curti" }
   - { role: "Direção de experiência e tecnologia", name: "Felipe Sztutman" }
   - { role: "Produção e materialização", name: "AYA Studio" }
+  - { role: "Fotografia", name: "Lua Morales" }
 press:
   - { source: "CNN Brasil", url: "https://www.cnnbrasil.com.br/lifestyle/maior-exposicao-de-yoshitaka-amano-designer-de-final-fantasy-chega-a-bh/", title: "Maior exposição de Yoshitaka Amano, designer de Final Fantasy, chega a BH" }
   - { source: "IGN Brasil", url: "https://br.ign.com/final-fantasy-vii-rebirth/148981/news/exposicao-de-yoshitaka-amano-artista-de-final-fantasy-retorna-ao-brasil-e-de-forma-gratuita-ao-publi", title: "Exposição de Yoshitaka Amano, artista de Final Fantasy, retorna ao Brasil" }
