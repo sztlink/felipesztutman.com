@@ -1,0 +1,337 @@
+---
+// Publicacoes: circulacao do trabalho fora da sala. Quatro faixas (livros e
+// textos, catalogos, arquivo aberto, imprensa) com contagem no topo; capas dos
+// catalogos numa prateleira sem moldura; imprensa recolhida por ano em
+// <details> nativo, como a ficha das obras. Linhas finas, rotulos mono. Sem JS.
+import publicationsData from '../data/publications.json';
+import worksData from '../data/works.json';
+
+interface Props {
+  isEN: boolean;
+}
+
+const { isEN } = Astro.props;
+const prefix = isEN ? '/en' : '';
+
+const pubs: any[] = (publicationsData as any).publications || [];
+const press: any[] = (publicationsData as any).press || [];
+const works: any[] = (worksData as any).works || [];
+const bySlug = new Map(works.map((w) => [w.slug, w]));
+
+const livros = pubs.filter((p) => p.section === 'livros');
+const catalogos = pubs.filter((p) => p.section === 'catalogos');
+const arquivo = pubs.filter((p) => p.section === 'arquivo');
+
+const years = [...new Set(press.map((p) => p.ano))].sort((a, b) => b - a);
+const pressByYear = years.map((year) => ({ year, items: press.filter((p) => p.ano === year) }));
+const pressSpan = years.length ? `${years[years.length - 1]}-${years[0]}` : '';
+
+const t = isEN ? {
+  back: '← archive', backHref: '/en/#obras', map: 'relational map (PT)', alt: 'PT', altHref: '/publicacoes', altLabel: 'Versão em português',
+  kicker: 'Publications · Circulation', title: 'Circulation',
+  subtitle: 'Where the work goes on existing outside the room: in books, in the institutions’ catalogues, in open archives and in the press.',
+  livros: 'Books and texts', catalogos: 'Catalogues', arquivo: 'Open archive', imprensa: 'Press',
+  catNote: 'Exhibition catalogues published by the institutions. Page numbers refer to the PDF.',
+  arqNote: 'Archive and research of 2047 published while the work runs.',
+  pressNote: 'Articles that name Felipe, by year.',
+  text: 'Text by Felipe', textEn: 'EN', pdf: 'PDF', expo: 'Exhibition page', page: 'Read on this site', summary: 'Summary on this site',
+  newTab: ' (opens in a new tab)', noDate: 'n.d.', release: 'press release', institucional: 'institutional', works: 'Related works',
+  updated: 'updated', item: (n: number) => n === 1 ? ' item' : ' items', articles: (n: number) => n === 1 ? ' article' : ' articles',
+  cover: 'Cover of the catalogue',
+} : {
+  back: '← arquivo', backHref: '/#obras', map: 'mapa relacional', alt: 'EN', altHref: '/en/publicacoes', altLabel: 'English version',
+  kicker: 'Publicações · Circulação', title: 'Circulação',
+  subtitle: 'Onde o trabalho continua existindo fora da sala: no livro, no catálogo das instituições, no arquivo aberto e na imprensa.',
+  livros: 'Livros e textos', catalogos: 'Catálogos', arquivo: 'Arquivo aberto', imprensa: 'Imprensa',
+  catNote: 'Catálogos de exposição publicados pelas instituições. As páginas citadas são as do PDF.',
+  arqNote: 'Arquivo e pesquisa de 2047, publicados enquanto a obra roda.',
+  pressNote: 'Matérias que nomeiam Felipe, por ano.',
+  text: 'Texto de Felipe', textEn: 'EN', pdf: 'PDF', expo: 'Página da exposição', page: 'Ler no site', summary: 'Resumo no site',
+  newTab: ' (abre em nova aba)', noDate: 's/d', release: 'release', institucional: 'institucional', works: 'Obras relacionadas',
+  updated: 'atualizado em', item: (n: number) => n === 1 ? ' item' : ' itens', articles: (n: number) => n === 1 ? ' matéria' : ' matérias',
+  cover: 'Capa do catálogo',
+};
+
+const monthsPT = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+const monthsEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function day(iso: string | null) {
+  if (!iso) return t.noDate;
+  const [, m, d] = iso.split('-').map(Number);
+  return isEN ? `${monthsEN[m - 1]} ${d}` : `${d} ${monthsPT[m - 1]}`;
+}
+
+// Titulo curto da obra: corta o subtitulo depois de ':' (mas 'Objeto em Forma de: Espaco' fica inteiro).
+function shortTitle(w: any) {
+  const [head] = String(w.titulo).split(':');
+  return /\s(de|da|do)$/i.test(head) ? w.titulo : head;
+}
+
+function related(list: string[] = []) {
+  return list.map((slug) => bySlug.get(slug)).filter(Boolean);
+}
+
+// Item com pagina no site leva para ela; sem pagina, para a url externa.
+function internal(p: any) {
+  return isEN ? p.currentPublicPathEn : p.currentPublicPath;
+}
+
+const desc = (p: any) => (isEN ? p.descriptionEn : p.description);
+const papel = (p: any) => (isEN ? p.papelEn : p.papel);
+const inst = (p: any) => (isEN ? p.instituicaoEn || p.instituicao : p.instituicao);
+
+const counts = [
+  { id: 'livros', label: t.livros, n: livros.length },
+  { id: 'catalogos', label: t.catalogos, n: catalogos.length },
+  { id: 'arquivo', label: t.arquivo, n: arquivo.length },
+  { id: 'imprensa', label: t.imprensa, n: press.length, span: pressSpan },
+];
+---
+<main class="pubs">
+  <header class="entry">
+    <nav class="surface-links" aria-label="Site">
+      <a href={t.backHref} class="back">{t.back}</a>
+      <a href="/mapa" class="surface-link">{t.map}</a>
+      <a href={t.altHref} class="surface-link" hreflang={isEN ? 'pt-BR' : 'en'} aria-label={t.altLabel}>{t.alt}</a>
+    </nav>
+    <p class="kicker">{t.kicker}</p>
+    <h1>{t.title}</h1>
+    <p class="subtitle">{t.subtitle}</p>
+    <ul class="pulse">
+      {counts.map((c) => (
+        <li>
+          <a href={`#${c.id}`}>
+            <span class="pulse-n">{c.n}</span>
+            <span class="pulse-label">{c.label}{c.span && <span class="pulse-span"> · {c.span}</span>}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </header>
+
+  <section class="band" id="livros" aria-labelledby="h-livros">
+    <h2 class="section-kicker" id="h-livros"><span class="band-n" aria-hidden="true">01</span>{t.livros}<span class="sum-count">{livros.length}<span class="sr-only">{t.item(livros.length)}</span></span></h2>
+    <ul class="rows">
+      {livros.map((p) => {
+        const page = internal(p);
+        const isVerbete = p.tipo === 'verbete';
+        return (
+          <li class="row">
+            <p class="row-year">{isVerbete ? '' : (p.ano || '')}</p>
+            <div class="row-body">
+              <p class="row-meta">{p.autor}{inst(p) && p.autor !== inst(p) ? ` · ${inst(p)}` : ''}{isVerbete && p.ano ? ` · ${t.updated} ${p.ano}` : ''}</p>
+              <h3 class="row-title">
+                {p.tipo === 'livro' && page
+                  ? <a href={page}>{p.titulo}</a>
+                  : <a href={p.url} target="_blank" rel="noopener">{p.titulo}<span class="ext" aria-hidden="true"> ↗</span><span class="sr-only">{t.newTab}</span></a>}
+              </h3>
+              {papel(p) && <p class="row-role">{papel(p)}{p.paginasFelipe ? `, ${p.paginasFelipe}` : ''}</p>}
+              <p class="row-desc">{desc(p)}</p>
+              <p class="row-links">
+                {p.tipo !== 'livro' && page && <a href={page}>{t.summary}</a>}
+                {related(p.relatedWorks).map((w: any) => (
+                  <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+                ))}
+              </p>
+            </div>
+            {p.capa && (
+              <a class="row-cover" href={p.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <img src={p.capa} width={p.capaW} height={p.capaH} alt="" loading="lazy" decoding="async" />
+              </a>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  <section class="band" id="catalogos" aria-labelledby="h-catalogos">
+    <h2 class="section-kicker" id="h-catalogos"><span class="band-n" aria-hidden="true">02</span>{t.catalogos}<span class="sum-count">{catalogos.length}<span class="sr-only">{t.item(catalogos.length)}</span></span></h2>
+    <p class="band-note">{t.catNote}</p>
+    <ul class="shelf">
+      {catalogos.map((p) => (
+        <li class="cat">
+          <a class="cover" href={p.url} target="_blank" rel="noopener">
+            <img src={p.capa} width={p.capaW} height={p.capaH} alt={`${t.cover} ${p.titulo} (PDF)${t.newTab}`} loading="lazy" decoding="async" />
+          </a>
+          <p class="cat-meta">{p.ano} · {inst(p)}</p>
+          <h3 class="cat-title"><a href={p.url} target="_blank" rel="noopener">{p.titulo}<span class="ext" aria-hidden="true"> ↗</span><span class="sr-only">{t.newTab}</span></a></h3>
+          {papel(p) && <p class="cat-role">{papel(p)}</p>}
+          {p.textoFelipe && <p class="cat-text">{t.text} · {p.textoFelipe.pt} · {t.textEn} {p.textoFelipe.en}</p>}
+          <p class="cat-desc">{desc(p)}</p>
+          <p class="row-links">
+            {p.paginaOficial && <a href={p.paginaOficial} target="_blank" rel="noopener" class="plain">{t.expo}<span class="ext" aria-hidden="true"> ↗</span><span class="sr-only">{t.newTab}</span></a>}
+            {related(p.relatedWorks).map((w: any) => (
+              <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+            ))}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="band" id="arquivo" aria-labelledby="h-arquivo">
+    <h2 class="section-kicker" id="h-arquivo"><span class="band-n" aria-hidden="true">03</span>{t.arquivo}<span class="sum-count">{arquivo.length}<span class="sr-only">{t.item(arquivo.length)}</span></span></h2>
+    <p class="band-note">{t.arqNote}</p>
+    <ul class="rows">
+      {arquivo.map((p) => (
+        <li class="row">
+          <p class="row-year">{p.ano}</p>
+          <div class="row-body">
+            <p class="row-meta">{p.autor} · {inst(p)}</p>
+            <h3 class="row-title"><a href={p.url} target="_blank" rel="noopener">{p.titulo}<span class="ext" aria-hidden="true"> ↗</span><span class="sr-only">{t.newTab}</span></a></h3>
+            <p class="row-desc">{desc(p)}</p>
+            <p class="row-links">
+              {related(p.relatedWorks).map((w: any) => (
+                <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+              ))}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="band press" id="imprensa" aria-labelledby="h-imprensa">
+    <h2 class="section-kicker" id="h-imprensa"><span class="band-n" aria-hidden="true">04</span>{t.imprensa}<span class="sum-count">{press.length}<span class="sr-only">{t.articles(press.length)}</span></span></h2>
+    <p class="band-note">{t.pressNote}</p>
+    {pressByYear.map((group, i) => (
+      <details class="year" open={i === 0}>
+        <summary>
+          <span class="year-n">{group.year}</span>
+          <span class="sum-count">{group.items.length}<span class="sr-only">{t.articles(group.items.length)}</span></span>
+        </summary>
+        <ul class="press-list">
+          {group.items.map((item: any) => (
+            <li class="press-item">
+              <p class="press-date">{day(item.data)}</p>
+              <div class="press-body">
+                <p class="press-outlet">{item.veiculo}{item.tipo && <span class="press-kind"> · {item.tipo === 'release' ? t.release : t.institucional}</span>}</p>
+                <a class="press-title" href={item.url} target="_blank" rel="noopener">{item.titulo}<span class="ext" aria-hidden="true"> ↗</span><span class="sr-only">{t.newTab}</span></a>
+              </div>
+              <p class="press-works">
+                {related(item.relatedWorks).map((w: any) => (
+                  <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+                ))}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </details>
+    ))}
+  </section>
+</main>
+
+<style is:global>
+  body.page-publicacoes{background:#000000;color:#ffffff}
+  body.page-publicacoes a{text-decoration:none}
+</style>
+
+<style>
+  .pubs{--line:rgba(255,255,255,.12);--dim:rgba(255,255,255,.5);background:#000000;color:#ffffff;padding:1.25rem 1.25rem 4rem;overflow-x:clip}
+  .pubs :global(a:focus-visible),.pubs summary:focus-visible{outline:2px solid #ffffff;outline-offset:3px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+  .surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
+  .back,.surface-link,.kicker,.section-kicker,.pulse-label,.row-year,.row-meta,.cat-meta,.cat-text,.press-date,.press-outlet,.year summary,.work,.row-links .plain,.row-links a:not(.work){font:.72rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+  .back{color:rgba(255,255,255,.55)}
+  .surface-link{color:rgba(255,255,255,.38)}
+  .back:hover,.surface-link:hover{color:#ffffff}
+
+  .entry{padding:0 0 2rem;border-bottom:1px solid var(--line)}
+  .kicker{color:var(--dim);margin-bottom:1rem}
+  .entry h1{font:900 clamp(2.8rem,10vw,8rem)/.9 var(--sans);letter-spacing:-.05em}
+  .subtitle{margin-top:1.25rem;max-width:60ch;font:1.05rem/1.6 var(--sans);color:rgba(255,255,255,.78)}
+
+  /* Pulso: quanto circula, por faixa */
+  .pulse{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 1.5rem;margin-top:2rem}
+  .pulse a{display:flex;flex-direction:column;gap:.35rem;color:#ffffff}
+  .pulse-n{font:700 2rem/1 var(--sans);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+  .pulse-label{font-size:.62rem;color:var(--dim)}
+  .pulse-span{color:rgba(255,255,255,.35)}
+  .pulse a:hover .pulse-label{color:#ffffff}
+
+  .band{padding:1.75rem 0 2.25rem;border-bottom:1px solid var(--line);scroll-margin-top:1rem}
+  .band:last-child{border-bottom:0}
+  .section-kicker{display:flex;align-items:baseline;gap:.9rem;font-size:.66rem;letter-spacing:.22em;color:rgba(255,255,255,.78);font-weight:400;margin-bottom:.6rem}
+  .band-n{color:rgba(255,255,255,.35)}
+  .sum-count{color:rgba(255,255,255,.38);letter-spacing:.08em}
+  .band-note{font:.88rem/1.55 var(--sans);color:rgba(255,255,255,.55);max-width:60ch;margin-bottom:1.25rem}
+  .ext{color:rgba(255,255,255,.4)}
+
+  /* Linhas: livros, textos, arquivo */
+  .rows{list-style:none;margin-top:1rem}
+  .row{display:grid;grid-template-columns:minmax(0,1fr);gap:.4rem;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.08)}
+  .row-year{color:rgba(255,255,255,.45)}
+  .row-year:empty{display:none}
+  .row-meta{font-size:.62rem;color:var(--dim);margin-bottom:.35rem}
+  .row-title{font:600 1.15rem/1.3 var(--sans);letter-spacing:-.02em}
+  .row-title a,.cat-title a,.press-title{color:#ffffff}
+  .row-title a:hover,.cat-title a:hover,.press-title:hover{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+  .row-role,.cat-role{margin-top:.3rem;font:.88rem/1.5 var(--sans);color:rgba(255,255,255,.7)}
+  .row-desc{margin-top:.35rem;max-width:64ch;font:.92rem/1.6 var(--sans);color:rgba(255,255,255,.62)}
+  .row-links{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;margin-top:.7rem}
+  .row-links a:not(.work){font-size:.62rem;color:rgba(255,255,255,.7);text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:.25em}
+  .row-links a:not(.work):hover{color:#ffffff}
+  .row-cover{display:block;width:9rem;margin-top:.6rem}
+  .row-cover img{display:block;width:100%;height:auto}
+
+  /* Obra relacionada: o pulso da obra como marca */
+  .work{display:inline-flex;align-items:center;gap:.45rem;font-size:.62rem;color:rgba(255,255,255,.7)}
+  .work::before{content:'';width:6px;height:6px;background:var(--pulse);flex:0 0 auto}
+  .work:hover{color:#ffffff}
+
+  /* Catalogos: prateleira de capas, sem moldura, base alinhada */
+  .shelf{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1rem}
+  .cat{display:flex;flex-direction:column;min-width:0}
+  .cover{display:flex;align-items:flex-end;aspect-ratio:1 / 1;margin-bottom:.8rem}
+  .cover img{display:block;width:100%;height:100%;object-fit:contain;object-position:left bottom;transition:opacity .2s}
+  .cover:hover img{opacity:.8}
+  .cat-meta{font-size:.6rem;color:var(--dim);margin-bottom:.3rem}
+  .cat-title{font:600 1rem/1.3 var(--sans);letter-spacing:-.015em}
+  .cat-role{font-size:.82rem;color:rgba(255,255,255,.72)}
+  .cat-text{margin-top:.45rem;font-size:.6rem;color:#ffffff}
+  .cat-desc{margin-top:.4rem;font:.84rem/1.55 var(--sans);color:rgba(255,255,255,.58)}
+
+  /* Imprensa: anos recolhidos */
+  .year{border-top:1px solid rgba(255,255,255,.1)}
+  .year summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:1rem;padding:.95rem 0;color:rgba(255,255,255,.78)}
+  .year summary::-webkit-details-marker{display:none}
+  .year summary::after{content:'+';margin-left:auto;letter-spacing:0;font-size:.9rem;line-height:1;color:rgba(255,255,255,.55)}
+  .year[open] > summary::after{content:'\2212'}
+  .year summary:hover{color:#ffffff}
+  .year-n{font:700 1.15rem/1 var(--sans);letter-spacing:-.02em;text-transform:none;color:#ffffff}
+  .press-list{list-style:none;padding:0 0 1.25rem}
+  .press-item{display:grid;grid-template-columns:4.2rem minmax(0,1fr);gap:.25rem 1rem;padding:.75rem 0;border-top:1px solid rgba(255,255,255,.06)}
+  .press-date{font-size:.62rem;color:rgba(255,255,255,.45);padding-top:.15rem}
+  .press-outlet{font-size:.6rem;color:var(--dim);margin-bottom:.25rem}
+  .press-kind{color:rgba(255,255,255,.35)}
+  .press-title{font:500 .95rem/1.45 var(--sans)}
+  .press-works{grid-column:2;display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-top:.2rem}
+
+  @media (min-width: 700px){
+    .pulse{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .shelf{grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem 1.75rem}
+  }
+
+  @media (min-width: 900px){
+    .pubs{padding:1.5rem 2rem 5rem}
+    .entry{padding-bottom:2.5rem}
+    .band{padding:2.25rem 0 2.75rem}
+  }
+
+  @media (min-width: 1100px){
+    .pulse-n{font-size:2.6rem}
+    .section-kicker,.band-note{margin-left:13.5rem}
+    .rows{margin-left:0}
+    .row{grid-template-columns:10rem minmax(0,64ch) minmax(8rem,1fr);gap:0 3.5rem;padding:1.4rem 0}
+    .row-year{text-align:right;font-size:1.35rem;font-family:var(--sans);font-weight:700;letter-spacing:-.03em;color:#ffffff;line-height:1.1}
+    .row-year:empty{display:block}
+    .row-cover{margin-top:0;justify-self:start}
+    .shelf{grid-template-columns:repeat(4,minmax(0,1fr));margin-left:13.5rem;gap:3rem 2rem}
+    .year summary{display:grid;grid-template-columns:10rem minmax(0,1fr) auto;gap:0 3.5rem}
+    .year-n{text-align:right;font-size:1.35rem}
+    .press-list{padding-left:13.5rem}
+    .press-item{grid-template-columns:5rem minmax(0,1fr) minmax(10rem,14rem);gap:0 1.5rem}
+    .press-works{grid-column:auto;flex-direction:column;gap:.35rem;margin-top:0;padding-top:.1rem}
+  }
+</style>

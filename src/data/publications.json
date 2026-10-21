@@ -1,29 +1,605 @@
 {
   "meta": {
-    "generatedAt": "2026-04-29",
+    "generatedAt": "2026-10-21",
     "sources": [
       "src/data/mapa.json",
-      "claude-design/material-claude-fase6.md"
+      "scratchpad/publicacoes/levantamento.md (21/10/2026)",
+      "catálogos oficiais Farol Santander e CCBB",
+      "BDTA USP",
+      "Enciclopédia Itaú Cultural"
     ],
     "notes": [
-      "Publicações estruturadas para uso em páginas de obra e nós do mapa."
+      "publications: livros e textos (section livros), catálogos (catalogos) e arquivo aberto (arquivo). Lidas por /publicacoes, Obra.astro e mapa.astro (por slug).",
+      "currentPublicPath só quando há página no site; senão a lista usa url (externa).",
+      "Páginas citadas (paginasFelipe, textoFelipe) são páginas do PDF, que nem sempre batem com o fólio impresso.",
+      "press: só matérias que nomeiam Felipe (mencoesSztutman > 0). anoInferido = sem data na página, ano da exposição.",
+      "Ano, editora formal e ISBN do livro de Carlos Zibel Costa não foram encontrados: ano fica null."
     ]
   },
   "publications": [
     {
       "slug": "100-anos-de-arte-moderna",
+      "tipo": "livro",
       "titulo": "100 Anos de Arte Moderna: a cena contemporânea",
       "autor": "Carlos Zibel Costa",
+      "instituicao": "Instituto São Paulo de Arte e Cultura",
       "ano": null,
-      "color": "#2a2a3a",
-      "description": "Publicação impressa que articula LUZCIDADE, Cachoeira, Mantiqueira e Oceanvs como partes de uma mesma linhagem.",
+      "paginas": null,
+      "isbn": null,
+      "url": null,
       "relatedWorks": [
         "cachoeira",
         "mantiqueira",
         "oceanvs"
       ],
-      "currentPublicPath": "/publicacoes",
-      "source": "src/data/mapa.json#ghosts.zibel-book"
+      "color": "#2a2a3a",
+      "description": "Livro com um perfil dedicado a Felipe que reúne Cachoeira, sem título, para Mantiqueira e OCEANVS numa mesma trajetória.",
+      "descriptionEn": "Book with a profile of Felipe that brings together Cachoeira, untitled, for Mantiqueira and OCEANVS as one trajectory.",
+      "currentPublicPath": "/publicacoes/100-anos-de-arte-moderna",
+      "source": "src/data/mapa.json#ghosts.zibel-book",
+      "section": "livros",
+      "instituicaoEn": "Instituto São Paulo de Arte e Cultura",
+      "currentPublicPathEn": "/en/publicacoes/100-anos-de-arte-moderna",
+      "paginasFelipe": "pp. 64-67",
+      "papel": "perfil dedicado a Felipe",
+      "papelEn": "profile of Felipe"
+    },
+    {
+      "slug": "luzcidade-tcc-fau-usp-2013",
+      "tipo": "trabalho-academico",
+      "titulo": "LUZCIDADE",
+      "autor": "Felipe Sztutman",
+      "instituicao": "FAU-USP, Biblioteca Digital de Trabalhos Acadêmicos",
+      "ano": 2013,
+      "paginas": 102,
+      "url": "https://bdta.abcd.usp.br/directbitstream/6fd89841-6445-4d03-8a87-7b6833d16e72/2013_felipe_sztutman_tcc.pdf",
+      "relatedWorks": [
+        "objeto-em-forma-de-espaco",
+        "occupycopan",
+        "cachoeira",
+        "canvas13",
+        "corrego-rio-verde",
+        "mantiqueira"
+      ],
+      "color": "#2a2a3a",
+      "description": "Trabalho de conclusão de curso em Design. Vai de Moholy-Nagy a Dan Flavin e chega à série LUZCIDADE. PDF aberto na biblioteca digital da USP.",
+      "descriptionEn": "Undergraduate thesis in Design. It runs from Moholy-Nagy to Dan Flavin and arrives at the LUZCIDADE series. Open PDF in the USP digital library.",
+      "currentPublicPath": "/escritos/luzcidade",
+      "section": "livros",
+      "instituicaoEn": "FAU-USP, Digital Library of Academic Works",
+      "capa": "/img/publicacoes/luzcidade-tcc.webp",
+      "capaW": 480,
+      "capaH": 288,
+      "currentPublicPathEn": "/en/escritos/luzcidade",
+      "papel": "autoria; orientação de Carlos Zibel Costa",
+      "papelEn": "author; advised by Carlos Zibel Costa"
+    },
+    {
+      "slug": "enciclopedia-itau-cultural",
+      "tipo": "verbete",
+      "titulo": "Enciclopédia Itaú Cultural de Arte e Cultura Brasileira",
+      "autor": "Itaú Cultural",
+      "instituicao": "Itaú Cultural",
+      "ano": 2026,
+      "paginas": null,
+      "url": "https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman",
+      "relatedWorks": [
+        "objeto-em-forma-de-espaco"
+      ],
+      "color": "#2a2a3a",
+      "description": "Verbete de pessoa. Registra a atuação como artista e a Mostra LABMIS 2009.",
+      "descriptionEn": "Person entry. It records his work as an artist and the LABMIS 2009 show.",
+      "currentPublicPath": null,
+      "section": "livros",
+      "instituicaoEn": "Itaú Cultural",
+      "papel": "verbete Felipe Sztutman, artes visuais",
+      "papelEn": "entry Felipe Sztutman, visual arts"
+    },
+    {
+      "slug": "catalogo-player-1-2026",
+      "tipo": "catalogo",
+      "titulo": "Player 1: 50 Anos dos Videogames",
+      "autor": null,
+      "instituicao": "Farol Santander São Paulo",
+      "ano": 2026,
+      "paginas": 45,
+      "url": "https://www.farolsantander.com.br/assets/sites/2/20260723140252/Catalogo-Player-1.pdf",
+      "paginaOficial": "https://www.farolsantander.com.br/sp/exposicao/player-1",
+      "relatedWorks": [
+        "player1"
+      ],
+      "color": "#2a2a3a",
+      "description": "Exposição sobre os 50 anos dos videogames, com acervo de Alex Mamed. Felipe assina o texto sobre as três experiências, RUSH, DRIFT e TRACE.",
+      "descriptionEn": "Exhibition on 50 years of video games, with the Alex Mamed collection. Felipe writes the text on the three experiences, RUSH, DRIFT and TRACE.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/player1.webp",
+      "capaW": 480,
+      "capaH": 340,
+      "instituicaoEn": "Farol Santander São Paulo",
+      "textoFelipe": {
+        "pt": "p. 26",
+        "en": "p. 42"
+      }
+    },
+    {
+      "slug": "catalogo-floresta-utopica-2025",
+      "tipo": "catalogo",
+      "titulo": "Floresta Utópica",
+      "autor": null,
+      "instituicao": "Farol Santander São Paulo",
+      "ano": 2025,
+      "paginas": 27,
+      "url": "https://www.farolsantander.com.br/assets/sites/2/20250829160558/FU_FarolSP_catalogo_V02.pdf",
+      "paginaOficial": "https://www.farolsantander.com.br/sp/exposicao/floresta-utopica",
+      "relatedWorks": [
+        "floresta-utopica",
+        "cachoeira"
+      ],
+      "color": "#2a2a3a",
+      "description": "Felipe assina o texto que parte de Cachoeira (2012) e chega à floresta.",
+      "descriptionEn": "Felipe writes the text that runs from Cachoeira (2012) to the forest.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/floresta.webp",
+      "capaW": 480,
+      "capaH": 340,
+      "instituicaoEn": "Farol Santander São Paulo",
+      "textoFelipe": {
+        "pt": "p. 6",
+        "en": "p. 24"
+      }
+    },
+    {
+      "slug": "catalogo-andromeda-2025",
+      "tipo": "catalogo",
+      "titulo": "Andrômeda: Universo Sem Fim",
+      "autor": null,
+      "instituicao": "Farol Santander São Paulo",
+      "ano": 2025,
+      "paginas": 39,
+      "url": "https://www.farolsantander.com.br/assets/sites/2/20250310112820/Andromeda_catalogo_V032s.pdf",
+      "paginaOficial": "https://www.farolsantander.com.br/sp/exposicao/andromeda",
+      "relatedWorks": [
+        "andromeda"
+      ],
+      "color": "#2a2a3a",
+      "description": "Exposição sobre o cosmos, com texto do diretor assinado por Felipe.",
+      "descriptionEn": "Exhibition on the cosmos, with a director's text by Felipe.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/andromeda.webp",
+      "capaW": 480,
+      "capaH": 340,
+      "instituicaoEn": "Farol Santander São Paulo",
+      "textoFelipe": {
+        "pt": "p. 6",
+        "en": "p. 36"
+      }
+    },
+    {
+      "slug": "catalogo-sao-paulo-3024-2024",
+      "tipo": "catalogo",
+      "titulo": "São Paulo 3024",
+      "autor": null,
+      "instituicao": "Farol Santander São Paulo",
+      "ano": 2024,
+      "paginas": 44,
+      "url": "https://www.farolsantander.com.br/assets/sites/2/20241122171827/SP_3024_catalogo_V02.pdf",
+      "paginaOficial": "https://www.farolsantander.com.br/sp/exposicao/sao-paulo-3024-arte-digital-imersiva",
+      "relatedWorks": [
+        "sao-paulo-3024"
+      ],
+      "color": "#2a2a3a",
+      "description": "São Paulo daqui a mil anos, com texto do diretor assinado por Felipe.",
+      "descriptionEn": "São Paulo a thousand years from now, with a director's text by Felipe.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/sp3024.webp",
+      "capaW": 480,
+      "capaH": 340,
+      "instituicaoEn": "Farol Santander São Paulo",
+      "textoFelipe": {
+        "pt": "pp. 7-8",
+        "en": "p. 40"
+      }
+    },
+    {
+      "slug": "catalogo-luz-aeterna-2024",
+      "tipo": "catalogo",
+      "titulo": "Luz Æterna: Ensaio sobre o Sol",
+      "autor": null,
+      "instituicao": "CCBB Rio de Janeiro",
+      "ano": 2024,
+      "paginas": 48,
+      "url": "https://static.ccbb.com.br/site-prod/2024/07/LUZ_AETERNA_catalogo_RJ_V01-1.pdf",
+      "paginaOficial": "https://ccbb.com.br/programacao-digital/catalogos/",
+      "relatedWorks": [
+        "luz-aeterna"
+      ],
+      "color": "#2a2a3a",
+      "description": "Edição do CCBB Rio de Janeiro, de 5 de junho a 12 de agosto de 2024. Curadoria de Antonio Curti.",
+      "descriptionEn": "CCBB Rio de Janeiro edition, June 5 to August 12, 2024. Curated by Antonio Curti.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/luzaeterna.webp",
+      "capaW": 480,
+      "capaH": 600,
+      "instituicaoEn": "CCBB Rio de Janeiro",
+      "papel": "Exposição coletiva de oito artistas, com direção de arte, tecnologia e experiência de Felipe",
+      "papelEn": "Group exhibition of eight artists, with art, technology and experience direction by Felipe"
+    },
+    {
+      "slug": "catalogo-amano-2024",
+      "tipo": "catalogo",
+      "titulo": "Yoshitaka Amano: Além da Fantasia",
+      "autor": null,
+      "instituicao": "Farol Santander São Paulo",
+      "ano": 2024,
+      "paginas": 72,
+      "url": "https://www.farolsantander.com.br/assets/sites/2/20240415152309/Yoshitaka_Amano_Alem_da_Fantasia_VS-FINAL.pdf",
+      "paginaOficial": "https://www.farolsantander.com.br/sp/exposicao/yoshitaka-amano-alem-da-fantasia",
+      "relatedWorks": [
+        "amano"
+      ],
+      "color": "#2a2a3a",
+      "description": "Curadoria de Antonio Curti. O catálogo é sobre a obra de Amano; Felipe aparece no crédito.",
+      "descriptionEn": "Curated by Antonio Curti. The catalogue covers Amano's work; Felipe appears in the credits.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/amano.webp",
+      "capaW": 480,
+      "capaH": 340,
+      "instituicaoEn": "Farol Santander São Paulo",
+      "papel": "Exposição de Yoshitaka Amano, com direção de experiência e tecnologia de Felipe",
+      "papelEn": "Yoshitaka Amano exhibition, with experience and technology direction by Felipe"
+    },
+    {
+      "slug": "catalogo-oceanvs-2022",
+      "tipo": "catalogo",
+      "titulo": "Oceanvs: Imersão em Azul",
+      "autor": null,
+      "instituicao": "Farol Santander São Paulo",
+      "ano": 2022,
+      "paginas": 26,
+      "url": "https://www.farolsantander.com.br/assets/sites/2/20241114103737/catalogo-Oceanvs_FINAL.pdf",
+      "paginaOficial": "https://www.farolsantander.com.br/sp/exposicao/oceanvs-imersao-em-azul",
+      "relatedWorks": [
+        "oceanvs"
+      ],
+      "color": "#2a2a3a",
+      "description": "Primeira individual da AYA no Farol Santander, com curadoria de Antonio Curti e direção de Felipe.",
+      "descriptionEn": "AYA's first solo show at Farol Santander, curated by Antonio Curti and directed by Felipe.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/oceanvs.webp",
+      "capaW": 480,
+      "capaH": 340,
+      "instituicaoEn": "Farol Santander São Paulo"
+    },
+    {
+      "slug": "catalogo-metaverso-2019",
+      "tipo": "catalogo",
+      "titulo": "Metaversø",
+      "autor": null,
+      "instituicao": "Farol Santander São Paulo",
+      "ano": 2019,
+      "paginas": 60,
+      "url": "https://www.farolsantander.com.br/assets/sites/2/20241111150135/metaverso_1909_issus.pdf",
+      "paginaOficial": "https://www.farolsantander.com.br/sp/exposicao/metaverso",
+      "relatedWorks": [
+        "mementos",
+        "interludio"
+      ],
+      "color": "#2a2a3a",
+      "description": "Exposição coletiva com curadoria de Antonio Curti. Traz Mementos e Interlúdio.",
+      "descriptionEn": "Group exhibition curated by Antonio Curti. It includes Mementos and Interlúdio.",
+      "currentPublicPath": null,
+      "section": "catalogos",
+      "capa": "/img/publicacoes/metaverso.webp",
+      "capaW": 480,
+      "capaH": 616,
+      "instituicaoEn": "Farol Santander São Paulo"
+    },
+    {
+      "slug": "heretica-2047",
+      "tipo": "arquivo-publico",
+      "titulo": "heretica.xyz",
+      "autor": "Giselle Beiguelman e Felipe Sztutman",
+      "instituicao": "arquivo público de 2047",
+      "ano": 2026,
+      "paginas": null,
+      "url": "https://heretica.xyz/",
+      "relatedWorks": [
+        "2047"
+      ],
+      "color": "#2a2a3a",
+      "description": "Cada capítulo que a máquina escreve fica guardado com a notícia de origem e a energia gasta.",
+      "descriptionEn": "Each chapter the machine writes is kept with its source news item and the energy spent.",
+      "currentPublicPath": null,
+      "section": "arquivo",
+      "instituicaoEn": "public archive of 2047"
+    },
+    {
+      "slug": "sztlink-lab",
+      "tipo": "repositorio",
+      "titulo": "sztlink/lab",
+      "autor": "Felipe Sztutman",
+      "instituicao": "GitHub",
+      "ano": 2026,
+      "paginas": null,
+      "url": "https://github.com/sztlink/lab",
+      "relatedWorks": [
+        "2047"
+      ],
+      "color": "#2a2a3a",
+      "description": "Caderno público da pesquisa técnica de 2047: inferência de imagem e vídeo em placa local, medida para instalação.",
+      "descriptionEn": "Public notebook of the technical research behind 2047: image and video inference on local GPUs, measured for installation use.",
+      "currentPublicPath": null,
+      "section": "arquivo",
+      "instituicaoEn": "GitHub"
+    }
+  ],
+  "press": [
+    {
+      "veiculo": "Rio Press",
+      "titulo": "Casa Firjan no Rio realiza 9ª edição do Festival Futuros Possíveis sobre inteligência artificial",
+      "data": "2026-10-15",
+      "ano": 2026,
+      "url": "https://riopress.com.br/casa-firjan-no-rio-realiza-9a-edicao-do-festival-futuros-possiveis-sobre-inteligencia-artificial/",
+      "relatedWorks": [
+        "2047"
+      ],
+      "mencoesSztutman": 1
+    },
+    {
+      "veiculo": "Jornal Brasil em Folhas",
+      "titulo": "Festival Futuros Possíveis discute impactos da inteligência artificial no Rio",
+      "data": "2026-10-15",
+      "ano": 2026,
+      "url": "https://brasilemfolhas.com.br/2026/10/festival-futuros-possiveis-discute-impactos-da-inteligencia-artificial-no-rio/",
+      "relatedWorks": [
+        "2047"
+      ],
+      "mencoesSztutman": 1
+    },
+    {
+      "veiculo": "Agência de Notícias da Indústria (Portal da Indústria)",
+      "titulo": "Festival no RJ debate impactos da inteligência artificial no trabalho e no meio ambiente",
+      "data": "2026-10-13",
+      "ano": 2026,
+      "url": "https://noticias.portaldaindustria.com.br/noticias/inovacao-e-tecnologia/festival-no-rj-debate-impactos-da-inteligencia-artificial-no-trabalho-e-no-meio-ambiente/",
+      "relatedWorks": [
+        "2047"
+      ],
+      "mencoesSztutman": 5
+    },
+    {
+      "veiculo": "Jornal da USP (Rádio USP, Ouvir Imagens)",
+      "titulo": "Obra transforma notícias do presente em ficção distópica sobre o futuro da inteligência artificial",
+      "data": "2026-10-12",
+      "ano": 2026,
+      "url": "https://jornal.usp.br/radio-usp/obra-transforma-noticias-do-presente-em-ficcao-distopica-sobre-o-futuro-da-inteligencia-artificial/",
+      "relatedWorks": [
+        "2047"
+      ],
+      "mencoesSztutman": 1
+    },
+    {
+      "veiculo": "Folha de Alphaville",
+      "titulo": "Farol Santander revisita cinco décadas da história dos jogos eletrônicos",
+      "data": "2026-07-31",
+      "ano": 2026,
+      "url": "https://folhadealphaville.com.br/caderno-a/2026/07/31/farol-santander-revisita-cinco-decadas-da-historia-dos-jogos-eletronicos.html",
+      "relatedWorks": [
+        "player1"
+      ],
+      "mencoesSztutman": 2
+    },
+    {
+      "veiculo": "Warpzone",
+      "titulo": "Player 1 no Farol Santander em São Paulo traz a história dos videogames em exposição",
+      "data": "2026-06-30",
+      "ano": 2026,
+      "url": "https://warpzone.me/player-1-no-farol-santander-em-sao-paulo-traz-a-historia-dos-videogames-em-exposicao/",
+      "relatedWorks": [
+        "player1"
+      ],
+      "mencoesSztutman": 1
+    },
+    {
+      "veiculo": "Santander Imprensa",
+      "titulo": "Farol Santander São Paulo traz exposição sobre a história dos videogames",
+      "data": "2026-06-19",
+      "ano": 2026,
+      "url": "https://santanderimprensa.com.br/farol-santander-sao-paulo-traz-exposicao-sobre-a-historia-dos-videogames/",
+      "relatedWorks": [
+        "player1"
+      ],
+      "mencoesSztutman": 1,
+      "tipo": "release"
+    },
+    {
+      "veiculo": "Nerds da Galáxia",
+      "titulo": "Player 1: Nova Exposição no Farol Santander Transforma 50 Anos de História dos Videogames em Arte Viva no Coração de São Paulo",
+      "data": "2026-06-19",
+      "ano": 2026,
+      "url": "https://nerdsdagalaxia.com.br/2026/06/19/exposicao-player-1/",
+      "relatedWorks": [
+        "player1"
+      ],
+      "mencoesSztutman": 5
+    },
+    {
+      "veiculo": "CHNews",
+      "titulo": "Exposição em São Paulo percorre cinco décadas dos videogames",
+      "data": "2026-06-19",
+      "ano": 2026,
+      "url": "https://www.chnews.com.br/exposicao-em-sao-paulo-percorre-cinco-decadas-dos-videogames/",
+      "relatedWorks": [
+        "player1"
+      ],
+      "mencoesSztutman": 4
+    },
+    {
+      "veiculo": "Omelete",
+      "titulo": "Farol Santander terá exposição narrando história dos games",
+      "data": "2026-05-28",
+      "ano": 2026,
+      "url": "https://www.omelete.com.br/games/farol-santander-tera-exposicao-narrando-historia-dos-games",
+      "relatedWorks": [
+        "player1"
+      ],
+      "mencoesSztutman": 1
+    },
+    {
+      "veiculo": "Prefeitura de Lagoa Grande (PE)",
+      "titulo": "Lagoa Grande recebe o projeto Oceanvs - Imersão em Azul em parceria com Ministério da Cultura e com Santander",
+      "data": "2026-03-13",
+      "ano": 2026,
+      "url": "https://lagoagrande.pe.gov.br/lagoa-grande-recebe-o-projeto-oceanvs-imersao-em-azul-em-parceria-com-ministerio-da-cultura-e-com-santander/",
+      "relatedWorks": [
+        "oceanvs"
+      ],
+      "mencoesSztutman": 1,
+      "tipo": "institucional"
+    },
+    {
+      "veiculo": "VEJA São Paulo",
+      "titulo": "Teorias do neurocientista Miguel Nicolelis viram arte na Avenida Paulista",
+      "data": "2025-10-18",
+      "ano": 2025,
+      "url": "https://vejasp.abril.com.br/cultura-lazer/teorias-neurocientista-miguel-nicolelis-exposicao-fiesp-avenida-paulista/",
+      "relatedWorks": [
+        "o-que-nos-une"
+      ],
+      "mencoesSztutman": 2
+    },
+    {
+      "veiculo": "Digestivo Cultural",
+      "titulo": "Farol Santander convida o público a uma jornada sensorial pela natureza na mostra Floresta Utópica",
+      "data": "2025-07-10",
+      "ano": 2025,
+      "url": "https://www.digestivocultural.com/pressreleases/pressrelease.asp?codigo=26798&titulo=Farol_Santander_convida_o_publico_a_uma_jornada_sensorial_pela_natureza_na_mostra_Floresta_Utopica",
+      "relatedWorks": [
+        "floresta-utopica"
+      ],
+      "mencoesSztutman": 1,
+      "dataFonte": "corpo da página",
+      "tipo": "release"
+    },
+    {
+      "veiculo": "Rota 1976",
+      "titulo": "Farol Santander: \"Andrômeda: universo sem fim\" mostra o universo em espaço interativo!",
+      "data": "2025-02-17",
+      "ano": 2025,
+      "url": "https://rota1976.com/farol-santander-andromeda-universo-sem-fim-mostra-o-universo-em-espaco-interativo/",
+      "relatedWorks": [
+        "andromeda"
+      ],
+      "mencoesSztutman": 4
+    },
+    {
+      "veiculo": "São Paulo para Crianças",
+      "titulo": "Farol Santander explora os mistérios do cosmos com a exposição \"Andrômeda: universo sem fim\"",
+      "data": null,
+      "ano": 2025,
+      "url": "https://saopauloparacriancas.com.br/farol-santander-exposicao-andromeda/",
+      "relatedWorks": [
+        "andromeda"
+      ],
+      "mencoesSztutman": 5,
+      "anoInferido": true
+    },
+    {
+      "veiculo": "Estado de Minas",
+      "titulo": "CCBB-BH recebe exposição de arte digital imersiva tendo o sol como tema",
+      "data": "2024-12-11",
+      "ano": 2024,
+      "url": "https://www.em.com.br/cultura/2024/12/7008891-ccbb-bh-recebe-exposicao-de-arte-digital-imersiva-tendo-o-sol-como-tema.html",
+      "relatedWorks": [
+        "luz-aeterna"
+      ],
+      "mencoesSztutman": 10
+    },
+    {
+      "veiculo": "Envolverde",
+      "titulo": "O Sol na jornada da humanidade em mostra no CCBB Brasília",
+      "data": "2024-02-08",
+      "ano": 2024,
+      "url": "https://envolverde.com.br/noticia/importancia-do-sol-na-jornada-da-humanidade-ganha-mostra-que-abre-pelo-ccbb-brasilia-e-percorrera-bh-rj-e-sp",
+      "relatedWorks": [
+        "luz-aeterna"
+      ],
+      "mencoesSztutman": 3
+    },
+    {
+      "veiculo": "O Tempo",
+      "titulo": "Casa Fiat de Cultura apresenta mostra imersiva que simula o fundo do mar",
+      "data": "2023-09-12",
+      "ano": 2023,
+      "url": "https://www.otempo.com.br/entretenimento/casa-fiat-de-cultura-apresenta-mostra-imersiva-que-simula-o-fundo-do-mar-1.3231776",
+      "relatedWorks": [
+        "oceanvs"
+      ],
+      "mencoesSztutman": 6
+    },
+    {
+      "veiculo": "Terra (Estadão Conteúdo), Ana Carolina Ralston",
+      "titulo": "A imersão da Aya em Oceanvs",
+      "data": "2022-11-27",
+      "ano": 2022,
+      "url": "https://www.terra.com.br/diversao/a-imersao-da-aya-em-oceanvs,9a9d53d2061a4c36e955902102426b3abv42jqaf.html",
+      "relatedWorks": [
+        "oceanvs"
+      ],
+      "mencoesSztutman": 3
+    },
+    {
+      "veiculo": "SEGS",
+      "titulo": "Farol Santander São Paulo recebe exposição imersiva 3D que mergulha no universo da água",
+      "data": "2022-10-27",
+      "ano": 2022,
+      "url": "https://www.segs.com.br/eventos/361925-farol-santander-sao-paulo-recebe-exposicao-imersiva-3d-que-mergulha-no-universo-da-agua",
+      "relatedWorks": [
+        "oceanvs"
+      ],
+      "mencoesSztutman": 6,
+      "tipo": "release"
+    },
+    {
+      "veiculo": "São Paulo Secreto",
+      "titulo": "'Oceanvs - Imersão em Azul' é a nova exposição do Farol Santander",
+      "data": "2022-10-26",
+      "ano": 2022,
+      "url": "https://saopaulosecreto.com/exposicao-oceanvs-imersao-em-azul-farol-santander/",
+      "relatedWorks": [
+        "oceanvs"
+      ],
+      "mencoesSztutman": 2
+    },
+    {
+      "veiculo": "Harper's Bazaar Brasil",
+      "titulo": "Acontece: Nesta semana, São Paulo recebe a URBE, Mostra de Arte Pública",
+      "data": "2012-01-26",
+      "ano": 2012,
+      "url": "https://harpersbazaar.uol.com.br/cultura/acontece-nesta-semana-sao-pauli-recebe-a-urbe-mostra-de-arte-publica",
+      "relatedWorks": [
+        "cachoeira"
+      ],
+      "mencoesSztutman": 3
+    },
+    {
+      "veiculo": "Revista IstoÉ",
+      "titulo": "Na velocidade da luz",
+      "data": "2012-01-20",
+      "ano": 2012,
+      "url": "https://revista.istoe.com.br/187449_navelocidadedaluz",
+      "relatedWorks": [
+        "cachoeira"
+      ],
+      "mencoesSztutman": 2,
+      "dataFonte": "corpo da página"
     }
   ]
 }

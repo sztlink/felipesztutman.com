@@ -35,7 +35,7 @@ credits:
   - { role: "Lighting design execution", name: "Santa Luz" }
   - { role: "Photography and video editing", name: "Lua Morales" }
 press:
-  - { source: "VEJA São Paulo", url: "https://preprod.vejasp.abril.com.br/cultura-lazer/teorias-neurocientista-miguel-nicolelis-exposicao-fiesp-avenida-paulista/", title: "Teorias do neurocientista Miguel Nicolelis viram arte na Avenida Paulista" }
+  - { source: "VEJA São Paulo", url: "https://vejasp.abril.com.br/cultura-lazer/teorias-neurocientista-miguel-nicolelis-exposicao-fiesp-avenida-paulista/", title: "Teorias do neurocientista Miguel Nicolelis viram arte na Avenida Paulista" }
   - { source: "SESI", url: "https://www.sesisp.org.br/noticia/o-que-nos-une-abre-ao-publico-no-centro-cultural-fiesp-e-apresenta-teorias-do-neurocientista-miguel-nicolelis-em-forma-de-arte", title: "O que nos une: Exposição apresenta teorias de Miguel Nicolelis em forma de arte" }
   - { source: "Artsoul", url: "https://en.artsoul.com.br/revista/eventos/exposicao-o-que-nos-une", title: "Exposição O Que Nos Une" }
   - { source: "Instagram Centro Cultural Fiesp", url: "https://www.instagram.com/reel/DTf1_SKjB4m/", title: "Vídeo da exposição" }

@@ -1,70 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
-import publicationsData from '../../data/publications.json';
-
-const items = (publicationsData as any).publications || [];
+import PublicacoesCorpo from '../../components/PublicacoesCorpo.astro';
 ---
 <Base
   title="Felipe Sztutman · Publications"
-  description="Publications, books, and editorial records related to Felipe Sztutman’s trajectory."
+  description="Books, exhibition catalogues, open archive and press: how Felipe Sztutman's work circulates outside the room."
   lang="en"
   fullBleed={true}
   showHeader={false}
   showFooter={false}
   bodyClass="page-publicacoes"
 >
-  <main class="archive-page">
-    <section class="entry">
-      <div class="surface-links">
-        <a href="/en/#obras" class="back">← archive</a>
-        <a href="/mapa" class="surface-link">relational map (PT)</a>
-        <a href="/publicacoes" class="surface-link">PT</a>
-      </div>
-      <div class="entry-kicker">PUBLICATIONS · EDITORIAL CIRCULATION</div>
-      <h1>Editorial circulation</h1>
-      <p>Books, catalogues, and printed records that begin to operate as part of the work’s field.</p>
-    </section>
-
-    <section class="paper">
-      <div class="paper-kicker">EDITORIAL ARCHIVE</div>
-      <div class="count">{items.length} publication{items.length === 1 ? '' : 's'}</div>
-      <div class="pub-list">
-        {items.map((item: any) => (
-          <a href={`/en/publicacoes/${item.slug}`} class="pub-item">
-            <div class="pub-title">{item.titulo}</div>
-            <div class="pub-meta">{item.autor}{item.ano ? ` · ${item.ano}` : ''} · print publication</div>
-            <div class="pub-desc">{item.description}</div>
-          </a>
-        ))}
-      </div>
-    </section>
-  </main>
+  <PublicacoesCorpo isEN={true} />
 </Base>
-
-<style is:global>
-body.page-publicacoes{background:#000000;color:#ffffff}
-body.page-publicacoes a{text-decoration:none}
-</style>
-
-<style>
-:root{--paper:#000000;--ink:#ffffff;--line:rgba(255,255,255,.16);--line-strong:rgba(255,255,255,.28)}
-.archive-page{min-height:100vh;background:#000000}
-.entry{padding:1.25rem 1rem 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
-.back,.surface-link,.entry-kicker,.paper-kicker,.count{font:.72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.surface-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
-.back,.surface-link{display:inline-block;color:rgba(255,255,255,.55)}.back:hover,.surface-link:hover{color:#fff}
-.surface-link{color:rgba(255,255,255,.38)}
-.entry-kicker{color:rgba(255,255,255,.48);margin-bottom:.75rem}
-.entry h1{font:900 clamp(2.8rem,8vw,6rem)/.94 var(--sans);letter-spacing:-.05em;margin-bottom:.85rem;max-width:12ch}
-.entry p{max-width:42rem;font:1rem/1.65 var(--sans);color:rgba(255,255,255,.7)}
-.paper{background:var(--paper);color:var(--ink);padding:1rem 1rem 2rem}
-.paper-kicker{color:rgba(255,255,255,.45);margin-bottom:.75rem}
-.count{color:rgba(255,255,255,.58);margin-bottom:1rem}
-.pub-list{border-top:1px solid var(--line)}
-.pub-item{display:block;padding:1rem 0;border-bottom:1px solid var(--line);color:inherit}
-.pub-item:hover .pub-title{text-decoration:underline}
-.pub-title{font:600 1.08rem/1.3 var(--sans);letter-spacing:-.02em;margin-bottom:.2rem}
-.pub-meta{font:.74rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.35rem}
-.pub-desc{font:.9rem/1.65 var(--sans);color:rgba(255,255,255,.72);max-width:56ch}
-@media (min-width: 900px){.entry,.paper{padding-left:2rem;padding-right:2rem}.entry{padding-top:1.5rem;padding-bottom:3.5rem}.paper{padding-bottom:2.5rem}}
-</style>
