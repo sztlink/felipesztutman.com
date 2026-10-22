@@ -2,8 +2,7 @@
 // Documentacao da obra: um componente, dois comportamentos sobre os mesmos dados.
 // "sequencia" (palco com uma foto inteira por vez + faixa de miniaturas) e
 // "folha" (folha de contato). Sem JS: trilho com rolagem nativa e ancoras #doc-NN.
-import { existsSync } from 'node:fs';
-import path from 'node:path';
+import { thumbOf, responsive } from '../lib/images.js';
 
 export type DocItem = { src: string; alt: string; caption: string };
 
@@ -20,13 +19,6 @@ const width = Math.max(2, String(total).length);
 const pad = (n: number) => String(n).padStart(width, '0');
 const title = label || (isEN ? 'Documentation' : 'Documentação');
 
-// miniatura gerada por scripts/thumbs.mjs; se faltar, usa a imagem original
-const publicDir = path.join(process.cwd(), 'public');
-function thumbOf(src: string) {
-  const thumb = src.replace(/\/([^/]+)\.(jpe?g|png)$/i, '/thumb/$1.webp');
-  if (thumb === src) return src;
-  return existsSync(path.join(publicDir, thumb)) ? thumb : src;
-}
 const slides = items.map((item, index) => ({ ...item, thumb: thumbOf(item.src), id: `doc-${pad(index + 1)}`, num: pad(index + 1) }));
 
 const t = isEN
@@ -47,7 +39,7 @@ const t = isEN
       <div class="track" tabindex="0" role="region" aria-roledescription={t.carousel} aria-label={t.region}>
         {slides.map((slide, index) => (
           <figure class="slide" id={slide.id} role="group" aria-roledescription={t.slide} aria-label={`${slide.num} / ${pad(total)}`}>
-            <img src={slide.src} alt={slide.alt} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+            <img {...responsive(slide.src, '(max-width: 900px) 100vw, 80vw')} alt={slide.alt} loading="lazy" decoding="async" />
             <figcaption><span class="num">{slide.num} / {pad(total)}</span>{slide.caption && <span class="txt">{slide.caption}</span>}</figcaption>
           </figure>
         ))}
