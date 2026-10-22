@@ -1,8 +1,10 @@
 ---
 layout: ../../layouts/Obra.astro
 title: "Metadata: O Mundo Invisível"
-year: "2023"
+year: "2023-2024"
 location: "Centro Cultural FIESP, São Paulo"
+circulation:
+  - { label: "Período", value: "Centro Cultural FIESP, São Paulo, de outubro de 2023 a março de 2024" }
 description: "Sala imersiva de cinco telas onde sistemas de partículas simulam fluidos 3D perturbados por dados reais de São Paulo. Raio-X da metrópole em tempo real."
 lead: "Instalação imersiva em cinco telas que transforma dados reais de São Paulo em fluidos tridimensionais, fazendo a cidade aparecer como sistema perceptivo habitável."
 archiveNote: "METADATA deve ser lida no arquivo menos como exposição genérica e mais como mecanismo de percepção: uma sala onde dados urbanos, tempo real e memória histórica perturbam continuamente a imagem."

@@ -758,7 +758,7 @@
       "numero": "009",
       "slug": "oceanvs",
       "titulo": "Oceanvs",
-      "ano": 2022,
+      "ano": "2022-2023",
       "status": "REALIZADA",
       "local": "Farol Santander SP, Casa Fiat BH",
       "cidades": [
@@ -942,7 +942,7 @@
       "numero": "011",
       "slug": "metadata",
       "titulo": "Metadata: O Mundo Invisível",
-      "ano": 2023,
+      "ano": "2023-2024",
       "status": "REALIZADA",
       "local": "Centro Cultural FIESP, São Paulo",
       "cidades": [
@@ -1032,15 +1032,17 @@
       "numero": "012",
       "slug": "luz-aeterna",
       "titulo": "Luz Æterna: Ensaio Sobre o Sol",
-      "ano": 2024,
+      "ano": "2024-2025",
       "status": "REALIZADA",
-      "local": "CCBB Brasília + CCBB Belo Horizonte",
+      "local": "CCBB Brasília, São Paulo e Belo Horizonte",
       "cidades": [
         "Brasília",
+        "São Paulo",
         "Belo Horizonte"
       ],
       "cidadesSigla": [
         "DF",
+        "SP",
         "BH"
       ],
       "tecnicaMedium": [
@@ -1534,7 +1536,7 @@
       "numero": "017",
       "slug": "o-que-nos-une",
       "titulo": "O Que Nos Une",
-      "ano": 2025,
+      "ano": "2025-2026",
       "status": "REALIZADA",
       "local": "Centro Cultural FIESP, São Paulo",
       "cidades": [

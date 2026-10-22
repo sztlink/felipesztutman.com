@@ -1,15 +1,15 @@
 ---
 layout: ../../../layouts/Obra.astro
 title: "Oceanvs"
-year: "2022"
+year: "2022-2023"
 location: "Farol Santander SP, Casa Fiat BH"
 lang: en
 description: "Felipe Sztutman's authored exhibition in eight acts. Antonio Curti wrote the curatorial script, Felipe conceived the work and the spatial experience that brings water to the body without wetting the skin."
 lead: "Felipe Sztutman's authored work in eight acts, born from his lineage of expanded video and materialized by AYA Studio, where curatorial script, motion, score, programming, and spatial design work together to bring water to the body without wetting the skin."
 archiveNote: "This page marks OCEANVS as an authored exhibition by Felipe Sztutman and as a work of circulation and adaptation. The passage from São Paulo to Belo Horizonte, and later to Farol Viajante, is not a documentary exception, but part of the work's behavior."
 circulation:
-  - { label: "Premiere", value: "Farol Santander, São Paulo, 2022" }
-  - { label: "Adaptation", value: "Casa Fiat de Cultura, Belo Horizonte, 2023" }
+  - { label: "Premiere", value: "Farol Santander, São Paulo, 2022, dismantled in January 2023" }
+  - { label: "Adaptation", value: "Casa Fiat de Cultura, Belo Horizonte, September 12 to November 19, 2023" }
   - { label: "Circulation", value: "Farol Viajante, ongoing" }
   - { label: "Structure", value: "Eight acts, mapped projection, original score, interactivity, and immersive space" }
 collaborationNote: "In OCEANVS, collaboration does not enter as execution of a pre-closed concept. Antonio Curti structured the visual and narrative concept, the motion by Flávio Reis and João Alencar, Juvi Chagas's score, Matheus Leston's interactive programming, and AYA Studio's materialization directly interfere with the final design of the experience."

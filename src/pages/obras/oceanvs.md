@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/Obra.astro
 title: "Oceanvs"
-year: "2022"
+year: "2022-2023"
 location: "Farol Santander SP, Casa Fiat BH"
 description: "Exposição autoral de Felipe Sztutman em oito atos. Antonio escreveu o roteiro curatorial, Felipe concebeu a obra e a experiência espacial que traz água ao corpo sem molhar a pele."
 lead: "Obra autoral de Felipe Sztutman em oito atos, nascida da sua linhagem de vídeo expandido e materializada pela AYA Studio, onde roteiro curatorial, motion, trilha, programação e desenho espacial operam juntos para trazer água ao corpo sem molhar a pele."
 archiveNote: "Esta página marca OCEANVS como exposição autoral de Felipe Sztutman e como obra de circulação e adaptação. A passagem de São Paulo para Belo Horizonte, e depois para o Farol Viajante, não é exceção documental, mas parte do comportamento da obra."
 circulation:
-  - { label: "Estreia", value: "Farol Santander, São Paulo, 2022" }
-  - { label: "Adaptação", value: "Casa Fiat de Cultura, Belo Horizonte, 2023" }
+  - { label: "Estreia", value: "Farol Santander, São Paulo, 2022, com desmontagem em janeiro de 2023" }
+  - { label: "Adaptação", value: "Casa Fiat de Cultura, Belo Horizonte, 12 de setembro a 19 de novembro de 2023" }
   - { label: "Circulação", value: "Farol Viajante, em curso" }
   - { label: "Estrutura", value: "Oito atos, projeção mapeada, trilha original, interatividade e espaço de imersão" }
 collaborationNote: "Em OCEANVS, a colaboração não entra como execução de um conceito pré-fechado. Antonio Curti estruturou o conceito visual e narrativo, o motion de Flávio Reis e João Alencar, a trilha de Juvi Chagas, a programação interativa de Matheus Leston e a materialização da AYA Studio interferem diretamente no desenho final da experiência."

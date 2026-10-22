@@ -1,14 +1,14 @@
 ---
 layout: ../../../layouts/Obra.astro
 title: "Luz Æterna: Ensaio Sobre o Sol"
-year: "2024"
-location: "CCBB Brasília + CCBB Belo Horizonte"
+year: "2024-2025"
+location: "CCBB Brasília, São Paulo, and Belo Horizonte"
 lang: en
 description: "Art, technology, and experience direction for a collective new media art exhibition featuring eight Brazilian artists, where light organizes space and unifies the journey between physical and virtual."
 lead: "Thematic/collective new media art exhibition treated as art, technology, and experience direction: eight artists coexist in a route where light, exhibition design, and architectural adaptation organize the experience without erasing each work's autonomy."
 archiveNote: "Luz Æterna remains in the archive as a directed thematic/collective exhibition, not as Felipe's individual authored work. The page records a directing gesture, spatial, technical, and experiential, while the works and their artists preserve their own authorship."
 circulation:
-  - { label: "Circuit", value: "CCBB Brasília and CCBB Belo Horizonte" }
+  - { label: "Circuit", value: "CCBB Brasília (February to May 5, 2024), CCBB São Paulo (September 14 to November 25, 2024), and CCBB Belo Horizonte (December 11, 2024 to February 10, 2025)" }
   - { label: "Structure", value: "Collective new media art exhibition with eight Brazilian artists" }
   - { label: "Experience direction", value: "Site-specific exhibition design, light, and route between autonomous works" }
 collaborationNote: "Collaboration is constitutive of the exhibition: Antonio Curti signs curatorial conception and curation, Felipe Sztutman organizes art, technology, and experience direction, Eduardo Raele and Rodrigo Primo join executive production, and AYA Studio sustains the multimedia project and equipment rental. The archive does not turn this network into single authorship, it records the directing gesture that made the set function as an inhabitable exhibition."

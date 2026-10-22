@@ -7,7 +7,7 @@ description: "Espaço imersivo da maior exposição de Yoshitaka Amano já reali
 lead: "Projeto com artista terceiro: espaço imersivo concebido para traduzir 218 obras originais de Yoshitaka Amano em experiência habitável, articulando vídeo, luz, som, automação e projeção como um único sistema."
 archiveNote: "AMANO deve ser lida no arquivo como direção de experiência e tecnologia dentro de um projeto com artista terceiro. A autoria artística principal permanece de Yoshitaka Amano, o gesto de Felipe está na tradução espacial, técnica e experiencial desse universo visual no Brasil."
 circulation:
-  - { label: "Itinerância", value: "Farol Santander São Paulo (2024); CCBB Belo Horizonte (2025-2026), CCBB Rio de Janeiro (2026) e CCBB Brasília (2026)" }
+  - { label: "Itinerância", value: "Farol Santander São Paulo (15 de março a 16 de junho de 2024); CCBB Belo Horizonte (10 de dezembro de 2025 a 2 de março de 2026), CCBB Rio de Janeiro (22 de abril a 22 de junho de 2026) e CCBB Brasília (17 de julho a 1º de novembro de 2026)" }
   - { label: "Estrutura", value: "Sala imersiva de 11 minutos e 40 segundos com quinze projetores laser sincronizados" }
   - { label: "Matéria", value: "Vídeo, luz, som, automação e projeção organizados como um único sistema" }
 collaborationNote: "A curadoria de Antonio Curti, a direção de experiência e tecnologia de Felipe Sztutman, a coordenação de conteúdo audiovisual de João Alencar, o motion e a produção de conteúdo de Raphael Minhoso e a integração de sistemas com Ihon Yadoya fazem a sala imersiva existir como materialização coletiva sem deslocar a autoria artística de Yoshitaka Amano."

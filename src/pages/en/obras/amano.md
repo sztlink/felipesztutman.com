@@ -8,7 +8,7 @@ description: "Third-party artist project: experience and technology direction fo
 lead: "Third-party artist project: immersive space conceived to translate 218 original works by Yoshitaka Amano into an inhabitable experience, articulating video, light, sound, automation, and projection as a single system."
 archiveNote: "AMANO should be read in the archive as experience and technology direction within a third-party artist project. The primary artistic authorship remains Yoshitaka Amano's, Felipe's gesture is the spatial, technical, and experiential translation of that visual universe in Brazil."
 circulation:
-  - { label: "Itinerary", value: "Farol Santander São Paulo (2024); CCBB Belo Horizonte (2025-2026), CCBB Rio de Janeiro (2026), and CCBB Brasília (2026)" }
+  - { label: "Itinerary", value: "Farol Santander São Paulo (March 15 to June 16, 2024); CCBB Belo Horizonte (December 10, 2025 to March 2, 2026), CCBB Rio de Janeiro (April 22 to June 22, 2026), and CCBB Brasília (July 17 to November 1, 2026)" }
   - { label: "Structure", value: "11-minute-40-second immersive room with fifteen synchronized laser projectors" }
   - { label: "Material", value: "Video, light, sound, automation, and projection organized as a single system" }
 collaborationNote: "Antonio Curti's curation, Felipe Sztutman's experience and technology direction, João Alencar's audiovisual content coordination, Raphael Minhoso's motion graphics and content production, and systems integration with Ihon Yadoya make the immersive room exist as collective materialization without displacing Yoshitaka Amano's artistic authorship."

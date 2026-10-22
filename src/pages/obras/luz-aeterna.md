@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/Obra.astro
 title: "Luz Æterna: Ensaio Sobre o Sol"
-year: "2024"
-location: "CCBB Brasília + CCBB Belo Horizonte"
+year: "2024-2025"
+location: "CCBB Brasília, São Paulo e Belo Horizonte"
 description: "Direção de arte, tecnologia e experiência de exposição coletiva de new media art com oito artistas brasileiros, onde a luz organiza o espaço e unifica a jornada entre físico e virtual."
 lead: "Exposição temática/coletiva de new media art tratada como direção de arte, tecnologia e experiência: oito artistas coexistem em um percurso onde luz, expografia e adaptação arquitetônica organizam a experiência sem apagar a autonomia de cada obra."
 archiveNote: "Luz Æterna permanece no arquivo como exposição temática/coletiva dirigida, não como obra autoral individual de Felipe. A página registra o gesto de direção, espacial, técnico e experiencial, enquanto as obras e seus artistas preservam autoria própria."
 circulation:
-  - { label: "Circuito", value: "CCBB Brasília e CCBB Belo Horizonte" }
+  - { label: "Circuito", value: "CCBB Brasília (fevereiro a 5 de maio de 2024), CCBB São Paulo (14 de setembro a 25 de novembro de 2024) e CCBB Belo Horizonte (11 de dezembro de 2024 a 10 de fevereiro de 2025)" }
   - { label: "Estrutura", value: "Exposição coletiva de new media art com oito artistas brasileiros" }
   - { label: "Direção de experiência", value: "Expografia site-specific, luz e percurso entre trabalhos autônomos" }
 collaborationNote: "A colaboração é constitutiva da exposição: Antonio Curti assina a concepção curatorial e a curadoria, Felipe Sztutman organiza a direção de arte, tecnologia e experiência, Eduardo Raele e Rodrigo Primo integram a produção executiva, e a AYA Studio sustenta projeto multimídia e locação de equipamentos. O arquivo não transforma essa rede em autoria única, registra o gesto de direção que fez o conjunto funcionar como exposição habitável."

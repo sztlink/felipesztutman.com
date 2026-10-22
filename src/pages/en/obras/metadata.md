@@ -1,8 +1,10 @@
 ---
 layout: ../../../layouts/Obra.astro
 title: "Metadata: O Mundo Invisível"
-year: "2023"
+year: "2023-2024"
 location: "Centro Cultural FIESP, São Paulo"
+circulation:
+  - { label: "Run", value: "Centro Cultural FIESP, São Paulo, October 2023 to March 2024" }
 lang: en
 description: "Immersive five-screen room where particle systems simulate 3D fluids disturbed by real São Paulo data. X-ray of the metropolis in real time."
 lead: "Immersive five-screen installation that transforms real São Paulo data into three-dimensional fluids, making the city appear as a habitable perceptual system."

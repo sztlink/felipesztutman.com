@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/Obra.astro
 title: "O Que Nos Une"
-year: "2025"
+year: "2025-2026"
 location: "Centro Cultural FIESP, São Paulo"
 lang: en
 description: "Thematic/scientific exhibition in three environments that translates Miguel Nicolelis's theories about collective consciousness into mirrors, position tracking, live-generated patterns, and biometric synchronization."
