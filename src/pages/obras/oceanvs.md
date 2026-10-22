@@ -41,7 +41,7 @@ A obra nasceu em um momento em que a AYA reunia um núcleo audiovisual recém-fo
 
 A obra percorre oito momentos, Prelúdio, Horizonte, Mergulho, Submersão, Tempestade, Seca, Caos, Vida. Flávio Reis (Audiovisualismo) e João Alencar desenvolveram o motion graphics que dá corpo ao roteiro de Antonio, Juvi Chagas compôs a trilha sonora original, Matheus Leston programou os elementos interativos que respondem à presença do público. Concebi o espaço como uma câmara de imersão: seis projetores mapeados, som espacial, piso que reflete o oceano acima. O público entra, deita, e o mar acontece ao redor.
 
-OCEANVS circulou pelo Farol Santander em São Paulo (2022), pela Casa Fiat de Cultura em Belo Horizonte (2023) e segue em nova aplicação no Farol Viajante. Gerou subprodutos, objetos de arte que isolam frames da narrativa, expostos na Galeria Luis Maluf e na SP-Arte Rotas Brasileiras.
+OCEANVS circulou pelo Farol Santander em São Paulo (2022), pela Casa Fiat de Cultura em Belo Horizonte (2023) e segue em nova aplicação no Farol Viajante. Gerou subprodutos, objetos de arte que isolam frames da narrativa, [expostos pela Galeria Luis Maluf na SP-Arte Rotas Brasileiras](/obras/oceanvs-objetos).
 
 A colaboração com Antonio Curti merece registro que vai além da distribuição de funções. O roteiro dos oito atos não chegou como texto pronto: ele se transformou no espaço. Motion, trilha e programação interativa não ilustraram o roteiro, interferiram nele. O que saiu da sala de exposição em São Paulo não era o roteiro original. Isso é o que diferencia co-criação de divisão de trabalho.
 

@@ -1884,6 +1884,85 @@
         "virar status REALIZADA depois de 16/11/2026"
       ],
       "authorshipMode": "COAUTORAL_FELIPE"
+    },
+    {
+      "numero": "020",
+      "slug": "oceanvs-objetos",
+      "titulo": "Oceanvs #1.11, #2.22, #3.33",
+      "ano": 2023,
+      "status": "REALIZADA",
+      "local": "SP-Arte Rotas Brasileiras, ARCA, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "formato audiovisual não convencional",
+        "conteúdo digital"
+      ],
+      "contexto": "Galeria Luis Maluf / SP-Arte Rotas Brasileiras",
+      "tipo": "OBJETO_AUDIOVISUAL",
+      "serie": "Oceanvs",
+      "corPulso": "#2255ee",
+      "description": "Três objetos audiovisuais que isolam fragmentos de OCEANVS em formatos de tela não convencionais: um círculo, um par de barras e um losango.",
+      "sourceFiles": {
+        "page": "src/pages/obras/oceanvs-objetos.md",
+        "galleryKey": "oceanvs-objetos",
+        "mapNodeKey": "oceanvs-objetos"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 13
+      },
+      "mapa": {
+        "materiais": [
+          "tela",
+          "dados"
+        ],
+        "tags": [
+          "água",
+          "oceano",
+          "objeto",
+          "tela",
+          "galeria",
+          "edição"
+        ],
+        "venueCurto": "SP-Arte Rotas",
+        "lens": {
+          "conceito": [
+            60,
+            70
+          ],
+          "temporal": [
+            250,
+            40
+          ],
+          "linhagem": [
+            215,
+            -170
+          ]
+        },
+        "linksDeclarados": [
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/oceanvs-objetos.md"
+      },
+      "fichaTecnica": {
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "realizacao": [
+          "AYA Studio",
+          "Galeria Luis Maluf"
+        ]
+      },
+      "todo": [],
+      "authorshipMode": "AUTORAL_FELIPE"
     }
   ]
 }

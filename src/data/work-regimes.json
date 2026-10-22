@@ -42,7 +42,8 @@
     "amano": "C",
     "flama": "B",
     "player1": "B",
-    "2047": "B"
+    "2047": "B",
+    "oceanvs-objetos": "B"
   },
   "pilots": ["cachoeira", "mementos", "oceanvs"]
 }

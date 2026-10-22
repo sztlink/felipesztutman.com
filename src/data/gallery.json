@@ -862,5 +862,72 @@
       "caption": "Player 1 · o corredor dos painéis, cinquenta anos de videogame em linha do tempo",
       "captionEn": "Player 1 · the corridor of panels, fifty years of video games as a timeline"
     }
+  ],
+  "oceanvs-objetos": [
+    {
+      "src": "/img/obras/oceanvs-objetos/01-oceanvs-objetos.jpg",
+      "caption": "Oceanvs #1.11 | Ouroboros na parede.",
+      "captionEn": "Oceanvs #1.11 | Ouroboros on the wall."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/02-oceanvs-objetos.jpg",
+      "caption": "Oceanvs #3.33 | 23º31'54\"S 46º30'30\"W, o losango.",
+      "captionEn": "Oceanvs #3.33 | 23º31'54\"S 46º30'30\"W, the diamond."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/03-oceanvs-objetos.jpg",
+      "caption": "Oceanvs #2.22 | Biolumina, as duas barras.",
+      "captionEn": "Oceanvs #2.22 | Biolumina, the two bars."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/04-oceanvs-objetos.jpg",
+      "caption": "Ouroboros, o anel branco no centro do círculo.",
+      "captionEn": "Ouroboros, the white ring at the center of the circle."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/05-oceanvs-objetos.jpg",
+      "caption": "Ouroboros no escuro.",
+      "captionEn": "Ouroboros in the dark."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/06-oceanvs-objetos.jpg",
+      "caption": "Ouroboros no escuro, a água em partículas.",
+      "captionEn": "Ouroboros in the dark, water as particles."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/07-oceanvs-objetos.jpg",
+      "caption": "O losango no escuro.",
+      "captionEn": "The diamond in the dark."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/08-oceanvs-objetos.jpg",
+      "caption": "Biolumina no escuro.",
+      "captionEn": "Biolumina in the dark."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/09-oceanvs-objetos.jpg",
+      "caption": "Detalhe do losango: São Paulo submersa.",
+      "captionEn": "Detail of the diamond: São Paulo submerged."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/10-oceanvs-objetos.jpg",
+      "caption": "Detalhe de Biolumina.",
+      "captionEn": "Detail of Biolumina."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/11-oceanvs-objetos.jpg",
+      "caption": "Biolumina, filamentos de luz.",
+      "captionEn": "Biolumina, filaments of light."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/12-oceanvs-objetos.jpg",
+      "caption": "Detalhe de Ouroboros.",
+      "captionEn": "Detail of Ouroboros."
+    },
+    {
+      "src": "/img/obras/oceanvs-objetos/13-oceanvs-objetos.jpg",
+      "caption": "Ouroboros, a borda da maré.",
+      "captionEn": "Ouroboros, the edge of the tide."
+    }
   ]
 }
