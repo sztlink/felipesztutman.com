@@ -33,7 +33,7 @@ credits:
   - { role: "Projection equipment", name: "On Projeções" }
   - { role: "Photography", name: "Luiz Maudonnet (São Paulo), Leo Lara (Belo Horizonte)" }
 publications:
-  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64–67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "The book frames OCEANVS as a turning point between the early light works and the AYA phase of immersive exhibitions." }
+  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64-67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "The book frames OCEANVS as a turning point between the early light works and the AYA phase of immersive exhibitions." }
 ---
 
 Before OCEANVS, I already had authored works within AYA exhibitions, Mementos and Interlúdio, in Metaversø, are part of that chronology. OCEANVS was a different turning point: not an installation within a thematic exhibition, but AYA's first full immersive exhibition organized as an authored work of mine. With it, I learned to design spaces in collaboration: Antonio Curti structured the visual and narrative concept for the eight acts, while I conceived the work, the spatial experience, and the technical direction that would bring water to the body without wetting the skin.
