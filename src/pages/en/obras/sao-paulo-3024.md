@@ -1,8 +1,10 @@
 ---
 layout: ../../../layouts/Obra.astro
 title: "São Paulo 3024"
-year: "2024"
+year: "2024-2025"
 location: "Farol Santander São Paulo"
+circulation:
+  - { label: "Run", value: "Farol Santander São Paulo, 23rd floor, November 1, 2024 to February 2, 2025" }
 lang: en
 description: "16-minute immersive experience imagining São Paulo a thousand years in the future, using LLMs and LoRA as philosophical foundation. Includes interactive installation where body movements generate urban territories in real time."
 lead: "Immersive 16-minute journey through São Paulo a thousand years ahead, using LLMs and LoRA as philosophical ground and bodily movement as live urban matter."

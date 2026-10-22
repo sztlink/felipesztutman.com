@@ -1,8 +1,10 @@
 ---
 layout: ../../layouts/Obra.astro
 title: "São Paulo 3024"
-year: "2024"
+year: "2024-2025"
 location: "Farol Santander São Paulo"
+circulation:
+  - { label: "Período", value: "Farol Santander São Paulo, 23º andar, de 1º de novembro de 2024 a 2 de fevereiro de 2025" }
 description: "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRA como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real."
 credits:
   - { role: "Assinatura", name: "AYA Studio" }

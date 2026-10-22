@@ -861,6 +861,85 @@
     },
     {
       "numero": "010",
+      "slug": "oceanvs-objetos",
+      "titulo": "Oceanvs #1.11, #2.22, #3.33",
+      "ano": 2023,
+      "status": "REALIZADA",
+      "local": "SP-Arte Rotas Brasileiras, ARCA, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "formato audiovisual não convencional",
+        "conteúdo digital"
+      ],
+      "contexto": "Galeria Luis Maluf / SP-Arte Rotas Brasileiras",
+      "tipo": "OBJETO_AUDIOVISUAL",
+      "serie": "Oceanvs",
+      "corPulso": "#2255ee",
+      "description": "Três objetos audiovisuais que isolam fragmentos de OCEANVS em formatos de tela não convencionais: um círculo, um par de barras e um losango.",
+      "sourceFiles": {
+        "page": "src/pages/obras/oceanvs-objetos.md",
+        "galleryKey": "oceanvs-objetos",
+        "mapNodeKey": "oceanvs-objetos"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 13
+      },
+      "mapa": {
+        "materiais": [
+          "tela",
+          "dados"
+        ],
+        "tags": [
+          "água",
+          "oceano",
+          "objeto",
+          "tela",
+          "galeria",
+          "edição"
+        ],
+        "venueCurto": "SP-Arte Rotas",
+        "lens": {
+          "conceito": [
+            60,
+            70
+          ],
+          "temporal": [
+            250,
+            40
+          ],
+          "linhagem": [
+            215,
+            -170
+          ]
+        },
+        "linksDeclarados": [
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/oceanvs-objetos.md"
+      },
+      "fichaTecnica": {
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "realizacao": [
+          "AYA Studio",
+          "Galeria Luis Maluf"
+        ]
+      },
+      "todo": [],
+      "authorshipMode": "AUTORAL_FELIPE"
+    },
+    {
+      "numero": "011",
       "slug": "metadata",
       "titulo": "Metadata: O Mundo Invisível",
       "ano": 2023,
@@ -947,85 +1026,6 @@
         "Confirmar créditos fotográficos específicos da galeria.",
         "Expandir ficha técnica com fontes de dados, sistema de projeção e equipe técnica quando o dado estiver consolidado."
       ],
-      "authorshipMode": "AUTORAL_FELIPE"
-    },
-    {
-      "numero": "011",
-      "slug": "sao-paulo-3024",
-      "titulo": "São Paulo 3024",
-      "ano": 2024,
-      "status": "REALIZADA",
-      "local": "Farol Santander São Paulo",
-      "cidades": [
-        "São Paulo"
-      ],
-      "cidadesSigla": [
-        "SP"
-      ],
-      "tecnicaMedium": [
-        "LLMs",
-        "LoRA",
-        "OpenCV",
-        "projeção",
-        "instalação interativa"
-      ],
-      "contexto": "série dos Elementos / humano",
-      "tipo": "EXPOSICAO_IMERSIVA",
-      "serie": "Os Elementos",
-      "corPulso": "#aa77ff",
-      "description": "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRA como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real.",
-      "sourceFiles": {
-        "page": "src/pages/obras/sao-paulo-3024.md",
-        "galleryKey": "sao-paulo-3024",
-        "mapNodeKey": "sao-paulo-3024"
-      },
-      "assets": {
-        "galleryAvailable": true,
-        "galleryCount": 6
-      },
-      "mapa": {
-        "materiais": [
-          "dados",
-          "projeção"
-        ],
-        "tags": [
-          "dados",
-          "ia",
-          "llm",
-          "futuro",
-          "cidade",
-          "são paulo",
-          "corpo",
-          "projeção",
-          "imersivo",
-          "lora",
-          "território"
-        ],
-        "venueCurto": null,
-        "lens": {
-          "conceito": [
-            -60,
-            -300
-          ],
-          "temporal": [
-            312,
-            -150
-          ],
-          "linhagem": [
-            320,
-            -100
-          ]
-        },
-        "linksDeclarados": [
-          "andromeda",
-          "metadata",
-          "flama"
-        ]
-      },
-      "content": {
-        "hasNarrativa": true,
-        "narrativaPath": "src/pages/obras/sao-paulo-3024.md"
-      },
       "authorshipMode": "AUTORAL_FELIPE"
     },
     {
@@ -1139,316 +1139,6 @@
     },
     {
       "numero": "013",
-      "slug": "o-que-nos-une",
-      "titulo": "O Que Nos Une",
-      "ano": 2025,
-      "status": "REALIZADA",
-      "local": "Centro Cultural FIESP, São Paulo",
-      "cidades": [
-        "São Paulo"
-      ],
-      "cidadesSigla": [
-        "SP"
-      ],
-      "tecnicaMedium": [
-        "espelhos",
-        "sincronização biométrica",
-        "sensor",
-        "projeção"
-      ],
-      "contexto": "instalação-sistema / Nicolelis",
-      "tipo": "INSTALACAO",
-      "serie": null,
-      "corPulso": "#00ccff",
-      "description": "Exposição temática/científica em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica.",
-      "sourceFiles": {
-        "page": "src/pages/obras/o-que-nos-une.md",
-        "galleryKey": "o-que-nos-une",
-        "mapNodeKey": "o-que-nos-une"
-      },
-      "assets": {
-        "galleryAvailable": true,
-        "galleryCount": 6
-      },
-      "mapa": {
-        "materiais": [
-          "sensor",
-          "projeção"
-        ],
-        "tags": [
-          "corpo",
-          "biométrico",
-          "coração",
-          "sincronização",
-          "espelho",
-          "sensor",
-          "nicolelis",
-          "ciência",
-          "conexão",
-          "batimento"
-        ],
-        "venueCurto": "FIESP",
-        "lens": {
-          "conceito": [
-            280,
-            50
-          ],
-          "temporal": [
-            355,
-            110
-          ],
-          "linhagem": [
-            220,
-            -40
-          ]
-        },
-        "linksDeclarados": [
-          "interludio",
-          "player1",
-          "metadata"
-        ]
-      },
-      "content": {
-        "hasNarrativa": true,
-        "narrativaPath": "src/pages/obras/o-que-nos-une.md"
-      },
-      "fichaTecnica": {
-        "estrutura": "três ambientes interligados: câmara de espelhos e LEDs, piso interativo com câmeras/projeção e câmara de sincronização biométrica",
-        "periodo": "outubro de 2025 a fevereiro de 2026",
-        "curadoria": [
-          "Miguel Nicolelis (científica)",
-          "Antonio Curti (artística)"
-        ],
-        "programacao": [
-          "Matheus Leston (Max/MSP, obras 2 e 3)"
-        ],
-        "cenografia": [
-          "Tiago Guimarães"
-        ],
-        "projetoDeLuz": [
-          "André Boll / SANTA LUZ"
-        ],
-        "execucao": [
-          "AYA Studio"
-        ],
-        "producao": [
-          "Arte3, Ana Helena Curti"
-        ],
-        "direcaoArteTecnologiaExperiencia": [
-          "Felipe Sztutman"
-        ]
-      },
-      "todo": [
-        "Confirmar créditos fotográficos específicos da galeria.",
-        "Expandir a ficha técnica com detalhes dos sensores biométricos, câmeras, projeção e adaptações de itinerância quando o dado estiver consolidado."
-      ],
-      "authorshipMode": "EXPOSICAO_TEMATICA"
-    },
-    {
-      "numero": "014",
-      "slug": "floresta-utopica",
-      "titulo": "Floresta Utópica",
-      "ano": 2025,
-      "status": "REALIZADA",
-      "local": "Farol Santander São Paulo",
-      "cidades": [
-        "São Paulo"
-      ],
-      "cidadesSigla": [
-        "SP"
-      ],
-      "tecnicaMedium": [
-        "projeção",
-        "espelhos",
-        "aromas",
-        "escultura de luz"
-      ],
-      "contexto": "série dos Elementos / terra",
-      "tipo": "EXPOSICAO_IMERSIVA",
-      "serie": "Os Elementos",
-      "corPulso": "#00ff88",
-      "description": "Obra autoral de Felipe Sztutman sobre temporalidades florestais e sistemas invisíveis de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa central.",
-      "sourceFiles": {
-        "page": "src/pages/obras/floresta-utopica.md",
-        "galleryKey": "floresta-utopica",
-        "mapNodeKey": "floresta-utopica"
-      },
-      "assets": {
-        "galleryAvailable": true,
-        "galleryCount": 6
-      },
-      "mapa": {
-        "materiais": [
-          "luz",
-          "laser",
-          "projeção",
-          "aroma"
-        ],
-        "tags": [
-          "natureza",
-          "floresta",
-          "luz",
-          "espelho",
-          "aroma",
-          "projeção",
-          "invisível",
-          "revelar",
-          "ecologia",
-          "mapping",
-          "13 anos depois"
-        ],
-        "venueCurto": null,
-        "lens": {
-          "conceito": [
-            -320,
-            -100
-          ],
-          "temporal": [
-            355,
-            -40
-          ],
-          "linhagem": [
-            -200,
-            180
-          ]
-        },
-        "linksDeclarados": [
-          "cachoeira",
-          "mantiqueira",
-          "oceanvs"
-        ]
-      },
-      "content": {
-        "hasNarrativa": true,
-        "narrativaPath": "src/pages/obras/floresta-utopica.md"
-      },
-      "fichaTecnica": {
-        "concepcao": [
-          "Felipe Sztutman"
-        ],
-        "curadoria": [
-          "Antonio Curti"
-        ],
-        "realizacao": [
-          "AYA Studio",
-          "Farol Santander"
-        ],
-        "artista": [
-          "Felipe Sztutman"
-        ],
-        "curadoriaNarrativa": [
-          "Antonio Curti"
-        ],
-        "producaoMaterializacao": [
-          "AYA Studio",
-          "Farol Santander"
-        ]
-      },
-      "todo": [
-        "Confirmar créditos fotográficos específicos da galeria.",
-        "Expandir a ficha técnica com equipe de som, aromas, projeção e montagem quando o dado estiver consolidado."
-      ],
-      "authorshipMode": "AUTORAL_FELIPE"
-    },
-    {
-      "numero": "015",
-      "slug": "andromeda",
-      "titulo": "Andrômeda: Universo Sem Fim",
-      "ano": 2025,
-      "status": "REALIZADA",
-      "local": "Farol Santander São Paulo",
-      "cidades": [
-        "São Paulo"
-      ],
-      "cidadesSigla": [
-        "SP"
-      ],
-      "tecnicaMedium": [
-        "projeção",
-        "laser",
-        "ambiente imersivo"
-      ],
-      "contexto": "série dos Elementos / ar-cosmos",
-      "tipo": "EXPOSICAO_IMERSIVA",
-      "serie": "Os Elementos",
-      "corPulso": "#aa77ff",
-      "description": "Experiência imersiva de 17 minutos sobre fenômenos cósmicos, com ambiente interativo modulado por presença e jornada audiovisual através de nebulosas, supernovas e galáxias.",
-      "sourceFiles": {
-        "page": "src/pages/obras/andromeda.md",
-        "galleryKey": "andromeda",
-        "mapNodeKey": "andromeda"
-      },
-      "assets": {
-        "galleryAvailable": true,
-        "galleryCount": 6
-      },
-      "mapa": {
-        "materiais": [
-          "luz",
-          "projeção",
-          "laser"
-        ],
-        "tags": [
-          "cosmos",
-          "astronomia",
-          "luz",
-          "projeção",
-          "imersivo",
-          "espaço sideral",
-          "fenômeno",
-          "juvi",
-          "vídeo"
-        ],
-        "venueCurto": null,
-        "lens": {
-          "conceito": [
-            60,
-            -260
-          ],
-          "temporal": [
-            355,
-            -190
-          ],
-          "linhagem": [
-            370,
-            -290
-          ]
-        },
-        "linksDeclarados": [
-          "sao-paulo-3024",
-          "flama",
-          "oceanvs"
-        ]
-      },
-      "content": {
-        "hasNarrativa": true,
-        "narrativaPath": "src/pages/obras/andromeda.md"
-      },
-      "fichaTecnica": {
-        "duracao": "17 minutos",
-        "estrutura": "ambiente interativo de entrada e jornada audiovisual imersiva",
-        "concepcao": [
-          "Felipe Sztutman"
-        ],
-        "curadoria": [
-          "Antonio Curti"
-        ],
-        "trilhaSonora": [
-          "Juvi"
-        ],
-        "producao": [
-          "AYA Studio"
-        ],
-        "local": "Farol Santander São Paulo"
-      },
-      "todo": [
-        "Confirmar créditos fotográficos específicos da galeria.",
-        "Expandir ficha técnica com sistema de projeção, laser, sensores e equipe técnica quando o dado estiver consolidado."
-      ],
-      "authorshipMode": "AUTORAL_FELIPE"
-    },
-    {
-      "numero": "016",
       "slug": "amano",
       "titulo": "AMANO: Além da Fantasia",
       "ano": "2024-2026",
@@ -1559,12 +1249,12 @@
       "authorshipMode": "PROJETO_ARTISTA_TERCEIRO"
     },
     {
-      "numero": "017",
-      "slug": "flama",
-      "titulo": "FLAMA",
-      "ano": 2027,
-      "status": "A_CONFIRMAR",
-      "local": "Farol Santander São Paulo, 22º andar",
+      "numero": "014",
+      "slug": "sao-paulo-3024",
+      "titulo": "São Paulo 3024",
+      "ano": "2024-2025",
+      "status": "REALIZADA",
+      "local": "Farol Santander São Paulo",
       "cidades": [
         "São Paulo"
       ],
@@ -1572,71 +1262,247 @@
         "SP"
       ],
       "tecnicaMedium": [
-        "fogo como material interativo",
-        "sensores",
+        "LLMs",
+        "LoRA",
+        "OpenCV",
         "projeção",
-        "LED"
+        "instalação interativa"
       ],
-      "contexto": "série dos Elementos / instalação-sistema do fogo",
-      "tipo": "INSTALACAO",
+      "contexto": "série dos Elementos / humano",
+      "tipo": "EXPOSICAO_IMERSIVA",
       "serie": "Os Elementos",
-      "corPulso": "#8a8a8a",
-      "description": "Obra autoral em confirmação. Encerramento da pentalogia Os Elementos: três ambientes onde o visitante contempla, cria e é revelado pela chama.",
+      "corPulso": "#aa77ff",
+      "description": "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRA como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real.",
       "sourceFiles": {
-        "page": "src/pages/obras/flama.md",
-        "galleryKey": null,
-        "mapNodeKey": "flama"
+        "page": "src/pages/obras/sao-paulo-3024.md",
+        "galleryKey": "sao-paulo-3024",
+        "mapNodeKey": "sao-paulo-3024"
       },
       "assets": {
-        "galleryAvailable": false,
-        "galleryCount": 0
+        "galleryAvailable": true,
+        "galleryCount": 6
       },
       "mapa": {
         "materiais": [
-          "luz",
-          "sensor",
+          "dados",
           "projeção"
         ],
         "tags": [
-          "fogo",
-          "toque",
-          "marca",
-          "permanente",
-          "interativo",
-          "cristal",
-          "chama",
-          "calor",
-          "fogueira",
-          "led"
+          "dados",
+          "ia",
+          "llm",
+          "futuro",
+          "cidade",
+          "são paulo",
+          "corpo",
+          "projeção",
+          "imersivo",
+          "lora",
+          "território"
         ],
         "venueCurto": null,
         "lens": {
           "conceito": [
-            180,
-            -260
+            -60,
+            -300
           ],
           "temporal": [
-            400,
-            70
+            312,
+            -150
           ],
           "linhagem": [
-            390,
-            90
+            320,
+            -100
           ]
         },
         "linksDeclarados": [
           "andromeda",
-          "floresta-utopica",
+          "metadata",
+          "flama"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/sao-paulo-3024.md"
+      },
+      "authorshipMode": "AUTORAL_FELIPE"
+    },
+    {
+      "numero": "015",
+      "slug": "andromeda",
+      "titulo": "Andrômeda: Universo Sem Fim",
+      "ano": 2025,
+      "status": "REALIZADA",
+      "local": "Farol Santander São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "projeção",
+        "laser",
+        "ambiente imersivo"
+      ],
+      "contexto": "série dos Elementos / ar-cosmos",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": "Os Elementos",
+      "corPulso": "#aa77ff",
+      "description": "Experiência imersiva de 17 minutos sobre fenômenos cósmicos, com ambiente interativo modulado por presença e jornada audiovisual através de nebulosas, supernovas e galáxias.",
+      "sourceFiles": {
+        "page": "src/pages/obras/andromeda.md",
+        "galleryKey": "andromeda",
+        "mapNodeKey": "andromeda"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "projeção",
+          "laser"
+        ],
+        "tags": [
+          "cosmos",
+          "astronomia",
+          "luz",
+          "projeção",
+          "imersivo",
+          "espaço sideral",
+          "fenômeno",
+          "juvi",
+          "vídeo"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            60,
+            -260
+          ],
+          "temporal": [
+            355,
+            -190
+          ],
+          "linhagem": [
+            370,
+            -290
+          ]
+        },
+        "linksDeclarados": [
+          "sao-paulo-3024",
+          "flama",
           "oceanvs"
         ]
       },
       "content": {
         "hasNarrativa": true,
-        "narrativaPath": "src/pages/obras/flama.md"
+        "narrativaPath": "src/pages/obras/andromeda.md"
       },
       "fichaTecnica": {
-        "estrutura": "três ambientes: fogueira escultórica de LED volumétrico com projeção 360°, sala responsiva por sensores e Câmara do Cristal",
-        "local": "Farol Santander São Paulo, 22º andar",
+        "duracao": "17 minutos",
+        "estrutura": "ambiente interativo de entrada e jornada audiovisual imersiva",
+        "concepcao": [
+          "Felipe Sztutman"
+        ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
+        "trilhaSonora": [
+          "Juvi"
+        ],
+        "producao": [
+          "AYA Studio"
+        ],
+        "local": "Farol Santander São Paulo"
+      },
+      "todo": [
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir ficha técnica com sistema de projeção, laser, sensores e equipe técnica quando o dado estiver consolidado."
+      ],
+      "authorshipMode": "AUTORAL_FELIPE"
+    },
+    {
+      "numero": "016",
+      "slug": "floresta-utopica",
+      "titulo": "Floresta Utópica",
+      "ano": 2025,
+      "status": "REALIZADA",
+      "local": "Farol Santander São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "projeção",
+        "espelhos",
+        "aromas",
+        "escultura de luz"
+      ],
+      "contexto": "série dos Elementos / terra",
+      "tipo": "EXPOSICAO_IMERSIVA",
+      "serie": "Os Elementos",
+      "corPulso": "#00ff88",
+      "description": "Obra autoral de Felipe Sztutman sobre temporalidades florestais e sistemas invisíveis de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa central.",
+      "sourceFiles": {
+        "page": "src/pages/obras/floresta-utopica.md",
+        "galleryKey": "floresta-utopica",
+        "mapNodeKey": "floresta-utopica"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "luz",
+          "laser",
+          "projeção",
+          "aroma"
+        ],
+        "tags": [
+          "natureza",
+          "floresta",
+          "luz",
+          "espelho",
+          "aroma",
+          "projeção",
+          "invisível",
+          "revelar",
+          "ecologia",
+          "mapping",
+          "13 anos depois"
+        ],
+        "venueCurto": null,
+        "lens": {
+          "conceito": [
+            -320,
+            -100
+          ],
+          "temporal": [
+            355,
+            -40
+          ],
+          "linhagem": [
+            -200,
+            180
+          ]
+        },
+        "linksDeclarados": [
+          "cachoeira",
+          "mantiqueira",
+          "oceanvs"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/floresta-utopica.md"
+      },
+      "fichaTecnica": {
         "concepcao": [
           "Felipe Sztutman"
         ],
@@ -1644,7 +1510,8 @@
           "Antonio Curti"
         ],
         "realizacao": [
-          "AYA Studio"
+          "AYA Studio",
+          "Farol Santander"
         ],
         "artista": [
           "Felipe Sztutman"
@@ -1653,17 +1520,122 @@
           "Antonio Curti"
         ],
         "producaoMaterializacao": [
-          "AYA Studio"
+          "AYA Studio",
+          "Farol Santander"
         ]
       },
       "todo": [
-        "Confirmar status factual final antes de tratar como REALIZADA.",
-        "Confirmar data de abertura, período de exibição e duração do ciclo audiovisual antes de publicar ficha expandida.",
-        "Confirmar documentação visual, créditos fotográficos e legendas antes de criar galeria.",
-        "Expandir ficha técnica com sensores, LED volumétrico, projeção, som, cristal e equipe técnica quando o dado estiver consolidado.",
-        "Confirmar os parâmetros técnicos da memória coletiva e das marcas permanentes descritas para a segunda sala e a Câmara do Cristal."
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir a ficha técnica com equipe de som, aromas, projeção e montagem quando o dado estiver consolidado."
       ],
       "authorshipMode": "AUTORAL_FELIPE"
+    },
+    {
+      "numero": "017",
+      "slug": "o-que-nos-une",
+      "titulo": "O Que Nos Une",
+      "ano": 2025,
+      "status": "REALIZADA",
+      "local": "Centro Cultural FIESP, São Paulo",
+      "cidades": [
+        "São Paulo"
+      ],
+      "cidadesSigla": [
+        "SP"
+      ],
+      "tecnicaMedium": [
+        "espelhos",
+        "sincronização biométrica",
+        "sensor",
+        "projeção"
+      ],
+      "contexto": "instalação-sistema / Nicolelis",
+      "tipo": "INSTALACAO",
+      "serie": null,
+      "corPulso": "#00ccff",
+      "description": "Exposição temática/científica em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica.",
+      "sourceFiles": {
+        "page": "src/pages/obras/o-que-nos-une.md",
+        "galleryKey": "o-que-nos-une",
+        "mapNodeKey": "o-que-nos-une"
+      },
+      "assets": {
+        "galleryAvailable": true,
+        "galleryCount": 6
+      },
+      "mapa": {
+        "materiais": [
+          "sensor",
+          "projeção"
+        ],
+        "tags": [
+          "corpo",
+          "biométrico",
+          "coração",
+          "sincronização",
+          "espelho",
+          "sensor",
+          "nicolelis",
+          "ciência",
+          "conexão",
+          "batimento"
+        ],
+        "venueCurto": "FIESP",
+        "lens": {
+          "conceito": [
+            280,
+            50
+          ],
+          "temporal": [
+            355,
+            110
+          ],
+          "linhagem": [
+            220,
+            -40
+          ]
+        },
+        "linksDeclarados": [
+          "interludio",
+          "player1",
+          "metadata"
+        ]
+      },
+      "content": {
+        "hasNarrativa": true,
+        "narrativaPath": "src/pages/obras/o-que-nos-une.md"
+      },
+      "fichaTecnica": {
+        "estrutura": "três ambientes interligados: câmara de espelhos e LEDs, piso interativo com câmeras/projeção e câmara de sincronização biométrica",
+        "periodo": "outubro de 2025 a fevereiro de 2026",
+        "curadoria": [
+          "Miguel Nicolelis (científica)",
+          "Antonio Curti (artística)"
+        ],
+        "programacao": [
+          "Matheus Leston (Max/MSP, obras 2 e 3)"
+        ],
+        "cenografia": [
+          "Tiago Guimarães"
+        ],
+        "projetoDeLuz": [
+          "André Boll / SANTA LUZ"
+        ],
+        "execucao": [
+          "AYA Studio"
+        ],
+        "producao": [
+          "Arte3, Ana Helena Curti"
+        ],
+        "direcaoArteTecnologiaExperiencia": [
+          "Felipe Sztutman"
+        ]
+      },
+      "todo": [
+        "Confirmar créditos fotográficos específicos da galeria.",
+        "Expandir a ficha técnica com detalhes dos sensores biométricos, câmeras, projeção e adaptações de itinerância quando o dado estiver consolidado."
+      ],
+      "authorshipMode": "EXPOSICAO_TEMATICA"
     },
     {
       "numero": "018",
@@ -1887,11 +1859,11 @@
     },
     {
       "numero": "020",
-      "slug": "oceanvs-objetos",
-      "titulo": "Oceanvs #1.11, #2.22, #3.33",
-      "ano": 2023,
-      "status": "REALIZADA",
-      "local": "SP-Arte Rotas Brasileiras, ARCA, São Paulo",
+      "slug": "flama",
+      "titulo": "FLAMA",
+      "ano": 2027,
+      "status": "A_CONFIRMAR",
+      "local": "Farol Santander São Paulo, 22º andar",
       "cidades": [
         "São Paulo"
       ],
@@ -1899,69 +1871,97 @@
         "SP"
       ],
       "tecnicaMedium": [
-        "formato audiovisual não convencional",
-        "conteúdo digital"
+        "fogo como material interativo",
+        "sensores",
+        "projeção",
+        "LED"
       ],
-      "contexto": "Galeria Luis Maluf / SP-Arte Rotas Brasileiras",
-      "tipo": "OBJETO_AUDIOVISUAL",
-      "serie": "Oceanvs",
-      "corPulso": "#2255ee",
-      "description": "Três objetos audiovisuais que isolam fragmentos de OCEANVS em formatos de tela não convencionais: um círculo, um par de barras e um losango.",
+      "contexto": "série dos Elementos / instalação-sistema do fogo",
+      "tipo": "INSTALACAO",
+      "serie": "Os Elementos",
+      "corPulso": "#8a8a8a",
+      "description": "Obra autoral em confirmação. Encerramento da pentalogia Os Elementos: três ambientes onde o visitante contempla, cria e é revelado pela chama.",
       "sourceFiles": {
-        "page": "src/pages/obras/oceanvs-objetos.md",
-        "galleryKey": "oceanvs-objetos",
-        "mapNodeKey": "oceanvs-objetos"
+        "page": "src/pages/obras/flama.md",
+        "galleryKey": null,
+        "mapNodeKey": "flama"
       },
       "assets": {
-        "galleryAvailable": true,
-        "galleryCount": 13
+        "galleryAvailable": false,
+        "galleryCount": 0
       },
       "mapa": {
         "materiais": [
-          "tela",
-          "dados"
+          "luz",
+          "sensor",
+          "projeção"
         ],
         "tags": [
-          "água",
-          "oceano",
-          "objeto",
-          "tela",
-          "galeria",
-          "edição"
+          "fogo",
+          "toque",
+          "marca",
+          "permanente",
+          "interativo",
+          "cristal",
+          "chama",
+          "calor",
+          "fogueira",
+          "led"
         ],
-        "venueCurto": "SP-Arte Rotas",
+        "venueCurto": null,
         "lens": {
           "conceito": [
-            60,
-            70
+            180,
+            -260
           ],
           "temporal": [
-            250,
-            40
+            400,
+            70
           ],
           "linhagem": [
-            215,
-            -170
+            390,
+            90
           ]
         },
         "linksDeclarados": [
+          "andromeda",
+          "floresta-utopica",
           "oceanvs"
         ]
       },
       "content": {
         "hasNarrativa": true,
-        "narrativaPath": "src/pages/obras/oceanvs-objetos.md"
+        "narrativaPath": "src/pages/obras/flama.md"
       },
       "fichaTecnica": {
+        "estrutura": "três ambientes: fogueira escultórica de LED volumétrico com projeção 360°, sala responsiva por sensores e Câmara do Cristal",
+        "local": "Farol Santander São Paulo, 22º andar",
         "concepcao": [
           "Felipe Sztutman"
         ],
+        "curadoria": [
+          "Antonio Curti"
+        ],
         "realizacao": [
-          "AYA Studio",
-          "Galeria Luis Maluf"
+          "AYA Studio"
+        ],
+        "artista": [
+          "Felipe Sztutman"
+        ],
+        "curadoriaNarrativa": [
+          "Antonio Curti"
+        ],
+        "producaoMaterializacao": [
+          "AYA Studio"
         ]
       },
-      "todo": [],
+      "todo": [
+        "Confirmar status factual final antes de tratar como REALIZADA.",
+        "Confirmar data de abertura, período de exibição e duração do ciclo audiovisual antes de publicar ficha expandida.",
+        "Confirmar documentação visual, créditos fotográficos e legendas antes de criar galeria.",
+        "Expandir ficha técnica com sensores, LED volumétrico, projeção, som, cristal e equipe técnica quando o dado estiver consolidado.",
+        "Confirmar os parâmetros técnicos da memória coletiva e das marcas permanentes descritas para a segunda sala e a Câmara do Cristal."
+      ],
       "authorshipMode": "AUTORAL_FELIPE"
     }
   ]
