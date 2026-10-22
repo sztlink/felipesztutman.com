@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "Floresta Utópica"
 year: "2025"
 location: "Farol Santander São Paulo"
-description: "Instalação imersiva de 20 minutos sobre temporalidades florestais e redes de interdependência, com projeção mapeada, design sonoro, aromas e escultura luminosa que evoca água e regeneração natural."
+description: "Instalação imersiva de 20 minutos sobre o tempo da floresta e redes de interdependência, com projeção mapeada, som, aromas e escultura de luz."
 lead: "Obra autoral de Felipe Sztutman sobre temporalidades florestais e sistemas invisíveis de interdependência, estruturada por projeção, aromas e uma escultura de luz em forma de cachoeira."
 archiveNote: "Floresta Utópica deve ser lida no arquivo como exposição autoral de Felipe e como desdobramento tardio de Cachoeira e Mantiqueira: a água e os sistemas invisíveis reaparecem aqui não como intervenção urbana, mas como ecologia imersiva."
 circulation:

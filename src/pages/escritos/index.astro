@@ -13,7 +13,9 @@ const escritos = Object.entries(modules)
   .sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'));
 ---
 <Base
-  title="Felipe Sztutman · Escritos"
+  title="Escritos · Felipe Sztutman"
+  schemaName="Escritos de Felipe Sztutman"
+  breadcrumbs={[{ name: 'Felipe Sztutman', path: '/' }, { name: 'escritos', path: '/escritos/' }]}
   description="Textos sobre prática artística, cartografia do saber, implante cognitivo szt.link e pesquisa."
   fullBleed={true}
   showHeader={false}
@@ -24,7 +26,7 @@ const escritos = Object.entries(modules)
     <section class="entry">
       <div class="surface-links">
         <a href="/#obras" class="back">← arquivo</a>
-        <a href="/mapa" class="surface-link">mapa relacional</a>
+        <a href="/mapa/" class="surface-link">mapa relacional</a>
       </div>
       <div class="entry-kicker">ESCRITOS · CAMADA CONCEITUAL</div>
       <h1>Processo, sistema, pesquisa</h1>
@@ -36,7 +38,7 @@ const escritos = Object.entries(modules)
       <div class="count">{escritos.length} escrito{escritos.length === 1 ? '' : 's'}</div>
       <div class="writing-list">
         {escritos.map((item) => (
-          <a href={`/escritos/${item.slug}`} class="writing-item">
+          <a href={`/escritos/${item.slug}/`} class="writing-item">
             <div class="writing-type">{item.type}</div>
             <div class="writing-main">
               <div class="writing-title">{item.title}</div>

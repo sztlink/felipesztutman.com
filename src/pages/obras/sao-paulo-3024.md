@@ -5,7 +5,15 @@ year: "2024-2025"
 location: "Farol Santander São Paulo"
 circulation:
   - { label: "Período", value: "Farol Santander São Paulo, 23º andar, de 1º de novembro de 2024 a 2 de fevereiro de 2025" }
-description: "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, usando LLMs e LoRA como fundamento filosófico. Inclui instalação interativa onde movimentos corporais geram territórios urbanos em tempo real."
+description: "Experiência imersiva de 16 minutos que imagina São Paulo mil anos no futuro, com LLMs e LoRA e uma instalação em que o corpo gera território urbano."
+lead: "Jornada imersiva de 16 minutos por uma São Paulo mil anos à frente, com LLMs e LoRA como fundamento filosófico e o movimento do corpo como matéria urbana ao vivo."
+mechanism:
+  - { label: "Sala imersiva", value: "Jornada de sete atos e 16 minutos por mundos futuros coexistentes, no 23º andar do Farol Santander" }
+  - { label: "IA", value: "LLMs e LoRA usados como fundamento filosófico, não só como ferramentas de geração de imagem" }
+  - { label: "Território", value: "Instalação interativa em que os movimentos do corpo viram elementos arquitetônicos projetados em tempo real" }
+  - { label: "Rastreamento", value: "OpenCV, cinco projetores mapeados e uma RTX 4090 processam o gesto do corpo como matéria-prima da paisagem urbana" }
+  - { label: "Infraestrutura", value: "Onze projetores sincronizados, som 5.1 e rede distribuída em três zonas, com redundância" }
+  - { label: "Pergunta", value: "A tecnologia ilustra o futuro, ou pergunta se o futuro já está escondido dentro das máquinas de hoje?" }
 credits:
   - { role: "Assinatura", name: "AYA Studio" }
   - { role: "Concepção", name: "Felipe Sztutman" }

@@ -2,7 +2,7 @@
 layout: ../../../layouts/Escrito.astro
 title: "szt.link"
 subtitle: "The artist's cognitive implant"
-date: "2025–present"
+date: "2025-present"
 description: "szt.link is a cognitive implant, a computational system shaped like clay by the artist. It's not a tool, not an assistant, not a product. It's an unfinished work co-evolving with whoever shapes it."
 type: "system"
 lang: en

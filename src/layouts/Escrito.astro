@@ -1,7 +1,7 @@
 ---
 import Base from './Base.astro';
 import galleryData from '../data/gallery.json';
-type GalleryItem = { src: string; caption: string | null };
+type GalleryItem = { src: string; caption: string | null; captionEn?: string };
 
 interface Props {
   frontmatter: {
@@ -19,22 +19,38 @@ const { frontmatter } = Astro.props;
 const lang = frontmatter.lang || 'pt';
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
-const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
+const isDiario = /^\/diario\//.test(Astro.url.pathname);
+const seoTitle = `${frontmatter.title} · Felipe Sztutman`;
 const seoDesc = frontmatter.description || `${frontmatter.title}. Felipe Sztutman.`;
-const slug = Astro.url.pathname.replace(/^\/(?:en\/)?escritos\//, '').replace(/\/$/, '');
-const items: GalleryItem[] = (galleryData as Record<string, GalleryItem[]>)[slug] || [];
+const slug = Astro.url.pathname.replace(/^\/(?:en\/)?(?:escritos|diario)\//, '').replace(/\/$/, '');
+const items: GalleryItem[] = ((galleryData as Record<string, GalleryItem[]>)[slug] || [])
+  .map((item) => (isEN && item.captionEn ? { ...item, caption: item.captionEn } : item));
 const heroItem = items[0] || null;
 const galleryItems = items.slice(1);
 const ogImage = heroItem?.src || undefined;
 // Entradas do diário ficam fora da busca, salvo as marcadas com index: true.
 const noindex = /^\/diario\/[^/]+/.test(Astro.url.pathname) && frontmatter.index !== true;
-const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
+// O diário não tem versão em inglês: sem troca de idioma ali.
+const altPath = isDiario ? null : (isEN ? `/escritos/${slug}/` : `/en/escritos/${slug}/`);
+const backHref = isDiario ? '/diario/' : `${prefix}/escritos/`;
+const isoDate = frontmatter.date?.match(/^\d{4}(?:-\d{2}-\d{2})?/)?.[0];
+const crumbs = [
+  { name: 'Felipe Sztutman', path: `${prefix}/` },
+  isDiario ? { name: 'diário', path: '/diario/' } : { name: isEN ? 'writings' : 'escritos', path: `${prefix}/escritos/` },
+  { name: frontmatter.title, path: Astro.url.pathname },
+];
 ---
 <Base
   title={seoTitle}
   description={seoDesc}
   lang={lang}
   ogImage={ogImage}
+  ogType="article"
+  datePublished={isoDate}
+  schemaType="Article"
+  schemaName={frontmatter.title}
+  schemaDate={isoDate}
+  breadcrumbs={crumbs}
   fullBleed={true}
   showHeader={false}
   showFooter={false}
@@ -44,10 +60,10 @@ const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
   <main class="writing-page">
     <section class="writing-entry">
       <div class="surface-links">
-        <a href={`${prefix}/escritos`} class="back">{isEN ? '← writings' : '← escritos'}</a>
+        <a href={backHref} class="back">{isDiario ? '← diário' : (isEN ? '← writings' : '← escritos')}</a>
         <a href={`${prefix}/#obras`} class="surface-link">{isEN ? 'archive' : 'arquivo'}</a>
-        <a href={isEN ? '/mapa' : '/mapa'} class="surface-link">{isEN ? 'relational map' : 'mapa relacional'}</a>
-        <a href={altPath} class="surface-link">{isEN ? 'PT' : 'EN'}</a>
+        <a href="/mapa/" class="surface-link" hreflang={isEN ? 'pt-BR' : undefined}>{isEN ? 'relational map (in Portuguese)' : 'mapa relacional'}</a>
+        {altPath && <a href={altPath} class="surface-link" hreflang={isEN ? 'pt-BR' : 'en'}>{isEN ? 'PT' : 'EN'}</a>}
       </div>
       {frontmatter.type && <div class="writing-type">{frontmatter.type}</div>}
       <h1>{frontmatter.title}</h1>
@@ -58,7 +74,7 @@ const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
     <article class="paper" aria-label={frontmatter.title}>
       {heroItem && (
         <figure class="writing-hero">
-          <img src={heroItem.src} alt={frontmatter.title} loading="eager" data-idx="0" class="lightbox-trigger" />
+          <img src={heroItem.src} alt={heroItem.caption ? `${frontmatter.title} · ${heroItem.caption}` : frontmatter.title} loading="eager" fetchpriority="high" decoding="async" data-idx="0" class="lightbox-trigger" />
           {heroItem.caption && <figcaption>{heroItem.caption}</figcaption>}
         </figure>
       )}
@@ -71,7 +87,7 @@ const altPath = isEN ? `/escritos/${slug}` : `/en/escritos/${slug}`;
         <div class="writing-gallery" aria-label={isEN ? 'Image documentation' : 'Documentação de imagem'}>
           {galleryItems.map((item, i) => (
             <figure class="gallery-fig">
-              <img src={item.src} alt={`${frontmatter.title} · ${i + 2}`} loading="lazy" data-idx={i + 1} class="lightbox-trigger" />
+              <img src={item.src} alt={item.caption ? `${frontmatter.title} · ${item.caption}` : `${frontmatter.title} · ${i + 2}`} loading="lazy" decoding="async" data-idx={i + 1} class="lightbox-trigger" />
               {item.caption && <figcaption>{item.caption}</figcaption>}
             </figure>
           ))}

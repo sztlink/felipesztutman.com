@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "Player 1: 50 Anos dos Videogames"
 year: "2026"
 location: "Farol Santander São Paulo"
-description: "Exposição temática sobre cinquenta anos de cultura jogável, aberta em 18 de junho de 2026 no Farol Santander São Paulo, com direção de arte, tecnologia e experiência de Felipe Sztutman."
+description: "Exposição sobre cinquenta anos de cultura jogável, Farol Santander São Paulo, 2026, com direção de arte, tecnologia e experiência de Felipe Sztutman."
 lead: "Quatro experiências em que o corpo substitui o controle e transforma cultura jogável em comportamento no espaço. Aberta em 18 de junho de 2026."
 archiveNote: "Player 1 abriu em 18 de junho de 2026 no Farol Santander São Paulo. A camada autobiográfica permanece como origem do gesto. A data de encerramento será consolidada ao longo da temporada."
 mechanism:
@@ -12,6 +12,7 @@ mechanism:
   - { label: "Arquivo", value: "A coleção de Alex Mamed, organizada curatorialmente por Antonio Curti, funciona como chão histórico da mostra" }
   - { label: "Comportamentos", value: "STRIKE traduz gestos em ataques de energia, DRIFT em esquiva, TRACE em exploração de acervo e RUSH em execução sob cronômetro em quatro CRTs" }
   - { label: "Pergunta", value: "O que cinquenta anos de cultura jogável deixaram inscrito no corpo?" }
+collaborationNote: "Os créditos seguem o catálogo da exposição: curadoria de Antonio Curti, acervo de Alex Mamed e a equipe do AYA Studio nomeada por função."
 credits:
   - { role: "Concepção e curadoria da exposição", name: "Antonio Curti" }
   - { role: "Direção de arte, experiência e tecnologia", name: "Felipe Sztutman" }

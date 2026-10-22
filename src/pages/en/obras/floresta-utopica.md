@@ -4,7 +4,7 @@ title: "Floresta Utópica"
 year: "2025"
 location: "Farol Santander São Paulo"
 lang: en
-description: "20-minute immersive installation about forest temporalities and interdependency networks, with mapped projection, sound design, aromas, and a luminous sculpture that evokes water and natural regeneration."
+description: "20-minute immersive installation on forest time and interdependence, with mapped projection, sound design, scents and a light sculpture."
 lead: "Felipe Sztutman's authored work about forest temporalities and invisible systems of interdependence, structured by projection, aromas, and a light sculpture in the form of a waterfall."
 archiveNote: "Floresta Utópica should be read in the archive as Felipe's authored exhibition and as a late unfolding of Cachoeira and Mantiqueira: water and invisible systems reappear here not as urban intervention, but as immersive ecology."
 circulation:

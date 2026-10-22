@@ -20,7 +20,7 @@ const writings = Object.entries(writingModules)
       slug: id,
       title: mod.frontmatter.title as string,
       description: mod.frontmatter.description as string,
-      href: `/escritos/${id}`,
+      href: `/escritos/${id}/`,
       lens: (legacyMap as any).nodes?.[id]?.lens || null,
     };
   });
@@ -64,7 +64,7 @@ function resolveNode(kind: string, id: string) {
       kind,
       label: work.titulo,
       meta: `${work.numero} · ${work.ano}`,
-      href: `/obras/${work.slug}`,
+      href: `/obras/${work.slug}/`,
       position: positions.conceito,
       positions,
       color: work.corPulso || '#ffffff',
@@ -114,7 +114,7 @@ function resolveNode(kind: string, id: string) {
       kind,
       label: publication.titulo,
       meta: 'publicação',
-      href: publication.currentPublicPath || '/publicacoes',
+      href: publication.currentPublicPath || '/publicacoes/',
       position: positions.conceito,
       positions,
       color: '#777777',
@@ -156,7 +156,8 @@ const lines = publicRelations
   .filter(Boolean);
 ---
 <Base
-  title="Felipe Sztutman · Mapa"
+  title="Mapa relacional · Felipe Sztutman"
+  schemaName="Mapa relacional da obra de Felipe Sztutman"
   description="Diagrama de relações públicas entre obras, escritos e referências de Felipe Sztutman."
   fullBleed={true}
   showHeader={false}

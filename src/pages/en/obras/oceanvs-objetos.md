@@ -4,7 +4,7 @@ title: "Oceanvs #1.11, #2.22, #3.33"
 year: "2023"
 location: "SP-Arte Rotas Brasileiras, ARCA, São Paulo, with Galeria Luis Maluf"
 lang: en
-description: "Three audiovisual objects that isolate fragments of OCEANVS in unconventional screen formats: a circle, a pair of bars and a diamond. Presented by Galeria Luis Maluf at SP-Arte Rotas Brasileiras 2023."
+description: "Three audiovisual objects that isolate fragments of OCEANVS on unconventional screens. Galeria Luis Maluf, SP-Arte Rotas Brasileiras, 2023."
 lead: "Three audiovisual objects that take OCEANVS out of the immersive room and onto the wall: a circle, a pair of bars and a diamond, each holding a fragment of the exhibition."
 mechanism:
   - { label: "Oceanvs #1.11 | Ouroboros", value: "Circle, Ø 66 x 6 cm. Edition of 5 + 1 AP" }

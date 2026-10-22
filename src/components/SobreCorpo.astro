@@ -77,7 +77,7 @@ const prefix = isEN ? '/en' : '';
   <header class="entry">
     <nav class="surface-links" aria-label={isEN ? 'Site' : 'Site'}>
       <a href={nav.backHref} class="back">{nav.back}</a>
-      <a href="/mapa" class="surface-link">{nav.map}</a>
+      <a href="/mapa/" class="surface-link">{nav.map}</a>
       <a href={nav.altHref} class="surface-link" hreflang={isEN ? 'pt-BR' : 'en'} aria-label={nav.altLabel}>{nav.alt}</a>
     </nav>
     <p class="kicker">{kicker}</p>
@@ -113,7 +113,7 @@ const prefix = isEN ? '/en' : '';
               <ul class="cited" aria-label={labels.cited}>
                 {list.map((w: any) => (
                   <li style={`--pulse:${w.corPulso || '#ffffff'}`}>
-                    <a href={`${prefix}/obras/${w.slug}`}>
+                    <a href={`${prefix}/obras/${w.slug}/`}>
                       <span class="cited-meta">{labels.work} {w.numero} · {w.ano}</span>
                       <span class="cited-title">{w.titulo}</span>
                     </a>

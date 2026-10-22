@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "AMANO: Além da Fantasia"
 year: "2024-2026"
 location: "Farol Santander São Paulo; CCBB Belo Horizonte, Rio de Janeiro e Brasília"
-description: "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada no mundo. Direção de experiência e tecnologia para traduzir 218 obras originais em experiência habitável."
+description: "Espaço imersivo da maior exposição de Yoshitaka Amano já realizada: direção de experiência e tecnologia para 218 obras originais."
 lead: "Projeto com artista terceiro: espaço imersivo concebido para traduzir 218 obras originais de Yoshitaka Amano em experiência habitável, articulando vídeo, luz, som, automação e projeção como um único sistema."
 archiveNote: "AMANO deve ser lida no arquivo como direção de experiência e tecnologia dentro de um projeto com artista terceiro. A autoria artística principal permanece de Yoshitaka Amano, o gesto de Felipe está na tradução espacial, técnica e experiencial desse universo visual no Brasil."
 circulation:

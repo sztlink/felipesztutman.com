@@ -3,14 +3,14 @@ layout: ../../../layouts/Obra.astro
 title: "sem título, para Mantiqueira"
 year: "2013"
 location: "Serra da Mantiqueira, SP"
-description: "Ephemeral luminous installation in Serra da Mantiqueira. LUZCIDADE meets water, the only one in the series where the natural environment defeated the parametric method."
+description: "Ephemeral light installation in Serra da Mantiqueira, the only LUZCIDADE work where the natural environment defeated the parametric method."
 lead: "One-night ephemeral installation in Serra da Mantiqueira, where 40 meters of electroluminescent cable met the waterfall and closed the LUZCIDADE series."
 archiveNote: "In the archive, Mantiqueira records the limit of the parametric method before the natural environment: the final form is born from the water, the rocks and the possible fixing points."
 lang: en
 credits:
   - { role: "Photography", name: "Layla Motta" }
 publications:
-  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "pp. 64–67", url: "/en/publicacoes/100-anos-de-arte-moderna", note: "The work's image and caption appear in the dedicated profile, reinforcing the LUZCIDADE series within a broader reading of the trajectory." }
+  - { title: "100 Anos de Arte Moderna: a cena contemporânea", author: "Carlos Zibel Costa", pages: "ppp. 64-67", url: "/en/publicacoes/100-anos-de-arte-moderna/", note: "The work's image and caption appear in the dedicated profile, reinforcing the LUZCIDADE series within a broader reading of the trajectory." }
 ---
 
 LUZCIDADE completes itself when light finally meets water. Unlike all others in the series, here the natural environment defeated my parametric design method, literally fell through water. How to predict the physical conditions of the place? Trees, rocks, roots, unpredictable flow of the waterfall. I brought 40 meters of electroluminescent cable to Serra da Mantiqueira without knowing what form the work would take. During installation, immersed in water, I searched for points where I could fix the cables, and these points couldn't be established according to my will. The environment had its own organizational rules. It was nature.

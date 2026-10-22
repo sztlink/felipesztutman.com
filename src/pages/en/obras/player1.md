@@ -4,7 +4,7 @@ title: "Player 1: 50 Anos dos Videogames"
 year: "2026"
 location: "Farol Santander São Paulo"
 lang: en
-description: "Exhibition about fifty years of playable culture, opened on 18 June 2026 at Farol Santander São Paulo, with art, technology, and experience direction by Felipe Sztutman and four body-interface installations."
+description: "Exhibition on fifty years of playable culture, Farol Santander São Paulo, 2026, with art, technology and experience direction by Felipe Sztutman."
 lead: "Four experiences in which the body replaces the controller and turns playable culture into behavior in space. Opened on 18 June 2026."
 archiveNote: "Player 1 opened on 18 June 2026 at Farol Santander São Paulo. The autobiographical layer remains as the origin of the gesture. The closing date will be consolidated as the season runs."
 mechanism:

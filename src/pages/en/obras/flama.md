@@ -4,7 +4,7 @@ title: "FLAMA"
 year: "2027"
 location: "Farol Santander São Paulo, 22nd floor"
 lang: en
-description: "Authored work under confirmation. Conclusion of the pentology Os Elementos: three environments where the visitor contemplates, creates, and is revealed by flame."
+description: "Authored work under confirmation. Closing The Elements series: three environments where the visitor contemplates, creates and is revealed by flame."
 lead: "System-installation in three environments where fire appears as interactive material: collective contemplation, bodily creation, and individual touch organize an experience conceived to accumulate memory in space."
 archiveNote: "FLAMA remains under confirmation: this page describes the project from the current archive text, with opening planned for 2027 and still without visual documentation, expanded technical credits, or final realization confirmation."
 mechanism:
@@ -12,7 +12,7 @@ mechanism:
   - { label: "Body", value: "The project describes sensors capturing movement and position, broad gestures generate vibrant flames, gentle movements produce delicate blue flames" }
   - { label: "Accumulation", value: "The project envisions collective memory accumulating in the space, in the crystal, touch would leave marks over the operation" }
   - { label: "Question", value: "How to create three modes of being before fire, contemplating, creating, and being revealed by flame?" }
-collaborationNote: "The current project text names Antonio Curti's curation and AYA Studio's materialization, including Ana Clara on visual design, Minhoso on 3D renders, and the technical infrastructure planned for continuous operation, this remains a project description, not final confirmed credits."
+collaborationNote: "The current project text names Antonio Curti's curation and AYA Studio's materialization, including Ana Clara on visual design, Minhoso on 3D renders, and the technical infrastructure planned for continuous operation. This remains a project description, not final confirmed credits."
 credits:
   - { role: "Artist", name: "Felipe Sztutman" }
   - { role: "Series concept and curation", name: "Antonio Curti" }

@@ -108,7 +108,7 @@ function displayWork(work: any) {
 }
 ---
 <Base
-  title="Felipe Sztutman · Work archive"
+  title="Felipe Sztutman · artist, immersive art, light and technology"
   description="Work archive of Felipe Sztutman. Light, technology, perception, and immersive systems organized as work and relation."
   schemaType="Person"
   lang="en"
@@ -124,7 +124,7 @@ function displayWork(work: any) {
           <span class="strip-cell"><img src={item.src} alt={item.captionEn || item.caption || ""} loading="eager" /></span>
         ))}
       </div>
-      <div class="entry-meta">WORK ARCHIVE · 2009–</div>
+      <div class="entry-meta">WORK ARCHIVE · since 2009</div>
       <h1><span class="given">FELIPE</span>SZTUTMAN</h1>
       <div class="entry-hint">SCROLL TO ENTER ↓</div>
     </section>
@@ -138,7 +138,7 @@ function displayWork(work: any) {
       <div class="archive-head">
         <div class="archive-kicker">ARCHIVE</div>
         <h2>{total} works</h2>
-        <div class="archive-meta">São Paulo · active 2009– · {realized} realized · {onView > 0 && `${onView} on view · `}{inProduction > 0 && `${inProduction} in production · `}{toConfirm} to confirm · updated {updatedAt}</div>
+        <div class="archive-meta">São Paulo · active since 2009 · {realized} realized · {onView > 0 && `${onView} on view · `}{inProduction > 0 && `${inProduction} in production · `}{toConfirm} to confirm · updated {updatedAt}</div>
         <p class="archive-note">Public entry to the archive. Works, systems, and experience directions lead to dossiers. The map reads sustained relations.</p>
       </div>
 
@@ -159,9 +159,9 @@ function displayWork(work: any) {
               const display = displayWork(work);
               return (
                 <tr class:list={{ pending: work.status === 'A_CONFIRMAR' }} style={`--pulse:${work.corPulso || '#ffffff'};`}>
-                  <td class="num"><a href={`/en/obras/${work.slug}`}>{work.numero}</a></td>
+                  <td class="num"><a href={`/en/obras/${work.slug}/`}>{work.numero}</a></td>
                   <td class="title-cell">
-                    <a href={`/en/obras/${work.slug}`}>{display.title}</a>
+                    <a href={`/en/obras/${work.slug}/`}>{display.title}</a>
                     <div class="title-desc">{display.description}</div>
                   </td>
                   <td>{display.year}</td>
@@ -179,11 +179,11 @@ function displayWork(work: any) {
       </div>
 
       <div class="archive-links">
-        <a href="/mapa"><strong>map</strong> relational exploration <em>(in Portuguese)</em></a>
-        <a href="/en/escritos"><strong>writings</strong> conceptual layer</a>
-        <a href="/en/publicacoes"><strong>publications</strong> editorial circulation</a>
-        <a href="/en/trajetoria"><strong>trajectory</strong> chronology</a>
-        <a href="/en/sobre"><strong>about</strong> context</a>
+        <a href="/mapa/"><strong>map</strong> relational exploration <em>(in Portuguese)</em></a>
+        <a href="/en/escritos/"><strong>writings</strong> conceptual layer</a>
+        <a href="/en/publicacoes/"><strong>publications</strong> editorial circulation</a>
+        <a href="/en/trajetoria/"><strong>trajectory</strong> chronology</a>
+        <a href="/en/sobre/"><strong>about</strong> context</a>
         <a href="/"><strong>PT</strong> português</a>
         <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
       </div>

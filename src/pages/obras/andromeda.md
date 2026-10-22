@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "Andrômeda: Universo Sem Fim"
 year: "2025"
 location: "Farol Santander São Paulo"
-description: "Experiência imersiva de 17 minutos sobre fenômenos cósmicos, com ambiente interativo modulado por presença e jornada audiovisual através de nebulosas, supernovas e galáxias."
+description: "Experiência imersiva de 17 minutos sobre fenômenos cósmicos: ambiente modulado por presença e jornada por nebulosas, supernovas e galáxias."
 lead: "Exposição imersiva concebida como percurso espacial: um primeiro ambiente responsivo à presença do público e uma jornada audiovisual de 17 minutos que reorganiza a arquitetura do Farol Santander por luz, projeção e som."
 archiveNote: "Andrômeda deve ser lida no arquivo como obra de circulação institucional da série Os Elementos: menos como página imersiva genérica, mais como direção espacial construída para ser habitada pelo público dentro do Farol Santander."
 circulation:

@@ -1,0 +1,14 @@
+{
+  "name": "Felipe Sztutman",
+  "short_name": "Sztutman",
+  "description": "Felipe Sztutman, artista e construtor de sistemas imersivos. São Paulo, Brasil.",
+  "start_url": "/",
+  "lang": "pt-BR",
+  "display": "browser",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}

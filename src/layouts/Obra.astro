@@ -8,6 +8,8 @@ import regimeData from '../data/work-regimes.json';
 import relationsData from '../data/map-relations.json';
 import referencesData from '../data/references.json';
 import publicationsData from '../data/publications.json';
+import worksEnData from '../data/works-en.json';
+import { responsive } from '../lib/images.js';
 
 type GalleryItem = { src: string; caption: string | null; captionEn?: string };
 
@@ -48,7 +50,7 @@ const { frontmatter } = Astro.props;
 const lang = frontmatter.lang || 'pt';
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
-const seoTitle = `Felipe Sztutman · ${frontmatter.title}`;
+const seoTitle = `${frontmatter.title} (${frontmatter.year}) · Felipe Sztutman`;
 const schemaYear = String(frontmatter.year).slice(0, 4);
 const seoDesc = frontmatter.description || `${frontmatter.title} (${frontmatter.year}) · ${frontmatter.location}. Felipe Sztutman.`;
 const slug = Astro.url.pathname.replace(/^\/(?:en\/)?obras\//, '').replace(/\/$/, '');
@@ -62,7 +64,27 @@ const references = (referencesData as any).references || [];
 const publications = (publicationsData as any).publications || [];
 const relationSeeds = (relationsData as any).relations || [];
 
-const work = works.find((entry: any) => entry.slug === slug) || null;
+const workRaw = works.find((entry: any) => entry.slug === slug) || null;
+// No EN, os campos de texto do works.json vêm de works-en.json quando existem.
+const worksEn = (worksEnData as any).works || {};
+const relationsEn = (worksEnData as any).relations || {};
+function localizeWork(entry: any) {
+  if (!entry || !isEN) return entry;
+  const en = worksEn[entry.slug];
+  if (!en) return entry;
+  const { extensao, duracao, realizacao, ...top } = en;
+  return {
+    ...entry,
+    ...top,
+    fichaTecnica: entry.fichaTecnica ? {
+      ...entry.fichaTecnica,
+      ...(extensao ? { extensao } : {}),
+      ...(duracao ? { duracao } : {}),
+      ...(realizacao ? { realizacao } : {}),
+    } : entry.fichaTecnica,
+  };
+}
+const work = localizeWork(workRaw);
 const artistCredits = frontmatter.credits?.filter((credit) => ['artista', 'artist'].includes(credit.role.toLowerCase())) || [];
 const schemaCreatorNames = work?.authorshipMode === 'PROJETO_ARTISTA_TERCEIRO'
   ? artistCredits.map((credit) => credit.name)
@@ -131,22 +153,23 @@ const currentIndex = works.findIndex((entry: any) => entry.slug === slug);
 const previousWork = currentIndex > 0 ? works[currentIndex - 1] : null;
 const nextWork = currentIndex >= 0 && currentIndex < works.length - 1 ? works[currentIndex + 1] : null;
 
-const writingModules = import.meta.glob('../pages/escritos/*.md', { eager: true }) as Record<string, any>;
-const writings = Object.entries(writingModules)
+const writingModulesPt = import.meta.glob('../pages/escritos/*.md', { eager: true }) as Record<string, any>;
+const writingModulesEn = import.meta.glob('../pages/en/escritos/*.md', { eager: true }) as Record<string, any>;
+const writings = Object.entries(isEN ? writingModulesEn : writingModulesPt)
   .filter(([path]) => !path.endsWith('index.astro'))
   .map(([path, mod]) => {
     const id = path.split('/').pop()!.replace('.md', '');
     return {
       slug: id,
       title: mod.frontmatter.title as string,
-      href: `${prefix}/escritos/${id}`,
+      href: `${prefix}/escritos/${id}/`,
     };
   });
 
 function resolveEntity(kind: string, id: string) {
   if (kind === 'OBRA') {
     const found = works.find((entry: any) => entry.slug === id);
-    return found ? { label: found.titulo, href: `${prefix}/obras/${found.slug}` } : null;
+    return found ? { label: found.titulo, href: `${prefix}/obras/${found.slug}/` } : null;
   }
   if (kind === 'ESCRITO') {
     const found = writings.find((entry) => entry.slug === id);
@@ -154,7 +177,8 @@ function resolveEntity(kind: string, id: string) {
   }
   if (kind === 'PUBLICACAO') {
     const found = publications.find((entry: any) => entry.slug === id);
-    return found ? { label: found.titulo, href: found.currentPublicPath || `${prefix}/publicacoes` } : null;
+    const path = isEN ? (found.currentPublicPathEn || null) : found.currentPublicPath;
+    return found ? { label: found.titulo, href: path ? path.replace(/\/?$/, '/') : `${prefix}/publicacoes/` } : null;
   }
   if (kind === 'REFERENCIA') {
     const found = references.find((entry: any) => entry.slug === id);
@@ -170,11 +194,12 @@ const publicRelations = relationSeeds
     const relatedKind = isSource ? relation.targetKind : relation.sourceKind;
     const relatedId = isSource ? relation.target : relation.source;
     const related = resolveEntity(relatedKind, relatedId);
+    const en = isEN ? (relationsEn[`${relation.source}>${relation.target}`] || {}) : null;
     return related ? {
       label: related.label,
       href: related.href,
-      relationLabel: relation.label,
-      notes: relation.notes,
+      relationLabel: en ? (en.label ?? (relation.label ? null : relation.label)) : relation.label,
+      notes: en ? (en.notes ?? (relation.notes ? null : relation.notes)) : relation.notes,
       relationType: relation.relationType,
     } : null;
   })
@@ -226,6 +251,8 @@ function imageAlt(item: GalleryItem, index: number) {
 }
 
 const hasDoc = items.length > 3;
+// O topo mostra até três imagens lado a lado no desktop e uma por linha no celular.
+const heroSizes = items.length >= 3 ? '(max-width: 700px) 100vw, 34vw' : items.length === 2 ? '(max-width: 700px) 100vw, 50vw' : '100vw';
 const docPad = Math.max(2, String(items.length).length);
 const docId = (index: number) => `doc-${String(index + 1).padStart(docPad, '0')}`;
 const docItems = items.map((item, index) => ({ src: item.src, alt: imageAlt(item, index), caption: cleanCaption(item.caption) }));
@@ -244,6 +271,14 @@ const docItems = items.map((item, index) => ({ src: item.src, alt: imageAlt(item
   schemaMedium={frontmatter.artMedium}
   schemaExhibition={schemaExhibition}
   ogImage={ogImage}
+  ogImageAlt={items[0] ? imageAlt(items[0], 0) : frontmatter.title}
+  ogType="article"
+  schemaImages={items.length ? items.map((item) => item.src) : undefined}
+  breadcrumbs={[
+    { name: 'Felipe Sztutman', path: `${prefix}/` },
+    { name: isEN ? 'works' : 'obras', path: `${prefix}/#obras` },
+    { name: frontmatter.title, path: Astro.url.pathname },
+  ]}
   fullBleed={true}
   showHeader={false}
   showFooter={false}
@@ -256,10 +291,10 @@ const docItems = items.map((item, index) => ({ src: item.src, alt: imageAlt(item
           <figure class="hero-cell">
             {hasDoc ? (
               <a href={`#${docId(index)}`} class="hero-link" aria-label={`${imageAlt(item, index)} · ${isEN ? 'open in documentation' : 'abrir na documentação'}`}>
-                <img src={item.src} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
+                <img {...responsive(item.src, heroSizes)} alt={imageAlt(item, index)} loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : undefined} decoding="async" />
               </a>
             ) : (
-              <img src={item.src} alt={imageAlt(item, index)} loading={index === 0 ? 'eager' : 'lazy'} />
+              <img {...responsive(item.src, heroSizes)} alt={imageAlt(item, index)} loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : undefined} decoding="async" />
             )}
             {index === 0 && item.caption && <figcaption>{item.caption.split('·')[0].trim()}</figcaption>}
           </figure>
@@ -269,7 +304,7 @@ const docItems = items.map((item, index) => ({ src: item.src, alt: imageAlt(item
     <section class="obra-entry">
       <div class="surface-links">
         <a href={`${prefix}/#obras`} class="back">{isEN ? '← archive' : '← arquivo'}</a>
-        <a href="/mapa" class="map-link">{isEN ? 'map relations (PT)' : 'mapa relacional'}</a>
+        <a href="/mapa/" class="map-link" hreflang={isEN ? 'pt-BR' : undefined}>{isEN ? 'relational map (in Portuguese)' : 'mapa relacional'}</a>
       </div>
       <div class="eyebrow">
         {work?.numero ? (isEN ? `WORK No. ${work.numero}` : `OBRA Nº ${work.numero}`) : (isEN ? 'WORK' : 'OBRA')} · {frontmatter.year}
@@ -395,13 +430,13 @@ const docItems = items.map((item, index) => ({ src: item.src, alt: imageAlt(item
     {(previousWork || nextWork) && (
       <nav class="archive-nav" aria-label={isEN ? 'Archive navigation' : 'Navegação do arquivo'}>
         {previousWork ? (
-          <a href={`${prefix}/obras/${previousWork.slug}`} class="archive-nav-item prev">
+          <a href={`${prefix}/obras/${previousWork.slug}/`} class="archive-nav-item prev">
             <span class="archive-nav-label">{isEN ? 'Previous' : 'Anterior'}</span>
             <strong>{previousWork.numero} · {previousWork.titulo}</strong>
           </a>
         ) : <span />}
         {nextWork ? (
-          <a href={`${prefix}/obras/${nextWork.slug}`} class="archive-nav-item next">
+          <a href={`${prefix}/obras/${nextWork.slug}/`} class="archive-nav-item next">
             <span class="archive-nav-label">{isEN ? 'Next' : 'Próxima'}</span>
             <strong>{nextWork.numero} · {nextWork.titulo}</strong>
           </a>

@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "Luz Æterna: Ensaio Sobre o Sol"
 year: "2024-2025"
 location: "CCBB Brasília, São Paulo e Belo Horizonte"
-description: "Direção de arte, tecnologia e experiência de exposição coletiva de new media art com oito artistas brasileiros, onde a luz organiza o espaço e unifica a jornada entre físico e virtual."
+description: "Direção de arte, tecnologia e experiência de exposição coletiva de new media art com oito artistas brasileiros, em que a luz organiza o espaço."
 lead: "Exposição temática/coletiva de new media art tratada como direção de arte, tecnologia e experiência: oito artistas coexistem em um percurso onde luz, expografia e adaptação arquitetônica organizam a experiência sem apagar a autonomia de cada obra."
 archiveNote: "Luz Æterna permanece no arquivo como exposição temática/coletiva dirigida, não como obra autoral individual de Felipe. A página registra o gesto de direção, espacial, técnico e experiencial, enquanto as obras e seus artistas preservam autoria própria."
 circulation:

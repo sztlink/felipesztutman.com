@@ -14,7 +14,8 @@ const entradas = Object.entries(modules)
   .sort((a, b) => (b.date || b.slug).localeCompare(a.date || a.slug));
 ---
 <Base
-  title="Felipe Sztutman · Diário de Ateliê"
+  title="Diário de Ateliê · Felipe Sztutman"
+  schemaName="Diário de Ateliê de Felipe Sztutman"
   description="Notas públicas do processo artístico de Felipe Sztutman: arquivo, obras, software, memória e sistemas imersivos."
   fullBleed={true}
   showHeader={false}
@@ -25,8 +26,8 @@ const entradas = Object.entries(modules)
     <section class="entry">
       <div class="surface-links">
         <a href="/" class="back">← arquivo</a>
-        <a href="/escritos" class="surface-link">escritos</a>
-        <a href="/mapa" class="surface-link">mapa relacional</a>
+        <a href="/escritos/" class="surface-link">escritos</a>
+        <a href="/mapa/" class="surface-link">mapa relacional</a>
       </div>
       <div class="entry-kicker">DIÁRIO DE ATELIÊ · PROCESSO PÚBLICO</div>
       <h1>Notas de passagem.</h1>
@@ -38,7 +39,7 @@ const entradas = Object.entries(modules)
       <div class="count">{entradas.length} entrada{entradas.length === 1 ? '' : 's'}</div>
       <div class="diary-list">
         {entradas.map((item) => (
-          <a href={`/diario/${item.slug}`} class="diary-item">
+          <a href={`/diario/${item.slug}/`} class="diary-item">
             <div class="diary-date">{item.date || item.slug}</div>
             <div class="diary-main">
               <div class="diary-title">{item.title}</div>

@@ -2,7 +2,7 @@
 layout: ../../layouts/Escrito.astro
 title: "szt.link"
 subtitle: "Implante cognitivo do artista"
-date: "2025–presente"
+date: "2025-presente"
 description: "szt.link é um implante cognitivo, sistema computacional moldado como argila pelo artista. Não é ferramenta, não é assistente, não é produto. É obra inacabada co-evoluindo com quem a molda."
 type: "sistema"
 ---

@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "Oceanvs #1.11, #2.22, #3.33"
 year: "2023"
 location: "SP-Arte Rotas Brasileiras, ARCA, São Paulo, com a Galeria Luis Maluf"
-description: "Três objetos audiovisuais que isolam fragmentos de OCEANVS em formatos de tela não convencionais: um círculo, um par de barras e um losango. Apresentados pela Galeria Luis Maluf na SP-Arte Rotas Brasileiras 2023."
+description: "Três objetos audiovisuais que isolam fragmentos de OCEANVS em telas não convencionais. Galeria Luis Maluf, SP-Arte Rotas Brasileiras, 2023."
 lead: "Três objetos audiovisuais que tiram OCEANVS da sala imersiva e o levam para a parede: um círculo, um par de barras e um losango, cada um com um fragmento da exposição."
 mechanism:
   - { label: "Oceanvs #1.11 | Ouroboros", value: "Círculo, Ø 66 x 6 cm. Edição de 5 + 1 PA" }

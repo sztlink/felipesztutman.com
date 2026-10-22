@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "O Que Nos Une"
 year: "2025-2026"
 location: "Centro Cultural FIESP, São Paulo"
-description: "Instalação-sistema em três ambientes que traduz teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento de posição, padrões gerados ao vivo e sincronização biométrica."
+description: "Instalação-sistema em três ambientes que traduz as teorias de Miguel Nicolelis sobre consciência coletiva em espelhos, rastreamento e biometria."
 lead: "Instalação-sistema em três ambientes: o visitante atravessa espelhos, câmeras e sensores cardíacos para perceber, no próprio corpo, padrões de rede e sincronização coletiva."
 archiveNote: "No arquivo, O Que Nos Une deve ser lida menos como exposição imersiva genérica e mais como mecanismo perceptivo: espelhos, rastreamento de posição e sensores biométricos fazem a ideia de consciência coletiva depender da presença e da sincronização dos visitantes."
 mechanism:

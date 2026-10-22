@@ -1,0 +1,144 @@
+{
+  "_note": "English values for the PT-only fields of works.json and map-relations.json. Keyed by work slug and by 'source>target' for relations. Obra.astro reads this on /en pages.",
+  "works": {
+    "objeto-em-forma-de-espaco": {
+      "local": "Museu da Imagem e do Som (MIS-SP), São Paulo",
+      "contexto": "LUZCIDADE series / synesthetic environment",
+      "tecnicaMedium": ["optical fibers", "sound", "scent", "light"]
+    },
+    "occupycopan": {
+      "local": "Copan Building, São Paulo",
+      "contexto": "LUZCIDADE series / vertical intervention",
+      "tecnicaMedium": ["fluorescent lamps", "steel cable", "light in space"]
+    },
+    "cachoeira": {
+      "local": "Vale do Anhangabaú and Viaduto do Chá, São Paulo",
+      "contexto": "URBE / CCBB / public art",
+      "tecnicaMedium": ["500 m of electroluminescent wire"],
+      "extensao": "500 m of electroluminescent wire in 40 m segments",
+      "duracao": "5 nights · 8 to 10 pm",
+      "realizacao": ["URBE: Public Art Exhibition", "CCBB"]
+    },
+    "canvas13": {
+      "local": "Serralheria Cultural, São Paulo",
+      "contexto": "LUZCIDADE series",
+      "tecnicaMedium": ["site-specific light installation"],
+      "extensao": "500 m of electroluminescent wire left over from Cachoeira"
+    },
+    "corrego-rio-verde": {
+      "local": "Beco do Batman, Vila Madalena, São Paulo",
+      "contexto": "LUZCIDADE series / independent intervention",
+      "tecnicaMedium": ["parametric design + light"],
+      "extensao": "240 m of electroluminescent wire"
+    },
+    "mantiqueira": {
+      "local": "Serra da Mantiqueira, São Paulo state",
+      "contexto": "LUZCIDADE series",
+      "tecnicaMedium": ["ephemeral light installation in nature"],
+      "extensao": "40 m of electroluminescent wire",
+      "duracao": "one night"
+    },
+    "mementos": {
+      "local": "Farol Santander, São Paulo",
+      "contexto": "Metaversø / Farol",
+      "tecnicaMedium": ["lasers + crystal"]
+    },
+    "interludio": {
+      "local": "Farol Santander, São Paulo",
+      "contexto": "Metaversø / Farol",
+      "tecnicaMedium": ["proximity sensors + responsive light"]
+    },
+    "oceanvs": {
+      "local": "Farol Santander São Paulo, Casa Fiat de Cultura Belo Horizonte",
+      "contexto": "The Elements series / water",
+      "serie": "The Elements",
+      "tecnicaMedium": ["projection", "interactivity", "soundtrack", "eight acts"]
+    },
+    "oceanvs-objetos": {
+      "local": "SP-Arte Rotas Brasileiras, ARCA, São Paulo",
+      "contexto": "Galeria Luis Maluf / SP-Arte Rotas Brasileiras",
+      "tecnicaMedium": ["unconventional audiovisual format", "digital content"]
+    },
+    "metadata": {
+      "local": "Centro Cultural FIESP, São Paulo",
+      "contexto": "installation-system / urban data",
+      "tecnicaMedium": ["real-time data + 3D fluids + projection"],
+      "duracao": "six months on view"
+    },
+    "luz-aeterna": {
+      "local": "CCBB Brasília, São Paulo and Belo Horizonte",
+      "contexto": "directed exhibition / new media",
+      "tecnicaMedium": ["exhibition design", "light", "projection"]
+    },
+    "amano": {
+      "local": "Farol Santander São Paulo; CCBB Belo Horizonte, Rio de Janeiro and Brasília",
+      "contexto": "directed exhibition / touring",
+      "tecnicaMedium": ["immersive space", "video", "light", "sound", "automation", "projection"]
+    },
+    "sao-paulo-3024": {
+      "local": "Farol Santander São Paulo",
+      "contexto": "The Elements series / human",
+      "serie": "The Elements",
+      "tecnicaMedium": ["LLMs", "LoRA", "OpenCV", "projection", "interactive installation"]
+    },
+    "andromeda": {
+      "local": "Farol Santander São Paulo",
+      "contexto": "The Elements series / air-cosmos",
+      "serie": "The Elements",
+      "tecnicaMedium": ["projection", "laser", "immersive environment"],
+      "duracao": "17 minutes"
+    },
+    "floresta-utopica": {
+      "local": "Farol Santander São Paulo",
+      "contexto": "The Elements series / earth",
+      "serie": "The Elements",
+      "tecnicaMedium": ["projection", "mirrors", "scents", "light sculpture"]
+    },
+    "o-que-nos-une": {
+      "local": "Centro Cultural FIESP, São Paulo",
+      "contexto": "installation-system / Nicolelis",
+      "tecnicaMedium": ["mirrors", "biometric synchronization", "sensor", "projection"]
+    },
+    "player1": {
+      "local": "Farol Santander São Paulo",
+      "contexto": "installation-system / body-interface / games as medium",
+      "tecnicaMedium": ["body-interface interactive installations"],
+      "duracao": "opened on June 18, 2026"
+    },
+    "2047": {
+      "local": "Casa Firjan, Rio de Janeiro",
+      "contexto": "writing machine / material archive / mining and infrastructure",
+      "tecnicaMedium": ["writing machine with an AI agent", "dot-matrix printing on continuous paper", "video generated on a local GPU"],
+      "duracao": "October 15 to November 16, 2026",
+      "realizacao": ["Futuros Possíveis Festival", "Casa Firjan"]
+    },
+    "flama": {
+      "local": "Farol Santander São Paulo, 22nd floor",
+      "contexto": "The Elements series / fire installation-system",
+      "serie": "The Elements",
+      "tecnicaMedium": ["fire as interactive material", "sensors", "projection", "LED"]
+    }
+  },
+  "relations": {
+    "objeto-em-forma-de-espaco>occupycopan": { "label": "light as matter in space" },
+    "objeto-em-forma-de-espaco>cachoeira": { "notes": "LUZCIDADE lineage." },
+    "objeto-em-forma-de-espaco>canvas13": { "notes": "LUZCIDADE continuity." },
+    "occupycopan>cachoeira": { "label": "light in urban space" },
+    "cachoeira>floresta-utopica": { "label": "making the invisible visible" },
+    "cachoeira>mantiqueira": { "notes": "Water / nature continuity." },
+    "cachoeira>corrego-rio-verde": { "label": "buried stream" },
+    "mantiqueira>floresta-utopica": { "label": "nature · invisible systems" },
+    "mantiqueira>corrego-rio-verde": { "notes": "LUZCIDADE continuity." },
+    "corrego-rio-verde>canvas13": { "notes": "Luminous geometry / LUZCIDADE." },
+    "mementos>interludio": { "label": "Metaversø · Farol 2019" },
+    "interludio>o-que-nos-une": { "label": "body · presence · sensor" },
+    "oceanvs>floresta-utopica": { "label": "The Elements series" },
+    "oceanvs>metadata": { "label": "data · projection" },
+    "metadata>sao-paulo-3024": { "label": "data · city" },
+    "sao-paulo-3024>andromeda": { "label": "immersive projection" },
+    "luzcidade>moholy-nagy": { "label": "lineage" },
+    "luzcidade>dan-flavin": { "label": "lamp as medium" },
+    "cachoeira>2047": { "label": "revealing the invisible" },
+    "floresta-utopica>2047": { "label": "invisible chain" }
+  }
+}

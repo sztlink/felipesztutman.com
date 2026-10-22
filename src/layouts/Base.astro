@@ -26,6 +26,12 @@ interface Props {
   fullBleed?: boolean;
   bodyClass?: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article' | 'profile' | 'book';
+  ogImageAlt?: string;
+  breadcrumbs?: Array<{name: string; path: string}>;
+  extraSchema?: Record<string, unknown>[];
+  schemaImages?: string[];
+  datePublished?: string;
 }
 const {
   title,
@@ -46,14 +52,42 @@ const {
   showFooter = true,
   fullBleed = false,
   bodyClass = '',
-  noindex = false
+  noindex = false,
+  ogType = 'website',
+  ogImageAlt,
+  breadcrumbs,
+  extraSchema = [],
+  schemaImages,
+  datePublished
 } = Astro.props;
 const isEN = lang === 'en';
 const prefix = isEN ? '/en' : '';
 const altLang = isEN ? 'pt' : 'en';
 const currentPath = Astro.url.pathname;
-const ogImageUrl = ogImage ? (/^https?:\/\//.test(ogImage) ? ogImage : `https://felipesztutman.com${ogImage}`) : undefined;
-const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPath}`;
+const SITE = 'https://felipesztutman.com';
+const abs = (p: string) => (/^https?:\/\//.test(p) ? p : `${SITE}${p}`);
+const DEFAULT_OG = '/og/default.jpg';
+const ogImageUrl = abs(ogImage || DEFAULT_OG);
+const ogIsDefault = !ogImage;
+
+// Rotas que existem de fato, para só declarar hreflang e oferecer a troca de idioma
+// quando a tradução existe (mapa, diário e 404 são só em português).
+const withSlash = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+const pageFiles = Object.keys(import.meta.glob('../pages/**/*.{astro,md}'));
+const routes = new Set(pageFiles.map((f) => withSlash(f.replace('../pages', '').replace(/\.(astro|md)$/, '').replace(/\/index$/, '') || '/')));
+const here = withSlash(currentPath);
+const ptPath = isEN ? withSlash(here.replace(/^\/en/, '') || '/') : here;
+const enPath = isEN ? here : withSlash(`/en${here}`);
+const hasTranslation = !noindex && routes.has(ptPath) && routes.has(enPath);
+const altPath = isEN ? ptPath : enPath;
+const canonical = `${SITE}${here}`;
+const ogLocale = isEN ? 'en_US' : 'pt_BR';
+const ogLocaleAlt = isEN ? 'pt_BR' : 'en_US';
+const crumbs = breadcrumbs?.length ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((c, i) => ({ "@type": "ListItem", "position": i + 1, "name": c.name, "item": abs(c.path.includes("#") ? c.path : withSlash(c.path)) }))
+} : null;
 ---
 <!DOCTYPE html>
 <html lang={isEN ? 'en' : 'pt-BR'}>
@@ -64,23 +98,43 @@ const altPath = isEN ? currentPath.replace(/^\/en/, '') || '/' : `/en${currentPa
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
 <title>{title}</title>
 <meta name="description" content={description}>
-{noindex && <meta name="robots" content="noindex, follow">}
-<link rel="canonical" href={Astro.url.href}>
-<link rel="alternate" hrefLang="pt-BR" href={`https://felipesztutman.com${isEN ? currentPath.replace(/^\/en/, '') || '/' : currentPath}`}>
-<link rel="alternate" hrefLang="en" href={`https://felipesztutman.com${isEN ? currentPath : '/en' + currentPath}`}>
+<meta name="author" content="Felipe Sztutman">
+{noindex
+  ? <meta name="robots" content="noindex, follow">
+  : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">}
+{!noindex && <link rel="canonical" href={canonical}>}
+{hasTranslation && <link rel="alternate" hreflang="pt-BR" href={`${SITE}${ptPath}`}>}
+{hasTranslation && <link rel="alternate" hreflang="en" href={`${SITE}${enPath}`}>}
+{hasTranslation && <link rel="alternate" hreflang="x-default" href={`${SITE}${ptPath}`}>}
+<link rel="alternate" type="application/rss+xml" title={isEN ? 'Felipe Sztutman · works and writings' : 'Felipe Sztutman · obras e escritos'} href={isEN ? '/en/rss.xml' : '/rss.xml'}>
+<meta property="og:site_name" content="Felipe Sztutman">
 <meta property="og:title" content={ogTitle || title}>
 <meta property="og:description" content={description}>
-<meta property="og:url" content={Astro.url.href}>
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
-{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
-<meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'}>
+<meta property="og:url" content={canonical}>
+<meta property="og:type" content={ogType}>
+<meta property="og:locale" content={ogLocale}>
+{hasTranslation && <meta property="og:locale:alternate" content={ogLocaleAlt}>}
+<meta property="og:image" content={ogImageUrl}>
+{ogIsDefault && <meta property="og:image:width" content="1200">}
+{ogIsDefault && <meta property="og:image:height" content="630">}
+<meta property="og:image:alt" content={ogImageAlt || (ogIsDefault ? (isEN ? 'OCEANVS, immersive room by Felipe Sztutman' : 'OCEANVS, sala imersiva de Felipe Sztutman') : (ogTitle || title))}>
+{ogType === 'profile' && <meta property="profile:first_name" content="Felipe">}
+{ogType === 'profile' && <meta property="profile:last_name" content="Sztutman">}
+{ogType === 'article' && datePublished && <meta property="article:published_time" content={datePublished}>}
+{ogType === 'article' && <meta property="article:author" content={SITE + '/'}>}
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content={ogTitle || title}>
 <meta name="twitter:description" content={description}>
-<SchemaOrg type={schemaType} name={schemaName} description={description} url={Astro.url.href} dateCreated={schemaDate} location={schemaLocation} creatorNames={schemaCreatorNames} omitCreator={schemaOmitCreator} sameAs={schemaSameAs} artMedium={schemaMedium} exhibition={schemaExhibition} image={ogImageUrl} inLanguage={isEN ? 'en' : 'pt-BR'} />
+<meta name="twitter:image" content={ogImageUrl}>
+<meta name="twitter:image:alt" content={ogImageAlt || (ogIsDefault ? (isEN ? 'OCEANVS, immersive room by Felipe Sztutman' : 'OCEANVS, sala imersiva de Felipe Sztutman') : (ogTitle || title))}>
+<SchemaOrg type={schemaType} name={schemaName} description={description} url={canonical} dateCreated={schemaDate} location={schemaLocation} creatorNames={schemaCreatorNames} omitCreator={schemaOmitCreator} sameAs={schemaSameAs} artMedium={schemaMedium} exhibition={schemaExhibition} image={ogIsDefault ? undefined : ogImageUrl} images={schemaImages?.map(abs)} inLanguage={isEN ? 'en' : 'pt-BR'} />
+{crumbs && <script type="application/ld+json" set:html={JSON.stringify(crumbs)} />}
+{extraSchema.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
 <style is:global>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#000000;--fg:#ffffff;--fg2:rgba(255,255,255,.45);--fg3:rgba(255,255,255,.2);--accent:#ffffff;--mono:'IBM Plex Mono','SF Mono',monospace;--sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
@@ -102,22 +156,22 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,
 <header>
   <h1><a href={`${prefix}/`}>Felipe Sztutman</a></h1>
   <nav>
-    <a href="/mapa">{isEN ? 'map (PT)' : 'mapa'}</a>
+    <a href="/mapa/" hreflang={isEN ? 'pt-BR' : undefined}>{isEN ? 'map (in Portuguese)' : 'mapa'}</a>
     <a href={`${prefix}/#obras`}>{isEN ? 'works' : 'obras'}</a>
-    <a href={`${prefix}/escritos`}>{isEN ? 'writings' : 'escritos'}</a>
-    {!isEN && <a href="/diario">diário</a>}
-    <a href={`${prefix}/publicacoes`}>{isEN ? 'publications' : 'publicações'}</a>
-    <a href={`${prefix}/trajetoria`}>{isEN ? 'trajectory' : 'trajetória'}</a>
-    <a href={`${prefix}/sobre`}>{isEN ? 'about' : 'sobre'}</a>
+    <a href={`${prefix}/escritos/`}>{isEN ? 'writings' : 'escritos'}</a>
+    {!isEN && <a href="/diario/">diário</a>}
+    <a href={`${prefix}/publicacoes/`}>{isEN ? 'publications' : 'publicações'}</a>
+    <a href={`${prefix}/trajetoria/`}>{isEN ? 'trajectory' : 'trajetória'}</a>
+    <a href={`${prefix}/sobre/`}>{isEN ? 'about' : 'sobre'}</a>
     <a href={`${prefix}/#contato`}>{isEN ? 'contact' : 'contato'}</a>
-    <a href={altPath} class="lang-toggle">{altLang.toUpperCase()}</a>
+    <a href={hasTranslation ? altPath : (isEN ? '/' : '/en/')} class="lang-toggle" hreflang={isEN ? 'pt-BR' : 'en'} lang={isEN ? 'pt-BR' : 'en'}>{altLang.toUpperCase()}</a>
   </nav>
 </header>
 )}
 <slot />
 {showFooter && (
 <footer>
-  <p>Felipe Sztutman · São Paulo · 2009–2026</p>
+  <p>Felipe Sztutman · São Paulo · 2009-2026</p>
   <p style="margin-top:.5rem"><a href="https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman" target="_blank">Enciclopédia Itaú Cultural</a></p>
 </footer>
 )}

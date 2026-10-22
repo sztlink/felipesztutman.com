@@ -4,7 +4,7 @@ title: "Interlúdio"
 year: "2019"
 location: "Farol Santander, São Paulo"
 lang: en
-description: "Installation with ultra-precise proximity sensors and responsive light. The work only existed when someone was present, technology that fundamentally depends on human presence."
+description: "Installation with proximity sensors and responsive light that only existed when someone was present. Metaversø, Farol Santander, 2019."
 lead: "Responsive installation in which proximity sensors and light activate only with the body's presence, making technology's dependence on the human literal."
 mechanism:
   - { label: "System", value: "Ultra-precise proximity sensors coupled to a responsive light system" }

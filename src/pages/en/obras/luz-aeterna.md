@@ -4,7 +4,7 @@ title: "Luz Æterna: Ensaio Sobre o Sol"
 year: "2024-2025"
 location: "CCBB Brasília, São Paulo, and Belo Horizonte"
 lang: en
-description: "Art, technology, and experience direction for a collective new media art exhibition featuring eight Brazilian artists, where light organizes space and unifies the journey between physical and virtual."
+description: "Art, technology and experience direction for a new media art group show with eight Brazilian artists, where light organizes the space."
 lead: "Thematic/collective new media art exhibition treated as art, technology, and experience direction: eight artists coexist in a route where light, exhibition design, and architectural adaptation organize the experience without erasing each work's autonomy."
 archiveNote: "Luz Æterna remains in the archive as a directed thematic/collective exhibition, not as Felipe's individual authored work. The page records a directing gesture, spatial, technical, and experiential, while the works and their artists preserve their own authorship."
 circulation:

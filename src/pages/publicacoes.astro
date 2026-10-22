@@ -3,7 +3,9 @@ import Base from '../layouts/Base.astro';
 import PublicacoesCorpo from '../components/PublicacoesCorpo.astro';
 ---
 <Base
-  title="Felipe Sztutman · Publicações"
+  title="Publicações · Felipe Sztutman"
+  schemaName="Publicações de Felipe Sztutman"
+  breadcrumbs={[{ name: 'Felipe Sztutman', path: '/' }, { name: 'publicações', path: '/publicacoes/' }]}
   description="Livros, catálogos de exposição, arquivo aberto e imprensa: a circulação do trabalho de Felipe Sztutman fora da sala."
   fullBleed={true}
   showHeader={false}

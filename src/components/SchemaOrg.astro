@@ -1,10 +1,11 @@
 ---
 interface Props {
-  type?: 'WebSite' | 'Person' | 'ArtWork';
+  type?: 'WebSite' | 'Person' | 'ArtWork' | 'Profile' | 'Article';
   name?: string;
   description?: string;
   url?: string;
   image?: string;
+  images?: string[];
   dateCreated?: string;
   location?: string;
   creatorNames?: string[];
@@ -14,48 +15,73 @@ interface Props {
   inLanguage?: string;
   exhibition?: {name: string; startDate: string; endDate: string; location?: string; city?: string; country?: string};
 }
-const { type = 'WebSite', name, description, url, image, dateCreated, location, creatorNames, omitCreator = false, sameAs, artMedium, inLanguage, exhibition } = Astro.props;
+const { type = 'WebSite', name, description, url, image, images, dateCreated, location, creatorNames, omitCreator = false, sameAs, artMedium, inLanguage, exhibition } = Astro.props;
 
+const SITE = 'https://felipesztutman.com';
+const PERSON_ID = `${SITE}/#person`;
+const WEBSITE_ID = `${SITE}/#website`;
+const isEN = inLanguage === 'en';
+
+// Entidade única do artista. As outras páginas referenciam por @id.
 const person = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": PERSON_ID,
   "name": "Felipe Sztutman",
-  "url": "https://felipesztutman.com",
+  "givenName": "Felipe",
+  "familyName": "Sztutman",
+  "url": `${SITE}/`,
   "sameAs": [
     "https://instagram.com/felipesztutman",
     "https://br.linkedin.com/in/felipesztutman",
     "https://enciclopedia.itaucultural.org.br/pessoas/60193-felipe-sztutman",
     "https://aya.cx"
   ],
-  "jobTitle": "Artist",
-  "description": "Artist and builder of immersive systems. Conceives environments where light, technology, and perception become language.",
+  "jobTitle": isEN ? "Artist" : "Artista",
+  "description": isEN
+    ? "Artist and builder of immersive systems. Conceives environments where light, technology, and perception become language."
+    : "Artista e construtor de sistemas imersivos. Concebe ambientes em que luz, tecnologia e percepção viram linguagem.",
   "birthDate": "1986-11-30",
-  "birthPlace": { "@type": "Place", "name": "São Paulo, Brazil" },
+  "birthPlace": { "@type": "Place", "name": "São Paulo, Brasil" },
+  "nationality": { "@type": "Country", "name": "Brasil" },
+  "homeLocation": { "@type": "Place", "name": "São Paulo, Brasil" },
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "FAU-USP", "department": "Design" },
     { "@type": "EducationalOrganization", "name": "COTUCA/Unicamp", "department": "Mechatronics" }
   ],
   "affiliation": { "@type": "Organization", "name": "AYA Studio", "url": "https://aya.cx" },
-  "knowsAbout": ["immersive art", "light art", "new media art", "installation art", "projection mapping", "interactive installation"]
+  "knowsAbout": ["immersive art", "light art", "new media art", "installation art", "projection mapping", "interactive installation", "arte imersiva", "arte e tecnologia"]
 };
 
 const website = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": WEBSITE_ID,
   "name": "Felipe Sztutman",
-  "url": "https://felipesztutman.com",
-  "author": { "@type": "Person", "name": "Felipe Sztutman" },
+  "url": `${SITE}/`,
+  "author": { "@id": PERSON_ID },
+  "publisher": { "@id": PERSON_ID },
   "inLanguage": ["pt-BR", "en"]
 };
 
-const resolvedCreators = (creatorNames?.length ? creatorNames : ['Felipe Sztutman']).map((creatorName) => ({
-  "@type": "Person",
-  "name": creatorName,
-  ...(creatorName === 'Felipe Sztutman' ? { "url": "https://felipesztutman.com" } : {})
-}));
+const webpage = {
+  "@context": "https://schema.org",
+  "@type": type === 'Profile' ? "ProfilePage" : "WebPage",
+  ...(url ? { "@id": `${url}#webpage`, "url": url } : {}),
+  ...(name ? { "name": name } : {}),
+  ...(description ? { "description": description } : {}),
+  "isPartOf": { "@id": WEBSITE_ID },
+  ...(type === 'Profile' ? { "mainEntity": { "@id": PERSON_ID } } : { "about": { "@id": PERSON_ID } }),
+  ...(inLanguage ? { "inLanguage": inLanguage } : {})
+};
 
+const resolvedCreators = (creatorNames?.length ? creatorNames : ['Felipe Sztutman']).map((creatorName) => (
+  creatorName === 'Felipe Sztutman' ? { "@id": PERSON_ID } : { "@type": "Person", "name": creatorName }
+));
+
+const imageList = images?.length ? images : (image ? [image] : []);
 const artworkId = url ? `${url}#obra` : undefined;
-const artwork = name ? {
+const artwork = name && type === 'ArtWork' ? {
   "@context": "https://schema.org",
   "@type": "VisualArtwork",
   ...(artworkId ? { "@id": artworkId } : {}),
@@ -65,14 +91,30 @@ const artwork = name ? {
   ...(!omitCreator ? { "creator": resolvedCreators.length === 1 ? resolvedCreators[0] : resolvedCreators } : {}),
   "dateCreated": dateCreated,
   ...(location ? { "locationCreated": { "@type": "Place", "name": location } } : {}),
-  ...(image ? { "image": image } : {}),
+  ...(imageList.length ? { "image": imageList.length === 1 ? imageList[0] : imageList } : {}),
   ...(inLanguage ? { "inLanguage": inLanguage } : {}),
+  "isPartOf": { "@id": WEBSITE_ID },
+  "mainEntityOfPage": url,
   ...(sameAs?.length ? {
     "sameAs": sameAs,
     "subjectOf": sameAs.map((siteUrl) => ({ "@type": "WebSite", "url": siteUrl }))
   } : {}),
   "artMedium": artMedium || "immersive installation",
   "artform": "new media art"
+} : null;
+
+const article = type === 'Article' && name ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  ...(url ? { "@id": `${url}#article`, "url": url, "mainEntityOfPage": url } : {}),
+  "headline": name,
+  ...(description ? { "description": description } : {}),
+  "author": { "@id": PERSON_ID },
+  "publisher": { "@id": PERSON_ID },
+  ...(dateCreated ? { "datePublished": dateCreated } : {}),
+  ...(imageList.length ? { "image": imageList } : {}),
+  ...(inLanguage ? { "inLanguage": inLanguage } : {}),
+  "isPartOf": { "@id": WEBSITE_ID }
 } : null;
 
 const exhibitionEvent = artwork && exhibition ? {
@@ -92,9 +134,11 @@ const exhibitionEvent = artwork && exhibition ? {
   ...(url ? { "url": url } : {})
 } : null;
 
-const schemas = type === 'Person' ? [person, website] : 
-                type === 'ArtWork' && artwork ? [artwork, exhibitionEvent].filter(Boolean) : 
-                [website];
+const schemas = type === 'Person' ? [person, website] :
+                type === 'Profile' ? [person, webpage] :
+                type === 'ArtWork' && artwork ? [artwork, exhibitionEvent].filter(Boolean) :
+                type === 'Article' && article ? [article] :
+                [webpage];
 ---
 {schemas.map(schema => (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />

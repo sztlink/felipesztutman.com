@@ -3,7 +3,7 @@ layout: ../../layouts/Obra.astro
 title: "Interlúdio"
 year: "2019"
 location: "Farol Santander, São Paulo"
-description: "Instalação com sensores de proximidade ultraprecisos e luz responsiva. A obra só existia quando alguém estava presente, tecnologia que depende fundamentalmente da presença humana."
+description: "Instalação com sensores de proximidade e luz responsiva que só existia quando alguém estava presente. Metaversø, Farol Santander, 2019."
 lead: "Instalação responsiva em que sensores de proximidade e luz só se ativam com a presença do corpo, tornando literal a dependência da tecnologia em relação ao humano."
 mechanism:
   - { label: "Sistema", value: "Sensores de proximidade ultraprecisos acoplados a um sistema de luz responsiva" }

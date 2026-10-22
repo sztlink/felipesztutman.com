@@ -40,7 +40,7 @@ const {
 
 function normalizePublicationUrl(url?: string) {
   if (!url) return null;
-  if (url.includes('/publicacoes/')) return `${prefix}/publicacoes`;
+  if (url.includes('/publicacoes/')) return `${prefix}/publicacoes/`;
   return url;
 }
 

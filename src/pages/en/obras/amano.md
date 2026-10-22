@@ -4,7 +4,7 @@ title: "AMANO: Além da Fantasia"
 year: "2024-2026"
 location: "Farol Santander São Paulo; CCBB Belo Horizonte, Rio de Janeiro, and Brasília"
 lang: en
-description: "Third-party artist project: experience and technology direction for the largest Yoshitaka Amano exhibition ever held worldwide, translating 218 original works into an inhabitable experience."
+description: "Experience and technology direction for the largest Yoshitaka Amano exhibition ever held, turning 218 original works into an inhabitable space."
 lead: "Third-party artist project: immersive space conceived to translate 218 original works by Yoshitaka Amano into an inhabitable experience, articulating video, light, sound, automation, and projection as a single system."
 archiveNote: "AMANO should be read in the archive as experience and technology direction within a third-party artist project. The primary artistic authorship remains Yoshitaka Amano's, Felipe's gesture is the spatial, technical, and experiential translation of that visual universe in Brazil."
 circulation:

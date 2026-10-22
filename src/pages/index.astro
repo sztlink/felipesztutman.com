@@ -70,7 +70,7 @@ function regimeLabel(work: any) {
 }
 ---
 <Base
-  title="Felipe Sztutman · Arquivo de obra"
+  title="Felipe Sztutman · artista, arte imersiva, luz e tecnologia"
   description="Arquivo de obra de Felipe Sztutman. Luz, tecnologia, percepção e sistemas imersivos organizados como obra e relação."
   schemaType="Person"
   fullBleed={true}
@@ -85,7 +85,7 @@ function regimeLabel(work: any) {
           <span class="strip-cell"><img src={item.src} alt={item.caption || ""} loading="eager" /></span>
         ))}
       </div>
-      <div class="entry-meta">ARQUIVO DE OBRA · 2009–</div>
+      <div class="entry-meta">ARQUIVO DE OBRA · desde 2009</div>
       <h1><span class="given">FELIPE</span>SZTUTMAN</h1>
       <div class="entry-hint">ROLAR PARA ENTRAR ↓</div>
     </section>
@@ -99,7 +99,7 @@ function regimeLabel(work: any) {
       <div class="archive-head">
         <div class="archive-kicker">ARQUIVO</div>
         <h2>{total} obras</h2>
-        <div class="archive-meta">São Paulo · ativo 2009– · {realizada} realizadas · {emExposicao > 0 && `${emExposicao} em exposição · `}{emCurso > 0 && `${emCurso} em produção · `}{aConfirmar} a confirmar · atualizado {updatedAt}</div>
+        <div class="archive-meta">São Paulo · ativo desde 2009 · {realizada} realizadas · {emExposicao > 0 && `${emExposicao} em exposição · `}{emCurso > 0 && `${emCurso} em produção · `}{aConfirmar} a confirmar · atualizado {updatedAt}</div>
         <p class="archive-note">Entrada pública do arquivo. As obras, sistemas e direções de experiência levam ao dossiê. O mapa lê relações sustentadas.</p>
       </div>
 
@@ -118,9 +118,9 @@ function regimeLabel(work: any) {
           <tbody>
             {works.map((work) => (
               <tr class:list={{ pending: work.status === 'A_CONFIRMAR' }} style={`--pulse:${work.corPulso || '#ffffff'};`}>
-                <td class="num"><a href={`/obras/${work.slug}`}>{work.numero}</a></td>
+                <td class="num"><a href={`/obras/${work.slug}/`}>{work.numero}</a></td>
                 <td class="title-cell">
-                  <a href={`/obras/${work.slug}`}>{work.titulo}</a>
+                  <a href={`/obras/${work.slug}/`}>{work.titulo}</a>
                   <div class="title-desc">{work.description}</div>
                 </td>
                 <td>{work.ano}</td>
@@ -137,13 +137,13 @@ function regimeLabel(work: any) {
       </div>
 
       <div class="archive-links">
-        <a href="/mapa"><strong>mapa</strong> exploração relacional</a>
-        <a href="/escritos"><strong>escritos</strong> camada conceitual</a>
-        <a href="/diario"><strong>diário</strong> ateliê em processo</a>
-        <a href="/publicacoes"><strong>publicações</strong> circulação editorial</a>
-        <a href="/trajetoria"><strong>trajetória</strong> cronologia</a>
-        <a href="/sobre"><strong>sobre</strong> contexto</a>
-        <a href="/en"><strong>EN</strong> english</a>
+        <a href="/mapa/"><strong>mapa</strong> exploração relacional</a>
+        <a href="/escritos/"><strong>escritos</strong> camada conceitual</a>
+        <a href="/diario/"><strong>diário</strong> ateliê em processo</a>
+        <a href="/publicacoes/"><strong>publicações</strong> circulação editorial</a>
+        <a href="/trajetoria/"><strong>trajetória</strong> cronologia</a>
+        <a href="/sobre/"><strong>sobre</strong> contexto</a>
+        <a href="/en/"><strong>EN</strong> english</a>
         <a href="mailto:felipe@aya.cx">felipe@aya.cx</a>
       </div>
     </section>

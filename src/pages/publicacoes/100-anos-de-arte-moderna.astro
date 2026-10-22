@@ -2,7 +2,10 @@
 import Base from '../../layouts/Base.astro';
 ---
 <Base
-  title="Felipe Sztutman · 100 Anos de Arte Moderna: a cena contemporânea"
+  title="100 Anos de Arte Moderna: a cena contemporânea · Felipe Sztutman"
+  ogType="book"
+  breadcrumbs={[{ name: 'Felipe Sztutman', path: '/' }, { name: 'publicações', path: '/publicacoes/' }, { name: '100 Anos de Arte Moderna', path: '/publicacoes/100-anos-de-arte-moderna/' }]}
+  extraSchema={[{ "@context": "https://schema.org", "@type": "Book", "name": "100 Anos de Arte Moderna: a cena contemporânea", "author": { "@type": "Person", "name": "Carlos Zibel Costa" }, "about": { "@id": "https://felipesztutman.com/#person" }, "inLanguage": "pt-BR", "url": "https://felipesztutman.com/publicacoes/100-anos-de-arte-moderna/" }]}
   description="Registro editorial impresso que dedica um perfil a Felipe Sztutman e articula Cachoeira, sem título, para Mantiqueira e OCEANVS em uma mesma trajetória."
   fullBleed={true}
   showHeader={false}
@@ -12,10 +15,10 @@ import Base from '../../layouts/Base.astro';
   <main class="text-page">
     <section class="text-entry">
       <div class="surface-links">
-        <a href="/publicacoes" class="back">← publicações</a>
+        <a href="/publicacoes/" class="back">← publicações</a>
         <a href="/#obras" class="surface-link">arquivo</a>
-        <a href="/mapa" class="surface-link">mapa relacional</a>
-        <a href="/en/publicacoes/100-anos-de-arte-moderna" class="surface-link">EN</a>
+        <a href="/mapa/" class="surface-link">mapa relacional</a>
+        <a href="/en/publicacoes/100-anos-de-arte-moderna/" class="surface-link">EN</a>
       </div>
       <div class="text-type">publicação impressa</div>
       <h1>100 Anos de Arte Moderna: a cena contemporânea</h1>
@@ -49,10 +52,10 @@ import Base from '../../layouts/Base.astro';
 
         <h2>Obras relacionadas</h2>
         <div class="links-list">
-          <a href="/obras/cachoeira">Cachoeira, para Córrego das Almas</a>
-          <a href="/obras/mantiqueira">sem título, para Mantiqueira</a>
-          <a href="/obras/oceanvs">OCEANVS</a>
-          <a href="/sobre">Sobre</a>
+          <a href="/obras/cachoeira/">Cachoeira, para Córrego das Almas</a>
+          <a href="/obras/mantiqueira/">sem título, para Mantiqueira</a>
+          <a href="/obras/oceanvs/">OCEANVS</a>
+          <a href="/sobre/">Sobre</a>
         </div>
 
         <h2>Condição de circulação</h2>

@@ -14,7 +14,9 @@ const escritos = Object.entries(modules)
 ---
 <Base
   lang="en"
-  title="Felipe Sztutman · Writings"
+  title="Writings · Felipe Sztutman"
+  schemaName="Writings by Felipe Sztutman"
+  breadcrumbs={[{ name: 'Felipe Sztutman', path: '/en/' }, { name: 'writings', path: '/en/escritos/' }]}
   description="Texts on artistic practice, cartography of knowledge, cognitive implant szt.link, and research."
   fullBleed={true}
   showHeader={false}
@@ -25,8 +27,8 @@ const escritos = Object.entries(modules)
     <section class="entry">
       <div class="surface-links">
         <a href="/en/#obras" class="back">← archive</a>
-        <a href="/mapa" class="surface-link">relational map</a>
-        <a href="/escritos" class="surface-link">PT</a>
+        <a href="/mapa/" class="surface-link">relational map</a>
+        <a href="/escritos/" class="surface-link">PT</a>
       </div>
       <div class="entry-kicker">WRITINGS · CONCEPTUAL LAYER</div>
       <h1>Process, system, research</h1>
@@ -38,7 +40,7 @@ const escritos = Object.entries(modules)
       <div class="count">{escritos.length} writing{escritos.length === 1 ? '' : 's'}</div>
       <div class="writing-list">
         {escritos.map((item) => (
-          <a href={`/en/escritos/${item.slug}`} class="writing-item">
+          <a href={`/en/escritos/${item.slug}/`} class="writing-item">
             <div class="writing-type">{item.type}</div>
             <div class="writing-main">
               <div class="writing-title">{item.title}</div>

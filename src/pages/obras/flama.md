@@ -11,6 +11,7 @@ mechanism:
   - { label: "Corpo", value: "Sensores captam movimento e posição, gestos amplos geram labaredas vibrantes, movimentos suaves produzem chamas azuis delicadas" }
   - { label: "Acúmulo", value: "O projeto prevê memória coletiva acumulada no espaço, no cristal, o toque deixaria marcas ao longo da operação" }
   - { label: "Pergunta", value: "Como criar três modos de estar diante do fogo, contemplar, criar e ser revelado pela chama?" }
+collaborationNote: "O texto atual do projeto nomeia a curadoria de Antonio Curti e a materialização do AYA Studio, com Ana Clara no design visual, Minhoso nos renders 3D e a infraestrutura técnica prevista para operação contínua. É descrição de projeto, não créditos finais confirmados."
 credits:
   - { role: "Artista", name: "Felipe Sztutman" }
   - { role: "Concepção da série e curadoria", name: "Antonio Curti" }

@@ -27,7 +27,7 @@ const pressByYear = years.map((year) => ({ year, items: press.filter((p) => p.an
 const pressSpan = years.length ? `${years[years.length - 1]}-${years[0]}` : '';
 
 const t = isEN ? {
-  back: '← archive', backHref: '/en/#obras', map: 'relational map (PT)', alt: 'PT', altHref: '/publicacoes', altLabel: 'Versão em português',
+  back: '← archive', backHref: '/en/#obras', map: 'relational map (in Portuguese)', alt: 'PT', altHref: '/publicacoes/', altLabel: 'Versão em português',
   kicker: 'Publications · Circulation', title: 'Circulation',
   subtitle: 'Where the work goes on existing outside the room: in books, in the institutions’ catalogues, in open archives and in the press.',
   livros: 'Books and texts', catalogos: 'Catalogues', arquivo: 'Open archive', imprensa: 'Press',
@@ -39,7 +39,7 @@ const t = isEN ? {
   updated: 'updated', item: (n: number) => n === 1 ? ' item' : ' items', articles: (n: number) => n === 1 ? ' article' : ' articles',
   cover: 'Cover of the catalogue',
 } : {
-  back: '← arquivo', backHref: '/#obras', map: 'mapa relacional', alt: 'EN', altHref: '/en/publicacoes', altLabel: 'English version',
+  back: '← arquivo', backHref: '/#obras', map: 'mapa relacional', alt: 'EN', altHref: '/en/publicacoes/', altLabel: 'English version',
   kicker: 'Publicações · Circulação', title: 'Circulação',
   subtitle: 'Onde o trabalho continua existindo fora da sala: no livro, no catálogo das instituições, no arquivo aberto e na imprensa.',
   livros: 'Livros e textos', catalogos: 'Catálogos', arquivo: 'Arquivo aberto', imprensa: 'Imprensa',
@@ -90,7 +90,7 @@ const counts = [
   <header class="entry">
     <nav class="surface-links" aria-label="Site">
       <a href={t.backHref} class="back">{t.back}</a>
-      <a href="/mapa" class="surface-link">{t.map}</a>
+      <a href="/mapa/" class="surface-link">{t.map}</a>
       <a href={t.altHref} class="surface-link" hreflang={isEN ? 'pt-BR' : 'en'} aria-label={t.altLabel}>{t.alt}</a>
     </nav>
     <p class="kicker">{t.kicker}</p>
@@ -129,7 +129,7 @@ const counts = [
               <p class="row-links">
                 {p.tipo !== 'livro' && page && <a href={page}>{t.summary}</a>}
                 {related(p.relatedWorks).map((w: any) => (
-                  <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+                  <a href={`${prefix}/obras/${w.slug}/`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
                 ))}
               </p>
             </div>
@@ -161,7 +161,7 @@ const counts = [
           <p class="row-links">
             {p.paginaOficial && <a href={p.paginaOficial} target="_blank" rel="noopener" class="plain">{t.expo}<span class="ext" aria-hidden="true"> ↗</span><span class="sr-only">{t.newTab}</span></a>}
             {related(p.relatedWorks).map((w: any) => (
-              <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+              <a href={`${prefix}/obras/${w.slug}/`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
             ))}
           </p>
         </li>
@@ -182,7 +182,7 @@ const counts = [
             <p class="row-desc">{desc(p)}</p>
             <p class="row-links">
               {related(p.relatedWorks).map((w: any) => (
-                <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+                <a href={`${prefix}/obras/${w.slug}/`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
               ))}
             </p>
           </div>
@@ -210,7 +210,7 @@ const counts = [
               </div>
               <p class="press-works">
                 {related(item.relatedWorks).map((w: any) => (
-                  <a href={`${prefix}/obras/${w.slug}`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
+                  <a href={`${prefix}/obras/${w.slug}/`} class="work" style={`--pulse:${w.corPulso || '#ffffff'}`}>{shortTitle(w)}</a>
                 ))}
               </p>
             </li>

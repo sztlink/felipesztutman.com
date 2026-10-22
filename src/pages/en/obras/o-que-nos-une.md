@@ -4,7 +4,7 @@ title: "O Que Nos Une"
 year: "2025-2026"
 location: "Centro Cultural FIESP, São Paulo"
 lang: en
-description: "Thematic/scientific exhibition in three environments that translates Miguel Nicolelis's theories about collective consciousness into mirrors, position tracking, live-generated patterns, and biometric synchronization."
+description: "Exhibition in three environments that turns Miguel Nicolelis's theories on collective consciousness into mirrors, tracking and biometric sync."
 lead: "System-installation in three environments: visitors move through mirrors, cameras, and heartbeat sensors to perceive network patterns and collective synchronization in their own bodies."
 archiveNote: "In the archive, O Que Nos Une should be read less as a generic immersive exhibition and more as a perceptual mechanism: mirrors, position tracking, and biometric sensors make the idea of collective consciousness depend on visitors' presence and synchronization."
 mechanism:

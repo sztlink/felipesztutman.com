@@ -1,3 +1,5 @@
+# felipesztutman.com
 User-agent: *
 Allow: /
+
 Sitemap: https://felipesztutman.com/sitemap-index.xml
