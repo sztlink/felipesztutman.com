@@ -11,7 +11,7 @@ credits:
   - { role: "Fotografia", name: "Frans Kemper (Vitruvius)" }
 ---
 
-Em novembro de 2011, expus pela primeira vez numa coletiva de arte contemporânea. O OccupyCopan reuniu 25 artistas num espaço de 3.500 metros quadrados nos andares inferiores do Edifício Copan, abandonados havia quase duas décadas. Fernanda Brenner, que organizou a mostra, fundaria a Pivô naquele mesmo espaço poucos meses depois.
+Em novembro de 2011, expus pela primeira vez numa coletiva de arte contemporânea. A coletiva Projeto Imóvel, também chamada OccupyCopan, reuniu 28 artistas num espaço de 3.500 metros quadrados nos andares inferiores do Edifício Copan, abandonados havia quase duas décadas. A concepção e a curadoria eram de Alessandra Terpins. Fernanda Brenner, da equipe de produção, fundaria a Pivô naquele mesmo espaço poucos meses depois.
 
 Encontrei um vão vertical entre dois andares onde havia existido uma escada. Construí uma escultura de lâmpadas tubulares fluorescentes, amarelo, azul e vermelho, tensionadas por cabos de aço, vencendo o vão de um piso ao outro. A composição era rítmica: as cores se alternavam em cadência, como uma partitura vertical de luz. Nenhum suporte além dos cabos, as lâmpadas ficavam suspensas no ar, ocupando o vazio que a arquitetura tinha deixado.
 

@@ -11,7 +11,7 @@ credits:
   - { role: "Fotografia", name: "Felipe Sztutman" }
 ---
 
-Em 2009, fui selecionado para o programa de residência artística do LabMIS, o Laboratório de Novas Mídias do Museu da Imagem e do Som de São Paulo. Tinha 22 anos e acabara de me formar em Mecatrônica no COTUCA. Levei para aquela residência uma pergunta que vinha do corpo: como criar ambientes que existem pela soma de elementos invisíveis? Não queria fazer um objeto que você olha. Queria fazer um espaço que você habita.
+Em 2009, fui selecionado para o programa de residência artística do LabMIS, o Laboratório de Novas Mídias do Museu da Imagem e do Som de São Paulo. Tinha 22 anos, tinha feito o técnico em Mecatrônica no COTUCA e cursava Design na FAU-USP. Levei para aquela residência uma pergunta que vinha do corpo: como criar ambientes que existem pela soma de elementos invisíveis? Não queria fazer um objeto que você olha. Queria fazer um espaço que você habita.
 
 *Objeto em Forma de: Espaço* foi minha primeira obra. Concebi um ambiente sinestésico onde som, aroma e luz se organizavam por regras, não por composição expressiva, mas por lógica de sistema. A mecatrônica me ensinou a pensar em sensores e atuadores. O design me deu ferramentas para desenhar experiências. O vídeo me mostrou que a luz pode ser tão temporal quanto o som. Juntei as três coisas e propus: o ambiente é a obra. Não o que está dentro dele, mas a própria atmosfera artificial que emerge quando essas camadas se encontram.
 

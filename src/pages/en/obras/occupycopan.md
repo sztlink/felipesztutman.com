@@ -12,7 +12,7 @@ credits:
   - { role: "Photography", name: "Frans Kemper (Vitruvius)" }
 ---
 
-In November 2011, I exhibited for the first time in a contemporary art group show. OccupyCopan brought together 25 artists in a 3,500 square meter space on the lower floors of the Copan Building, abandoned for almost two decades. Fernanda Brenner, who organized the exhibition, would found Pivô in that same space just a few months later.
+In November 2011, I exhibited for the first time in a contemporary art group show. The group show Projeto Imóvel, also known as OccupyCopan, brought together 28 artists in a 3,500 square meter space on the lower floors of the Copan Building, abandoned for almost two decades. It was conceived and curated by Alessandra Terpins. Fernanda Brenner, part of the production team, would found Pivô in that same space just a few months later.
 
 I found a vertical void between two floors where a staircase once existed. I built a sculpture of tubular fluorescent lamps, yellow, blue and red, tensioned by steel cables, spanning the void from one floor to another. The composition was rhythmic: the colors alternated in cadence, like a vertical score of light. No support besides the cables, the lamps were suspended in the air, occupying the void that the architecture had left behind.
 

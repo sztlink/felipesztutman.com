@@ -12,7 +12,7 @@ credits:
   - { role: "Photography", name: "Felipe Sztutman" }
 ---
 
-In 2009, I was selected for the LabMIS artist residency program, the New Media Laboratory at the Museum of Image and Sound in São Paulo. I was 22 and had just graduated in Mechatronics from COTUCA. I brought to that residency a question that came from the body: how to create environments that exist through the sum of invisible elements? I didn't want to make an object you look at. I wanted to make a space you inhabit.
+In 2009, I was selected for the LabMIS artist residency program, the New Media Laboratory at the Museum of Image and Sound in São Paulo. I was 22, had trained as a mechatronics technician at COTUCA and was studying Design at FAU-USP. I brought to that residency a question that came from the body: how to create environments that exist through the sum of invisible elements? I didn't want to make an object you look at. I wanted to make a space you inhabit.
 
 *Objeto em Forma de: Espaço* was my first artwork. I conceived a synesthetic environment where sound, aroma and light were organized by rules, not through expressive composition, but through system logic. Mechatronics taught me to think in sensors and actuators. Design gave me tools to design experiences. Video showed me that light can be as temporal as sound. I put these three things together and proposed: the environment is the work. Not what's inside it, but the artificial atmosphere itself that emerges when these layers meet.
 
