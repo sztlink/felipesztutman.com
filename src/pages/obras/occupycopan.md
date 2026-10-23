@@ -5,9 +5,10 @@ year: "2011"
 location: "Edifício Copan, São Paulo"
 description: "Escultura de lâmpadas fluorescentes suspensas por cabos de aço no vão vertical do Copan, primeira exploração de luz como matéria"
 lead: "Escultura de lâmpadas fluorescentes suspensas por cabos de aço no vão vertical do Copan, primeiro gesto da linhagem que depois seria articulada como LUZCIDADE."
-archiveNote: "A página permanece sem galeria publicada. No arquivo, OccupyCopan é preservada como documento textual de origem: a luz aparece pela primeira vez como matéria no espaço arquitetônico."
+archiveNote: "Única imagem da obra localizada até agora, publicada pela revista Vitruvius (Arquiteturismo 057.02, novembro de 2011)."
 credits:
   - { role: "Concepção", name: "Felipe Sztutman" }
+  - { role: "Fotografia", name: "Frans Kemper (Vitruvius)" }
 ---
 
 Em novembro de 2011, expus pela primeira vez numa coletiva de arte contemporânea. O OccupyCopan reuniu 25 artistas num espaço de 3.500 metros quadrados nos andares inferiores do Edifício Copan, abandonados havia quase duas décadas. Fernanda Brenner, que organizou a mostra, fundaria a Pivô naquele mesmo espaço poucos meses depois.

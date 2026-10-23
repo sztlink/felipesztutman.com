@@ -5,10 +5,11 @@ year: "2011"
 location: "Edifício Copan, São Paulo"
 description: "Sculpture of fluorescent lamps suspended by steel cables in the vertical void of the Copan building, first exploration of light as matter"
 lead: "Sculpture of fluorescent lamps suspended by steel cables in the vertical void of the Copan building, the first gesture of the lineage later articulated as LUZCIDADE."
-archiveNote: "This page remains without a published gallery. In the archive, OccupyCopan is preserved as a textual origin document: light appears for the first time as matter in architectural space."
+archiveNote: "The only image of the work located so far, published by Vitruvius magazine (Arquiteturismo 057.02, November 2011)."
 lang: en
 credits:
   - { role: "Concept", name: "Felipe Sztutman" }
+  - { role: "Photography", name: "Frans Kemper (Vitruvius)" }
 ---
 
 In November 2011, I exhibited for the first time in a contemporary art group show. OccupyCopan brought together 25 artists in a 3,500 square meter space on the lower floors of the Copan Building, abandoned for almost two decades. Fernanda Brenner, who organized the exhibition, would found Pivô in that same space just a few months later.
