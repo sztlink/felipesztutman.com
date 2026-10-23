@@ -31,20 +31,6 @@ const regimeLabels: Record<string, string> = {
   C: 'space / circulation / collaboration',
 };
 
-function statusLabel(status: string) {
-  if (status === 'A_CONFIRMAR') return 'TO CONFIRM';
-  if (status === 'EM_CURSO') return 'IN PRODUCTION';
-  if (status === 'EM_EXPOSICAO') return 'ON VIEW';
-  return 'REALIZED';
-}
-
-function statusNote(status: string) {
-  if (status === 'A_CONFIRMAR') return 'published as archive in verification';
-  if (status === 'EM_CURSO') return 'confirmed and in production';
-  if (status === 'EM_EXPOSICAO') return 'open to the public, with dates';
-  return 'realized work in the archive';
-}
-
 function editorialStatus(work: any) {
   const labels: Record<string, string> = {
     AUTORAL_FELIPE: 'Felipe-authored work',
@@ -124,7 +110,7 @@ function displayWork(work: any) {
           <span class="strip-cell"><img src={item.src} alt={item.captionEn || item.caption || ""} loading="eager" /></span>
         ))}
       </div>
-      <div class="entry-meta">WORK ARCHIVE · since 2009</div>
+      <div class="entry-meta">ART AND TECHNOLOGY · São Paulo</div>
       <h1><span class="given">FELIPE</span>SZTUTMAN</h1>
       <div class="entry-hint">SCROLL TO ENTER ↓</div>
     </section>
@@ -151,7 +137,6 @@ function displayWork(work: any) {
               <th>YEAR</th>
               <th>LOCATION</th>
               <th>CONTEXT</th>
-              <th>STATUS</th>
             </tr>
           </thead>
           <tbody>
@@ -167,10 +152,6 @@ function displayWork(work: any) {
                   <td>{display.year}</td>
                   <td>{display.location}</td>
                   <td>{contextLabel(work)}</td>
-                  <td>
-                    <span class:list={[ 'status', work.status === 'A_CONFIRMAR' && 'pending' ]}>{statusLabel(work.status)}</span>
-                    <div class="status-note">{statusNote(work.status)}</div>
-                  </td>
                 </tr>
               );
             })}
@@ -240,9 +221,6 @@ body.page-home a{text-decoration:none}
 .title-cell{min-width:320px}
 .title-cell a{font-weight:600;letter-spacing:-.01em}
 .title-desc{margin-top:.3rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.58);max-width:52ch}
-.status{display:inline-block;font:.72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)}
-.status.pending{color:rgba(255,255,255,.42)}
-.status-note{margin-top:.35rem;font:.74rem/1.4 var(--sans);color:rgba(255,255,255,.5);max-width:18ch}
 .archive-links{display:flex;gap:.7rem 1.25rem;flex-wrap:wrap;padding-top:1.5rem;color:rgba(255,255,255,.55);border-top:1px solid var(--line-strong);margin-top:1.5rem}
 .archive-links a{color:inherit;display:flex;gap:.35rem;align-items:baseline}
 .archive-links strong{font-weight:600;color:rgba(255,255,255,.78)}
@@ -267,7 +245,5 @@ body.page-home a{text-decoration:none}
   .archive-table td:nth-child(3){grid-column:2;margin-top:.5rem}
   .archive-table td:nth-child(4){grid-column:2}
   .archive-table td:nth-child(5){grid-column:2;color:rgba(255,255,255,.55);font-size:.82rem;margin-top:.15rem}
-  .archive-table td:nth-child(6){grid-column:2;margin-top:.45rem}
-  .status-note{display:none}
 }
 </style>
