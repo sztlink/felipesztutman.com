@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brasil depois do 2º turno</title>
+<meta name="description" content="Bolsa, dólar, juros, Tesouro e política em 26 e 27 de outubro de 2026, com hora e fonte.">
+<meta property="og:title" content="Brasil depois do 2º turno">
+<meta property="og:description" content="Bolsa, dólar, juros, Tesouro e política em 26 e 27 de outubro de 2026, com hora e fonte.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://felipesztutman.com/brasil/">
+<link rel="canonical" href="https://felipesztutman.com/brasil/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+/* Sistema do dossiê economia-brasil (estilo/DESIGN.md). Papel branco, tinta, um azul para o Brasil e para o que importa.
+   Sem cantos arredondados, sem caixa contornada, sem cor de juízo. Hierarquia por tamanho, peso e espaço. */
+:root {
+  --tinta: #1f1f1f; --cinza-1: #4d4d4d; --cinza-2: #8a8a8a; --cinza-3: #c6c6c6; --grade: #e2e2e2; --papel: #ffffff;
+  --brasil: #1d4e89; --ocre: #a8841f;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --col: 68rem;
+  color-scheme: light;
+}
+* { box-sizing: border-box; border-radius: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font-family: var(--serif); font-size: 17px; line-height: 1.5; }
+.wrap { max-width: var(--col); margin-inline: auto; padding-inline: max(20px, env(safe-area-inset-left, 0px)) max(20px, env(safe-area-inset-right, 0px)); padding-block: 48px 72px; }
+.data { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+.kicker { font-family: var(--sans); font-size: 13px; color: var(--cinza-1); letter-spacing: .01em; }
+h1 { font-family: var(--serif); font-optical-sizing: auto; font-weight: 400; font-size: clamp(34px, 6vw, 60px); line-height: 1.04; margin: 10px 0 18px; text-wrap: balance; letter-spacing: -.01em; }
+.lede { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.45; max-width: 40em; margin: 0; }
+.when { font-family: var(--sans); font-size: 13px; color: var(--cinza-2); margin-top: 14px; }
+section { margin-top: 64px; }
+h2 { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
+.leitura { margin: 0 0 18px; max-width: 42em; color: var(--cinza-1); }
+.fonte { font-family: var(--sans); font-size: 12px; color: var(--cinza-2); margin-top: 8px; }
+.nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11.5rem), 1fr)); gap: 28px 32px; margin-top: 44px; }
+.num .lab { font-family: var(--sans); font-size: 13px; color: var(--cinza-1); }
+.num .val { font-family: var(--serif); font-size: clamp(34px, 4.4vw, 46px); line-height: 1.05; font-variant-numeric: tabular-nums lining-nums; margin-top: 4px; }
+.num .val.brasil { color: var(--brasil); }
+.num .chg { font-family: var(--sans); font-size: 13px; color: var(--cinza-1); margin-top: 6px; font-variant-numeric: tabular-nums; line-height: 1.45; }
+.duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 0 48px; }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+.tip { position: absolute; z-index: 3; pointer-events: none; background: var(--papel); color: var(--tinta); font-family: var(--sans); font-size: 13px; line-height: 1.4; padding: 8px 10px; max-width: 19rem; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 6px 18px rgba(0,0,0,.10); }
+.tip .t { color: var(--cinza-2); font-size: 12px; }
+.tip[hidden] { display: none; }
+.ewz { display: grid; grid-template-columns: auto auto 1fr; gap: 6px 28px; font-family: var(--sans); font-size: 15px; align-items: baseline; }
+.ewz .d { color: var(--cinza-1); }
+.ewz .c { font-family: var(--serif); font-size: 30px; font-variant-numeric: tabular-nums; }
+.ewz .n { color: var(--cinza-2); font-variant-numeric: tabular-nums; }
+.filtros { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 4px 0 18px; font-family: var(--sans); font-size: 14px; }
+.filtros button { font: inherit; background: none; border: 0; padding: 4px 0; color: var(--cinza-2); cursor: pointer; border-bottom: 2px solid transparent; }
+.filtros button:hover { color: var(--tinta); }
+.filtros button[aria-pressed="true"] { color: var(--tinta); border-bottom-color: var(--brasil); }
+.filtros button:focus-visible { outline: 2px solid var(--brasil); outline-offset: 3px; }
+.linha { list-style: none; margin: 0; padding: 0; }
+.linha li { display: grid; grid-template-columns: 2.4rem 6.6rem 1fr; gap: 0 16px; padding: 14px 0; border-top: 1px solid var(--grade); }
+.linha .id { font-family: var(--sans); font-size: 13px; color: var(--brasil); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.linha .quando { font-family: var(--sans); font-size: 13px; color: var(--cinza-1); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.linha .quando span { display: block; color: var(--cinza-2); }
+.linha .fato { margin: 0; }
+.linha .src { font-family: var(--sans); font-size: 12px; color: var(--cinza-2); margin-top: 2px; }
+.linha li.hl { background: linear-gradient(90deg, rgba(29,78,137,.07), rgba(29,78,137,0)); }
+footer { margin-top: 72px; padding-top: 18px; border-top: 1px solid var(--grade); font-family: var(--sans); font-size: 12px; color: var(--cinza-2); line-height: 1.6; max-width: 46em; }
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .linha li { grid-template-columns: 2rem 1fr; }
+  .linha .quando { grid-column: 2; padding-top: 0; }
+  .linha .quando span { display: inline; margin-left: 6px; }
+  .linha li > div:last-child { grid-column: 2; }
+  .ewz { grid-template-columns: auto 1fr; }
+  .ewz .n { grid-column: 2; margin-top: -4px; }
+}
+@media (prefers-reduced-motion: no-preference) { .linha li { transition: background .3s; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="kicker">Dossiê economia-brasil · diário de mercado</div>
+    <h1>Brasil depois do 2º turno</h1>
+    <p class="lede" id="lede"></p>
+    <p class="when" id="when"></p>
+  </header>
+
+  <div class="nums" id="nums"></div>
+
+  <section id="ibov">
+    <h2>A bolsa nos dois pregões</h2>
+    <p class="leitura">Ibovespa a cada 15 minutos. Na segunda o índice só voltou a ser negociado às 10h47, depois do circuit breaker. O ponto à esquerda é o fechamento de sexta. Os números no alto marcam os fatos da linha do tempo, e passar o cursor sobre eles mostra o fato.</p>
+    <div class="chart" id="ch-ibov"></div>
+    <p class="fonte">Fonte. Yahoo Finance (^BVSP), B3 via InfoMoney para os fechamentos.</p>
+  </section>
+
+  <div class="duo">
+    <section id="dolar">
+      <h2>O dólar</h2>
+      <p class="leitura">Reais por dólar a cada 15 minutos, das 9h às 18h. A linha tracejada é o fechamento de sexta.</p>
+      <div class="chart" id="ch-dolar"></div>
+      <p class="fonte">Fonte. Yahoo Finance (BRL=X), InfoMoney.</p>
+    </section>
+    <section id="juros">
+      <h2>A curva de juros</h2>
+      <p class="leitura">Taxa dos contratos de juros futuros por vencimento. A segunda levantou a curva inteira, e mais nos prazos longos. Depois das 9h15 de terça as taxas caíram mais 40 pontos com a recompra do Tesouro.</p>
+      <div class="chart" id="ch-di"></div>
+      <p class="fonte">Fonte. InfoMoney (DI1, fechamento de 23 e 26/10, abertura de 27/10), Reuters.</p>
+    </section>
+  </div>
+
+  <div class="duo">
+    <section id="tesouro">
+      <h2>Quem segurou</h2>
+      <p class="leitura">O Tesouro comprou de volta os próprios títulos nos dois dias, para conter a alta dos juros longos. O Banco Central não atuou no câmbio. Galípolo disse na terça que "não é o caso agora".</p>
+      <div class="chart" id="ch-tes"></div>
+      <p class="fonte">Fonte. InfoMoney, 26/10 12h50 e 27/10 12h13.</p>
+    </section>
+    <section id="ewz">
+      <h2>O estrangeiro saiu do fundo?</h2>
+      <p class="leitura">O EWZ é o fundo de ações brasileiras mais negociado em Nova York. Se o investidor estrangeiro tivesse resgatado, o número de cotas teria caído. Na segunda o preço caiu, as cotas não.</p>
+      <div class="ewz" id="ewz-rows"></div>
+      <p class="fonte">Fonte. iShares. A leitura com data de 27/10 sai na manhã de 28/10 e pode mostrar resgate com um dia de atraso.</p>
+    </section>
+  </div>
+
+  <section id="linha-do-tempo">
+    <h2>Linha do tempo</h2>
+    <p class="leitura">O que aconteceu, com hora e fonte. Fato sem confirmação oficial está dito como tal.</p>
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar por tema"></div>
+    <ol class="linha" id="linha"></ol>
+  </section>
+
+  <footer id="rodape"></footer>
+</main>
+
+<div class="tip" id="tip" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const DADOS = {"intraday": [{"ts": "2026-10-26T10:45", "dia": "26/10", "serie": "ibovespa", "valor": "172506.5469"}, {"ts": "2026-10-26T11:00", "dia": "26/10", "serie": "ibovespa", "valor": "171416.1719"}, {"ts": "2026-10-26T11:15", "dia": "26/10", "serie": "ibovespa", "valor": "169956.8281"}, {"ts": "2026-10-26T11:30", "dia": "26/10", "serie": "ibovespa", "valor": "171603.8125"}, {"ts": "2026-10-26T11:45", "dia": "26/10", "serie": "ibovespa", "valor": "172679.0156"}, {"ts": "2026-10-26T12:00", "dia": "26/10", "serie": "ibovespa", "valor": "174104.5781"}, {"ts": "2026-10-26T12:15", "dia": "26/10", "serie": "ibovespa", "valor": "174426.9531"}, {"ts": "2026-10-26T12:30", "dia": "26/10", "serie": "ibovespa", "valor": "175635.5156"}, {"ts": "2026-10-26T12:45", "dia": "26/10", "serie": "ibovespa", "valor": "175384.8281"}, {"ts": "2026-10-26T13:00", "dia": "26/10", "serie": "ibovespa", "valor": "173564.3125"}, {"ts": "2026-10-26T13:15", "dia": "26/10", "serie": "ibovespa", "valor": "172855.3594"}, {"ts": "2026-10-26T13:30", "dia": "26/10", "serie": "ibovespa", "valor": "172587.0625"}, {"ts": "2026-10-26T13:45", "dia": "26/10", "serie": "ibovespa", "valor": "174322.4375"}, {"ts": "2026-10-26T14:00", "dia": "26/10", "serie": "ibovespa", "valor": "176340.3125"}, {"ts": "2026-10-26T14:15", "dia": "26/10", "serie": "ibovespa", "valor": "175993.2656"}, {"ts": "2026-10-26T14:30", "dia": "26/10", "serie": "ibovespa", "valor": "174262.4375"}, {"ts": "2026-10-26T14:45", "dia": "26/10", "serie": "ibovespa", "valor": "174849.2969"}, {"ts": "2026-10-26T15:00", "dia": "26/10", "serie": "ibovespa", "valor": "174565.375"}, {"ts": "2026-10-26T15:15", "dia": "26/10", "serie": "ibovespa", "valor": "175557.1719"}, {"ts": "2026-10-26T15:30", "dia": "26/10", "serie": "ibovespa", "valor": "174890.8594"}, {"ts": "2026-10-26T15:45", "dia": "26/10", "serie": "ibovespa", "valor": "174809.9375"}, {"ts": "2026-10-26T16:00", "dia": "26/10", "serie": "ibovespa", "valor": "175014.5"}, {"ts": "2026-10-26T16:15", "dia": "26/10", "serie": "ibovespa", "valor": "177137.6562"}, {"ts": "2026-10-26T16:30", "dia": "26/10", "serie": "ibovespa", "valor": "176553.375"}, {"ts": "2026-10-26T16:45", "dia": "26/10", "serie": "ibovespa", "valor": "177539.8125"}, {"ts": "2026-10-27T10:00", "dia": "27/10", "serie": "ibovespa", "valor": "177365.8594"}, {"ts": "2026-10-27T10:15", "dia": "27/10", "serie": "ibovespa", "valor": "177708.7344"}, {"ts": "2026-10-27T10:30", "dia": "27/10", "serie": "ibovespa", "valor": "178426.8125"}, {"ts": "2026-10-27T10:45", "dia": "27/10", "serie": "ibovespa", "valor": "176597.4062"}, {"ts": "2026-10-27T11:00", "dia": "27/10", "serie": "ibovespa", "valor": "176698.8125"}, {"ts": "2026-10-27T11:15", "dia": "27/10", "serie": "ibovespa", "valor": "176148.7031"}, {"ts": "2026-10-27T11:30", "dia": "27/10", "serie": "ibovespa", "valor": "175302.1562"}, {"ts": "2026-10-27T11:45", "dia": "27/10", "serie": "ibovespa", "valor": "176241.0"}, {"ts": "2026-10-27T12:00", "dia": "27/10", "serie": "ibovespa", "valor": "175855.2969"}, {"ts": "2026-10-27T12:15", "dia": "27/10", "serie": "ibovespa", "valor": "176480.3281"}, {"ts": "2026-10-27T12:30", "dia": "27/10", "serie": "ibovespa", "valor": "176887.2031"}, {"ts": "2026-10-27T12:45", "dia": "27/10", "serie": "ibovespa", "valor": "176746.875"}, {"ts": "2026-10-27T13:00", "dia": "27/10", "serie": "ibovespa", "valor": "176554.6562"}, {"ts": "2026-10-27T13:15", "dia": "27/10", "serie": "ibovespa", "valor": "176332.2344"}, {"ts": "2026-10-27T13:30", "dia": "27/10", "serie": "ibovespa", "valor": "175895.375"}, {"ts": "2026-10-27T13:45", "dia": "27/10", "serie": "ibovespa", "valor": "175479.9062"}, {"ts": "2026-10-27T14:00", "dia": "27/10", "serie": "ibovespa", "valor": "175787.375"}, {"ts": "2026-10-27T14:15", "dia": "27/10", "serie": "ibovespa", "valor": "176185.7656"}, {"ts": "2026-10-27T14:30", "dia": "27/10", "serie": "ibovespa", "valor": "176172.3281"}, {"ts": "2026-10-27T14:45", "dia": "27/10", "serie": "ibovespa", "valor": "175907.9375"}, {"ts": "2026-10-27T14:56", "dia": "27/10", "serie": "ibovespa", "valor": "175895.4375"}, {"ts": "2026-10-26T09:00", "dia": "26/10", "serie": "dolar", "valor": "4.9993"}, {"ts": "2026-10-26T10:15", "dia": "26/10", "serie": "dolar", "valor": "5.5964"}, {"ts": "2026-10-26T10:30", "dia": "26/10", "serie": "dolar", "valor": "5.5513"}, {"ts": "2026-10-26T10:45", "dia": "26/10", "serie": "dolar", "valor": "5.5168"}, {"ts": "2026-10-26T11:00", "dia": "26/10", "serie": "dolar", "valor": "5.5139"}, {"ts": "2026-10-26T11:15", "dia": "26/10", "serie": "dolar", "valor": "5.4646"}, {"ts": "2026-10-26T11:30", "dia": "26/10", "serie": "dolar", "valor": "5.4372"}, {"ts": "2026-10-26T11:45", "dia": "26/10", "serie": "dolar", "valor": "5.4538"}, {"ts": "2026-10-26T12:00", "dia": "26/10", "serie": "dolar", "valor": "5.423"}, {"ts": "2026-10-26T12:15", "dia": "26/10", "serie": "dolar", "valor": "5.4102"}, {"ts": "2026-10-26T12:30", "dia": "26/10", "serie": "dolar", "valor": "5.4168"}, {"ts": "2026-10-26T12:45", "dia": "26/10", "serie": "dolar", "valor": "5.4401"}, {"ts": "2026-10-26T13:00", "dia": "26/10", "serie": "dolar", "valor": "5.4362"}, {"ts": "2026-10-26T13:15", "dia": "26/10", "serie": "dolar", "valor": "5.4382"}, {"ts": "2026-10-26T13:30", "dia": "26/10", "serie": "dolar", "valor": "5.4287"}, {"ts": "2026-10-26T13:45", "dia": "26/10", "serie": "dolar", "valor": "5.4276"}, {"ts": "2026-10-26T14:00", "dia": "26/10", "serie": "dolar", "valor": "5.4369"}, {"ts": "2026-10-26T14:15", "dia": "26/10", "serie": "dolar", "valor": "5.4322"}, {"ts": "2026-10-26T14:30", "dia": "26/10", "serie": "dolar", "valor": "5.4479"}, {"ts": "2026-10-26T14:45", "dia": "26/10", "serie": "dolar", "valor": "5.4238"}, {"ts": "2026-10-26T15:00", "dia": "26/10", "serie": "dolar", "valor": "5.4187"}, {"ts": "2026-10-26T15:15", "dia": "26/10", "serie": "dolar", "valor": "5.4132"}, {"ts": "2026-10-26T15:30", "dia": "26/10", "serie": "dolar", "valor": "5.4157"}, {"ts": "2026-10-26T15:45", "dia": "26/10", "serie": "dolar", "valor": "5.4159"}, {"ts": "2026-10-26T16:00", "dia": "26/10", "serie": "dolar", "valor": "5.4068"}, {"ts": "2026-10-26T16:15", "dia": "26/10", "serie": "dolar", "valor": "5.3849"}, {"ts": "2026-10-26T16:30", "dia": "26/10", "serie": "dolar", "valor": "5.3971"}, {"ts": "2026-10-26T16:45", "dia": "26/10", "serie": "dolar", "valor": "5.3969"}, {"ts": "2026-10-26T17:00", "dia": "26/10", "serie": "dolar", "valor": "5.4029"}, {"ts": "2026-10-26T17:15", "dia": "26/10", "serie": "dolar", "valor": "5.4146"}, {"ts": "2026-10-26T17:30", "dia": "26/10", "serie": "dolar", "valor": "5.4042"}, {"ts": "2026-10-26T17:45", "dia": "26/10", "serie": "dolar", "valor": "5.4051"}, {"ts": "2026-10-26T18:00", "dia": "26/10", "serie": "dolar", "valor": "5.3876"}, {"ts": "2026-10-26T18:15", "dia": "26/10", "serie": "dolar", "valor": "5.3767"}, {"ts": "2026-10-26T19:15", "dia": "26/10", "serie": "dolar", "valor": "5.3767"}, {"ts": "2026-10-26T19:30", "dia": "26/10", "serie": "dolar", "valor": "5.3716"}, {"ts": "2026-10-26T21:30", "dia": "26/10", "serie": "dolar", "valor": "5.3716"}, {"ts": "2026-10-26T21:45", "dia": "26/10", "serie": "dolar", "valor": "5.3716"}, {"ts": "2026-10-26T23:45", "dia": "26/10", "serie": "dolar", "valor": "5.3716"}, {"ts": "2026-10-27T09:00", "dia": "27/10", "serie": "dolar", "valor": "5.3761"}, {"ts": "2026-10-27T09:15", "dia": "27/10", "serie": "dolar", "valor": "5.3567"}, {"ts": "2026-10-27T09:30", "dia": "27/10", "serie": "dolar", "valor": "5.3371"}, {"ts": "2026-10-27T09:45", "dia": "27/10", "serie": "dolar", "valor": "5.3386"}, {"ts": "2026-10-27T10:00", "dia": "27/10", "serie": "dolar", "valor": "5.3506"}, {"ts": "2026-10-27T10:15", "dia": "27/10", "serie": "dolar", "valor": "5.3308"}, {"ts": "2026-10-27T10:30", "dia": "27/10", "serie": "dolar", "valor": "5.3078"}, {"ts": "2026-10-27T10:45", "dia": "27/10", "serie": "dolar", "valor": "5.3155"}, {"ts": "2026-10-27T11:00", "dia": "27/10", "serie": "dolar", "valor": "5.3216"}, {"ts": "2026-10-27T11:15", "dia": "27/10", "serie": "dolar", "valor": "5.3205"}, {"ts": "2026-10-27T11:30", "dia": "27/10", "serie": "dolar", "valor": "5.3535"}, {"ts": "2026-10-27T11:45", "dia": "27/10", "serie": "dolar", "valor": "5.341"}, {"ts": "2026-10-27T12:00", "dia": "27/10", "serie": "dolar", "valor": "5.3376"}, {"ts": "2026-10-27T12:15", "dia": "27/10", "serie": "dolar", "valor": "5.3401"}, {"ts": "2026-10-27T12:30", "dia": "27/10", "serie": "dolar", "valor": "5.3304"}, {"ts": "2026-10-27T12:45", "dia": "27/10", "serie": "dolar", "valor": "5.34"}, {"ts": "2026-10-27T13:00", "dia": "27/10", "serie": "dolar", "valor": "5.3383"}, {"ts": "2026-10-27T13:15", "dia": "27/10", "serie": "dolar", "valor": "5.3466"}, {"ts": "2026-10-27T13:30", "dia": "27/10", "serie": "dolar", "valor": "5.3475"}, {"ts": "2026-10-27T13:45", "dia": "27/10", "serie": "dolar", "valor": "5.3506"}, {"ts": "2026-10-27T14:00", "dia": "27/10", "serie": "dolar", "valor": "5.3413"}, {"ts": "2026-10-27T14:15", "dia": "27/10", "serie": "dolar", "valor": "5.3321"}, {"ts": "2026-10-27T14:30", "dia": "27/10", "serie": "dolar", "valor": "5.3298"}, {"ts": "2026-10-27T14:45", "dia": "27/10", "serie": "dolar", "valor": "5.3391"}, {"ts": "2026-10-27T15:00", "dia": "27/10", "serie": "dolar", "valor": "5.3382"}, {"ts": "2026-10-27T15:11", "dia": "27/10", "serie": "dolar", "valor": "5.3376"}, {"ts": "2026-10-26T10:30", "dia": "26/10", "serie": "ewz", "valor": "32.255"}, {"ts": "2026-10-26T10:45", "dia": "26/10", "serie": "ewz", "valor": "32.7"}, {"ts": "2026-10-26T11:00", "dia": "26/10", "serie": "ewz", "valor": "32.55"}, {"ts": "2026-10-26T11:15", "dia": "26/10", "serie": "ewz", "valor": "32.515"}, {"ts": "2026-10-26T11:30", "dia": "26/10", "serie": "ewz", "valor": "32.965"}, {"ts": "2026-10-26T11:45", "dia": "26/10", "serie": "ewz", "valor": "32.99"}, {"ts": "2026-10-26T12:00", "dia": "26/10", "serie": "ewz", "valor": "33.485"}, {"ts": "2026-10-26T12:15", "dia": "26/10", "serie": "ewz", "valor": "33.635"}, {"ts": "2026-10-26T12:30", "dia": "26/10", "serie": "ewz", "valor": "33.915"}, {"ts": "2026-10-26T12:45", "dia": "26/10", "serie": "ewz", "valor": "33.635"}, {"ts": "2026-10-26T13:00", "dia": "26/10", "serie": "ewz", "valor": "33.4101"}, {"ts": "2026-10-26T13:15", "dia": "26/10", "serie": "ewz", "valor": "33.165"}, {"ts": "2026-10-26T13:30", "dia": "26/10", "serie": "ewz", "valor": "33.235"}, {"ts": "2026-10-26T13:45", "dia": "26/10", "serie": "ewz", "valor": "33.505"}, {"ts": "2026-10-26T14:00", "dia": "26/10", "serie": "ewz", "valor": "33.895"}, {"ts": "2026-10-26T14:15", "dia": "26/10", "serie": "ewz", "valor": "33.9"}, {"ts": "2026-10-26T14:30", "dia": "26/10", "serie": "ewz", "valor": "33.485"}, {"ts": "2026-10-26T14:45", "dia": "26/10", "serie": "ewz", "valor": "33.76"}, {"ts": "2026-10-26T15:00", "dia": "26/10", "serie": "ewz", "valor": "33.745"}, {"ts": "2026-10-26T15:15", "dia": "26/10", "serie": "ewz", "valor": "33.965"}, {"ts": "2026-10-26T15:30", "dia": "26/10", "serie": "ewz", "valor": "33.87"}, {"ts": "2026-10-26T15:45", "dia": "26/10", "serie": "ewz", "valor": "33.85"}, {"ts": "2026-10-26T16:00", "dia": "26/10", "serie": "ewz", "valor": "33.915"}, {"ts": "2026-10-26T16:15", "dia": "26/10", "serie": "ewz", "valor": "34.46"}, {"ts": "2026-10-26T16:30", "dia": "26/10", "serie": "ewz", "valor": "34.255"}, {"ts": "2026-10-26T16:45", "dia": "26/10", "serie": "ewz", "valor": "34.145"}, {"ts": "2026-10-27T10:30", "dia": "27/10", "serie": "ewz", "valor": "35.155"}, {"ts": "2026-10-27T10:45", "dia": "27/10", "serie": "ewz", "valor": "34.735"}, {"ts": "2026-10-27T11:00", "dia": "27/10", "serie": "ewz", "valor": "34.8"}, {"ts": "2026-10-27T11:15", "dia": "27/10", "serie": "ewz", "valor": "34.735"}, {"ts": "2026-10-27T11:30", "dia": "27/10", "serie": "ewz", "valor": "34.355"}, {"ts": "2026-10-27T11:45", "dia": "27/10", "serie": "ewz", "valor": "34.57"}, {"ts": "2026-10-27T12:00", "dia": "27/10", "serie": "ewz", "valor": "34.485"}, {"ts": "2026-10-27T12:15", "dia": "27/10", "serie": "ewz", "valor": "34.585"}, {"ts": "2026-10-27T12:30", "dia": "27/10", "serie": "ewz", "valor": "34.69"}, {"ts": "2026-10-27T12:45", "dia": "27/10", "serie": "ewz", "valor": "34.66"}, {"ts": "2026-10-27T13:00", "dia": "27/10", "serie": "ewz", "valor": "34.65"}, {"ts": "2026-10-27T13:15", "dia": "27/10", "serie": "ewz", "valor": "34.5599"}, {"ts": "2026-10-27T13:30", "dia": "27/10", "serie": "ewz", "valor": "34.48"}, {"ts": "2026-10-27T13:45", "dia": "27/10", "serie": "ewz", "valor": "34.38"}, {"ts": "2026-10-27T14:00", "dia": "27/10", "serie": "ewz", "valor": "34.505"}, {"ts": "2026-10-27T14:15", "dia": "27/10", "serie": "ewz", "valor": "34.645"}, {"ts": "2026-10-27T14:30", "dia": "27/10", "serie": "ewz", "valor": "34.645"}, {"ts": "2026-10-27T14:45", "dia": "27/10", "serie": "ewz", "valor": "34.525"}, {"ts": "2026-10-27T15:00", "dia": "27/10", "serie": "ewz", "valor": "34.58"}, {"ts": "2026-10-27T15:11", "dia": "27/10", "serie": "ewz", "valor": "34.58"}], "fechamentos": [{"indicador": "Ibovespa", "unidade": "pontos", "sexta_23": "205083", "segunda_26": "176608.23", "terca_27": "175895.4375", "hora_27": "14h56", "fonte": "B3 via InfoMoney (23 e 26/10), Yahoo ^BVSP (27/10)"}, {"indicador": "Dólar comercial", "unidade": "R$", "sexta_23": "4.9931", "segunda_26": "5.403", "terca_27": "5.3376", "hora_27": "15h11", "fonte": "InfoMoney (23 e 26/10), Yahoo BRL=X (27/10)"}, {"indicador": "EWZ em Nova York", "unidade": "US$", "sexta_23": "42.59", "segunda_26": "34.15", "terca_27": "34.58", "hora_27": "15h11 de Brasília", "fonte": "Yahoo EWZ"}, {"indicador": "Prefixado 2032 (Tesouro Direto)", "unidade": "% ao ano", "sexta_23": "12.89", "segunda_26": "15.50", "terca_27": "15.01", "hora_27": "12h22", "fonte": "InfoMoney Tesouro Direto 27/10"}, {"indicador": "IPCA+ 2032 (Tesouro Direto)", "unidade": "% acima do IPCA", "sexta_23": "", "segunda_26": "7.80", "terca_27": "7.64", "hora_27": "12h22", "fonte": "InfoMoney Tesouro Direto 27/10"}, {"indicador": "IPCA+ 2040 (Tesouro Direto)", "unidade": "% acima do IPCA", "sexta_23": "", "segunda_26": "7.29", "terca_27": "7.41", "hora_27": "12h22", "fonte": "InfoMoney Tesouro Direto 27/10"}], "curva_di": [{"vencimento": "jan/27", "ordem": "1", "sexta_23": "13.475", "segunda_26": "13.723", "terca_27": "13.690"}, {"vencimento": "jan/28", "ordem": "2", "sexta_23": "12.825", "segunda_26": "14.905", "terca_27": "14.730"}, {"vencimento": "jan/31", "ordem": "3", "sexta_23": "12.575", "segunda_26": "15.240", "terca_27": "15.185"}, {"vencimento": "jan/33", "ordem": "4", "sexta_23": "12.650", "segunda_26": "15.250", "terca_27": "15.225"}, {"vencimento": "jan/35", "ordem": "5", "sexta_23": "12.655", "segunda_26": "15.195", "terca_27": "15.205"}], "intervencoes": [{"dia": "26/10", "operacao": "Recompra de prefixados (NTN-F)", "valor_bi": "7.1", "fonte": "InfoMoney 26/10"}, {"dia": "27/10", "operacao": "Recompra de títulos de inflação (NTN-B)", "valor_bi": "16.8", "fonte": "InfoMoney 27/10 12h13"}], "eventos": [{"id": "1", "dia": "26/10", "hora": "09:04", "tema": "Mercado", "fato": "Ibovespa futuro abre a 177.215 (-14,84%). B3 amplia limites de oscilação dos futuros", "fonte": "InfoMoney"}, {"id": "2", "dia": "26/10", "hora": "10:00", "tema": "Mercado", "fato": "Circuit breaker no Ibovespa na abertura, o primeiro desde março de 2020", "fonte": "B3 via InfoMoney"}, {"id": "3", "dia": "26/10", "hora": "10:03", "tema": "Tesouro e BC", "fato": "Tesouro cancela os leilões de prefixados e de IPCA+ da semana e mantém LFT", "fonte": "InfoMoney"}, {"id": "4", "dia": "26/10", "hora": "10:47", "tema": "Mercado", "fato": "Bolsa reabre a 170.315 (-16,95%)", "fonte": "InfoMoney"}, {"id": "5", "dia": "26/10", "hora": "11:13", "tema": "Governo", "fato": "Rafael Fonteles aparece como principal nome para a Fazenda (coluna do O Globo). Rumor", "fonte": "InfoMoney"}, {"id": "6", "dia": "26/10", "hora": "12:50", "tema": "Tesouro e BC", "fato": "Tesouro recompra cerca de R$ 7,1 bi em prefixados (NTN-F)", "fonte": "InfoMoney"}, {"id": "7", "dia": "26/10", "hora": "12:59", "tema": "Governo", "fato": "Durigan diz que o governo vai buscar o centro da meta fiscal ainda este ano, mudando lei ou Constituição", "fonte": "InfoMoney; O Povo; Money Times"}, {"id": "8", "dia": "26/10", "hora": "13:09", "tema": "Mercado", "fato": "PTAX do dia fecha em 5,5007 (+9,19% sobre sexta)", "fonte": "BCB Olinda"}, {"id": "9", "dia": "26/10", "hora": "13:35", "tema": "Mercado", "fato": "Prefixado 2032 a 15,78%, maior salto da série, acima de março de 2020", "fonte": "InfoMoney"}, {"id": "10", "dia": "26/10", "hora": "13:40", "tema": "Política", "fato": "TSE registra cerca de 34,3 mil votos depois das 17h, contra diferença de 4.430.191", "fonte": "InfoMoney citando TSE"}, {"id": "11", "dia": "26/10", "hora": "16:48", "tema": "Mundo", "fato": "Trump diz, sem prova, que a eleição brasileira 'pareceu fraudada' e que gosta de Lula", "fonte": "InfoMoney; Bloomberg; Reuters"}, {"id": "12", "dia": "26/10", "hora": "17:16", "tema": "Mercado", "fato": "Fechamento com Ibovespa a 176.608,23 (-13,88%), dólar a 5,403 (+8,25%) e EWZ -19,8%", "fonte": "InfoMoney; Yahoo"}, {"id": "13", "dia": "27/10", "hora": "01:00", "tema": "Flávio", "fato": "Infobae diz que Flávio 'habría salido' do Brasil rumo aos EUA por Puerto Iguazú. Sem fonte nomeada", "fonte": "Infobae"}, {"id": "14", "dia": "27/10", "hora": "08:15", "tema": "Mundo", "fato": "Xi Jinping manda mensagem formal de parabéns a Lula", "fonte": "Xinhua; gov.cn"}, {"id": "15", "dia": "27/10", "hora": "08:16", "tema": "Flávio", "fato": "PF aciona autoridades argentinas. Marinho diz que ele 'não saiu'", "fonte": "Metrópoles"}, {"id": "16", "dia": "27/10", "hora": "09:22", "tema": "Tesouro e BC", "fato": "Tesouro cancela também o leilão de LFT e anuncia recompra de NTN-B", "fonte": "InfoMoney"}, {"id": "17", "dia": "27/10", "hora": "10:26", "tema": "Governo", "fato": "Durigan diz que o governo tem medidas fiscais prontas e chama Fonteles de 'excelente'", "fonte": "InfoMoney"}, {"id": "18", "dia": "27/10", "hora": "11:58", "tema": "Política", "fato": "Dino (STF, ADPF 1.178) manda a PF abrir inquérito sobre possível interferência estrangeira. Apura financiamento oculto via Rockbridge, perfis estrangeiros pagos, ligação com interesse em terras raras e algoritmos de big techs", "fonte": "Conjur; CNN Brasil; Gazeta do Povo"}, {"id": "19", "dia": "27/10", "hora": "11:19", "tema": "Flávio", "fato": "Imigração argentina diz não ter registro de entrada de Flávio", "fonte": "InfoMoney"}, {"id": "20", "dia": "27/10", "hora": "11:50", "tema": "Tesouro e BC", "fato": "Galípolo diz que não é cotado para a Fazenda e fica no BC até 2028. Às 11h55, diz não ver disfunção no câmbio", "fonte": "InfoMoney"}, {"id": "21", "dia": "27/10", "hora": "12:00", "tema": "Mercado", "fato": "Tesouro Direto reabre depois de parar por volta de 10h30 pelo anúncio da recompra", "fonte": "Investnews"}, {"id": "22", "dia": "27/10", "hora": "12:13", "tema": "Tesouro e BC", "fato": "Tesouro recompra R$ 16,8 bi em títulos de inflação (NTN-B 2030 a 2045)", "fonte": "InfoMoney"}, {"id": "23", "dia": "27/10", "hora": "12:40", "tema": "Flávio", "fato": "Flávio perde o prazo dos passaportes, que são cancelados (fontes da PF à Reuters)", "fonte": "InfoMoney citando Reuters"}, {"id": "24", "dia": "27/10", "hora": "13:10", "tema": "Governo", "fato": "Alckmin e Fonteles são as principais apostas para a Fazenda; Lula deve demorar a decidir (fontes)", "fonte": "InfoMoney"}, {"id": "25", "dia": "27/10", "hora": "13:31", "tema": "Governo", "fato": "Ministro José Guimarães diz que o pacote fiscal 'não foi discutido no governo'", "fonte": "InfoMoney"}, {"id": "26", "dia": "27/10", "hora": "13:41", "tema": "Flávio", "fato": "Metrópoles diz que Flávio 'foi embora para os EUA' e que o avião está em voo, citando pessoas próximas à família", "fonte": "Metrópoles"}, {"id": "27", "dia": "27/10", "hora": "14:15", "tema": "Flávio", "fato": "Fontes anônimas da PF dizem que ele saiu do país. Porta-voz argentino nega passagem e voo", "fonte": "Gazeta do Povo"}, {"id": "28", "dia": "27/10", "hora": "14:59", "tema": "Flávio", "fato": "Aliado de Flávio diz à Reuters que ele foi para os EUA. PF ainda sem nota oficial", "fonte": "InfoMoney citando Reuters"}], "ewz_cotas": [{"data": "23/10", "cotas": "329050000", "nav_usd": "42.4352", "fonte": "iShares"}, {"data": "26/10", "cotas": "329050000", "nav_usd": "34.3252", "fonte": "iShares (lido 27/10 9h13)"}]};
+const RETRATO = {"texto": "Retrato de terça, 27/10/2026, às 15h30. Não se atualiza sozinho.", "rodape": "Números lidos de fonte, com hora, pela pesquisa economia-brasil. Cotações intradia do Yahoo Finance, fechamentos da B3 e do InfoMoney, curva de juros e Tesouro Direto pelo InfoMoney, recompras do Tesouro Nacional pelo InfoMoney, cotas do EWZ pela iShares. Notícias citadas pela fonte que as publicou. Nome de governo serve para datar, não para atribuir causa. Retrato de terça, 27/10/2026, às 15h30."};
+</script>
+<script>
+(() => {
+  const L = d3.formatLocale({decimal: ',', thousands: '.', grouping: [3], currency: ['R$ ', '']});
+  const fInt = L.format(',.0f'), f2 = L.format(',.2f'), f3 = L.format(',.3f'), f1 = L.format(',.1f'), sg1 = L.format('+.1f'), sg0 = L.format('+,.0f');
+  const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const C = {tinta: css('--tinta'), c1: css('--cinza-1'), c2: css('--cinza-2'), c3: css('--cinza-3'), grade: css('--grade'), brasil: css('--brasil'), papel: css('--papel')};
+  const n = (v) => (v === '' || v == null) ? null : Number(v);
+  const F = DADOS.fechamentos, I = DADOS.intraday, E = DADOS.eventos, D = DADOS.curva_di, V = DADOS.intervencoes, Q = DADOS.ewz_cotas;
+  const fe = (nome) => F.find((r) => r.indicador === nome);
+  const tip = document.getElementById('tip');
+  const showTip = (ev, head, lines) => {
+    tip.replaceChildren();
+    const h = document.createElement('div'); h.className = 't'; h.textContent = head; tip.appendChild(h);
+    lines.forEach((l) => { const d = document.createElement('div'); d.textContent = l; tip.appendChild(d); });
+    tip.hidden = false;
+    const W = document.documentElement.clientWidth, w = tip.offsetWidth;
+    tip.style.left = Math.max(8, Math.min(W - w - 8, ev.pageX + 14)) + 'px';
+    tip.style.top = (ev.pageY + 16) + 'px';
+  };
+  const hideTip = () => { tip.hidden = true; };
+
+  // cabeçalho
+  const ib = fe('Ibovespa'), dl = fe('Dólar comercial');
+  const ibS = (n(ib.terca_27) / n(ib.sexta_23) - 1) * 100, dlS = (n(dl.terca_27) / n(dl.sexta_23) - 1) * 100;
+  const ibD = (n(ib.terca_27) / n(ib.segunda_26) - 1) * 100, dlD = (n(dl.terca_27) / n(dl.segunda_26) - 1) * 100;
+  document.getElementById('lede').textContent = `Desde sexta, a bolsa perdeu ${f1(-ibS)}% e o dólar subiu ${f1(dlS)}%. Na terça o câmbio e os juros devolveram uma parte, com o Tesouro comprando títulos de volta, e a bolsa ficou parada (${sg1(ibD)}% no dia).`;
+  document.getElementById('when').textContent = RETRATO.texto;
+
+  // números
+  const NUMS = [
+    ['Ibovespa', 'Ibovespa, pontos', fInt, 'pct', true],
+    ['Dólar comercial', 'Dólar comercial, R$', f3, 'pct', false],
+    ['Prefixado 2032 (Tesouro Direto)', 'Prefixado 2032, % ao ano', f2, 'pb', false],
+    ['EWZ em Nova York', 'EWZ em Nova York, US$', f2, 'pct', false],
+  ];
+  const box = document.getElementById('nums');
+  NUMS.forEach(([k, lab, fmt, modo, destaque]) => {
+    const r = fe(k); const a = n(r.sexta_23), b = n(r.segunda_26), c = n(r.terca_27);
+    const el = document.createElement('div'); el.className = 'num';
+    const l = document.createElement('div'); l.className = 'lab'; l.textContent = lab;
+    const v = document.createElement('div'); v.className = 'val' + (destaque ? ' brasil' : ''); v.textContent = fmt(c);
+    const ch = document.createElement('div'); ch.className = 'chg';
+    ch.textContent = modo === 'pb'
+      ? `${sg0((c - b) * 100)} pb na terça · ${sg0((c - a) * 100)} pb desde sexta`
+      : `${sg1((c / b - 1) * 100)}% na terça · ${sg1((c / a - 1) * 100)}% desde sexta`;
+    el.append(l, v, ch); box.appendChild(el);
+  });
+  {
+    const tot = d3.sum(V, (r) => Number(r.valor_bi));
+    const el = document.createElement('div'); el.className = 'num';
+    const l = document.createElement('div'); l.className = 'lab'; l.textContent = 'Recompras do Tesouro, R$ bilhões';
+    const v = document.createElement('div'); v.className = 'val'; v.textContent = f1(tot);
+    const ch = document.createElement('div'); ch.className = 'chg'; ch.textContent = 'em dois dias, para conter os juros longos';
+    el.append(l, v, ch); box.appendChild(el);
+  }
+
+  // gráfico de linha intradia, um eixo de pontos que pula a noite
+  function intradia(id, serie, opts) {
+    const box = document.getElementById(id);
+    box.replaceChildren();
+    const rows = I.filter((r) => r.serie === serie).map((r) => ({ts: r.ts, dia: r.dia, v: Number(r.valor)}));
+    if (opts.sexta) rows.unshift({ts: '2026-10-23T17:00', dia: '23/10', v: opts.ref, sexta: true});
+    const W = Math.max(300, box.clientWidth), H = opts.h;
+    const narrow = W < 560;
+    const m = {t: opts.events ? 34 : 14, r: 64, b: 30, l: 8};
+    const svg = d3.select(box).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', opts.aria);
+    const vals = rows.map((r) => r.v).concat([opts.ref]);
+    const y = d3.scaleLinear(d3.extent(vals), [H - m.b, m.t]).nice(5);
+    const probe = svg.append('text').attr('font-size', 12).text(opts.fmt(y.domain()[1]));
+    m.l = probe.node().getComputedTextLength() + 12; probe.remove();
+    const x = d3.scalePoint(rows.map((r) => r.ts), [m.l, W - m.r]);
+    svg.append('g').selectAll('line').data(y.ticks(5)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y).attr('y2', y).attr('stroke', C.grade);
+    svg.append('g').selectAll('text').data(y.ticks(5)).join('text').attr('x', m.l - 8).attr('y', (d) => y(d) + 4).attr('text-anchor', 'end').attr('font-size', 12).attr('fill', C.c2).text(opts.fmt);
+    const p27 = rows.find((r) => r.dia === '27/10');
+    const xd = x(p27.ts) - x.step() / 2;
+    svg.append('line').attr('x1', xd).attr('x2', xd).attr('y1', m.t - 6).attr('y2', H - m.b + 4).attr('stroke', C.c3);
+    const p26 = rows.find((r) => r.dia === '26/10');
+    svg.append('text').attr('x', x(p26.ts) - (opts.sexta ? 0 : 0)).attr('y', H - 8).attr('font-size', 12).attr('fill', C.c1).text(narrow ? '26/10' : 'segunda, 26/10');
+    if (opts.sexta) {
+      const p0 = rows[0];
+      svg.append('line').attr('x1', x(p0.ts)).attr('x2', x(p26.ts)).attr('y1', y(p0.v)).attr('y2', y(p26.v)).attr('stroke', C.brasil).attr('stroke-width', 1.4).attr('stroke-dasharray', '2 4');
+      svg.append('circle').attr('cx', x(p0.ts)).attr('cy', y(p0.v)).attr('r', 3.5).attr('fill', C.brasil);
+      svg.append('text').attr('x', x(p0.ts) + 8).attr('y', y(p0.v) - 8).attr('font-size', 12).attr('fill', C.c1).text('sexta, ' + opts.fmt(p0.v));
+      svg.append('text').attr('x', (x(p0.ts) + x(p26.ts)) / 2 + 6).attr('y', (y(p0.v) + y(p26.v)) / 2).attr('font-size', 12).attr('fill', C.c1).text(narrow ? '' : 'circuit breaker');
+    }
+    svg.append('text').attr('x', xd + 8).attr('y', H - 8).attr('font-size', 12).attr('fill', C.c1).text(narrow ? '27/10' : 'terça, 27/10');
+    // referência de sexta
+    if (!opts.sexta) {
+    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(opts.ref)).attr('y2', y(opts.ref)).attr('stroke', C.c2).attr('stroke-dasharray', '3 4');
+    svg.append('text').attr('x', W - m.r + 6).attr('y', y(opts.ref) + 4).attr('font-size', 12).attr('fill', C.c2).text('sexta');
+    svg.append('text').attr('x', W - m.r + 6).attr('y', y(opts.ref) + 18).attr('font-size', 12).attr('fill', C.c2).text(opts.fmt(opts.ref));
+    }
+    ['26/10', '27/10'].forEach((dia) => {
+      const seg = rows.filter((r) => r.dia === dia && !r.sexta);
+      svg.append('path').datum(seg).attr('fill', 'none').attr('stroke', C.brasil).attr('stroke-width', 2.2).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round')
+        .attr('d', d3.line().x((r) => x(r.ts)).y((r) => y(r.v)));
+    });
+    const last = rows[rows.length - 1];
+    svg.append('circle').attr('cx', x(last.ts)).attr('cy', y(last.v)).attr('r', 3.5).attr('fill', C.brasil);
+    svg.append('text').attr('x', x(last.ts) + 8).attr('y', y(last.v) + 4).attr('font-size', 12).attr('font-weight', 600).attr('fill', C.brasil).text(opts.fmt(last.v));
+    // eventos
+    if (opts.events && !narrow) {
+      const pos = opts.events.map((e) => {
+        const day = e.dia === '26/10' ? '2026-10-26' : '2026-10-27';
+        const same = rows.filter((r) => r.ts.startsWith(day));
+        let p = same.find((r) => r.ts.slice(11, 16) >= e.hora) || same[same.length - 1];
+        if (e.hora < same[0].ts.slice(11, 16)) p = same[0];
+        return {e, x: x(p.ts)};
+      });
+      const lane = []; // evita sobreposição: desloca para a direita quem cai em cima de outro
+      pos.sort((a, b) => a.x - b.x).forEach((p) => { const prev = lane[lane.length - 1]; p.cx = prev && p.x - prev.cx < 17 ? prev.cx + 17 : p.x; lane.push(p); });
+      const g = svg.append('g').selectAll('g').data(pos).join('g').attr('transform', (p) => `translate(${p.cx},${m.t - 22})`).attr('tabindex', 0).style('cursor', 'default');
+      g.append('line').attr('x1', (p) => p.x - p.cx).attr('x2', (p) => p.x - p.cx).attr('y1', 8).attr('y2', H - m.b - m.t + 22).attr('stroke', C.c3).attr('stroke-dasharray', '1 3');
+      g.append('rect').attr('x', -8).attr('y', -8).attr('width', 16).attr('height', 16).attr('fill', C.papel).attr('stroke', C.tinta).attr('stroke-width', 1);
+      g.append('text').attr('text-anchor', 'middle').attr('y', 4).attr('font-size', 10).attr('fill', C.tinta).text((p) => p.e.id);
+      g.on('mouseenter', (ev, p) => { showTip(ev, `${p.e.dia}, ${p.e.hora.replace(':', 'h')} · ${p.e.tema}`, [p.e.fato]); marca(p.e.id); })
+        .on('mouseleave', () => { hideTip(); marca(null); })
+        .on('focus', (ev, p) => { const r = ev.target.getBoundingClientRect(); showTip({pageX: r.left + scrollX, pageY: r.bottom + scrollY}, `${p.e.dia}, ${p.e.hora.replace(':', 'h')} · ${p.e.tema}`, [p.e.fato]); })
+        .on('blur', hideTip);
+    }
+    // cursor
+    const hov = svg.append('g').style('pointer-events', 'none');
+    svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).attr('fill', 'transparent')
+      .on('mousemove', (ev) => {
+        const [mx] = d3.pointer(ev);
+        const i = Math.max(0, Math.min(rows.length - 1, Math.round((mx - m.l) / x.step())));
+        const r = rows[i];
+        hov.replaceChildren();
+        hov.append('line').attr('x1', x(r.ts)).attr('x2', x(r.ts)).attr('y1', m.t).attr('y2', H - m.b).attr('stroke', C.c3);
+        hov.append('circle').attr('cx', x(r.ts)).attr('cy', y(r.v)).attr('r', 4).attr('fill', C.brasil).attr('stroke', C.papel).attr('stroke-width', 2);
+        showTip(ev, `${r.dia}, ${r.ts.slice(11, 16).replace(':', 'h')}`, [opts.fmt(r.v)]);
+      })
+      .on('mouseleave', () => { hov.replaceChildren(); hideTip(); });
+  }
+
+  function curva() {
+    const box = document.getElementById('ch-di'); box.replaceChildren();
+    const W = Math.max(300, box.clientWidth), H = 280, m = {t: 14, r: 96, b: 30, l: 44};
+    const rows = D.map((r) => ({v: r.vencimento, a: n(r.sexta_23), b: n(r.segunda_26), c: n(r.terca_27)}));
+    const S = [['a', 'sexta', C.c3, 1.6], ['b', 'segunda', C.c1, 1.6], ['c', 'terça, 9h15', C.brasil, 2.4]];
+    const x = d3.scalePoint(rows.map((r) => r.v), [m.l, W - m.r]).padding(.2);
+    const y = d3.scaleLinear(d3.extent(rows.flatMap((r) => [r.a, r.b, r.c])), [H - m.b, m.t]).nice(5);
+    const svg = d3.select(box).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Curva de juros futuros em sexta, segunda e terça');
+    svg.append('g').selectAll('line').data(y.ticks(5)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y).attr('y2', y).attr('stroke', C.grade);
+    svg.append('g').selectAll('text').data(y.ticks(5)).join('text').attr('x', m.l - 8).attr('y', (d) => y(d) + 4).attr('text-anchor', 'end').attr('font-size', 12).attr('fill', C.c2).text((d) => f1(d) + '%');
+    svg.append('g').selectAll('text').data(rows).join('text').attr('x', (r) => x(r.v)).attr('y', H - 8).attr('text-anchor', 'middle').attr('font-size', 12).attr('fill', C.c1).text((r) => r.v);
+    const ends = [];
+    S.forEach(([k, nome, cor, w]) => {
+      svg.append('path').datum(rows).attr('fill', 'none').attr('stroke', cor).attr('stroke-width', w).attr('stroke-linejoin', 'round').attr('d', d3.line().x((r) => x(r.v)).y((r) => y(r[k])));
+      svg.append('g').selectAll('circle').data(rows).join('circle').attr('cx', (r) => x(r.v)).attr('cy', (r) => y(r[k])).attr('r', 3).attr('fill', cor)
+        .on('mouseenter', (ev, r) => showTip(ev, `Juros futuros ${r.v}`, S.map(([kk, nn]) => `${nn}, ${f3(r[kk])}%`))).on('mouseleave', hideTip);
+      ends.push({nome, cor, y: y(rows[rows.length - 1][k]), k});
+    });
+    ends.sort((a, b) => a.y - b.y); for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 15) ends[i].y = ends[i - 1].y + 15;
+    svg.append('g').selectAll('text').data(ends).join('text').attr('x', W - m.r + 10).attr('y', (e) => e.y + 4).attr('font-size', 12).attr('fill', (e) => e.cor === C.c3 ? C.c2 : e.cor).attr('font-weight', (e) => e.k === 'c' ? 600 : 400).text((e) => e.nome);
+  }
+
+  function recompras() {
+    const box = document.getElementById('ch-tes'); box.replaceChildren();
+    const W = Math.max(300, box.clientWidth), rows = V.map((r) => ({d: r.dia, o: r.operacao, v: Number(r.valor_bi)})), H = rows.length * 64;
+    const x = d3.scaleLinear([0, d3.max(rows, (r) => r.v)], [0, W - 110]);
+    const svg = d3.select(box).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Recompras do Tesouro por dia');
+    const g = svg.selectAll('g').data(rows).join('g').attr('transform', (r, i) => `translate(0,${i * 64})`);
+    g.append('text').attr('y', 14).attr('font-size', 13).attr('fill', C.c1).text((r) => `${r.d} · ${r.o}`);
+    g.append('rect').attr('x', 0).attr('y', 24).attr('height', 24).attr('width', (r) => x(r.v)).attr('fill', C.tinta);
+    g.append('text').attr('x', (r) => x(r.v) + 10).attr('y', 41).attr('font-size', 15).attr('fill', C.tinta).text((r) => `R$ ${f1(r.v)} bi`);
+  }
+
+  function ewz() {
+    const box = document.getElementById('ewz-rows'); box.replaceChildren();
+    Q.forEach((r) => {
+      const a = document.createElement('div'); a.className = 'd'; a.textContent = r.data;
+      const b = document.createElement('div'); b.className = 'c'; b.textContent = fInt(Number(r.cotas));
+      const c = document.createElement('div'); c.className = 'n'; c.textContent = `cotas · US$ ${f2(Number(r.nav_usd))} por cota`;
+      box.append(a, b, c);
+    });
+  }
+
+  // linha do tempo com filtro
+  const TEMAS = ['Todos', 'Mercado', 'Tesouro e BC', 'Governo', 'Política', 'Flávio', 'Mundo'];
+  let tema = 'Todos';
+  const filtros = document.getElementById('filtros');
+  TEMAS.forEach((t) => {
+    const b = document.createElement('button'); b.type = 'button'; b.id = 'f-' + t.normalize('NFD').replace(/[^\w]/g, ''); b.textContent = t;
+    b.addEventListener('click', () => { tema = t; linha(); });
+    filtros.appendChild(b);
+  });
+  function linha() {
+    filtros.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.textContent === tema)));
+    const ol = document.getElementById('linha'); ol.replaceChildren();
+    E.filter((r) => tema === 'Todos' || r.tema === tema).forEach((r) => {
+      const li = document.createElement('li'); li.dataset.id = r.id;
+      const id = document.createElement('div'); id.className = 'id'; id.textContent = r.id;
+      const q = document.createElement('div'); q.className = 'quando'; q.textContent = `${r.dia}, ${r.hora.replace(':', 'h')}`;
+      const t = document.createElement('span'); t.textContent = r.tema; q.appendChild(t);
+      const body = document.createElement('div');
+      const f = document.createElement('p'); f.className = 'fato'; f.textContent = r.fato;
+      const s = document.createElement('div'); s.className = 'src'; s.textContent = r.fonte;
+      body.append(f, s); li.append(id, q, body); ol.appendChild(li);
+    });
+  }
+  function marca(id) { document.querySelectorAll('.linha li').forEach((li) => li.classList.toggle('hl', li.dataset.id === id)); }
+
+  document.getElementById('rodape').textContent = RETRATO.rodape;
+
+  const desenha = () => {
+    intradia('ch-ibov', 'ibovespa', {h: 380, fmt: fInt, ref: n(ib.sexta_23), sexta: true, events: E, aria: 'Ibovespa a cada 15 minutos em 26 e 27 de outubro'});
+    intradia('ch-dolar', 'dolar', {h: 280, fmt: f2, ref: n(dl.sexta_23), aria: 'Dólar a cada 15 minutos em 26 e 27 de outubro'});
+    curva(); recompras(); ewz();
+  };
+  linha(); desenha();
+  let t0; addEventListener('resize', () => { clearTimeout(t0); t0 = setTimeout(desenha, 150); });
+})();
+</script>
+</body>
+</html>
