@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suplemento técnico</title>
+<meta name="description" content="Base de dados e de método do livro O que muda no Brasil quando muda a régua?, com as séries, os testes e as fontes.">
+<meta property="og:title" content="Suplemento técnico">
+<meta property="og:description" content="Base de dados e de método do livro O que muda no Brasil quando muda a régua?">
+<meta property="og:url" content="https://felipesztutman.com/brasil/suplemento/">
+<link rel="canonical" href="https://felipesztutman.com/brasil/suplemento/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+:root { --tinta: #1f1f1f; --cinza-1: #4d4d4d; --cinza-2: #8a8a8a; --grade: #e2e2e2; --papel: #ffffff; --brasil: #1d4e89;
+  --serif: "Newsreader", Georgia, serif; --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; color-scheme: light; }
+* { box-sizing: border-box; border-radius: 0; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font-family: var(--serif); font-size: 17px; line-height: 1.5; }
+.wrap { max-width: 52rem; margin-inline: auto; padding-inline: max(20px, env(safe-area-inset-left, 0px)) max(20px, env(safe-area-inset-right, 0px)); padding-block: 48px 72px; }
+.kicker, .when, .baixa .m, footer, .sum li { font-family: var(--sans); }
+.kicker { font-size: 13px; color: var(--cinza-1); }
+.kicker a { color: var(--brasil); text-decoration: none; border-bottom: 1px solid rgba(29,78,137,.3); }
+h1 { font-weight: 400; font-size: clamp(34px, 6vw, 56px); line-height: 1.05; margin: 10px 0 18px; letter-spacing: -.01em; text-wrap: balance; }
+.lede { font-size: clamp(18px, 2.2vw, 21px); line-height: 1.45; margin: 0; }
+.when { font-size: 13px; color: var(--cinza-2); margin-top: 14px; }
+.baixa { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 24px 40px; margin-top: 40px; }
+.baixa a { display: block; color: var(--tinta); text-decoration: none; border-top: 2px solid var(--brasil); padding-top: 10px; }
+.baixa a:hover .t, .baixa a:focus-visible .t { color: var(--brasil); }
+.baixa a:focus-visible { outline: 2px solid var(--brasil); outline-offset: 4px; }
+.baixa .t { font-size: 22px; line-height: 1.2; }
+.baixa .m { font-size: 13px; color: var(--cinza-2); margin-top: 4px; }
+section { margin-top: 56px; }
+h2 { font-weight: 500; font-size: 24px; line-height: 1.2; margin: 0 0 10px; }
+.sum { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.sum li { display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-top: 1px solid var(--grade); color: var(--cinza-1); }
+.sum li.g { color: var(--brasil); font-weight: 600; margin-top: 10px; }
+.sum .p { font-variant-numeric: tabular-nums; color: var(--cinza-2); }
+footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--grade); font-size: 12px; color: var(--cinza-2); line-height: 1.6; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="kicker">Livro O que muda no Brasil quando muda a régua? · <a href="/brasil/">painel do pós-eleição</a></div>
+  <h1>Suplemento técnico</h1>
+  <p class="lede">Aqui estão as contas que o livro resume. As séries completas, os testes de robustez, as fontes numeradas e os scripts para refazer cada número. A Parte A trata do dinheiro público da União, da dívida e dos juros. A Parte B trata do desenvolvimento, de renda e produtividade a condições de vida e cultura.</p>
+  <p class="when">Versão 1 de 27/10/2026. 95 páginas.</p>
+  <div class="baixa">
+    <a href="suplemento-tecnico.pdf"><div class="t">Ler o suplemento</div><div class="m">PDF, 1.6 MB</div></a>
+    <a href="suplemento-tecnico-dados.zip"><div class="t">Baixar dados e scripts</div><div class="m">ZIP, 10.9 MB, CSV e código para reproduzir</div></a>
+  </div>
+  <section><h2>Parte A. Gastos públicos do Brasil</h2><ol class=sum><li class=""><span>Como ler este dossiê</span><span class=p>3</span></li><li class=""><span>O essencial</span><span class=p>4</span></li><li class=""><span>Para quem aloca capital</span><span class=p>5</span></li><li class="g"><span>Parte I. Núcleo fiscal</span><span class=p>8</span></li><li class=""><span>1. União, 2025 (Lula 3), por linha</span><span class=p>8</span></li><li class=""><span>2. País inteiro, 2024 (Lula 3, União, estados e municípios)</span><span class=p>9</span></li><li class=""><span>3. Despesa e resultado por governo, 1997 a 2025</span><span class=p>10</span></li><li class=""><span>4. Receita, carga tributária e rigidez da despesa</span><span class=p>11</span></li><li class=""><span>5. Primário cheio, recorrente e estrutural</span><span class=p>16</span></li><li class=""><span>6. Trajetória das maiores linhas, R$ bi de 2025</span><span class=p>17</span></li><li class=""><span>7. Por habitante e por beneficiado, 2008 a 2025</span><span class=p>17</span></li><li class=""><span>8. A dívida que gera os juros (agosto de 2026, Lula 3)</span><span class=p>20</span></li><li class=""><span>9. Superávit e evolução da dívida, por governo</span><span class=p>20</span></li><li class=""><span>10. Juros. O Brasil entre os emergentes</span><span class=p>26</span></li><li class=""><span>11. Juro real de longo prazo, inflação implícita e eventos fiscais</span><span class=p>29</span></li><li class=""><span>12. Cenários da dívida até 2030</span><span class=p>31</span></li><li class=""><span>13. Quanto a política fiscal pode efetivamente reduzir os juros da dívida brasileira?</span><span class=p>34</span></li><li class="g"><span>Parte II. Anexos temáticos</span><span class=p>40</span></li><li class=""><span>Anexo T1. Cultura, por governo e na OCDE</span><span class=p>40</span></li><li class=""><span>Anexo T2. Agro e meio ambiente por governo, 2000 a 2025</span><span class=p>45</span></li><li class=""><span>Anexo T3. Quem paga e quem recebe</span><span class=p>47</span></li><li class=""><span>Anexo T4. O que se obtém. Educação e saúde</span><span class=p>55</span></li><li class=""><span>Anexo T5. 2027 a 2030. Propostas econômicas, cenários e possíveis efeitos sobre as famílias</span><span class=p>56</span></li><li class=""><span>Anexo T6. Expectativas contra resultados, e o mercado nos turnos da eleição</span><span class=p>65</span></li><li class=""><span>Anexo T7. Investimento das estatais federais, 2009 a 2025</span><span class=p>66</span></li><li class="g"><span>Parte III. Método e dados</span><span class=p>68</span></li><li class=""><span>Anexo A. Séries ano a ano</span><span class=p>68</span></li><li class=""><span>Anexo B. Dados e reprodução</span><span class=p>70</span></li><li class=""><span>Anexo C. Método da seção 13</span><span class=p>71</span></li><li class=""><span>Limites dos dados</span><span class=p>75</span></li><li class=""><span>Fontes</span><span class=p>76</span></li></ol></section><section><h2>Parte B. Desenvolvimento do Brasil</h2><ol class=sum><li class=""><span>Como ler esta parte</span><span class=p>81</span></li><li class=""><span>O essencial</span><span class=p>82</span></li><li class="g"><span>Parte I. Renda, crescimento e investimento</span><span class=p>83</span></li><li class=""><span>1. Renda por habitante e quem passou o Brasil</span><span class=p>83</span></li><li class=""><span>2. De onde veio o crescimento</span><span class=p>84</span></li><li class=""><span>3. Investimento e poupança</span><span class=p>86</span></li><li class=""><span>4. Inovação</span><span class=p>88</span></li><li class=""><span>5. Ambiente de negócios</span><span class=p>88</span></li><li class="g"><span>Parte II. Condições de vida e cultura</span><span class=p>90</span></li><li class=""><span>6. Indicadores sociais</span><span class=p>90</span></li><li class=""><span>7. Bem-estar declarado</span><span class=p>92</span></li><li class=""><span>8. Cultura como desenvolvimento</span><span class=p>92</span></li><li class="g"><span>Parte III. Método e dados</span><span class=p>94</span></li><li class=""><span>Limites dos dados</span><span class=p>94</span></li><li class=""><span>Dados e reprodução</span><span class=p>94</span></li><li class=""><span>Fontes</span><span class=p>94</span></li></ol></section>
+  <footer>Investigação independente, aberta a críticas, sem tese eleitoral. Cada número traz a fonte primária numerada no fim de cada parte. Nome de governo serve para datar o valor, não para atribuir causa. As Partes A e B foram publicadas antes em separado e aqui aparecem com o mesmo conteúdo e outra organização.</footer>
+</main>
+</body>
+</html>
